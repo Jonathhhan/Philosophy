@@ -1,0 +1,24 @@
+id: algorithmus
+label: Algorithmus
+status: core
+chapter: 8
+definition: explizierbare und wiederholbare Ordnung bedingter Übergänge
+depends_on:
+  - anschliessen
+  - aktualisieren
+  - programm
+required_for:
+  - organisieren
+  - revidieren
+  - reorganisieren
+related:
+  - improvisieren
+  - komposition
+  - regel
+constraints:
+  - Algorithmus ist keine bloße Metapher.
+  - Algorithmus und Programm dürfen nicht gleichgesetzt werden.
+  - Der Begriff bleibt auf nichtdigitale Ordnungen bedingter Übergänge anwendbar.
+source_files:
+  - GLOSSAR.md
+  - projekt/architektur.md
