@@ -1,0 +1,55 @@
+source: bachelor-filmmontage-improvisation
+status: initial_argument_reconstruction
+arguments:
+  - id: form_eroeffnet_spielraum
+    claim: Eine diagrammatische Partitur begrenzt den Vollzug, ohne ihn vollständig festzulegen, und eröffnet dadurch improvisatorischen Spielraum.
+    support:
+      - Anfangsbuchstaben können den Beginn eines Textes vorgeben, ohne seinen weiteren Verlauf zu bestimmen.
+      - Tonart und Takt strukturieren musikalisches Handeln, ohne jede Entscheidung vorzuschreiben.
+      - Rohmaterial strukturiert die Montage, ohne eine einzige richtige Anordnung zu erzwingen.
+    source_locations:
+      - pdf_pages: 4-7
+  - id: material_und_haltung_konkretisieren_montage
+    claim: Die Vielzahl möglicher Anordnungen wird durch Materialinhalt, Regeln und die Haltung der montierenden Person konkretisiert.
+    support:
+      - Rein kombinatorisch entstehen sehr viele Anordnungen.
+      - Viele davon ergeben im jeweiligen Zusammenhang keinen Sinn.
+      - Haltung und Interpretation wirken als Auswahl- und Formbildungsbedingungen.
+    source_locations:
+      - pdf_page: 5
+  - id: erfahrung_als_repertoire_und_gefahr
+    claim: Erfahrung vergrößert das Repertoire und die Fähigkeit zur Verbindung von Möglichkeiten, kann aber zugleich in Routine erstarren.
+    support:
+      - Komplexere Ergebnisse beruhen nicht nur auf mehr Möglichkeiten, sondern auf ihrem gekonnten Anschluss.
+      - Spielen, Umdeuten und Neuzusammensetzen wirken der Erstarrung entgegen.
+    source_locations:
+      - pdf_page: 6
+  - id: improvisation_braucht_haltung
+    claim: Improvisatorisches Handeln setzt eine nicht erstarrte subjektive Haltung voraus.
+    support:
+      - Unbekannte Situationen können nicht immer angemessen mit alten Strategien behandelt werden.
+      - Das bloße Übernehmen fremder Ideen reproduziert Bekanntes.
+      - Die handelnde Person muss sich zur Situation und zum Material verhalten.
+    source_locations:
+      - pdf_page: 7
+  - id: montage_als_rekursiver_prozess
+    claim: Montage ist keine einseitige Umsetzung einer fertigen Absicht, sondern eine Rückkopplung zwischen Material, Haltung, Entscheidung und entstehender Form.
+    support:
+      - Haltung verändert den Film.
+      - Der jeweilige Zustand des Films verändert wiederum Wahrnehmung, Haltung und weitere Möglichkeiten.
+      - Entscheidungen entstehen im Verlauf statt ausschließlich vor ihm.
+    source_locations:
+      - pdf_pages: 18-23
+        context: Diagramme und Erläuterungen
+  - id: arbeit_als_fortsetzungswerkzeug
+    claim: Die schriftliche Arbeit ist nicht nur Resultat, sondern Werkzeug zur Weiterführung und Anregung weiterer Gedanken.
+    support:
+      - Gedanken entstehen aus Beziehungen zu anderen Autorinnen, Autoren und Erfahrungen.
+      - Das Werk kann neue Anschlüsse ermöglichen, statt einen Prozess endgültig abzuschließen.
+    source_locations:
+      - pdf_pages: 36-40
+cautions_for_book:
+  - Die Gegenüberstellung von Realität und Bewusstsein nicht als gesicherte Ontologie übernehmen.
+  - Die These, regelgeleitetes Handeln ohne ausdrückliche Intention sei notwendig beliebig, ist zu stark und muss differenziert werden.
+  - Subjektive Haltung mit sozialen, materiellen und sprachlichen Bedingungen vermitteln.
+  - Improvisation so bestimmen, dass sie nicht durch grenzenlose Ausweitung ihre unterscheidende Kraft verliert.
