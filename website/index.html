@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="de">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Interaktive Ausgabe von Zur Kritik der Organisation von Anschlussmöglichkeiten">
+  <title>Zur Kritik der Organisation von Anschlussmöglichkeiten</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <header class="site-header">
+    <p class="eyebrow">Interaktive Arbeitsausgabe</p>
+    <h1>Zur Kritik der Organisation von Anschlussmöglichkeiten</h1>
+  </header>
+
+  <main class="book-layout">
+    <article class="manuscript" aria-labelledby="chapter-title">
+      <p class="chapter-number">Kapitel 1</p>
+      <h2 id="chapter-title">Anschließen</h2>
+      <h3>1. Der Schein des Anfangs</h3>
+
+      <p>Jedes Handeln scheint mit einem Anfang zu beginnen. Wir fassen einen Entschluss, sprechen ein erstes Wort, setzen einen ersten Schritt oder beginnen eine Arbeit.</p>
+      <p>Doch kein Anfang beginnt tatsächlich bei null. Wer spricht, übernimmt eine Sprache, die bereits gesprochen wird. Wer handelt, bewegt sich in Bedingungen, die seinem Handeln vorausliegen.</p>
+      <blockquote>Menschen treten in Gespräche ein, die bereits begonnen haben.</blockquote>
+    </article>
+
+    <section class="experiment" aria-labelledby="experiment-title">
+      <p class="chapter-number">Operative Darstellung</p>
+      <h2 id="experiment-title">Beginne hier</h2>
+      <label for="beginning">Schreibe einen Anfang.</label>
+      <textarea id="beginning" rows="5" placeholder="Ich beginne …"></textarea>
+      <button id="analyse" type="button">Anschlussbedingungen anzeigen</button>
+
+      <div id="conditions" class="conditions" aria-live="polite" hidden>
+        <h3>Dein Anfang schließt bereits an:</h3>
+        <ul>
+          <li>ein vorgegebenes Alphabet,</li>
+          <li>eine bereits erlernte Sprache,</li>
+          <li>die Regeln dieses Eingabefeldes,</li>
+          <li>den Text, der deiner Eingabe vorausging.</li>
+        </ul>
+        <p id="response"></p>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <p>Arbeitsfassung. Manuskript und digitale Form werden gemeinsam versioniert.</p>
+  </footer>
+
+  <script src="app.js"></script>
+</body>
+</html>
