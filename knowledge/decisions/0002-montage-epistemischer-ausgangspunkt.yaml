@@ -1,0 +1,17 @@
+id: decision-0002
+date: 2026-07-28
+title: Montage bleibt epistemischer Ausgangspunkt
+status: accepted
+decision: >-
+  Montage wird als epistemisches Modell rekursiver Formbildung behandelt und nicht
+  auf eine illustrative Anwendung der Theorie reduziert.
+reason: >-
+  In der Montage werden Auswahl, Anordnung, Aktualisierung, Revision und die
+  Veränderung weiterer Möglichkeiten in einem Vollzug sichtbar.
+affected:
+  - PROJECT.md
+  - CONSTITUTION.md
+  - manuskript/09-komponieren.md
+  - manuskript/16-revidieren.md
+  - manuskript/17-reorganisieren.md
+supersedes: []
