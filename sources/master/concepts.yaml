@@ -1,0 +1,88 @@
+source: master-algorithmische-komposition
+status: initial_source-grounded_index
+concepts:
+  - id: improvisation
+    source_definition: Kreativer Vollzug innerhalb von Strukturen, der auf Material und entstehende Sequenzen reagiert, ohne einem vollständig vorher festgelegten Schema zu folgen.
+    distinctions:
+      - nicht mit Zufall oder Beliebigkeit gleichsetzen
+      - nicht außerhalb jeder Struktur verorten
+      - menschliche Improvisation nicht mit ihrer algorithmischen Simulation gleichsetzen
+    development_role: Ausgang aus der Bachelorarbeit und Gegenpol, aber zugleich Partner von Programm und Algorithmus.
+    source_locations:
+      - printed_pages: 6-10
+        context: Einleitung
+  - id: programm
+    source_definition: Das Vorgeschriebene im umfassenden Sinn: Material, Erfahrung, entstandene Sequenzen, Ordnung, Notizen und weitere bereits vorhandene Bedingungen, auf die sich der Vollzug bezieht.
+    dynamics: Das Vorgeschriebene verändert sich und schreibt sich fort; Programm ist daher nicht auf ein statisches Computerprogramm reduzierbar.
+    relations:
+      - improvisation zulassen und strukturieren
+      - als lesbar gemachte Form in der diagrammatischen Partitur erscheinen
+      - durch Luhmann als sich selbst programmierendes Kunstwerk erweitert werden
+    source_locations:
+      - printed_pages: 8-10
+        context: Einleitung
+      - printed_pages: 16-19
+        context: Niklas Luhmann und die Montage
+  - id: algorithmus
+    source_definition: Vorher festgelegte Entscheidungsfolge oder Spielregel; in der Arbeit auch als eindeutige Handlungsvorschrift zur Lösung eines Problems bezeichnet.
+    distinctions:
+      - kann mehrere zugelassene Möglichkeiten enthalten
+      - ist nicht notwendig an einen Computer gebunden
+      - seine Ausführung ist vom improvisatorischen Entwurf des Algorithmus zu unterscheiden
+    source_locations:
+      - printed_pages: 13-15
+        context: Einleitung und Definitionskette
+      - printed_pages: 20-23
+        context: Algorithmus und Improvisation
+  - id: montage
+    source_definition: Improvisatorisches und spielerisches Entdecken und Herausarbeiten von Strukturen aus verfügbarem Material; zugleich Komposition.
+    epistemic_role: Konkretes Modell für materialgebundene Formbildung, Entscheidung und Erkenntnis.
+    source_locations:
+      - printed_pages: 8-14
+        context: Einleitung
+  - id: diagrammatische_partitur
+    source_definition: Darstellung oder Vorgabe, die einen Verlauf beziehungsweise einen strukturierten Möglichkeitsraum lesbar macht, ohne den Vollzug vollständig festzulegen.
+    relations:
+      - verbindet Bachelorarbeit und Masterarbeit
+      - kann ein Programm lesbar machen
+      - vermittelt zwischen Vorgabe und improvisatorischem Vollzug
+    source_locations:
+      - printed_pages: 6-8
+        context: Einleitung
+      - printed_pages: 37-38
+        context: Die diagrammatische Partitur
+  - id: struktur
+    source_definition: Zusammenfügung von Elementen und Bedingung, innerhalb derer Improvisation Neues hervorbringen kann.
+    caution: Struktur ist nicht nur Einschränkung; sie erzeugt und ordnet Möglichkeiten.
+  - id: komposition
+    source_definition: Zusammenstellung von Elementen; kann notiert oder improvisatorisch hervorgebracht werden und ist medienübergreifend.
+  - id: werkzeug
+    source_definition: Technisches oder selbstgebautes Mittel, dessen Eigenschaften das künstlerische Ergebnis mitformen.
+    thesis: Werkzeugebauen ist Teil des künstlerischen Prozesses.
+    source_locations:
+      - printed_page: 14
+        context: Einleitung
+  - id: montage_automat
+    source_definition: Praktisches Kernexperiment zur Generierung filmischer Strukturen mit algorithmischen Methoden.
+    research_function: Prüfung, was durch die zeitweilige Verlagerung oder Ausschaltung improvisatorischer Entscheidungen sichtbar wird.
+  - id: kuenstlerische_forschung
+    source_definition: Forschung durch künstlerische Praxis, Experimente, Werkzeugbau, theoretische Reflexion und offene Darstellung der eigenen Positionsbildung.
+relations_summary:
+  - from: programm
+    to: improvisation
+    relation: strukturiert_und_ermöglicht
+  - from: improvisation
+    to: programm
+    relation: aktualisiert_und_fortschreibt
+  - from: algorithmus
+    to: programm
+    relation: spezifische_regelhafte_form
+  - from: diagrammatische_partitur
+    to: programm
+    relation: macht_lesbar
+  - from: montage
+    to: struktur
+    relation: entdeckt_und_formt
+  - from: werkzeug
+    to: werk
+    relation: prägt_möglichkeiten_und_resultate
