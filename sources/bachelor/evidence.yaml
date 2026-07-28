@@ -1,0 +1,91 @@
+source: bachelor-filmmontage-und-improvisation
+status: verified_passages_initial
+note: >-
+  Dieser Index trennt direkte Aussagen der Bachelorarbeit von ihrer späteren
+  begrifflichen Weiterentwicklung. Seitenangaben beziehen sich auf die im
+  Dokument gedruckten Seiten.
+entries:
+  - id: ba-e01
+    printed_pages: 8-9
+    section: Improvisation und Erfahrung
+    supports:
+      - Erfahrung vergrößert das Repertoire an Handlungsmöglichkeiten
+      - Können besteht auch im Verknüpfen und modularen Einsetzen von Möglichkeiten
+      - Erfahrung kann in Routine erstarren
+      - Spielen, Umdeuten und Neuzusammensetzen wirken der Erstarrung entgegen
+    paraphrase: >-
+      Improvisation ist weder voraussetzungslos noch bloß zufällig. Sie arbeitet
+      mit einem erworbenen Repertoire, dessen Möglichkeiten situationsbezogen
+      verbunden, umgedeutet und neu zusammengesetzt werden.
+
+  - id: ba-e02
+    printed_pages: 36-37
+    section: Diagramme zwei und drei
+    supports:
+      - der Montageprozess wird diagrammatisch dargestellt
+      - Möglichkeitsräume bezeichnen die Summe der Möglichkeiten eines Subjekts in einer Situation
+      - Möglichkeitsräume können selbst als diagrammatische Partitur verstanden werden
+      - Improvisation kann bereits in Konzeption und Dreh auftreten
+    paraphrase: >-
+      Die Diagramme übersetzen den Montageprozess in ein bewegliches Gefüge aus
+      Material, subjektiver Situation und möglichen Handlungen. Die Partitur legt
+      den Vollzug nicht vollständig fest, sondern macht den Raum seiner Bewegung sichtbar.
+
+  - id: ba-e03
+    printed_pages: 40-41
+    section: Möglichkeitsraum / Rohmaterial / Haltung / Film
+    supports:
+      - der Möglichkeitsraum des Bewusstseins umfasst erschlossene Möglichkeiten
+      - improvisatorisches Handeln kann diesen Möglichkeitsraum erweitern
+      - Rohmaterial bildet eine konkrete Bedingung der Montage
+      - die Haltung des Montierenden bestimmt die Position zu Material und Film
+      - Film bezeichnet Ergebnis und Zwischenstände des Montageprozesses
+    paraphrase: >-
+      Montage entsteht aus dem Verhältnis von verfügbaren Materialien,
+      erschlossenen Möglichkeiten, der Haltung des Montierenden und dem jeweils
+      erreichten Zustand des Films.
+
+  - id: ba-e04
+    printed_pages: 41-42
+    section: Wechselwirkung der Möglichkeitsräume
+    supports:
+      - Bewusstsein und Realität werden als wechselseitig wirksam beschrieben
+      - menschlich Hervorgebrachtes verändert den Möglichkeitsraum der Realität
+      - Wahrnehmung und materielle Veränderung sind miteinander verschränkt
+    paraphrase: >-
+      Die Arbeit versucht, subjektive und materielle Möglichkeitsbedingungen als
+      Wechselwirkung zu denken. Der Montagevollzug verändert die Welt, während
+      deren Bedingungen wiederum Wahrnehmung und Entscheidung formen.
+    caution: >-
+      Die begriffliche Trennung von Bewusstsein und Realität bleibt in der
+      Bachelorarbeit instabil. Das Buch soll die rekursive Einsicht aufnehmen,
+      aber den frühen Dualismus nicht ungeprüft fortführen.
+
+  - id: ba-e05
+    printed_pages: 36-44
+    section: Diagrammatische Prozessdarstellung
+    supports:
+      - die Haltung verändert den Film
+      - der entstehende Film wirkt auf Haltung und weitere Entscheidungen zurück
+      - Montage ist kein linearer Vollzug einer fertigen Absicht
+      - der Prozess lässt sich als Rückkopplung verstehen
+    paraphrase: >-
+      Jeder Montagezustand wird zum neuen Ausgangspunkt. Wahrnehmen, Entscheiden,
+      Gestalten und erneutes Wahrnehmen bilden eine rekursive Folge.
+
+  - id: ba-e06
+    printed_pages: 8-9, 36-44
+    section: Improvisation und Diagramme
+    supports:
+      - improvisation ist von Zufall zu unterscheiden
+      - improvisation verbindet vorhandene Möglichkeiten
+      - improvisation kann neue Handlungsmöglichkeiten erschließen
+    paraphrase: >-
+      Das Neue entsteht nicht aus völliger Ungebundenheit, sondern durch eine
+      nicht vollständig vorbestimmte Verbindung und Umbildung vorhandener Möglichkeiten.
+
+usage_rules:
+  - Die Bachelorarbeit im Buch nicht autobiografisch als Bachelorarbeit ausstellen.
+  - Ihre Gedanken sachlich in die Argumentation integrieren und in Fußnoten oder Literaturangaben belegen.
+  - Begriffe wie Anschluss, Programm und Organisation nicht rückwirkend als bereits explizit vorhanden darstellen.
+  - Die Diagramme als konzeptuelle Quelle behandeln, nicht nur als Illustration.
