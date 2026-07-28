@@ -1,0 +1,107 @@
+source: master-algorithmische-komposition
+status: verified_passages_initial
+note: >-
+  Dieser Index enthält nur Aussagen, die in den erschlossenen Passagen der
+  Masterarbeit direkt belegt sind. Seitenangaben beziehen sich auf die im
+  Dokument gedruckten Seiten, nicht notwendig auf die PDF-Zählung.
+entries:
+  - id: ma-e01
+    printed_pages: 6-8
+    section: Einleitung
+    supports:
+      - improvisation findet innerhalb von Strukturen statt
+      - improvisation kann innerhalb dieser Strukturen Neues hervorbringen
+      - diagrammatische Partituren bilden einen Übergang von der Bachelorarbeit zur Masterarbeit
+    paraphrase: >-
+      Die Arbeit setzt bei der Frage nach Entscheidungen in der Filmmontage an.
+      Improvisation wird als situationsbezogener kreativer Vollzug verstanden,
+      der nicht außerhalb von Strukturen steht, sondern sich in ihnen bewegt.
+
+  - id: ma-e02
+    printed_pages: 8-10
+    section: Einleitung
+    supports:
+      - programm ist nicht auf ein Computerprogramm beschränkt
+      - programm umfasst Material, Ordnung, Notizen, Sequenzen und weitere Vorgaben
+      - das Vorgeschriebene verändert sich, indem es sich fortschreibt
+      - ein Programm kann menschliche Improvisation zulassen, aber nicht selbst improvisieren
+    paraphrase: >-
+      Programm bezeichnet das jeweils Vorgeschriebene und Vorgefundene, auf das
+      sich der Montageprozess bezieht. Dieses Programm bleibt nicht unverändert,
+      weil die Montage neue Sequenzen, Ordnungen und Bezugspunkte erzeugt.
+    caution: >-
+      Die Aussage, ein Programm könne nicht improvisieren, gehört zur Position
+      der Masterarbeit. Das Buch darf sie prüfen und differenzieren, aber nicht
+      stillschweigend als endgültig geklärt behandeln.
+
+  - id: ma-e03
+    printed_pages: 15-19
+    section: Assoziative Definitionskette / Niklas Luhmann und die Montage
+    supports:
+      - struktur ist eine Zusammenfügung von Elementen
+      - komposition ist eine Zusammenstellung von Elementen
+      - montage ist komposition
+      - algorithmus wird als eindeutige Handlungsvorschrift eingeführt
+      - kunstwerk wird mit programm in Beziehung gesetzt
+      - Luhmanns Selbstprogrammierung erweitert den Programmbegriff
+    paraphrase: >-
+      Die Definitionskette verdichtet die Grundbegriffe der Arbeit. Im Anschluss
+      wird der Programmbegriff vom getrennten Plan-Ausführungs-Modell weg auf die
+      Entscheidungen im Verlauf der Herstellung erweitert.
+
+  - id: ma-e04
+    printed_pages: 20-24
+    section: Algorithmus und Improvisation
+    supports:
+      - algorithmische Strukturen können in Genres, Stilen und Erzählmodellen liegen
+      - algorithmische Komposition ordnet Film- und Tonmaterial nach formalisierbaren Regeln
+      - improvisation verlagert sich bei generativen Verfahren teilweise in das Programmieren
+      - ein Algorithmus ist nicht notwendig an einen Computer gebunden
+    paraphrase: >-
+      Das Algorithmische wird sowohl in vorhandenen filmischen Strukturen als
+      auch in ausdrücklich entworfenen Verfahren gesucht. Bei algorithmischer
+      Komposition liegt der improvisatorische Anteil eher im Entwurf des
+      Verfahrens als in dessen automatischer Ausführung.
+
+  - id: ma-e05
+    printed_pages: 24-38
+    section: Geschichte der algorithmischen Filmkomposition / Diagrammatische Partitur
+    supports:
+      - Notationen machen den Aufbau algorithmischer Filme sichtbar
+      - diagrammatische Partituren können Programme lesbar machen
+      - historische algorithmische Filmkomposition ist nicht vom Computer abhängig
+    paraphrase: >-
+      Die Notation wird nicht nur als technische Vorbereitung, sondern als
+      Erkenntnisform behandelt: Sie zeigt Strukturen und Regeln, die in einem
+      Einzelbild des fertigen Films nicht sichtbar wären.
+
+  - id: ma-e06
+    printed_pages: 51-123
+    section: Montage-Automat / Zellulärer Automat
+    supports:
+      - der Montage-Automat ist das zentrale praktische Experiment der Arbeit
+      - Kategorien und Regeln machen die Grenzen vollständiger Formalisierung sichtbar
+      - Quelltext, Sequenz und Darstellung gehören zur Argumentation
+    paraphrase: >-
+      Die programmierte Montage dient nicht bloß als Illustration. Das Experiment
+      prüft praktisch, welche Montageentscheidungen kategorisiert und automatisiert
+      werden können und an welchen Stellen die Komplexität des Möglichen hervortritt.
+    caution: >-
+      Für detaillierte Aussagen zu einzelnen Algorithmen sind die betreffenden
+      Seiten noch separat zu erschließen.
+
+  - id: ma-e07
+    printed_pages: 124-153
+    section: Pure-Data-Experimente / Künstlerische Forschung / Abschließende Gedanken
+    supports:
+      - Werkzeugbau ist Teil des künstlerischen Erkenntnisprozesses
+      - die Form der Arbeit ist selbst Bestandteil der Forschung
+      - Experimente, Reflexion und Darstellung bilden keine getrennten Phasen
+    paraphrase: >-
+      Die Arbeit versteht Programmieren, Experimentieren, Montieren und Schreiben
+      als miteinander verschränkte Formen künstlerischer Forschung.
+
+usage_rules:
+  - Aussagen im Buch aus diesen Einträgen paraphrasieren und mit dem jeweiligen evidence-id verknüpfen.
+  - Direkte Zitate erst nach Kontrolle der exakten Passage und Zeichensetzung verwenden.
+  - Spätere Buchbegriffe wie Anschlussmöglichkeit oder Reorganisation als Weiterentwicklung kennzeichnen.
