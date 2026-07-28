@@ -1,0 +1,64 @@
+source: master-algorithmische-komposition
+status: initial_argument_reconstruction
+arguments:
+  - id: improvisation_innerhalb_von_strukturen
+    claim: Improvisation ist ein wesentlicher Bestandteil kreativer Filmmontage und findet innerhalb von Strukturen statt.
+    support:
+      - Improvisation reagiert auf Material und entstehende Sequenzen.
+      - Entscheidungen sind nicht beliebig, weil Material und Situation Möglichkeiten begrenzen.
+      - Innerhalb solcher Begrenzungen können neue Strukturen entstehen.
+    source_locations:
+      - printed_pages: 6-8
+  - id: programm_als_vorgeschriebenes
+    claim: Programm bezeichnet umfassender als Computerprogramm das bereits Vorgeschriebene, auf das ein Vollzug anschließt.
+    support:
+      - Material, Erfahrung, Sequenzen, Ordnung und Notizen sind bereits vorhanden.
+      - Diese Vorgaben verändern sich im Prozess und schreiben sich fort.
+      - Luhmanns Idee des sich selbst programmierenden Kunstwerks erweitert den Begriff.
+    source_locations:
+      - printed_pages: 8-10
+      - printed_pages: 16-19
+  - id: verschiebung_des_improvisatorischen
+    claim: In algorithmischer Montage verschwindet Improvisation nicht notwendig, sondern kann sich vom Generieren zum Entwerfen und Programmieren der Regeln verschieben.
+    support:
+      - Die Ausführung eines festgelegten Algorithmus folgt determinierten Regeln.
+      - Das Festlegen, Testen und Verändern dieser Regeln kann improvisatorisch erfolgen.
+    source_locations:
+      - printed_page: 8
+      - printed_pages: 20-23
+  - id: computerprogramm_improvisiert_nicht
+    claim: Ein Computerprogramm improvisiert in der hier verwendeten Bedeutung nicht, sondern führt Regeln aus oder simuliert Entscheidungsprozesse.
+    support:
+      - Zufall und Wahrscheinlichkeiten können menschliche Entscheidungen nachahmen.
+      - Simulation ist von subjektivem, situationsbezogenem Improvisieren zu unterscheiden.
+    source_locations:
+      - printed_page: 10
+  - id: montage_automat_als_erkenntnisexperiment
+    claim: Der Montage-Automat ist nicht nur Produktionswerkzeug, sondern ein Experiment zur Erkenntnis über algorithmische Komposition und die Grenzen automatisierter Filmmontage.
+    support:
+      - Er prüft die Übertragung gelernter filmischer Strukturen auf anderes Material.
+      - Er macht die Differenz zwischen klassischer Montage und algorithmischer Filmmontage erfahrbar.
+      - Die Arbeit hält daran fest, dass klassische dokumentarische Montage nicht durch Computerprogramme ersetzt wird.
+    source_locations:
+      - printed_pages: 10-14
+      - printed_pages: 92-93
+      - printed_pages: 150-153
+  - id: werkzeugbau_ist_formbildung
+    claim: Das Bauen von Werkzeugen ist Teil des künstlerischen Prozesses, weil Werkzeuge die möglichen Ergebnisse wesentlich mitbestimmen.
+    support:
+      - Fertige und selbstgebaute Werkzeuge strukturieren Wahrnehmung und Handeln.
+      - Automaten sind Werkzeuge, die selbst generieren.
+    source_locations:
+      - printed_page: 14
+  - id: struktur_und_freiheit
+    claim: Struktur und Freiheit sind keine einfachen Gegensätze; Reduktion von Komplexität ermöglicht improvisatorische Beweglichkeit und neue Formbildung.
+    support:
+      - Tonleiter, Harmonie und Takt begrenzen musikalische Möglichkeiten und eröffnen darin Variation.
+      - Entsprechende Strukturierungen werden auf Montage und algorithmische Komposition bezogen.
+    source_locations:
+      - printed_pages: 11-13
+open_questions:
+  - Kann ein Algorithmus selbst als Programm gelten oder nur als Teil eines umfassenderen Programms?
+  - Welche Aspekte filmischer Bedeutung lassen sich überhaupt formalisieren?
+  - Wann ist eine Regel produktive Bedingung und wann schließt sie improvisatorische Beteiligung aus?
+  - Wie lässt sich die subjektive Haltung mit sozialen, materiellen und sprachlichen Bedingungen vermitteln?
