@@ -1,0 +1,24 @@
+id: master-algorithmische-komposition
+ type: master_thesis
+ title: Algorithmische Komposition in der Filmmontage oder wie ich darüber denke
+ author: Jonathan Frank
+ year: 2020
+ edition: 2
+ institution: Filmuniversität Babelsberg KONRAD WOLF
+ status: central_primary_source
+ expected_pdf: Algorithmische_Komposition_in_der_Filmmontage.pdf
+ priority_topics:
+   - programm
+   - algorithmus
+   - montage
+   - improvisation
+   - komposition
+   - möglichkeitsraum
+   - notation
+   - künstlerische_forschung
+ interpretation_rules:
+   - Als zentrale genealogische Quelle für Programm und Algorithmus behandeln.
+   - Programm nicht auf Computerprogramm reduzieren.
+   - Algorithmus, Programm und Improvisation nicht gleichsetzen.
+   - Bei Abweichungen hat die bestätigte aktuelle Buchfassung Vorrang.
+   - Für wörtliche oder genaue inhaltliche Belege Seitenangaben aus dem PDF verwenden.
