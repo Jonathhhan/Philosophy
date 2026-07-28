@@ -1,0 +1,65 @@
+source: master-algorithmische-komposition
+status: initial_reconstruction
+page_basis: pdf_pages
+chapters:
+  - id: einleitung
+    title: Einleitung
+    starts_at_printed_page: 6
+    function: Fortsetzung der Bachelorfrage nach dem Entscheiden in der Filmmontage; Einführung von Improvisation, Programm und Algorithmus.
+  - id: definitionskette
+    title: Eine assoziative Definitionskette
+    starts_at_printed_page: 15
+    function: Spielerische relationale Vorordnung der Grundbegriffe Muster, Rhythmus, Struktur, Komposition, Notation, Sequenz, Prozess, Diagramm und Algorithmus.
+  - id: luhmann_montage
+    title: Niklas Luhmann und die Montage
+    starts_at_printed_page: 16
+    function: Erweiterung des Programmbegriffs durch die Idee des sich selbst programmierenden Kunstwerks.
+  - id: algorithmus_improvisation
+    title: Algorithmus und Improvisation
+    starts_at_printed_page: 20
+    function: Bestimmung ihres Wechselspiels und Verschiebung des Improvisatorischen vom Generieren zum Programmieren.
+  - id: geschichte_algorithmische_filmkomposition
+    title: Eine kleine Geschichte der algorithmischen Filmkomposition
+    starts_at_printed_page: 24
+  - id: pure_data
+    title: Pure Data und das Programmieren
+    starts_at_printed_page: 33
+  - id: diagrammatische_partitur
+    title: Die diagrammatische Partitur
+    starts_at_printed_page: 37
+  - id: markov_ketten
+    title: Markov-Ketten
+    starts_at_printed_page: 38
+  - id: montage_automat
+    title: Der Montage-Automat
+    starts_at_printed_page: 51
+  - id: montage_automat_sequenz
+    title: Der Montage-Automat - eine Sequenz
+    starts_at_printed_page: 58
+  - id: montage_automat_erkenntnisse
+    title: Der Montage-Automat und meine Erkenntnisse
+    starts_at_printed_page: 92
+  - id: montage_automat_quelltext
+    title: Der Montage-Automat als Quelltext
+    starts_at_printed_page: 94
+  - id: zellulaerer_automat
+    title: Zellulärer Automat
+    starts_at_printed_page: 116
+  - id: pure_data_katalog
+    title: Pure Data Experimente - ein Katalog
+    starts_at_printed_page: 124
+  - id: audiovisual
+    title: AudioVideo
+    starts_at_printed_page: 134
+  - id: handmadeproductions
+    title: Handmadeproductions
+    starts_at_printed_page: 138
+  - id: kuenstlerische_forschung
+    title: Über künstlerische Forschung
+    starts_at_printed_page: 141
+  - id: abschluss
+    title: Abschließende Gedanken
+    starts_at_printed_page: 150
+notes:
+  - Die Seitenangaben folgen dem Inhaltsverzeichnis der Arbeit.
+  - Diese Datei ersetzt nicht die Seitenprüfung am PDF.
