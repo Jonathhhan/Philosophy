@@ -1,0 +1,70 @@
+status: initial_cross-source_genealogy
+priority_rule:
+  - Das bestätigte aktuelle Buchmanuskript hat bei Begriffsabweichungen Vorrang.
+  - Master- und Bachelorarbeit bleiben genealogische Primärquellen und dürfen nicht stillschweigend aktualisiert werden.
+lines:
+  - id: improvisation
+    bachelor:
+      formulation: Situationsbezogene Verbindung, Umdeutung und Neuzusammensetzung von Möglichkeiten aus einer nicht erstarrten subjektiven Haltung.
+      function: Modell für Freiheit innerhalb strukturierender Vorgaben.
+    master:
+      formulation: Kreativer Vollzug innerhalb von Programm und Struktur; bei algorithmischer Montage kann sich das Improvisatorische vom Generieren zum Programmieren verschieben.
+      function: Vermittlung zwischen menschlichem Entscheiden, Regelbildung und algorithmischer Ausführung.
+    book_direction:
+      formulation: Offenheit eines Vollzugs, der vorhandene Anschlussmöglichkeiten situationsbezogen aktualisiert und dadurch den Raum weiterer Anschlüsse reorganisiert.
+      unresolved:
+        - enger von bloßer Variabilität unterscheiden
+        - subjektive, soziale, materielle und sprachliche Bedingungen gemeinsam bestimmen
+  - id: programm
+    bachelor:
+      formulation: Noch nicht als eigenständiger Leitbegriff ausgearbeitet; vorbereitet durch diagrammatische Partitur, Rohmaterial, Regeln und Möglichkeitsraum.
+    master:
+      formulation: Das Vorgeschriebene im umfassenden Sinn, das sich im Prozess fortschreibt; nicht auf Computerprogramme reduzierbar.
+      function: Struktur, innerhalb derer improvisiert wird und die durch den Vollzug verändert werden kann.
+    book_direction:
+      formulation: Organisation eines Möglichkeitsraums beziehungsweise von Anschlussmöglichkeiten.
+      binding_rule: Programm bleibt ein eigenständiger Begriff und ein eigenes Kapitel.
+  - id: algorithmus
+    bachelor:
+      formulation: Nur indirekt durch Regel, Funktion und strukturierte Ausführung vorbereitet.
+    master:
+      formulation: Vorher festgelegte Entscheidungsfolge oder Spielregel; nicht notwendig computergebunden.
+      function: Spezifische operative Form innerhalb eines Programms.
+    book_direction:
+      formulation: Verfahren der Auswahl, Verknüpfung oder Aktualisierung innerhalb eines organisierten Möglichkeitsraums.
+      binding_rule: Algorithmus nicht mit Programm gleichsetzen.
+  - id: moeglichkeitsraum
+    bachelor:
+      formulation: Durch Rohmaterial, Haltung, Erfahrung und Regeln eröffnete und begrenzte Menge möglicher Handlungen und Anordnungen.
+    master:
+      formulation: In Programm, Struktur, Material und algorithmischen Regeln weitergeführt, jedoch nicht durchgehend als systematischer Leitbegriff benannt.
+    book_direction:
+      formulation: Raum organisierter Anschlussmöglichkeiten, der durch jede Aktualisierung verändert wird.
+  - id: montage
+    bachelor:
+      formulation: Rekursiver Prozess zwischen Material, Haltung, Entscheidung und entstehender Form.
+    master:
+      formulation: Improvisatorisches Entdecken und Herausarbeiten von Strukturen sowie Experimentierfeld algorithmischer Komposition.
+    book_direction:
+      formulation: Epistemisches Modell von Formbildung durch Variantenbildung, Vergleich, Auswahl und Reorganisation.
+      binding_rule: Montage nicht als bloßes Beispiel oder Metapher behandeln.
+  - id: form
+    bachelor:
+      formulation: Diagrammatische Vorgabe, die zugleich begrenzt und Freiheit eröffnet.
+    master:
+      formulation: Strukturierte Komposition, Programm und Werkzeugwirkung; Formen entstehen durch Regeln und ihre Variation.
+    book_direction:
+      formulation: Organisation, die bestimmte Anschlüsse ermöglicht, andere erschwert und durch Vollzug fortgeschrieben wird.
+  - id: werk
+    bachelor:
+      formulation: Vorläufiges Resultat und Werkzeug zur Fortsetzung von Gedanken.
+    master:
+      formulation: Ergebnis und Erkenntnismedium künstlerischer Forschung; durch Werkzeuge und Programme mitgeformt.
+    book_direction:
+      formulation: Organisierte Fortsetzbarkeit und Knoten weiterer Anschlüsse.
+critical_discontinuities:
+  - Die frühe Opposition von Realität und Bewusstsein wird nicht als aktuelle Ontologie übernommen.
+  - Subjektive Haltung bleibt wichtig, wird aber nicht als alleinige Quelle von Sinn und Verantwortung gesetzt.
+  - Ein Programm wird nicht als improvisierendes Subjekt bezeichnet.
+  - Algorithmische Simulation, Zufall und menschliche Improvisation bleiben unterschieden.
+  - Die ältere autobiografische Rahmung wird im Buch nicht als Bachelor- oder Masterbiografie erzählt; Gedanken werden in den Argumentationsgang integriert und sachlich belegt.
