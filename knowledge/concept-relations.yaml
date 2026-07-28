@@ -1,0 +1,137 @@
+status: working_graph_source_linked
+purpose: >-
+  Der Graph verbindet die frühen Begriffe der Bachelorarbeit, ihre Ausarbeitung
+  in der Masterarbeit und die gegenwärtigen Arbeitsbegriffe des Buches. Er ist
+  keine Behauptung vollständiger Identität, sondern dokumentiert Übergänge,
+  Verschiebungen und offene Probleme.
+nodes:
+  - id: moeglichkeitsraum
+    stage: bachelor
+    minimal_definition: situationsbezogene Menge beziehungsweise Ordnung erschlossener Möglichkeiten
+    evidence: [ba-e02, ba-e03, ba-e04]
+  - id: haltung
+    stage: bachelor
+    minimal_definition: Position des Handelnden zu Material, Werk und Situation, aus der Entscheidungen getroffen werden
+    evidence: [ba-e03, ba-e05]
+  - id: improvisation
+    stage: bachelor_master
+    minimal_definition: nicht vollständig vorbestimmtes Verbinden, Umdeuten und Neuzusammensetzen von Möglichkeiten innerhalb von Strukturen
+    evidence: [ba-e01, ba-e06, ma-e01]
+  - id: diagrammatische_partitur
+    stage: bachelor_master
+    minimal_definition: lesbare Darstellung eines strukturierten Verlaufs oder Möglichkeitsgefüges, ohne dessen Vollzug vollständig festzulegen
+    evidence: [ba-e02, ma-e01, ma-e05]
+  - id: programm
+    stage: master
+    minimal_definition: das jeweils Vorgeschriebene und sich im Vollzug fortschreibende Gefüge von Bedingungen, Entscheidungen und Formen
+    evidence: [ma-e02, ma-e03]
+  - id: algorithmus
+    stage: master
+    minimal_definition: explizit festgelegte Regel oder Entscheidungsfolge innerhalb eines Programms
+    evidence: [ma-e03, ma-e04]
+  - id: montage
+    stage: bachelor_master
+    minimal_definition: materialgebundene, rekursive Formbildung durch Auswahl, Anordnung, Vergleich und Revision
+    evidence: [ba-e03, ba-e05, ma-e01]
+  - id: anschlussmoeglichkeit
+    stage: book
+    minimal_definition: zugängliche Weise, einen laufenden Prozess fortzusetzen, zu verändern oder zu unterbrechen
+    evidence: []
+    status: book_development_not_direct_thesis_term
+  - id: organisation
+    stage: book
+    minimal_definition: Hervorbringung, Gewichtung, Stabilisierung und Ausschließung von Anschlussmöglichkeiten
+    evidence: []
+    status: book_development_not_direct_thesis_term
+  - id: reorganisation
+    stage: book
+    minimal_definition: Veränderung der Bedingungen, unter denen Anschlüsse möglich, wahrscheinlich oder ausgeschlossen werden
+    evidence: []
+    status: book_development_not_direct_thesis_term
+
+edges:
+  - from: haltung
+    to: improvisation
+    type: orientiert
+    basis: Die Haltung prägt, welche Möglichkeiten wahrgenommen und verbunden werden.
+    evidence: [ba-e03, ba-e05]
+  - from: moeglichkeitsraum
+    to: improvisation
+    type: stellt_bedingungen_bereit
+    basis: Improvisation bewegt sich innerhalb erschlossener Möglichkeiten und kann deren Gefüge erweitern.
+    evidence: [ba-e01, ba-e02, ba-e03]
+  - from: improvisation
+    to: moeglichkeitsraum
+    type: erweitert_und_verändert
+    basis: Spielen, Umdeuten und Neuzusammensetzen erschließen weitere Möglichkeiten.
+    evidence: [ba-e01, ba-e03, ba-e06]
+  - from: montage
+    to: haltung
+    type: wirkt_rekursiv_zurück
+    basis: Der jeweils entstehende Film verändert die weitere Wahrnehmung und Entscheidung.
+    evidence: [ba-e05]
+  - from: diagrammatische_partitur
+    to: moeglichkeitsraum
+    type: macht_sichtbar
+    basis: Die Bachelorarbeit versteht Möglichkeitsräume selbst als diagrammatische Partituren.
+    evidence: [ba-e02]
+  - from: diagrammatische_partitur
+    to: programm
+    type: macht_lesbar
+    basis: Die Masterarbeit beschreibt die Partitur als Möglichkeit, ein Programm lesbar zu machen.
+    evidence: [ma-e01, ma-e05]
+  - from: programm
+    to: improvisation
+    type: strukturiert_und_lässt_zu
+    basis: Das Vorgeschriebene bildet die veränderlichen Bedingungen des improvisatorischen Vollzugs.
+    evidence: [ma-e02]
+  - from: improvisation
+    to: programm
+    type: schreibt_fort
+    basis: Neue Sequenzen, Ordnungen und Entscheidungen werden selbst Teil des weiteren Programms.
+    evidence: [ma-e02]
+  - from: algorithmus
+    to: programm
+    type: explizite_regelhafte_teilform
+    basis: Der Algorithmus formalisiert bestimmte Entscheidungsfolgen, während Programm umfassender gefasst wird.
+    evidence: [ma-e03, ma-e04]
+  - from: algorithmus
+    to: improvisation
+    type: verlagert
+    basis: In generativen Verfahren liegt improvisatorische Tätigkeit teilweise im Entwurf des Algorithmus statt in seiner Ausführung.
+    evidence: [ma-e04]
+
+book_translations:
+  - from: moeglichkeitsraum
+    to: anschlussmoeglichkeit
+    relation: begriffliche_praezisierung
+    rule: >-
+      Nicht von einem fertigen Behälter möglicher Zustände ausgehen. Stattdessen
+      untersuchen, welche Fortsetzungen in einem konkreten Prozess zugänglich,
+      erwartbar, blockiert oder erst hervorgebracht werden.
+  - from: programm
+    to: organisation
+    relation: systematische_verallgemeinerung
+    rule: >-
+      Programm bleibt als eigenständiger Begriff erhalten. Organisation ist
+      nicht sein Ersatz, sondern bezeichnet allgemeiner die Operationen, durch
+      die Möglichkeiten hervorgebracht, gewichtet und stabilisiert werden.
+  - from: improvisation
+    to: reorganisation
+    relation: mögliche_kritische_funktion
+    rule: >-
+      Improvisation kann Reorganisation leisten, ist aber nicht mit ihr identisch.
+      Auch geplante, kollektive oder institutionelle Verfahren können reorganisieren.
+  - from: montage
+    to: anschliessen
+    relation: konkretes_ausgangsmodell
+    rule: >-
+      Auswahl, Trennung, Anordnung und Revision der Montage liefern ein Modell
+      für Anschlussprozesse, dürfen aber nicht unbesehen auf alle Wirklichkeit übertragen werden.
+
+open_questions:
+  - Wann ist eine Variation im engeren Sinn improvisatorisch?
+  - Kann ein technisches System improvisieren oder nur menschliche Improvisation simulieren beziehungsweise ermöglichen?
+  - Wie lässt sich Haltung relational bestimmen, ohne sie auf eine isolierte subjektive Innenperspektive zu reduzieren?
+  - Wie entstehen neue Möglichkeiten, die nicht bereits im organisierten Gefüge enthalten waren?
+  - Welche normativen Kriterien unterscheiden emanzipatorische von repressiver Reorganisation?
