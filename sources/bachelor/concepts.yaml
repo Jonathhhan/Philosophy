@@ -1,0 +1,68 @@
+source: bachelor-filmmontage-improvisation
+status: initial_source-grounded_index
+concepts:
+  - id: improvisation
+    source_definition: Situationsbezogener Vollzug, in dem eine handelnde Person innerhalb gegebener Strukturen aus ihrer Haltung heraus Möglichkeiten verbindet, umdeutet und neu zusammensetzt.
+    distinctions:
+      - nicht mit Zufall gleichsetzen
+      - nicht als Regellosigkeit verstehen
+      - nicht auf spontane Eingebung reduzieren
+    source_locations:
+      - pdf_pages: 4-10
+        context: Einleitung, Strukturen und Relationalität, Improvisation und Erfahrung
+  - id: diagrammatische_partitur
+    source_definition: Vorgabe eines Verlaufs oder Rahmens, auf den sich die ausführende Person bezieht, ohne ihn bloß mechanisch auszuführen.
+    examples:
+      - Anfangsbuchstaben der Textabschnitte
+      - Tonart und Takt eines Musikstücks
+      - Rohmaterial eines Films
+    theoretical_role: Modell einer Form, die begrenzt und zugleich einen improvisatorischen Spielraum eröffnet.
+    source_locations:
+      - pdf_pages: 4-7
+  - id: moeglichkeitsraum
+    source_definition: Gesamtheit der durch Material, Erfahrung, Haltung, Regeln und Situation eröffneten und begrenzten Handlungsmöglichkeiten.
+    dynamics:
+      - nicht potentiell unendlich
+      - durch Materialinhalt und Haltung konkretisiert
+      - durch Erfahrung erweitert
+      - durch Routine auch verengt
+    source_locations:
+      - pdf_pages: 5-7
+      - pdf_pages: 18-23
+        context: Diagramme und Erläuterungen
+  - id: subjektive_haltung
+    source_definition: Nicht erstarrte Position, aus der heraus eine Person Material und Situation deutet und sich verantwortlich verhält.
+    role: Bedingung improvisatorischer Beteiligung und Gegenbegriff zum bloßen Erfüllen einer Funktion.
+    source_locations:
+      - pdf_pages: 5-7
+  - id: erfahrung
+    source_definition: Repertoire erlernter Handlungsmöglichkeiten und Können ihrer Verbindung.
+    ambivalence:
+      - erweitert Komplexität und Handlungsfähigkeit
+      - kann in Routine und Erstarrung umschlagen
+    source_locations:
+      - pdf_page: 6
+  - id: montage
+    source_definition: Konkrete Formbildung aus Rohmaterial durch Auswahl, Anordnung, Haltung und fortlaufende Rückwirkung des entstehenden Films.
+    role: Primärer Erfahrungs- und Untersuchungsbereich der Arbeit.
+  - id: relationalitaet
+    source_definition: Film, Material, Bewusstsein, Haltung und Form werden nicht isoliert gedacht, sondern in ihren wechselseitigen Veränderungen.
+    caution: Die frühe Gegenüberstellung von Realität und Bewusstsein bleibt begrifflich instabil und darf nicht ungeprüft in das Buch übernommen werden.
+  - id: werk
+    source_definition: Vorläufiges Ergebnis, das zugleich Werkzeug zur Fortsetzung des Denkens und Handelns werden kann.
+relations_summary:
+  - from: diagrammatische_partitur
+    to: moeglichkeitsraum
+    relation: strukturiert
+  - from: subjektive_haltung
+    to: moeglichkeitsraum
+    relation: selektiert_und_konkretisiert
+  - from: erfahrung
+    to: moeglichkeitsraum
+    relation: erweitert_oder_verengt
+  - from: improvisation
+    to: moeglichkeitsraum
+    relation: verbindet_und_reorganisiert
+  - from: entstehender_film
+    to: subjektive_haltung
+    relation: wirkt_zurueck
