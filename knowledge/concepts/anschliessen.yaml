@@ -1,0 +1,29 @@
+id: anschliessen
+label: Anschließen
+status: core
+chapter: 1
+working_definition: >-
+  Anschließen bezeichnet den Eintritt in einen bereits begonnenen Zusammenhang,
+  durch den eine Möglichkeit aktualisiert und der Raum weiterer Anschlüsse verändert wird.
+central_claim: Jede Aktualisierung verändert den Raum weiterer Anschlussmöglichkeiten.
+depends_on: []
+required_for:
+  - unterbrechen
+  - problematisieren
+  - form
+  - aktualisieren
+  - improvisieren
+  - programm
+  - algorithmus
+  - organisieren
+related:
+  - fortsetzen
+  - kommunikation
+  - montage
+constraints:
+  - Kein Anfang beginnt bei null.
+  - Auch der Bruch schließt an dasjenige an, von dem er sich absetzt.
+  - Anschluss darf nicht auf sprachliche Kommunikation reduziert werden.
+source_files:
+  - manuskript/01-anschliessen.md
+  - projekt/architektur.md
