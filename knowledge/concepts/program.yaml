@@ -1,0 +1,25 @@
+id: programm
+label: Programm
+status: core
+chapter: 7
+definition: wirksame Vorordnung möglicher Anschlüsse
+depends_on:
+  - anschliessen
+  - aktualisieren
+  - form
+required_for:
+  - algorithmus
+  - organisieren
+  - revidieren
+  - reorganisieren
+related:
+  - improvisieren
+  - komposition
+  - moeglichkeitsraum
+constraints:
+  - Programm ist nicht auf Computerprogramme beschränkt.
+  - Programm bestimmt Anschlüsse nicht vollständig, sondern ordnet ihre Bedingungen vor.
+  - Programm und Algorithmus bleiben eigenständige Begriffe und Kapitel.
+source_files:
+  - GLOSSAR.md
+  - projekt/architektur.md
