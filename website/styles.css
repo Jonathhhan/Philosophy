@@ -1,0 +1,93 @@
+:root {
+  color-scheme: light dark;
+  --page-width: 76rem;
+  --spacing: clamp(1rem, 2vw, 2rem);
+  font-family: Georgia, "Times New Roman", serif;
+}
+
+* { box-sizing: border-box; }
+
+body {
+  margin: 0;
+  line-height: 1.65;
+}
+
+.site-header,
+footer {
+  width: min(var(--page-width), calc(100% - 2 * var(--spacing)));
+  margin: 0 auto;
+  padding: 2rem 0;
+}
+
+.site-header h1 {
+  max-width: 22ch;
+  margin: 0;
+  font-size: clamp(2rem, 5vw, 4.5rem);
+  line-height: 1.05;
+}
+
+.eyebrow,
+.chapter-number {
+  font-family: system-ui, sans-serif;
+  font-size: .78rem;
+  font-weight: 700;
+  letter-spacing: .12em;
+  text-transform: uppercase;
+}
+
+.book-layout {
+  display: grid;
+  grid-template-columns: minmax(0, 1.2fr) minmax(18rem, .8fr);
+  gap: var(--spacing);
+  width: min(var(--page-width), calc(100% - 2 * var(--spacing)));
+  margin: 0 auto;
+}
+
+.manuscript,
+.experiment {
+  padding: clamp(1.25rem, 3vw, 3rem);
+  border: 1px solid currentColor;
+}
+
+.manuscript p,
+.manuscript blockquote {
+  max-width: 66ch;
+}
+
+blockquote {
+  margin: 2rem 0;
+  padding-left: 1.25rem;
+  border-left: .2rem solid currentColor;
+  font-size: 1.2rem;
+}
+
+label,
+button,
+textarea {
+  font-family: system-ui, sans-serif;
+}
+
+textarea {
+  width: 100%;
+  margin: .5rem 0 1rem;
+  padding: .9rem;
+  resize: vertical;
+  font-size: 1rem;
+}
+
+button {
+  padding: .75rem 1rem;
+  border: 1px solid currentColor;
+  cursor: pointer;
+  font-weight: 700;
+}
+
+.conditions {
+  margin-top: 2rem;
+  padding-top: 1rem;
+  border-top: 1px solid currentColor;
+}
+
+@media (max-width: 780px) {
+  .book-layout { grid-template-columns: 1fr; }
+}
