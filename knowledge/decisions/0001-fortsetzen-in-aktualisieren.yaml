@@ -1,0 +1,16 @@
+id: decision-0001
+date: 2026-07-28
+title: Fortsetzen wird in Aktualisieren integriert
+status: accepted
+decision: >-
+  Fortsetzen erhält kein eigenständiges Kapitel, sondern wird als eine Form der
+  Aktualisierung in Kapitel 5 entwickelt.
+reason: >-
+  Fortsetzen bezeichnet keine hinreichend eigenständige Operation. Jede Fortsetzung
+  aktualisiert eine Möglichkeit und verändert dadurch die Bedingungen weiterer
+  Anschlüsse.
+affected:
+  - manuskript/05-aktualisieren.md
+  - manuskript/16-revidieren.md
+  - manuskript/17-reorganisieren.md
+supersedes: []
