@@ -46,6 +46,22 @@ Der Raum weiterer Anschlussmöglichkeiten ist deshalb kein Vorrat, aus dem bei j
 
 Diese Veränderung muss weder dauerhaft noch besonders weitreichend sein. Eine flüchtige Äußerung kann den nächsten Satz beeinflussen und danach an Bedeutung verlieren. Eine wiederholte Aktualisierung kann dagegen dazu beitragen, dass eine Form über den einzelnen Vollzug hinaus wirksam bleibt. Ob eine solche relative Dauer entsteht, ist eine Frage der Stabilisierung und folgt nicht aus der Aktualisierung allein.
 
+Die rekursive Bewegung der Aktualisierung lässt sich in ihrer kleinsten Form so fassen:
+
+~~~mermaid
+flowchart TD
+    A[Raum bedingter Anschlussmöglichkeiten]
+    B[Selektion eines möglichen Anschlusses]
+    C[Aktualisierung]
+    D[Hervorgebrachter Zustand mit wahrnehmbaren Folgen]
+    E[Veränderter Raum weiterer Anschlussmöglichkeiten]
+
+    A --> B --> C --> D --> E
+    E --> B
+~~~
+
+Der letzte Pfeil bedeutet nicht, dass derselbe Ablauf unverändert wiederkehrt. Der nächste Vollzug beginnt in einem Anschlussraum, zu dessen Bedingungen nun auch die vorherige Aktualisierung und ihre Folgen gehören.
+
 ## 5. Fortsetzen, Wiederholen und Variieren
 
 Fortsetzen ist eine Weise des Aktualisierens. Ein Vollzug nimmt einen bereits wirksamen Zusammenhang auf und führt ihn weiter. Dabei wird nicht bloß Zeit an einen unveränderten Verlauf angefügt. Der fortsetzende Anschluss verändert den Stand des Zusammenhangs und damit die Bedingungen seiner weiteren Fortsetzung.
@@ -76,6 +92,10 @@ In der Montage wird der Unterschied zwischen Möglichkeit und Aktualisierung pra
 
 Der Schnitt verwirklicht nicht lediglich eine vollständig bekannte Beziehung. Seine konkrete Wirkung entsteht mit den Eigenschaften der Ausschnitte, ihrer Dauer, dem Ton und dem bereits montierten Zusammenhang. Deshalb müssen Varianten häufig hergestellt und verglichen werden. Die Aktualisierung dient hier zugleich als Erkenntnisoperation: Sie bringt eine Form hervor, an der Folgen wahrnehmbar werden.
 
+Der dokumentierte `Alphaville`-Versuch des Montage-Automaten trennt diese Vollzüge anschaulich. Aus den gewichteten Untertitelbeziehungen wurde eine bestimmte Sequenz generiert. Damit war eine berechenbare Folge als konkrete Fassung aktualisiert. Ihre Ausführung machte konkrete Nachbarschaften und Wiederholungen sichtbar, die in den Regeln allein noch nicht als angesehene Fassung vorlagen. Die anschließenden künstlerischen Eingriffe und der Vergleich mit den Erwartungen an Geschichte und Muster waren weitere Aktualisierungen, die den erzeugten Zustand aufnahmen und die Untersuchung veränderten.[^ma-automat-aktualisieren]
+
+Gerade weil das Ergebnis die Ausgangsabsicht nicht erfüllte, wurde seine Produktivität erkennbar. Die generierte Fassung verwirklichte nicht den erhofften Strukturtransfer, erschloss aber assoziative Beziehungen und machte fehlende Daten und Kategorien bestimmbar. Aktualisieren bezeichnet hier weder bloß den Rechenlauf noch allein die spätere menschliche Bearbeitung. Jeder dieser Vollzüge überführte eine Möglichkeit in konkrete Bestimmtheit und veränderte die Bedingungen des folgenden Schritts.
+
 Die Bachelorarbeit versteht den Film sowohl als fertiges Ergebnis als auch als jeden während der Montage entstandenen Zustand. Sie beschreibt außerdem, wie der jeweilige Filmzustand auf die Haltung der montierenden Person zurückwirkt.[^ba-aktualisieren] Die Masterarbeit entwickelt diese Figur weiter, indem sie die erste Formfestlegung und die folgenden Entscheidungen als einen Prozess beschreibt, in dem der erreichte Zustand des Werks weitere Möglichkeiten begrenzt und orientiert.[^ma-aktualisieren]
 
 Der gegenwärtige Begriff des Aktualisierens steht nicht bereits in diesen Quellen. Er bestimmt ihre Rückkopplungsfigur neu. Ein Filmzustand ist nicht nur ein vorläufiges Ergebnis. Er ist die Aktualisierung bestimmter Beziehungen und wird dadurch zur Bedingung weiterer Aktualisierungen. Das Material, die Haltung und die entstandene Form gehen in eine veränderte Anschlusssituation ein.
@@ -96,3 +116,4 @@ Diese Frage führt zum Improvisieren.
 
 [^ba-aktualisieren]: Jonathan Frank, *Filmmontage und Improvisation. Weiterführende Gedanken* (2014), gedruckte S. 41 und 44.
 [^ma-aktualisieren]: Jonathan Frank, *Algorithmische Komposition in der Filmmontage oder wie ich darüber denke*, 2. Aufl. (2020), gedruckte S. 16–18.
+[^ma-automat-aktualisieren]: Ebd., gedruckte S. 58–59 und 92–93.

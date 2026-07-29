@@ -14,7 +14,7 @@ Problematisieren und Form sind deshalb nicht dasselbe. Problematisieren bestimmt
 
 Form kann bereits in einem einzelnen und vorläufigen Vollzug entstehen. Dafür genügt nicht das bloße Vorhandensein eines Unterschieds. Er muss relational so bestimmt sein, dass er für mindestens einen weiteren Anschluss wirksam wird. Ob diese Bestimmung über wechselnde Situationen und mehrere Vollzüge hinweg wiedererkennbar bleibt, gehört nicht zur Form als solcher, sondern zur Stabilisierung.
 
-## 2. Keine äußere Gestalt
+## 2. Form als relationale Gestalt
 
 Im alltäglichen Gebrauch bezeichnet Form häufig die sichtbare Gestalt eines Gegenstandes. Ein Gefäß besitzt einen Umriss, ein Gebäude einen Grundriss und ein Bild eine bestimmte Anordnung von Flächen. Auch solche Gestalten können für Anschlüsse wirksam sein. Der hier benötigte Formbegriff erschöpft sich jedoch nicht in ihnen.
 
@@ -64,6 +64,10 @@ In der Montage wird Form nicht erst am fertigen Werk sichtbar. Bereits eine vorl
 
 Eine Schnittvariante ist deshalb ein Formversuch. Sie artikuliert eine mögliche Beziehung, bevor entschieden ist, ob diese Beziehung im weiteren Verlauf erhalten bleibt. Wird eine zweite Variante hergestellt, können nicht nur zwei technische Ausführungen, sondern zwei verschiedene Bestimmungen des Materials verglichen werden. In der einen Fassung erscheint ein Blick als Antwort, in der anderen als Ausweichen. Der Vergleich macht prüfbar, welche Unterschiede durch die jeweilige Form hervortreten und welche zurücktreten.
 
+Am Montage-Automaten lässt sich diese Formbildung an den Voraussetzungen der Generierung verfolgen. Für den dokumentierten `Alphaville`-Versuch wurden häufige Untertitelwörter als Stoppwörter zurückgestellt und andere Wörter unterschiedlich gewichtet. Diese Einteilung war keine äußere Gestalt der späteren Sequenz. Sie bildete eine relationale Form, weil sie bestimmte Ähnlichkeiten für mögliche Übergänge wirksam und andere Eigenschaften des Materials unwirksam machte. Bildhandlung, Klang, Körperhaltung und weitere visuelle oder auditive Unterschiede gingen in dieser Fassung nicht in die Berechnung ein.[^ma-automat-form]
+
+Die erzeugte Sequenz besaß wiederum eine andere Form als die Kategorien ihres Verfahrens. In ihr erhielten die ausgewählten Ausschnitte zeitliche Nachbarschaften und assoziative Beziehungen, die erst angesehen und weiterbearbeitet werden konnten. Das Beispiel zeigt damit zwei aufeinander bezogene Formbildungen: die Bestimmung algorithmisch relevanter Unterschiede und die Bestimmung filmischer Beziehungen in der hervorgebrachten Fassung.
+
 Die Bachelorarbeit bereitet diese Bestimmung mit dem Rohmaterial als diagrammatischer Partitur vor: Das Material kann unterschiedlich, aber nicht beliebig gelesen und verbunden werden. Ihre späteren Diagramme beschreiben außerdem die Wechselwirkung zwischen Rohmaterial, Haltung und jeweiligem Filmzustand.[^ba-form] Die Masterarbeit führt diesen Gedanken über die erste Formfestlegung und die sich daran anschließenden Entscheidungen weiter; der erreichte Zustand des Werks begrenzt und orientiert die folgenden Möglichkeiten.[^ma-form]
 
 Der heutige Formbegriff übernimmt diese früheren Aussagen nicht unverändert. Insbesondere wird der damalige Möglichkeitsraum nicht als Summe bereits vorhandener Optionen behandelt. Aus der genealogischen Figur wird vielmehr eine relationale These entwickelt: Eine im Material vollzogene Bestimmung verändert, welche Beziehungen im nächsten Schritt zugänglich und relevant werden.
@@ -84,3 +88,4 @@ Diese Frage führt zum Aktualisieren.
 
 [^ba-form]: Jonathan Frank, *Filmmontage und Improvisation. Weiterführende Gedanken* (2014), gedruckte S. 32 und 40–44.
 [^ma-form]: Jonathan Frank, *Algorithmische Komposition in der Filmmontage oder wie ich darüber denke*, 2. Aufl. (2020), gedruckte S. 16–18.
+[^ma-automat-form]: Ebd., gedruckte S. 51, 58–59 und 92–93.

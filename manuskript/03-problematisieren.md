@@ -34,6 +34,26 @@ Problematisieren bewegt sich zwischen Finden und Hervorbringen. Es findet eine S
 
 Diese Bestimmung bleibt vorläufig. Eine Frage kann sich als zu eng erweisen, weil sie entscheidende Beziehungen ausschließt. Sie kann zu weit sein und keine bestimmte Bearbeitung orientieren. Sie kann eine Folge für ihre Ursache halten oder eine erwartete Fortsetzung zum unveränderlichen Maßstab machen. Problematisieren muss deshalb nicht nur Antworten, sondern auch die eigene Problemfassung neu fassen können.
 
+Der Montage-Automat der Masterarbeit macht eine solche Verschiebung der Problemfassung konkret. Ausgangspunkt war die Frage, ob ein Computerprogramm die Struktur eines Films lernen und auf anderes Material übertragen könne. Im Versuch wurden zunächst Untertitel als Träger filmischer Struktur gewählt und nach Ähnlichkeiten und Gewichtungen verkettet. Die erzeugten Folgen ließen zwar assoziative Verbindungen erkennen, aber keine berechnete Geschichte und kein erkennbares übertragbares filmisches Muster. Damit scheiterte der Versuch nicht einfach an seiner Ausgangsfrage. Sein Ergebnis machte genauer fraglich, welche Eigenschaften überhaupt als filmische Struktur behandelt, in Daten überführt und auf anderes Material bezogen werden können.[^ma-automat-problem]
+
+Die Problematisierung ging so aus einer technischen und künstlerischen Erprobung hervor. Das Verfahren produzierte nicht nur eine Antwort auf eine bereits fertige Frage. Es veränderte, was anschließend als das zu bearbeitende Problem erschien: nicht mehr allein die Berechnung einer Folge, sondern die Auswahl der Kategorien, durch die eine Folge als filmisch strukturiert erkennbar werden sollte.
+
+Die Bewegung lässt sich als Rückkopplung darstellen:
+
+~~~mermaid
+flowchart TD
+    A[Problematische Situation]
+    B[Problematisieren: Relevanzen auswählen und Frage bilden]
+    C[Problem: vorläufig bearbeitbare Fassung]
+    D[Untersuchung oder Versuch]
+    E[Ergebnis: veränderte Situation und Anschlussbedingungen]
+
+    A --> B --> C --> D --> E
+    E --> B
+~~~
+
+Das Diagramm bezeichnet keinen notwendigen Stufenplan. Der Rückweg hält fest, dass ein Ergebnis nicht nur eine Antwort liefert, sondern die Frage und die Auswahl relevanter Unterschiede bestätigen, verschieben oder verwerfen kann.
+
 ## 4. Selektion und Relevanz
 
 Keine Problematisierung kann alle Beziehungen einer Situation zugleich berücksichtigen. Sie muss auswählen, welche Unterschiede zunächst als relevant gelten. Ohne diese Selektion entstünde kein bestimmtes Problem, sondern eine unbegrenzte Beschreibung des Zusammenhangs.
@@ -80,3 +100,4 @@ Diese Frage führt zur Form.
 
 [^ba-problematisieren]: Jonathan Frank, *Filmmontage und Improvisation. Weiterführende Gedanken* (2014), gedruckte S. 36–44, besonders S. 40–44.
 [^ma-problematisieren]: Jonathan Frank, *Algorithmische Komposition in der Filmmontage oder wie ich darüber denke*, 2. Aufl. (2020), gedruckte S. 6–10.
+[^ma-automat-problem]: Ebd., gedruckte S. 10, 51 und 92–93.

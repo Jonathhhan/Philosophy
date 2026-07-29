@@ -37,3 +37,14 @@ Prompt 397 ist zusätzlich in `recovered/manuscript/chapter-01-prompt-397.md` al
 ## Offene Sicherungslücke
 
 Teile des ursprünglichen Chatverlaufs sind in der Chatoberfläche und Suche nicht mehr auffindbar. Der fehlende Wortlaut darf nicht als sicher rekonstruiert behandelt werden. Inhaltliche Rekonstruktionen werden ausdrücklich markiert und erst nach Bestätigung durch den Autor in das Manuskript übernommen.
+
+## Revisionsnotiz 2026-07-29
+
+- Bearbeitet: `manuskript/03-problematisieren.md` bis `manuskript/09-komponieren.md`.
+- Ziel: Die im Gesamtgutachten benannte Abstraktion der Montagepassagen verringern, ohne Definitionen oder Kapitelarchitektur zu verändern.
+- Integrierter Leitfall: der quellenbelegte `Alphaville`-Versuch des Montage-Automaten als Problemfassung, Formsetzung, Aktualisierung, improvisatorisch bearbeitete Erprobung, programmatische Vorordnung, algorithmische Übergangsordnung und Komposition.
+- Zusätzlich konkretisiert: die diagrammatische Darstellung der Rückkopplung in der Bachelorarbeit.
+- Ergänzt: vier Prozessdiagramme zu Problematisierung, Aktualisierung, improvisatorischer Rückkopplung und dem Verhältnis von programmatischer Vorordnung, algorithmischer Ausführung und kompositorischer Weiterbestimmung.
+- Interaktive Ausgabe: Der bisherige Prototyp unter `interaktiv/` wurde zu einem Anschlusslabor ausgebaut. Eine eigene Äußerung und die Operationen Fortsetzen, Präzisieren, Unterbrechen und Variieren verändern darin sichtbar die wirksamen Bedingungen, den Verlauf und die weiteren Anschlussmöglichkeiten. Die technische Ausgabe bleibt ausdrücklich eine operative Bearbeitung und ersetzt nicht den Manuskripttext.
+- Unverändert geblieben: Kapitel 1 und 2, da dort kein eindeutig behebbarer Verlust des Leitfalls festgestellt wurde.
+- Offen: systematischer Literaturapparat und die normative Bewährungsprobe der späteren Kapitel.

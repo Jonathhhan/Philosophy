@@ -1,0 +1,22 @@
+id: decision-0013
+date: 2026-07-29
+title: Technisches Komponieren folgt dem gestuften Anschlussnachweis
+status: accepted
+decision: >-
+  Technische Systeme können kompositorische Operationen ausführen und
+  Kompositionen hervorbringen, ohne dass ihnen deshalb Sinnverstehen, Haltung
+  oder Verantwortung zugeschrieben wird. Ob ein rein technischer Prozess im
+  vollen Sinn des Buches selbst komponiert, hängt davon ab, ob für ihn ein
+  eigener Anschlussnachweis erbracht werden kann. In hybriden Vollzügen können
+  technische Operationen am Komponieren beteiligt sein, ohne selbst dessen
+  sinnhaft orientierte oder verantwortbare Seite zu tragen.
+reason: >-
+  Die gestufte Bestimmung bewahrt die materielle und algorithmische Mitwirkung
+  technischer Verfahren, ohne eine geordnete oder variable Ausgabe bereits mit
+  einem Anschlussvollzug gleichzusetzen. Sie entspricht dem für Anschließen und
+  Improvisieren bestätigten offenen Geltungsbereich.
+affected:
+  - manuskript/09-komponieren.md
+  - knowledge/decisions/0003-gestufter-geltungsbereich-anschluss.yaml
+  - knowledge/decisions/0009-reichweite-improvisation.yaml
+supersedes: []

@@ -26,7 +26,7 @@ Programmatische Wirksamkeit hat drei Momente. Die Bestimmung ist auf noch nicht 
 
 Programmatische Vorordnung setzt nicht mehrere Ausführungen voraus. Auch eine einmalige Situation kann ein Feld mehrerer möglicher Anschlüsse selektiv gliedern. Eine isolierte Folgewirkung, die keinen Unterschied zwischen möglichen Anschlüssen wirksam macht, genügt dagegen nicht.
 
-## 3. Nicht jede Bedingung ist ein Programm
+## 3. Die Schwelle programmatischer Wirksamkeit
 
 Jeder Vollzug hängt von mehr Bedingungen ab, als in ihm ausdrücklich berücksichtigt werden können. Körperliche Fähigkeiten, Materialien, Räume, Werkzeuge, Erinnerungen und soziale Beziehungen tragen dazu bei, dass etwas geschehen kann. Würde jede solche Bedingung Programm heißen, fiele der Programmbegriff mit der Gesamtheit der Anschlussbedingungen zusammen.
 
@@ -67,6 +67,8 @@ Programm ist auch nicht mit Organisation gleichzusetzen. Programm bezeichnet die
 In der Montage treffen verschiedene mögliche Träger programmatischer Wirksamkeit aufeinander. Das Rohmaterial besitzt konkrete Dauern, Bewegungen, Töne und Perspektiven. Ein Drehbuch oder eine Absprache kann einen Verlauf entwerfen. Das Schnittsystem macht Operationen unterschiedlich erreichbar. Die bereits montierte Fassung erzeugt Beziehungen und Erwartungen, die den Blick auf das noch unbenutzte Material verändern.
 
 Diese Bedingungen wirken jeweils nur insofern programmatisch, als sie die Auswahl weiterer Schnitte vorordnen.
+
+Im `Alphaville`-Versuch des Montage-Automaten wird diese Schwelle an einzelnen Entscheidungen sichtbar. Untertitel wurden als strukturrelevante Daten gewählt; häufige Wörter wurden als Stoppwörter behandelt; andere Wörter erhielten verschiedene Gewichte; Lern- und Zuordnungsmaterial wurden für den Versuch identisch gesetzt. Keine dieser Bestimmungen war nur eine Beschreibung des Materials. Gemeinsam ordneten sie vor, welche Ähnlichkeiten als mögliche Übergänge zählen und mit welchem Gewicht sie eine generierte Folge bestimmen konnten. Die Masterarbeit hält zugleich fest, dass auch Bildhandlung, Schnittfrequenz, Orte oder auditive Eigenschaften hätten kategorisiert werden können. Gerade die nicht einbezogenen Unterschiede zeigen die Selektivität des wirksamen Programms.[^ma-werkzeug]
 
 Die früheren Montagearbeiten bereiten diese Bestimmung in mehreren Stufen vor. Die Bachelorarbeit beschreibt die diagrammatische Partitur als Vorgabe, die eine Ausführung orientiert, ohne sie vollständig festzulegen.[^ba-programm] Die Masterarbeit fasst „Programm“ anschließend weit als das bereits Vorgeschriebene: Material, Erfahrung, entstandene Sequenzen, Ordnungen und Notizen bilden Bezugspunkte weiterer Entscheidungen und verändern sich im Verlauf der Arbeit.[^ma-programm] An der ersten Formfestlegung und dem jeweils erreichten Werkzustand entwickelt sie außerdem die Figur einer Selbstprogrammierung des Kunstwerks.[^ma-selbstprogrammierung] Der Werkzeugbau gehört dort zur künstlerischen und epistemischen Praxis: Diagramme und selbst entwickelte Werkzeuge machen Vorordnungen sichtbar, veränderbar und an ihren Ergebnissen vergleichbar.[^ma-werkzeug]
 
@@ -110,4 +112,4 @@ Diese Frage führt zum Algorithmus.
 [^ma-programm]: Jonathan Frank, *Algorithmische Komposition in der Filmmontage oder wie ich darüber denke*, 2. Aufl. (2020), gedruckte S. 8–10.
 [^ma-selbstprogrammierung]: Ebd., gedruckte S. 16–18.
 [^ma-abschluss]: Ebd., gedruckte S. 150–152.
-[^ma-werkzeug]: Ebd., gedruckte S. 37, 51–58 und 141–149.
+[^ma-werkzeug]: Ebd., gedruckte S. 37, 51–59, 92–93 und 141–149.

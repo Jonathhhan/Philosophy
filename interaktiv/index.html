@@ -1,36 +1,140 @@
 <!doctype html>
-<html lang="de">
+<html lang='de'>
 <head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Zur Kritik der Organisation von Anschlussmöglichkeiten</title>
-  <link rel="stylesheet" href="css/main.css">
+  <meta charset='utf-8'>
+  <meta name='viewport' content='width=device-width, initial-scale=1'>
+  <meta name='description' content='Interaktives Anschlusslabor zum philosophischen Buchprojekt Zur Kritik der Organisation von Anschlussmöglichkeiten'>
+  <title>Anschlusslabor · Zur Kritik der Organisation von Anschlussmöglichkeiten</title>
+  <link rel='stylesheet' href='css/main.css'>
 </head>
 <body>
-  <main class="book-shell">
-    <article class="text-panel">
-      <p class="eyebrow">Operative Darstellung · Prototyp</p>
-      <h1>Anschließen</h1>
-      <h2>Der Schein des Anfangs</h2>
-      <p class="adaptation-note">Die folgende Interaktion ist eine begriffliche Bearbeitung des Manuskriptfragments, kein ursprünglicher Manuskriptwortlaut.</p>
-      <p>Kein Anfang beginnt tatsächlich bei null. Die Eingabe macht einige Bedingungen sichtbar, an die ein Anfang bereits anschließt.</p>
-      <label for="beginning">Beginne hier:</label>
-      <textarea id="beginning" rows="4" placeholder="Ich beginne …"></textarea>
-      <p id="observation" aria-live="polite">Noch scheint das Feld leer. Doch Alphabet, Sprache, Eingaberegeln und mögliche Zeichen sind bereits vorgeordnet.</p>
-    </article>
+  <header class='site-header'>
+    <p class='wordmark'>Zur Kritik der Organisation von Anschlussmöglichkeiten</p>
+    <p class='module-label'>Interaktiver Prototyp · Anschließen</p>
+  </header>
 
-    <aside class="relation-panel" aria-label="Anschlussbedingungen">
-      <h2>Sichtbare Bedingungen</h2>
-      <div class="nodes" id="nodes">
-        <span>Alphabet</span>
-        <span>Sprache</span>
-        <span>Interface</span>
-        <span>Erwartung</span>
-        <span>Fortsetzung</span>
+  <main>
+    <section class='intro' aria-labelledby='page-title'>
+      <p class='eyebrow'>Ein operatives Begriffsmodell</p>
+      <h1 id='page-title'>Kein Anfang beginnt bei null.</h1>
+      <p class='lead'>Eine Äußerung schließt an Bedingungen an, die sie nicht selbst hervorgebracht hat. Sobald sie aktualisiert wird, verändert sie, was danach fortgesetzt, präzisiert, unterbrochen oder variiert werden kann.</p>
+      <p class='adaptation-note'>Die Interaktion bearbeitet einen Gedanken des Manuskripts. Sie ersetzt weder dessen Argumentation noch bildet sie einen ursprünglichen Manuskriptwortlaut ab.</p>
+    </section>
+
+    <section class='laboratory' aria-labelledby='laboratory-title'>
+      <div class='control-panel'>
+        <div class='section-heading'>
+          <span class='section-number' aria-hidden='true'>01</span>
+          <div>
+            <p class='section-kicker'>Ausgangslage</p>
+            <h2 id='laboratory-title'>Aktualisiere einen Anschluss</h2>
+          </div>
+        </div>
+
+        <label class='input-label' for='beginning'>Setze eine Äußerung in den bereits begonnenen Zusammenhang.</label>
+        <textarea id='beginning' rows='5' maxlength='280' placeholder='Zum Beispiel: Eine Möglichkeit ist nie voraussetzungslos.'></textarea>
+        <div class='input-meta'>
+          <span id='char-count'>0 von 280 Zeichen</span>
+          <button class='text-button' id='reset' type='button'>Zurücksetzen</button>
+        </div>
+
+        <fieldset class='moves' id='moves' disabled>
+          <legend>
+            <span class='section-number' aria-hidden='true'>02</span>
+            <span>
+              <span class='section-kicker'>Nächster Vollzug</span>
+              <strong>Verändere die Anschlussrichtung</strong>
+            </span>
+          </legend>
+          <div class='move-grid'>
+            <button class='move-button' type='button' data-move='fortsetzen'>
+              <span>Fortsetzen</span>
+              <small>den gesetzten Bezug weiterführen</small>
+            </button>
+            <button class='move-button' type='button' data-move='praezisieren'>
+              <span>Präzisieren</span>
+              <small>eine Unterscheidung bestimmter machen</small>
+            </button>
+            <button class='move-button' type='button' data-move='unterbrechen'>
+              <span>Unterbrechen</span>
+              <small>eine Voraussetzung fraglich werden lassen</small>
+            </button>
+            <button class='move-button' type='button' data-move='variieren'>
+              <span>Variieren</span>
+              <small>Gewichtung oder Perspektive verschieben</small>
+            </button>
+          </div>
+        </fieldset>
+
+        <div class='observation' aria-live='polite' aria-atomic='true'>
+          <p class='section-kicker'>Beobachtung</p>
+          <p id='observation'>Noch wurde kein eigener Anschluss aktualisiert. Alphabet, Sprache, Interface und die Erwartung einer Fortsetzung wirken dennoch bereits als Bedingungen.</p>
+        </div>
       </div>
-      <p class="thesis">Jede Aktualisierung verändert den Raum weiterer Anschlussmöglichkeiten.</p>
-    </aside>
+
+      <figure class='process-panel' aria-labelledby='process-caption'>
+        <figcaption id='process-caption'>Der veränderte Anschlussraum</figcaption>
+
+        <div class='process-stage conditions-stage'>
+          <p class='stage-label'>Wirksame Bedingungen</p>
+          <ul class='condition-list' id='conditions'>
+            <li>Alphabet</li>
+            <li>Sprache</li>
+            <li>Interface</li>
+            <li>Erwartung</li>
+          </ul>
+        </div>
+
+        <div class='flow-arrow' aria-hidden='true'><span>↓</span></div>
+
+        <div class='process-stage actual-stage' id='actual-stage'>
+          <p class='stage-label'>Aktualisierter Anschluss</p>
+          <p class='actual-text' id='actual-text'>Noch keine eigene Äußerung</p>
+        </div>
+
+        <div class='flow-arrow' aria-hidden='true'><span>↓</span></div>
+
+        <div class='process-stage possibilities-stage'>
+          <p class='stage-label'>Weitere Anschlussmöglichkeiten</p>
+          <ul class='possibility-list' id='possibilities'>
+            <li>eine erste Äußerung setzen</li>
+            <li>den erwarteten Zusammenhang aufnehmen</li>
+            <li>den Anfang verweigern</li>
+          </ul>
+        </div>
+
+        <div class='return-line' aria-hidden='true'>
+          <span>Der hervorgebrachte Zustand wird selbst zur Bedingung.</span>
+          <b>↺</b>
+        </div>
+
+        <div class='history-block'>
+          <div class='history-heading'>
+            <p class='stage-label'>Verlauf</p>
+            <span id='iteration-count'>0 Aktualisierungen</span>
+          </div>
+          <ol class='history-list' id='history'>
+            <li class='empty-history'>Noch kein weiterer Vollzug</li>
+          </ol>
+        </div>
+      </figure>
+    </section>
+
+    <section class='concept-strip' aria-label='Begriffliche Bewegung'>
+      <p>Ausgangsbedingungen</p>
+      <span aria-hidden='true'>→</span>
+      <p>möglicher Anschluss</p>
+      <span aria-hidden='true'>→</span>
+      <p>Aktualisierung</p>
+      <span aria-hidden='true'>→</span>
+      <p>veränderte Bedingungen</p>
+    </section>
   </main>
-  <script src="js/main.js"></script>
+
+  <footer>
+    <blockquote>Jede Aktualisierung verändert den Raum weiterer Anschlussmöglichkeiten.</blockquote>
+  </footer>
+
+  <script src='js/main.js'></script>
 </body>
 </html>

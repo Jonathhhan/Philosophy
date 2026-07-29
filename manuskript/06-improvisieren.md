@@ -50,6 +50,23 @@ Diese Darstellung bezeichnet keine geschlossene Wiederholung identischer Schritt
 
 In gemeinsamen Improvisationen gehören die tatsächlichen Beiträge anderer zu dieser Rückkopplung. Sie sind nicht bloß Material für einen unabhängig gefassten Plan. Ein eigener Anschluss kann durch sie bestätigt, umgelenkt oder unbrauchbar werden. Die Beteiligten bestimmen den Verlauf nicht notwendig in gleicher Weise, aber keine Beschreibung gemeinsamer Improvisation kann die wechselseitige Veränderung ihrer Anschlussbedingungen auslassen.
 
+Die frühere Montagearbeit stellt diese Rückkopplung nicht nur sprachlich dar. „Diagramm zwei“ führt vom Rohmaterial über die Bedingungen der Montage und die Improvisation zu einem Ergebnis und zeichnet von dort einen Pfeil zurück zu den Montagebedingungen. „Diagramm vier“ löst das lineare Schema weiter auf: Rohmaterial, Haltung, Film und Möglichkeitsräume stehen in mehreren gegenläufigen Beziehungen. Die Diagramme sind damit keine bloßen Illustrationen eines fertigen Gedankens. In ihrer eigenen Anordnung wird erprobt, wie ein Ergebnis in die Bedingungen weiterer Entscheidungen zurückkehrt.[^ba-rueckkopplung]
+
+Schematisch rekonstruiert die lineare Rückkopplungsfigur folgenden Vorgang:
+
+~~~mermaid
+flowchart LR
+    R[Rohmaterial]
+    B[Bedingungen der Montage]
+    I[Improvisation]
+    F[Ergebnis oder erreichter Filmzustand]
+
+    R --> B --> I --> F
+    F --> B
+~~~
+
+Die komplexere Figur ergänzt dazu, dass weder Rohmaterial noch Haltung oder Möglichkeitsraum unverändert außerhalb des Verlaufs stehen. Sie werden in den wechselseitigen Beziehungen des Montageprozesses für weitere Entscheidungen neu bestimmt.
+
 Nicht jede Rückkopplung ist bereits Improvisation. Auch geregelte Prozesse können Ergebnisse zurückführen. Improvisatorisch ist die Rückkopplung dort, wo ihre Folgen für eine situative Formbestimmung aufgenommen werden müssen, weil die vorhandene Vorordnung den nächsten Anschluss nicht hinreichend bestimmt.
 
 ## 5. Können, Repertoire und Haltung
@@ -64,7 +81,9 @@ Gewichtung bezeichnet hier noch keine begründete Beurteilung. Sie besagt zunäc
 
 Nicht jeder improvisatorische Anschluss muss aus einer ausdrücklich formulierten Entscheidung hervorgehen. Eingeübte Aufmerksamkeit und körperliches Können können reagieren, bevor ihre Unterscheidungen vollständig sprachlich ausgewiesen sind. Daraus folgt nicht, dass jeder spontane oder nicht ausdrücklich reflektierte Vollzug improvisiert ist. Entscheidend bleibt, ob er unter partieller Unbestimmtheit formgebunden und formbildend anschließt.
 
-## 6. Spontaneität, Zufall, Variation und Erprobung
+## 6. Variation und Erprobung als Momente
+
+Der Montage-Automat zeigt, wie Variation und Erprobung in einer improvisatorischen Praxis mitwirken können, ohne selbst die Improvisation zu definieren. Seine Generierung brachte nach gewichteten Untertitelbeziehungen verschiedene Sequenzen hervor; dieser Teil war algorithmisch vorgeordnet. Die Masterarbeit verortet das Improvisatorische dagegen in der Entwicklung und Veränderung des Verfahrens sowie in den künstlerischen Eingriffen in die erzeugte Folge. Für den gegenwärtigen Begriff sind solche Vollzüge genau insoweit improvisatorisch, als ihre nächste relevante Bestimmung nicht hinreichend vorgeordnet ist und im Umgang mit Kategorien, unerwarteten Assoziationen oder der erzeugten Fassung situativ hervorgebracht werden muss.[^ma-automat-improvisieren]
 
 Improvisation wird häufig mit Spontaneität gleichgesetzt. Spontan ist ein Vollzug, wenn er unmittelbar oder ohne längere Vorbereitung erfolgt. Eine spontane Reaktion kann jedoch eine eingeübte Routine wiederholen, deren relevanter Anschluss hinreichend vorgeordnet ist. Umgekehrt kann eine Improvisation sorgfältig vorbereitet sein, obwohl ihr konkreter Verlauf offenbleibt.
 
@@ -73,8 +92,6 @@ Auch Zufall ist nicht mit Improvisation identisch. Ein unbeabsichtigtes Ereignis
 Variation bezeichnet eine bestimmbare Abweichung innerhalb eines Bezugs. Sie kann vollständig geplant, technisch erzeugt oder unbeabsichtigt entstanden sein. Improvisation kann variieren, wenn sie eine vorhandene Form unter den Bedingungen der Situation anders bestimmt. Sie geht aber nicht in Variation auf, weil ihre Eigenfunktion nicht die Abweichung als solche, sondern die situative Hervorbringung eines nicht hinreichend vorgeordneten Anschlusses betrifft.
 
 Erprobung wiederum bezeichnet einen probeweisen Vollzug, dessen Folgen gezielt für eine weitere Untersuchung aufgenommen werden. Ein Versuch kann vollständig vorgeordnet sein und deshalb nicht improvisatorisch verlaufen. Improvisation kann erproben, muss aber nicht als Untersuchung angelegt sein. Spontaneität, Zufall, Variation und Erprobung können somit Momente oder Bedingungen einer Improvisation bilden, ohne sie jeweils zu definieren.
-
-Dass ein Ergebnis überraschend oder unvorhersagbar ist, genügt ebenfalls nicht. Ein komplexer Ablauf kann Ergebnisse hervorbringen, die niemand vorausgesehen hat, obwohl die Art seiner Übergänge vollständig vorgeordnet war. Unvorhersagbarkeit betrifft das Wissen über einen Verlauf. Improvisatorische Unbestimmtheit betrifft die situative Bestimmung des nächsten Anschlusses.
 
 ## 7. Montage als improvisatorischer Formprozess
 
@@ -103,6 +120,7 @@ Diese Frage führt zum Programm.
 [^ba-haltung]: Jonathan Frank, *Filmmontage und Improvisation. Weiterführende Gedanken* (2014), gedruckte S. 10, 41 und 44.
 [^ba-partitur]: Ebd., gedruckte S. 32.
 [^ba-erfahrung]: Ebd., gedruckte S. 9.
-[^ba-rueckkopplung]: Ebd., gedruckte S. 41 und 44.
+[^ba-rueckkopplung]: Ebd., gedruckte S. 36, 38 und 40–44.
 [^ma-vorgeschriebenes]: Jonathan Frank, *Algorithmische Komposition in der Filmmontage oder wie ich darüber denke*, 2. Aufl. (2020), gedruckte S. 6–10, besonders S. 8–9.
 [^ma-verlagerung]: Ebd., gedruckte S. 20–23 und 150–152.
+[^ma-automat-improvisieren]: Ebd., gedruckte S. 58–59 und 92–93.

@@ -1,0 +1,22 @@
+id: decision-0014
+date: 2026-07-29
+title: Komponieren und Organisieren behalten verschiedene Eigenfunktionen
+status: accepted
+decision: >-
+  Komponieren fragt nach der Stellung von Elementen, Übergängen und Relationen
+  innerhalb eines bestimmten Zusammenhangs. Organisieren fragt nach der
+  Koordination, Stabilisierung, Priorisierung und Ausschließung verteilter
+  Anschlussbedingungen über Vollzüge und Beteiligte hinweg. Derselbe Vorgang
+  kann unter verschiedenen Hinsichten kompositorisch und organisatorisch
+  bestimmt sein. Keiner der Begriffe ist allgemein eine Unterart des anderen.
+reason: >-
+  Die Abgrenzung erhält die eigenständige Funktion beider Kapitel und vermeidet
+  zugleich künstlich getrennte Gegenstandsbereiche. Sie ermöglicht, etwa die
+  Filmbeziehung eines Schnitts kompositorisch und die Dateistrukturen,
+  Zuständigkeiten, Ressourcen und Freigaben desselben Montageprozesses
+  organisatorisch zu untersuchen.
+affected:
+  - manuskript/09-komponieren.md
+  - GLOSSAR.md
+  - projekt/architektur.md
+supersedes: []
