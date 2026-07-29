@@ -40,6 +40,7 @@ Vor Arbeiten an Improvisation, Programm, Algorithmus, Montage, Form oder Möglic
 
 Vor jeder größeren Änderung:
 
+- `CONSTITUTION.md` lesen und die geltende Autoritätshierarchie bestimmen.
 - PROJECT.md lesen.
 - STYLE.md lesen.
 - GLOSSAR.md prüfen.

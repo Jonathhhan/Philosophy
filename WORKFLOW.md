@@ -48,6 +48,7 @@ Zusätzlich sind Rolle, Eingriffstiefe, veränderbare und geschützte Dateien so
 
 Mindestens zu prüfen sind:
 
+- `CONSTITUTION.md` lesen und die geltende Autoritätshierarchie bestimmen;
 - das vollständige betroffene Kapitel;
 - das vorhergehende und folgende Kapitel, soweit vorhanden;
 - PROJECT.md;

@@ -248,3 +248,35 @@ Teile des ursprünglichen Chatverlaufs sind in der Chatoberfläche und Suche nic
 - Zurückgestellt: `knowledge/genealogy.yaml`, schreibende Werkzeuge, automatische Git-Abdeckung und eine eigene graphische Oberfläche.
 - Ereignis: `knowledge/change-events/0003-recursive-codex-mcp-graph.yaml` dokumentiert den getesteten Stand.
 - Unverändert: Manuskript, Glossar, aktuelle Begriffsdefinitionen, Entscheidungen und Kapitelarchitektur.
+
+## Interaktive Ausgabe – optionale KI-Vorschlagsschicht 2026-07-30
+
+- Ergänzt: Zu einer ausdrücklich gewählten Anschlussweise kann ein einzelner Formulierungsvorschlag angefordert werden. Die KI wird nicht als Autorin, Urteilsträgerin oder eigenständig anschließendes Subjekt beschrieben.
+- Getrennt: Der Modellvorschlag bleibt flüchtig, die bewusste Übernahme kopiert ihn nur in den offenen Arbeitsentwurf und erst „Anschluss aktualisieren“ verändert und speichert die Anschlussfolge.
+- Datenminimiert: Der Browser sendet ausschließlich Anschlussweise und aktuellen Bezugswortlaut an den gleichursprünglichen Projektserver; Sitzung, Fassungen, Freigaben und offene Entwürfe bleiben ausgeschlossen.
+- Abgesichert: API-Schlüssel, Modellsteuerung und Systemanweisung verbleiben serverseitig. Ohne Secret, Safety-Salt und Rate-Limiter bleibt der Endpunkt deaktiviert; Eingabe und strukturierte Ausgabe besitzen geschlossene Grenzen.
+- Begrifflich begrenzt: Die Modellerläuterung kann nur angeben, warum ein Vorschlag die gesetzte Relation erfüllen könnte. Sie bestätigt weder Gelingen noch sachliche Richtigkeit, Revision oder Reorganisation.
+- Bedienung: Anforderung und laufende Anfrage sind sichtbar und abbrechbar; veraltete Antworten werden verworfen, vorhandene manuelle Entwürfe nur nach Bestätigung ersetzt und der manuelle Weg bleibt bei jedem KI-Fehler verfügbar.
+- Prüfung: 18 DOM-, Interaktions- und Worker-Tests, Syntaxprüfung, Build sowie lokale Browserkontrolle bestehen. Modellverweigerung, unvollständige Ausgabe, XSS-Text, Rate-Limit und fehlende Konfiguration werden ohne realen API-Aufruf geprüft.
+- Aktivierung offen: Vor öffentlicher Nutzung sind Deployment-Secrets, konkrete Rate- und Budgetgrenzen, Monitoring, globale Parallelitätsbegrenzung und gegebenenfalls eine Missbrauchschallenge festzulegen.
+- Ereignis: `knowledge/change-events/0004-interactive-ai-suggestions.yaml` dokumentiert den getesteten Stand.
+- Zurückgestellt: Fassungsvergleich, genealogisches Versionsdiagramm, mehrstufige Agentendialoge und Zugriff der KI auf vollständige Sitzungen oder Manuskriptdateien.
+- Unverändert: Manuskript, Glossar, Projektarchitektur, bestätigte Begriffsdefinitionen und Wissensentscheidungen.
+## Gesamtaudit – lokale Manuskriptkorrekturen 2026-07-30
+
+- Kapitel 1: Interne Provenienzkommentare wurden aus dem Publikationstext entfernt; Fragmentgrenze, Normalisierung und Entwurfsstatus bleiben im Rekonstruktionsdossier dokumentiert.
+- Kapitel 11: Reorganisieren als Tätigkeit ist wieder eindeutig vom möglichen Ergebnis einer Reorganisation unterschieden.
+- Kapitel 15 und 16: Die bestätigten Präzisierungen zu Tragfähigkeit und unveränderter Bestätigung stehen nun vor den jeweiligen Kapitelübergängen; ihr Wortlaut blieb unverändert.
+- Glossar: Die Definitionszitate zu Revidieren und Reorganisieren sind korrekt von den Erläuterungen abgesetzt.
+- Geprüft: Auditmarker und verwischende Altformulierung sind entfernt; Change Events, Wissens- und Recursive-State-Prüfung, Hook-Selbsttest, Anschlusslabor und MCP-Graph-Tests bestehen. Die 24 bekannten Wissenswarnungen bleiben offen und nicht blockierend.
+- Ereignis: `knowledge/change-events/0005-manuscript-audit-local-corrections.yaml` dokumentiert den stabilisierten redaktionellen Eingriff.
+- Unverändert: Kapitelarchitektur, theoretische Reichweite und bestätigte Begriffsentscheidungen.
+## Governance und zentrale Gesamtprüfung 2026-07-30
+
+- Verbindlicher Kontext: `AGENTS.md`, `WORKFLOW.md` und der Recursive-Codex-Skill beginnen größere Arbeiten nun ausdrücklich mit `CONSTITUTION.md` und der geltenden Autoritätshierarchie.
+- Zentraler Befehl: `python scripts/check_all.py` bündelt Wissensvalidierung, alle Change Events, Recursive State, MCP-Kern und -Protokoll, Hook-Selbsttest sowie Installation, Tests, Syntaxprüfung und Build des Anschlusslabors.
+- CI: `.github/workflows/validate.yml` führt denselben Gesamtbefehl bei Pushes und Pull Requests mit Python 3.12 und Node 22 aus.
+- Geprüft: Der vollständige lokale Lauf einschließlich `npm ci`, 18 DOM-/Worker-Tests und MCP-STDIO-Protokoll besteht; die 24 bekannten Wissenswarnungen bleiben sichtbar und nicht blockierend.
+- TODO: Der Autor muss noch entscheiden, wie eine neu akzeptierte Entscheidung wirkt, wenn sie Glossar oder Architektur ausdrücklich revidiert, die höherrangige Datei aber noch nicht synchronisiert ist.
+- Grenze: Eine erfolgreiche Gesamtprüfung bestätigt deterministische Repository-Invarianten, nicht philosophische Vollständigkeit oder wissenschaftliche Publikationsreife.
+- Ereignis: `knowledge/change-events/0006-governance-and-central-validation.yaml` dokumentiert die stabilisierte Reorganisation.

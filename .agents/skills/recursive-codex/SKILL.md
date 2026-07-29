@@ -9,10 +9,11 @@ description: Steuert größere Änderungen als rekursive, revidierbare Projektar
 
 ## Verbindlichen Kontext aufnehmen
 
-1. `AGENTS.md`, `WORKFLOW.md` und `projekt/codex-auftragsvorlage.md` lesen.
-2. Betroffene Dateien, Definitionen, Entscheidungen, Quellen und technische Ausgaben bestimmen.
-3. Quelle, begriffliche Entwicklung, Agentenvorschlag und bestätigten Status unterscheiden.
-4. Geschützte Dateien und erforderliche Autorenentscheidungen festhalten.
+1. `CONSTITUTION.md` lesen und die geltende Autoritätshierarchie bestimmen.
+2. `AGENTS.md`, `WORKFLOW.md` und `projekt/codex-auftragsvorlage.md` lesen.
+3. Betroffene Dateien, Definitionen, Entscheidungen, Quellen und technische Ausgaben bestimmen.
+4. Quelle, begriffliche Entwicklung, Agentenvorschlag und bestätigten Status unterscheiden.
+5. Geschützte Dateien und erforderliche Autorenentscheidungen festhalten.
 
 ## Eingriff klassifizieren
 
