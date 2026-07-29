@@ -23,3 +23,7 @@ Das Projekt untersucht, wie Anschlussmöglichkeiten organisiert, aktualisiert, s
 - Anwendungen erst nach der Grundtheorie.
 
 Die Texte werden als Arbeitsfassungen versioniert. Frühere Varianten bleiben über die Git-Historie nachvollziehbar.
+
+## Wissensbasis prüfen
+
+Die YAML-Dateien und ihre internen Referenzen werden mit `python scripts/validate_knowledge.py` geprüft. Die dafür benötigte Entwicklungsabhängigkeit steht in `requirements-dev.txt`.

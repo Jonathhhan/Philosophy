@@ -12,7 +12,10 @@ concepts:
       - printed_pages: 6-10
         context: Einleitung
   - id: programm
-    source_definition: Das Vorgeschriebene im umfassenden Sinn: Material, Erfahrung, entstandene Sequenzen, Ordnung, Notizen und weitere bereits vorhandene Bedingungen, auf die sich der Vollzug bezieht.
+    source_definition: >-
+      Das Vorgeschriebene im umfassenden Sinn: Material, Erfahrung, entstandene
+      Sequenzen, Ordnung, Notizen und weitere bereits vorhandene Bedingungen,
+      auf die sich der Vollzug bezieht.
     dynamics: Das Vorgeschriebene verändert sich und schreibt sich fort; Programm ist daher nicht auf ein statisches Computerprogramm reduzierbar.
     relations:
       - improvisation zulassen und strukturieren

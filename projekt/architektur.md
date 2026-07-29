@@ -6,7 +6,7 @@
 
 ## Rekursive Grundbewegung
 
-> Anschlussmöglichkeiten → Organisation → Aktualisierung → Stabilisierung → Kritik → Revision → Reorganisation
+> Anschlussmöglichkeiten → Organisation → Aktualisierung → Reorganisation → Kritik
 
 Zentraler Satz:
 
@@ -50,7 +50,7 @@ Leitformel:
 
 - **Improvisieren:** formgebundene und formbildende Tätigkeit unter Bedingungen partieller Unbestimmtheit.
 - **Programm:** wirksame Vorordnung möglicher Anschlüsse.
-- **Algorithmus:** explizierbare und wiederholbare Ordnung bedingter Übergänge.
+- **Algorithmus:** wiederholbare Ordnung bedingter Übergänge.
 - **Revidieren:** begründetes Zurückkommen auf stabilisierte Anschlussbedingungen, um sie erneut zu bestimmen.
 - **Reorganisieren:** Veränderung der Beziehungen, durch die mehrere Anschlussbedingungen einander stützen, begrenzen und für weitere Vollzüge wirksam werden.
 

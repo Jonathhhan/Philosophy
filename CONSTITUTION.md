@@ -10,14 +10,14 @@ Diese Datei enthält die theoretischen und methodischen Grenzen des Buchprojekts
 4. Montage ist epistemischer Ausgangspunkt und Modell rekursiver Formbildung, nicht bloß ein Beispiel.
 5. Anschluss ist grundlegender als Kommunikation.
 6. Programm bezeichnet die wirksame Vorordnung möglicher Anschlüsse und ist nicht auf Computerprogramme beschränkt.
-7. Algorithmus bezeichnet eine explizierbare und wiederholbare Ordnung bedingter Übergänge und ist keine bloße Metapher.
+7. Algorithmus bezeichnet eine wiederholbare Ordnung bedingter Übergänge und ist keine bloße Metapher.
 8. Improvisation ist weder Regellosigkeit noch reine Spontaneität.
 9. Kritik steht nicht außerhalb der Organisation, sondern ist eine Operation innerhalb organisierter Anschlussbedingungen.
 10. Reorganisation ist keine Rückkehr zu einem voraussetzungslosen Anfang.
 
 ## Rekursive Grundbewegung
 
-> Anschlussmöglichkeiten → Organisation → Aktualisierung → Stabilisierung → Kritik → Revision → Reorganisation
+> Anschlussmöglichkeiten → Organisation → Aktualisierung → Reorganisation → Kritik
 
 Zentraler Satz:
 

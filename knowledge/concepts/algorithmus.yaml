@@ -2,7 +2,7 @@ id: algorithmus
 label: Algorithmus
 status: core
 chapter: 8
-definition: explizierbare und wiederholbare Ordnung bedingter Übergänge
+definition: wiederholbare Ordnung bedingter Übergänge
 depends_on:
   - anschliessen
   - aktualisieren
