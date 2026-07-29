@@ -10,14 +10,14 @@
 <body>
   <header class='site-header'>
     <p class='wordmark'>Zur Kritik der Organisation von Anschlussmöglichkeiten</p>
-    <p class='module-label'>Interaktiver Prototyp · Anschließen</p>
+    <p class='module-label'>Anschlusslabor · Aktualisieren und Stabilisieren</p>
   </header>
 
   <main>
     <section class='intro' aria-labelledby='page-title'>
       <p class='eyebrow'>Ein operatives Begriffsmodell</p>
       <h1 id='page-title'>Kein Anfang beginnt bei null.</h1>
-      <p class='lead'>Eine Äußerung schließt an Bedingungen an, die sie nicht selbst hervorgebracht hat. Sobald sie aktualisiert wird, verändert sie, was danach fortgesetzt, präzisiert, unterbrochen oder variiert werden kann.</p>
+      <p class='lead'>Eine Äußerung schließt an Bedingungen an, die sie nicht selbst hervorgebracht hat. Sobald sie aktualisiert wird, verändert sie, was danach fortgesetzt, präzisiert, unterbrochen oder variiert werden kann. Erst das Festhalten einer Fassung gibt diesem Zusammenhang relative Dauer.</p>
       <p class='adaptation-note'>Die Interaktion bearbeitet einen Gedanken des Manuskripts. Sie ersetzt weder dessen Argumentation noch bildet sie einen ursprünglichen Manuskriptwortlaut ab.</p>
     </section>
 
@@ -70,10 +70,26 @@
           <p class='section-kicker'>Beobachtung</p>
           <p id='observation'>Noch wurde kein eigener Anschluss aktualisiert. Alphabet, Sprache, Interface und die Erwartung einer Fortsetzung wirken dennoch bereits als Bedingungen.</p>
         </div>
+
+        <section class='stabilization-control' aria-labelledby='stabilization-title'>
+          <div class='section-heading compact-heading'>
+            <span class='section-number' aria-hidden='true'>03</span>
+            <div>
+              <p class='section-kicker'>Relative Dauer</p>
+              <h3 id='stabilization-title'>Eine Fassung stabilisieren</h3>
+            </div>
+          </div>
+          <p class='stabilization-copy'>Festhalten bewahrt einen bestimmten Stand. Freigeben behandelt ihn vorläufig als maßgeblich. Beides schließt spätere Veränderung nicht aus und rechtfertigt die Fassung nicht.</p>
+          <div class='stabilization-actions'>
+            <button class='primary-action' id='stabilize' type='button' disabled>Fassung festhalten</button>
+            <button class='secondary-action' id='release' type='button' disabled>Letzte Fassung freigeben</button>
+          </div>
+          <p class='stabilization-status' id='stabilization-status' aria-live='polite'>Noch besteht keine stabilisierte Fassung.</p>
+        </section>
       </div>
 
       <figure class='process-panel' aria-labelledby='process-caption'>
-        <figcaption id='process-caption'>Der veränderte Anschlussraum</figcaption>
+        <figcaption id='process-caption'>Raum weiterer Anschlussmöglichkeiten</figcaption>
 
         <div class='process-stage conditions-stage'>
           <p class='stage-label'>Wirksame Bedingungen</p>
@@ -117,6 +133,16 @@
             <li class='empty-history'>Noch kein weiterer Vollzug</li>
           </ol>
         </div>
+
+        <div class='version-block'>
+          <div class='history-heading'>
+            <p class='stage-label'>Stabilisierte Fassungen</p>
+            <span id='version-count'>0 Fassungen</span>
+          </div>
+          <ol class='version-list' id='versions'>
+            <li class='empty-version'>Noch keine Fassung festgehalten</li>
+          </ol>
+        </div>
       </figure>
     </section>
 
@@ -128,11 +154,14 @@
       <p>Aktualisierung</p>
       <span aria-hidden='true'>→</span>
       <p>veränderte Bedingungen</p>
+      <span aria-hidden='true'>→</span>
+      <p>stabilisierte Fassung</p>
     </section>
   </main>
 
   <footer>
     <blockquote>Jede Aktualisierung verändert den Raum weiterer Anschlussmöglichkeiten.</blockquote>
+    <p class='footer-note'>Dass eine Anschlussordnung fortbesteht, begründet noch nicht, dass sie fortbestehen soll.</p>
   </footer>
 
   <script src='js/main.js'></script>
