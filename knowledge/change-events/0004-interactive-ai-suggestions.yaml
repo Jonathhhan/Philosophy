@@ -1,0 +1,141 @@
+schema_version: 1
+id: change-interactive-ai-suggestions
+created_at: 2026-07-30
+goal: >-
+  Das Anschlusslabor um eine optionale, ausdrücklich angeforderte
+  KI-Vorschlagsfunktion ergänzen, ohne Vorschlag, Übernahme und Aktualisierung
+  zu vermischen oder lokale Sitzungsdaten stillschweigend zu übertragen.
+operation: reorganization
+scope:
+  allowed_files:
+    - interaktiv/index.html
+    - interaktiv/css/main.css
+    - interaktiv/js/main.js
+    - interaktiv/build.mjs
+    - interaktiv/server/runtime.js
+    - interaktiv/tests/main.test.mjs
+    - interaktiv/tests/worker.test.mjs
+    - interaktiv/package.json
+    - interaktiv/README.md
+    - knowledge/change-events/0004-interactive-ai-suggestions.yaml
+    - projekt/arbeitsstand.md
+  protected_files:
+    - manuskript/
+    - GLOSSAR.md
+    - PROJECT.md
+    - knowledge/concepts/
+    - knowledge/decisions/
+basis:
+  project_files:
+    - AGENTS.md
+    - WORKFLOW.md
+    - manuskript/10-stabilisieren.md
+    - manuskript/16-revidieren.md
+    - manuskript/17-reorganisieren.md
+    - knowledge/decisions/0019-unveraenderte-bestaetigung-und-revision.yaml
+    - knowledge/decisions/0020-reorganisieren-und-reorganisation.yaml
+  decisions:
+    - decision-0019
+    - decision-0020
+    - decision-0021
+  sources:
+    - "OpenAI API documentation: Text generation and Responses API"
+    - "OpenAI API documentation: Structured model outputs"
+    - "OpenAI Help Center: Best Practices for API Key Safety"
+changes:
+  - file: interaktiv/index.html
+    summary: Eine optionale, ausdrücklich angeforderte KI-Vorschlagsschicht mit Datenhinweis, flüchtigem Ergebnis, bewusster Übernahme und getrennter Aktualisierung ergänzt.
+  - file: interaktiv/css/main.css
+    summary: Den Vorschlagsbereich responsiv und im bestehenden visuellen System gestaltet.
+  - file: interaktiv/js/main.js
+    summary: Flüchtigen KI-Zustand, Abbruch, Zustandsbindung, sichere Textausgabe und explizite Übernahme ohne automatische Persistenz implementiert.
+  - file: interaktiv/server/runtime.js
+    summary: Gleichursprünglichen Responses-API-Adapter mit Secret-Schutz, geschlossenem Eingabeschema, Rate-Limit, anonymisierter Sicherheitskennung und strukturiertem Ausgabeformat ergänzt.
+  - file: interaktiv/build.mjs
+    summary: Statische Auslieferung und serverseitigen API-Adapter in einem Worker-Build verbunden.
+  - file: interaktiv/tests/main.test.mjs
+    summary: Flüchtigkeit, bewusste Übernahme, XSS-sichere Ausgabe, veraltete Antworten und manuellen Fehlerpfad geprüft.
+  - file: interaktiv/tests/worker.test.mjs
+    summary: Konfigurationsgrenze, Datenminimierung, Eingabevalidierung, Rate-Limit, Safety-Kennung, CSP und fehlerhafte Modellausgaben geprüft.
+  - file: interaktiv/package.json
+    summary: Syntax- und Testbefehle auf Browser- und Workerlogik erweitert.
+  - file: interaktiv/README.md
+    summary: Datenfluss, Konfiguration, Schutzgrenzen und Voraussetzungen einer öffentlichen Aktivierung dokumentiert.
+  - file: knowledge/change-events/0004-interactive-ai-suggestions.yaml
+    summary: Reorganisation, unabhängige Einwände und Prüfstatus dokumentiert.
+  - file: projekt/arbeitsstand.md
+    summary: Getesteten Stand und verbleibende Deploymentgrenzen festgehalten.
+affected_relations:
+  - from: interaktiv/js/main.js
+    relation: depends_on
+    to: interaktiv/server/runtime.js
+    effect: added
+    note: Die Oberfläche soll ausschließlich nach ausdrücklicher Anforderung einen begrenzten Vorschlag vom gleichursprünglichen Serverendpunkt beziehen.
+  - from: interaktiv/build.mjs
+    relation: renders
+    to: interaktiv/server/runtime.js
+    effect: added
+    note: Der Build soll statische Ausgabe und serverseitigen API-Adapter gemeinsam ausliefern.
+  - from: interaktiv/tests/worker.test.mjs
+    relation: tests
+    to: interaktiv/server/runtime.js
+    effect: added
+    note: Geheimnisschutz, Missbrauchsgrenze, Eingabevalidierung und Responses-API-Vertrag sollen ohne realen API-Aufruf geprüft werden.
+  - from: interaktiv/index.html
+    relation: documents
+    to: interaktiv/js/main.js
+    effect: changed
+    note: Die Oberfläche soll Datenübertragung, Vorschlagsstatus und notwendige Benutzerübernahme kenntlich machen.
+possibilities:
+  opened:
+    - Zu einer gewählten Anschlussweise kann ein externer Formulierungsvorschlag angefordert und vor jeder Aktualisierung bearbeitet werden.
+    - Die Differenz zwischen maschinellem Vorschlag, menschlicher Übernahme und aktualisiertem Anschluss wird praktisch sichtbar.
+    - Die KI-Funktion kann serverseitig konfiguriert oder vollständig deaktiviert bleiben.
+  restricted:
+    - API-Schlüssel dürfen weder in Browsercode noch in Repositorydateien gelangen.
+    - Ohne serverseitige Ratenbegrenzung und Sicherheitskonfiguration bleibt der KI-Endpunkt deaktiviert.
+    - Übertragen werden nur die gewählte Anschlussweise und der aktuell sichtbare Bezugswortlaut nach ausdrücklichem Klick.
+  deferred:
+    - Fassungsvergleich und genealogisches Versionsdiagramm.
+    - Automatische Aktualisierung oder Speicherung von KI-Vorschlägen.
+    - Mehrstufige Agentendialoge und Zugriff der KI auf vollständige Sitzungen oder Manuskriptdateien.
+uncertainties:
+  - Ein echter OpenAI-Aufruf kann ohne bereitgestellte Deployment-Geheimnisse nicht lokal validiert werden.
+  - Die konkrete produktive Ratenbegrenzung hängt von der späteren Worker-Umgebung ab.
+agent_findings:
+  genealogist:
+    - Ein KI-Vorschlag ist weder automatisch Revision noch Reorganisation; er erhält erst durch bewusste Übernahme, mögliche Bearbeitung und Aktualisierung einen Ort in der Anschlussfolge.
+  consistency_checker:
+    - Vorschlag, Übernahme in den offenen Entwurf und persistierende Aktualisierung müssen als drei verschiedene Zustände sichtbar bleiben.
+    - Die gewählte Operation bezeichnet eine Absicht; weder Modellvorschlag noch Erläuterung garantieren das Gelingen der Relation.
+  critic:
+    - Die Oberfläche darf weder maschinelle Autorschaft noch sachliche Prüfung, begründete Revision oder Reorganisation behaupten.
+    - Nicht übernommene Vorschläge und Erläuterungen dürfen nicht in Sitzung, Fassungen, Export oder lokalen Speicher gelangen.
+  material_technical:
+    - Der öffentliche Endpunkt muss ohne Secret, Safety-Salt und serverseitige Ratenbegrenzung deaktiviert bleiben.
+    - Browsercode darf weder API-Schlüssel noch Modell- oder Promptsteuerung enthalten; Modelltext wird ausschließlich mit textContent ausgegeben.
+    - Öffentliche Aktivierung benötigt zusätzlich zur implementierten Ratenbegrenzung konkrete Budget-, Monitoring- und Missbrauchsgrenzen der Hostingumgebung.
+authority:
+  requires_author_decision: true
+  decision_status: accepted
+  decision_reference: user-instruction-2026-07-30
+validation:
+  - check: DOM- und Interaktionstests
+    result: passed
+    evidence: npm test besteht mit 18 Tests einschließlich KI-Flüchtigkeit, Übernahmegrenze, veralteter Antworten und manuellem Fehlerpfad.
+  - check: Worker-Sicherheitsvertrag
+    result: passed
+    evidence: Simulierte Requests bestätigen geschlossene Eingaben, serverseitige Secrets, Rate-Limit, gehashte Safety-Kennung, Structured Output und bereinigte Fehlerantworten.
+  - check: Syntax und Build
+    result: passed
+    evidence: npm run check und npm run build bestehen; dist/server enthält statische Assets und runtime.js.
+  - check: Browserdarstellung und Bedienung
+    result: passed
+    evidence: Desktopdarstellung, Fokusbereich, explizite Anforderung und der vollständig nutzbare manuelle Fehlerpfad wurden im lokalen Browser geprüft; keine Konsolenfehler.
+  - check: Live-API-Aufruf
+    result: warning
+    evidence: Ohne Deployment-Secrets wurde bewusst kein echter OpenAI-Aufruf ausgeführt; Providervertrag und Fehlerpfade sind mit simulierten Antworten geprüft.
+  - check: Manuskript- und Begriffsgrenze
+    result: passed
+    evidence: Manuskript, Glossar, Projektdefinitionen und Wissensentscheidungen blieben unverändert.
+status: tested

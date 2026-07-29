@@ -82,13 +82,36 @@
           <p class='section-kicker'>Konkreter Anschluss</p>
           <h3 id='connection-title'>Formuliere den nächsten Vollzug</h3>
           <p class='move-prompt' id='move-prompt'></p>
-          <label class='input-label compact-label' for='connection-text'>Eigener Wortlaut</label>
+          <label class='input-label compact-label' for='connection-text'>Arbeitsentwurf</label>
           <textarea id='connection-text' rows='4' maxlength='400' aria-describedby='move-prompt connection-count connection-warning'></textarea>
           <div class='input-meta'>
             <span id='connection-count'>0 von 400 Zeichen</span>
             <span class='visually-hidden' id='connection-warning' role='status' aria-live='polite'></span>
             <button class='text-button' id='cancel-move' type='button'>Operation abwählen</button>
           </div>
+          <section class='ai-assistant' id='ai-assistant' aria-labelledby='ai-title' aria-busy='false'>
+            <p class='section-kicker'>Optionaler Formulierungsvorschlag</p>
+            <h4 id='ai-title'>KI als Vorschlagsschicht</h4>
+            <p class='ai-disclosure'>Beim Anfordern werden nur die gewählte Anschlussweise und der aktuelle Bezugswortlaut über den Projektserver an OpenAI übermittelt – nicht die vollständige Sitzung, Fassungen oder Freigaben.</p>
+            <div class='ai-request-actions'>
+              <button class='secondary-action compact-action' id='ai-suggest' type='button'>KI-Vorschlag anfordern</button>
+              <button class='text-button' id='ai-cancel' type='button' hidden>Anfrage abbrechen</button>
+            </div>
+            <p class='ai-status' id='ai-status' role='status' aria-live='polite'></p>
+            <div class='ai-result' id='ai-result' aria-labelledby='ai-result-title' hidden>
+              <h5 id='ai-result-title' tabindex='-1'>KI-generierter Vorschlag – nicht Teil der Arbeitsfassung</h5>
+              <p class='ai-suggestion' id='ai-suggestion'></p>
+              <p class='ai-explanation-label'>Erläuterung der beabsichtigten Anschlussweise</p>
+              <p id='ai-explanation'></p>
+              <p class='ai-caveat'>Die Erläuterung beschreibt nur, warum der Vorschlag die gewählte Relation erfüllen könnte. Sie ist weder ein begründetes Urteil über eine stabilisierte Bedingung noch weist sie die Veränderung der Beziehungen mehrerer Anschlussbedingungen nach.</p>
+              <p class='ai-caveat'>Die KI hat den Formulierungsvorschlag erzeugt. Du entscheidest, ob du ihn übernimmst, gegebenenfalls bearbeitest und als Anschluss aktualisierst.</p>
+              <div class='ai-actions'>
+                <button class='secondary-action compact-action' id='ai-adopt' type='button'>Vorschlag in den Entwurf übernehmen</button>
+                <button class='text-button' id='ai-discard' type='button'>Vorschlag verwerfen</button>
+              </div>
+            </div>
+            <p class='ai-adoption-note'>Die Übernahme kopiert den Vorschlag nur in den offenen Entwurf. Die Arbeitsfassung ändert sich erst mit „Anschluss aktualisieren“.</p>
+          </section>
           <button class='primary-action connection-submit' id='commit-move' type='button' disabled>Anschluss aktualisieren</button>
         </section>
 

@@ -725,6 +725,85 @@ blockquote {
   }
 }
 
+.ai-assistant {
+  margin-top: 1.25rem;
+  padding: 1rem;
+  border: 1px solid rgba(17, 71, 73, .28);
+  background: rgba(246, 241, 231, .78);
+}
+
+.ai-assistant h4,
+.ai-result h5 {
+  margin: 0;
+  color: var(--ink);
+  font-weight: 400;
+}
+
+.ai-assistant h4 {
+  font-size: 1.05rem;
+}
+
+.ai-result h5 {
+  font-size: .94rem;
+}
+
+.ai-disclosure,
+.ai-adoption-note,
+.ai-status,
+.ai-caveat,
+.ai-explanation-label {
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: .76rem;
+  line-height: 1.5;
+}
+
+.ai-disclosure,
+.ai-adoption-note,
+.ai-caveat {
+  color: var(--ink-soft);
+}
+
+.ai-request-actions,
+.ai-actions {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: .65rem;
+}
+
+.ai-status {
+  min-height: 1.1rem;
+  margin: .65rem 0 0;
+  color: var(--petrol);
+}
+
+.ai-result {
+  margin-top: .85rem;
+  padding-top: .85rem;
+  border-top: 1px solid var(--line);
+}
+
+.ai-suggestion {
+  margin: .7rem 0 1rem;
+  padding: .85rem;
+  border-left: 3px solid var(--oxide);
+  background: var(--surface);
+  white-space: pre-wrap;
+}
+
+.ai-explanation-label {
+  margin: 0 0 .25rem;
+  color: var(--petrol);
+  font-weight: 700;
+}
+
+.ai-result > p:not(.ai-suggestion) {
+  margin-top: .45rem;
+}
+
+.ai-adoption-note {
+  margin: .8rem 0 0;
+}
 @media (max-width: 650px) {
   .site-header {
     align-items: flex-start;
@@ -1029,6 +1108,8 @@ textarea:disabled {
   }
 
   .input-actions,
+  .ai-request-actions,
+  .ai-actions,
   .carrier-buttons,
   .edit-actions > div {
     align-items: stretch;

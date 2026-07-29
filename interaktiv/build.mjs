@@ -1,4 +1,4 @@
-import { mkdir, readFile, rm, writeFile } from 'node:fs/promises';
+import { copyFile, mkdir, readFile, rm, writeFile } from 'node:fs/promises';
 import { dirname, join } from 'node:path';
 import { fileURLToPath } from 'node:url';
 
@@ -18,34 +18,13 @@ const assets = [
   ['/js/main.js', { body: javascript, contentType: 'text/javascript; charset=utf-8' }]
 ];
 
-const contentSecurityPolicy = `default-src 'self'; style-src 'self'; script-src 'self'; img-src 'self' data:; base-uri 'none'; frame-ancestors 'none'`;
-
 const workerSource = `const assets = new Map(${JSON.stringify(assets)});
-
-export default {
-  async fetch(request) {
-    const url = new URL(request.url);
-    const asset = assets.get(url.pathname);
-
-    if (!asset) {
-      return new Response('Nicht gefunden', { status: 404 });
-    }
-
-    return new Response(asset.body, {
-      headers: {
-        'Content-Type': asset.contentType,
-        'Cache-Control': url.pathname === '/' || url.pathname === '/index.html' ? 'no-cache' : 'public, max-age=3600',
-        'Content-Security-Policy': ${JSON.stringify(contentSecurityPolicy)},
-        'Referrer-Policy': 'no-referrer',
-        'X-Content-Type-Options': 'nosniff'
-      }
-    });
-  }
-};
+import { createWorker } from './runtime.js';
+export default createWorker(assets);
 `;
-
 await rm(join(root, 'dist'), { recursive: true, force: true });
 await mkdir(outputDirectory, { recursive: true });
 await writeFile(join(outputDirectory, 'index.js'), workerSource, 'utf8');
+await copyFile(join(root, 'server', 'runtime.js'), join(outputDirectory, 'runtime.js'));
 
 console.log('Built Anschlusslabor worker.');

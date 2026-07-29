@@ -284,3 +284,110 @@ test('Offene Entwürfe sperren Import und Export und werden als ungesichert ausg
   assert.equal(window.document.querySelector('#char-warning').textContent, 'Das Zeichenlimit ist fast erreicht.');
   window.happyDOM.abort();
 });
+
+test('KI-Vorschläge bleiben bis zur ausdrücklichen Aktualisierung flüchtig', async () => {
+  const window = createApp();
+  let request;
+  window.fetch = async (url, options) => {
+    request = { url, options };
+    return new window.Response(JSON.stringify({
+      suggestion: '<img onerror="window.compromised=true"> Eine vorgeschlagene Fortsetzung.',
+      explanation: 'Der Wortlaut könnte die gesetzte Linie weiterführen.'
+    }), {
+      status: 200,
+      headers: { 'Content-Type': 'application/json' }
+    });
+  };
+
+  setValue(window, '#beginning', 'Eine bedingte Ausgangsäußerung.');
+  click(window, "[data-move='fortsetzen']");
+  const storedBeforeRequest = window.localStorage.getItem(storageKey);
+  click(window, '#ai-suggest');
+  await window.happyDOM.waitUntilComplete();
+
+  const payload = JSON.parse(request.options.body);
+  assert.equal(request.url, '/api/anschluss');
+  assert.deepEqual(payload, {
+    move: 'fortsetzen',
+    previousText: 'Eine bedingte Ausgangsäußerung.'
+  });
+  assert.deepEqual(Object.keys(payload).sort(), ['move', 'previousText']);
+  assert.equal(window.document.querySelector('#ai-result').hidden, false);
+  assert.equal(window.document.querySelector('#ai-suggestion img'), null);
+  assert.match(window.document.querySelector('#ai-suggestion').textContent, /<img onerror/);
+  assert.equal(window.localStorage.getItem(storageKey), storedBeforeRequest);
+  const reloadedWindow = createApp(storedBeforeRequest);
+  assert.equal(reloadedWindow.document.querySelector('#ai-result').hidden, true);
+  assert.equal(reloadedWindow.document.querySelector('#ai-status').textContent, '');
+  reloadedWindow.happyDOM.abort();
+
+  click(window, '#ai-adopt');
+  assert.match(window.document.querySelector('#connection-text').value, /vorgeschlagene Fortsetzung/);
+  assert.equal(window.localStorage.getItem(storageKey), storedBeforeRequest);
+
+  click(window, '#commit-move');
+  assert.match(window.localStorage.getItem(storageKey), /vorgeschlagene Fortsetzung/);
+  assert.equal(window.document.activeElement, window.document.querySelector('#observation'));
+  window.happyDOM.abort();
+});
+
+test('Veraltete oder nicht verfügbare KI-Antworten verändern den manuellen Entwurf nicht', async () => {
+  const window = createApp();
+  let resolveRequest;
+  window.fetch = () => new Promise((resolve) => {
+    resolveRequest = resolve;
+  });
+
+  setValue(window, '#beginning', 'Ausgang für einen flüchtigen Vorschlag.');
+  click(window, "[data-move='fortsetzen']");
+  click(window, '#ai-suggest');
+  assert.equal(window.document.querySelector('#ai-assistant').getAttribute('aria-busy'), 'true');
+
+  click(window, "[data-move='variieren']");
+  resolveRequest(new window.Response(JSON.stringify({
+    suggestion: 'Veralteter Vorschlag.',
+    explanation: 'Nicht mehr einschlägig.'
+  }), { status: 200, headers: { 'Content-Type': 'application/json' } }));
+  await window.happyDOM.waitUntilComplete();
+
+  assert.equal(window.document.querySelector('#ai-result').hidden, true);
+  assert.equal(window.document.querySelector('#connection-text').value, '');
+  assert.doesNotMatch(window.localStorage.getItem(storageKey), /Veralteter Vorschlag/);
+
+  window.fetch = async () => new window.Response(JSON.stringify({
+    error: 'Die KI-Vorschlagsfunktion ist auf diesem Server nicht eingerichtet.'
+  }), { status: 503, headers: { 'Content-Type': 'application/json' } });
+  click(window, '#ai-suggest');
+  await window.happyDOM.waitUntilComplete();
+  assert.match(window.document.querySelector('#ai-status').textContent, /nicht eingerichtet/);
+
+  setValue(window, '#connection-text', 'Der manuelle Weg bleibt verfügbar.');
+  click(window, '#commit-move');
+  assert.match(window.localStorage.getItem(storageKey), /manuelle Weg bleibt verfügbar/);
+  window.happyDOM.abort();
+});
+
+test('Eine asynchrone KI-Antwort unterbricht das manuelle Schreiben nicht', async () => {
+  const window = createApp();
+  let resolveRequest;
+  window.fetch = () => new Promise((resolve) => {
+    resolveRequest = resolve;
+  });
+
+  setValue(window, '#beginning', 'Ein Bezug für paralleles Schreiben.');
+  click(window, "[data-move='praezisieren']");
+  click(window, '#ai-suggest');
+  const draft = setValue(window, '#connection-text', 'Ein bereits begonnener manueller Entwurf.');
+  draft.focus();
+
+  resolveRequest(new window.Response(JSON.stringify({
+    suggestion: 'Ein ergänzender Vorschlag.',
+    explanation: 'Er könnte die gewählte Unterscheidung genauer bestimmen.'
+  }), { status: 200, headers: { 'Content-Type': 'application/json' } }));
+  await window.happyDOM.waitUntilComplete();
+
+  assert.equal(window.document.activeElement, draft);
+  assert.equal(draft.value, 'Ein bereits begonnener manueller Entwurf.');
+  assert.equal(window.document.querySelector('#ai-result').hidden, false);
+  window.happyDOM.abort();
+});

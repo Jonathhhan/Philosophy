@@ -17,6 +17,16 @@ const connectionCount = document.querySelector('#connection-count');
 const connectionWarning = document.querySelector('#connection-warning');
 const commitMoveButton = document.querySelector('#commit-move');
 const cancelMoveButton = document.querySelector('#cancel-move');
+const aiAssistant = document.querySelector('#ai-assistant');
+const aiSuggestButton = document.querySelector('#ai-suggest');
+const aiCancelButton = document.querySelector('#ai-cancel');
+const aiStatus = document.querySelector('#ai-status');
+const aiResult = document.querySelector('#ai-result');
+const aiResultTitle = document.querySelector('#ai-result-title');
+const aiSuggestionText = document.querySelector('#ai-suggestion');
+const aiExplanation = document.querySelector('#ai-explanation');
+const aiAdoptButton = document.querySelector('#ai-adopt');
+const aiDiscardButton = document.querySelector('#ai-discard');
 const actualText = document.querySelector('#actual-text');
 const actualRelation = document.querySelector('#actual-relation');
 const conditions = document.querySelector('#conditions');
@@ -43,6 +53,7 @@ const SCHEMA_VERSION = 2;
 const MAX_STEPS = 50;
 const MAX_VERSIONS = 40;
 const HISTORY_PREVIEW_LENGTH = 6;
+const AI_REQUEST_TIMEOUT_MS = 20_000;
 
 const baseConditions = ['Alphabet', 'Sprache', 'Interface', 'Erwartung'];
 const emptyPossibilities = [
@@ -125,8 +136,149 @@ let workingParentVersionId = null;
 let currentReleaseId = null;
 let pendingMoveKey = null;
 let editingBeginning = false;
+let aiSuggestion = null;
+let aiRequest = null;
+let aiRequestSequence = 0;
 let storageMessage = 'Fassungen werden lokal in diesem Browser bewahrt. Sie sind nicht öffentlich und nicht zwischen Geräten synchronisiert.';
 
+function aiSignature() {
+  return JSON.stringify([pendingMoveKey, currentWording()]);
+}
+
+function clearAiState({ abort = true, status = '' } = {}) {
+  aiRequestSequence += 1;
+  if (aiRequest?.timer) {
+    clearTimeout(aiRequest.timer);
+  }
+  if (abort) {
+    aiRequest?.controller.abort();
+  }
+  aiRequest = null;
+  aiSuggestion = null;
+  aiAssistant.setAttribute('aria-busy', 'false');
+  aiSuggestButton.disabled = false;
+  aiCancelButton.hidden = true;
+  aiResult.hidden = true;
+  aiSuggestionText.textContent = '';
+  aiExplanation.textContent = '';
+  aiStatus.textContent = status;
+}
+
+async function requestAiSuggestion() {
+  const previousText = currentWording();
+  if (!pendingMoveKey || !previousText || aiRequest) {
+    return;
+  }
+
+  clearAiState();
+  const sequence = aiRequestSequence;
+  const signature = aiSignature();
+  const controller = new AbortController();
+  aiRequest = { controller, sequence, signature, timedOut: false, timer: null };
+  aiRequest.timer = setTimeout(() => {
+    if (aiRequest?.sequence === sequence) {
+      aiRequest.timedOut = true;
+      controller.abort();
+    }
+  }, AI_REQUEST_TIMEOUT_MS);
+  aiAssistant.setAttribute('aria-busy', 'true');
+  aiSuggestButton.disabled = true;
+  aiCancelButton.hidden = false;
+  aiStatus.textContent = 'Der Formulierungsvorschlag wird angefordert.';
+
+  try {
+    const response = await fetch('/api/anschluss', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      signal: controller.signal,
+      body: JSON.stringify({ move: pendingMoveKey, previousText })
+    });
+    const result = await response.json().catch(() => ({}));
+    if (!aiRequest || aiRequest.sequence !== sequence) {
+      return;
+    }
+    if (aiSignature() !== signature) {
+      clearAiState({ abort: false, status: 'Der Bezugsstand hat sich geändert; die KI-Antwort wurde verworfen.' });
+      return;
+    }
+    if (!response.ok) {
+      throw new Error(typeof result.error === 'string' ? result.error : 'Der KI-Vorschlag ist derzeit nicht verfügbar.');
+    }
+
+    const suggestion = typeof result.suggestion === 'string' ? result.suggestion.trim() : '';
+    const explanation = typeof result.explanation === 'string' ? result.explanation.trim() : '';
+    if (!suggestion || suggestion.length > 400 || !explanation || explanation.length > 600) {
+      throw new Error('Die KI-Antwort hatte kein verwendbares Format.');
+    }
+
+    aiSuggestion = { suggestion, explanation, signature };
+    aiSuggestionText.textContent = suggestion;
+    aiExplanation.textContent = explanation;
+    aiResult.hidden = false;
+    aiStatus.textContent = 'Ein flüchtiger Vorschlag liegt zur Prüfung vor.';
+    if (aiAssistant.contains(document.activeElement)) {
+      aiResultTitle.focus();
+    }
+  } catch (error) {
+    if (!aiRequest || aiRequest.sequence !== sequence) {
+      return;
+    }
+    if (error?.name === 'AbortError') {
+      aiStatus.textContent = aiRequest.timedOut
+        ? 'Die KI-Anfrage hat zu lange gedauert. Der manuelle Entwurf bleibt verfügbar.'
+        : 'Die KI-Anfrage wurde abgebrochen.';
+    } else {
+      aiStatus.textContent = error instanceof Error
+        ? error.message
+        : 'Der KI-Vorschlag ist derzeit nicht verfügbar. Der manuelle Entwurf bleibt verfügbar.';
+    }
+  } finally {
+    if (aiRequest?.sequence === sequence) {
+      clearTimeout(aiRequest.timer);
+      aiRequest = null;
+      aiAssistant.setAttribute('aria-busy', 'false');
+      aiSuggestButton.disabled = false;
+      aiCancelButton.hidden = true;
+    }
+  }
+}
+
+function cancelAiRequest() {
+  const controller = aiRequest?.controller;
+  if (!controller) {
+    return;
+  }
+  clearTimeout(aiRequest.timer);
+  controller.abort();
+  aiRequest = null;
+  aiRequestSequence += 1;
+  aiAssistant.setAttribute('aria-busy', 'false');
+  aiSuggestButton.disabled = false;
+  aiCancelButton.hidden = true;
+  aiStatus.textContent = 'Die KI-Anfrage wurde abgebrochen.';
+  aiSuggestButton.focus();
+}
+
+function adoptAiSuggestion() {
+  if (!aiSuggestion || aiSuggestion.signature !== aiSignature()) {
+    clearAiState({ status: 'Der Vorschlag bezog sich auf einen früheren Stand und wurde verworfen.' });
+    return;
+  }
+  if (connectionInput.value.trim() && !window.confirm('Der KI-Vorschlag ersetzt den vorhandenen ungespeicherten Arbeitsentwurf. Fortfahren?')) {
+    connectionInput.focus();
+    return;
+  }
+
+  connectionInput.value = aiSuggestion.suggestion;
+  connectionInput.dispatchEvent(new Event('input', { bubbles: true }));
+  aiStatus.textContent = 'Der Vorschlag wurde in den offenen Entwurf kopiert. Gespeichert ist er noch nicht.';
+  connectionInput.focus();
+}
+
+function discardAiSuggestion() {
+  clearAiState({ status: 'Der flüchtige KI-Vorschlag wurde verworfen.' });
+  aiSuggestButton.focus();
+}
 function renderList(element, entries, className) {
   element.replaceChildren();
   entries.forEach((entry) => {
@@ -678,6 +830,7 @@ function renderAll(message) {
 
 
 function selectMove(event) {
+  clearAiState();
   pendingMoveKey = event.currentTarget.dataset.move;
   connectionInput.value = '';
   renderInputControls();
@@ -685,6 +838,7 @@ function selectMove(event) {
 }
 
 function cancelMove() {
+  clearAiState();
   pendingMoveKey = null;
   connectionInput.value = '';
   renderInputControls();
@@ -697,6 +851,8 @@ function commitMove() {
   if (!definition || !text || working.steps.length >= MAX_STEPS) {
     return;
   }
+
+  clearAiState();
 
   if (isCurrentVersionExact()) {
     workingParentVersionId = currentVersionId;
@@ -719,6 +875,7 @@ function commitMove() {
 }
 
 function beginBeginningEdit() {
+  clearAiState();
   editingBeginning = true;
   pendingMoveKey = null;
   connectionInput.value = '';
@@ -789,6 +946,7 @@ function releaseCurrentVersion() {
 }
 
 function restoreVersion(event) {
+  clearAiState();
   const version = versionById(event.currentTarget.dataset.versionId);
   if (!version) {
     return;
@@ -809,6 +967,7 @@ function restoreVersion(event) {
 }
 
 function clearCurrent() {
+  clearAiState();
   working = { root: '', steps: [] };
   currentVersionId = null;
   workingParentVersionId = null;
@@ -826,6 +985,8 @@ function clearEntireSession() {
   if (hasState && !window.confirm('Gesamte Sitzung einschließlich aller Fassungen und Freigaben löschen? Diese Handlung kann nur über einen vorherigen JSON-Export rückgängig gemacht werden.')) {
     return;
   }
+
+  clearAiState();
 
   working = { root: '', steps: [] };
   versions = [];
@@ -880,6 +1041,7 @@ async function importSession(event) {
       return;
     }
 
+    clearAiState();
     applyNormalizedSession(imported);
     input.value = working.root;
     connectionInput.value = '';
@@ -896,6 +1058,9 @@ async function importSession(event) {
 }
 
 input.addEventListener('input', () => {
+  if (pendingMoveKey && (aiRequest || aiSuggestion)) {
+    clearAiState({ status: 'Der Bezugswortlaut hat sich geändert; der flüchtige KI-Vorschlag wurde verworfen.' });
+  }
   characterCount.textContent = input.value.length + ' von 280 Zeichen';
   updateLimitWarning(input, characterWarning, 280, 30);
   acceptBeginningEditButton.disabled = !input.value.trim();
@@ -926,6 +1091,10 @@ cancelBeginningEditButton.addEventListener('click', cancelBeginningEdit);
 clearCurrentButton.addEventListener('click', clearCurrent);
 commitMoveButton.addEventListener('click', commitMove);
 cancelMoveButton.addEventListener('click', cancelMove);
+aiSuggestButton.addEventListener('click', requestAiSuggestion);
+aiCancelButton.addEventListener('click', cancelAiRequest);
+aiAdoptButton.addEventListener('click', adoptAiSuggestion);
+aiDiscardButton.addEventListener('click', discardAiSuggestion);
 stabilizeButton.addEventListener('click', stabilizeCurrent);
 releaseButton.addEventListener('click', releaseCurrentVersion);
 exportSessionButton.addEventListener('click', exportSession);

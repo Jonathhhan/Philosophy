@@ -4,8 +4,8 @@
   "type": "module",
   "scripts": {
     "build": "node build.mjs",
-    "check": "node --check js/main.js && node --check build.mjs",
-    "test": "node --test --test-isolation=none tests/main.test.mjs"
+    "check": "node --check js/main.js && node --check server/runtime.js && node --check build.mjs",
+    "test": "node --test --test-isolation=none tests/main.test.mjs tests/worker.test.mjs"
   },
   "devDependencies": {
     "happy-dom": "^20.11.1"
