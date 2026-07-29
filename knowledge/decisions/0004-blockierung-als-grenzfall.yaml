@@ -1,0 +1,19 @@
+id: decision-0004
+date: 2026-07-29
+title: Blockierung bleibt Grenzfall des Unterbrechens
+status: accepted
+decision: >-
+  Blockierung bleibt in Kapitel 2 als Grenze einer ereigniszentrierten
+  Unterbrechungstheorie erhalten. Sie ist kein gleichrangiger Untertyp neben
+  Ausfall und gesetzter Zäsur. Ihre organisierte Verteilung und asymmetrische
+  Wirksamkeit werden erst in den Kapiteln 12 und 13 bestimmt.
+reason: >-
+  Eine Ordnung kann für einige störungsfrei fortlaufen, während sie Anschlüsse
+  anderer verhindert. Dieser Vorbehalt muss früh sichtbar bleiben, darf aber die
+  späteren Begriffe von Verteilung und Asymmetrie nicht vorwegnehmen.
+affected:
+  - manuskript/02-unterbrechen.md
+  - manuskript/03-problematisieren.md
+  - manuskript/12-verteilen.md
+  - manuskript/13-asymmetrie.md
+supersedes: []

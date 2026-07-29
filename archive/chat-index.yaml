@@ -1,0 +1,222 @@
+status: provisional_browser_map
+title: Inhaltskarte des geteilten ChatGPT-Chats "buch"
+created: 2026-07-29
+source:
+  kind: shared_chatgpt_conversation
+  locator: not_recorded_for_privacy
+  ui_prompt_markers: 429
+  extracted_text_user_prompts: 429
+  limitation: >-
+    Die Prompt-Ordnungszahlen bezeichnen die chronologische Reihenfolge der
+    extrahierbaren Nutzertexte nach der Normalisierung doppelter Datenzweige.
+    Dateiuploads können dabei nur als sichtbare Texthinweise erhalten sein.
+privacy:
+  repository_rule: >-
+    Der Freigabelink und persönliche Inhalte werden nicht im Repository
+    gespeichert. Der Link gewährt Zugriff auf Gesundheits-, Familien- und
+    Suizidkontexte und sollte nach abgeschlossener Sicherung widerrufen werden.
+  excluded_range:
+    text_prompt_ordinals: 1-102
+    category: personal_and_health
+    handling: excluded_from_book_knowledge_base
+  quotation_rule: >-
+    Keine Chatpassage wird allein aufgrund dieser Karte als Manuskriptwortlaut,
+    Primärquellenbeleg oder bestätigte Autorenentscheidung behandelt.
+secured_artifacts:
+  - path: archive/chats/book-chat.user-prompts.md
+    content: verbatim_non_private_user_prompts
+    prompt_ordinals: 104-429
+    count: 325
+    exclusions:
+      - 1-103
+      - 107
+    assistant_responses_included: false
+    status: secured
+  - path: archive/chats/book-chat.assistant-answers.redacted.md
+    content: assistant_answers_privacy_redacted
+    prompt_ordinals: 104-429
+    message_count: 334
+    prompt_groups: 318
+    fully_excluded_answers:
+      - 107
+    partially_redacted_answers:
+      - 106
+      - 108
+      - 109
+      - 110
+      - 111
+      - 114
+      - 119
+      - 122
+    status: secured_with_visible_redactions
+provenance_classes:
+  - id: author_statement
+    meaning: Aussage oder Arbeitsauftrag des Autors im Chat
+  - id: assistant_proposal
+    meaning: Formulierung oder Theorieangebot des Assistenten; nicht verbindlich
+  - id: author_confirmation
+    meaning: ausdrückliche Zustimmung des Autors zu einem erkennbaren Vorschlag
+  - id: manuscript_candidate
+    meaning: möglicher Wortlaut; vor Integration wörtlich im Chat zu prüfen
+  - id: source_discussion
+    meaning: Besprechung früherer Arbeiten; Originalquelle bleibt maßgeblich
+phases:
+  - id: phase-01
+    text_prompt_ordinals: 1-102
+    category: excluded_private_context
+    summary: Persönliche und gesundheitliche Gespräche vor Beginn der Bucharbeit.
+    current_status: excluded
+  - id: phase-02
+    text_prompt_ordinals: 104-130
+    category: source_discussion
+    summary: >-
+      Übergang von Programmiererfahrung zur Lektüre der Masterarbeit;
+      kapitelweise Besprechung und Einordnung als langfristiges Thema, das auf
+      der Bachelorarbeit zu Improvisation in der Filmmontage aufbaut.
+    recovery_targets:
+      - Rekonstruktion der frühen Masterarbeitsbesprechung
+      - Abgleich aller Aussagen mit der Original-PDF
+  - id: phase-03
+    text_prompt_ordinals: 131-177
+    category: theoretical_formation
+    summary: >-
+      Ausbildung der Theorie rekursiver Formbildung; Verhältnis von
+      Improvisation, Algorithmus und Programm; Übergang von Kommunikation zu
+      Anschluss und Anschlussmöglichkeiten; erste Kapitelstruktur und Titelsuche.
+    recovery_targets:
+      - Triade Improvisation, Algorithmus, Programm
+      - Anschluss als grundlegender als Kommunikation
+      - Genese des Begriffs Anschlussmöglichkeiten
+      - frühe Architektur- und Titelvarianten
+  - id: phase-04
+    text_prompt_ordinals: 178-237
+    category: workshop_and_research
+    summary: >-
+      Werkstattbuch, Kritik klassischer Ontologie, Diskussion mit Agenten,
+      künstlerische Forschung, Problem und Formbildung sowie Schumms
+      Montagetheorie.
+    recovery_targets:
+      - Passage "Das Problem sucht seine Sprache"
+      - Forschung als Variantenbildung und Variantenvergleich
+      - Verhältnis von Montage und Zur-Sprache-Finden
+  - id: phase-05
+    text_prompt_ordinals: 238-347
+    category: manuscript_drafting
+    summary: >-
+      Entwürfe mehrerer Buch- und Kapitelvarianten, Ausarbeitung des Satzes
+      "Handeln braucht Anschluss", Planung eines vollständigen Manuskripts und
+      Übergang zu fortlaufenden Kapitelentwürfen.
+    recovery_targets:
+      - vorhandene Fassungen der Kapitel 1 bis 15
+      - mögliche Mehrbuch- und Einbuchvarianten
+      - bestätigte Übergänge zwischen den Kapiteln
+  - id: phase-06
+    text_prompt_ordinals: 348-389
+    category: source_integrated_review
+    summary: >-
+      Prüfung der ersten Kapitel mit Agenten, erneute Einbeziehung der
+      Bachelor- und Masterarbeit, Korrekturen an Montage, Improvisation,
+      Programm und Algorithmus sowie Begrenzung gegenüber einer allgemeinen
+      Gesellschafts- und Herrschaftstheorie.
+    recovery_targets:
+      - Kritik an zu wörtlicher Übernahme früherer Arbeiten
+      - Montage als epistemisches Modell
+      - allgemeine, aber getrennte Begriffe von Programm und Algorithmus
+      - Begrenzung des systematischen Gegenstands
+  - id: phase-07
+    text_prompt_ordinals: 390-402
+    category: chapter_01_analysis
+    summary: >-
+      Überlieferter Beginn von Kapitel 1 in Prompt 397. Eine unmittelbar
+      zugehörige Assistentenantwort ist nicht vorhanden; Prompt 398 wechselt
+      zum interaktiven HTML-Teil.
+    recovery_targets:
+      - vollständigen Wortlaut des überlieferten Kapitelanfangs sichern
+      - Überlieferungslücke dokumentieren, ohne eine Analyse zu erfinden
+  - id: phase-08
+    text_prompt_ordinals: 403-429
+    category: codex_handoff
+    summary: >-
+      Entscheidung zur Weiterarbeit mit Codex, Anforderungen an den Zugriff
+      auf frühere Texte und Primärquellen sowie Versuche, den Chatverlauf in das
+      Repository zu übertragen.
+    recovery_targets:
+      - editorische Regeln für die Rekonstruktion
+      - Trennung von Originaltext, Assistentenentwurf und Autorenentscheidung
+candidate_confirmations:
+  - id: recursive_formbildung
+    prompt: 131
+    provenance: author_confirmation
+    evidence_summary: Der Autor bestätigt die Bezeichnung "Philosophie der rekursiven Formbildung" als überzeugend.
+    current_status: consistent_with_project_but_not_separate_basic_thesis
+  - id: conceptual_triad
+    prompt: 136
+    provenance: author_confirmation
+    evidence_summary: >-
+      Ausdrückliche Zustimmung zur Triade Improvisation als Offenheit,
+      Algorithmus als Verfahren und Programm als Möglichkeitsraum.
+    current_status: confirmed_in_PROJECT.md
+  - id: anschluss_before_communication
+    prompt: 146
+    provenance: author_confirmation
+    evidence_summary: Ausdrückliche Zustimmung dazu, Anschluss grundlegender als Kommunikation zu fassen.
+    current_status: confirmed_in_CONSTITUTION.md
+  - id: title_direction
+    prompts: 171-172
+    provenance: author_statement
+    evidence_summary: Vorschlag einer Kritik der Organisation von Möglichkeiten und Bitte um eine entsprechende Bucharchitektur.
+    current_status: developed_into_current_title
+  - id: handlung_forschung
+    prompt: 275
+    provenance: author_confirmation
+    evidence_summary: >-
+      Zustimmung zum Zusammenhang "Handeln braucht Anschluss" und Forschung
+      als Arbeit an neuen Anschlüssen.
+    current_status: confirmed_in_PROJECT.md
+  - id: improvisation_not_formlessness
+    prompt: 362
+    provenance: author_statement
+    evidence_summary: Improvisation ist nie Formlosigkeit.
+    current_status: confirmed_in_CONSTITUTION.md_and_GLOSSAR.md
+  - id: scope_limit
+    prompt: 384
+    provenance: author_confirmation
+    evidence_summary: >-
+      Zustimmung zur Diagnose, dass das Projekt nicht in eine allgemeine
+      Gesellschafts- und Herrschaftstheorie ausgreifen darf.
+    current_status: confirmed_in_CONSTITUTION.md
+open_recovery_tasks:
+  - priority: 1
+    target: chapter_01
+    status: completed
+    dossier: recovered/manuscript/chapter-01-prompt-397.md
+    action: >-
+      Prompt 397 wurde wörtlich gesichert und mit dem aktuellen Manuskript
+      verglichen. Eine unmittelbar folgende Absatzanalyse ist im Chat nicht
+      vorhanden; dieser negative Quellenbefund ist im Dossier dokumentiert.
+  - priority: 2
+    target: chapters_16_17_and_conclusion
+    status: completed
+    inventory: recovered/manuscript/README.md
+    dossiers:
+      - recovered/manuscript/chapter-16-answer-391.md
+      - recovered/manuscript/chapter-17-answer-392.md
+      - recovered/manuscript/conclusion-answer-393.md
+    action: >-
+      Je eine vollständige Fassung wurde als Assistentenentwurf isoliert. Frühere
+      Architekturvarianten sind im Inventar getrennt verzeichnet; eine
+      Autorenbestätigung der einzelnen Formulierungen steht noch aus.
+  - priority: 3
+    target: chapters_01_to_15
+    status: completed
+    map: recovered/manuscript/chapters-01-15-map.md
+    inventory: recovered/manuscript/README.md
+    action: >-
+      Dreizehn Vollentwürfe wurden wortgetreu einzeln gesichert. Für die nicht
+      vollständig vorliegenden aktuellen Kapitel 5 und 10 wurden getrennte
+      Materialdossiers mit ihren Rohfassungen und dem Integrationsauftrag angelegt.
+  - priority: 4
+    target: research_and_montage
+    action: >-
+      Chatformulierungen zu Forschung, Variantenbildung und Montage mit den
+      Original-PDFs und den seitenbezogenen Evidenzdateien abgleichen.

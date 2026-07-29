@@ -14,6 +14,10 @@ Eine unter bestimmten Bedingungen aktualisierbare Möglichkeit des Weitergehens.
 
 Eine Anschlussmöglichkeit in einen bestimmten Vollzug überführen. Jede Aktualisierung verändert den Raum weiterer Anschlussmöglichkeiten.
 
+## Problematisieren
+
+Eine zunächst unbestimmte Fraglichkeit selektiv als bearbeitbare Frage fassen, ohne damit bereits ihre Lösung, Form oder Beurteilung festzulegen.
+
 ## Form
 
 Eine relationale Bestimmung, durch die Unterschiede für weitere Anschlüsse wirksam werden.

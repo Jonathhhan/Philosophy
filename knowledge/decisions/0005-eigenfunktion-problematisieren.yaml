@@ -1,0 +1,18 @@
+id: decision-0005
+date: 2026-07-29
+title: Eigenfunktion des Problematisierens
+status: accepted
+decision: >-
+  Problematisieren ist der selektive Vollzug, in dem eine zunächst unbestimmte
+  Fraglichkeit als bearbeitbare Frage gefasst wird. Es bestimmt noch keine Form,
+  vollzieht keine Kritik oder Beurteilung und legt keine Lösung fest.
+reason: >-
+  Die Eigenfunktion vermittelt zwischen Unterbrechen und Form: Unterbrechung
+  macht Bedingtheit bemerkbar, Problematisieren bestimmt vorläufig Relevanz und
+  Bearbeitungsgegenstand, Form hält relevante Unterschiede für weitere
+  Anschlüsse wirksam.
+affected:
+  - manuskript/03-problematisieren.md
+  - manuskript/04-form.md
+  - GLOSSAR.md
+supersedes: []

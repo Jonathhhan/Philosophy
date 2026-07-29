@@ -1,0 +1,21 @@
+id: decision-0003
+date: 2026-07-29
+title: Geltungsbereich des Anschlussbegriffs bleibt gestuft offen
+status: accepted
+decision: >-
+  Methodischer Ausgangspunkt sind sinnhaft orientierte menschliche Vollzüge in
+  materiellen, technischen und sozialen Bedingungsgefügen. Der Anschlussbegriff
+  wird nicht anthropologisch abgeschlossen, aber auch nicht auf beliebige
+  natürliche, technische oder kausale Übergänge ausgedehnt. Eine Übertragung auf
+  nichtmenschliche Prozesse bedarf eines eigenen Nachweises.
+reason: >-
+  Die gestufte Fassung hält Programm, Algorithmus, Montage und Organisation für
+  technische und hybride Gefüge offen, ohne Anschluss mit beliebiger Kausalität
+  gleichzusetzen oder Sinn, Entscheidung und Verantwortung unterschiedslos allen
+  beteiligten Prozessen zuzuschreiben.
+affected:
+  - manuskript/01-anschliessen.md
+  - manuskript/03-problematisieren.md
+  - manuskript/07-programm.md
+  - manuskript/08-algorithmus.md
+supersedes: []
