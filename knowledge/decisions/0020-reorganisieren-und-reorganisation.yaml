@@ -1,0 +1,23 @@
+id: decision-0020
+date: 2026-07-29
+title: Tätigkeitsbegriff und Ergebnisbegriff der Reorganisation
+status: accepted
+decision: >-
+  „Reorganisieren“ bezeichnet absichtsvoll oder zurechenbar vollzogene
+  Veränderungen der Beziehungen mehrerer Anschlussbedingungen.
+  „Reorganisation“ kann darüber hinaus das hervorgebrachte relationale
+  Ergebnis bezeichnen, wenn es aus kumulierten Aktualisierungen entsteht,
+  ohne von einer zentralen Position als Ganzes geplant oder beabsichtigt
+  worden zu sein.
+reason: >-
+  Die Unterscheidung erhält die Eigenfunktion des Tätigkeitsbegriffs, ohne
+  unbeabsichtigte oder emergente Veränderungen organisierter Beziehungen
+  analytisch unsichtbar zu machen. Sie erlaubt, ein Ergebnis als
+  Reorganisation zu bestimmen, ohne dafür einen zentralen reorganisierenden
+  Akteur zu erfinden.
+affected:
+  - manuskript/17-reorganisieren.md
+  - manuskript/schluss.md
+  - GLOSSAR.md
+  - projekt/arbeitsstand.md
+supersedes: []

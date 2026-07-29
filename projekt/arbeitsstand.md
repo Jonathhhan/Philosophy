@@ -4,28 +4,27 @@
 
 - Arbeitstitel und verbindliche Architektur
 - rekursive Grundbewegung des Projekts
-- aktuelle Manuskriptfassungen der Kapitel 1 bis 14
+- aktuelle Manuskriptfassungen der Kapitel 1 bis 17 und des Schlusses
 - zentrale Definitionen zu Form, Improvisieren, Programm, Algorithmus, Komponieren, Revidieren und Reorganisieren
 - bestätigte Entscheidungen zur Eigenfunktion von Problematisieren, Form, Programm, Algorithmus, Komponieren und Stabilisieren sowie zur Einordnung des Werks als besonderem Fall der Stabilisierung
+- bestätigte Entscheidungen zu „Tragfähigkeit“ als zusammenfassendem Urteilsbegriff, zur Schwelle unveränderter erneuter Bestätigung und zur Trennung von `Reorganisieren` als Tätigkeit und `Reorganisation` als Ergebnis
 - quellenkritisches Audit der Codex-Kapitel 1 bis 8
 - kompositorischer Audit des vollständigen ersten Teils, Kapitel 1 bis 10
 - genealogische Konkretisierung der Kapitel 3 bis 9 aus Montage, Improvisation, Programm und Algorithmus
 - funktionaler Stand des Anschlusslabors unter `interaktiv/`
-- vollständige Assistentenentwürfe der Kapitel 16 und 17 sowie des Schlusses sind aus dem Chat wortgetreu als Rekonstruktionsdossiers gesichert; ihre editorische Prüfung und Autorenbestätigung stehen aus
+- vollständige Assistentenentwürfe der Kapitel 16 und 17 sowie des Schlusses sind aus dem Chat wortgetreu als Rekonstruktionsdossiers gesichert und editorisch geprüft
 
 ## Noch zu sichern
 
-1. Kapitel 15 als aktuelle Manuskriptfassung
-2. editorische Prüfung und Autorenbestätigung der gesicherten Fassungen von Kapitel 16, Kapitel 17 und Schluss
-3. Quellen- und Literaturapparat
-4. spätere Prüfung der rekonstruierten Hauptfassungen und Varianten der noch nicht aktuellen Kapitel
-5. abschließende Autorenlektüre des vollständigen ersten Teils
+1. Quellen- und Literaturapparat
+2. spätere Prüfung der rekonstruierten Hauptfassungen und Varianten der noch nicht aktuellen Kapitel
+3. abschließende Autorenlektüre des vollständigen Manuskripts
 
 ## Aktuelle Priorität
 
-1. Kapitel 15 „Beurteilen“ als nächste aktuelle Manuskriptfassung entwickeln.
-2. Ausweisbare Maßstäbe bestimmen, ohne die im Assistentenentwurf vorgeschlagene „Tragfähigkeit“ oder einen vorläufigen normativen Maßstab stillschweigend zu bestätigen.
-3. Erst nach Kapitel 15 die gesicherten Entwürfe zu Revidieren und Reorganisieren editorisch prüfen.
+1. Den vollständigen Manuskriptstand auf kompositorische Übergänge, Redundanzen und begriffliche Konsistenz prüfen.
+2. Eindeutig behebbare Befunde aus diesem Gesamtaudit in kleinen, nachvollziehbaren Änderungen bearbeiten.
+3. Den Quellen- und Literaturapparat des Gesamtmanuskripts konsolidieren.
 
 Das Anschlusslabor wird als operative Prüfung der Begriffe weiterentwickelt und bleibt ausdrücklich vom Manuskript unterschieden.
 
@@ -48,7 +47,7 @@ Teile des ursprünglichen Chatverlaufs sind in der Chatoberfläche und Suche nic
 - Ergänzt: vier Prozessdiagramme zu Problematisierung, Aktualisierung, improvisatorischer Rückkopplung und dem Verhältnis von programmatischer Vorordnung, algorithmischer Ausführung und kompositorischer Weiterbestimmung.
 - Interaktive Ausgabe: Der bisherige Prototyp unter `interaktiv/` wurde zu einem Anschlusslabor ausgebaut. Eine eigene Äußerung und die Operationen Fortsetzen, Präzisieren, Unterbrechen und Variieren verändern darin sichtbar die wirksamen Bedingungen, den Verlauf und die weiteren Anschlussmöglichkeiten. Die technische Ausgabe bleibt ausdrücklich eine operative Bearbeitung und ersetzt nicht den Manuskripttext.
 - Unverändert geblieben: Kapitel 1 und 2, da dort kein eindeutig behebbarer Verlust des Leitfalls festgestellt wurde.
-- Offen: systematischer Literaturapparat und die normative Bewährungsprobe der späteren Kapitel.
+- Inzwischen bearbeitet: die normative Bewährungsprobe in den Kapiteln 14 bis 17 und im Schluss. Offen bleibt der systematische Literaturapparat.
 
 ## Kapitel 10 – Stand 2026-07-29
 
@@ -107,8 +106,65 @@ Teile des ursprünglichen Chatverlaufs sind in der Chatoberfläche und Suche nic
 - Nicht übernommen: die umfassende zwanzigteilige Architektur des Assistentenentwurfs, „Öffentlichkeit“ als zusätzlicher Grundbegriff und eine abschließende Verantwortungslehre.
 - Kapitel 15 vorbehalten: die Bestimmung und Prüfung der Maßstäbe, anhand deren mögliche und aktualisierte Anschlussordnungen beurteilt werden.
 
-## Teil I – Autorenentscheidungen und lokale Revision 2026-07-29
+## Kapitel 15 – Stand 2026-07-29
 
+- Neu angelegt: `manuskript/15-beurteilen.md` als aktuelle Manuskriptfassung.
+- Verbindliche Definition: Beurteilen bestimmt Unterschiede zwischen möglichen und aktualisierten Ordnungen anhand ausweisbarer Maßstäbe, ohne den Maßstab als voraussetzungslos zu behandeln.
+- Ausgearbeitet: Ausweisbarkeit als notwendige, aber nicht hinreichende Bedingung eines Urteils sowie Zweck, Anspruch, Folge, Abhängigkeit, Alternative, Gewichtung und Korrekturbedingung als prüfbare Hinsichten.
+- Begründet: Betroffenheit erzeugt einen Anspruch auf Berücksichtigung relevanter Erfahrungen, aber kein automatisches Vetorecht; Antwortfähigkeit folgt aus dem Begründungsanspruch des Urteils und nicht aus einer vorausgesetzten Harmonie des Gesprächs.
+- Abgegrenzt: Nicht jede Asymmetrie ist unangemessen. Ihre Aufgabenbezogenheit, Reichweite, Folgen, Dauer, Alternativen und Prüfbarkeit müssen am Gegenstand ausgewiesen werden.
+- Konfliktprüfung: Möglichkeiten werden relational nach Reichweite, Dauer, Umkehrbarkeit, Abhängigkeiten sowie der Verteilung von Belastungen und Risiken verglichen; eine allgemeine Optionsmaximierung wird nicht eingeführt.
+- Genealogisch konkretisiert: Die Bachelorarbeit wird für materialgebundene Auswahl, Varianten und Rückkopplung auf den gedruckten Seiten 7 und 35–45 herangezogen; die Masterarbeit für gesetzte Gewichtungen und die Differenz von mathematischer Richtigkeit und filmischem Urteil auf den gedruckten Seiten 54–61 und 92–93.
+- Montage bleibt epistemisches Modell: Varianten machen die verwendeten Unterschiede, Gewichtungen und Folgen eines Urteils praktisch prüfbar.
+- Nicht übernommen: der umfassende normative Maßstab des rekonstruierten Assistentenentwurfs sowie „korrespondierende Möglichkeiten“, „Mitgestaltung“ und „Gegenseitigkeit“ als neue Grundbegriffe.
+- Bestätigt: „Tragfähigkeit“ wird als zusammenfassendes Ergebnis eines ausgewiesenen Urteils verwendet, nicht als eigenständiger normativer Grundbegriff oder universaler Maßstab; siehe `knowledge/decisions/0018-tragfaehigkeit-als-urteilsbegriff.yaml`.
+- Kapitel 16 vorbehalten: der Vollzug, in dem aufgrund eines Urteils auf stabilisierte Anschlussbedingungen zurückgekommen wird.
+
+## Kapitel 16 – Stand 2026-07-29
+
+- Neu angelegt: `manuskript/16-revidieren.md` als aktuelle Manuskriptfassung.
+- Verbindliche Definition: Revidieren ist das begründete Zurückkommen auf stabilisierte Anschlussbedingungen, um sie im Licht ihrer Wirkungen, veränderter Umstände oder neu erschlossener Möglichkeiten erneut zu bestimmen.
+- Eigenfunktion: Ein begründetes Urteil wird auf eine bereits wirksame Bedingung bezogen und in deren erneute Bestimmung überführt; Revidieren wird als besondere Form des Aktualisierens, nicht als bloße Veränderung behandelt.
+- Abgegrenzt: Korrektur folgt einem fortgeltenden Maßstab, Reparatur zielt auf Wiederherstellung und Anpassung kann innerhalb eines unveränderten Programms stattfinden. Derselbe Eingriff kann unter verschiedenen Hinsichten zugleich Revision sein.
+- Zeitlichkeit: Zurückkommen bedeutet keine Rückkehr zu einem ungeschehenen Zustand. Revidierbarkeit wird von Reversibilität unterschieden und schließt die Bearbeitung fortwirkender Folgen ein.
+- Ausgearbeitet: Anlass, Diagnoseebene, Reichweite, Ausnahme, Gedächtnis, Fassungen und die Verteilung von Anregung, Entscheidung, Ausführung und verbindlicher Bestätigung einer Revision.
+- Technisch konkretisiert: Programmrevision verändert die wirksame Vorordnung möglicher Anschlüsse; Algorithmusrevision setzt auf ausgewiesener Analyseebene eine Veränderung relevanter Bedingungen, Operationswirkungen oder Übergangsrelationen voraus.
+- Genealogisch konkretisiert: Die Bachelorarbeit wird für Diagrammrevision, Fassungsrückkopplung und vorläufige Erkenntnisstände auf den gedruckten Seiten 37–45 herangezogen; die Masterarbeit für die zweite Version des Montage-Automaten und die spätere Ergebnisprüfung auf den gedruckten Seiten 54–55 und 92–93.
+- Montage bleibt epistemisches Modell: Eine stabilisierte Fassung wird wahrgenommen, beurteilt und erneut geformt; die neue Fassung verändert wiederum die Bedingungen weiterer Urteile.
+- Nicht übernommen: „Gestaltungsmacht“ als Grundbegriff, eine allgemeine Verantwortungslehre und der umfangreiche Katalog institutionalisierter Revidierbarkeit aus dem Assistentenentwurf.
+- Bestätigt: Eine inhaltlich unveränderte erneute Bestätigung ist nur dann Revision, wenn mindestens Geltungsgrund, Reichweite, Dauer oder Stellung neu bestimmt wird; siehe `knowledge/decisions/0019-unveraenderte-bestaetigung-und-revision.yaml`.
+- Kapitel 17 vorbehalten: die Veränderung der Beziehungen, durch die mehrere Anschlussbedingungen einander stützen, begrenzen und gemeinsam wirksam werden.
+
+## Kapitel 17 – Stand 2026-07-29
+
+- Neu angelegt: `manuskript/17-reorganisieren.md` als aktuelle Manuskriptfassung und Abschluss von Teil III.
+- Verbindliche Definition: Reorganisieren bedeutet, die Beziehungen zu verändern, durch die mehrere Anschlussbedingungen einander stützen, begrenzen und für weitere Vollzüge wirksam werden.
+- Eigenfunktion: Reorganisieren arbeitet auf der Relationsebene mehrerer Anschlussbedingungen; es ist weder ein Sammelbegriff für jede Veränderung noch bloß eine umfangreiche Revision.
+- Abgegrenzt: Organisieren bildet den Zusammenhang mehrerer Bedingungen, Revision bestimmt eine stabilisierte Bedingung erneut und Anpassung kann innerhalb unveränderter Beziehungen stattfinden. Derselbe Eingriff kann unter verschiedenen Hinsichten Revision und Reorganisation sein.
+- Ausgearbeitet: Erhalten, Lösen und Neuverbinden von Beziehungen, die praktische Hervorbringung weiterer Möglichkeiten, Entwurf, Varianten, Erprobung, Übergang, Improvisation, Verteilung und unbeabsichtigte Wirkungen.
+- Technisch konkretisiert: Programme und Algorithmen können Gegenstände, Mittel oder Bestandteile einer Reorganisation sein. Strukturell gleiche Algorithmen können durch verschiedene materielle Implementierungen organisatorisch verschieden eingebunden und wirksam werden, ohne deshalb schon verschiedene Algorithmen zu sein.
+- Genealogisch konkretisiert: Die Bachelorarbeit wird für das relationale Rückkopplungsmodell von Material, Film, Möglichkeitsräumen und Position des Montierenden auf den gedruckten Seiten 38–45 herangezogen; die Masterarbeit für das Verhältnis von Programm, Algorithmus, Material und improvisatorischer Bearbeitung sowie die zweite Version des Montage-Automaten auf den gedruckten Seiten 8–9, 54–55 und 92–93.
+- Montage bleibt epistemisches Modell: Sie trennt Elemente, verändert Beziehungen, bildet Varianten und macht in aktualisierten Fassungen Folgen einer relationalen Neuordnung wahrnehmbar.
+- Nicht übernommen: „Gestaltungsmacht“ als Grundbegriff, eine umfassende Beteiligungs- und Verantwortungsnorm sowie „Tragfähigkeit“ als bereits bestätigter Gesamtmaßstab aus dem rekonstruierten Assistentenentwurf.
+- Bestätigt: `Reorganisieren` bezeichnet absichtsvoll oder zurechenbar vollzogene relationale Veränderungen; `Reorganisation` kann auch ein nicht zentral geplantes oder unbeabsichtigt hervorgebrachtes Ergebnis bezeichnen; siehe `knowledge/decisions/0020-reorganisieren-und-reorganisation.yaml`.
+- Dem Schluss vorbehalten: die Bündelung der rekursiven Gesamtbewegung ohne neue Theorieachse und ohne Standpunkt außerhalb organisierter Anschlussbedingungen.
+
+## Schluss – Stand 2026-07-29
+
+- Neu angelegt: `manuskript/schluss.md` als aktuelle Schlussfassung unter dem verbindlichen Titel „Die Organisation der Möglichkeit zur Reorganisation“.
+- Eigenfunktion: Der Schluss bestimmt nicht erneut die einzelnen Kapitelbegriffe, sondern zeigt, dass auch die Möglichkeit, organisierte Beziehungen zu verändern, selbst organisierte Anschlussbedingungen besitzt.
+- Unterschieden: abstrakte Veränderbarkeit, formal zugelassene Änderung und praktisch wirksame Reorganisation. Eine bloße Änderungsoption genügt nicht, wenn Erfahrung, Urteil, Entscheidung, Ausführung und Stabilisierung nicht wirksam aufeinander bezogen sind.
+- Präzisiert: Reorganisierbarkeit verlangt keine permanente Offenheit. Relative Dauer und begründete Wege der Wiederaufnahme werden als aufeinander angewiesene Bedingungen behandelt.
+- Integriert: Gedächtnis, ausweisbares Urteil und praktische Übergänge als bereits entwickelte Bedingungen des Zurückwirkens; daraus wird kein universaler institutioneller Katalog gebildet.
+- Bestätigte Freiheitsformel übernommen: Freiheit ist nicht die Aufhebung jeder Organisation, sondern die Möglichkeit, innerhalb organisierter Bedingungen zu handeln und an ihrer begründeten Reorganisation mitzuwirken.
+- Montage bleibt epistemischer Ausgangspunkt: Die Schlussfassung führt Aktualisierung, Rückkopplung, Fassung und relationale Neuordnung auf ihre konkrete Herkunft zurück. Forschung wird gemäß der bestätigten Leitthese als Arbeit an neuen Anschlüssen bestimmt, ohne ein eigenes Forschungskapitel zu ersetzen.
+- Reichweite begrenzt: keine allgemeine Ontologie, Gesellschafts-, Macht- oder Herrschaftstheorie und keine Zuschreibung von Urteil oder Verantwortung an Algorithmen oder materielle Anordnungen.
+- Nicht übernommen: der umfassende normative Tragfähigkeitsmaßstab, „korrespondierende Möglichkeiten“, eine allgemeine Gegenseitigkeits- und Beteiligungsnorm sowie die langen Anwendungsabschnitte zu ästhetischer Praxis und gesellschaftlicher Organisation aus dem rekonstruierten Assistentenentwurf.
+- Bestätigt: Die Schlussformel verwendet „Tragfähigkeit“ als zusammenfassenden Urteilsbegriff, nicht als universalen Maßstab; siehe `knowledge/decisions/0018-tragfaehigkeit-als-urteilsbegriff.yaml`.
+- Bestätigt: Der Schluss unterscheidet `Reorganisieren` als absichtsvoll oder zurechenbar vollzogene Tätigkeit von `Reorganisation` als auch unbeabsichtigt hervorgebrachtem relationalem Ergebnis; siehe `knowledge/decisions/0020-reorganisieren-und-reorganisation.yaml`.
+
+
+## Teil I – Autorenentscheidungen und lokale Revision 2026-07-29
 - Bestätigt: Die Definition des Komponierens behält „anordnen“; siehe `knowledge/decisions/0015-komponieren-anordnen.yaml`.
 - Bestätigt: Die vier Prozessdiagramme sind Buchbestandteile; siehe `knowledge/decisions/0016-diagramme-als-buchbestandteile.yaml`.
 - Umgesetzt: fortlaufende Abbildungsnummern und begrifflich bestimmte Bildunterschriften.

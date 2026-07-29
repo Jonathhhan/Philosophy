@@ -1,0 +1,23 @@
+id: decision-0018
+date: 2026-07-29
+title: Tragfähigkeit ist ein zusammenfassender Urteilsbegriff
+status: accepted
+decision: >-
+  „Tragfähigkeit“ bezeichnet das positive Ergebnis eines ausgewiesenen Urteils
+  darüber, dass eine Anschlussordnung die für den jeweiligen Zusammenhang
+  begründeten Anforderungen unter den berücksichtigten Bedingungen erfüllt.
+  Der Ausdruck ist weder ein eigenständiger normativer Grundbegriff noch ein
+  universaler Maßstab. Er kann in der Kapitelarchitektur und in der
+  Schlussformel unter diesem begrenzten Status verwendet werden.
+reason: >-
+  Die Entscheidung bewahrt die verbindliche Architektur, ohne den im früheren
+  Assistentenentwurf vorgeschlagenen umfassenden Tragfähigkeitsmaßstab zu
+  übernehmen. Maßgeblich bleiben die in Kapitel 15 auszuweisenden Zwecke,
+  Folgen, Abhängigkeiten, Alternativen, Gewichtungen und
+  Korrekturbedingungen.
+affected:
+  - manuskript/15-beurteilen.md
+  - manuskript/schluss.md
+  - projekt/architektur.md
+  - projekt/arbeitsstand.md
+supersedes: []

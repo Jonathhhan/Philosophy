@@ -1,0 +1,20 @@
+id: decision-0019
+date: 2026-07-29
+title: Unveränderte Bestätigung ist nur bei erneuter Bestimmung Revision
+status: accepted
+decision: >-
+  Eine inhaltlich unveränderte erneute Bestätigung gilt nur dann als Revision,
+  wenn mindestens Geltungsgrund, Reichweite, Dauer oder Stellung der
+  stabilisierten Anschlussbedingung neu bestimmt wird. Eine bloße erneute
+  Prüfung oder Zustimmung bei unverändertem Bestimmungsstatus verbleibt beim
+  Beurteilen.
+reason: >-
+  Revidieren ist das begründete Zurückkommen auf eine stabilisierte
+  Anschlussbedingung, um sie erneut zu bestimmen. Die Entscheidung wahrt diese
+  Eigenfunktion und verhindert, dass jede wiederholte Prüfung bereits als
+  Revision bezeichnet wird.
+affected:
+  - manuskript/16-revidieren.md
+  - GLOSSAR.md
+  - projekt/arbeitsstand.md
+supersedes: []

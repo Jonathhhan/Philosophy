@@ -69,10 +69,12 @@ Unterschiede zwischen möglichen und aktualisierten Ordnungen anhand ausweisbare
 ## Revidieren
 
 > Revidieren ist das begründete Zurückkommen auf stabilisierte Anschlussbedingungen, um sie im Licht ihrer Wirkungen, veränderter Umstände oder neu erschlossener Möglichkeiten erneut zu bestimmen.
+Eine inhaltlich unveränderte erneute Bestätigung gilt nur dann als Revision, wenn mindestens Geltungsgrund, Reichweite, Dauer oder Stellung der stabilisierten Anschlussbedingung neu bestimmt wird.
 
 ## Reorganisieren
 
 > Reorganisieren bedeutet, die Beziehungen zu verändern, durch die mehrere Anschlussbedingungen einander stützen, begrenzen und für weitere Vollzüge wirksam werden.
+Der Tätigkeitsbegriff bezeichnet absichtsvoll oder zurechenbar vollzogene Veränderungen. „Reorganisation“ kann auch das hervorgebrachte relationale Ergebnis kumulierter Aktualisierungen bezeichnen, ohne dass eine zentrale Position die neue Ordnung als Ganzes geplant oder beabsichtigt hat.
 
 ## Montage
 
