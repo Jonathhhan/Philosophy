@@ -1,0 +1,22 @@
+id: decision-0009
+date: 2026-07-29
+title: Technische Improvisation bedarf eines eigenen Nachweises
+status: accepted
+decision: >-
+  Improvisieren bezeichnet im Buch zunächst sinnhaft orientierte menschliche
+  Tätigkeit in materiellen, technischen und sozialen Bedingungsgefügen.
+  Technische Prozesse können an improvisatorischen Vollzügen mitwirken, ohne
+  deshalb selbst zu improvisieren. Eine Übertragung auf rein technische
+  Prozesse bedarf eines eigenen Nachweises; Variation, Adaptivität, Stochastik
+  und Unvorhersagbarkeit genügen dafür nicht.
+reason: >-
+  Die Entscheidung hält den Geltungsbereich offen, ohne technische Variation
+  mit situativer Relevanzbestimmung und formbildendem Anschließen gleichzusetzen.
+  Sie konkretisiert decision-0003 für den Improvisationsbegriff.
+affected:
+  - manuskript/06-improvisieren.md
+  - manuskript/08-algorithmus.md
+  - knowledge/thesis-book-crosswalk.md
+  - knowledge/genealogy.yaml
+  - knowledge/concept-relations.yaml
+supersedes: []

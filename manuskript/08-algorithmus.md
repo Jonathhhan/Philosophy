@@ -20,9 +20,9 @@ Der Algorithmus wird häufig mit Computerprogrammen, mathematischen Verfahren od
 
 „Übergang“ bezeichnet die geordnete Beziehung, in der unter einer solchen Bedingung eine Operation ausgeführt, ein anderer Zustand erreicht oder eine Ausgabe erzeugt wird. Der Algorithmus ist weder die Bedingung noch die einzelne Operation. Er ist die Ordnung ihrer bedingten Verknüpfung.
 
-Die Definition verlangt bislang weder, dass diese Ordnung vollständig ausgeschrieben ist, noch dass sie nach endlich vielen Schritten endet oder einen bestimmten Ergebniszustand erreicht. Solche Merkmale gehören zu vielen klassischen Algorithmusbegriffen. Sie dürfen hier nicht ohne Entscheidung ergänzt werden.
+Eine Ordnung ist nur insofern algorithmisch, als ihre relevanten Bedingungen, Operationen und deren Übergangsrelation prinzipiell hinreichend angegeben oder rekonstruiert werden können. Diese Spezifizierbarkeit verhindert, dass jede Routine oder nachträglich beobachtete Regelmäßigkeit als Algorithmus gilt. Sie verlangt jedoch weder eine vollständige schriftliche Notation noch ein bewusstes Wissen der Ausführenden.
 
-TODO: Autor entscheiden, ob Explizierbarkeit, Endlichkeit und Terminierung notwendige Merkmale des Algorithmus sein sollen und ob bereits ein einzelner wiederholbarer bedingter Übergang als Algorithmus genügt. Bis dahin werden diese Eigenschaften als mögliche Formen algorithmischer Ordnung, nicht als Bestandteile der verbindlichen Definition behandelt.
+Endlichkeit und Terminierung sind keine notwendigen Merkmale des hier verwendeten Algorithmusbegriffs. Rekursive, interaktive oder fortlaufende Verfahren können algorithmisch geordnet sein, ohne einen endgültigen Ergebniszustand zu erreichen. Auch eine einzelne bedingte Übergangsrelation kann eine algorithmische Ordnung bilden, sofern ihre Weise des Weitergehens unter vergleichbaren Bedingungen erneut angewendet werden kann.
 
 ## 3. Wiederholbarkeit und Ausführung
 
@@ -34,15 +34,21 @@ Wiederholbarkeit ist deshalb eine Eigenschaft der Ordnung, nicht die Behauptung,
 
 Algorithmus, Darstellung, Ausführung und Ergebnis sind zu unterscheiden. Eine Notation oder ein Quelltext kann eine algorithmische Ordnung darstellen. Eine Ausführung aktualisiert diese Ordnung unter konkreten Bedingungen. Das Ergebnis ist ein hervorgebrachter Zustand, eine Ausgabe oder eine Folge. Verschiedene Darstellungen und technische Implementierungen können möglicherweise denselben Algorithmus realisieren; derselbe Algorithmus kann bei verschiedenen Eingaben unterschiedliche Ergebnisse hervorbringen.
 
-Eine algorithmische Ordnung kann beschrieben oder notiert sein, ohne in einem konkreten Zusammenhang bereits wirksam zu werden. Programm ist definitionsgemäß eine wirksame Vorordnung möglicher Anschlüsse. Nach dem in Kapitel 7 vorgeschlagenen Relationsgebrauch wirkt ein Algorithmus programmatisch, sofern seine Übergangsordnung tatsächliche Aktualisierungen vorordnet. Unabhängig von diesem Vorschlag bleiben die Definitionen verschieden: Programm hebt die Wirksamkeit einer Vorordnung hervor, Algorithmus die Wiederholbarkeit bedingter Übergänge.
+Eine algorithmische Ordnung kann beschrieben oder notiert sein, ohne in einem konkreten Zusammenhang bereits wirksam zu werden. Programm ist definitionsgemäß eine wirksame Vorordnung möglicher Anschlüsse. Ein Algorithmus wirkt programmatisch, sofern seine Übergangsordnung tatsächliche Aktualisierungen vorordnet. Die Definitionen bleiben verschieden: Programm hebt die Wirksamkeit einer Vorordnung hervor, Algorithmus die Wiederholbarkeit bedingter Übergänge.
 
-TODO: Autor präzisieren, wodurch derselbe Algorithmus über verschiedene Beschreibungen, Implementierungen und Ausführungen hinweg identisch bleibt. Strukturelle Gleichheit der Übergänge, praktische Austauschbarkeit und identische Notation sind nicht ohne Weiteres dasselbe.
+Die Identität eines Algorithmus liegt nicht in einem identischen Zeichenbestand, einem bestimmten materiellen Träger oder der Gleichheit einzelner Ausführungen. Sie liegt in der strukturerhaltenden Gleichheit seiner spezifizierten Ordnung bedingter Übergänge auf einer ausgewiesenen Analyseebene.
+
+Verschiedene Darstellungen und Implementierungen realisieren denselben Algorithmus, wenn ihre relevanten Zustände, Bedingungen, Operationswirkungen und Übergangsrelationen strukturerhaltend aufeinander bezogen werden können. Bei stochastischen Verfahren muss außerdem die bedingte Wahrscheinlichkeits- und Auswahlordnung erhalten bleiben, nicht die konkrete Folge gezogener Werte.
+
+Welche Unterschiede als algorithmisch relevant und welche als implementierungsintern gelten, muss für den jeweiligen Vergleich ausgewiesen werden. Eine andere Notation, Programmiersprache oder technische Zerlegung kann dieselbe Übergangsordnung darstellen. Gleiche Ein- und Ausgaben, dieselbe praktische Aufgabe oder Austauschbarkeit in einem begrenzten Zusammenhang genügen dagegen nicht für Identität, wenn die Weise des Weitergehens verschieden geordnet ist.
+
+Materielle Unterschiede verändern den Algorithmus, wenn sie seine relevante Übergangsordnung verändern. Numerische Präzision, Zeit- oder Speichergrenzen, Datenrepräsentation, Sensorik und vorgesehene Fehlerpfade können deshalb zur algorithmischen Ordnung gehören. Bleiben deren Unterschiede ohne Einfluss auf die relevanten Bedingungen und Übergänge, gehören sie zur Implementierung oder konkreten Ausführung. Derselbe Algorithmus kann dadurch materiell verschieden realisiert und zugleich unterschiedlich programmatisch wirksam werden.
 
 ## 4. Determination, Wahrscheinlichkeit und Unvorhersagbarkeit
 
 Wiederholbarkeit darf nicht mit einem stets identischen Ergebnis gleichgesetzt werden. Bei einer deterministischen Übergangsordnung ist unter denselben algorithmisch relevanten Bedingungen genau ein weiterer Übergang bestimmt. Auch ein solcher Verlauf kann praktisch unvorhersagbar bleiben, wenn seine Berechnung zu komplex ist oder die Ausgangsbedingungen nicht vollständig bekannt sind.
 
-Sofern stochastische Übergangsordnungen unter den Algorithmusbegriff fallen, verbinden sie Bedingungen mit einer Wahrscheinlichkeitsverteilung und einem stochastischen Auswahl- oder Abtastverfahren. Unter vergleichbaren Bedingungen kann ein anderer konkreter Übergang eintreten. Wiederholt wird dann nicht das Ergebnis, sondern die Wahrscheinlichkeits- und Auswahlordnung, nach der es hervorgebracht wird.
+Stochastische Übergangsordnungen fallen unter den Algorithmusbegriff, sofern sie Bedingungen mit einer bestimmten Wahrscheinlichkeitsverteilung und einem wiederholbaren Auswahl- oder Abtastverfahren verbinden. Unter vergleichbaren Bedingungen kann ein anderer konkreter Übergang eintreten. Wiederholt wird dann nicht das Ergebnis, sondern die Wahrscheinlichkeits- und Auswahlordnung, nach der es hervorgebracht wird.
 
 Die Markov-Experimente der Masterarbeit bilden den genealogischen Anlass für diese Erweiterung. Der jeweils vorausgegangene Zustand oder eine Folge früherer Zustände bildet die Bedingung, von der die Wahrscheinlichkeiten möglicher Folgezustände abhängen. Bei jeder Generierung können andere Tonfolgen entstehen, während die Übergangsmatrix und die Weise der Auswahl bestehen bleiben.[^ma-markov]
 
@@ -50,7 +56,7 @@ Ein früheres Ergebnis kann innerhalb eines Algorithmus erneut als Bedingung ode
 
 Unvorhersagbarkeit betrifft das Wissen über einen Verlauf. Algorithmische Bestimmtheit betrifft die Ordnung, nach der Übergänge hervorgebracht werden. Ein zufälliges oder überraschendes Ergebnis ist deshalb nicht allein aufgrund seiner Unvorhersagbarkeit improvisiert. Entscheidend bleibt, ob die relevante Übergangsordnung bereits vorliegt oder ob ein Anschluss in der besonderen Situation formbildend bestimmt werden muss.
 
-TODO: Autor bestätigen, ob stochastische und nichtdeterministische Verfahren ausdrücklich unter den Algorithmusbegriff fallen, sofern ihre Wahrscheinlichkeits-, Auswahl- oder Zulässigkeitsordnung wiederholbar bestimmt ist. Die Quellen tragen diese Erweiterung genealogisch, die verbindliche Definition legt sie aber noch nicht ausdrücklich fest.
+Eine nichtdeterministische Ordnung ist davon zu unterscheiden. Bestimmt sie nur eine Menge zulässiger Übergänge, ohne die Weise ihrer Auswahl zu ordnen, bildet sie eine Regel oder Einschränkung, aber noch keinen vollständigen Algorithmus des nächsten Übergangs. Algorithmisch wird auch dieser Vollzug erst, wenn eine wiederholbare Ausführungsordnung bestimmt, wie aus den zulässigen Übergängen weitergegangen wird.
 
 ## 5. Regel, Muster und bloße Regelmäßigkeit
 
@@ -76,7 +82,7 @@ Ein Teilvollzug kann daher nach erfolgter Klassifikation algorithmisch geordnet 
 
 Die korrekte Ausführung eines Algorithmus entscheidet deshalb noch nicht, ob seine Kategorien den untersuchten Zusammenhang hinreichend erfassen oder ob seine Anwendung dort angebracht ist. Diese Fragen gehören zur späteren Beurteilung. Für den Algorithmusbegriff genügt hier die analytische Trennung zwischen der internen Ordnung eines Übergangs und den Bedingungen, unter denen ein Fall ihr zugeordnet wird.
 
-TODO: Autor entscheiden, ob die Erkennung beziehungsweise fallbezogene Bestimmung der Bedingung selbst vollständig zur algorithmischen Ordnung gehören muss. Die vorliegende Ebenenanalyse lässt algorithmische Übergänge auch dort zu, wo ihre Anwendung von einem nicht algorithmisch bestimmten Klassifikationsschritt abhängt.
+Die Erkennung einer Bedingung gehört insoweit zum Algorithmus, als ihre Prüfung oder Klassifikation selbst durch eine wiederholbare Übergangsordnung bestimmt wird. Andernfalls bildet sie eine externe Anwendungsbedingung des algorithmischen Teilvollzugs. Ein menschlich klassifizierter Fall kann daher einen algorithmischen Übergang auslösen, ohne dass die situierte Klassifikation selbst algorithmisch wird.
 
 ## 7. Algorithmische Montage und Improvisation
 
@@ -86,13 +92,13 @@ Zugleich zeigt die historische Untersuchung algorithmischer Filmkomposition, das
 
 Algorithmus und Improvisation sind damit keine vollständigen Gegensätze. Ein Montageprozess kann algorithmische Teilvollzüge enthalten und an anderen Stellen eine situative Formbestimmung verlangen. Ein Verfahren kann vorsehen, dass bei einem erkannten Merkmal eine bestimmte Aufnahmegruppe durchsucht wird; welche Merkmale überhaupt relevant sind oder wie mit einem unerwarteten Ergebnis weitergearbeitet wird, kann außerhalb dieser Übergangsordnung bestimmt werden.
 
-Der Montage-Automat macht diese Ebenen praktisch untersuchbar. Er ordnet filmisches Material anhand ausgewählter Untertitelmerkmale, Ähnlichkeiten und Gewichtungen. Dadurch kann er assoziative Folgen erzeugen. Zugleich zeigt das Experiment, dass die erzeugten Beziehungen davon abhängen, welche Merkmale als Daten bereitgestellt und wie sie kategorisiert wurden. Bildhandlung, Klang, Körperhaltung und weitere Eigenschaften blieben in der untersuchten Fassung unberücksichtigt.[^ma-automat]
+Der Montage-Automat macht diese Ebenen praktisch untersuchbar. Das Gutachten zur Masterarbeit bezeichnet ihn als Denkmodell eines subjektiven `if–then–else`.[^gutachten-automat] Für das Buch lässt sich daran untersuchen, wie situierte Montageurteile in Kategorien, Bedingungen und Übergänge übersetzt werden. Das Werkzeug ordnet filmisches Material anhand ausgewählter Untertitelmerkmale, Ähnlichkeiten und Gewichtungen. Dadurch kann es assoziative Folgen erzeugen. Zugleich zeigt das Experiment, dass die erzeugten Beziehungen davon abhängen, welche Merkmale als Daten bereitgestellt und wie sie kategorisiert wurden. Bildhandlung, Klang, Körperhaltung und weitere Eigenschaften blieben in der untersuchten Fassung unberücksichtigt.[^ma-automat]
 
-Diese Beobachtung beweist keine prinzipielle Grenze jeder Algorithmisierung von Montage. Sie zeigt genauer, welche Beziehungen die gewählte Übergangsordnung erfassen konnte und welche der konkrete Versuch nicht bearbeitete. Montage dient hier als epistemisches Modell, weil die Übersetzung von Material in Bedingungen, Kategorien und Übergänge praktisch vollzogen und an ihren Ergebnissen verglichen werden kann.
+Diese Beobachtung beweist keine prinzipielle Grenze jeder Algorithmisierung von Montage. Sie zeigt genauer, welche Beziehungen die gewählte Übergangsordnung erfassen konnte und welche der konkrete Versuch nicht bearbeitete. Der Werkzeugbau und die diagrammatische Darstellung gehören dabei zur Erkenntnispraxis: Sie machen Kategorien, Bedingungen und Übergänge sichtbar, veränderbar und an erzeugten Folgen vergleichbar.[^ma-werkzeug-algorithmus] Montage dient hier als epistemisches Modell, weil die Übersetzung von Material in eine Übergangsordnung praktisch vollzogen und geprüft werden kann.
 
 Technische Operationen können dabei algorithmisch geordnet sein, ohne dass Maschinen deshalb verstehen, entscheiden oder improvisieren. In hybriden Vollzügen wählen Menschen Kategorien, konfigurieren Verfahren, führen technische Operationen aus und schließen an deren Ergebnisse an. Ob rein technische Zustandsübergänge selbst Anschlüsse im vollen Sinn des Buches bilden, bedarf gemäß dem gestuft offenen Geltungsbereich eines eigenen Nachweises.
 
-TODO: Den Status rein technischer Übergänge als Anschlüsse offenhalten. Bis zu einem eigenen Nachweis bezeichnet „algorithmischer Anschluss“ nur einen menschlichen oder hybriden Vollzug, in dem eine algorithmische Übergangsordnung für Anschlussmöglichkeiten wirksam wird.
+Der Status rein technischer Übergänge als Anschlüsse bleibt bewusst offen. Bis zu einem eigenen Nachweis bezeichnet „algorithmischer Anschluss“ nur einen menschlichen oder hybriden Vollzug, in dem eine algorithmische Übergangsordnung für Anschlussmöglichkeiten wirksam wird.
 
 ## 8. Vom Übergang zum Zusammenhang
 
@@ -108,3 +114,5 @@ Diese Frage führt zum Komponieren.
 [^ma-film]: Ebd., gedruckte S. 20–24 und 150–152.
 [^ma-markov]: Ebd., gedruckte S. 38–44.
 [^ma-automat]: Ebd., gedruckte S. 51, 58–59 und 92–93.
+[^ma-werkzeug-algorithmus]: Ebd., gedruckte S. 37, 51–58 und 141–149.
+[^gutachten-automat]: Gutachten zu Jonathan Frank, *Algorithmische Komposition in der Filmmontage oder wie ich darüber denke*, S. 2–3.

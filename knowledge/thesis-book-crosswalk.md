@@ -22,13 +22,13 @@ Improvisation findet innerhalb von Programm und gegebenen Strukturen statt. Beim
 
 ### Buchprojekt
 
-Improvisation soll als besondere Weise der Aktualisierung verstanden werden, die vorhandene Möglichkeiten nicht nur auswählt, sondern ihre Beziehungen verändert und dadurch den Möglichkeitsraum reorganisiert.
+Improvisieren ist formgebundene und formbildende Tätigkeit unter Bedingungen partieller Unbestimmtheit. Diese Unbestimmtheit bezeichnet die unzureichende Vorordnung mindestens eines relevanten Anschlusses, nicht bloß die Unkenntnis eines festgelegten Verlaufs.
 
-### Noch zu klären
+### Verbindliche Präzisierungen
 
-- Ab wann ist ein variabler Vollzug im engeren Sinn improvisatorisch?
-- Welche Rolle spielen Haltung, Können, Situation und soziale Koordination?
-- Wie unterscheidet sich Improvisation von Variation, Zufall und Exploration?
+- Haltung wird relational bestimmt; präreflexives und körperliches Können kann improvisatorisch wirksam sein.
+- Variation, Zufall, Adaptivität und Unvorhersagbarkeit genügen nicht als Improvisationsnachweis.
+- Technische Prozesse können an hybrider Improvisation mitwirken; eine eigene technische Improvisation bedarf eines gesonderten Anschluss- und Relevanznachweises.
 
 ## Programm
 
@@ -42,7 +42,7 @@ Programm bedeutet das Vorgeschriebene: Material, Erfahrung, bereits gebildete Se
 
 ### Buchprojekt
 
-Programm ist der organisierte Möglichkeitsraum eines Vollzugs: eine historisch gewordene, veränderliche Ordnung, in der bestimmte Anschlüsse wahrscheinlicher, sichtbarer oder überhaupt erst möglich werden.
+Programm ist die wirksame Vorordnung möglicher Anschlüsse. Auch implizite, ungeplante und im Prozess entstandene Bedingungen können programmatisch wirken, wenn sie auf noch nicht aktualisierte Anschlüsse gerichtet sind, ein Feld möglicher Anschlüsse selektiv gliedern und diese Gliederung im Vollzug wirksam wird. Programm und Möglichkeitsraum bleiben unterschieden.
 
 ### Vorsicht
 
@@ -60,14 +60,16 @@ Algorithmus ist eine vorher festgelegte Entscheidungsfolge oder Spielregel. Er k
 
 ### Buchprojekt
 
-Algorithmus soll als Verfahren innerhalb eines Programms behandelt werden: eine selektive Operationsweise, die Möglichkeiten nach bestimmten Regeln aktualisiert.
+Algorithmus ist die wiederholbare Ordnung bedingter Übergänge. Ihre relevanten Bedingungen und Übergänge müssen prinzipiell spezifizierbar sein. Vollständige Notation, Endlichkeit und Terminierung sind nicht notwendig; bereits eine einzelne wiederholbare bedingte Übergangsrelation kann genügen. Stochastische Verfahren gehören dazu, sofern ihre Auswahlordnung wiederholbar bestimmt ist. Eine bloße Menge zulässiger Übergänge bildet ohne geordnete Auswahlweise noch keinen vollständigen Algorithmus des nächsten Übergangs.
+
+Seine Identität liegt in der strukturerhaltenden Gleichheit der relevanten Übergangsordnung auf einer ausgewiesenen Analyseebene. Verschiedene Darstellungen und Implementierungen können denselben Algorithmus realisieren; gleiche Aufgaben, Ergebnisse oder praktische Austauschbarkeit genügen dafür nicht. Materielle Unterschiede werden algorithmisch relevant, sobald sie Bedingungen, Operationswirkungen oder Übergangsrelationen verändern.
 
 ### Verbindliche Unterscheidung
 
-- Programm = Möglichkeitsordnung und Vorgeschriebenes.
-- Algorithmus = Verfahren beziehungsweise Entscheidungsfolge innerhalb dieser Ordnung.
-- Ausführung = konkrete Aktualisierung des Verfahrens.
-- Improvisation = nicht vollständig vorbestimmte, situationsbezogene Reorganisation möglicher Anschlüsse.
+- Programm = wirksame Vorordnung möglicher Anschlüsse.
+- Algorithmus = wiederholbare Ordnung bedingter Übergänge.
+- Ausführung = konkrete Aktualisierung einer solchen Übergangsordnung unter bestimmten Bedingungen.
+- Improvisation = formgebundene und formbildende Tätigkeit bei unzureichender Vorordnung des relevanten Anschlusses.
 
 ## Diagrammatische Partitur
 
@@ -109,7 +111,7 @@ Die Perspektive bleibt wichtig, wird aber durch Material, Programm, technische W
 
 ### Buchprojekt
 
-Haltung darf weder verschwinden noch als souveräner Ursprung behandelt werden. Sie ist selbst geformt, sozial und materiell bedingt und zugleich an der Aktualisierung von Möglichkeiten beteiligt.
+Haltung bezeichnet die situierte und veränderliche Weise, in der ein Beteiligter Unterschiede wahrnimmt, gewichtet und auf sie anschließt. Sie entsteht in Beziehungen von Erfahrung, körperlichem Können, Material, Form und Rückwirkung und ist kein souveräner innerer Ursprung.
 
 ## Montage
 
@@ -137,7 +139,7 @@ Frühere Formentscheidungen und Programme strukturieren weitere Entscheidungen; 
 
 ### Buchprojekt
 
-Form ist eine Aktualisierung, die einen Unterschied stabilisiert und damit weitere Anschlussmöglichkeiten neu organisiert.
+Form ist eine relationale Bestimmung, durch die Unterschiede für weitere Anschlüsse wirksam werden. Sie kann bereits in einem vorläufigen Vollzug entstehen. Relative Dauer und Wiedererkennbarkeit über mehrere Vollzüge gehören zur Stabilisierung, nicht zur Form als solcher.
 
 ## Werkzeug
 
@@ -151,7 +153,7 @@ Werkzeugbau ist Teil des künstlerischen Prozesses, weil Werkzeuge das mögliche
 
 ### Buchprojekt
 
-Werkzeuge sind materialisierte Programme. Sie organisieren Wahrnehmung, Operationen und mögliche Formen, ohne deren konkrete Aktualisierung vollständig festzulegen.
+Werkzeuge sind nicht an sich Programme. Sie wirken programmatisch, wenn ihre materielle und technische Anordnung ein Feld möglicher Anschlüsse selektiv gliedert. Werkzeugbau kann diese Vorordnung sichtbar, veränderbar und an ihren Ergebnissen vergleichbar machen.
 
 ## Quellenpraxis für das Manuskript
 

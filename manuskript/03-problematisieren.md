@@ -72,9 +72,9 @@ Eine Problemfassung bleibt deshalb doppelt vorläufig. Sie kann verändert werde
 
 Problematisieren setzt Unterschiede. Es unterscheidet Relevantes von zunächst Zurücktretendem, verbindet Beobachtungen und grenzt einen Bearbeitungszusammenhang ab. Diese Unterschiede sind zunächst an einen bestimmten Vollzug gebunden. Sie können einmalig, umstritten oder flüchtig bleiben.
 
-Soll eine Untersuchung fortgesetzt, ein Versuch verglichen oder eine Frage gemeinsam bearbeitet werden, müssen Unterschiede wiedererkennbar und für weitere Anschlüsse wirksam werden. Eine Beobachtung muss festgehalten, eine Variante von einer anderen unterschieden und eine Frage so bestimmt werden, dass auf sie zurückgekommen werden kann.
+Soll eine Untersuchung fortgesetzt, ein Versuch verglichen oder eine Frage gemeinsam bearbeitet werden, müssen Unterschiede bestimmt und für weitere Anschlüsse wirksam werden. Eine Beobachtung kann festgehalten, eine Variante von einer anderen unterschieden und eine Frage so gefasst werden, dass weitere Vollzüge an sie anschließen können. Ob diese Bestimmungen über den einzelnen Vollzug hinaus wiedererkennbar bleiben, ist damit noch nicht entschieden.
 
-Damit entsteht der Bedarf nach einem weiteren Begriff. Problematisieren bestimmt, welche Unterschiede für eine Bearbeitung relevant erscheinen. Es erklärt noch nicht, wie solche Unterschiede eine relative Beständigkeit gewinnen und weitere Anschlüsse orientieren können.
+Damit entsteht der Bedarf nach einem weiteren Begriff. Problematisieren bestimmt, welche Unterschiede für eine Bearbeitung relevant erscheinen. Es erklärt noch nicht, wie solche Unterschiede Beziehungen gliedern und dadurch weitere Anschlüsse orientieren können.
 
 Diese Frage führt zur Form.
 

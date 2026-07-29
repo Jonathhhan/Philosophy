@@ -12,7 +12,7 @@ Form bezeichnet diese relationale Bestimmung. Sie ist nicht bereits die Lösung 
 
 Problematisieren und Form sind deshalb nicht dasselbe. Problematisieren bestimmt, welcher Unterschied für eine Bearbeitung relevant erscheint. Form bezeichnet die Bestimmtheit, in der dieser Unterschied Beziehungen gliedert und dadurch weitere Anschlüsse orientieren kann.
 
-TODO: Autor bestätigen, ob Form ausdrücklich bereits in einem einzelnen und vorläufigen Vollzug wirksam sein kann. Diese Fassung trennt Form als anschlusswirksame Bestimmung von Stabilisierung als ihrer relativen Dauer über mehrere Vollzüge hinweg. Bei Bestätigung sind der bisherige Architekturuntertitel „Die Stabilisierung relevanter Unterschiede“ und der Übergang aus Kapitel 3, der noch von Wiedererkennbarkeit und relativer Beständigkeit spricht, entsprechend anzupassen.
+Form kann bereits in einem einzelnen und vorläufigen Vollzug entstehen. Dafür genügt nicht das bloße Vorhandensein eines Unterschieds. Er muss relational so bestimmt sein, dass er für mindestens einen weiteren Anschluss wirksam wird. Ob diese Bestimmung über wechselnde Situationen und mehrere Vollzüge hinweg wiedererkennbar bleibt, gehört nicht zur Form als solcher, sondern zur Stabilisierung.
 
 ## 2. Keine äußere Gestalt
 

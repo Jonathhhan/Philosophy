@@ -11,10 +11,8 @@ lines:
       formulation: Kreativer Vollzug innerhalb von Programm und Struktur; bei algorithmischer Montage kann sich das Improvisatorische vom Generieren zum Programmieren verschieben.
       function: Vermittlung zwischen menschlichem Entscheiden, Regelbildung und algorithmischer Ausführung.
     book_direction:
-      formulation: Offenheit eines Vollzugs, der vorhandene Anschlussmöglichkeiten situationsbezogen aktualisiert und dadurch den Raum weiterer Anschlüsse reorganisiert.
-      unresolved:
-        - enger von bloßer Variabilität unterscheiden
-        - subjektive, soziale, materielle und sprachliche Bedingungen gemeinsam bestimmen
+      formulation: Formgebundene und formbildende Tätigkeit, bei der mindestens ein relevanter Anschluss nicht hinreichend vorgeordnet ist und seine konkrete Bestimmtheit im Vollzug mit hervorgebracht wird.
+      binding_rule: Variation, Zufall und Unvorhersagbarkeit genügen nicht; Haltung wird relational und die technische Reichweite gestuft offen bestimmt.
   - id: programm
     bachelor:
       formulation: Noch nicht als eigenständiger Leitbegriff ausgearbeitet; vorbereitet durch diagrammatische Partitur, Rohmaterial, Regeln und Möglichkeitsraum.
@@ -22,7 +20,7 @@ lines:
       formulation: Das Vorgeschriebene im umfassenden Sinn, das sich im Prozess fortschreibt; nicht auf Computerprogramme reduzierbar.
       function: Struktur, innerhalb derer improvisiert wird und die durch den Vollzug verändert werden kann.
     book_direction:
-      formulation: Organisation eines Möglichkeitsraums beziehungsweise von Anschlussmöglichkeiten.
+      formulation: Wirksame Vorordnung möglicher Anschlüsse mit prospektiver, selektiver und operativ nachweisbarer Gliederung eines Feldes möglicher Anschlüsse.
       binding_rule: Programm bleibt ein eigenständiger Begriff und ein eigenes Kapitel.
   - id: algorithmus
     bachelor:
@@ -31,8 +29,8 @@ lines:
       formulation: Vorher festgelegte Entscheidungsfolge oder Spielregel; nicht notwendig computergebunden.
       function: Spezifische operative Form innerhalb eines Programms.
     book_direction:
-      formulation: Verfahren der Auswahl, Verknüpfung oder Aktualisierung innerhalb eines organisierten Möglichkeitsraums.
-      binding_rule: Algorithmus nicht mit Programm gleichsetzen.
+      formulation: Prinzipiell spezifizierbare und wiederholbare Ordnung bedingter Übergänge; stochastische Auswahlordnungen sind eingeschlossen, Endlichkeit und Terminierung nicht vorausgesetzt.
+      binding_rule: Algorithmus nicht mit Programm gleichsetzen; eine einzelne wiederholbare bedingte Übergangsrelation kann genügen, eine bloße Menge zulässiger Übergänge ohne Auswahlordnung nicht; Bedingungserkennung nur bei eigener algorithmischer Ordnung zurechnen; Identität verlangt strukturerhaltende Gleichheit der relevanten Übergangsordnung auf ausgewiesener Analyseebene, nicht bloß gleiche Ergebnisse.
   - id: moeglichkeitsraum
     bachelor:
       formulation: Durch Rohmaterial, Haltung, Erfahrung und Regeln eröffnete und begrenzte Menge möglicher Handlungen und Anordnungen.
@@ -54,7 +52,7 @@ lines:
     master:
       formulation: Strukturierte Komposition, Programm und Werkzeugwirkung; Formen entstehen durch Regeln und ihre Variation.
     book_direction:
-      formulation: Organisation, die bestimmte Anschlüsse ermöglicht, andere erschwert und durch Vollzug fortgeschrieben wird.
+      formulation: Relationale Bestimmung, durch die Unterschiede für weitere Anschlüsse wirksam werden; relative Dauer gehört erst zur Stabilisierung.
   - id: werk
     bachelor:
       formulation: Vorläufiges Resultat und Werkzeug zur Fortsetzung von Gedanken.

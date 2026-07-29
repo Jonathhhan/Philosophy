@@ -9,7 +9,7 @@ decision: >-
 reason: >-
   Die Eigenfunktion vermittelt zwischen Unterbrechen und Form: Unterbrechung
   macht Bedingtheit bemerkbar, Problematisieren bestimmt vorläufig Relevanz und
-  Bearbeitungsgegenstand, Form hält relevante Unterschiede für weitere
+  Bearbeitungsgegenstand, Form bestimmt relevante Unterschiede als für weitere
   Anschlüsse wirksam.
 affected:
   - manuskript/03-problematisieren.md

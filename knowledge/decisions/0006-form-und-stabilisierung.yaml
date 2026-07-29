@@ -1,0 +1,25 @@
+id: decision-0006
+date: 2026-07-29
+title: Form setzt Anschlusswirksamkeit, nicht relative Dauer voraus
+status: accepted
+decision: >-
+  Form kann bereits in einem einzelnen vorläufigen Vollzug entstehen, sofern
+  eine relationale Bestimmung für mindestens einen weiteren Anschluss wirksam
+  wird. Relative Dauer, Wiedererkennbarkeit über wechselnde Situationen und
+  Wirksamkeit über mehrere Vollzüge hinweg gehören nicht zur Form als solcher,
+  sondern zur Stabilisierung.
+reason: >-
+  Die Trennung bewahrt die Eigenfunktion des Formbegriffs und des späteren
+  Stabilisierens. Sie entspricht der Montagegenealogie, in der bereits ein
+  vorläufiger Filmzustand die nächste Wahrnehmung und Entscheidung orientieren
+  kann, ohne dadurch schon relative Dauer gewonnen zu haben.
+affected:
+  - manuskript/03-problematisieren.md
+  - manuskript/04-form.md
+  - manuskript/05-aktualisieren.md
+  - projekt/architektur.md
+  - GLOSSAR.md
+  - knowledge/decisions/0005-eigenfunktion-problematisieren.yaml
+  - knowledge/thesis-book-crosswalk.md
+  - knowledge/genealogy.yaml
+supersedes: []

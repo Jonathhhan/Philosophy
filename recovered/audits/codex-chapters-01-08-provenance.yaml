@@ -1,0 +1,348 @@
+audit:
+  title: "Provenienzprüfung der Codex-Kapitel 1–8"
+  scope: "manuskript/01-anschliessen.md bis manuskript/08-algorithmus.md"
+  manuscript_changed: false
+  source_status:
+    requested_source: "text.md"
+    availability: "unavailable_removed_for_privacy"
+    restoration_attempted: false
+    substituted_sources:
+      - "archive/chats/book-chat.user-prompts.md"
+      - "archive/chats/book-chat.assistant-answers.redacted.md"
+      - "archive/chat-index.yaml"
+      - "recovered/manuscript/"
+    private_material_consulted: false
+    excluded_chat_sections:
+      - "Prompts 1–103"
+      - "Prompt 107"
+  authority_note: >-
+    Der nicht private Chatverlauf ist eine historische Quelle, aber nicht
+    automatisch verbindlicher als das aktuelle Manuskript. Assistentenantworten
+    gelten nur dann als bestätigt, wenn sie durch einen Nutzerimpuls, eine
+    dokumentierte Entscheidung oder einen höherrangigen aktuellen Projekttext
+    gedeckt sind.
+
+chapters:
+  - chapter: 1
+    manuscript_file: "manuskript/01-anschliessen.md"
+    relevant_chat_sections:
+      - "Prompts 131–161: frühe Grundidee, Anschluss und Rekursion"
+      - "Prompts 171–172: Titel und Architektur"
+      - "Prompt 275: Forschung als Arbeit an neuen Anschlüssen"
+      - "Prompts 352, 358: Kapitelansatz und nicht bloß zeitliche Anschlussbedingungen"
+      - "Prompts 384, 389–390: Geltungsbereich und bestätigte Architektur"
+      - "Prompt 397: bestätigter Kapitelanfang"
+    recovered_sources:
+      - "recovered/manuscript/chapter-01-answer-351.md"
+      - "recovered/manuscript/chapter-01-prompt-397.md"
+      - "sources/bachelor/Filmmontage_und_Improvisation.pdf, insbesondere S. 7–10"
+      - "sources/master/Algorithmische_Komposition_in_der_Filmmontage.pdf, insbesondere S. 8–10 und 92–94"
+    confirmed_decisions:
+      - "Kein Anfang beginnt bei null."
+      - "Anschluss ist grundlegender als Kommunikation."
+      - "Anschlussmöglichkeit, Anschließen und Anschluss sind zu unterscheiden."
+      - "Jede Aktualisierung verändert den Raum weiterer Anschlussmöglichkeiten."
+      - "Montage ist epistemischer Ursprung und Modell, nicht bloß Beispiel."
+      - "Der Geltungsbereich wird gestuft geöffnet und nicht ontologisch totalisiert."
+    assistant_only_proposals:
+      - "Anschluss als allgemeines Weltprinzip"
+      - "Taxonomie biologischer, technischer, symbolischer und ästhetischer Anschlüsse"
+      - "Formbildung als eigentlicher Gegensatz zur Form"
+      - "Trias aufnehmen–verändern–öffnen als Definition des Anschließens"
+    preserved_concepts:
+      - "Anschlussmöglichkeit"
+      - "Anschließen"
+      - "Anschluss"
+      - "Voraussetzungen und Bedingungen"
+      - "rekursive Veränderung"
+      - "Montage als Erkenntnismodell"
+    missing_concepts: []
+    transformations:
+      - "Der breite Chatbegriff wurde in drei präzise Operationsbegriffe differenziert."
+      - "Der frühe ontologische Anspruch wurde auf sinnhaft orientierte Vollzüge begrenzt."
+      - "Normative und sozialtheoretische Nebenachsen wurden entfernt."
+    contradictions: []
+    recommended_action: "keep"
+
+  - chapter: 2
+    manuscript_file: "manuskript/02-unterbrechen.md"
+    relevant_chat_sections:
+      - "Prompts 353–354: frühe Kapitelentwürfe zu Unterbrechung"
+      - "Prompt 354: Montage als Modellfall von Zäsur und Weiterführung"
+      - "Spätere Projektentscheidung: Blockierung ist Grenzfall, nicht gleichrangiger Unterbrechungstyp"
+    recovered_sources:
+      - "recovered/manuscript/chapter-02-answer-353.md"
+      - "sources/bachelor/Filmmontage_und_Improvisation.pdf, insbesondere die Diagramme und Rückkopplungsmodelle S. 32–45"
+      - "sources/master/Algorithmische_Komposition_in_der_Filmmontage.pdf, insbesondere S. 92–94"
+    confirmed_decisions:
+      - "Unterbrechung macht Anschlussbedingungen sichtbar, ohne automatisch Erkenntnis zu erzeugen."
+      - "Pause, Abbruch, Unterbrechung und Blockierung sind zu unterscheiden."
+      - "Blockierung ist ein Grenzfall."
+      - "Der Schnitt ist ein epistemisches Modell der Unterbrechung."
+    assistant_only_proposals:
+      - "Jede Unterbrechung sei produktiv."
+      - "Blockierung sei eine gleichrangige Form der Unterbrechung."
+      - "Unterbrechung sei bereits Kritik oder Normativität."
+    preserved_concepts:
+      - "Erwartung"
+      - "Fortsetzbarkeit"
+      - "Pause"
+      - "Abbruch"
+      - "Unterbrechung"
+      - "Blockierung als Grenzfall"
+      - "Schnitt"
+    missing_concepts: []
+    transformations:
+      - "Die frühe Typologie wurde hierarchisch geklärt."
+      - "Sichtbarkeit von Bedingungen wurde von Wissen und Kritik getrennt."
+      - "Die normative Überladung der Unterbrechung wurde entfernt."
+    contradictions: []
+    recommended_action: "keep"
+
+  - chapter: 3
+    manuscript_file: "manuskript/03-problematisieren.md"
+    relevant_chat_sections:
+      - "Prompts 230–237: Problem wird spürbar, bevor es formulierbar ist"
+      - "Prompt 275: Forschung als Arbeit an neuen Anschlüssen"
+      - "Frühe Assistentenentwürfe zu Varianten, Forschung und Problemartikulation"
+      - "Spätere Projektentscheidung: Problematisieren ist eine eigene Funktion"
+    recovered_sources:
+      - "recovered/manuscript/chapter-03-answer-355.md"
+      - "sources/bachelor/Filmmontage_und_Improvisation.pdf, insbesondere S. 32–45"
+      - "sources/master/Algorithmische_Komposition_in_der_Filmmontage.pdf, insbesondere S. 141–149"
+    confirmed_decisions:
+      - "Ein Problem kann praktisch spürbar sein, bevor es begrifflich formuliert ist."
+      - "Problemsituation, Problemprozess und Problem sind zu unterscheiden."
+      - "Problematisieren kann ein Problem finden und hervorbringen."
+      - "Problematisieren ist nicht mit Kritik, Urteil oder Lösung gleichzusetzen."
+      - "Varianten können unterschiedliche Aspekte eines Problems artikulierbar machen."
+    assistant_only_proposals:
+      - "Alle Forschung sei primär Variantenproduktion."
+      - "Kritik gehöre notwendig bereits in den Variantenvergleich."
+      - "Das Problem sei das eigentliche Ergebnis jeder Forschung."
+      - "Problematisieren sei von sich aus normativ."
+    preserved_concepts:
+      - "vorbegriffliche Problemsituation"
+      - "Artikulation"
+      - "Selektion"
+      - "Problemfinden und Problemhervorbringen"
+      - "Varianten"
+      - "keine Lösungspflicht"
+    missing_concepts:
+      - "Die konkrete Montagegenealogie des Zur-Sprache-Findens ist nur schwach sichtbar."
+      - "Der Vergleich von Varianten als Artikulationsverfahren könnte quellengeprüft präzisiert werden."
+    transformations:
+      - "Der allgemeine Forschungsanspruch des Chats wurde in eine begrenzte Operationsanalyse überführt."
+      - "Problematisieren wurde von Kritik und Normativität getrennt."
+      - "Die frühere Schumm-Formel wurde nicht ungeprüft übernommen."
+    contradictions: []
+    recommended_action: "clarify"
+
+  - chapter: 4
+    manuscript_file: "manuskript/04-form.md"
+    relevant_chat_sections:
+      - "Antwort 131: frühe Opposition von Form und Formbildung"
+      - "Prompts 159–161: Rekursion, Aktualisierung und Veränderung des Möglichkeitsraums"
+      - "Prompt 354: Montage als epistemisches Modell"
+      - "Prompt 390: Architekturformel zur Stabilisierung relevanter Unterschiede"
+    recovered_sources:
+      - "recovered/manuscript/chapter-04-answer-356-part-1.md"
+      - "sources/bachelor/Filmmontage_und_Improvisation.pdf, insbesondere S. 4–5 und 32–45"
+      - "sources/master/Algorithmische_Komposition_in_der_Filmmontage.pdf, insbesondere S. 37"
+    confirmed_decisions:
+      - "Form ist nicht mit äußerer Gestalt gleichzusetzen."
+      - "Form betrifft relationale Bestimmung und wirksame Unterschiede."
+      - "Bestimmung ist nicht Determinismus."
+      - "Material und Form entstehen nicht unabhängig voneinander."
+      - "Montage ist ein Formexperiment und Erkenntnismodell."
+    assistant_only_proposals:
+      - "Formbildung sei der eigentliche Gegensatz zur Form."
+      - "Form sei notwendig ein stabiles Muster."
+      - "Jede vorläufige Relation sei ohne weitere Schwelle bereits Form."
+    preserved_concepts:
+      - "relationale Bestimmung"
+      - "wirksame Unterschiede"
+      - "Bestimmung ohne Determinismus"
+      - "Materialrelation"
+      - "Montage als Formexperiment"
+    missing_concepts:
+      - "Die performative, diagrammatische Eigenform der Bachelorarbeit ist nicht ausdrücklich rekonstruiert."
+      - "Das Verhältnis von Form und relativer Dauer bleibt offen."
+    transformations:
+      - "Form wurde von Stabilisierung begrifflich getrennt."
+      - "Die frühe Opposition Form/Formbildung wurde durch einen relationalen Formbegriff ersetzt."
+      - "Die Diagrammatik der Primärquellen wurde stärker abstrahiert."
+    contradictions:
+      - "Offene Spannung zur Architekturformel in Prompt 390, nach der Form relevante Unterschiede stabilisiert; das Kapitel markiert die Entscheidung als TODO."
+    recommended_action: "verify_with_author"
+
+  - chapter: 5
+    manuscript_file: "manuskript/05-aktualisieren.md"
+    relevant_chat_sections:
+      - "Prompts 159–161: Anschlussmöglichkeiten, Rekursion und Veränderung früherer Möglichkeiten"
+      - "Prompts 171–172: rekursive Bucharchitektur"
+      - "Prompt 275: Forschung als Arbeit an neuen Anschlüssen"
+      - "Prompt 390: Wiederherstellung der Operation Aktualisieren"
+      - "Dokumentierte Entscheidung 0001: Fortsetzen wird in Aktualisieren integriert"
+    recovered_sources:
+      - "recovered/manuscript/chapter-05-materials.md"
+      - "recovered/manuscript/source-fortsetzen-answer-356-part-2.md"
+      - "recovered/manuscript/source-variieren-answer-359.md"
+      - "knowledge/decisions/0001-fortsetzen-in-aktualisieren.md"
+      - "sources/bachelor/Filmmontage_und_Improvisation.pdf, insbesondere S. 7–10 und 32–45"
+      - "sources/master/Algorithmische_Komposition_in_der_Filmmontage.pdf, insbesondere S. 92–94"
+    confirmed_decisions:
+      - "Aktualisieren ist die selektive Realisierung einer Anschlussmöglichkeit."
+      - "Jede Aktualisierung verändert den Raum weiterer Anschlussmöglichkeiten."
+      - "Fortsetzen und Variieren werden als Modi des Aktualisierens behandelt."
+      - "Aktualisierung ist weder souveräne Wahl noch bloße Ausführung."
+      - "Der Möglichkeitsraum ist kein statischer Vorrat."
+    assistant_only_proposals:
+      - "Fortsetzen müsse ein eigenes Kapitel bilden."
+      - "Aktualisierung sei souveräne Auswahl aus vollständig gegebenen Optionen."
+      - "Jede Abweichung sei bereits Kritik."
+    preserved_concepts:
+      - "Aktualisierung"
+      - "Selektion"
+      - "Fortsetzen"
+      - "Variieren"
+      - "rekursive Veränderung"
+      - "Version und Experiment"
+      - "Montage"
+    missing_concepts: []
+    transformations:
+      - "Fortsetzen und Variieren wurden systematisch in Aktualisieren integriert."
+      - "Möglichkeiten werden nicht als fertige Zukunftsobjekte behandelt."
+      - "Die Montagegenealogie wurde mit Version und Experiment verbunden."
+    contradictions: []
+    recommended_action: "keep"
+
+  - chapter: 6
+    manuscript_file: "manuskript/06-improvisieren.md"
+    relevant_chat_sections:
+      - "Prompt 136: bestätigte Trias Improvisation–Offenheit, Algorithmus–Verfahren, Programm–Möglichkeitsraum"
+      - "Prompts 360–362: Improvisation ist niemals formlos"
+      - "Prompts 364 und 367: historische Genealogie und Korrektur zu breiter Begriffe"
+      - "Prompts 383–384 und 389–390: Begrenzung des Theorieanspruchs"
+    recovered_sources:
+      - "recovered/manuscript/chapter-06-answer-361.md"
+      - "sources/bachelor/Filmmontage_und_Improvisation.pdf, insbesondere S. 7–10 und 32–45"
+      - "sources/master/Algorithmische_Komposition_in_der_Filmmontage.pdf, insbesondere S. 8–10 und 150–152"
+    confirmed_decisions:
+      - "Improvisation ist weder Regellosigkeit noch reine Spontaneität."
+      - "Improvisation ist zugleich formgebunden und formbildend."
+      - "Improvisation operiert unter partieller Unbestimmtheit."
+      - "Erfahrung, Repertoire, Routine, Haltung und Rückkopplung strukturieren den Vollzug."
+      - "Zufall, Spontaneität, Variation und Unvorhersehbarkeit sind nicht mit Improvisation gleichzusetzen."
+      - "Programm und Algorithmus sind eigenständige Begriffe und Kapitel."
+    assistant_only_proposals:
+      - "Improvisation sei allgemeine Metapher jeder Offenheit."
+      - "Partielle Unbestimmtheit sei bloß subjektive Unkenntnis."
+      - "Haltung lasse sich ohne Prüfung als allgemeiner technischer Begriff übertragen."
+      - "Improvisation sei notwendig widerständig oder kritisch."
+    preserved_concepts:
+      - "formgebundene und formbildende Improvisation"
+      - "partielle Unbestimmtheit"
+      - "Erfahrung"
+      - "Repertoire"
+      - "Routine"
+      - "Haltung"
+      - "Rückkopplung"
+      - "Montage"
+    missing_concepts:
+      - "Die aktuelle theoretische Funktion von Haltung und präreflexivem Können ist noch nicht entschieden."
+      - "Die Reichweite des Begriffs auf nichtmenschliche technische Vollzüge ist offen."
+      - "Die epistemische Forschungsfunktion der Improvisation könnte später an geeigneter Stelle verdichtet werden."
+    transformations:
+      - "Die Chat-Chiffre Offenheit wurde in partielle Unbestimmtheit präzisiert."
+      - "Improvisation wurde von Zufall, Spontaneität, Variation und Unvorhersehbarkeit abgegrenzt."
+      - "Die historische ästhetische Herkunft wurde in eine begrenzte Operationsbestimmung überführt."
+    contradictions: []
+    recommended_action: "verify_with_author"
+
+  - chapter: 7
+    manuscript_file: "manuskript/07-programm.md"
+    relevant_chat_sections:
+      - "Prompt 136: bestätigte Chiffre Programm–Möglichkeitsraum"
+      - "Prompts 360–362: Verhältnis von Improvisation, Programm und Montage"
+      - "Prompt 364: sehr breite historische Programmbestimmung"
+      - "Prompt 367: Korrektur auf wirksame Vorordnung"
+      - "Prompt 369: Programm und Algorithmus bleiben getrennt"
+      - "Prompt 390: bestätigte Architektur"
+    recovered_sources:
+      - "recovered/manuscript/chapter-07-answer-371.md"
+      - "sources/master/Algorithmische_Komposition_in_der_Filmmontage.pdf, insbesondere S. 8–10, 37, 51–58 und 141–149"
+    confirmed_decisions:
+      - "Programm ist nicht auf Computerprogramme beschränkt."
+      - "Programm bezeichnet eine wirksame Vorordnung möglicher Anschlüsse."
+      - "Programm und Möglichkeitsraum sind aufeinander bezogen, aber nicht identisch."
+      - "Programm, Plan, Regel, Form, Organisation, Aktualisierung und Algorithmus sind zu unterscheiden."
+      - "Programme determinieren Aktualisierungen nicht notwendig vollständig."
+    assistant_only_proposals:
+      - "Alles zeitlich Vorausgehende sei bereits Programm."
+      - "Programm und Möglichkeitsraum seien identisch."
+      - "Jede implizite, ungeplante oder emergente Vorordnung sei ohne Schwellenprüfung Programm."
+      - "Selbstprogrammierung sei bereits ein gesicherter Grundbegriff."
+      - "Jede Folgewirkung sei programmatisch."
+    preserved_concepts:
+      - "wirksame Vorordnung"
+      - "Möglichkeitsraum"
+      - "Programm ohne Computerbeschränkung"
+      - "operative Wirkung"
+      - "Abgrenzung von Plan, Regel und Algorithmus"
+      - "Montage und Programmierung"
+    missing_concepts:
+      - "Werkzeugbau als Teil der künstlerischen und epistemischen Praxis ist nur schwach sichtbar."
+      - "Die diagrammatische Sichtbarkeit und Lesbarkeit des Programms aus der Masterarbeit ist abgeschwächt."
+      - "Die Schwelle zwischen bloßer Folgewirkung und Programm ist noch nicht entschieden."
+    transformations:
+      - "Die Chiffre Programm–Möglichkeitsraum wurde in eine Relation statt eine Identität überführt."
+      - "Der zu breite historische Programmsinn wurde auf wirksame Vorordnung begrenzt."
+      - "Ungeplante, implizite und prozessgenerierte Programme werden nur als markierte Vorschläge behandelt."
+    contradictions: []
+    recommended_action: "verify_with_author"
+
+  - chapter: 8
+    manuscript_file: "manuskript/08-algorithmus.md"
+    relevant_chat_sections:
+      - "Prompt 136: bestätigte Chiffre Algorithmus–Verfahren"
+      - "Prompt 364: breite historische Übertragung des Algorithmusbegriffs"
+      - "Prompt 367: Korrektur auf wiederholbare Übergangsordnung"
+      - "Prompt 369: Algorithmus statt Algorithmisieren als Kapitel"
+      - "Prompts 383–384 und 389–390: begrenzter Theorieanspruch und Architektur"
+    recovered_sources:
+      - "recovered/manuscript/chapter-08-answer-372.md"
+      - "sources/master/Algorithmische_Komposition_in_der_Filmmontage.pdf, insbesondere S. 13–18, 51–58, 92–94 und 150–152"
+      - "sources/master/Gutachten.pdf, S. 1–3"
+    confirmed_decisions:
+      - "Algorithmus ist nicht auf Computer beschränkt."
+      - "Algorithmus bezeichnet eine wiederholbare, bedingte Übergangsordnung."
+      - "Programm und Algorithmus sind eigenständige Begriffe."
+      - "Algorithmus ist weder bloßes Verfahren noch Metapher für jede Ordnung."
+      - "Bedingungen, Übergänge und Kategorien sind für die Montagegenealogie zentral."
+      - "Algorithmische Vorordnung schließt Improvisation nicht grundsätzlich aus."
+    assistant_only_proposals:
+      - "Jedes Verfahren sei Algorithmus."
+      - "Jede technische oder soziale Regelmäßigkeit sei algorithmisch."
+      - "Das Scheitern des Montage-Automaten beweise die prinzipielle Unmöglichkeit vollständiger Algorithmisierung."
+      - "Explizierbarkeit, Endlichkeit und Terminierung gehörten bereits sicher zur aktuellen Definition."
+      - "Die Bedingungserkennung sei ohne weitere Entscheidung Teil des Algorithmus."
+    preserved_concepts:
+      - "bedingte Übergangsordnung"
+      - "Wiederholbarkeit"
+      - "Bedingungen und Übergänge"
+      - "stochastische Montagegenealogie"
+      - "Kategorien"
+      - "Montage-Automat"
+      - "Verhältnis zu Improvisation"
+    missing_concepts:
+      - "Der Montage-Automat als Denkmodell eines subjektiven if–then–else ist nicht ausdrücklich benannt."
+      - "Werkzeugbau und diagrammatische Sichtbarkeit als Erkenntnispraxis sind abgeschwächt."
+      - "Die Übersetzung situierter Entscheidungen in Kategorien könnte genealogisch deutlicher werden."
+      - "Explizierbarkeit, Endlichkeit, Terminierung, stochastische Übergänge und Bedingungserkennung bleiben offene Autorenentscheidungen."
+    transformations:
+      - "Die Chat-Chiffre Verfahren wurde zu einer wiederholbaren, bedingten Übergangsordnung präzisiert."
+      - "Der konkrete Montageversuch wird nicht als Beweis einer allgemeinen Unmöglichkeit überdehnt."
+      - "Die historische technische Genealogie wurde in einen engeren Operationsbegriff überführt."
+    contradictions: []
+    recommended_action: "verify_with_author"

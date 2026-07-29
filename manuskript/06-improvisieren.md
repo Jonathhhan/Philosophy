@@ -20,9 +20,9 @@ Vollständige Unbestimmtheit wäre der entgegengesetzte Grenzfall. Ohne vorhande
 
 Partielle Unbestimmtheit liegt zwischen diesen Grenzfällen. Bestimmte Bedingungen sind wirksam, während mindestens eine für den Verlauf relevante Anschlussbeziehung nicht hinreichend vorgeordnet ist. In einer Montage sind Aufnahmen, Werkzeuge, Projektgeschichte und der bisherige Filmzustand vorhanden. Dennoch kann offenbleiben, welche Einstellung folgen, wie lange sie dauern oder welche Beziehung durch ihre Verbindung entstehen soll.
 
-Unbestimmtheit darf dabei nicht vorschnell mit bloßem Nichtwissen gleichgesetzt werden. Ein vorgeordneter Ablauf kann einer Person unbekannt und dennoch vollständig festgelegt sein. Umgekehrt kann jemand die vorhandenen Bedingungen genau kennen, während mehrere Fortsetzungen erst im Vollzug ihre konkrete Gestalt und Bedeutung gewinnen.
+Diese Unbestimmtheit ist nicht bloß die Unkenntnis eines bereits festgelegten Verlaufs. Sie betrifft eine Anschlussbeziehung, deren konkrete Bestimmtheit erst im Vollzug mit hervorgebracht wird. Ein vorgeordneter Ablauf kann einer Person unbekannt und dennoch vollständig festgelegt sein. Umgekehrt kann jemand die vorhandenen Bedingungen genau kennen, während mehrere Fortsetzungen erst im Vollzug ihre konkrete Gestalt und Bedeutung gewinnen.
 
-TODO: Autor bestätigen, ob der Begriff der partiellen Unbestimmtheit ausdrücklich zwischen bloßer epistemischer Unkenntnis und einer unzureichenden Vorordnung des relevanten Anschlusses unterscheiden soll. Diese Präzisierung ist für die Abgrenzung von Improvisation und bloßer Unvorhersagbarkeit tragend.
+Diese Bestimmung behauptet keine Unbestimmtheit der Situation an sich. Sie bezeichnet ein Verhältnis zwischen den wirksamen Formen und dem Anschluss, der für den untersuchten Verlauf relevant ist. Welche Vorordnung hinreichend wäre, muss deshalb auf der jeweiligen Analyseebene ausgewiesen werden.
 
 ## 3. Formgebunden und formbildend
 
@@ -58,11 +58,11 @@ Vorbereitung widerspricht der Improvisation nicht. Eine eingeübte Fähigkeit ka
 
 Ein Repertoire ist jedoch kein vollständiges Menü fertiger Lösungen. Können zeigt sich nicht nur in der Menge bekannter Möglichkeiten, sondern auch darin, Gewohntes unter veränderten Bedingungen anders zu verbinden. Erfahrung kann den Vollzug beweglicher machen. Sie kann ebenso zur Routine erstarren, wenn eine Situation nur noch nach vorhandenen Mustern wahrgenommen wird.
 
-Die früheren Montagearbeiten verwenden für die situierte Weise des Wahrnehmens und Entscheidens den Begriff der Haltung. Diese Haltung ist dort wesentlich an der Auswahl und Verbindung des Materials beteiligt. Zugleich verändert der entstehende Film die Haltung, aus der weitere Entscheidungen getroffen werden.[^ba-haltung] Für den gegenwärtigen Zusammenhang kann Haltung daher nicht als souveräner innerer Ursprung gelten. Sie bezeichnet zunächst ein veränderliches Moment innerhalb der Beziehungen von Erfahrung, Material, Form und Rückwirkung.
+Die früheren Montagearbeiten verwenden für die situierte Weise des Wahrnehmens und Entscheidens den Begriff der Haltung. Diese Haltung ist dort wesentlich an der Auswahl und Verbindung des Materials beteiligt. Zugleich verändert der entstehende Film die Haltung, aus der weitere Entscheidungen getroffen werden.[^ba-haltung] Der gegenwärtige Begriff übernimmt diese subjektzentrierte Fassung nicht unverändert. Haltung bezeichnet die situierte und veränderliche Weise, in der ein Beteiligter Unterschiede wahrnimmt, gewichtet und auf sie anschließt. Sie entsteht in Beziehungen von Erfahrung, körperlichem Können, Material, Form und Rückwirkung und ist kein souveräner innerer Ursprung.
+
+Gewichtung bezeichnet hier noch keine begründete Beurteilung. Sie besagt zunächst nur, dass Unterschiede für mögliche Anschlüsse nicht in gleicher Weise wirksam werden. Haltung ist damit ein relationaler Arbeitsbegriff, kein zusätzlicher Ursprung neben Material und Form.
 
 Nicht jeder improvisatorische Anschluss muss aus einer ausdrücklich formulierten Entscheidung hervorgehen. Eingeübte Aufmerksamkeit und körperliches Können können reagieren, bevor ihre Unterscheidungen vollständig sprachlich ausgewiesen sind. Daraus folgt nicht, dass jeder spontane oder nicht ausdrücklich reflektierte Vollzug improvisiert ist. Entscheidend bleibt, ob er unter partieller Unbestimmtheit formgebunden und formbildend anschließt.
-
-TODO: Die gegenwärtige Buchdefinition von „Haltung“ sowie die ausdrückliche Rolle präreflexiven und körperlichen Könnens im Improvisieren bedürfen der Autorenbestätigung. Die frühere Quellenbedeutung darf nicht stillschweigend zur verbindlichen Definition werden.
 
 ## 6. Spontaneität, Zufall, Variation und Erprobung
 
@@ -90,9 +90,9 @@ Der heutige Begriff steht so in keiner der beiden Quellen. Er entwickelt deren V
 
 ## 8. Reichweite und Übergang zum Programm
 
-Der methodische Ausgangspunkt bleibt das sinnhaft orientierte menschliche Improvisieren in materiellen, technischen und sozialen Bedingungsgefügen. Adaptive, stochastische oder generative Prozesse sind nicht allein deshalb improvisatorisch, weil ihre Ergebnisse variieren oder schwer vorherzusagen sind. Eine Übertragung auf nichtmenschliche Prozesse müsste eigens zeigen, worin die situative Relevanzbestimmung und formbildende Aufnahme von Rückwirkungen besteht.
+Der methodische Ausgangspunkt bleibt das sinnhaft orientierte menschliche Improvisieren in materiellen, technischen und sozialen Bedingungsgefügen. Technische Prozesse können Material, Werkzeug, programmatische Vorordnung oder Rückkopplungsträger eines hybriden improvisatorischen Vollzugs sein, ohne deshalb selbst zu improvisieren.
 
-TODO: Prüfen, ob und unter welchen Bedingungen der Improvisationsbegriff auf nichtmenschliche technische Prozesse übertragen werden kann. Bis zu einem solchen Nachweis werden variable technische Abläufe nicht als Improvisation im hier bestimmten Sinn behandelt.
+Eine Übertragung auf rein technische Prozesse bedarf eines eigenen Nachweises. Adaptive, stochastische oder generative Prozesse sind nicht allein deshalb improvisatorisch, weil ihre Ergebnisse variieren oder schwer vorherzusagen sind. Auszuweisen wäre vielmehr, worin beim technischen Prozess selbst ein Anschluss im hier bestimmten Sinn, die situative Relevanzbestimmung und die formbildende Aufnahme von Rückwirkungen bestehen. Bis zu einem solchen Nachweis werden variable technische Abläufe nicht als Improvisation im hier bestimmten Sinn behandelt.
 
 Improvisation ist außerdem keine normative Auszeichnung. Ein improvisierter Anschluss kann scheitern, eine Situation verengen oder Folgen hervorbringen, die später kritisiert werden müssen. Ob Improvisation in einem bestimmten Zusammenhang angemessen ist, folgt nicht aus ihrer Offenheit und gehört nicht zur Definition des Begriffs.
 

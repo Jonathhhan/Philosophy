@@ -128,10 +128,16 @@ book_translations:
     rule: >-
       Auswahl, Trennung, Anordnung und Revision der Montage liefern ein Modell
       für Anschlussprozesse, dürfen aber nicht unbesehen auf alle Wirklichkeit übertragen werden.
+  - from: haltung
+    to: improvisation
+    relation: relationale_neubestimmung_im_buch
+    rule: >-
+      Haltung bezeichnet im Buch die situierte und veränderliche Weise, in der
+      ein Beteiligter Unterschiede wahrnimmt, gewichtet und auf sie anschließt.
+      Sie entsteht in Beziehungen von Erfahrung, körperlichem Können, Material,
+      Form und Rückwirkung und ist kein souveräner innerer Ursprung.
 
 open_questions:
-  - Wann ist eine Variation im engeren Sinn improvisatorisch?
-  - Kann ein technisches System improvisieren oder nur menschliche Improvisation simulieren beziehungsweise ermöglichen?
-  - Wie lässt sich Haltung relational bestimmen, ohne sie auf eine isolierte subjektive Innenperspektive zu reduzieren?
+  - Welcher eigene Anschluss- und Relevanznachweis könnte eine Zuschreibung technischer Improvisation tragen?
   - Wie entstehen neue Möglichkeiten, die nicht bereits im organisierten Gefüge enthalten waren?
   - Welche normativen Kriterien unterscheiden emanzipatorische von repressiver Reorganisation?

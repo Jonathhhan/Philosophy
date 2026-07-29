@@ -1,0 +1,21 @@
+id: decision-0007
+date: 2026-07-29
+title: Partielle Unbestimmtheit ist unzureichende Vorordnung
+status: accepted
+decision: >-
+  Partielle Unbestimmtheit bezeichnet nicht bloß die Unkenntnis eines bereits
+  festgelegten Verlaufs. Sie liegt vor, wenn die wirksamen Formen mindestens
+  einen für den Verlauf relevanten Anschluss nicht hinreichend vorordnen und
+  seine konkrete Bestimmtheit erst im Vollzug mit hervorgebracht wird.
+reason: >-
+  Nur diese Bestimmung trennt Improvisation von komplexen, stochastischen oder
+  unbekannten, aber vollständig vorgeordneten Abläufen. Die Unbestimmtheit wird
+  relational für den untersuchten Vollzug bestimmt und nicht als allgemeine
+  Ontologie behauptet.
+affected:
+  - manuskript/06-improvisieren.md
+  - manuskript/07-programm.md
+  - manuskript/08-algorithmus.md
+  - knowledge/thesis-book-crosswalk.md
+  - knowledge/genealogy.yaml
+supersedes: []

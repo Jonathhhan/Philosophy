@@ -19,6 +19,7 @@ constraints:
   - Algorithmus ist keine bloße Metapher.
   - Algorithmus und Programm dürfen nicht gleichgesetzt werden.
   - Der Begriff bleibt auf nichtdigitale Ordnungen bedingter Übergänge anwendbar.
+  - Algorithmusidentität verlangt strukturerhaltende Gleichheit der relevanten Übergangsordnung auf einer ausgewiesenen Analyseebene; gleiche Ergebnisse genügen nicht.
 source_files:
   - GLOSSAR.md
   - projekt/architektur.md

@@ -1,0 +1,21 @@
+id: decision-0010
+date: 2026-07-29
+title: Programmatische Wirksamkeit hat eine dreifache Schwelle
+status: accepted
+decision: >-
+  Implizite, ungeplante und im Prozess entstandene Vorordnungen können
+  programmatisch wirken. Dafür muss eine bereits wirksame Bestimmung auf noch
+  nicht aktualisierte Anschlüsse gerichtet sein, ein Feld möglicher Anschlüsse
+  selektiv gliedern und diese Gliederung im weiteren Vollzug wirksam werden
+  lassen. Eine isolierte kausale Folgewirkung genügt nicht.
+reason: >-
+  Die relationale Bestimmung bewahrt die Montagegenealogie veränderlicher
+  Vorgaben, ohne Programm mit der Gesamtheit aller Bedingungen, Formen oder
+  Folgen gleichzusetzen. Sie erlaubt die Rede vom programmatischen Wirken einer
+  Bedingung, ohne diese an sich zum Programm zu erklären.
+affected:
+  - manuskript/07-programm.md
+  - manuskript/08-algorithmus.md
+  - knowledge/thesis-book-crosswalk.md
+  - knowledge/genealogy.yaml
+supersedes: []

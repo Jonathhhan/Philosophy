@@ -1,0 +1,22 @@
+id: decision-0008
+date: 2026-07-29
+title: Haltung wird relational bestimmt
+status: accepted
+decision: >-
+  Haltung bezeichnet die situierte und veränderliche Weise, in der ein
+  Beteiligter Unterschiede wahrnimmt, gewichtet und auf sie anschließt. Sie
+  entsteht in Beziehungen von Erfahrung, körperlichem Können, Material, Form
+  und Rückwirkung und ist kein souveräner innerer Ursprung. Improvisatorisches
+  Können kann präreflexiv und körperlich wirksam sein; eine ausdrücklich
+  formulierte Entscheidung ist keine notwendige Bedingung des Improvisierens.
+reason: >-
+  Die Entscheidung bewahrt die genealogische Bedeutung der Haltung, ohne die
+  subjektzentrierte Fassung der Bachelorarbeit ungeprüft zu übernehmen. Sie
+  unterscheidet Können als erworbene Fähigkeit von der situierten Weise seines
+  Einsatzes.
+affected:
+  - manuskript/06-improvisieren.md
+  - knowledge/thesis-book-crosswalk.md
+  - knowledge/genealogy.yaml
+  - knowledge/concept-relations.yaml
+supersedes: []

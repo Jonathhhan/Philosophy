@@ -17,7 +17,7 @@ Zentraler Satz:
 1. Anschließen – Der Eintritt in bereits begonnene Zusammenhänge
 2. Unterbrechen – Die Sichtbarkeit der Anschlussbedingungen
 3. Problematisieren – Die Bildung einer bearbeitbaren Frage
-4. Form – Die Stabilisierung relevanter Unterschiede
+4. Form – Das Wirksamwerden relevanter Unterschiede
 5. Aktualisieren – Die Verwirklichung und Veränderung von Anschlussmöglichkeiten
 6. Improvisieren – Aktualisieren unter partieller Unbestimmtheit
 7. Programm – Die Vorordnung eines Möglichkeitsraums

@@ -1,0 +1,27 @@
+id: decision-0011
+date: 2026-07-29
+title: Algorithmische Ordnung ist spezifizierbar und wiederholbar
+status: accepted
+decision: >-
+  Ein Algorithmus muss hinsichtlich seiner relevanten Bedingungen und Übergänge
+  prinzipiell spezifizierbar und als Ordnung wiederholbar sein. Vollständige
+  Notation, Endlichkeit und Terminierung sind keine notwendigen Merkmale.
+  Bereits eine einzelne bedingte Übergangsrelation kann genügen, sofern ihre
+  Weise des Weitergehens unter vergleichbaren Bedingungen erneut angewendet
+  werden kann.
+  Stochastische Verfahren gehören zum Algorithmusbegriff, sofern ihre
+  Wahrscheinlichkeits- und Auswahlordnung wiederholbar bestimmt ist. Die
+  bloße Bestimmung einer Menge zulässiger Übergänge bildet ohne geordnete Weise
+  ihrer Auswahl noch keinen vollständigen Algorithmus des nächsten Übergangs. Die
+  Erkennung einer Bedingung gehört nur insoweit zum Algorithmus, als sie selbst
+  algorithmisch geordnet ist.
+reason: >-
+  Diese Schwelle unterscheidet Algorithmus von Routine, Regelmäßigkeit und bloß
+  rekonstruierter Ordnung, ohne fortlaufende, interaktive oder stochastische
+  Verfahren auszuschließen. Die modulare Bestimmung der Bedingungserkennung
+  erhält die analysierbaren algorithmischen Teilvollzüge hybrider Praktiken.
+affected:
+  - manuskript/08-algorithmus.md
+  - knowledge/thesis-book-crosswalk.md
+  - knowledge/genealogy.yaml
+supersedes: []
