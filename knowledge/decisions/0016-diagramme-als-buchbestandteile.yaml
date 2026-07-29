@@ -1,0 +1,22 @@
+id: decision-0016
+date: 2026-07-29
+title: Die Prozessdiagramme sind Bestandteile des Buches
+status: accepted
+decision: >-
+  Die vier Prozessdiagramme in den Kapiteln 3, 5, 6 und 9 gehören zum
+  Manuskript und sind als Buchbestandteile zu behandeln. Sie erhalten eine
+  fortlaufende Abbildungsnummer, eine begrifflich bestimmte Bildunterschrift
+  und eine Erläuterung ihrer jeweils eigenen Erkenntnisfunktion im Fließtext.
+reason: >-
+  Die Diagramme machen verschiedene rekursive Vorgänge sichtbar:
+  Problematisierung, Aktualisierung, improvisatorische Rückkopplung und das
+  Zusammenwirken programmatischer, algorithmischer, wahrnehmender und
+  kompositorischer Vollzüge. Ihre Funktion ist argumentativ und nicht bloß
+  illustrativ.
+affected:
+  - manuskript/03-problematisieren.md
+  - manuskript/05-aktualisieren.md
+  - manuskript/06-improvisieren.md
+  - manuskript/09-komponieren.md
+  - projekt/arbeitsstand.md
+supersedes: []

@@ -34,7 +34,7 @@ Das Unaktualisierte besitzt dabei keinen einheitlichen Status. Eine nicht vollzo
 
 Auch der aktualisierte Anschluss ist nicht notwendig beabsichtigt. Absicht kann einen Vollzug orientieren, deckt sich aber nicht mit allen seinen Folgen. Eine Äußerung kann eine Reaktion hervorrufen, die nicht vorgesehen war. Ein Schnitt kann eine Beziehung erzeugen, die erst beim Ansehen der Fassung bemerkbar wird. Die Veränderung weiterer Möglichkeiten reicht deshalb über den bewussten Zweck des Vollzugs hinaus.
 
-## 4. Der veränderte Anschlussraum
+## 4. Der veränderte Raum weiterer Anschlussmöglichkeiten
 
 Der Satz, jede Aktualisierung verändere den Raum weiterer Anschlussmöglichkeiten, behauptet nicht, dass jeder Vollzug alle Möglichkeiten erheblich verändert. Er besagt zunächst, dass spätere Anschlüsse auf eine Situation treffen, zu deren Bedingungen nun auch der vollzogene Anschluss und seine Folgen gehören.
 
@@ -50,17 +50,19 @@ Die rekursive Bewegung der Aktualisierung lässt sich in ihrer kleinsten Form so
 
 ~~~mermaid
 flowchart TD
-    A[Raum bedingter Anschlussmöglichkeiten]
-    B[Selektion eines möglichen Anschlusses]
-    C[Aktualisierung]
-    D[Hervorgebrachter Zustand mit wahrnehmbaren Folgen]
-    E[Veränderter Raum weiterer Anschlussmöglichkeiten]
+    A["Raum bedingter Anschlussmöglichkeiten"]
+    B["Selektion eines möglichen Anschlusses"]
+    C["Aktualisierung"]
+    D["Hervorgebrachter Zustand mit wahrnehmbaren Folgen"]
+    E["Veränderter Raum weiterer Anschlussmöglichkeiten"]
 
     A --> B --> C --> D --> E
     E --> B
 ~~~
 
-Der letzte Pfeil bedeutet nicht, dass derselbe Ablauf unverändert wiederkehrt. Der nächste Vollzug beginnt in einem Anschlussraum, zu dessen Bedingungen nun auch die vorherige Aktualisierung und ihre Folgen gehören.
+*Abbildung 2: Aktualisierung als Übergang in einen veränderten Raum weiterer Anschlussmöglichkeiten.*
+
+Der Rückpfeil in Abbildung 2 bedeutet nicht, dass derselbe Ablauf unverändert wiederkehrt. Der nächste Vollzug beginnt in einem Raum weiterer Anschlussmöglichkeiten, zu dessen Bedingungen nun auch die vorherige Aktualisierung und ihre Folgen gehören.
 
 ## 5. Fortsetzen, Wiederholen und Variieren
 
@@ -92,9 +94,7 @@ In der Montage wird der Unterschied zwischen Möglichkeit und Aktualisierung pra
 
 Der Schnitt verwirklicht nicht lediglich eine vollständig bekannte Beziehung. Seine konkrete Wirkung entsteht mit den Eigenschaften der Ausschnitte, ihrer Dauer, dem Ton und dem bereits montierten Zusammenhang. Deshalb müssen Varianten häufig hergestellt und verglichen werden. Die Aktualisierung dient hier zugleich als Erkenntnisoperation: Sie bringt eine Form hervor, an der Folgen wahrnehmbar werden.
 
-Der dokumentierte `Alphaville`-Versuch des Montage-Automaten trennt diese Vollzüge anschaulich. Aus den gewichteten Untertitelbeziehungen wurde eine bestimmte Sequenz generiert. Damit war eine berechenbare Folge als konkrete Fassung aktualisiert. Ihre Ausführung machte konkrete Nachbarschaften und Wiederholungen sichtbar, die in den Regeln allein noch nicht als angesehene Fassung vorlagen. Die anschließenden künstlerischen Eingriffe und der Vergleich mit den Erwartungen an Geschichte und Muster waren weitere Aktualisierungen, die den erzeugten Zustand aufnahmen und die Untersuchung veränderten.[^ma-automat-aktualisieren]
-
-Gerade weil das Ergebnis die Ausgangsabsicht nicht erfüllte, wurde seine Produktivität erkennbar. Die generierte Fassung verwirklichte nicht den erhofften Strukturtransfer, erschloss aber assoziative Beziehungen und machte fehlende Daten und Kategorien bestimmbar. Aktualisieren bezeichnet hier weder bloß den Rechenlauf noch allein die spätere menschliche Bearbeitung. Jeder dieser Vollzüge überführte eine Möglichkeit in konkrete Bestimmtheit und veränderte die Bedingungen des folgenden Schritts.
+Der bereits eingeführte `Alphaville`-Versuch trennt diese Vollzüge anschaulich. Die Generierung aktualisierte die vorgeordneten Untertitelbeziehungen als konkrete Fassung. Das Ansehen, der Vergleich mit den Erwartungen und die anschließenden künstlerischen Eingriffe bildeten weitere Aktualisierungen. Gerade weil der erhoffte Strukturtransfer ausblieb, wurden assoziative Beziehungen sowie fehlende Daten und Kategorien bestimmbar. Jeder dieser Vollzüge brachte eine Möglichkeit in konkrete Bestimmtheit und veränderte die Bedingungen des folgenden Schritts.[^ma-automat-aktualisieren]
 
 Die Bachelorarbeit versteht den Film sowohl als fertiges Ergebnis als auch als jeden während der Montage entstandenen Zustand. Sie beschreibt außerdem, wie der jeweilige Filmzustand auf die Haltung der montierenden Person zurückwirkt.[^ba-aktualisieren] Die Masterarbeit entwickelt diese Figur weiter, indem sie die erste Formfestlegung und die folgenden Entscheidungen als einen Prozess beschreibt, in dem der erreichte Zustand des Werks weitere Möglichkeiten begrenzt und orientiert.[^ma-aktualisieren]
 
@@ -110,9 +110,7 @@ Nicht jede Aktualisierung ist daher improvisiert. Improvisation bezeichnet eine 
 
 Auch improvisatorisches Handeln beginnt nicht formlos. Es greift auf Material, Fähigkeiten, Erfahrungen und bereits entstandene Beziehungen zurück. Zugleich kann es sich nicht darauf beschränken, einen vollständig festgelegten Übergang auszuführen. Der Vollzug muss auf Bedingungen und Rückwirkungen reagieren, die erst während seines Verlaufs bestimmend werden.
 
-Damit verschiebt sich die Frage. Nachdem geklärt ist, was es heißt, eine Anschlussmöglichkeit zu aktualisieren, ist zu untersuchen, wie Aktualisierung unter partieller Unbestimmtheit möglich ist.
-
-Diese Frage führt zum Improvisieren.
+Nachdem geklärt ist, was es heißt, eine Anschlussmöglichkeit zu aktualisieren, ist nun die besondere Weise ihrer Hervorbringung unter partieller Unbestimmtheit zu untersuchen: das Improvisieren.
 
 [^ba-aktualisieren]: Jonathan Frank, *Filmmontage und Improvisation. Weiterführende Gedanken* (2014), gedruckte S. 41 und 44.
 [^ma-aktualisieren]: Jonathan Frank, *Algorithmische Komposition in der Filmmontage oder wie ich darüber denke*, 2. Aufl. (2020), gedruckte S. 16–18.

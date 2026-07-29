@@ -1,0 +1,20 @@
+id: decision-0017
+date: 2026-07-29
+title: Werk ist ein besonderer Fall stabilisierter Komposition
+status: accepted
+decision: >-
+  Ein Werk ist ein hinreichend stabilisierter und als Einheit adressierbarer
+  kompositorischer Zusammenhang, der über seine Herstellungssituation hinaus
+  weitere Anschlüsse ermöglicht. Nicht jede stabilisierte Form ist ein Werk;
+  Werk bezeichnet keine zusätzliche Grundoperation des Buches.
+reason: >-
+  Die Definition ordnet den Werkbegriff dem Stabilisieren unter und verbindet
+  Komposition, relative Dauer und Adressierbarkeit, ohne Werkidentität von
+  materiellen Trägern und wiederaufnehmenden Vollzügen abzulösen.
+affected:
+  - manuskript/10-stabilisieren.md
+  - GLOSSAR.md
+  - knowledge/genealogy.yaml
+  - recovered/manuscript/chapter-10-materials.md
+  - projekt/arbeitsstand.md
+supersedes: []

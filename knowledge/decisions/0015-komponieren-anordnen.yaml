@@ -1,0 +1,20 @@
+id: decision-0015
+date: 2026-07-29
+title: Komponieren verwendet in der Definition anordnen
+status: accepted
+decision: >-
+  Die Definition des Komponierens behält das Verb „anordnen“. Komponieren
+  heißt, Elemente, Übergänge und Relationen so anzuordnen, dass ein bestimmter
+  Zusammenhang möglicher und aktualisierter Anschlüsse entsteht. „Gliedern“
+  kann die relationale Wirkung dieser Anordnung im erläuternden Text
+  bezeichnen, ersetzt aber nicht das definierende Verb.
+reason: >-
+  Die Autorenentscheidung bewahrt die bestehende Definition in Manuskript und
+  Glossar. Die Abgrenzung von Programm und Organisieren wird durch die
+  Eigenfunktion des bestimmten kompositorischen Zusammenhangs geleistet und
+  verlangt keinen stillschweigenden Austausch der Terminologie.
+affected:
+  - manuskript/09-komponieren.md
+  - GLOSSAR.md
+  - projekt/arbeitsstand.md
+supersedes: []

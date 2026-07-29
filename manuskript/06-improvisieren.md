@@ -56,16 +56,18 @@ Schematisch rekonstruiert die lineare Rückkopplungsfigur folgenden Vorgang:
 
 ~~~mermaid
 flowchart LR
-    R[Rohmaterial]
-    B[Bedingungen der Montage]
-    I[Improvisation]
-    F[Ergebnis oder erreichter Filmzustand]
+    R["Rohmaterial"]
+    B["Bedingungen der Montage"]
+    I["Improvisation"]
+    F["Ergebnis oder erreichter Filmzustand"]
 
     R --> B --> I --> F
     F --> B
 ~~~
 
-Die komplexere Figur ergänzt dazu, dass weder Rohmaterial noch Haltung oder Möglichkeitsraum unverändert außerhalb des Verlaufs stehen. Sie werden in den wechselseitigen Beziehungen des Montageprozesses für weitere Entscheidungen neu bestimmt.
+*Abbildung 3: Rückkopplung von Rohmaterial, Montagebedingungen, improvisatorischem Vollzug und Filmzustand.*
+
+Gegenüber der in Abbildung 3 rekonstruierten linearen Rückkopplungsfigur ergänzt die komplexere Figur der Bachelorarbeit, dass weder Rohmaterial noch Haltung oder Möglichkeitsraum unverändert außerhalb des Verlaufs stehen. Sie werden in den wechselseitigen Beziehungen des Montageprozesses für weitere Entscheidungen neu bestimmt.
 
 Nicht jede Rückkopplung ist bereits Improvisation. Auch geregelte Prozesse können Ergebnisse zurückführen. Improvisatorisch ist die Rückkopplung dort, wo ihre Folgen für eine situative Formbestimmung aufgenommen werden müssen, weil die vorhandene Vorordnung den nächsten Anschluss nicht hinreichend bestimmt.
 

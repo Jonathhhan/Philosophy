@@ -42,6 +42,10 @@ Elemente, Übergänge und Relationen so anordnen, dass ein bestimmter Zusammenha
 
 Anschlussbedingungen so festigen, dass sie über einzelne Vollzüge hinaus wiedererkennbar und wirksam bleiben, ohne dadurch notwendig endgültig zu werden.
 
+## Werk
+
+Ein hinreichend stabilisierter und als Einheit adressierbarer kompositorischer Zusammenhang, der über seine Herstellungssituation hinaus weitere Anschlüsse ermöglicht.
+
 ## Organisieren
 
 Mehrere Anschlussbedingungen in einen Zusammenhang bringen, in dem sie einander ermöglichen, begrenzen, priorisieren oder ausschließen.

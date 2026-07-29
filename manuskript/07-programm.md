@@ -68,7 +68,7 @@ In der Montage treffen verschiedene mögliche Träger programmatischer Wirksamke
 
 Diese Bedingungen wirken jeweils nur insofern programmatisch, als sie die Auswahl weiterer Schnitte vorordnen.
 
-Im `Alphaville`-Versuch des Montage-Automaten wird diese Schwelle an einzelnen Entscheidungen sichtbar. Untertitel wurden als strukturrelevante Daten gewählt; häufige Wörter wurden als Stoppwörter behandelt; andere Wörter erhielten verschiedene Gewichte; Lern- und Zuordnungsmaterial wurden für den Versuch identisch gesetzt. Keine dieser Bestimmungen war nur eine Beschreibung des Materials. Gemeinsam ordneten sie vor, welche Ähnlichkeiten als mögliche Übergänge zählen und mit welchem Gewicht sie eine generierte Folge bestimmen konnten. Die Masterarbeit hält zugleich fest, dass auch Bildhandlung, Schnittfrequenz, Orte oder auditive Eigenschaften hätten kategorisiert werden können. Gerade die nicht einbezogenen Unterschiede zeigen die Selektivität des wirksamen Programms.[^ma-werkzeug]
+Im bereits eingeführten `Alphaville`-Versuch lag die programmatische Schwelle in der Auswahl der Daten, Kategorien und Gewichte, durch die mögliche Übergänge unterschiedlich relevant wurden. Diese Bestimmungen beschrieben das Material nicht nur, sondern ordneten seine weitere Verarbeitung vor. Dass auch Bildhandlung, Schnittfrequenz, Orte oder auditive Eigenschaften hätten kategorisiert werden können, zeigt die Selektivität des wirksamen Programms.[^ma-werkzeug]
 
 Die früheren Montagearbeiten bereiten diese Bestimmung in mehreren Stufen vor. Die Bachelorarbeit beschreibt die diagrammatische Partitur als Vorgabe, die eine Ausführung orientiert, ohne sie vollständig festzulegen.[^ba-programm] Die Masterarbeit fasst „Programm“ anschließend weit als das bereits Vorgeschriebene: Material, Erfahrung, entstandene Sequenzen, Ordnungen und Notizen bilden Bezugspunkte weiterer Entscheidungen und verändern sich im Verlauf der Arbeit.[^ma-programm] An der ersten Formfestlegung und dem jeweils erreichten Werkzustand entwickelt sie außerdem die Figur einer Selbstprogrammierung des Kunstwerks.[^ma-selbstprogrammierung] Der Werkzeugbau gehört dort zur künstlerischen und epistemischen Praxis: Diagramme und selbst entwickelte Werkzeuge machen Vorordnungen sichtbar, veränderbar und an ihren Ergebnissen vergleichbar.[^ma-werkzeug]
 
@@ -104,9 +104,7 @@ Hier ist Programm weiterhin nicht mit Algorithmus gleichzusetzen.
 
 Ein Programm kann algorithmische Bestimmungen enthalten, ohne in ihnen aufzugehen. Eine Notation, ein Rhythmus oder ein erreichter Filmzustand kann weitere Möglichkeiten programmatisch gliedern, obwohl daraus kein wiederholbarer bedingter Übergang folgt. Ein Algorithmus setzt umgekehrt bereits unterschiedene Bedingungen und mögliche Operationen voraus. Programmatisch wirksam wird seine Übergangsordnung dort, wo sie in einem konkreten Zusammenhang tatsächliche Aktualisierungen vorordnet.
 
-Die engere Frage lautet deshalb nicht, ob ein Programm besonders stark bestimmt oder technisch ausgeführt wird. Sie lautet, wie Bedingungen und Übergänge so geordnet werden, dass eine bestimmte Weise des Weitergehens wiederholbar wird.
-
-Diese Frage führt zum Algorithmus.
+Die engere Frage lautet deshalb nicht, ob ein Programm besonders stark bestimmt oder technisch ausgeführt wird. Sie lautet, wie Bedingungen und Übergänge so geordnet werden, dass eine bestimmte Weise des Weitergehens wiederholbar wird. Kapitel 8 untersucht diese Ordnung als Algorithmus.
 
 [^ba-programm]: Jonathan Frank, *Filmmontage und Improvisation. Weiterführende Gedanken* (2014), gedruckte S. 32.
 [^ma-programm]: Jonathan Frank, *Algorithmische Komposition in der Filmmontage oder wie ich darüber denke*, 2. Aufl. (2020), gedruckte S. 8–10.

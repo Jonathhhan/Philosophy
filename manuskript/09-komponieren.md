@@ -66,7 +66,7 @@ Material ist deshalb nicht bloß Träger einer kompositorischen Entscheidung. Ei
 
 Gerade die Veränderbarkeit der Montagefassungen macht diese Widerständigkeit erkenntniswirksam. Eine Variante aktualisiert eine mögliche Anordnung. Ihre Wahrnehmung zeigt Folgen, die im bloßen Plan nicht notwendig zugänglich waren. Der Vergleich mit einer anderen Variante isoliert diese Folgen nie vollständig, weil jede Veränderung mehrere Beziehungen betreffen kann. Er erlaubt aber, Unterschiede praktisch hervorzubringen und an ihnen weiterzuarbeiten.
 
-Die Masterarbeit erweitert diese Versuchsanordnung durch algorithmische Filmkomposition. Notationen und Programme machen Regeln der Auswahl und zeitlichen Anordnung lesbar oder ausführbar. Im dokumentierten `Alphaville`-Versuch verkettete der Montage-Automat Ausschnitte anhand gewichteter Untertitelbeziehungen. Die generierte Folge wurde anschließend durch Zitate bearbeitet, um in sie künstlerisch einzugreifen und sie wiedererkennbar zu machen. Der Versuch brachte assoziative Beziehungen hervor, ohne die erhoffte Geschichte oder ein übertragbares filmisches Muster zu erzeugen.[^ma-algorithmische-komposition]
+Die Masterarbeit erweitert diese Versuchsanordnung durch algorithmische Filmkomposition. Im zuvor untersuchten `Alphaville`-Versuch wurde die generierte Folge anschließend durch Zitate bearbeitet, um in sie künstlerisch einzugreifen und sie wiedererkennbar zu machen. Für das Komponieren ist daran nicht erneut die einzelne Kategorie oder Übergangsregel entscheidend, sondern die Weise, in der generierte und hinzugefügte Elemente einen bestimmten Zusammenhang bilden.[^ma-algorithmische-komposition]
 
 Damit werden mehrere kompositorische Ebenen unterscheidbar. Die Wahl der Untertitel, Stoppwörter und Gewichte ordnete vor, welche Beziehungen überhaupt generiert werden konnten. Die Ausführung bildete daraus eine bestimmte zeitliche Folge. Die anschließenden Eingriffe bezogen diese Folge auf weitere Bedeutungs- und Wahrnehmungszusammenhänge. Komponieren wurde dadurch nicht von seiner materiellen Herkunft abgelöst. Die Formalisierung und ihre Bearbeitung zeigten vielmehr, wie Eigenschaften als Elemente, Bedingungen und Übergänge in einen Zusammenhang eingehen und wie ein hervorgebrachter Zusammenhang neue Entscheidungen verlangt.
 
@@ -74,20 +74,22 @@ Am Versuch lassen sich die beteiligten Ordnungen unterscheiden, ohne sie in getr
 
 ~~~mermaid
 flowchart TD
-    A[Material- und Datenauswahl]
-    B[Programmatische Vorordnung: Kategorien und Gewichte]
-    C[Algorithmische Ausführung: bedingte Übergänge]
-    D[Generierte Folge: aktualisierte Übergänge]
-    E[Wahrnehmung und Vergleich]
-    F[Situative Weiterbestimmung]
-    G[Veränderte kompositorische Fassung]
+    A["Material- und Datenauswahl"]
+    B["Programmatische Vorordnung: Kategorien und Gewichte"]
+    C["Algorithmische Ausführung: bedingte Übergänge"]
+    D["Generierte Folge: aktualisierte Übergänge"]
+    E["Wahrnehmung und Vergleich"]
+    F["Situative Weiterbestimmung"]
+    G["Veränderte kompositorische Fassung"]
 
     A --> B --> C --> D --> E
     E --> F --> G
     G --> B
 ~~~
 
-Die Ausführung ist in diesem Diagramm algorithmisch bestimmt. Die Weiterbestimmung ist nur insoweit improvisatorisch, als ihr nächster relevanter Anschluss nicht hinreichend vorgeordnet ist. Kompositorisch sind die Vollzüge unter der Hinsicht, dass sie Elemente, Übergänge und Relationen zu einem bestimmten Zusammenhang gliedern.
+*Abbildung 4: Analytische Hinsichten des algorithmisch unterstützten Komponierens im `Alphaville`-Versuch.*
+
+Die Ausführung ist in Abbildung 4 algorithmisch bestimmt. Die Weiterbestimmung ist nur insoweit improvisatorisch, als ihr nächster relevanter Anschluss nicht hinreichend vorgeordnet ist. Kompositorisch sind die Vollzüge unter der Hinsicht, dass sie Elemente, Übergänge und Relationen zu einem bestimmten Zusammenhang gliedern.
 
 ## 6. Programm, Algorithmus und Improvisation im Komponieren
 
@@ -121,17 +123,11 @@ Die Unterscheidung bezeichnet keine vollständig getrennten Gegenstandsbereiche.
 
 ## 8. Von der Komposition zur Stabilisierung
 
-Eine Komposition kann in einem einzelnen vorläufigen Vollzug entstehen. Sobald mehrere Elemente und Übergänge so gegliedert sind, dass ihre Beziehungen für weitere Anschlüsse wirksam werden, liegt ein bestimmter Zusammenhang vor. Daraus folgt noch nicht, dass er über wechselnde Situationen oder mehrere Vollzüge hinweg bestehen bleibt.
+Eine Komposition kann in einem einzelnen vorläufigen Vollzug entstehen. Sobald mehrere Elemente und Übergänge so angeordnet sind, dass ihre Beziehungen für weitere Anschlüsse wirksam werden, liegt ein bestimmter Zusammenhang vor. Daraus folgt weder, dass er abgeschlossen ist, noch dass er über wechselnde Situationen hinweg bestehen bleibt.
 
-Eine Montagefassung kann unmittelbar nach ihrer Betrachtung verworfen werden. Eine improvisierte musikalische Gestalt kann den nächsten Einsatz orientieren und danach verschwinden. Eine Anordnung kann als Variante kenntlich sein, ohne zur maßgeblichen Fassung zu werden. Kompositorische Formbildung und relative Dauer sind deshalb zu unterscheiden.
+Auch die Anerkennung einer Fassung als hinreichend bestimmt erklärt noch nicht, wie ihre Beziehungen später wiedererkennbar und wirksam bleiben. Die nächste Frage lautet deshalb, wie hervorgebrachte Formen relative Dauer gewinnen, ohne ihre Veränderbarkeit vollständig zu verlieren.
 
-Diese Unterscheidung betrifft auch den Abschluss. Ein Kompositionsprozess kann beendet werden, weil eine Fassung als hinreichend bestimmt gilt. Er kann ebenso durch Fristen, Ressourcen oder institutionelle Entscheidungen abgebrochen werden. Weder die innere Anerkennung noch die äußere Beendigung erklärt für sich, wie der hervorgebrachte Zusammenhang später wiedererkennbar und wirksam bleibt.
-
-Dafür müssen Beziehungen festgehalten, wiederholt, materiell getragen oder durch weitere Vollzüge bestätigt werden. Eine Datei wird gespeichert, eine Partitur notiert, eine Fassung freigegeben oder eine Praxis eingeübt. Solche Vollzüge können die Komposition ihrer unmittelbaren Veränderbarkeit teilweise entziehen und sie zur Bedingung weiterer Anschlüsse machen.
-
-Stabilisierung bedeutet dabei keine endgültige Fixierung. Auch eine veröffentlichte Fassung kann revidiert, eine Partitur anders ausgeführt und ein wiederkehrendes Muster verändert werden. Die nächste Frage lautet deshalb nicht, wie Komponieren in Unveränderlichkeit endet. Sie lautet, wie hervorgebrachte Formen relative Dauer gewinnen, ohne ihre Veränderbarkeit vollständig zu verlieren.
-
-Diese Frage führt zum Stabilisieren.
+Damit ist die nächste Operation bestimmt: Stabilisieren.
 
 [^ma-komposition]: Jonathan Frank, *Algorithmische Komposition in der Filmmontage oder wie ich darüber denke*, 2. Aufl. (2020), gedruckte S. 15.
 [^ba-komposition]: Jonathan Frank, *Filmmontage und Improvisation. Weiterführende Gedanken* (2014), gedruckte S. 7, 32 und 40–44.

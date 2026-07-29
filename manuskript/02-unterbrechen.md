@@ -26,7 +26,7 @@ Ein **Ausfall** liegt vor, wenn ein erwarteter Anschluss nicht zustande kommt. E
 
 Eine **gesetzte Zäsur** ist ein Vollzug, durch den eine Fortsetzung bewusst angehalten oder gegliedert wird. Eine Pause, eine Frage, ein Einwand oder ein montierter Schnitt können eine solche Zäsur bilden. Das Aussetzen lässt häufig eine Wiederaufnahme offen. Es kann aber auch eine andere Richtung vorbereiten, ohne schon zu bestimmen, wie der Zusammenhang weitergehen wird.
 
-Eine **Blockierung** bezeichnet Bedingungen, unter denen ein möglicher Anschluss nicht zugänglich oder nicht wirksam werden kann. Sie muss nicht als auffälliges Ereignis erscheinen. Gerade deshalb ist sie ein Grenzfall des Unterbrechungsbegriffs: Sie kann einer konkreten Fortsetzung vorausliegen, statt einen bereits laufenden Verlauf anzuhalten. Für Kapitel 2 ist zunächst nur festzuhalten, dass nicht jede verhinderte Fortsetzung als sichtbarer Ausfall erfahren wird. Wie solche Bedingungen organisiert und verteilt werden, ist später eigens zu untersuchen.
+Eine **Blockierung** bezeichnet Bedingungen, unter denen ein möglicher Anschluss nicht zugänglich oder nicht wirksam werden kann. Sie muss nicht als auffälliges Ereignis erscheinen. Gerade deshalb ist sie ein Grenzfall des Unterbrechungsbegriffs: Sie kann einer konkreten Fortsetzung vorausliegen, statt einen bereits laufenden Verlauf anzuhalten. Für Kapitel 2 ist zunächst nur festzuhalten, dass nicht jede verhinderte Fortsetzung als sichtbarer Ausfall erfahren wird.
 
 Blockierung bleibt damit als Grenzfall des Unterbrechens festgehalten. Wie Blockierungen organisiert, verteilt und asymmetrisch wirksam werden, wird erst in den Kapiteln über Verteilen und Asymmetrie systematisch bestimmt.
 

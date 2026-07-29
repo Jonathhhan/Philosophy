@@ -42,17 +42,19 @@ Die Bewegung lässt sich als Rückkopplung darstellen:
 
 ~~~mermaid
 flowchart TD
-    A[Problematische Situation]
-    B[Problematisieren: Relevanzen auswählen und Frage bilden]
-    C[Problem: vorläufig bearbeitbare Fassung]
-    D[Untersuchung oder Versuch]
-    E[Ergebnis: veränderte Situation und Anschlussbedingungen]
+    A["Problematische Situation"]
+    B["Problematisieren: Relevanzen auswählen und Frage bilden"]
+    C["Problem: vorläufig bearbeitbare Fassung"]
+    D["Untersuchung oder Versuch"]
+    E["Ergebnis: veränderte Situation und Anschlussbedingungen"]
 
     A --> B --> C --> D --> E
     E --> B
 ~~~
 
-Das Diagramm bezeichnet keinen notwendigen Stufenplan. Der Rückweg hält fest, dass ein Ergebnis nicht nur eine Antwort liefert, sondern die Frage und die Auswahl relevanter Unterschiede bestätigen, verschieben oder verwerfen kann.
+*Abbildung 1: Problematisierung als rekursive Bearbeitung einer veränderten Situation.*
+
+Abbildung 1 bezeichnet keinen notwendigen Stufenplan. Der Rückweg hält fest, dass ein Ergebnis nicht nur eine Antwort liefert, sondern die Frage und die Auswahl relevanter Unterschiede bestätigen, verschieben oder verwerfen kann.
 
 ## 4. Selektion und Relevanz
 
@@ -94,9 +96,9 @@ Problematisieren setzt Unterschiede. Es unterscheidet Relevantes von zunächst Z
 
 Soll eine Untersuchung fortgesetzt, ein Versuch verglichen oder eine Frage gemeinsam bearbeitet werden, müssen Unterschiede bestimmt und für weitere Anschlüsse wirksam werden. Eine Beobachtung kann festgehalten, eine Variante von einer anderen unterschieden und eine Frage so gefasst werden, dass weitere Vollzüge an sie anschließen können. Ob diese Bestimmungen über den einzelnen Vollzug hinaus wiedererkennbar bleiben, ist damit noch nicht entschieden.
 
-Damit entsteht der Bedarf nach einem weiteren Begriff. Problematisieren bestimmt, welche Unterschiede für eine Bearbeitung relevant erscheinen. Es erklärt noch nicht, wie solche Unterschiede Beziehungen gliedern und dadurch weitere Anschlüsse orientieren können.
+Problematisieren vollzieht damit bereits Formbildungen, untersucht sie aber unter dem Gesichtspunkt der Frage, die aus einer Fraglichkeit hervorgeht. Die Reihenfolge der Kapitel ist analytisch, nicht zeitlich: Erst das nächste Kapitel bestimmt eigens, was einen Unterschied zur relational wirksamen Form macht.
 
-Diese Frage führt zur Form.
+Im nächsten Schritt ist deshalb die Bestimmtheit solcher Unterschiede als Form zu untersuchen.
 
 [^ba-problematisieren]: Jonathan Frank, *Filmmontage und Improvisation. Weiterführende Gedanken* (2014), gedruckte S. 36–44, besonders S. 40–44.
 [^ma-problematisieren]: Jonathan Frank, *Algorithmische Komposition in der Filmmontage oder wie ich darüber denke*, 2. Aufl. (2020), gedruckte S. 6–10.
