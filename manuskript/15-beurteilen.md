@@ -116,6 +116,8 @@ Eine Ordnung ist nicht schon tragfähig, weil sie funktioniert, fortbesteht, Zus
 
 Von Tragfähigkeit kann daher nur als Ergebnis eines ausgewiesenen Urteils gesprochen werden, nicht als dessen vorausgesetzte Begründung. Das Urteil muss benennen, in welcher Hinsicht und für welchen Zeitraum die Ordnung trägt, welche Belastungen dabei wem zugerechnet werden und welche ungelösten Konflikte bestehen bleiben.
 
+„Tragfähigkeit“ wird damit als zusammenfassender Urteilsbegriff verwendet. Der Ausdruck bezeichnet das positive Ergebnis eines ausgewiesenen Urteils unter den jeweils berücksichtigten Bedingungen; er bildet weder einen eigenständigen normativen Grundbegriff noch einen universalen Maßstab.
+
 Die bisherige Untersuchung lässt sich daher nur zu einer Prüfregel des Urteilens, nicht zu einem universalen Sachmaßstab verdichten:
 
 > Ein Urteil über eine Anschlussordnung ist ausgewiesen, wenn es den Gegenstand und die Geltungsgründe seines Maßstabs, die relevanten Folgen für weitere Anschlüsse, die verglichenen Alternativen, die Gewichtung widerstreitender Gründe und seine Korrekturbedingungen kenntlich macht.
@@ -125,8 +127,6 @@ Auch ein gut ausgewiesenes Urteil ist eine Aktualisierung. Es hebt bestimmte Unt
 Diese Korrekturbereitschaft begründet keine Pflicht, jede Ordnung jederzeit offenzuhalten. Verlässlichkeit, Schutz und die Möglichkeit gemeinsamer Planung können eine Stabilisierung verlangen. Zunächst muss das Urteil selbst als revidierbar ausgewiesen bleiben: Neue Folgen, veränderte Umstände oder eine überzeugendere Alternative können seine Gründe und Gewichtungen erneut fraglich machen.
 
 Ein Urteil kann so ergeben, dass eine bestehende Anschlussbedingung fortgesetzt, begrenzt oder verändert werden sollte. Es verändert diese Bedingung aber noch nicht selbst. Das begründete Zurückkommen auf stabilisierte Anschlussbedingungen ist die Eigenfunktion des Revidierens.
-
-„Tragfähigkeit“ wird damit als zusammenfassender Urteilsbegriff verwendet. Der Ausdruck bezeichnet das positive Ergebnis eines ausgewiesenen Urteils unter den jeweils berücksichtigten Bedingungen; er bildet weder einen eigenständigen normativen Grundbegriff noch einen universalen Maßstab.
 
 [^ba-beurteilen-material]: Jonathan Frank, *Filmmontage und Improvisation. Weiterführende Gedanken* (2014), gedruckte S. 7.
 [^ba-beurteilen-varianten]: Ebd., gedruckte S. 35–45, besonders S. 40–45.

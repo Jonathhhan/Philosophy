@@ -1,0 +1,118 @@
+schema_version: 1
+id: change-manuscript-audit-local-corrections
+created_at: 2026-07-30
+goal: >-
+  Die fünf im bestätigten Gesamtaudit ausgewiesenen lokalen Manuskript- und
+  Glossarkorrekturen umsetzen, ohne Definitionen, Kapitelarchitektur oder
+  theoretische Reichweite zu verändern.
+operation: local_update
+scope:
+  allowed_files:
+    - manuskript/01-anschliessen.md
+    - manuskript/11-organisieren.md
+    - manuskript/15-beurteilen.md
+    - manuskript/16-revidieren.md
+    - GLOSSAR.md
+    - recovered/manuscript/chapter-01-prompt-397.md
+    - knowledge/change-events/0005-manuscript-audit-local-corrections.yaml
+    - projekt/arbeitsstand.md
+  protected_files:
+    - PROJECT.md
+    - CONSTITUTION.md
+    - projekt/architektur.md
+    - knowledge/concepts/
+    - knowledge/decisions/
+basis:
+  project_files:
+    - CONSTITUTION.md
+    - AGENTS.md
+    - PROJECT.md
+    - STYLE.md
+    - GLOSSAR.md
+    - recovered/audits/full-manuscript-consistency-audit.md
+  decisions:
+    - decision-0018
+    - decision-0019
+    - decision-0020
+  sources:
+    - recovered/manuscript/chapter-01-prompt-397.md
+changes:
+  - file: manuskript/01-anschliessen.md
+    summary: Interne Herkunftskommentare aus dem Publikationstext entfernt, ohne den Wortlaut des Entwurfs zu verändern.
+  - file: manuskript/11-organisieren.md
+    summary: Die Tätigkeit des Reorganisierens vom hervorgebrachten Ergebnis einer Reorganisation wieder eindeutig unterschieden.
+  - file: manuskript/15-beurteilen.md
+    summary: Die bestätigte Tragfähigkeitspräzisierung vor die abschließende Überleitung zum Revidieren versetzt.
+  - file: manuskript/16-revidieren.md
+    summary: Die bestätigte Präzisierung unveränderter Bestätigung vor die abschließende Überleitung zum Reorganisieren versetzt.
+  - file: GLOSSAR.md
+    summary: Die Definitionszitate zu Revidieren und Reorganisieren durch die erforderlichen Leerzeilen von ihren Erläuterungen getrennt.
+  - file: recovered/manuscript/chapter-01-prompt-397.md
+    summary: Die entfernte interne Herkunftsmarkierung mit Fragmentgrenze und Entwurfsstatus dauerhaft im Rekonstruktionsdossier dokumentiert.
+  - file: knowledge/change-events/0005-manuscript-audit-local-corrections.yaml
+    summary: Umfang, Relationsfolgen und Prüfstatus der lokalen Auditkorrekturen dokumentiert.
+  - file: projekt/arbeitsstand.md
+    summary: Die Umsetzung der fünf Auditbefunde und ihre unveränderten Theoriegrenzen festgehalten.
+affected_relations:
+  - from: manuskript/11-organisieren.md
+    relation: depends_on
+    to: knowledge/decisions/0020-reorganisieren-und-reorganisation.yaml
+    effect: preserved
+    note: Die lokale Formulierung soll Tätigkeit und hervorgebrachtes Ergebnis wieder eindeutig unterscheiden.
+  - from: manuskript/15-beurteilen.md
+    relation: depends_on
+    to: knowledge/decisions/0018-tragfaehigkeit-als-urteilsbegriff.yaml
+    effect: preserved
+    note: Der bestätigte Gehalt bleibt unverändert und wird nur vor den Kapitelübergang versetzt.
+  - from: manuskript/16-revidieren.md
+    relation: depends_on
+    to: knowledge/decisions/0019-unveraenderte-bestaetigung-und-revision.yaml
+    effect: preserved
+    note: Der bestätigte Gehalt bleibt unverändert und wird nur vor den Kapitelübergang versetzt.
+  - from: manuskript/01-anschliessen.md
+    relation: sourced_from
+    to: recovered/manuscript/chapter-01-prompt-397.md
+    effect: preserved
+    note: Die Provenienz bleibt im Dossier erhalten, wird aber aus dem Publikationstext entfernt.
+possibilities:
+  opened:
+    - Der vollständige Manuskripttext kann ohne interne Arbeitsmarkierungen gelesen werden.
+    - Die Übergänge zu Revidieren und Reorganisieren bilden wieder den jeweiligen Kapitelschluss.
+  restricted:
+    - Die historischen Herkunftsgrenzen von Kapitel 1 dürfen nicht verlorengehen.
+    - Die bestätigten Definitionen und Präzisierungen dürfen inhaltlich nicht verändert werden.
+  deferred:
+    - Weitere Stilrevisionen oder theoretische Neuordnungen.
+    - Literaturapparat und Gesamtbuch-Build.
+uncertainties: []
+agent_findings:
+  genealogist:
+    - Die unsichere Grenze des historischen Fragments bleibt im Rekonstruktionsdossier sichtbar; aus ihr wird kein verlorener Originalwortlaut rekonstruiert.
+  consistency_checker:
+    - Die neue Formulierung in Kapitel 11 entspricht der bestätigten Trennung von Reorganisieren als Tätigkeit und Reorganisation als möglichem Ergebnis.
+    - Die Präzisierungen in Kapitel 15 und 16 stehen nun jeweils vor dem Übergang zum Folgekapitel und behalten ihren bestätigten Wortlaut.
+  critic:
+    - Keine der lokalen Korrekturen erweitert Reichweite, Definitionen oder Kapitelarchitektur; weitere Stilrevisionen lassen sich aus ihnen nicht ableiten.
+  material_technical:
+    - Die internen HTML-Kommentare und die verwischende Formulierung sind nicht mehr im Manuskript vorhanden; die Glossareinträge sind valides, lesbares Markdown.
+authority:
+  requires_author_decision: false
+  decision_status: not_required
+  decision_reference: null
+validation:
+  - check: Auditbefunde und Publikationstext
+    result: passed
+    evidence: Die beiden internen HTML-Kommentare und die Formulierung „damit reorganisieren“ sind im Manuskript nicht mehr vorhanden; alle sechs Zieldateien zeigen ausschließlich die beauftragten lokalen Diffs.
+  - check: Bestätigte Begriffsentscheidungen
+    result: passed
+    evidence: Kapitel 11 entspricht decision-0020; die unverändert versetzten Präzisierungen in Kapitel 15 und 16 entsprechen decision-0018 und decision-0019.
+  - check: Provenienzgrenze Kapitel 1
+    result: passed
+    evidence: Das Dossier dokumentiert weiterhin Fragmentende, Normalisierung zu „Bruch“ und Status des anschließenden Codex-Entwurfs.
+  - check: Repository- und Wissensvalidierung
+    result: passed
+    evidence: git diff --check, beide betroffenen Change-Event-Validatoren, Recursive-State-Prüfung, Knowledge-Validator und Hook-Selbsttest bestehen; die 24 bereits bekannten Wissenswarnungen bleiben nicht blockierend.
+  - check: Technische Regression
+    result: passed
+    evidence: Anschlusslabor-Testlauf mit 18 Tests, JavaScript-Syntaxprüfung, Worker-Build und MCP-Kern- und Protokolltest bestehen.
+status: stabilized

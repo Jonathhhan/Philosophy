@@ -124,9 +124,9 @@ Eine Revision kann mehrere Bedingungen zugleich betreffen. Ihre Eigenfunktion li
 
 Beide Bestimmungen schließen einander nicht aus. Eine Regelrevision kann zugleich Zuständigkeiten, Mittel und technische Übergänge neu aufeinander beziehen und insofern Teil einer Reorganisation sein. Umgekehrt besteht eine Reorganisation aus Aktualisierungen, die auf einzelne stabilisierte Bedingungen zurückkommen können. Die Begriffe unterscheiden Analyseebenen, nicht notwendig getrennte Ereignisse.
 
-Damit verschiebt sich die nächste Frage. Revidieren erklärt, wie eine stabilisierte Anschlussbedingung aufgrund von Gründen erneut bestimmt wird. Reorganisieren untersucht, wie die Beziehungen verändert werden, innerhalb deren solche Bedingungen gemeinsam weitere Möglichkeiten hervorbringen, verteilen und begrenzen.
-
 Eine erneute Bestätigung bei unverändertem Gehalt gilt nur dann als Revision, wenn mindestens Geltungsgrund, Reichweite, Dauer oder Stellung der stabilisierten Bedingung neu bestimmt wird. Eine bloße erneute Prüfung oder Zustimmung bei unverändertem Bestimmungsstatus verbleibt beim Beurteilen.
+
+Damit verschiebt sich die nächste Frage. Revidieren erklärt, wie eine stabilisierte Anschlussbedingung aufgrund von Gründen erneut bestimmt wird. Reorganisieren untersucht, wie die Beziehungen verändert werden, innerhalb deren solche Bedingungen gemeinsam weitere Möglichkeiten hervorbringen, verteilen und begrenzen.
 
 [^ba-revidieren]: Jonathan Frank, *Filmmontage und Improvisation. Weiterführende Gedanken* (2014), gedruckte S. 37–45.
 [^ma-revidieren]: Jonathan Frank, *Algorithmische Komposition in der Filmmontage oder wie ich darüber denke*, 2. Aufl. (2020), gedruckte S. 54–55 und 92–93.

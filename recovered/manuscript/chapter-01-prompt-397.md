@@ -46,9 +46,9 @@ Interpretation:
 
 Die Ergänzung von „Bru“ zu „Bruch“ ist eine sehr plausible orthografische Normalisierung, aber nicht wörtlich durch Prompt 397 belegt. Die Formulierung „so fängt es an“ bestätigt den vorangehenden Text als Kapitelbeginn, bestätigt jedoch keine Fortsetzung nach „Bru“.
 
-Änderungsvorschlag:
+Redaktioneller Status seit 2026-07-30:
 
-Die bestehende Manuskriptmarkierung kann vorläufig erhalten bleiben. Für strengere Provenienz sollte bei einer späteren editorischen Revision vermerkt werden, dass das letzte Wort gegenüber der Chatquelle zu „Bruch“ normalisiert wurde. Eine verlorene Fortsetzung darf aus diesem Dossier nicht rekonstruiert werden.
+Die beiden internen Provenienzkommentare wurden aus dem Publikationstext entfernt. Die Grenze bleibt in diesem Dossier dokumentiert: Der wörtlich erhaltene Nutzertext endet unsicher mit „Bru“, das aktuelle Manuskript normalisiert dieses Fragment zu „Bruch“, und der anschließende Wortlaut ist ein neuer Entwurf aus der Codex-Arbeit vom 29. Juli 2026. Eine verlorene Fortsetzung wird daraus nicht rekonstruiert.
 
 ## Nachfolgende Chatbewegung
 
