@@ -17,7 +17,7 @@
     <section class='intro' aria-labelledby='page-title'>
       <p class='eyebrow'>Ein operatives Begriffsmodell</p>
       <h1 id='page-title'>Kein Anfang beginnt bei null.</h1>
-      <p class='lead'>Eine Äußerung schließt an Bedingungen an, die sie nicht selbst hervorgebracht hat. Sobald sie aktualisiert wird, verändert sie, was danach fortgesetzt, präzisiert, unterbrochen oder variiert werden kann. Erst das Festhalten einer Fassung gibt diesem Zusammenhang relative Dauer.</p>
+      <p class='lead'>Eine Äußerung schließt an Bedingungen an, die sie nicht selbst hervorgebracht hat. Jeder weitere Anschluss nimmt einen konkreten Wortlaut auf, verändert ihn relational und wird selbst zur Bedingung dessen, was folgen kann.</p>
       <p class='adaptation-note'>Die Interaktion bearbeitet einen Gedanken des Manuskripts. Sie ersetzt weder dessen Argumentation noch bildet sie einen ursprünglichen Manuskriptwortlaut ab.</p>
     </section>
 
@@ -27,15 +27,26 @@
           <span class='section-number' aria-hidden='true'>01</span>
           <div>
             <p class='section-kicker'>Ausgangslage</p>
-            <h2 id='laboratory-title'>Aktualisiere einen Anschluss</h2>
+            <h2 id='laboratory-title'>Setze eine Äußerung</h2>
           </div>
         </div>
 
         <label class='input-label' for='beginning'>Setze eine Äußerung in den bereits begonnenen Zusammenhang.</label>
-        <textarea id='beginning' rows='5' maxlength='280' placeholder='Zum Beispiel: Eine Möglichkeit ist nie voraussetzungslos.'></textarea>
+        <p class='input-help' id='beginning-help'>Sie bildet den Bezug, an den jeder folgende sprachliche Anschluss ausdrücklich anknüpft.</p>
+        <textarea id='beginning' rows='5' maxlength='280' aria-describedby='beginning-help char-count' placeholder='Zum Beispiel: Eine Möglichkeit ist nie voraussetzungslos.'></textarea>
         <div class='input-meta'>
-          <span id='char-count'>0 von 280 Zeichen</span>
-          <button class='text-button' id='reset' type='button'>Zurücksetzen</button>
+          <span id='char-count' aria-live='polite'>0 von 280 Zeichen</span>
+          <div class='input-actions'>
+            <button class='text-button' id='edit-beginning' type='button' hidden>Ausgangsäußerung bearbeiten</button>
+            <button class='text-button' id='clear-current' type='button'>Aktuelle Eingabe leeren</button>
+          </div>
+        </div>
+        <div class='edit-actions' id='beginning-edit-actions' hidden>
+          <p>Die bisherige Anschlussfolge bleibt sichtbar, bis die Änderung ausdrücklich als neue Arbeitsfassung übernommen wird.</p>
+          <div>
+            <button class='primary-action compact-action' id='accept-beginning-edit' type='button'>Neue Arbeitsfassung bilden</button>
+            <button class='secondary-action compact-action' id='cancel-beginning-edit' type='button'>Änderung verwerfen</button>
+          </div>
         </div>
 
         <fieldset class='moves' id='moves' disabled>
@@ -43,28 +54,41 @@
             <span class='section-number' aria-hidden='true'>02</span>
             <span>
               <span class='section-kicker'>Nächster Vollzug</span>
-              <strong>Verändere die Anschlussrichtung</strong>
+              <strong>Wähle eine Anschlussweise</strong>
             </span>
           </legend>
           <div class='move-grid'>
-            <button class='move-button' type='button' data-move='fortsetzen'>
+            <button class='move-button' type='button' data-move='fortsetzen' aria-pressed='false'>
               <span>Fortsetzen</span>
               <small>den gesetzten Bezug weiterführen</small>
             </button>
-            <button class='move-button' type='button' data-move='praezisieren'>
+            <button class='move-button' type='button' data-move='praezisieren' aria-pressed='false'>
               <span>Präzisieren</span>
               <small>eine Unterscheidung bestimmter machen</small>
             </button>
-            <button class='move-button' type='button' data-move='unterbrechen'>
+            <button class='move-button' type='button' data-move='unterbrechen' aria-pressed='false'>
               <span>Unterbrechen</span>
               <small>eine Voraussetzung fraglich werden lassen</small>
             </button>
-            <button class='move-button' type='button' data-move='variieren'>
+            <button class='move-button' type='button' data-move='variieren' aria-pressed='false'>
               <span>Variieren</span>
               <small>Gewichtung oder Perspektive verschieben</small>
             </button>
           </div>
         </fieldset>
+
+        <section class='connection-composer' id='connection-composer' aria-labelledby='connection-title' hidden>
+          <p class='section-kicker'>Konkreter Anschluss</p>
+          <h3 id='connection-title'>Formuliere den nächsten Vollzug</h3>
+          <p class='move-prompt' id='move-prompt'></p>
+          <label class='input-label compact-label' for='connection-text'>Eigener Wortlaut</label>
+          <textarea id='connection-text' rows='4' maxlength='400' aria-describedby='move-prompt connection-count'></textarea>
+          <div class='input-meta'>
+            <span id='connection-count' aria-live='polite'>0 von 400 Zeichen</span>
+            <button class='text-button' id='cancel-move' type='button'>Operation abwählen</button>
+          </div>
+          <button class='primary-action connection-submit' id='commit-move' type='button' disabled>Anschluss aktualisieren</button>
+        </section>
 
         <div class='observation' aria-live='polite' aria-atomic='true'>
           <p class='section-kicker'>Beobachtung</p>
@@ -79,12 +103,25 @@
               <h3 id='stabilization-title'>Eine Fassung stabilisieren</h3>
             </div>
           </div>
-          <p class='stabilization-copy'>Festhalten bewahrt einen bestimmten Stand. Freigeben behandelt ihn vorläufig als maßgeblich. Beides schließt spätere Veränderung nicht aus und rechtfertigt die Fassung nicht.</p>
+          <p class='stabilization-copy'>Festhalten bewahrt einen bestimmten Stand. Freigeben behandelt die aktuell sichtbare Fassung vorläufig als maßgeblich. Frühere Freigaben bleiben als Geschichte erkennbar.</p>
           <div class='stabilization-actions'>
             <button class='primary-action' id='stabilize' type='button' disabled>Fassung festhalten</button>
-            <button class='secondary-action' id='release' type='button' disabled>Letzte Fassung freigeben</button>
+            <button class='secondary-action' id='release' type='button' disabled>Aktuelle Fassung freigeben</button>
           </div>
           <p class='stabilization-status' id='stabilization-status' aria-live='polite'>Noch besteht keine stabilisierte Fassung.</p>
+
+          <div class='carrier-actions' aria-labelledby='carrier-title'>
+            <div>
+              <p class='section-kicker' id='carrier-title'>Träger der Sitzung</p>
+              <p id='storage-status'>Fassungen werden lokal in diesem Browser bewahrt. Sie sind nicht öffentlich und nicht zwischen Geräten synchronisiert.</p>
+            </div>
+            <div class='carrier-buttons'>
+              <button class='secondary-action compact-action' id='export-session' type='button'>Als JSON exportieren</button>
+              <button class='secondary-action compact-action' id='import-session-trigger' type='button'>JSON importieren</button>
+              <input id='import-session' type='file' accept='application/json,.json' hidden>
+              <button class='danger-action compact-action' id='clear-session' type='button'>Gesamte Sitzung löschen</button>
+            </div>
+          </div>
         </section>
       </div>
 
@@ -105,6 +142,7 @@
 
         <div class='process-stage actual-stage' id='actual-stage'>
           <p class='stage-label'>Aktualisierter Anschluss</p>
+          <p class='actual-relation' id='actual-relation'>Noch keine relationale Bestimmung</p>
           <p class='actual-text' id='actual-text'>Noch keine eigene Äußerung</p>
         </div>
 
@@ -120,7 +158,7 @@
         </div>
 
         <div class='return-line' aria-hidden='true'>
-          <span>Der hervorgebrachte Zustand wird selbst zur Bedingung.</span>
+          <span>Der hervorgebrachte Wortlaut wird selbst zur Bedingung.</span>
           <b>↺</b>
         </div>
 
@@ -149,11 +187,11 @@
     <section class='concept-strip' aria-label='Begriffliche Bewegung'>
       <p>Ausgangsbedingungen</p>
       <span aria-hidden='true'>→</span>
-      <p>möglicher Anschluss</p>
+      <p>konkreter Anschluss</p>
       <span aria-hidden='true'>→</span>
-      <p>Aktualisierung</p>
+      <p>veränderte Möglichkeiten</p>
       <span aria-hidden='true'>→</span>
-      <p>veränderte Bedingungen</p>
+      <p>Wiederaufnahme</p>
       <span aria-hidden='true'>→</span>
       <p>stabilisierte Fassung</p>
     </section>

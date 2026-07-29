@@ -27,7 +27,7 @@
 2. Dabei die in Kapitel 9 und 10 bestätigte Abgrenzung zwischen kompositorischem Zusammenhang, relativer Dauer und Koordination verteilter Anschlussbedingungen bewahren.
 3. Erst nach einer konsistenten Fassung von Kapitel 11 die Kapitel „Verteilen“ und „Asymmetrie“ entwickeln.
 
-Das Anschlusslabor bleibt vorerst funktional eingefroren. Es dient als operative Prüfung der Begriffe und nicht als Ersatz des Manuskripts.
+Das Anschlusslabor wird als operative Prüfung der Begriffe weiterentwickelt und bleibt ausdrücklich vom Manuskript unterschieden.
 
 ## Kartierter Chatbestand
 
@@ -77,3 +77,14 @@ Teile des ursprünglichen Chatverlaufs sind in der Chatoberfläche und Suche nic
 - Begriffliche Grenze: Freigabe erzeugt keine Vollkommenheit oder Rechtfertigung; der normative Satz aus Kapitel 10 wird in der Ausgabe ausdrücklich mitgeführt.
 - Technischer Stand: Syntax, Interaktionsstruktur, Worker-Build, Auslieferung und Fehlerroute sind geprüft.
 - Das Anschlusslabor bleibt eine operative Bearbeitung des Manuskripts und ersetzt dessen Argumentation nicht.
+## Interaktive Ausgabe – operative Anschlussbildung 2026-07-29
+
+- Bearbeitet: `interaktiv/index.html`, `interaktiv/css/main.css`, `interaktiv/js/main.js`, `interaktiv/package.json` und `interaktiv/tests/main.test.mjs`.
+- Korrigiert: zuletzt erzeugte, aktuell bearbeitete und aktuell freigegebene Fassung sind getrennte Zustände. Genau eine Fassung gilt als aktuell freigegeben; frühere Freigaben bleiben historisch kenntlich.
+- Operationalisiert: Fortsetzen, Präzisieren, Unterbrechen und Variieren verlangen nun einen eigenen sprachlichen Anschluss. Jeder Schritt bewahrt Wortlaut, Operationstyp und Bezug auf den vorherigen Anschluss.
+- Ergänzt: Fassungen besitzen eine ausgewiesene Abstammung. Die Wiederaufnahme einer älteren Fassung kann eine neue Arbeitslinie bilden, ohne spätere Fassungen zu überschreiben.
+- Stabilisiert: Die Sitzung wird gerätelokal im Browser bewahrt und kann als JSON exportiert oder importiert werden. Diese technische Dauer wird ausdrücklich als lokaler Träger und nicht als öffentliche oder geräteübergreifende Speicherung bezeichnet.
+- Bedienung: Ausgangsäußerung, aktuelle Arbeitsfassung und gesamte Sitzung haben getrennte Bearbeitungs- und Löschhandlungen; das vollständige Löschen verlangt eine Bestätigung.
+- Barrierefreiheit: Textfelder sind mit Erklärung und Zeichenzähler verknüpft, Operationsauswahl wird semantisch ausgewiesen, Bewegungsreduktion und deutsche Silbentrennung werden berücksichtigt.
+- Prüfung: sechs DOM- und Interaktionstests decken Anschlussbildung, explizite Ausgangsbearbeitung, Versionsidentität, Freigabewechsel, Reload und Löschverhalten ab.
+- Unverändert: Manuskript, Glossar, Begriffsdefinitionen und Kapitelarchitektur.
