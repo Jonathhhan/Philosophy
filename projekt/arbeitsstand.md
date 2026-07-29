@@ -125,6 +125,7 @@ Teile des ursprünglichen Chatverlaufs sind in der Chatoberfläche und Suche nic
 - Begriffliche Grenze: Freigabe erzeugt keine Vollkommenheit oder Rechtfertigung; der normative Satz aus Kapitel 10 wird in der Ausgabe ausdrücklich mitgeführt.
 - Technischer Stand: Syntax, Interaktionsstruktur, Worker-Build, Auslieferung und Fehlerroute sind geprüft.
 - Das Anschlusslabor bleibt eine operative Bearbeitung des Manuskripts und ersetzt dessen Argumentation nicht.
+
 ## Interaktive Ausgabe – operative Anschlussbildung 2026-07-29
 
 - Bearbeitet: `interaktiv/index.html`, `interaktiv/css/main.css`, `interaktiv/js/main.js`, `interaktiv/package.json` und `interaktiv/tests/main.test.mjs`.
@@ -135,4 +136,16 @@ Teile des ursprünglichen Chatverlaufs sind in der Chatoberfläche und Suche nic
 - Bedienung: Ausgangsäußerung, aktuelle Arbeitsfassung und gesamte Sitzung haben getrennte Bearbeitungs- und Löschhandlungen; das vollständige Löschen verlangt eine Bestätigung.
 - Barrierefreiheit: Textfelder sind mit Erklärung und Zeichenzähler verknüpft, Operationsauswahl wird semantisch ausgewiesen, Bewegungsreduktion und deutsche Silbentrennung werden berücksichtigt.
 - Prüfung: sechs DOM- und Interaktionstests decken Anschlussbildung, explizite Ausgangsbearbeitung, Versionsidentität, Freigabewechsel, Reload und Löschverhalten ab.
+- Unverändert: Manuskript, Glossar, Begriffsdefinitionen und Kapitelarchitektur.
+
+## Interaktive Ausgabe – Importintegrität und Relationsprüfung 2026-07-29
+
+- Abgesichert: Ein JSON-Import ersetzt eine vorhandene lokale Sitzung erst nach ausdrücklicher Bestätigung; ein Abbruch bewahrt den bestehenden Stand.
+- Normalisiert: Importierte `previousText`-Bezüge werden aus der tatsächlichen Anschlusskette rekonstruiert. Schritt-IDs und doppelte Fassungsnummern werden neu vergeben.
+- Geprüft: Selbstbezüge und Zyklen der Versionsabstammung werden aufgelöst; eine aktuelle Freigabe wird nur übernommen, wenn die betreffende Fassung einen gültigen Freigabezeitpunkt besitzt.
+- Begrifflich präzisiert: Die Operationswahl setzt eine vorgesehene Relation, garantiert aber nicht deren Gelingen. Beobachtung und Prüffragen halten diese Differenz sichtbar.
+- Korrigiert: Verlaufsnummern folgen auch über eingeklappte Einträge hinweg dem tatsächlichen Index.
+- Bedienung und Barrierefreiheit: Fokus wird nach Aktualisierung, bestätigter Ausgangsbearbeitung und Import auf sichtbare Statusmeldungen verschoben. Importmeldungen sind als Live-Status ausgezeichnet; Zeichenzähler werden nicht mehr bei jedem Tastendruck vorgelesen.
+- Entwurfsgrenze: Während einer offenen Anschluss- oder Ausgangsbearbeitung sind Import und Export gesperrt; die Oberfläche weist ausdrücklich darauf hin, dass der Entwurf noch nicht gesichert ist.
+- Prüfung: Zehn DOM- und Interaktionstests decken zusätzlich Importabbruch, manipulierte Beziehungen, zyklische Genealogien, Verlaufsnummerierung, Fokus und offene Entwürfe ab.
 - Unverändert: Manuskript, Glossar, Begriffsdefinitionen und Kapitelarchitektur.

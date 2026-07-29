@@ -33,9 +33,10 @@
 
         <label class='input-label' for='beginning'>Setze eine Äußerung in den bereits begonnenen Zusammenhang.</label>
         <p class='input-help' id='beginning-help'>Sie bildet den Bezug, an den jeder folgende sprachliche Anschluss ausdrücklich anknüpft.</p>
-        <textarea id='beginning' rows='5' maxlength='280' aria-describedby='beginning-help char-count' placeholder='Zum Beispiel: Eine Möglichkeit ist nie voraussetzungslos.'></textarea>
+        <textarea id='beginning' rows='5' maxlength='280' aria-describedby='beginning-help char-count char-warning' placeholder='Zum Beispiel: Eine Möglichkeit ist nie voraussetzungslos.'></textarea>
         <div class='input-meta'>
-          <span id='char-count' aria-live='polite'>0 von 280 Zeichen</span>
+          <span id='char-count'>0 von 280 Zeichen</span>
+          <span class='visually-hidden' id='char-warning' role='status' aria-live='polite'></span>
           <div class='input-actions'>
             <button class='text-button' id='edit-beginning' type='button' hidden>Ausgangsäußerung bearbeiten</button>
             <button class='text-button' id='clear-current' type='button'>Aktuelle Eingabe leeren</button>
@@ -82,9 +83,10 @@
           <h3 id='connection-title'>Formuliere den nächsten Vollzug</h3>
           <p class='move-prompt' id='move-prompt'></p>
           <label class='input-label compact-label' for='connection-text'>Eigener Wortlaut</label>
-          <textarea id='connection-text' rows='4' maxlength='400' aria-describedby='move-prompt connection-count'></textarea>
+          <textarea id='connection-text' rows='4' maxlength='400' aria-describedby='move-prompt connection-count connection-warning'></textarea>
           <div class='input-meta'>
-            <span id='connection-count' aria-live='polite'>0 von 400 Zeichen</span>
+            <span id='connection-count'>0 von 400 Zeichen</span>
+            <span class='visually-hidden' id='connection-warning' role='status' aria-live='polite'></span>
             <button class='text-button' id='cancel-move' type='button'>Operation abwählen</button>
           </div>
           <button class='primary-action connection-submit' id='commit-move' type='button' disabled>Anschluss aktualisieren</button>
@@ -92,7 +94,15 @@
 
         <div class='observation' aria-live='polite' aria-atomic='true'>
           <p class='section-kicker'>Beobachtung</p>
-          <p id='observation'>Noch wurde kein eigener Anschluss aktualisiert. Alphabet, Sprache, Interface und die Erwartung einer Fortsetzung wirken dennoch bereits als Bedingungen.</p>
+          <p id='observation' tabindex='-1'>Noch wurde kein eigener Anschluss aktualisiert. Alphabet, Sprache, Interface und die Erwartung einer Fortsetzung wirken dennoch bereits als Bedingungen.</p>
+          <div class='relation-check' id='relation-check' hidden>
+            <p class='relation-check-title'>Prüffragen zur gesetzten Relation</p>
+            <ul>
+              <li>Was bleibt vom vorherigen Anschluss erhalten?</li>
+              <li>Was verändert der neue Wortlaut?</li>
+              <li id='relation-check-prompt'>Trägt der neue Wortlaut die gewählte Relation?</li>
+            </ul>
+          </div>
         </div>
 
         <section class='stabilization-control' aria-labelledby='stabilization-title'>
@@ -113,7 +123,8 @@
           <div class='carrier-actions' aria-labelledby='carrier-title'>
             <div>
               <p class='section-kicker' id='carrier-title'>Träger der Sitzung</p>
-              <p id='storage-status'>Fassungen werden lokal in diesem Browser bewahrt. Sie sind nicht öffentlich und nicht zwischen Geräten synchronisiert.</p>
+              <p id='storage-status' role='status' aria-live='polite' tabindex='-1'>Fassungen werden lokal in diesem Browser bewahrt. Sie sind nicht öffentlich und nicht zwischen Geräten synchronisiert.</p>
+              <p class='draft-status' id='draft-status' role='status' aria-live='polite' hidden>Ein noch nicht aktualisierter Entwurf wird weder gespeichert noch exportiert.</p>
             </div>
             <div class='carrier-buttons'>
               <button class='secondary-action compact-action' id='export-session' type='button'>Als JSON exportieren</button>
@@ -149,7 +160,7 @@
         <div class='flow-arrow' aria-hidden='true'><span>↓</span></div>
 
         <div class='process-stage possibilities-stage'>
-          <p class='stage-label'>Weitere Anschlussmöglichkeiten</p>
+          <p class='stage-label'>Beispielhafte weitere Anschlussmöglichkeiten</p>
           <ul class='possibility-list' id='possibilities'>
             <li>eine erste Äußerung setzen</li>
             <li>den erwarteten Zusammenhang aufnehmen</li>

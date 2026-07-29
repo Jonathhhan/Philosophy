@@ -43,21 +43,30 @@ function addConnection(window, move, wording) {
   click(window, '#commit-move');
 }
 
+async function importJson(window, payload) {
+  const target = window.document.querySelector('#import-session');
+  const file = new window.File([JSON.stringify(payload)], 'session.json', { type: 'application/json' });
+  Object.defineProperty(target, 'files', { configurable: true, value: [file] });
+  await window.importSession({ target });
+}
+
 test('Eingaben und Operationswahl besitzen die angekündigten zugänglichen Zustände', () => {
   const window = createApp();
   const beginning = window.document.querySelector('#beginning');
   const counter = window.document.querySelector('#char-count');
   const moveButton = window.document.querySelector("[data-move='fortsetzen']");
 
-  assert.equal(beginning.getAttribute('aria-describedby'), 'beginning-help char-count');
-  assert.equal(counter.getAttribute('aria-live'), 'polite');
+  assert.equal(beginning.getAttribute('aria-describedby'), 'beginning-help char-count char-warning');
+  assert.equal(counter.getAttribute('aria-live'), null);
+  assert.equal(window.document.querySelector('#char-warning').getAttribute('role'), 'status');
+  assert.equal(window.document.querySelector('#storage-status').getAttribute('role'), 'status');
   assert.equal(moveButton.getAttribute('aria-pressed'), 'false');
   assert.equal(window.document.querySelector('#import-session-trigger').tagName, 'BUTTON');
 
   setValue(window, '#beginning', 'Zugänglicher Ausgang.');
   moveButton.click();
   assert.equal(moveButton.getAttribute('aria-pressed'), 'true');
-  assert.equal(window.document.querySelector('#connection-text').getAttribute('aria-describedby'), 'move-prompt connection-count');
+  assert.equal(window.document.querySelector('#connection-text').getAttribute('aria-describedby'), 'move-prompt connection-count connection-warning');
   window.happyDOM.abort();
 });
 test('Eingabe aktiviert Operationen und ein konkreter Anschluss erscheint im Verlauf', () => {
@@ -73,9 +82,13 @@ test('Eingabe aktiviert Operationen und ein konkreter Anschluss erscheint im Ver
   click(window, '#commit-move');
 
   assert.match(window.document.querySelector('#actual-text').textContent, /Bedingungen den Vollzug/);
-  assert.match(window.document.querySelector('#history').textContent, /Fortsetzen/);
+  assert.match(window.document.querySelector('#history').textContent, /Als Fortsetzung gesetzt/);
   assert.match(window.document.querySelector('#history').textContent, /Daraus folgt/);
   assert.equal(window.document.querySelector('#beginning').disabled, true);
+  assert.match(window.document.querySelector('#actual-relation').textContent, /Als Fortsetzung gesetzt/);
+  assert.equal(window.document.querySelector('#relation-check').hidden, false);
+  assert.equal(window.document.activeElement, window.document.querySelector('#observation'));
+
   window.happyDOM.abort();
 });
 
@@ -92,6 +105,7 @@ test('Bearbeitung der Ausgangsäußerung löscht den Verlauf nicht unsichtbar', 
   assert.doesNotMatch(window.document.querySelector('#history').textContent, /sprachlich bestimmt/);
   assert.match(window.document.querySelector('#history').textContent, /Veränderte Ausgangsäußerung/);
   assert.match(window.document.querySelector('#observation').textContent, /nicht stillschweigend/);
+  assert.equal(window.document.activeElement, window.document.querySelector('#observation'));
   window.happyDOM.abort();
 });
 
@@ -155,5 +169,118 @@ test('Aktuelle Eingabe und gesamte Sitzung besitzen getrennte Löschhandlungen',
   click(window, '#clear-session');
   assert.equal(window.document.querySelector('#version-count').textContent, '0 Fassungen');
   assert.equal(window.localStorage.getItem(storageKey), null);
+  window.happyDOM.abort();
+});
+
+test('Import verlangt Zustimmung und bewahrt den bestehenden Stand bei Abbruch', async () => {
+  const sourceWindow = createApp();
+  setValue(sourceWindow, '#beginning', 'Importierte Sitzung.');
+  addConnection(sourceWindow, 'variieren', 'Importierte Variante.');
+  const payload = JSON.parse(sourceWindow.localStorage.getItem(storageKey));
+  sourceWindow.happyDOM.abort();
+
+  const window = createApp();
+  setValue(window, '#beginning', 'Lokale Sitzung.');
+  let prompt = '';
+  window.confirm = (message) => {
+    prompt = message;
+    return false;
+  };
+
+  await importJson(window, payload);
+  assert.match(prompt, /ersetzt die aktuelle lokale Sitzung/);
+  assert.equal(window.document.querySelector('#beginning').value, 'Lokale Sitzung.');
+  assert.match(window.document.querySelector('#storage-status').textContent, /abgebrochen/);
+
+  window.confirm = () => true;
+  await importJson(window, payload);
+  assert.equal(window.document.querySelector('#beginning').value, 'Importierte Sitzung.');
+  assert.match(window.document.querySelector('#actual-text').textContent, /Importierte Variante/);
+  assert.equal(window.document.activeElement, window.document.querySelector('#storage-status'));
+  window.happyDOM.abort();
+});
+
+test('Import rekonstruiert Wortlautketten und bereinigt ungültige Genealogien', async () => {
+  const payload = {
+    format: 'anschlusslabor-session',
+    schemaVersion: 2,
+    versionSequence: 3,
+    stepSequence: 99,
+    currentVersionId: null,
+    workingParentVersionId: null,
+    currentReleaseId: 'version-2',
+    working: {
+      root: 'Geprüfter Ausgang.',
+      steps: [
+        { id: 'step-40', type: 'fortsetzen', text: 'Erster Anschluss.', previousText: 'Manipulierter Bezug.' },
+        { id: 'step-40', type: 'praezisieren', text: 'Zweiter Anschluss.', previousText: 'Noch ein manipulierter Bezug.' }
+      ]
+    },
+    versions: [
+      { id: 'version-1', number: 1, root: 'Fassung eins.', steps: [], parentVersionId: 'version-2', releasedAt: null },
+      { id: 'version-2', number: 1, root: 'Fassung zwei.', steps: [], parentVersionId: 'version-1', releasedAt: null },
+      { id: 'version-3', number: 1, root: 'Fassung drei.', steps: [], parentVersionId: 'version-3', releasedAt: null }
+    ]
+  };
+  const window = createApp();
+  await importJson(window, payload);
+  const normalized = JSON.parse(window.localStorage.getItem(storageKey));
+
+  assert.equal(normalized.working.steps[0].previousText, 'Geprüfter Ausgang.');
+  assert.equal(normalized.working.steps[1].previousText, 'Erster Anschluss.');
+  assert.deepEqual(normalized.versions.map((version) => version.number), [1, 2, 3]);
+  assert.equal(normalized.currentReleaseId, null);
+  assert.equal(normalized.versions.find((version) => version.id === 'version-3').parentVersionId, null);
+
+  const byId = new Map(normalized.versions.map((version) => [version.id, version]));
+  normalized.versions.forEach((version) => {
+    const visited = new Set([version.id]);
+    let cursor = version;
+    while (cursor.parentVersionId) {
+      assert.equal(visited.has(cursor.parentVersionId), false, 'Versionsgenealogie darf keinen Zyklus enthalten');
+      visited.add(cursor.parentVersionId);
+      cursor = byId.get(cursor.parentVersionId);
+    }
+  });
+  assert.match(window.document.querySelector('#actual-relation').textContent, /Erster Anschluss/);
+  window.happyDOM.abort();
+});
+
+test('Verlaufsnummern bleiben beim Einklappen zeitlich korrekt', () => {
+  const window = createApp();
+  setValue(window, '#beginning', 'Ausgang.');
+  for (let index = 1; index <= 7; index += 1) {
+    addConnection(window, index % 2 ? 'fortsetzen' : 'variieren', 'Anschluss ' + index + '.');
+  }
+
+  const numbers = [...window.document.querySelectorAll('.history-number')].map((element) => element.textContent);
+  assert.deepEqual(numbers, ['01', '02', '03', '04', '05', '06', '07', '08']);
+  assert.match(window.document.querySelector('.history-fold summary').textContent, /2 frühere Anschlüsse/);
+  assert.equal(window.document.activeElement, window.document.querySelector('#observation'));
+  window.happyDOM.abort();
+});
+
+test('Offene Entwürfe sperren Import und Export und werden als ungesichert ausgewiesen', () => {
+  const window = createApp();
+  setValue(window, '#beginning', 'Arbeitsausgang.');
+  click(window, "[data-move='praezisieren']");
+  setValue(window, '#connection-text', 'Noch nicht aktualisierter Entwurf.');
+
+  assert.equal(window.document.querySelector('#export-session').disabled, true);
+  assert.equal(window.document.querySelector('#import-session-trigger').disabled, true);
+  assert.equal(window.document.querySelector('#draft-status').hidden, false);
+  assert.match(window.document.querySelector('#draft-status').textContent, /nicht aktualisierte/);
+  assert.doesNotMatch(window.localStorage.getItem(storageKey), /Noch nicht aktualisierter Entwurf/);
+
+  click(window, '#cancel-move');
+  assert.equal(window.document.querySelector('#export-session').disabled, false);
+  addConnection(window, 'fortsetzen', 'Festgehaltener Anschluss.');
+  click(window, '#edit-beginning');
+  setValue(window, '#beginning', 'Noch nicht bestätigte Änderung.');
+  assert.equal(window.document.querySelector('#export-session').disabled, true);
+  assert.match(window.document.querySelector('#draft-status').textContent, /noch nicht bestätigte Änderung/);
+
+  setValue(window, '#beginning', 'x'.repeat(251));
+  assert.equal(window.document.querySelector('#char-warning').textContent, 'Das Zeichenlimit ist fast erreicht.');
   window.happyDOM.abort();
 });

@@ -5,6 +5,7 @@ const moveButtons = [...document.querySelectorAll('[data-move]')];
 const editBeginningButton = document.querySelector('#edit-beginning');
 const clearCurrentButton = document.querySelector('#clear-current');
 const characterCount = document.querySelector('#char-count');
+const characterWarning = document.querySelector('#char-warning');
 const beginningEditActions = document.querySelector('#beginning-edit-actions');
 const acceptBeginningEditButton = document.querySelector('#accept-beginning-edit');
 const cancelBeginningEditButton = document.querySelector('#cancel-beginning-edit');
@@ -13,6 +14,7 @@ const connectionTitle = document.querySelector('#connection-title');
 const movePrompt = document.querySelector('#move-prompt');
 const connectionInput = document.querySelector('#connection-text');
 const connectionCount = document.querySelector('#connection-count');
+const connectionWarning = document.querySelector('#connection-warning');
 const commitMoveButton = document.querySelector('#commit-move');
 const cancelMoveButton = document.querySelector('#cancel-move');
 const actualText = document.querySelector('#actual-text');
@@ -27,10 +29,13 @@ const stabilizationStatus = document.querySelector('#stabilization-status');
 const versionsList = document.querySelector('#versions');
 const versionCount = document.querySelector('#version-count');
 const storageStatus = document.querySelector('#storage-status');
+const draftStatus = document.querySelector('#draft-status');
 const exportSessionButton = document.querySelector('#export-session');
 const importSessionButton = document.querySelector('#import-session-trigger');
 const importSessionInput = document.querySelector('#import-session');
 const clearSessionButton = document.querySelector('#clear-session');
+const relationCheck = document.querySelector('#relation-check');
+const relationCheckPrompt = document.querySelector('#relation-check-prompt');
 
 const STORAGE_KEY = 'anschlusslabor.session.v2';
 const SESSION_FORMAT = 'anschlusslabor-session';
@@ -58,56 +63,56 @@ const moveDefinitions = {
     label: 'Fortsetzen',
     prompt: 'Wie setzt du den vorherigen Wortlaut fort?',
     placeholder: 'Formuliere eine Folgerung, Ergänzung oder Weiterführung.',
-    relation: 'Fortsetzung des vorherigen Anschlusses',
-    condition: 'gebildete Erwartung',
+    relation: 'Als Fortsetzung gesetzt',
+    condition: 'als Fortsetzung gesetzter Wortlaut',
     possibilities: [
       'eine Folgerung prüfen',
       'ein Beispiel an den neuen Wortlaut anschließen',
       'den fortgesetzten Bezug später wiederaufnehmen'
     ],
-    observation: 'Die Fortsetzung übernimmt nicht nur eine Kategorie. Ihr eigener Wortlaut nimmt den vorherigen Anschluss auf und verändert, welche Folgerungen, Beispiele und Einwände nun passen.'
+    observation: 'Der neue Wortlaut wurde als Fortsetzung gesetzt. Ob er den vorherigen Anschluss tatsächlich weiterführt und welche Folgerungen, Beispiele oder Einwände dadurch passen, bleibt prüfbar.'
   },
   praezisieren: {
     key: 'praezisieren',
     label: 'Präzisieren',
     prompt: 'Welche Unterscheidung soll genauer bestimmt werden?',
     placeholder: 'Benenne die Unterscheidung und ihren begrenzten Geltungsbereich.',
-    relation: 'Präzisierung des vorherigen Anschlusses',
-    condition: 'geschärfte Unterscheidung',
+    relation: 'Als Präzisierung gesetzt',
+    condition: 'als Präzisierung gesetzter Wortlaut',
     possibilities: [
       'den Geltungsbereich weiter eingrenzen',
       'eine Bedingung ausdrücklich benennen',
       'einen Grenzfall prüfen'
     ],
-    observation: 'Die Präzisierung gliedert den Raum weiterer Anschlüsse neu. Ihr Wortlaut macht manche Fortsetzungen bestimmter und lässt andere nicht mehr ohne Weiteres zur gesetzten Unterscheidung passen.'
+    observation: 'Der neue Wortlaut wurde als Präzisierung gesetzt. Ob er die bezeichnete Unterscheidung tatsächlich bestimmter macht und ihren Geltungsbereich trägt, bleibt prüfbar.'
   },
   unterbrechen: {
     key: 'unterbrechen',
     label: 'Unterbrechen',
     prompt: 'Welche Voraussetzung des vorherigen Anschlusses wird fraglich?',
     placeholder: 'Formuliere die Unterbrechung als konkrete Frage, Zurückweisung oder Zäsur.',
-    relation: 'Unterbrechung einer erwarteten Fortsetzung',
-    condition: 'sichtbar gewordene Voraussetzung',
+    relation: 'Als Unterbrechung gesetzt',
+    condition: 'als Unterbrechung gesetzter Wortlaut',
     possibilities: [
       'die sichtbar gewordene Voraussetzung prüfen',
       'die Frage unter veränderten Bedingungen neu fassen',
       'eine andere Anschlusslinie beginnen'
     ],
-    observation: 'Die Unterbrechung löscht den vorausgehenden Zusammenhang nicht. Der neue Wortlaut macht eine seiner Bedingungen bemerkbar und eröffnet Anschlüsse, die in der ungestörten Fortsetzung zurückgetreten wären.'
+    observation: 'Der neue Wortlaut wurde als Unterbrechung gesetzt. Ob er eine Voraussetzung des vorausgehenden Zusammenhangs tatsächlich sichtbar macht oder nur eine andere Linie beginnt, bleibt prüfbar.'
   },
   variieren: {
     key: 'variieren',
     label: 'Variieren',
     prompt: 'Wie verändern sich Perspektive oder Gewichtung des vorherigen Anschlusses?',
     placeholder: 'Formuliere eine erkennbare Abweichung innerhalb desselben Bezugs.',
-    relation: 'Variation innerhalb eines fortbestehenden Bezugs',
-    condition: 'veränderte Gewichtung',
+    relation: 'Als Variation gesetzt',
+    condition: 'als Variation gesetzter Wortlaut',
     possibilities: [
       'die Variante mit dem vorherigen Wortlaut vergleichen',
       'eine andere Perspektive ergänzen',
       'bestimmen, welche Beziehung trotz Variation fortbesteht'
     ],
-    observation: 'Die Variation hält einen Bezug fest und verändert zugleich seine Form. Weil beide Wortlaute erhalten bleiben, lässt sich prüfen, welche Beziehungen hervortreten, zurücktreten oder abbrechen.'
+    observation: 'Der neue Wortlaut wurde als Variation gesetzt. Ob der vorausgehende Bezug dabei fortbesteht und welche Gewichtung sich tatsächlich verändert, bleibt am Verhältnis beider Wortlaute zu prüfen.'
   }
 };
 
@@ -184,6 +189,23 @@ function setStorageMessage(message) {
   storageStatus.textContent = storageMessage;
 }
 
+function hasOpenDraft() {
+  return editingBeginning || Boolean(pendingMoveKey);
+}
+
+function hasSessionData() {
+  return Boolean(working.root.trim() || working.steps.length || versions.length);
+}
+
+function updateLimitWarning(element, warning, limit, threshold) {
+  const message = element.value.length >= limit - threshold
+    ? 'Das Zeichenlimit ist fast erreicht.'
+    : '';
+  if (warning.textContent !== message) {
+    warning.textContent = message;
+  }
+}
+
 function serializableSession() {
   return {
     format: SESSION_FORMAT,
@@ -213,25 +235,63 @@ function persistSession() {
   }
 }
 
-function normalizeStep(step, fallbackNumber) {
-  if (!step || typeof step !== 'object' || !moveDefinitions[step.type]) {
-    return null;
-  }
+function normalizeTimestamp(value) {
+  return typeof value === 'string' && Number.isFinite(Date.parse(value)) ? value : null;
+}
 
-  const text = typeof step.text === 'string' ? step.text.trim().slice(0, 400) : '';
-  if (!text) {
-    return null;
-  }
+function normalizeSteps(source, root, startingSequence) {
+  const steps = [];
+  let sequence = startingSequence;
+  let previousText = root.trim();
 
-  const numericId = Number(String(step.id || '').replace(/^step-/, ''));
-  const number = Number.isInteger(numericId) && numericId > 0 ? numericId : fallbackNumber;
-  return {
-    id: 'step-' + number,
-    type: step.type,
-    text,
-    previousText: typeof step.previousText === 'string' ? step.previousText.trim().slice(0, 400) : '',
-    createdAt: typeof step.createdAt === 'string' ? step.createdAt : null
-  };
+  (Array.isArray(source) ? source : []).slice(0, MAX_STEPS).forEach((step) => {
+    if (!step || typeof step !== 'object' || !moveDefinitions[step.type]) {
+      return;
+    }
+
+    const text = typeof step.text === 'string' ? step.text.trim().slice(0, 400) : '';
+    if (!text) {
+      return;
+    }
+
+    sequence += 1;
+    steps.push({
+      id: 'step-' + sequence,
+      type: step.type,
+      text,
+      previousText: previousText.slice(0, 400),
+      createdAt: normalizeTimestamp(step.createdAt)
+    });
+    previousText = text;
+  });
+
+  return { steps, sequence };
+}
+
+function removeInvalidGenealogies(normalizedVersions) {
+  const versionsById = new Map(normalizedVersions.map((version) => [version.id, version]));
+
+  normalizedVersions.forEach((version) => {
+    if (version.parentVersionId === version.id || !versionsById.has(version.parentVersionId)) {
+      version.parentVersionId = null;
+    }
+  });
+
+  normalizedVersions.forEach((version) => {
+    const visited = new Set([version.id]);
+    let cursor = version;
+
+    while (cursor.parentVersionId) {
+      if (visited.has(cursor.parentVersionId)) {
+        cursor.parentVersionId = null;
+        break;
+      }
+      visited.add(cursor.parentVersionId);
+      cursor = versionsById.get(cursor.parentVersionId);
+    }
+  });
+
+  return versionsById;
 }
 
 function normalizeSession(raw) {
@@ -242,63 +302,53 @@ function normalizeSession(raw) {
   const normalizedVersions = [];
   const seenIds = new Set();
   const sourceVersions = Array.isArray(raw.versions) ? raw.versions.slice(-MAX_VERSIONS) : [];
+  let normalizedStepSequence = 0;
 
-  sourceVersions.forEach((version, index) => {
+  sourceVersions.forEach((version) => {
     if (!version || typeof version !== 'object') {
       return;
     }
 
-    const number = Number(version.number);
     const id = typeof version.id === 'string' ? version.id : '';
     const root = typeof version.root === 'string' ? version.root.trim().slice(0, 280) : '';
-    if (!Number.isInteger(number) || number < 1 || !/^version-\d+$/.test(id) || seenIds.has(id) || !root) {
+    if (!/^version-\d+$/.test(id) || seenIds.has(id) || !root) {
       return;
     }
 
-    const steps = (Array.isArray(version.steps) ? version.steps : [])
-      .slice(0, MAX_STEPS)
-      .map((step, stepIndex) => normalizeStep(step, index * MAX_STEPS + stepIndex + 1))
-      .filter(Boolean);
-
+    const normalized = normalizeSteps(version.steps, root, normalizedStepSequence);
+    normalizedStepSequence = normalized.sequence;
     seenIds.add(id);
     normalizedVersions.push({
       id,
-      number,
+      number: normalizedVersions.length + 1,
       root,
-      steps,
+      steps: normalized.steps,
       parentVersionId: typeof version.parentVersionId === 'string' ? version.parentVersionId : null,
-      createdAt: typeof version.createdAt === 'string' ? version.createdAt : null,
-      releasedAt: typeof version.releasedAt === 'string' ? version.releasedAt : null
+      createdAt: normalizeTimestamp(version.createdAt),
+      releasedAt: normalizeTimestamp(version.releasedAt)
     });
   });
 
-  const normalizedWorkingSteps = (Array.isArray(raw.working?.steps) ? raw.working.steps : [])
-    .slice(0, MAX_STEPS)
-    .map((step, index) => normalizeStep(step, index + 1))
-    .filter(Boolean);
   const normalizedWorkingRoot = typeof raw.working?.root === 'string'
-    ? raw.working.root.slice(0, 280)
+    ? raw.working.root.trim().slice(0, 280)
     : '';
-  const validIds = new Set(normalizedVersions.map((version) => version.id));
+  const normalizedWorking = normalizeSteps(raw.working?.steps, normalizedWorkingRoot, normalizedStepSequence);
+  normalizedStepSequence = normalizedWorking.sequence;
 
-  normalizedVersions.forEach((version) => {
-    if (!validIds.has(version.parentVersionId)) {
-      version.parentVersionId = null;
-    }
-  });
-
-  const maximumVersionNumber = normalizedVersions.reduce((maximum, version) => Math.max(maximum, version.number), 0);
-  const maximumStepNumber = [...normalizedWorkingSteps, ...normalizedVersions.flatMap((version) => version.steps)]
-    .reduce((maximum, step) => Math.max(maximum, Number(step.id.replace('step-', '')) || 0), 0);
+  const versionsById = removeInvalidGenealogies(normalizedVersions);
+  const maximumVersionId = normalizedVersions.reduce((maximum, version) => {
+    return Math.max(maximum, Number(version.id.replace('version-', '')) || 0);
+  }, 0);
+  const releaseVersion = versionsById.get(raw.currentReleaseId);
 
   return {
-    working: { root: normalizedWorkingRoot, steps: normalizedWorkingSteps },
+    working: { root: normalizedWorkingRoot, steps: normalizedWorking.steps },
     versions: normalizedVersions,
-    versionSequence: Math.max(Number(raw.versionSequence) || 0, maximumVersionNumber),
-    stepSequence: Math.max(Number(raw.stepSequence) || 0, maximumStepNumber),
-    currentVersionId: validIds.has(raw.currentVersionId) ? raw.currentVersionId : null,
-    workingParentVersionId: validIds.has(raw.workingParentVersionId) ? raw.workingParentVersionId : null,
-    currentReleaseId: validIds.has(raw.currentReleaseId) ? raw.currentReleaseId : null
+    versionSequence: Math.max(Number(raw.versionSequence) || 0, maximumVersionId, normalizedVersions.length),
+    stepSequence: normalizedStepSequence,
+    currentVersionId: versionsById.has(raw.currentVersionId) ? raw.currentVersionId : null,
+    workingParentVersionId: versionsById.has(raw.workingParentVersionId) ? raw.workingParentVersionId : null,
+    currentReleaseId: releaseVersion?.releasedAt ? releaseVersion.id : null
   };
 }
 
@@ -360,10 +410,16 @@ function renderConditions() {
   });
 }
 
-function createHistoryEntry(entry) {
+function createHistoryEntry(entry, number) {
   const item = document.createElement('li');
   item.className = 'history-entry';
 
+  const numberElement = document.createElement('span');
+  numberElement.className = 'history-number';
+  numberElement.textContent = String(number).padStart(2, '0');
+
+  const body = document.createElement('div');
+  body.className = 'history-entry-body';
   const meta = document.createElement('span');
   meta.className = 'history-operation';
   meta.textContent = entry.meta;
@@ -371,7 +427,8 @@ function createHistoryEntry(entry) {
   const text = document.createElement('p');
   text.textContent = '„' + entry.text + '“';
 
-  item.append(meta, text);
+  body.append(meta, text);
+  item.append(numberElement, body);
   return item;
 }
 
@@ -391,11 +448,12 @@ function renderHistory() {
   const entries = [{ meta: 'Ausgangsäußerung', text: root }];
   working.steps.forEach((step) => {
     const definition = moveDefinitions[step.type];
-    entries.push({ meta: definition.label + ' · ' + definition.relation, text: step.text });
+    entries.push({ meta: definition.relation, text: step.text });
   });
 
-  if (entries.length > HISTORY_PREVIEW_LENGTH) {
-    const hiddenEntries = entries.slice(0, entries.length - HISTORY_PREVIEW_LENGTH);
+  const visibleStart = Math.max(0, entries.length - HISTORY_PREVIEW_LENGTH);
+  if (visibleStart > 0) {
+    const hiddenEntries = entries.slice(0, visibleStart);
     const foldItem = document.createElement('li');
     foldItem.className = 'history-fold';
     const details = document.createElement('details');
@@ -403,13 +461,15 @@ function renderHistory() {
     summary.textContent = hiddenEntries.length + ' frühere Anschlüsse anzeigen';
     const foldedList = document.createElement('ol');
     foldedList.className = 'folded-history-list';
-    hiddenEntries.forEach((entry) => foldedList.append(createHistoryEntry(entry)));
+    hiddenEntries.forEach((entry, index) => foldedList.append(createHistoryEntry(entry, index + 1)));
     details.append(summary, foldedList);
     foldItem.append(details);
     history.append(foldItem);
   }
 
-  entries.slice(-HISTORY_PREVIEW_LENGTH).forEach((entry) => history.append(createHistoryEntry(entry)));
+  entries.slice(visibleStart).forEach((entry, index) => {
+    history.append(createHistoryEntry(entry, visibleStart + index + 1));
+  });
   iterationCount.textContent = entries.length + (entries.length === 1 ? ' Aktualisierung' : ' Aktualisierungen');
 }
 
@@ -422,6 +482,7 @@ function renderVersions() {
     emptyItem.textContent = 'Noch keine Fassung festgehalten';
     versionsList.append(emptyItem);
     versionCount.textContent = '0 Fassungen';
+
     return;
   }
 
@@ -530,8 +591,10 @@ function renderStabilization() {
 function renderInputControls() {
   const root = working.root.trim();
   const hasSteps = working.steps.length > 0;
+  const openDraft = hasOpenDraft();
 
   characterCount.textContent = input.value.length + ' von 280 Zeichen';
+  updateLimitWarning(input, characterWarning, 280, 30);
   input.disabled = hasSteps && !editingBeginning;
   editBeginningButton.hidden = !hasSteps || editingBeginning;
   beginningEditActions.hidden = !editingBeginning;
@@ -553,7 +616,18 @@ function renderInputControls() {
     connectionInput.placeholder = definition.placeholder;
   }
   connectionCount.textContent = connectionInput.value.length + ' von 400 Zeichen';
+  updateLimitWarning(connectionInput, connectionWarning, 400, 40);
   commitMoveButton.disabled = !connectionInput.value.trim() || working.steps.length >= MAX_STEPS;
+
+  exportSessionButton.disabled = openDraft;
+  importSessionButton.disabled = openDraft;
+  importSessionInput.disabled = openDraft;
+  draftStatus.hidden = !openDraft;
+  if (openDraft) {
+    draftStatus.textContent = editingBeginning
+      ? 'Die noch nicht bestätigte Änderung der Ausgangsäußerung wird weder gespeichert noch exportiert.'
+      : 'Der noch nicht aktualisierte Anschlussentwurf wird weder gespeichert noch exportiert.';
+  }
 }
 
 function renderProcess(message) {
@@ -570,13 +644,18 @@ function renderProcess(message) {
     renderList(possibilities, emptyPossibilities);
   } else if (lastStep) {
     const definition = moveDefinitions[lastStep.type];
-    actualRelation.textContent = definition.label + ' · Bezug auf „' + excerpt(lastStep.previousText, 64) + '“';
+    actualRelation.textContent = definition.relation + ' · Bezug auf „' + excerpt(lastStep.previousText, 64) + '“';
     actualText.textContent = '„' + wording + '“';
     renderList(possibilities, definition.possibilities);
   } else {
     actualRelation.textContent = 'Ausgangsäußerung';
     actualText.textContent = '„' + root + '“';
     renderList(possibilities, initialPossibilities);
+  }
+
+  relationCheck.hidden = !lastStep;
+  if (lastStep) {
+    relationCheckPrompt.textContent = 'Trägt der neue Wortlaut die vorgesehene Relation „' + moveDefinitions[lastStep.type].label + '“?';
   }
 
   renderConditions();
@@ -596,6 +675,7 @@ function renderAll(message) {
   renderStabilization();
   storageStatus.textContent = storageMessage;
 }
+
 
 function selectMove(event) {
   pendingMoveKey = event.currentTarget.dataset.move;
@@ -635,6 +715,7 @@ function commitMove() {
   input.disabled = true;
   persistSession();
   renderAll(definition.observation);
+  observation.focus();
 }
 
 function beginBeginningEdit() {
@@ -661,6 +742,7 @@ function acceptBeginningEdit() {
   editingBeginning = false;
   persistSession();
   renderAll('Die geänderte Ausgangsäußerung bildet eine neue Arbeitsfassung. Die frühere Anschlussfolge wurde nicht stillschweigend umgeschrieben und bleibt in stabilisierten Fassungen erhalten.');
+  observation.focus();
 }
 
 function cancelBeginningEdit() {
@@ -792,14 +874,22 @@ async function importSession(event) {
       throw new Error('Datei zu groß');
     }
     const imported = normalizeSession(JSON.parse(await file.text()));
+    if (hasSessionData() && !window.confirm('Die importierte Sitzung ersetzt die aktuelle lokale Sitzung. Vorher exportieren oder fortfahren?')) {
+      setStorageMessage('Der Import wurde abgebrochen. Die aktuelle lokale Sitzung blieb unverändert.');
+      storageStatus.focus();
+      return;
+    }
+
     applyNormalizedSession(imported);
     input.value = working.root;
     connectionInput.value = '';
     persistSession();
     storageMessage = 'Die JSON-Sitzung wurde als lokaler Arbeitsstand wiederaufgenommen.';
-    renderAll('Die importierte Sitzung ist wieder anschlussfähig. Ihre Fassungen, Abstammungen und Freigabegeschichte wurden übernommen.');
+    renderAll('Die importierte Sitzung ist wieder anschlussfähig. Ihre geprüften Fassungen, Abstammungen und Freigabestatus wurden übernommen.');
+    storageStatus.focus();
   } catch {
     setStorageMessage('Die ausgewählte Datei konnte nicht als gültige Anschlusslabor-Sitzung gelesen werden. Der bestehende Stand blieb unverändert.');
+    storageStatus.focus();
   } finally {
     event.target.value = '';
   }
@@ -807,6 +897,7 @@ async function importSession(event) {
 
 input.addEventListener('input', () => {
   characterCount.textContent = input.value.length + ' von 280 Zeichen';
+  updateLimitWarning(input, characterWarning, 280, 30);
   acceptBeginningEditButton.disabled = !input.value.trim();
 
   if (editingBeginning) {
@@ -824,6 +915,7 @@ input.addEventListener('input', () => {
 
 connectionInput.addEventListener('input', () => {
   connectionCount.textContent = connectionInput.value.length + ' von 400 Zeichen';
+  updateLimitWarning(connectionInput, connectionWarning, 400, 40);
   commitMoveButton.disabled = !connectionInput.value.trim() || working.steps.length >= MAX_STEPS;
 });
 
