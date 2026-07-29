@@ -4,7 +4,7 @@
 
 - Arbeitstitel und verbindliche Architektur
 - rekursive Grundbewegung des Projekts
-- aktuelle Manuskriptfassungen der Kapitel 1 bis 10
+- aktuelle Manuskriptfassungen der Kapitel 1 bis 14
 - zentrale Definitionen zu Form, Improvisieren, Programm, Algorithmus, Komponieren, Revidieren und Reorganisieren
 - bestätigte Entscheidungen zur Eigenfunktion von Problematisieren, Form, Programm, Algorithmus, Komponieren und Stabilisieren sowie zur Einordnung des Werks als besonderem Fall der Stabilisierung
 - quellenkritisches Audit der Codex-Kapitel 1 bis 8
@@ -15,7 +15,7 @@
 
 ## Noch zu sichern
 
-1. Kapitel 11 bis 15 als aktuelle Manuskriptfassungen
+1. Kapitel 15 als aktuelle Manuskriptfassung
 2. editorische Prüfung und Autorenbestätigung der gesicherten Fassungen von Kapitel 16, Kapitel 17 und Schluss
 3. Quellen- und Literaturapparat
 4. spätere Prüfung der rekonstruierten Hauptfassungen und Varianten der noch nicht aktuellen Kapitel
@@ -23,9 +23,9 @@
 
 ## Aktuelle Priorität
 
-1. Mit Teil II und Kapitel 11 „Organisieren“ beginnen.
-2. Dabei die in Kapitel 9 und 10 bestätigte Abgrenzung zwischen kompositorischem Zusammenhang, relativer Dauer und Koordination verteilter Anschlussbedingungen bewahren.
-3. Erst nach einer konsistenten Fassung von Kapitel 11 die Kapitel „Verteilen“ und „Asymmetrie“ entwickeln.
+1. Kapitel 15 „Beurteilen“ als nächste aktuelle Manuskriptfassung entwickeln.
+2. Ausweisbare Maßstäbe bestimmen, ohne die im Assistentenentwurf vorgeschlagene „Tragfähigkeit“ oder einen vorläufigen normativen Maßstab stillschweigend zu bestätigen.
+3. Erst nach Kapitel 15 die gesicherten Entwürfe zu Revidieren und Reorganisieren editorisch prüfen.
 
 Das Anschlusslabor wird als operative Prüfung der Begriffe weiterentwickelt und bleibt ausdrücklich vom Manuskript unterschieden.
 
@@ -58,6 +58,54 @@ Teile des ursprünglichen Chatverlaufs sind in der Chatoberfläche und Suche nic
 - Späteren Kapiteln vorbehalten: Autorschaft und Verantwortung, öffentliche und institutionelle Sicherung, ungleiche Sichtbarkeit und Bewahrung, normative Beurteilung sowie Revision, Restaurierung und Versionierung als eigene Problemfelder.
 - Bestätigt: die Werkdefinition als besonderer Fall stabilisierter Komposition; siehe `knowledge/decisions/0017-werkdefinition.yaml`.
 - Audit abgeschlossen und lokal umgesetzt: `recovered/audits/part-i-compositional-audit.md`.
+
+## Kapitel 11 – Stand 2026-07-29
+
+- Neu angelegt: `manuskript/11-organisieren.md` als erste aktuelle Manuskriptfassung von Teil II.
+- Verbindliche Definition: Organisieren bringt mehrere Anschlussbedingungen in einen Zusammenhang, in dem sie einander ermöglichen, begrenzen, priorisieren oder ausschließen.
+- Abgegrenzt: Organisieren erklärt weder die relative Dauer einer einzelnen Bedingung noch die Gliederung eines kompositorischen Zusammenhangs; Programme und Algorithmen können Bestandteile organisierter Verfahren sein, ohne mit Organisation identisch zu werden.
+- Integriert: Arbeitsteilung, Rollen, materielle und technische Bedingungen, Regeln und Verfahren, Entscheidung, Information und Gedächtnis als verschiedene Träger organisierter Anschlüsse.
+- Genealogisch konkretisiert: Die Bachelorarbeit wird für Beteiligung, Autorschaft und Verantwortung auf den gedruckten Seiten 24–25 herangezogen; die Masterarbeit für alleinige und gemeinsame Montage auf den gedruckten Seiten 8–9. Diese früheren Problemstellungen werden nicht als bereits gesicherte normative Theorie ausgegeben.
+- Montage bleibt epistemisches Modell: Ihre Formbildung hängt von verteilten Produktionsbedingungen ab und wirkt auf deren Organisation zurück.
+- Nicht übernommen: die ältere Entwicklungsdefinition aus `knowledge/concept-relations.yaml`, da sie Organisieren zu weit als allgemeine Hervorbringung und Gewichtung von Anschlussmöglichkeiten fasst und gegenüber Glossar und bestätigter Kapitelarchitektur nachgeordnet ist.
+- Späteren Kapiteln vorbehalten: die genaue Bestimmung der Verteilung, asymmetrische Veränderbarkeit sowie Maßstäbe guter Beteiligung, Verantwortung und Revidierbarkeit.
+
+## Kapitel 12 – Stand 2026-07-29
+
+- Neu angelegt: `manuskript/12-verteilen.md` als aktuelle Manuskriptfassung.
+- Verbindliche Definition: Verteilen ordnet Möglichkeiten, Mittel, Positionen, Belastungen und Entscheidungschancen innerhalb einer Organisation unterschiedlich zu.
+- Abgegrenzt: Organisieren bildet den Zusammenhang mehrerer Bedingungen; Verteilen untersucht ihre Zuordnung zu verschiedenen Stellen. Unterschiedliche Verteilung ist weder mit Asymmetrie noch mit normativer Unangemessenheit identisch.
+- Integriert: Position, Zugang und Wirksamkeit, Mittel, Kenntnisse und Zeit, Äußerung und Entscheidung, Belastung und Entlastung sowie die rekursive Fortschreibung von Verteilungen.
+- Wieder aufgenommen: Blockierung als verteilt wirksame Grenze des Unterbrechens gemäß `knowledge/decisions/0004-blockierung-als-grenzfall.yaml`.
+- Genealogisch konkretisiert: Die Bachelorarbeit wird für Beteiligung, mehrfache Autorschaft und Verantwortung auf den gedruckten Seiten 24–25 herangezogen; die Masterarbeit für alleinige und gemeinsame Montage auf den gedruckten Seiten 8–9.
+- Montage bleibt epistemisches Modell: Die Zuordnung von Materialzugang, Technik, Zeit und Entscheidungschancen wirkt daran mit, welche Varianten praktisch Form gewinnen.
+- Nicht übernommen: „Gestaltungsmacht“ als Grundbegriff sowie die ausgearbeitete Analyse von Risiko und ungleicher Veränderbarkeit aus dem rekonstruierten Assistentenentwurf; diese Punkte greifen auf Kapitel 13 vor oder bedürfen späterer Prüfung.
+- Kapitel 13 vorbehalten: die Ungleichheit der Rückwirkung auf eigene und wechselseitige Anschlussbedingungen.
+
+## Kapitel 13 – Stand 2026-07-29
+
+- Neu angelegt: `manuskript/13-asymmetrie.md` als Abschluss von Teil II.
+- Verbindliche Definition: Asymmetrie ist eine relationale Ungleichheit von Anschlussbedingungen, durch die Beteiligte nicht in gleicher Weise aktualisieren, bestimmen, revidieren oder reorganisieren können.
+- Abgegrenzt: Nicht jeder Unterschied, jede Abhängigkeit oder jede ungleiche Verteilung ist asymmetrisch; entscheidend ist die gerichtete Ungleichheit der Rückwirkung auf eigene und wechselseitige Anschlussbedingungen.
+- Ausgearbeitet: die Unterschiede zwischen Aktualisieren, Bestimmen, Revidieren und Reorganisieren sowie Abhängigkeit, Zugang, Antwort, Austritt, Zeit, Aufmerksamkeit und rekursive Verstärkung.
+- Konkretisiert: programmatische und algorithmische Asymmetrien liegen nicht in Programmen oder Algorithmen als solchen, sondern in der ungleichen Veränderbarkeit ihrer Vorordnungen und Übergangsbedingungen.
+- Wieder aufgenommen: die asymmetrische Wirksamkeit verteilter Blockierungen gemäß `knowledge/decisions/0004-blockierung-als-grenzfall.yaml`.
+- Genealogisch konkretisiert: Die Bachelorarbeit wird für mehrfache Autorschaft und Verantwortung auf den gedruckten Seiten 24–25 herangezogen; die Masterarbeit für die wechselseitige Reaktion Beteiligter in gemeinsamer Montage auf den gedruckten Seiten 8–9.
+- Montage bleibt epistemisches Modell: Varianten und Zwischenstände machen unterschiedliche Reichweiten von Formbildung, Entscheidung und Zurechnung untersuchbar.
+- Nicht übernommen: „Gestaltungsmacht“ als Grundbegriff und die vorgeschlagene Definition eines herrschaftlichen Charakters. Macht und Herrschaft bleiben gemäß Architektur allenfalls abgeleitete Diagnosebegriffe organisierter Asymmetrie.
+- Teil III vorbehalten: die kritische Prüfung der Voraussetzungen, Wirkungen und Gründe asymmetrischer Anschlussordnungen sowie deren normative Beurteilung.
+
+## Kapitel 14 – Stand 2026-07-29
+
+- Neu angelegt: `manuskript/14-kritisieren.md` als erste aktuelle Manuskriptfassung von Teil III.
+- Verbindliche Definition: Kritisieren macht Bedingungen, Formen und Folgen organisierter Anschlüsse wahrnehmbar und einer begründeten Beurteilung zugänglich.
+- Abgegrenzt: Kritisieren setzt Problematisieren und Beschreibung voraus, ist aber weder mit ihnen noch mit Ablehnung oder abschließender Beurteilung identisch.
+- Ausgearbeitet: Rekonstruktion der Anschlussordnung, Rückgang von Wirkungen zu Bedingungen, Verfolgung von Bedingungen zu Folgen sowie der Vergleich von Anspruch, Vollzug und Wirkung.
+- Integriert: situierte Erfahrung, Vergleich, Gegenbeispiel, Position, Zurechnung und Antwortfähigkeit als Momente kritischer Prüfung, nicht als bereits gesicherte normative Maßstäbe.
+- Genealogisch konkretisiert: Die Bachelorarbeit wird für die Überarbeitung der Diagramme und die Arbeit als Werkzeug weiterer Erkenntnis auf den gedruckten Seiten 35–45 herangezogen; die Masterarbeit für Prozess, Umwege und Wechselwirkung von Theorie und Programmierpraxis auf den gedruckten Seiten 142–145 und 150–151.
+- Montage bleibt epistemisches Modell: Trennen, Anordnen und Vergleichen können organisierte Bedingungen und ausgelassene Beziehungen praktisch beurteilbar machen; Montage ist dadurch nicht automatisch kritisch.
+- Nicht übernommen: die umfassende zwanzigteilige Architektur des Assistentenentwurfs, „Öffentlichkeit“ als zusätzlicher Grundbegriff und eine abschließende Verantwortungslehre.
+- Kapitel 15 vorbehalten: die Bestimmung und Prüfung der Maßstäbe, anhand deren mögliche und aktualisierte Anschlussordnungen beurteilt werden.
 
 ## Teil I – Autorenentscheidungen und lokale Revision 2026-07-29
 
