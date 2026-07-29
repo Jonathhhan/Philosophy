@@ -61,6 +61,45 @@ Bei Prüfaufträgen:
 - zwischen Befund, Interpretation und Änderungsvorschlag unterscheiden;
 - keine Korrektur automatisch durchführen, wenn mehrere philosophisch plausible Lösungen bestehen.
 
+## Theoriegeleitetes Arbeitsprotokoll
+
+Codex behandelt die eigene Arbeit als eine Folge von Aktualisierungen, die den Raum weiterer Bearbeitungsmöglichkeiten verändert. Diese operative Anwendung orientiert sich am Begriffsrahmen des Buches, ersetzt aber keine Definition des Manuskripts und überträgt die Theorie nicht ungeprüft auf technische Vorgänge.
+
+Für größere Manuskript-, Architektur-, Revisions- und Reorganisationsaufträge ist der repository-lokale Skill `$recursive-codex` unter `.agents/skills/recursive-codex/` zu verwenden.
+
+Für jede größere Aufgabe gilt die rekursive Arbeitsbewegung:
+
+1. **Anschließen:** verbindlichen Projektstand, Auftrag, Quellen und betroffene Dateien aufnehmen;
+2. **Organisieren:** Abhängigkeiten, Querverweise, Rollen und Entscheidungskompetenzen bestimmen;
+3. **Aktualisieren:** die kleinste hinreichende und nachvollziehbare Änderung vornehmen;
+4. **Reorganisieren:** prüfen, ob die Änderung Beziehungen zwischen mehreren Dateien, Begriffen oder Ausgaben verändert;
+5. **Kritisieren:** Folgen, Widersprüche, Auslassungen und neu entstandene Unsicherheiten prüfen.
+
+Die Bewegung ist rekursiv, nicht linear. Eine Prüfung kann eine erneute Problematisierung, Revision oder Reorganisation erforderlich machen. Sie begründet keine Pflicht, jede Aufgabe durch alle Kapitelbegriffe zu führen.
+
+Der Umfang des Protokolls richtet sich nach dem Eingriff:
+
+- **lokale Korrektur:** Anschließen → Aktualisieren → Prüfen;
+- **Abschnitts- oder Kapitelarbeit:** Problematisieren → Form bestimmen → Aktualisieren → Komponieren → Stabilisieren → Prüfen;
+- **Änderung von Definition, Architektur oder Theoriebeziehung:** vollständige rekursive Arbeitsbewegung mit Quellenprüfung, Beurteilung, dokumentierter Autorenentscheidung und erneuter Konsistenzprüfung.
+
+Vor einer inhaltlichen Aktualisierung ist kenntlich zu machen, ob Codex:
+
+- einem bestätigten Arbeitsprogramm aus Definitionen und Entscheidungen folgt;
+- unter partieller Unbestimmtheit Varianten entwickelt;
+- eine stabilisierte Fassung revidiert;
+- oder Beziehungen mehrerer Projektbestandteile reorganisiert.
+
+Agenten und philosophische Perspektiven erweitern die Prüfung, entscheiden aber nicht durch Mehrheit. Ihre Vorschläge bleiben als Vorschläge kenntlich. Bestätigte Entscheidungen des Autors, aktuelle Manuskriptfassungen und verbindliche Projektdateien besitzen Vorrang.
+
+Nach größeren Änderungen berichtet Codex mindestens:
+
+- was aktualisiert wurde;
+- welche Anschlussbedingungen und Querverweise betroffen sind;
+- welche Möglichkeiten eröffnet, begrenzt oder zurückgestellt wurden;
+- welche Entscheidungen bestätigt und welche noch offen sind;
+- welche Prüfungen durchgeführt wurden.
+
 ## Rollen
 
 Codex kann je nach Auftrag folgende Rollen übernehmen:

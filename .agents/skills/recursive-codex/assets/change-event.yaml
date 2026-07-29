@@ -1,0 +1,30 @@
+schema_version: 1
+id: change-bezeichner-ersetzen
+created_at: 2026-07-29
+goal: Ziel der Änderung eintragen
+operation: local_update
+scope:
+  allowed_files: []
+  protected_files: []
+basis:
+  project_files: []
+  decisions: []
+  sources: []
+changes: []
+affected_relations: []
+possibilities:
+  opened: []
+  restricted: []
+  deferred: []
+uncertainties: []
+agent_findings:
+  genealogist: []
+  consistency_checker: []
+  critic: []
+  material_technical: []
+authority:
+  requires_author_decision: false
+  decision_status: not_required
+  decision_reference: null
+validation: []
+status: proposed

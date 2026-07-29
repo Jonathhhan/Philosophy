@@ -205,3 +205,46 @@ Teile des ursprünglichen Chatverlaufs sind in der Chatoberfläche und Suche nic
 - Entwurfsgrenze: Während einer offenen Anschluss- oder Ausgangsbearbeitung sind Import und Export gesperrt; die Oberfläche weist ausdrücklich darauf hin, dass der Entwurf noch nicht gesichert ist.
 - Prüfung: Zehn DOM- und Interaktionstests decken zusätzlich Importabbruch, manipulierte Beziehungen, zyklische Genealogien, Verlaufsnummerierung, Fokus und offene Entwürfe ab.
 - Unverändert: Manuskript, Glossar, Begriffsdefinitionen und Kapitelarchitektur.
+
+## Theoriegeleitetes Codex-Arbeitsprotokoll 2026-07-29
+
+- Bearbeitet: `AGENTS.md` und `WORKFLOW.md`; ergänzt: `projekt/codex-auftragsvorlage.md`.
+- Ziel: Die rekursive Bewegung des Buches strukturiert größere Codex-Arbeiten als Anschließen, Organisieren, Aktualisieren, Reorganisieren und Kritisieren.
+- Skaliert: Lokale Korrekturen, kompositorische Arbeiten und strukturelle Eingriffe besitzen verschieden umfangreiche Prüfwege.
+- Abgegrenzt: Die operative Verwendung ist analogisch, ersetzt keine Manuskriptdefinition und verallgemeinert die Theorie nicht auf beliebige Softwarevorgänge.
+- Entscheidungskompetenz: Agenten und philosophische Perspektiven erweitern die Prüfung, entscheiden aber nicht durch Mehrheit; die letzte inhaltliche Entscheidung liegt beim Autor.
+- Dokumentiert: `knowledge/decisions/0021-theoriegeleitetes-codex-arbeitsprotokoll.yaml`.
+- Operationalisiert: Der repository-lokale Skill `.agents/skills/recursive-codex/` klassifiziert Eingriffe, führt Relationsprüfungen und organisiert Abschlussberichte.
+- Ergänzt: typisierte YAML-Änderungsereignisse, vier unabhängige Prüfrollen und ein deterministischer Validator mit Selbsttest.
+- Erprobt: Ein unabhängiger read-only Forward-Test klassifizierte einen realistischen Konsistenzaudit korrekt, bewahrte den Schreibschutz und unterschied Befund, Vorbehalt und offene Entscheidung.
+- Ereignis: `knowledge/change-events/0001-recursive-codex-phase-1.yaml` dokumentiert und validiert die Reorganisation.
+- Unverändert: Manuskript, Glossar, Kapitelarchitektur und stabilisierte Begriffsdefinitionen.
+
+## Recursive Codex – projektlokale Abschlussprüfung 2026-07-30
+
+- Ergänzt: `.codex/hooks.json` und `.codex/hooks/recursive_stop.py` binden eine read-only Abschlussprüfung an das Codex-`Stop`-Ereignis.
+- Getrennt: `.agents/skills/recursive-codex/scripts/check_recursive_state.py` bleibt unabhängig vom Hook als CLI und später in CI ausführbar.
+- Geprüft: alle Änderungsereignisse gegen ihr eigenes Schema sowie die deklarierte Wissensintegrität über `scripts/validate_knowledge.py`.
+- Warnungspolitik: die 24 bereits vorhandenen Wissensreferenzwarnungen bleiben sichtbar, blockieren den Abschluss derzeit aber nicht; Schema- oder Wissensfehler blockieren den ersten Stop.
+- Schleifengrenze: Bei einem Fehler fordert der Hook höchstens einen weiteren Prüfgang an. Bleibt der Fehler bestehen, darf er keine Endlosschleife erzeugen und muss den verbleibenden Blocker kenntlich machen.
+- Reichweitengrenze: Der Prüfer behauptet keine philosophische Vollständigkeit der Relationsanalyse und leitet aus Git-Pfaden keine inhaltliche Relevanz ab.
+- Zurückgestellt: Eine deklarative Abdeckung struktureller Git-Änderungen benötigt zuerst Entscheidungen über Baseline, aktives Ereignis, relationspflichtige Pfade und zulässige Ereignisstatus.
+- Erprobt: Validator-, Zustandsprüfer- und Hook-Selbsttests, gültiges Stop-Ereignis aus Projektwurzel und Unterverzeichnis, ungültiges Hook-JSON sowie der konkrete Windows-Befehl.
+- Aktivierung offen: Projekt- und Hook-Vertrauen müssen in Codex bestätigt werden; je nach Oberfläche kann eine neue Sitzung oder ein Neustart erforderlich sein.
+- Ereignis: `knowledge/change-events/0002-recursive-codex-closure-gate.yaml` dokumentiert den getesteten, noch nicht vollständig aktivierten Stand.
+- Unverändert: Manuskript, Glossar, Projektarchitektur und stabilisierte Begriffsdefinitionen.
+
+## Recursive Codex – read-only MCP-Anschlussgraph 2026-07-30
+
+- Ergänzt: `.codex/config.toml` registriert den lokalen STDIO-Server `recursive_project_graph` mit vier read-only Werkzeugen.
+- Abfragbar: ausdrücklich deklarierte Beziehungen aus `knowledge/concepts/`, `knowledge/decisions/`, `knowledge/change-events/` und `knowledge/concept-relations.yaml`.
+- Getrennt: Gegenwärtige Begriffsknoten verwenden `concept:`, der historische Arbeitsgraph `historical:`. Genealogische Übergänge werden nicht als Identität gegenwärtiger Begriffe behandelt.
+- Provenienz: Jede Kante bewahrt Quelldatei und genaues YAML-Feld; Kanten aus Änderungsereignissen führen außerdem Status, Wirkung und Notiz mit.
+- Lückenpolitik: Nicht deklarierte Referenzen erscheinen als Platzhalter und werden weder automatisch definiert noch aus Manuskriptfreitext ergänzt.
+- Pfadgrenze: Dateien und Verzeichnisse bleiben verschiedene Knotentypen; absolute Pfade, Traversierung und Ausbrüche aus dem Projektstamm werden zurückgewiesen.
+- Dokumentiert: `.agents/skills/recursive-codex/references/mcp-graph.md` bestimmt Abfragefolge, Relationssemantik und Grenzen.
+- Erprobt: Kernlogik und echter MCP-STDIO-Dialog einschließlich Werkzeugliste, geschlossener Ausgabeschemata, Read-only-Annotationen, Fehlerfällen und Schreibfreiheit.
+- Aktivierung: `codex mcp list` erkennt den Server als aktiviert; eine bereits laufende Werkzeugsitzung übernimmt die neuen Werkzeuge gegebenenfalls erst nach Neustart oder in einer neuen Sitzung.
+- Zurückgestellt: `knowledge/genealogy.yaml`, schreibende Werkzeuge, automatische Git-Abdeckung und eine eigene graphische Oberfläche.
+- Ereignis: `knowledge/change-events/0003-recursive-codex-mcp-graph.yaml` dokumentiert den getesteten Stand.
+- Unverändert: Manuskript, Glossar, aktuelle Begriffsdefinitionen, Entscheidungen und Kapitelarchitektur.

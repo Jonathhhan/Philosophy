@@ -1,0 +1,4 @@
+interface:
+  display_name: "Recursive Codex"
+  short_description: "Rekursive, revidierbare Projektarbeit"
+  default_prompt: "Nutze $recursive-codex, um diese Änderung zu klassifizieren, ihre relationalen Folgen zu prüfen und sie revidierbar zu dokumentieren."

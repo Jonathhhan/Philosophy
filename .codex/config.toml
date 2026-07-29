@@ -1,0 +1,10 @@
+[mcp_servers.recursive_project_graph]
+command = "python"
+args = ["-B", "scripts/mcp/recursive_graph_server.py"]
+cwd = ".."
+enabled = true
+required = false
+enabled_tools = ["graph_summary", "search_nodes", "get_node", "trace_relations"]
+default_tools_approval_mode = "auto"
+startup_timeout_sec = 10
+tool_timeout_sec = 30

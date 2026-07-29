@@ -1,0 +1,136 @@
+schema_version: 1
+id: change-recursive-codex-mcp-graph
+created_at: 2026-07-30
+goal: >-
+  Die ausdrücklich dokumentierten Beziehungen zwischen Begriffen, Entscheidungen,
+  Änderungsereignissen und Projektdateien als read-only MCP-Anschlussgraph für
+  Codex abfragbar machen.
+operation: reorganization
+scope:
+  allowed_files:
+    - .codex/config.toml
+    - requirements-dev.txt
+    - scripts/mcp/recursive_graph_core.py
+    - scripts/mcp/recursive_graph_server.py
+    - scripts/test_recursive_graph.py
+    - .agents/skills/recursive-codex/SKILL.md
+    - .agents/skills/recursive-codex/references/mcp-graph.md
+    - knowledge/change-events/0003-recursive-codex-mcp-graph.yaml
+    - projekt/arbeitsstand.md
+  protected_files:
+    - manuskript/
+    - GLOSSAR.md
+    - PROJECT.md
+    - knowledge/concepts/
+    - knowledge/decisions/
+basis:
+  project_files:
+    - AGENTS.md
+    - WORKFLOW.md
+    - .agents/skills/recursive-codex/SKILL.md
+  decisions:
+    - decision-0021
+  sources:
+    - "Codex manual: Model Context Protocol and project-scoped MCP configuration"
+    - "OpenAI developer documentation: Build an MCP server"
+changes:
+  - file: .codex/config.toml
+    summary: Projektlokalen STDIO-MCP-Server mit vier freigegebenen read-only Werkzeugen registriert.
+  - file: requirements-dev.txt
+    summary: Getestete stabile Python-MCP-Abhängigkeit explizit fixiert.
+  - file: scripts/mcp/recursive_graph_core.py
+    summary: Deterministischen Graphaufbau aus ausdrücklich deklarierten YAML-Beziehungen implementiert.
+  - file: scripts/mcp/recursive_graph_server.py
+    summary: Vier read-only MCP-Werkzeuge mit geschlossenen Pydantic-Ausgabeschemata bereitgestellt.
+  - file: scripts/test_recursive_graph.py
+    summary: Kernsemantik, Pfadsicherheit, Protokoll, Schemas, Annotationen und Schreibfreiheit getestet.
+  - file: .agents/skills/recursive-codex/SKILL.md
+    summary: Abfragefolge und Auslegungsgrenzen des Anschlussgraphen in das Arbeitsprotokoll aufgenommen.
+  - file: .agents/skills/recursive-codex/references/mcp-graph.md
+    summary: Datenquellen, Namensräume, Relationssemantik, Betrieb und Grenzen dokumentiert.
+  - file: knowledge/change-events/0003-recursive-codex-mcp-graph.yaml
+    summary: Technische Reorganisation, Agentenbefunde und Prüfstatus dokumentiert.
+  - file: projekt/arbeitsstand.md
+    summary: Getesteten Phase-3-Stand und verbleibende Aktivierungsgrenze festgehalten.
+affected_relations:
+  - from: .codex/config.toml
+    relation: depends_on
+    to: scripts/mcp/recursive_graph_server.py
+    effect: added
+    note: Die Projektkonfiguration startet den lokalen STDIO-Server.
+  - from: scripts/mcp/recursive_graph_server.py
+    relation: depends_on
+    to: scripts/mcp/recursive_graph_core.py
+    effect: added
+    note: MCP-Transport und deterministische Graphkonstruktion bleiben getrennt.
+  - from: scripts/mcp/recursive_graph_core.py
+    relation: sourced_from
+    to: knowledge/
+    effect: added
+    note: Der Graph nimmt nur ausdrücklich deklarierte YAML-Beziehungen und Dateipfade auf.
+  - from: .agents/skills/recursive-codex/SKILL.md
+    relation: documents
+    to: .agents/skills/recursive-codex/references/mcp-graph.md
+    effect: added
+    note: Einsatzgrenzen und Abfragefolge sind Bestandteil des Arbeitsprotokolls.
+possibilities:
+  opened:
+    - Codex kann deklarierte Abhängigkeiten, Herkunft und Änderungsfolgen gezielt abfragen.
+    - Nicht deklarierte Begriffsreferenzen werden als Lücken sichtbar, ohne sie automatisch zu schließen.
+    - Dieselbe Graphlogik bleibt unabhängig vom MCP-Transport testbar.
+  restricted:
+    - Der MCP-Server bietet ausschließlich read-only Werkzeuge.
+    - Aus Manuskripttext werden keine Beziehungen automatisch inferiert.
+    - Graphbefunde ersetzen weder Quellenprüfung noch Autorenentscheidung.
+  deferred:
+    - Schreibende MCP-Werkzeuge.
+    - Automatische Git-basierte Relationsabdeckung.
+    - Eigene graphische Oberfläche über App Server oder SDK.
+    - Integration von knowledge/genealogy.yaml bis zur Bestimmung einer eigenen Semantik für begriffsübergreifende Entwicklungslinien.
+uncertainties:
+  - Die Projektkonfiguration wird von der Codex-CLI erkannt; die laufende Werkzeugsitzung übernimmt neue MCP-Werkzeuge gegebenenfalls erst nach einem Neustart oder in einer neuen Sitzung.
+  - Die konkrete Hook-Aktivierung aus Phase 2 bleibt eine getrennte Benutzerentscheidung.
+agent_findings:
+  genealogist:
+    - Gegenwärtige Begriffe und historische Arbeitsgraph-Knoten müssen getrennte Namensräume behalten; genealogische Übergänge begründen keine Identität.
+    - Deklarationsrichtungen, Listenindizes und Ereignisstatus müssen erhalten bleiben; aus related oder transitive Pfaden entstehen keine synthetischen Umkehr- oder Direktrelationen.
+    - Nicht deklarierte Begriffsreferenzen dürfen nur als Lücken erscheinen und weder Definitionen noch Vollständigkeit vortäuschen.
+  consistency_checker:
+    - Dateien, Verzeichnisse, Entscheidungen, Änderungsereignisse und Begriffe müssen als verschiedene Knotentypen erhalten bleiben.
+    - Die uneinheitliche Semantik von authority.decision_reference und knowledge/genealogy.yaml erlaubt noch keine unmarkierte Graphintegration.
+  critic: []
+  material_technical:
+    - Explizite Pydantic-Modelle sind nötig, damit die Werkzeugausgaben geschlossene und prüfbare JSON-Schemas besitzen.
+    - Traversierte Kanten dürfen nie auf wegen max_nodes ausgeschlossene Knoten zeigen; der Grenzfall max_nodes gleich eins wurde abgesichert.
+    - Projektpfade müssen relative Pfade bleiben, Traversierung und Symlink-Ausbruch zurückweisen und Diagnosen projektbezogen ausgeben.
+    - Ein echter STDIO-Clienttest muss Werkzeugliste, Annotationen, Schemas, Fehlerfälle und ausbleibende Dateischreibzugriffe prüfen.
+authority:
+  requires_author_decision: true
+  decision_status: accepted
+  decision_reference: user-instruction-2026-07-30
+validation:
+  - check: Python-Syntax
+    result: passed
+    evidence: py_compile akzeptiert Kern, MCP-Server und Protokolltest.
+  - check: Kern- und STDIO-Protokolltest
+    result: passed
+    evidence: scripts/test_recursive_graph.py meldet RECURSIVE GRAPH TESTS PASSED.
+  - check: Read-only-Vertrag
+    result: passed
+    evidence: Der Test bestätigt vier Werkzeuge mit readOnlyHint, geschlossenen Ausgabeschemata, Fehlergrenzen und unverändertem Dateisnapshot.
+  - check: Graphsemantik
+    result: passed
+    evidence: Aktuelle und historische Knoten bleiben getrennt; Provenienz, Ereignisstatus, Verzeichnisse und Traversierungsgrenzen werden geprüft.
+  - check: Projektkonfiguration
+    result: passed
+    evidence: tomllib liest .codex/config.toml und codex mcp list führt recursive_project_graph als aktiviert.
+  - check: Wissensreferenzen
+    result: warning
+    evidence: Der Graph weist bestehende nicht deklarierte Begriffsreferenzen als Platzhalter aus; er schließt sie nicht automatisch.
+  - check: Skill- und Projektzustand
+    result: passed
+    evidence: quick_validate.py meldet Skill is valid; check_recursive_state.py meldet drei von drei gültigen Ereignissen und bestandene Wissensvalidierung.
+  - check: Textintegrität
+    result: passed
+    evidence: Alle 24 geänderten oder neuen Textdateien sind striktes UTF-8 mit Schlusszeile und ohne erkannte Mojibake- oder Leerraumfehler.
+status: tested

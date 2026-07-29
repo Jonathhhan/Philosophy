@@ -1,0 +1,101 @@
+schema_version: 1
+id: change-recursive-codex-phase-1
+created_at: 2026-07-29
+goal: >-
+  Das theoriegeleitete Arbeitsprotokoll als repository-lokalen Codex-Skill mit
+  Ereignisschema, Agentenrollen und Abschlussprüfung operationalisieren.
+operation: reorganization
+scope:
+  allowed_files:
+    - AGENTS.md
+    - WORKFLOW.md
+    - projekt/codex-auftragsvorlage.md
+    - projekt/arbeitsstand.md
+    - knowledge/decisions/0021-theoriegeleitetes-codex-arbeitsprotokoll.yaml
+    - knowledge/change-events/0001-recursive-codex-phase-1.yaml
+    - .agents/skills/recursive-codex/
+  protected_files:
+    - manuskript/
+    - GLOSSAR.md
+    - PROJECT.md
+basis:
+  project_files:
+    - AGENTS.md
+    - WORKFLOW.md
+    - projekt/codex-auftragsvorlage.md
+  decisions:
+    - decision-0021
+  sources: []
+changes:
+  - file: AGENTS.md
+    summary: Verbindliches skaliertes Arbeitsprotokoll ergänzt.
+  - file: WORKFLOW.md
+    summary: Rekursive Arbeitsbewegung und Relationsprüfung integriert.
+  - file: projekt/codex-auftragsvorlage.md
+    summary: Wiederverwendbare Auftragsspezifikation angelegt.
+  - file: .agents/skills/recursive-codex/
+    summary: Repository-lokalen Skill samt Schema, Rollen, Vorlage und Validator angelegt.
+  - file: knowledge/decisions/0021-theoriegeleitetes-codex-arbeitsprotokoll.yaml
+    summary: Bestätigte Autorenentscheidung dokumentiert.
+  - file: projekt/arbeitsstand.md
+    summary: Operative Integration dokumentiert.
+  - file: knowledge/change-events/0001-recursive-codex-phase-1.yaml
+    summary: Die Reorganisation selbst als valides Änderungsereignis dokumentiert.
+affected_relations:
+  - from: AGENTS.md
+    relation: documents
+    to: WORKFLOW.md
+    effect: changed
+    note: Verbindliche Regeln und ausführbarer Ablauf sind rekursiv aufeinander bezogen.
+  - from: WORKFLOW.md
+    relation: depends_on
+    to: projekt/codex-auftragsvorlage.md
+    effect: added
+    note: Umfangreiche Aufgaben können den Workflow nun strukturiert instanziieren.
+  - from: .agents/skills/recursive-codex/SKILL.md
+    relation: depends_on
+    to: AGENTS.md
+    effect: added
+    note: Der Skill operationalisiert die dauerhaften Projektregeln, ersetzt sie aber nicht.
+  - from: .agents/skills/recursive-codex/scripts/validate_change_event.py
+    relation: tests
+    to: knowledge/change-events/0001-recursive-codex-phase-1.yaml
+    effect: added
+    note: Ereignisstruktur und Statusbedingungen werden deterministisch geprüft.
+possibilities:
+  opened:
+    - Wiederverwendbare rekursive Arbeitsweise über einzelne Chats hinaus.
+    - Explizite Provenienz und relationale Folgen größerer Änderungen.
+    - Unabhängige kritische Agentenrollen ohne Mehrheitsentscheidung.
+  restricted:
+    - Strukturelle Änderungen dürfen nicht als lokale Korrekturen behandelt werden.
+  deferred:
+    - MCP-basierter Anschlussgraph.
+    - Lifecycle-Hooks zur mechanischen Durchsetzung.
+    - Eigene Oberfläche über Codex SDK oder App Server.
+uncertainties: []
+agent_findings:
+  genealogist: []
+  consistency_checker:
+    - Der Skill klassifizierte den read-only Auftrag korrekt als audit und veränderte keine Datei.
+    - Die Prüfung erhielt einen lokalen Vorbehalt sowie eine fehlende Folgebeziehung, ohne daraus eigenmächtig eine Änderung abzuleiten.
+  critic: []
+  material_technical: []
+authority:
+  requires_author_decision: true
+  decision_status: accepted
+  decision_reference: decision-0021
+validation:
+  - check: Skill-Struktur
+    result: passed
+    evidence: quick_validate.py meldet Skill is valid.
+  - check: Validator-Selbsttest
+    result: passed
+    evidence: validate_change_event.py --self-test meldet SELF-TEST PASSED.
+  - check: Platzhalter-Gate der Ereignisvorlage
+    result: passed
+    evidence: Der Validator weist die unveränderten ID- und Zielplatzhalter zurück.
+  - check: Unabhängiger Forward-Test
+    result: passed
+    evidence: Ein frischer Agent klassifizierte und bearbeitete einen realistischen Konsistenzaudit skillgemäß ohne Schreibzugriff.
+status: stabilized

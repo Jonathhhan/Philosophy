@@ -1,0 +1,27 @@
+id: decision-0021
+date: 2026-07-29
+title: Theoriegeleitetes und skaliertes Codex-Arbeitsprotokoll
+status: accepted
+decision: >-
+  Codex orientiert größere Arbeiten am Projekt an der rekursiven Bewegung
+  Anschließen, Organisieren, Aktualisieren, Reorganisieren und Kritisieren.
+  Das Protokoll wird nach Eingriffstiefe skaliert und verwendet weitere
+  Kapiteloperationen nur dort, wo sie eine sachliche Differenz bestimmen.
+  Die operative Anwendung ist analogisch: Sie ersetzt keine Definition des
+  Manuskripts und verallgemeinert die Theorie nicht auf beliebige technische
+  Vorgänge. Agentenvorschläge entscheiden nicht durch Mehrheit; die letzte
+  inhaltliche Entscheidung verbleibt beim Autor.
+reason: >-
+  Die Arbeitsweise soll die zentrale Einsicht des Buches praktisch aufnehmen,
+  dass jede Aktualisierung weitere Anschlussmöglichkeiten verändert. Die
+  Skalierung bewahrt lokale Aufgaben vor unnötiger Schematisierung, während
+  strukturelle Änderungen ihre begrifflichen, kompositorischen und technischen
+  Folgen ausdrücklich prüfen müssen.
+affected:
+  - AGENTS.md
+  - WORKFLOW.md
+  - projekt/codex-auftragsvorlage.md
+  - .agents/skills/recursive-codex/
+  - knowledge/change-events/0001-recursive-codex-phase-1.yaml
+  - projekt/arbeitsstand.md
+supersedes: []
