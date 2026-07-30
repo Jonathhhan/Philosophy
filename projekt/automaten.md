@@ -1,6 +1,6 @@
 # Automaten der Unterscheidung und propositionalen Ordnung
 
-Diese Werkzeuge erweitern die vorhandenen Projektwerkzeuge um lesende Prüfmodi. Sie stabilisieren keine neue Theorieachse und verändern für sich genommen keine Manuskriptdateien. Im editorischen Arbeitsablauf dienen sie jedoch einer Entscheidung, die entweder zu einem Manuskriptpatch oder zu einem begründeten Abschluss führt.
+Diese Werkzeuge erweitern die vorhandenen Projektwerkzeuge um lesende Prüfmodi. Sie stabilisieren keine neue Theorieachse und verändern für sich genommen keine Manuskriptdateien. Der Automatenverbund kann die Prüfungen jedoch selbstständig verketten, bereits geprüfte Zustände persistent erkennen und bis zu einer produktiven Differenz weiterarbeiten.
 
 ## Codex-Automat der Unterscheidung
 
@@ -46,7 +46,7 @@ python scripts\kunstwerk_automat.py Algorithmus materielle-Ausfuehrung --max-ste
 python scripts\kunstwerk_automat.py Form Unmarkiertes --output recovered\proposals\kunstwerk-form-lauf.md
 ```
 
-Der Automat fragt nicht nach der letzten Wahrheit. Er läuft bis zu einer Abbruchbedingung:
+Der Automat läuft bis zu einer Abbruchbedingung:
 
 - gesetzte Schrittgrenze;
 - keine unbesuchte deklarierte Anschlussstelle;
@@ -59,12 +59,10 @@ Die Ausgabe ist eine Aufführungsspur: markierte Seite, unmarkierte Seite, Ansch
 
 `scripts/automatenverbund.py` kombiniert Unterscheidungsautomat, Tractatus-Automat und Kunstwerk-Automat dort, wo Anschlüsse nachweisbar sind. Der Verbund prüft Brücken über gemeinsame Begriffsadressen, Manuskriptanker oder deklarierte Concept-Relationen. Wo keine Brücke besteht, wird die Verbindung blockiert und als Befund ausgegeben.
 
-Beispiele:
+Ein einzelner Lauf:
 
 ```powershell
-python scripts\automatenverbund.py Anschliessen Nicht-Anschluss --context "von der ersten Unterscheidung bis zur Auffuehrung" --max-steps 8
-python scripts\automatenverbund.py Algorithmus materielle-Ausfuehrung --context "Identitaet ueber Implementierungen" --format json
-python scripts\automatenverbund.py Form Unmarkiertes --output recovered\proposals\automatenverbund-form.md
+python scripts\automatenverbund.py Anschliessen Nicht-Anschluss --context "von der ersten Unterscheidung bis zur Aufführung" --max-steps 8
 ```
 
 Der Verbund erzeugt drei Stufen:
@@ -73,23 +71,60 @@ Der Verbund erzeugt drei Stufen:
 2. Propositional ordnen: Tractatus-Struktur aus Leitsatz, Grenze und Anschluss.
 3. Aufführen: Kunstwerk-Score entlang deklarierter Relationen.
 
-Er schreibt nur mit explizitem `--output` und bleibt Proposal, Prüfstruktur oder Aufführungsspur.
+## Iterativer Modus bis zur produktiven Differenz
 
-## Schutz vor endlosem Regress
+Mit `--until-new` verfolgt der Verbund die im Lauf gefundenen Begriffsadressen selbstständig weiter. Jeder neu erreichte Begriff wird mit dem vorherigen Begriff als Gegenbegriff geprüft. Bereits bearbeitete Eingaben werden nicht wiederholt.
 
-Automaten dürfen einander nur innerhalb eines einzelnen, begrenzten Prüflaufs aufrufen. Eine Ausgabe darf nicht allein deshalb zum Eingang eines gleichartigen neuen Laufs werden, weil sie weitere mögliche Unterscheidungen enthält. Möglichkeit allein ist kein Arbeitsauftrag.
+```powershell
+python scripts\automatenverbund.py Organisation Nicht-Organisation `
+  --context "Organisation von Möglichkeiten" `
+  --until-new `
+  --max-runs 20 `
+  --output recovered\proposals\naechste-produktive-differenz.md
+```
 
-Für denselben Gegenstand gilt:
+Der iterative Modus verwaltet standardmäßig seinen persistenten Zustand in:
 
-1. ein Hauptlauf;
-2. höchstens ein gezielter Gegencheck bei einem konkreten Widerspruch;
-3. danach Entscheidung durch den Editor: `PATCH`, `KEEP` oder `BLOCKED`.
+```text
+recovered/state/automatenverbund-state.json
+```
 
-Ein Lauf ohne neue Textstelle, neue Quelle, neue Relation oder neuen Widerspruch wird nicht wiederholt. Nach einem Patch wechselt die Redaktion zum nächsten Abschnitt. Eine Rückkehr erfolgt nur, wenn eine spätere Änderung den früheren Befund tatsächlich verändert.
+Gespeichert werden:
+
+- bereits geprüfte Begriffspaare;
+- erreichte Begriffsadressen;
+- gefundene Manuskriptanker;
+- nachgewiesene Anschlussbrücken.
+
+Der erste Lauf bildet den Ausgangsstand. Danach arbeitet der Verbund weiter, bis mindestens eine produktive Differenz entsteht:
+
+- ein zuvor nicht erreichter Begriff;
+- ein neuer Manuskriptanker;
+- eine neue Anschlussbrücke zwischen Automaten.
+
+Ein weiterer Prüftext ohne neue Differenz beendet den Prozess nicht. Er wird als bereits bekannter Zustand behandelt, und der Verbund verfolgt den nächsten noch ungeprüften Anschluss. Entsteht innerhalb der Laufgrenze nichts Neues, endet der Lauf mit der ausdrücklichen Diagnose, dass der erreichbare neue Suchraum erschöpft oder die gesetzte Laufgrenze erreicht ist.
+
+Ein eigener Zustandsstand kann mit `--state-file` gewählt werden:
+
+```powershell
+python scripts\automatenverbund.py Verteilung Asymmetrie `
+  --until-new `
+  --state-file recovered\state\verteilung-asymmetrie.json
+```
+
+## Verhältnis zur Redaktion
+
+Eine produktive Differenz ist noch kein gültiger Manuskripttext. Sie ist ein neuer, hinreichend bestimmter editorischer Prüfgegenstand. Die anschließende Redaktion entscheidet:
+
+- `PATCH`, wenn die Differenz einen begründbaren Manuskripteingriff trägt;
+- `KEEP`, wenn der neue Befund eine vorhandene Stelle bestätigt;
+- `BLOCKED`, wenn für eine Integration Evidenz oder begriffliche Bestimmung fehlt.
+
+Der Automatenlauf verhindert damit zwei entgegengesetzte Fehler: Er bricht nicht schon bei einer weiteren bloßen Prüfspur ab, und er wiederholt auch nicht endlos denselben Zustand.
 
 ## Gemeinsame Grenzen
 
-- Die Werkzeuge schreiben nur mit explizitem `--output`.
-- Ausgaben sind Vorschläge, Prüfstrukturen oder Lesehilfen.
-- Ein Audit ist kein Selbstzweck und darf kein weiteres Audit als einzigen Output erzeugen.
-- Manuskriptintegration erfordert Quellenprüfung und eine explizite editorische Entscheidung; eine erneute Autorfreigabe ist nur nötig, wenn eine Entscheidung nicht aus den Projektvorgaben und dem Textbestand ableitbar ist.
+- Die Werkzeuge schreiben Ausgaben nur mit explizitem `--output`.
+- Der persistente Zustand ist kein theoretischer Wahrheitsbestand, sondern ein Gedächtnis bereits geprüfter Anschlüsse.
+- Eine produktive Differenz ist zunächst ein editorischer Prüfgegenstand, noch keine Theorieentscheidung.
+- Manuskriptintegration bleibt eine explizite editorische Operation mit Quellenprüfung und begrifflicher Begründung.
