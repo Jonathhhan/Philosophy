@@ -371,9 +371,9 @@ Teile des ursprünglichen Chatverlaufs sind in der Chatoberfläche und Suche nic
 - Anschlussbedingung: Der interaktive Teil macht damit sichtbar, dass Automatisierung Möglichkeiten organisiert, aber Autorentscheidung und Projektwissen nicht ersetzt.
 - Prüfung: Ein neuer UI-Test kontrolliert, dass Vorschlag, Draft, Event-Draft, Vorprüfung und gesperrte Autorentscheidung getrennt erscheinen.
 
-## Codex-Methode ? Verfeinerung der Anschlussarbeit 2026-07-30
+## Codex-Methode – Verfeinerung der Anschlussarbeit 2026-07-30
 
-- Aktualisiert: `projekt/codex-methode-verfeinerung.md` legt ein feineres Operationsregister f?r Codex an: Sondieren, Pr?zisieren, Integrieren, Revidieren, Reorganisieren und Sperrpr?fen.
-- Grenze: Die Methode ist ein Arbeitsprotokoll f?r Codex, keine neue Grundthese des Buches und kein Ersatz f?r Autorentscheidung oder Quellenlekt?re.
-- Anschlussbedingung: Gr??ere Codex-Bearbeitungen k?nnen k?nftig Status, Herkunft, ge?ffnete und begrenzte Anschlussm?glichkeiten sowie offene Autorentscheidungen sichtbarer mitf?hren.
-- Pr?fung: Zentrale Projektpr?fung bestanden; Change Event 0025 ist valide und stabilisiert.
+- Aktualisiert: `projekt/codex-methode-verfeinerung.md` legt ein feineres Operationsregister für Codex an: Sondieren, Präzisieren, Integrieren, Revidieren, Reorganisieren und Sperrprüfen.
+- Grenze: Die Methode ist ein Arbeitsprotokoll für Codex, keine neue Grundthese des Buches und kein Ersatz für Autorentscheidung oder Quellenlektüre.
+- Anschlussbedingung: Größere Codex-Bearbeitungen können künftig Status, Herkunft, geöffnete und begrenzte Anschlussmöglichkeiten sowie offene Autorentscheidungen sichtbarer mitführen.
+- Prüfung: Zentrale Projektprüfung bestanden; Change Event 0025 ist valide und stabilisiert.
