@@ -2,7 +2,7 @@
 
 Stand: 31. Juli 2026
 
-Das Projekt besitzt einen vollständigen Arbeitsentwurf mit 17 Kapiteln und Schluss. Die theoretische Architektur und die zentralen Begriffsentscheidungen sind stabilisiert. Die nächste Phase dient nicht dem Ausbau um weitere Grundbegriffe oder Werkzeuge, sondern der argumentativen, literarischen und editorischen Publikationsreife.
+Das Projekt besitzt einen vollständigen Arbeitsentwurf mit 17 Kapiteln und Schluss. Die theoretische Architektur und die zentralen Begriffsentscheidungen sind stabilisiert. Die aktuelle Phase dient nicht dem Ausbau um weitere Grundbegriffe oder Werkzeuge, sondern der argumentativen, literarischen und editorischen Publikationsreife.
 
 Abgeschlossene Entwicklungsphasen stehen im [`Änderungsjournal`](aenderungsjournal.md). Verbindliche Architekturentscheidungen stehen in [`architektur.md`](architektur.md), Begriffsdefinitionen im `GLOSSAR.md` und bestätigte Einzelentscheidungen unter `knowledge/decisions/`.
 
@@ -19,26 +19,31 @@ Abgeschlossene Entwicklungsphasen stehen im [`Änderungsjournal`](aenderungsjour
 - funktionaler Stand des Anschlusslabors
 - Change Events, Wissensbasis, zentrale Projektprüfung und CI
 - dokumentierte Arbeitsweise von Codex und Automaten als Prüfapparate, nicht als Theorieautoritäten
+- automatengeleitetes Audit der Übergänge 10 → 11, 13 → 14, 15 → 16 und 17 → Schluss
 
 ## Aktuelle Hauptaufgabe
 
 Der vollständige Manuskriptstand wird von einer stabilen Begriffsarchitektur in eine publizierbare Argumentation überführt.
 
-Dafür gelten vier Prioritäten:
+Die Publikationsphase folgt vier Anschlüssen:
 
-1. **Kapitelübergänge prüfen.** Kapitelenden und Kapitelanfänge werden paarweise darauf gelesen, welches ungelöste Problem die nächste Operation erforderlich macht.
-2. **Redundanzen verdichten.** Wiederholte Definitionen und Abgrenzungen bleiben nur dort erhalten, wo sie eine neue argumentative Leistung erbringen.
-3. **Literatur integrieren.** Externe Gesprächspartner werden problembezogen eingesetzt, um Unterscheidungen zu schärfen, Alternativen sichtbar zu machen oder Reichweitengrenzen auszuweisen.
-4. **Lesefassung beurteilen.** Nach lokalen Revisionen wird das Manuskript als zusammenhängender Text gelesen und nicht nur kapitelweise geprüft.
+1. **Kapitelübergänge prüfen – abgeschlossen.** Die vier priorisierten Übergänge wurden mit `keep` bewertet; künstliche Ergänzungen waren nicht erforderlich. Das Audit steht unter [`recovered/audits/uebergangsaudit-publikationsphase.md`](../recovered/audits/uebergangsaudit-publikationsphase.md).
+2. **Redundanzen verdichten – aktiv.** Wiederholte Definitionen und Abgrenzungen bleiben nur dort erhalten, wo sie eine neue argumentative Leistung erbringen.
+3. **Literatur integrieren – anschließend.** Externe Gesprächspartner werden problembezogen eingesetzt, um Unterscheidungen zu schärfen, Alternativen sichtbar zu machen oder Reichweitengrenzen auszuweisen.
+4. **Lesefassung beurteilen – abschließend.** Nach lokalen Revisionen wird das Manuskript als zusammenhängender Text gelesen und nicht nur kapitelweise geprüft.
 
 Die automatengeleitete Prüfstruktur für diese Phase steht unter [`recovered/proposals/naechste-anschluesse.md`](../recovered/proposals/naechste-anschluesse.md).
 
-## Besonders zu prüfende Übergänge
+## Redundanzprüfung
 
-- Kapitel 10 → 11: von der Stabilisierung einzelner Formen zur Organisation mehrerer Anschlussbedingungen
-- Kapitel 13 → 14: von der Beschreibung asymmetrischer Bedingungen zur kritischen Prüfung
-- Kapitel 15 → 16: vom begründeten Urteil zur erneuten Bestimmung stabilisierter Bedingungen
-- Kapitel 17 → Schluss: von konkreter Reorganisation zur Organisation ihrer Möglichkeit
+Besonders zu prüfen sind:
+
+- wiederholte Formeln zur Abgrenzung von Macht-, Herrschafts-, Gesellschafts- und Subjekttheorie;
+- wiederkehrende Sicherungen, dass Stabilisierung, Wirksamkeit oder Fortbestand keine Rechtfertigung begründen;
+- mehrfache Abgrenzungen von Programm, Algorithmus, Organisation, Revision und Reorganisation;
+- gleichförmige Kapitelendformeln ohne neue argumentative Funktion.
+
+Kürzungen erfolgen nur, wenn eine Wiederholung weder Orientierung, Rückbezug, Kontrast noch eine neue Folgerung leistet.
 
 ## Noch zu sichern
 
@@ -57,15 +62,14 @@ Die automatengeleitete Prüfstruktur für diese Phase steht unter [`recovered/pr
 
 ## Nächster konkreter Arbeitsschritt
 
-Ein Übergangsaudit erstellt für jedes Kapitelpaar eine kurze Karte aus:
+Ein Redundanzaudit unterscheidet für jede Wiederholung:
 
-- erreichtem Ergebnis des vorherigen Kapitels,
-- offen gebliebenem Problem,
-- Notwendigkeit der nächsten Operation,
-- möglicher Redundanz,
-- benötigtem Literaturanschluss.
+- notwendige Definition,
+- hilfreichen Rückbezug,
+- neue argumentative Folgerung,
+- bloße Sicherungswiederholung.
 
-Erst auf Grundlage dieses Audits werden Manuskriptpassagen verändert.
+Nur die letzte Kategorie wird zur Kürzung vorgeschlagen. Manuskriptänderungen bleiben klein, lokal und begründet.
 
 ## Prüfungen
 
