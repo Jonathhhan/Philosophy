@@ -1,0 +1,17 @@
+id: beurteilen
+label: Beurteilen
+status: core
+chapter: 15
+definition: Unterschiede zwischen möglichen und aktualisierten Ordnungen anhand ausweisbarer Maßstäbe bestimmen, ohne den Maßstab als voraussetzungslos zu behandeln.
+depends_on:
+  - kritisieren
+required_for:
+  - revidieren
+related: []
+constraints:
+  - Maßstäbe werden ausgewiesen und bleiben selbst prüfbar.
+  - Beurteilen führt keine voraussetzungslose Norm oder allgemeine Subjekttheorie ein.
+source_files:
+  - GLOSSAR.md
+  - PROJECT.md
+  - manuskript/15-beurteilen.md

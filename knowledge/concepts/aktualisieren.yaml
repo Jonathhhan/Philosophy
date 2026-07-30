@@ -1,0 +1,23 @@
+id: aktualisieren
+label: Aktualisieren
+status: core
+chapter: 5
+definition: Eine Anschlussmöglichkeit in einen bestimmten Vollzug überführen.
+central_claim: Jede Aktualisierung verändert den Raum weiterer Anschlussmöglichkeiten.
+depends_on:
+  - anschliessen
+required_for:
+  - programm
+  - algorithmus
+  - revidieren
+  - reorganisieren
+related:
+  - form
+  - improvisieren
+constraints:
+  - Aktualisieren ist nicht bloßes Realisieren eines schon fertig vorhandenen Zustands.
+  - Eine Aktualisierung verändert nicht notwendig alle, aber stets Bedingungen weiterer Anschlüsse.
+source_files:
+  - GLOSSAR.md
+  - PROJECT.md
+  - manuskript/05-aktualisieren.md

@@ -1,0 +1,17 @@
+id: stabilisieren
+label: Stabilisieren
+status: core
+chapter: 10
+definition: Anschlussbedingungen so festigen, dass sie über einzelne Vollzüge hinaus wiedererkennbar und wirksam bleiben, ohne dadurch notwendig endgültig zu werden.
+depends_on:
+  - aktualisieren
+required_for:
+  - revidieren
+related:
+  - komposition
+constraints:
+  - Stabilisierung ist nicht endgültige Fixierung und nicht normative Rechtfertigung.
+source_files:
+  - GLOSSAR.md
+  - PROJECT.md
+  - manuskript/10-stabilisieren.md

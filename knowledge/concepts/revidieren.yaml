@@ -1,0 +1,19 @@
+id: revidieren
+label: Revidieren
+status: core
+chapter: 16
+definition: Begründetes Zurückkommen auf stabilisierte Anschlussbedingungen, um sie im Licht ihrer Wirkungen, veränderter Umstände oder neu erschlossener Möglichkeiten erneut zu bestimmen.
+depends_on:
+  - aktualisieren
+  - beurteilen
+required_for:
+  - reorganisieren
+related:
+  - stabilisieren
+constraints:
+  - Revidieren ist nicht bloße Veränderung, Korrektur, Reparatur oder Anpassung.
+  - Revidierbarkeit ist nicht mit Reversibilität identisch.
+source_files:
+  - GLOSSAR.md
+  - PROJECT.md
+  - manuskript/16-revidieren.md

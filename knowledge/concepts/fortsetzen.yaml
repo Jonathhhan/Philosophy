@@ -1,0 +1,15 @@
+id: fortsetzen
+label: Fortsetzen
+status: supporting
+working_definition: Einen Zusammenhang so weiterführen, dass an bereits wirksame Bedingungen angeschlossen wird.
+depends_on:
+  - anschliessen
+required_for: []
+related:
+  - unterbrechen
+constraints:
+  - Fortsetzen ist kein bloßer zeitlicher Nachfolger, sondern bleibt an Anschlussbedingungen gebunden.
+source_files:
+  - PROJECT.md
+  - manuskript/01-anschliessen.md
+  - manuskript/02-unterbrechen.md

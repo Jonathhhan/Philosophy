@@ -1,0 +1,22 @@
+id: organisieren
+label: Organisieren
+status: core
+chapter: 11
+definition: Mehrere Anschlussbedingungen in einen Zusammenhang bringen, in dem sie einander ermöglichen, begrenzen, priorisieren oder ausschließen.
+depends_on:
+  - anschliessen
+required_for:
+  - verteilen
+  - asymmetrie
+  - kritisieren
+  - reorganisieren
+related:
+  - programm
+  - algorithmus
+constraints:
+  - Organisation ist nicht auf Institutionen beschränkt.
+  - Organisieren ist nicht mit Reorganisieren identisch.
+source_files:
+  - GLOSSAR.md
+  - PROJECT.md
+  - manuskript/11-organisieren.md

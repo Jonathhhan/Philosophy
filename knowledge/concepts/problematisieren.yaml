@@ -1,0 +1,18 @@
+id: problematisieren
+label: Problematisieren
+status: core
+chapter: 3
+definition: Eine zunächst unbestimmte Fraglichkeit selektiv als bearbeitbare Frage fassen, ohne damit bereits ihre Lösung, Form oder Beurteilung festzulegen.
+depends_on:
+  - anschliessen
+  - unterbrechen
+required_for:
+  - form
+  - kritisieren
+related: []
+constraints:
+  - Problematisieren legt noch keine Lösung, Form oder normative Beurteilung fest.
+source_files:
+  - GLOSSAR.md
+  - PROJECT.md
+  - manuskript/03-problematisieren.md

@@ -71,6 +71,10 @@ Die Bachelor- und Masterarbeit unter `sources/` sind genealogische Primärquelle
 
 Der interaktive Teil unter `interaktiv/` macht Anschlussoperationen praktisch erfahrbar. Er illustriert die Theorie nicht bloß, ersetzt aber auch nicht die argumentative Entwicklung des Manuskripts. Eine optionale KI-Funktion bleibt an Datenschutz-, Sicherheits- und Deploymententscheidungen gebunden und ist ohne serverseitige Schutzkonfiguration deaktiviert.
 
+## Codex-Arbeitsweise
+
+Codex wird in diesem Repository nicht als Autorersatz oder Theorieautorität behandelt. Größere Änderungen werden als adressierbare Aktualisierungen geführt: Sie sollen Herkunft, betroffene Relationen, bewahrte Entscheidungen, eröffnete Möglichkeiten und offene TODOs sichtbar machen. Der Projekttext `projekt/codex-als-anschlussapparat.md` beschreibt diese Arbeitsweise als Anschlussapparat; er ist ein Arbeitsprogramm, keine Manuskriptdefinition und keine neue Grundthese des Buches.
+
 ## Lesefassung bauen
 
 Der aktuelle Manuskriptstand kann als zusammenhängende Markdown-Lesefassung gebaut werden:

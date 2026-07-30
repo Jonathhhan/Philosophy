@@ -1,0 +1,17 @@
+id: unterbrechen
+label: Unterbrechen
+status: core
+chapter: 2
+working_definition: Einen laufenden oder erwarteten Anschluss so aussetzen, stören oder abbrechen, dass seine Bedingungen sichtbar oder fraglich werden.
+depends_on:
+  - anschliessen
+required_for:
+  - problematisieren
+related:
+  - fortsetzen
+constraints:
+  - Unterbrechen ist nicht bloß Pause oder endgültiger Abbruch.
+  - Auch der Bruch schließt an dasjenige an, von dem er sich absetzt.
+source_files:
+  - PROJECT.md
+  - manuskript/02-unterbrechen.md

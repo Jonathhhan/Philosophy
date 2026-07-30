@@ -1,0 +1,17 @@
+id: moeglichkeitsraum
+label: Möglichkeitsraum
+status: supporting
+working_definition: Relationale Ordnung der unter bestimmten Bedingungen praktisch aktualisierbaren Anschlussmöglichkeiten.
+depends_on:
+  - anschliessen
+required_for:
+  - programm
+related:
+  - aktualisieren
+constraints:
+  - Möglichkeitsraum bezeichnet keine bloße Menge beliebig denkbarer Zustände.
+  - Veränderungen des Möglichkeitsraums müssen an Bedingungen weiterer Anschlüsse ausgewiesen werden.
+source_files:
+  - PROJECT.md
+  - manuskript/05-aktualisieren.md
+  - manuskript/07-programm.md

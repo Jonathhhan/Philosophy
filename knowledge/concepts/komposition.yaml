@@ -1,0 +1,18 @@
+id: komposition
+label: Komposition
+status: derived
+chapter: 9
+working_definition: Ergebnis oder Zusammenhang des Komponierens, in dem Elemente, Übergänge und Relationen angeordnet sind.
+depends_on:
+  - form
+  - aktualisieren
+required_for: []
+related:
+  - algorithmus
+  - programm
+constraints:
+  - Komposition ersetzt nicht den Tätigkeitsbegriff Komponieren.
+  - Komposition ist nicht automatisch Werk; Werk setzt besondere Stabilisierung voraus.
+source_files:
+  - PROJECT.md
+  - manuskript/09-komponieren.md

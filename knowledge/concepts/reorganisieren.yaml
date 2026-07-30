@@ -1,0 +1,18 @@
+id: reorganisieren
+label: Reorganisieren
+status: core
+chapter: 17
+definition: Die Beziehungen verändern, durch die mehrere Anschlussbedingungen einander stützen, begrenzen und für weitere Vollzüge wirksam werden.
+depends_on:
+  - organisieren
+  - revidieren
+required_for: []
+related:
+  - aktualisieren
+constraints:
+  - Reorganisieren ist keine Rückkehr zu einem voraussetzungslosen Anfang.
+  - Reorganisation verändert Relationen mehrerer Bedingungen, nicht bloß ein isoliertes Element.
+source_files:
+  - GLOSSAR.md
+  - PROJECT.md
+  - manuskript/17-reorganisieren.md

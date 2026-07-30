@@ -1,0 +1,16 @@
+id: verteilen
+label: Verteilen
+status: core
+chapter: 12
+definition: Möglichkeiten, Mittel, Positionen, Belastungen und Entscheidungschancen innerhalb einer Organisation unterschiedlich zuordnen.
+depends_on:
+  - organisieren
+required_for:
+  - asymmetrie
+related: []
+constraints:
+  - Unterschiedliche Verteilung ist nicht schon Asymmetrie oder normative Unangemessenheit.
+source_files:
+  - GLOSSAR.md
+  - PROJECT.md
+  - manuskript/12-verteilen.md

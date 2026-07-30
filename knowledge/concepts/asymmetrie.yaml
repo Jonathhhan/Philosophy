@@ -1,0 +1,18 @@
+id: asymmetrie
+label: Asymmetrie
+status: core
+chapter: 13
+definition: Eine relationale Ungleichheit von Anschlussbedingungen, durch die Beteiligte nicht in gleicher Weise aktualisieren, bestimmen, revidieren oder reorganisieren können.
+depends_on:
+  - verteilen
+  - organisieren
+required_for:
+  - kritisieren
+related: []
+constraints:
+  - Asymmetrie ist keine allgemeine Macht- oder Herrschaftstheorie.
+  - Macht und Herrschaft bleiben allenfalls abgeleitete Diagnosebegriffe organisierter Asymmetrie.
+source_files:
+  - GLOSSAR.md
+  - CONSTITUTION.md
+  - manuskript/13-asymmetrie.md

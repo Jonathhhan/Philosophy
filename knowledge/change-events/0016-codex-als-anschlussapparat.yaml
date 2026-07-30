@@ -1,0 +1,96 @@
+schema_version: 1
+id: change-0016-codex-als-anschlussapparat
+created_at: 2026-07-30
+goal: >-
+  Einen Projekttext anlegen, der präzisiert, unter welchen Bedingungen die
+  Codex-Implementierung philosophisch als Anschlussapparat stark oder revolutionär
+  werden kann, ohne Codex als Autorität oder neue Manuskriptthese einzuführen.
+operation: composition
+scope:
+  allowed_files:
+    - projekt/codex-als-anschlussapparat.md
+    - knowledge/change-events/0016-codex-als-anschlussapparat.yaml
+  protected_files:
+    - CONSTITUTION.md
+    - PROJECT.md
+    - GLOSSAR.md
+    - manuskript/
+    - interaktiv/
+    - build/manuskript-lesefassung.md
+basis:
+  project_files:
+    - CONSTITUTION.md
+    - PROJECT.md
+    - GLOSSAR.md
+    - WORKFLOW.md
+    - projekt/codex-prinzip-zettelkasten-plateaus.md
+    - projekt/positionskarte.md
+  decisions:
+    - knowledge/decisions/0021-theoriegeleitetes-codex-arbeitsprotokoll.yaml
+    - knowledge/decisions/0022-codex-zettelkasten-plateaus.yaml
+  sources:
+    - author-confirmation-ja-2026-07-30
+changes:
+  - file: projekt/codex-als-anschlussapparat.md
+    summary: >-
+      Neuer Projekttext: Codex wird als organisierte Praxis der Sichtbarmachung,
+      Prüfung und Reorganisation von Anschlussmöglichkeiten bestimmt; ausdrücklich
+      nicht als Autorersatz, Theorieautorität oder neue Manuskriptdefinition.
+  - file: knowledge/change-events/0016-codex-als-anschlussapparat.yaml
+    summary: >-
+      Dokumentiert Umfang, Statusgrenzen und Prüfungen des neuen Projekttexts.
+affected_relations:
+  - from: projekt/codex-als-anschlussapparat.md
+    relation: depends_on
+    to: projekt/codex-prinzip-zettelkasten-plateaus.md
+    effect: preserved
+    note: Der neue Text verschärft das bestehende Arbeitsprinzip, ersetzt es aber nicht.
+  - from: projekt/codex-als-anschlussapparat.md
+    relation: constrains
+    to: CONSTITUTION.md
+    effect: preserved
+    note: Codex erhält keine inhaltliche Letztentscheidung und keine neue Grundthese des Buches.
+  - from: projekt/codex-als-anschlussapparat.md
+    relation: cross_references
+    to: interaktiv/
+    effect: added
+    note: Der Text benennt das Anschlusslabor als mögliche operative Probe, ohne technische Dateien zu ändern.
+  - from: projekt/codex-als-anschlussapparat.md
+    relation: documents
+    to: WORKFLOW.md
+    effect: preserved
+    note: Die rekursive Arbeitsweise wird als operative Projektpraxis erläutert, nicht als Manuskriptdefinition verändert.
+possibilities:
+  opened:
+    - Ein öffentliches oder internes Kurzstatement zur philosophisch begrenzten KI-Kooperation kann aus dem Projekttext entwickelt werden.
+    - Das Anschlusslabor kann später eine sichtbare Relationsspur erhalten, die KI-Vorschläge als Anschlussbedingungen statt als Autorschaft darstellt.
+    - Change Events können später stärker als Vorschau- und Prüfmaske genutzt werden.
+  restricted:
+    - Codex wird nicht als Autor, Urteilsträger oder philosophische Letztinstanz stabilisiert.
+    - Luhmann und Deleuze/Guattari werden nicht quellenlos als Manuskriptargumente verwendet.
+    - Keine Manuskript- oder Interaktivdatei wird durch diesen Schritt verändert.
+  deferred:
+    - "TODO: Autorentscheidung, ob der Text später in README, Anschlusslabor oder methodischen Anhang wandert."
+    - "TODO: Quellengeprüfte Einordnung von Luhmann und Deleuze/Guattari bleibt Literaturarbeit."
+uncertainties:
+  - "TODO: Der öffentliche Status der Formel 'Codex als Anschlussapparat' ist noch nicht entschieden."
+agent_findings:
+  genealogist: []
+  consistency_checker: []
+  critic: []
+  material_technical: []
+authority:
+  requires_author_decision: false
+  decision_status: not_required
+  decision_reference: null
+validation:
+  - check: Change-Event-Schema
+    result: passed
+    evidence: python -B .agents\skills\recursive-codex\scripts\validate_change_event.py knowledge\change-events\0016-codex-als-anschlussapparat.yaml
+  - check: Knowledge-Validation
+    result: passed
+    evidence: python scripts\validate_knowledge.py passed after declaration of the referenced concept files.
+  - check: Recursive-State
+    result: passed
+    evidence: python -B .agents\skills\recursive-codex\scripts\check_recursive_state.py reports RECURSIVE STATE VALID with 0 knowledge warnings.
+status: stabilized

@@ -1,0 +1,20 @@
+id: montage
+label: Montage
+status: core
+working_definition: Epistemisches Modell relationaler Formbildung, in dem Auswahl, Unterbrechung, Übergang, Variation, Komposition, Stabilisierung und Revision praktisch sichtbar werden.
+depends_on:
+  - form
+required_for:
+  - improvisieren
+  - programm
+  - algorithmus
+related:
+  - komposition
+constraints:
+  - Montage ist epistemischer Ausgangspunkt und Modell rekursiver Formbildung, nicht bloß ein Beispiel.
+  - Exakte historische oder quellenbezogene Behauptungen benötigen Seitenangaben aus den Primärquellen.
+source_files:
+  - CONSTITUTION.md
+  - PROJECT.md
+  - GLOSSAR.md
+  - sources/README.md

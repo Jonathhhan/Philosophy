@@ -1,0 +1,18 @@
+id: kritisieren
+label: Kritisieren
+status: core
+chapter: 14
+definition: Die Bedingungen, Formen und Folgen organisierter Anschlüsse wahrnehmbar und einer begründeten Beurteilung zugänglich machen.
+depends_on:
+  - asymmetrie
+  - problematisieren
+required_for:
+  - beurteilen
+related: []
+constraints:
+  - Kritik steht nicht außerhalb der Organisation.
+  - Kritisieren ist nicht mit Ablehnung oder abschließender Beurteilung identisch.
+source_files:
+  - GLOSSAR.md
+  - CONSTITUTION.md
+  - manuskript/14-kritisieren.md

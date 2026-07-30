@@ -1,0 +1,17 @@
+id: regel
+label: Regel
+status: supporting
+working_definition: Eine wiedererkennbare Bedingung, die mögliche Anschlüsse ordnet, ohne den Vollzug vollständig zu bestimmen.
+depends_on:
+  - anschliessen
+required_for: []
+related:
+  - programm
+  - algorithmus
+constraints:
+  - Regel, Programm und Algorithmus dürfen nicht gleichgesetzt werden.
+  - Eine Regel erklärt nicht allein ihre Anwendung und Wirkung im organisierten Zusammenhang.
+source_files:
+  - PROJECT.md
+  - manuskript/07-programm.md
+  - manuskript/08-algorithmus.md

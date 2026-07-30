@@ -1,0 +1,84 @@
+schema_version: 1
+id: change-0017-readme-codex-arbeitsweise
+created_at: 2026-07-30
+goal: >-
+  Den neuen Projekttext zu Codex als Anschlussapparat im README sichtbar machen,
+  ohne Codex als Autorersatz, Theorieautorität oder Manuskriptthese auszugeben.
+operation: composition
+scope:
+  allowed_files:
+    - README.md
+    - knowledge/change-events/0017-readme-codex-arbeitsweise.yaml
+  protected_files:
+    - CONSTITUTION.md
+    - PROJECT.md
+    - GLOSSAR.md
+    - manuskript/
+    - interaktiv/
+    - build/manuskript-lesefassung.md
+basis:
+  project_files:
+    - CONSTITUTION.md
+    - PROJECT.md
+    - README.md
+    - projekt/codex-als-anschlussapparat.md
+    - projekt/codex-prinzip-zettelkasten-plateaus.md
+  decisions:
+    - knowledge/decisions/0021-theoriegeleitetes-codex-arbeitsprotokoll.yaml
+    - knowledge/decisions/0022-codex-zettelkasten-plateaus.yaml
+  sources:
+    - author-request-weiter-2026-07-30
+changes:
+  - file: README.md
+    summary: >-
+      Ergänzt einen Abschnitt zur Codex-Arbeitsweise: Codex wird als begrenzte,
+      dokumentierende und relationale Projektpraxis beschrieben, nicht als Autorersatz.
+  - file: knowledge/change-events/0017-readme-codex-arbeitsweise.yaml
+    summary: >-
+      Dokumentiert Reichweite und Grenzen der README-Ergänzung.
+affected_relations:
+  - from: README.md
+    relation: cross_references
+    to: projekt/codex-als-anschlussapparat.md
+    effect: added
+    note: Der Projekttext wird öffentlich im Repository auffindbar gemacht.
+  - from: README.md
+    relation: constrains
+    to: CONSTITUTION.md
+    effect: preserved
+    note: Die README-Formulierung bestätigt die Autorität des Autors und führt keine neue Buchthese ein.
+  - from: README.md
+    relation: documents
+    to: WORKFLOW.md
+    effect: preserved
+    note: Die Arbeitsweise wird beschrieben, ohne den Workflow zu ändern.
+possibilities:
+  opened:
+    - Leserinnen und Leser können die besondere KI-Arbeitsweise des Repositorys früh einordnen.
+    - Der Projekttext zum Anschlussapparat erhält eine klare öffentliche Adresse.
+  restricted:
+    - Keine Manuskriptpassage wird verändert.
+    - Die Codex-Arbeitsweise wird nicht als philosophischer Beweis oder Autorschaftsersatz ausgegeben.
+  deferred:
+    - "TODO: Später entscheiden, ob die Codex-Arbeitsweise auch im Anschlusslabor selbst sichtbar erklärt wird."
+uncertainties: []
+agent_findings:
+  genealogist: []
+  consistency_checker: []
+  critic: []
+  material_technical: []
+authority:
+  requires_author_decision: false
+  decision_status: not_required
+  decision_reference: null
+validation:
+  - check: Change-Event-Schema
+    result: passed
+    evidence: python -B .agents\skills\recursive-codex\scripts\validate_change_event.py knowledge\change-events\0017-readme-codex-arbeitsweise.yaml
+  - check: Knowledge-Validation
+    result: passed
+    evidence: python scripts\validate_knowledge.py passed after declaration of the referenced concept files.
+  - check: Recursive-State
+    result: passed
+    evidence: python -B .agents\skills\recursive-codex\scripts\check_recursive_state.py reports RECURSIVE STATE VALID with 0 knowledge warnings.
+status: stabilized

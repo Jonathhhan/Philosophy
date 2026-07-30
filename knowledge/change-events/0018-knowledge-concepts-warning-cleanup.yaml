@@ -1,0 +1,128 @@
+schema_version: 1
+id: change-0018-knowledge-concepts-warning-cleanup
+created_at: 2026-07-30
+goal: >-
+  Die 24 bekannten Wissenswarnungen beheben, indem alle bereits referenzierten,
+  aber noch nicht deklarierten Begriffe als schlanke Concept-Dateien angelegt werden.
+operation: reorganization
+scope:
+  allowed_files:
+    - knowledge/concepts/aktualisieren.yaml
+    - knowledge/concepts/asymmetrie.yaml
+    - knowledge/concepts/beurteilen.yaml
+    - knowledge/concepts/form.yaml
+    - knowledge/concepts/fortsetzen.yaml
+    - knowledge/concepts/improvisieren.yaml
+    - knowledge/concepts/kommunikation.yaml
+    - knowledge/concepts/komposition.yaml
+    - knowledge/concepts/kritisieren.yaml
+    - knowledge/concepts/moeglichkeitsraum.yaml
+    - knowledge/concepts/montage.yaml
+    - knowledge/concepts/organisieren.yaml
+    - knowledge/concepts/problematisieren.yaml
+    - knowledge/concepts/regel.yaml
+    - knowledge/concepts/reorganisieren.yaml
+    - knowledge/concepts/revidieren.yaml
+    - knowledge/concepts/stabilisieren.yaml
+    - knowledge/concepts/unterbrechen.yaml
+    - knowledge/concepts/verteilen.yaml
+    - knowledge/change-events/0015-kapitel-16-revision-reorganisation-leitdifferenz.yaml
+    - knowledge/change-events/0016-codex-als-anschlussapparat.yaml
+    - knowledge/change-events/0017-readme-codex-arbeitsweise.yaml
+    - knowledge/change-events/0018-knowledge-concepts-warning-cleanup.yaml
+  protected_files:
+    - CONSTITUTION.md
+    - PROJECT.md
+    - GLOSSAR.md
+    - manuskript/
+    - README.md
+    - projekt/codex-als-anschlussapparat.md
+basis:
+  project_files:
+    - CONSTITUTION.md
+    - PROJECT.md
+    - GLOSSAR.md
+    - projekt/architektur.md
+    - scripts/validate_knowledge.py
+    - knowledge/concepts/algorithmus.yaml
+    - knowledge/concepts/anschliessen.yaml
+    - knowledge/concepts/program.yaml
+  decisions:
+    - knowledge/decisions/0021-theoriegeleitetes-codex-arbeitsprotokoll.yaml
+  sources:
+    - author-request-fixe-24-warnungen-2026-07-30
+changes:
+  - file: knowledge/concepts/
+    summary: >-
+      Ergänzt 19 schlanke Concept-Dateien für bereits referenzierte Begriffe aus
+      Glossar, Projektarchitektur und Manuskriptkapiteln, damit die Wissensrelationen
+      nicht mehr auf undeclared concepts zeigen.
+  - file: knowledge/change-events/0015-kapitel-16-revision-reorganisation-leitdifferenz.yaml
+    summary: >-
+      Aktualisiert die Validierungsnotiz von bekannten Warnungen auf die nun warnungsfreie Wissensprüfung.
+  - file: knowledge/change-events/0016-codex-als-anschlussapparat.yaml
+    summary: >-
+      Aktualisiert die Validierungsnotiz von bekannten Warnungen auf die nun warnungsfreie Wissensprüfung.
+  - file: knowledge/change-events/0017-readme-codex-arbeitsweise.yaml
+    summary: >-
+      Aktualisiert die Validierungsnotiz von bekannten Warnungen auf die nun warnungsfreie Wissensprüfung.
+  - file: knowledge/change-events/0018-knowledge-concepts-warning-cleanup.yaml
+    summary: >-
+      Dokumentiert die Reorganisation der Wissensbasis und ihre Prüfungen.
+affected_relations:
+  - from: knowledge/concepts/algorithmus.yaml
+    relation: depends_on
+    to: knowledge/concepts/aktualisieren.yaml
+    effect: added
+    note: Der bisherige Verweis auf aktualisieren ist nun als deklarierter Begriff auflösbar.
+  - from: knowledge/concepts/anschliessen.yaml
+    relation: cross_references
+    to: knowledge/concepts/unterbrechen.yaml
+    effect: added
+    note: Die von Anschließen abhängigen Kapitelbegriffe sind nun als Wissensknoten deklariert.
+  - from: knowledge/concepts/program.yaml
+    relation: depends_on
+    to: knowledge/concepts/form.yaml
+    effect: added
+    note: Der bisherige Verweis auf Form ist nun als deklarierter Begriff auflösbar.
+  - from: knowledge/concepts/
+    relation: documents
+    to: GLOSSAR.md
+    effect: preserved
+    note: Die neuen Concept-Dateien übernehmen stabilisierte Glossar- und Architekturformeln, ohne Definitionen zu ändern.
+  - from: knowledge/concepts/
+    relation: constrains
+    to: CONSTITUTION.md
+    effect: preserved
+    note: Die Wissensbasis bleibt Hilfs- und Prüfstruktur; sie ersetzt keine Autorentscheidung und keine Manuskriptdefinition.
+possibilities:
+  opened:
+    - Der rekursive Projektzustand kann ohne bekannte Wissenswarnungen geprüft werden.
+    - Der MCP-Graph und spätere Relationsprüfungen erhalten vollständigere Adressen für die zentralen Kapitelbegriffe.
+    - Künftige Warnungen markieren wieder neue Lücken statt bekannte Altlasten.
+  restricted:
+    - Die neuen Concept-Dateien stabilisieren keine neuen Grundbegriffe über Glossar, Projektarchitektur oder Manuskript hinaus.
+    - Manuskript, README und Projekttext bleiben durch diese Reorganisation unverändert.
+  deferred:
+    - "TODO: Später prüfen, ob die Concept-Dateien um präzisere Provenienz und Seitenangaben aus Primärquellen ergänzt werden sollen."
+uncertainties: []
+agent_findings:
+  genealogist: []
+  consistency_checker: []
+  critic: []
+  material_technical: []
+authority:
+  requires_author_decision: false
+  decision_status: not_required
+  decision_reference: null
+validation:
+  - check: Knowledge-Validation
+    result: passed
+    evidence: python scripts\validate_knowledge.py reports Knowledge validation passed.
+  - check: Recursive-State
+    result: passed
+    evidence: python -B .agents\skills\recursive-codex\scripts\check_recursive_state.py reports RECURSIVE STATE VALID with 0 knowledge warnings.
+  - check: Change-Event-Schema
+    result: passed
+    evidence: python -B .agents\skills\recursive-codex\scripts\validate_change_event.py knowledge\change-events\0018-knowledge-concepts-warning-cleanup.yaml
+status: stabilized

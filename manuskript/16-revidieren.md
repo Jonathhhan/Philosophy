@@ -58,6 +58,8 @@ Eine Ausnahme kann diese Diagnose eröffnen. Sie setzt eine allgemeine Bedingung
 
 Die Reichweite einer Revision lässt sich nicht an der Zahl der geänderten Sätze oder Einstellungen ablesen. Eine kleine Veränderung kann weitreichende Folgen besitzen, wenn zahlreiche Anschlüsse von ihr abhängen. Eine umfangreiche Neufassung kann die entscheidende Vorordnung unangetastet lassen. Maßgeblich ist die Stellung der revidierten Bedingung innerhalb des Zusammenhangs weiterer Anschlüsse.
 
+Damit ist zugleich die Grenze zur Reorganisation markiert. Revision fragt, welche stabilisierte Bedingung aufgrund welcher Gründe erneut bestimmt wird. Reorganisation fragt, ob sich dadurch die Beziehungen mehrerer Bedingungen verschieben, durch die sie einander stützen, begrenzen und für weitere Vollzüge wirksam werden. Ein Eingriff kann daher revisionär an einer einzelnen Bedingung ansetzen und erst aufgrund seiner relationalen Folgen reorganisierend werden.
+
 ## 6. Zurückkommen ohne Rückkehr
 
 Revision beginnt nicht bei null. Die frühere Bedingung hat Entscheidungen orientiert, Erwartungen gebildet, Mittel gebunden und Möglichkeiten eröffnet oder ausgeschlossen. Auch wenn ihre Geltung aufgehoben wird, verschwinden diese Aktualisierungen nicht aus der Geschichte des Zusammenhangs.

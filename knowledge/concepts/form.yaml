@@ -1,0 +1,21 @@
+id: form
+label: Form
+status: core
+chapter: 4
+definition: Eine relationale Bestimmung, durch die Unterschiede für weitere Anschlüsse wirksam werden.
+depends_on:
+  - anschliessen
+  - problematisieren
+required_for:
+  - aktualisieren
+  - improvisieren
+  - programm
+related:
+  - montage
+constraints:
+  - Form ist nicht mit äußerer Gestalt gleichzusetzen.
+  - Form bezeichnet das Wirksamwerden relevanter Unterschiede für weitere Anschlüsse.
+source_files:
+  - GLOSSAR.md
+  - PROJECT.md
+  - manuskript/04-form.md

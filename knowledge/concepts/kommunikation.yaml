@@ -1,0 +1,15 @@
+id: kommunikation
+label: Kommunikation
+status: boundary
+working_definition: Möglicher Bereich des Anschließens, auf den Anschluss im Projekt nicht reduziert wird.
+depends_on:
+  - anschliessen
+required_for: []
+related: []
+constraints:
+  - Anschluss ist grundlegender als Kommunikation.
+  - Das Projekt übernimmt keine allgemeine Kommunikationstheorie als Grundachse.
+source_files:
+  - CONSTITUTION.md
+  - GLOSSAR.md
+  - projekt/positionskarte.md

@@ -1,0 +1,20 @@
+id: improvisieren
+label: Improvisieren
+status: core
+chapter: 6
+definition: Formgebundene und formbildende Tätigkeit unter Bedingungen partieller Unbestimmtheit.
+depends_on:
+  - aktualisieren
+  - form
+required_for:
+  - programm
+  - algorithmus
+related:
+  - montage
+constraints:
+  - Improvisation ist weder Regellosigkeit noch reine Spontaneität.
+  - Improvisieren bleibt an Material, Situation, Haltung und Formbildung gebunden.
+source_files:
+  - GLOSSAR.md
+  - PROJECT.md
+  - manuskript/06-improvisieren.md
