@@ -1,0 +1,93 @@
+schema_version: 1
+id: change-0011-tragfaehigkeit-praezisierung
+created_at: 2026-07-30
+goal: >-
+  Kapitel 15 minimal präzisieren, damit Tragfähigkeit nicht als Konfliktfreiheit oder
+  versteckter Obermaßstab missverstanden wird, sondern als Ergebnis eines ausgewiesenen
+  Urteils unter bestimmten Bedingungen.
+operation: revision
+scope:
+  allowed_files:
+    - manuskript/15-beurteilen.md
+    - build/manuskript-lesefassung.md
+    - projekt/arbeitsstand.md
+    - knowledge/change-events/0011-tragfaehigkeit-praezisierung.yaml
+  protected_files:
+    - GLOSSAR.md
+    - PROJECT.md
+    - CONSTITUTION.md
+    - manuskript/schluss.md
+basis:
+  project_files:
+    - CONSTITUTION.md
+    - PROJECT.md
+    - GLOSSAR.md
+    - WORKFLOW.md
+    - manuskript/15-beurteilen.md
+    - manuskript/schluss.md
+    - recovered/audits/argumentation-audit-chapters-01-17.md
+  decisions:
+    - knowledge/decisions/0018-tragfaehigkeit-als-urteilsbegriff.yaml
+    - knowledge/decisions/0021-theoriegeleitetes-codex-arbeitsprotokoll.yaml
+  sources:
+    - author-request-weiter-2026-07-30
+changes:
+  - file: manuskript/15-beurteilen.md
+    summary: >-
+      Ergänzt in Abschnitt 10 einen Satz: Tragfähigkeit heißt nicht konfliktfrei,
+      sondern unter ausgewiesenen Bedingungen begründet fortsetzbar und hinsichtlich
+      möglicher Korrektur nicht verdeckt.
+  - file: build/manuskript-lesefassung.md
+    summary: >-
+      Wird nach der Manuskriptänderung neu gebaut.
+  - file: projekt/arbeitsstand.md
+    summary: >-
+      Dokumentiert die minimale Präzisierung und die Agentenbefunde.
+  - file: knowledge/change-events/0011-tragfaehigkeit-praezisierung.yaml
+    summary: >-
+      Dokumentiert Umfang, Grenzen, Agentenbefunde und Prüfungen der Revision.
+affected_relations:
+  - from: manuskript/15-beurteilen.md
+    relation: defines
+    to: knowledge/decisions/0018-tragfaehigkeit-als-urteilsbegriff.yaml
+    effect: preserved
+    note: Die Entscheidung bleibt unverändert; die Präzisierung hält Tragfähigkeit als Ergebnisbegriff fest.
+  - from: manuskript/15-beurteilen.md
+    relation: cross_references
+    to: manuskript/schluss.md
+    effect: preserved
+    note: Der Schluss bleibt unverändert, weil er Tragfähigkeit bereits direkt nach der Schlussformel begrenzt.
+  - from: manuskript/15-beurteilen.md
+    relation: constrains
+    to: GLOSSAR.md
+    effect: preserved
+    note: Keine Glossardefinition wird verändert oder ergänzt.
+possibilities:
+  opened:
+    - Der Begriff Tragfähigkeit ist gegen das Missverständnis der Konfliktfreiheit präzisiert.
+    - Kapitel 15 trägt die Schlussformel etwas besser vor, ohne den Schluss zu wiederholen.
+  restricted:
+    - Tragfähigkeit wird nicht als neuer universaler Maßstab verwendet.
+    - Der Schluss wird nicht mit einer weiteren Sicherung überladen.
+    - Konflikte, Belastungen und Korrekturbedingungen bleiben Bestandteil des Urteils.
+  deferred:
+    - "TODO: Subjektrolle im normativen Teil bleibt als nächster Reviewpunkt offen."
+    - "TODO: Dramaturgische Übergänge bleiben gesondert zu prüfen."
+uncertainties:
+  - "TODO: In der nächsten Gesamtlektüre prüfen, ob der neue Satz rhythmisch ausreichend unauffällig bleibt."
+agent_findings:
+  genealogist: []
+  consistency_checker:
+    - Eine zusätzliche Präzisierung ist nicht zwingend nötig; falls sie erfolgt, ist Kapitel 15 Abschnitt 10 die beste Stelle, der Schluss sollte unverändert bleiben.
+  critic:
+    - Der Begriff droht aktuell nicht ernsthaft zum Obermaßstab zu werden; eine Änderung sollte höchstens minimal sein.
+  material_technical: []
+authority:
+  requires_author_decision: false
+  decision_status: not_required
+  decision_reference: null
+validation:
+  - check: Change-Event-Schema
+    result: not_run
+    evidence: Wird nach Erstellung ausgeführt.
+status: stabilized

@@ -288,3 +288,39 @@ Teile des ursprünglichen Chatverlaufs sind in der Chatoberfläche und Suche nic
 - Grenze: Das Prinzip führt keine neue Grundthese des Manuskripts ein und ersetzt keine quellengeprüfte Integration von Luhmann oder Deleuze/Guattari.
 - Ergänzt: `WORKFLOW.md`, `.agents/skills/recursive-codex/SKILL.md`, `projekt/codex-auftragsvorlage.md`, `knowledge/decisions/0022-codex-zettelkasten-plateaus.yaml` und `knowledge/change-events/0007-codex-zettelkasten-plateaus.yaml`.
 - Offen: Ob daraus später ein technisches Zettel-/Graphregister entsteht, bleibt TODO und ist noch nicht beauftragt.
+## Argumentative Publikationsphase – Stand 2026-07-30
+
+- Review gesichert: `recovered/audits/argumentative-publication-phase-review.md`.
+- Öffentliche Oberfläche verbessert: `README.md` enthält nun Status, Synopsis, Architektur, Lesefassung, Anschlusslabor sowie Quellen- und Rekonstruktionspolitik.
+- Neu angelegt: `projekt/positionskarte.md` als problemorientierte Karte externer Gesprächsräume und eigener Differenzen.
+- Manuskript unverändert: Die Reviewpunkte zu Dramaturgie, Überabsicherung, Modalität der Anschlussmöglichkeiten, Subjektrolle und Tragfähigkeit bleiben TODOs für ein gesondertes Argumentationsaudit.
+## Argumentationsaudit Kapitel 1–17 – Stand 2026-07-30
+
+- Neu gesichert: `recovered/audits/argumentation-audit-chapters-01-17.md`.
+- Befund: Die Theoriebewegung ist konsistent; der größte Publikationsgewinn liegt in problematischer Dramaturgie, Verdichtung definitorischer Sicherungen und drei gezielten Klärungen.
+- Priorisierte TODOs: Modalität der Anschlussmöglichkeiten, Subjektrolle im normativen Teil, Tragfähigkeit als Ergebnisbegriff, dramaturgische Kapitelübergänge und Bündelung wiederholter Abgrenzungen.
+- Manuskript unverändert: Das Audit empfiehlt spätere Redaktionsaufträge, integriert aber noch keine Passage.
+## Kapitel 5 – Modalität der Anschlussmöglichkeiten – Stand 2026-07-30
+
+- Bearbeitet: `manuskript/05-aktualisieren.md`, Abschnitt 2.
+- Ziel: Den Revieweinwand zur Modalität der Anschlussmöglichkeiten mit einer kleinen Passage bearbeiten.
+- Integriert: Anschlussmöglichkeiten stehen zwischen bloßer Denkbarkeit und bereits vorhandener Option; sie können unbemerkt bestehen, werden aber für konkrete Vollzüge durch Position, Fähigkeiten, Material, Verfahren, Sinnzusammenhang und Zugang praktisch relevant.
+- Grenzen: Keine neue Theorieachse, keine Änderung der Glossardefinition, keine Vorwegnahme des Programmbegriffs.
+- Agentenbefund: Kritische und konsistenzprüfende Gegenprüfung bestätigten die Einfügung am Ende von Abschnitt 2.
+- Offen: Subjektrolle, Tragfähigkeit und dramaturgische Übergänge bleiben eigene TODOs.
+
+## Kapitel 15 – Tragfähigkeit – Stand 2026-07-30
+
+- Bearbeitet: `manuskript/15-beurteilen.md`, Abschnitt 10.
+- Ziel: Den Revieweinwand zu Tragfähigkeit mit einer minimalen Präzisierung bearbeiten.
+- Integriert: Tragfähigkeit bedeutet nicht Konfliktfreiheit, sondern begründete Fortsetzbarkeit unter ausgewiesenen Bedingungen bei erhaltener Korrigierbarkeit.
+- Grenzen: Keine neue Grundnorm, keine Änderung von `decision-0018`, Schlussformel unverändert.
+- Agentenbefund: Kritische Prüfung empfahl `keep`; Konsistenzprüfung hielt höchstens einen Satz in Kapitel 15 für sinnvoll. Umgesetzt wurde nur dieser minimale Satz.
+
+## Kapitel 15 – Subjektrolle und Verantwortung – Stand 2026-07-30
+
+- Bearbeitet: `manuskript/15-beurteilen.md`, Abschnitt 6.
+- Ziel: Verantwortung, Antwortfähigkeit und Zurechnung im normativen Teil gegen den Rückfall in ein voraussetzungsloses Subjekt absichern.
+- Integriert: Verantwortung meint keine voraussetzungslose Autorschaft, sondern zurechenbare Antwortfähigkeit innerhalb verteilter Anschlussbedingungen.
+- Grenzen: Keine neue Subjekttheorie, keine Glossaränderung, keine Abschwächung von Verantwortung oder Zurechnung.
+- Agentenbefund: Beide Prüfungen empfahlen nur eine minimale Präzisierung in Kapitel 15; Schluss und Kapitel 14 bleiben unverändert.

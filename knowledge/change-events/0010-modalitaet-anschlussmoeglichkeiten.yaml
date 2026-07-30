@@ -1,0 +1,100 @@
+schema_version: 1
+id: change-0010-modalitaet-anschlussmoeglichkeiten
+created_at: 2026-07-30
+goal: >-
+  Kapitel 5 minimal um eine präzisierende Passage zur Modalität von Anschlussmöglichkeiten ergänzen,
+  ohne einen neuen Grundbegriff oder eine neue Theorieachse einzuführen.
+operation: revision
+scope:
+  allowed_files:
+    - manuskript/05-aktualisieren.md
+    - projekt/arbeitsstand.md
+    - knowledge/change-events/0010-modalitaet-anschlussmoeglichkeiten.yaml
+  protected_files:
+    - GLOSSAR.md
+    - PROJECT.md
+    - CONSTITUTION.md
+    - manuskript/01-anschliessen.md
+    - manuskript/07-programm.md
+    - manuskript/17-reorganisieren.md
+basis:
+  project_files:
+    - CONSTITUTION.md
+    - PROJECT.md
+    - GLOSSAR.md
+    - WORKFLOW.md
+    - sources/README.md
+    - sources/development.md
+    - recovered/audits/argumentation-audit-chapters-01-17.md
+  decisions:
+    - knowledge/decisions/0003-gestufter-geltungsbereich-anschluss.yaml
+    - knowledge/decisions/0021-theoriegeleitetes-codex-arbeitsprotokoll.yaml
+  sources:
+    - manuskript/05-aktualisieren.md
+    - sources/bachelor/close-reading.md
+    - sources/master/concepts.yaml
+changes:
+  - file: manuskript/05-aktualisieren.md
+    summary: >-
+      Ergänzt am Ende von Abschnitt 2 eine kurze gestufte Klärung: Anschlussmöglichkeiten
+      sind weder bloße Denkformen noch fertige Optionen; sie können unbemerkt bestehen,
+      werden aber für Vollzüge praktisch relevant durch Position, Fähigkeiten, Material,
+      Verfahren, Sinnzusammenhang und Zugang.
+  - file: projekt/arbeitsstand.md
+    summary: >-
+      Dokumentiert die minimale Revision von Kapitel 5 und die weiterhin offenen
+      Redaktionsaufträge zu Subjektrolle, Tragfähigkeit und dramaturgischen Übergängen.
+  - file: knowledge/change-events/0010-modalitaet-anschlussmoeglichkeiten.yaml
+    summary: >-
+      Dokumentiert Umfang, Agentenbefunde, Relationen und Prüfungen der Revision.
+affected_relations:
+  - from: manuskript/05-aktualisieren.md
+    relation: defines
+    to: GLOSSAR.md#anschlussmoeglichkeit
+    effect: preserved
+    note: Die Glossardefinition bleibt unverändert; die Passage erläutert ihren Modalitätsstatus im Kapitel.
+  - from: manuskript/05-aktualisieren.md
+    relation: depends_on
+    to: manuskript/01-anschliessen.md
+    effect: preserved
+    note: Kapitel 1 grenzt Anschlussmöglichkeit bereits gegen bloß denkbare Folge ab; Kapitel 5 präzisiert dies.
+  - from: manuskript/05-aktualisieren.md
+    relation: constrains
+    to: manuskript/07-programm.md
+    effect: preserved
+    note: Die Passage vermeidet, jede Bedingtheit schon als programmatische Vorordnung auszugeben.
+  - from: manuskript/05-aktualisieren.md
+    relation: constrains
+    to: manuskript/17-reorganisieren.md
+    effect: preserved
+    note: Die spätere Unterscheidung von formaler, praktischer und wirksamer Möglichkeit bleibt anschlussfähig.
+possibilities:
+  opened:
+    - Der Revieweinwand zur Modalität der Anschlussmöglichkeiten ist in einer begrenzten Manuskriptpassage bearbeitbar geworden.
+    - Kapitel 5 verbindet nun deutlicher unbemerkte, praktisch relevante und bedingt aktualisierbare Möglichkeiten.
+  restricted:
+    - Modalität wird nicht als neuer Grundbegriff stabilisiert.
+    - Anschlussmöglichkeiten werden weder objektivistisch als fertiger Bestand noch subjektivistisch als bloße Vorstellung gefasst.
+    - Der Programmbegriff wird nicht vorweggenommen.
+  deferred:
+    - "TODO: Subjektrolle im normativen Teil gesondert prüfen."
+    - "TODO: Tragfähigkeit in Kapitel 15 und Schluss prüfen."
+    - "TODO: Dramaturgische Kapitelübergänge später kapitelweise bearbeiten."
+uncertainties:
+  - "TODO: Ob spätere Kapitel auf die neue Präzisierung querverweisen sollen, bleibt nach der nächsten Lesefassung zu prüfen."
+agent_findings:
+  genealogist: []
+  consistency_checker:
+    - Die beste Einfügestelle ist am Ende von Kapitel 5, Abschnitt 2; dort wird die Glossardefinition präzisiert, ohne Kapitel 7 oder 17 vorwegzunehmen.
+  critic:
+    - "Die Passage muss drei Gefahren vermeiden: objektivistischer Möglichkeitsbestand, subjektivistische Wahrnehmungstheorie und Reduktion auf faktische Verfügbarkeit."
+  material_technical: []
+authority:
+  requires_author_decision: false
+  decision_status: not_required
+  decision_reference: null
+validation:
+  - check: Change-Event-Schema
+    result: not_run
+    evidence: Wird nach Erstellung ausgeführt.
+status: stabilized

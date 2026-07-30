@@ -22,6 +22,8 @@ Eine Anschlussmöglichkeit ist daher bedingt und partiell bestimmt. Vor ihrer Ak
 
 Der Ausdruck „in einen Vollzug überführen“ bezeichnet deshalb keine äußerliche Ausführung eines schon fertigen Inhalts. Er bezeichnet die Beziehung zwischen einer unter den gegebenen Bedingungen aktualisierbaren Möglichkeit und der konkreten Bestimmtheit, die sie im Vollzug gewinnt.
 
+Der Status einer Anschlussmöglichkeit liegt damit zwischen bloßer Denkbarkeit und bereits vorhandener Option. Eine Möglichkeit kann unter den wirksamen Bedingungen bestehen, ohne von den Beteiligten bemerkt zu werden; sie wird aber für einen konkreten Vollzug nur dort praktisch relevant, wo Position, Fähigkeiten, Material, Verfahren, Sinnzusammenhang und Zugang ihre Aktualisierung ermöglichen oder begrenzen. Umgekehrt verschwindet eine Möglichkeit nicht schon deshalb aus dem Zusammenhang, weil sie einer bestimmten Position unzugänglich oder unbekannt bleibt. Gerade dann wird später zu fragen sein, wie Bedingungen Möglichkeiten verteilen, vorordnen, blockieren oder reorganisierbar machen.
+
 ## 3. Selektion ohne vollständige Übersicht
 
 Jede Aktualisierung ist selektiv. Indem ein bestimmter Anschluss zustande kommt, bleiben andere Anschlüsse in diesem Vollzug unaktualisiert. Ein Satz wird gesprochen und nicht zugleich jeder andere mögliche Satz. Ein Bild wird an einer Stelle eingesetzt und kann dort nicht gleichzeitig in jeder anderen Verbindung erscheinen.

@@ -1,0 +1,88 @@
+schema_version: 1
+id: change-0009-argumentation-audit-chapters-01-17
+created_at: 2026-07-30
+goal: >-
+  Den im Publikationsreview geforderten vollständigen Argumentationsaudit für Kapitel 1 bis 17
+  und den Schluss als Arbeitsgrundlage der nächsten Redaktionsphase sichern, ohne Manuskriptdateien
+  zu verändern.
+operation: audit
+scope:
+  allowed_files:
+    - recovered/audits/argumentation-audit-chapters-01-17.md
+    - projekt/arbeitsstand.md
+    - knowledge/change-events/0009-argumentation-audit-chapters-01-17.yaml
+  protected_files:
+    - manuskript/
+    - GLOSSAR.md
+    - PROJECT.md
+    - CONSTITUTION.md
+basis:
+  project_files:
+    - CONSTITUTION.md
+    - PROJECT.md
+    - WORKFLOW.md
+    - GLOSSAR.md
+    - manuskript/
+    - recovered/audits/argumentative-publication-phase-review.md
+    - projekt/positionskarte.md
+  decisions:
+    - knowledge/decisions/0021-theoriegeleitetes-codex-arbeitsprotokoll.yaml
+  sources:
+    - C:/Users/Jonathan Frank/.codex/attachments/0c20aec3-0c92-4c83-93ae-8377771a7512/pasted-text.txt
+changes:
+  - file: recovered/audits/argumentation-audit-chapters-01-17.md
+    summary: >-
+      Erstellt ein kapitelweises Argumentationsaudit mit Befunden zu Problemzwang,
+      Erklärungsleistung, Überabsicherung, Übergängen, Montageherkunft und priorisierten
+      Redaktionsaufträgen.
+  - file: projekt/arbeitsstand.md
+    summary: >-
+      Ergänzt den Arbeitsstand um das abgeschlossene Argumentationsaudit und seine priorisierten TODOs.
+  - file: knowledge/change-events/0009-argumentation-audit-chapters-01-17.yaml
+    summary: >-
+      Dokumentiert Umfang, Grenzen, Relationen und Prüfungen dieses Audits.
+affected_relations:
+  - from: recovered/audits/argumentative-publication-phase-review.md
+    relation: documents
+    to: recovered/audits/argumentation-audit-chapters-01-17.md
+    effect: added
+    note: Der Review verlangte ein vollständiges Argumentationsaudit; dieses Ereignis sichert dessen Ergebnis.
+  - from: recovered/audits/argumentation-audit-chapters-01-17.md
+    relation: constrains
+    to: manuskript/
+    effect: added
+    note: Das Audit formuliert spätere Redaktionsaufträge, verändert aber noch keine Kapitel.
+  - from: recovered/audits/argumentation-audit-chapters-01-17.md
+    relation: documents
+    to: projekt/arbeitsstand.md
+    effect: added
+    note: Der Arbeitsstand hält die priorisierten TODOs der Publikationsphase fest.
+possibilities:
+  opened:
+    - Kapitelweise Redaktionsaufträge können nun gezielt statt global formuliert werden.
+    - Die Reviewpunkte Modalität, Subjektrolle und Tragfähigkeit sind als begrenzte Aufgaben markiert.
+    - Stilistische Verdichtung kann an Referenzkapiteln und Problemschwellen orientiert werden.
+  restricted:
+    - Keine Manuskriptänderung wird allein aus dem Review abgeleitet.
+    - Neue externe Theorieachsen bleiben ausgeschlossen.
+    - Definitorische Präzision soll nicht pauschal zugunsten von Lesbarkeit geopfert werden.
+  deferred:
+    - "TODO: Kapitel 5 auf Modalität der Anschlussmöglichkeiten prüfen und ggf. eine Passage vorschlagen."
+    - "TODO: Kapitel 15 und Schluss auf Tragfähigkeit als Ergebnisbegriff prüfen."
+    - "TODO: Kapitelanfänge und Übergänge 4, 7, 9, 11, 12, 14 und 16 dramaturgisch prüfen."
+uncertainties:
+  - "TODO: Ob die Subjektrolle in Teil III als eigene Passage oder nur durch lokale Präzisierungen geklärt werden soll, ist offen."
+agent_findings:
+  genealogist: []
+  consistency_checker: []
+  critic: []
+  material_technical: []
+authority:
+  requires_author_decision: false
+  decision_status: not_required
+  decision_reference: null
+validation:
+  - check: Change-Event-Schema
+    result: not_run
+    evidence: Wird nach Erstellung des Ereignisses ausgeführt.
+status: stabilized

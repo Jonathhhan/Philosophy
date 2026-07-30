@@ -64,6 +64,8 @@ Diese Unterschiede bilden noch keine feste Rangordnung. Sie machen aber kenntlic
 
 Ein begründetes Urteil beansprucht mehr als die Wirksamkeit einer Entscheidung. Es gibt Gründe an, die auch für andere Positionen als Gründe erkennbar und auf den Gegenstand bezogen sein sollen. Dieser Anspruch macht das Urteil antwortbedürftig.
 
+Verantwortung meint in diesem Zusammenhang keine voraussetzungslose Autorschaft. Sie bezeichnet eine zurechenbare Antwortfähigkeit innerhalb verteilter Anschlussbedingungen: Es ist zu bestimmen, welche Position unter welchen Bedingungen Gründe geben, Einwände aufnehmen, Entscheidungen treffen oder Folgen ihrer Mitwirkung verantworten kann.
+
 Antwort bedeutet hier nicht, dass jede Äußerung übernommen werden muss. Gründe können auf unzutreffenden Annahmen beruhen, Folgen einseitig darstellen oder unvereinbare Forderungen enthalten. Ebenso können Zeitdruck, Schutzbedürfnisse oder besondere Kenntnisse die Form einer Antwort begrenzen. Solche Begrenzungen heben die Antwortbeziehung nicht notwendig auf. Sie werden selbst zu einem Teil dessen, was auszuweisen ist.
 
 Die normative Bedeutung der Antwort liegt nicht in einer vorausgesetzten Vorzüglichkeit des Gesprächs. Sie folgt aus dem Begründungsanspruch des Urteils. Wenn eine Entscheidung Bedingungen für andere setzt, ihre Einwände aber unabhängig von ihrem Gehalt folgenlos bleiben, kann sie die eigene Gewichtung nicht mehr durch die Prüfung dieser Gründe rechtfertigen. Sie ersetzt Begründung durch die asymmetrische Möglichkeit, eine Setzung wirksam zu machen.
@@ -115,6 +117,8 @@ Die Architektur dieses Kapitels spricht von Maßstäben tragfähiger Anschlussor
 Eine Ordnung ist nicht schon tragfähig, weil sie funktioniert, fortbesteht, Zustimmung erhält, offen bleibt oder verändert werden kann. Jede dieser Eigenschaften kann für ein bestimmtes Urteil relevant sein. Ihre Bedeutung hängt davon ab, welche Aufgabe die Ordnung erfüllt, welche Folgen sie hervorbringt, auf welchen Abhängigkeiten sie beruht und welche anderen Möglichkeiten durch ihre Fortsetzung oder Veränderung betroffen sind.
 
 Von Tragfähigkeit kann daher nur als Ergebnis eines ausgewiesenen Urteils gesprochen werden, nicht als dessen vorausgesetzte Begründung. Das Urteil muss benennen, in welcher Hinsicht und für welchen Zeitraum die Ordnung trägt, welche Belastungen dabei wem zugerechnet werden und welche ungelösten Konflikte bestehen bleiben.
+
+Tragfähig heißt daher nicht konfliktfrei. Der Ausdruck besagt nur, dass eine Ordnung unter den ausgewiesenen Bedingungen begründet fortsetzbar bleibt und die Bedingungen ihrer möglichen Korrektur nicht verdeckt.
 
 „Tragfähigkeit“ wird damit als zusammenfassender Urteilsbegriff verwendet. Der Ausdruck bezeichnet das positive Ergebnis eines ausgewiesenen Urteils unter den jeweils berücksichtigten Bedingungen; er bildet weder einen eigenständigen normativen Grundbegriff noch einen universalen Maßstab.
 
