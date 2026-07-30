@@ -2,7 +2,7 @@ id: verteilen
 label: Verteilen
 status: core
 chapter: 12
-definition: Möglichkeiten, Mittel, Positionen, Belastungen und Entscheidungschancen innerhalb einer Organisation unterschiedlich zuordnen.
+definition: Anschlussbedingungen innerhalb einer Organisation verschiedenen Positionen so zuordnen, dass Möglichkeiten, Mittel, Belastungen und Entscheidungschancen unterschiedlich wirksam werden.
 depends_on:
   - organisieren
 required_for:
@@ -10,6 +10,7 @@ required_for:
 related: []
 constraints:
   - Unterschiedliche Verteilung ist nicht schon Asymmetrie oder normative Unangemessenheit.
+  - Möglichkeiten werden nicht als fertig vorliegende Güter verteilt; ihre praktische Wirksamkeit verändert sich mit der Zuordnung ihrer Bedingungen.
 source_files:
   - GLOSSAR.md
   - PROJECT.md
