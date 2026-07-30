@@ -1,0 +1,27 @@
+id: invariant-organisation-selection-001
+type: invariant
+status: hypothesis
+claim: Jede Organisation stabilisiert bestimmte Anschlussmöglichkeiten, indem sie andere relativ unwahrscheinlicher macht.
+scope: soziale, technische, symbolische und ästhetische Anschlussordnungen
+supports:
+  - organisation
+  - verteilung
+  - asymmetrie
+source_locations:
+  - manuskript/11-organisieren.md
+  - manuskript/12-verteilen.md
+  - manuskript/13-asymmetrie.md
+counterexamples:
+  - Eine Organisation könnte behaupten, ausschließlich Möglichkeiten zu vermehren, ohne Auswahlen zu treffen.
+limits:
+  - Zu prüfen ist, ob bereits minimale zeitliche Stabilisierung als Selektion gelten muss.
+open_objections:
+  - Verwechselt der Satz Organisation mit Verteilung?
+  - Ist die Einschränkung anderer Möglichkeiten notwendig oder nur häufig?
+created_by: invarianten-agent
+reviewed_by: null
+productive_difference: Der Satz verbindet Organisation, Verteilung und Asymmetrie als unterschiedliche Momente eines Selektionsprozesses, ohne sie gleichzusetzen.
+next_tests:
+  - spannungs-agent
+  - gegenmodell-agent
+  - axiomatisierungs-agent
