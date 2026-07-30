@@ -1,14 +1,38 @@
 # Zur Kritik der Organisation von Anschlussmöglichkeiten
 
-Arbeitsrepository für ein philosophisches Buchprojekt von Jonathan Frank.
+Philosophisches Buchprojekt von Jonathan Frank über die Entstehung, Ordnung, Aktualisierung und Reorganisation von Anschlussmöglichkeiten.
 
-Status: vollständiger Arbeitsentwurf mit 17 Kapiteln und Schluss. Das Manuskript ist noch keine zitierfähige Endfassung; die nächste Arbeitsphase dient Gesamtrevision, Übergängen, Redundanzabbau, Literaturapparat und publizierbarer Lesefassung.
+> Jede Aktualisierung verändert den Raum weiterer Anschlussmöglichkeiten.
 
-## Synopsis
+## Status
 
-Das Buch untersucht, wie Anschlussmöglichkeiten entstehen, geordnet, aktualisiert, stabilisiert, verteilt, beurteilt, revidiert und reorganisiert werden. Es beginnt nicht bei fertigen Dingen oder isolierten Subjekten, sondern bei Vollzügen, die an bereits wirksame Bedingungen anschließen. Jede Aktualisierung verändert den Raum weiterer Anschlussmöglichkeiten: Ein vollzogener Anschluss wird selbst Bestandteil der Bedingungen, unter denen weitere Anschlüsse möglich, wahrscheinlicher, schwieriger oder ausgeschlossen werden.
+Das Repository enthält einen vollständigen Arbeitsentwurf mit 17 Kapiteln und Schluss. Das Manuskript ist noch keine zitierfähige Endfassung. Die laufende Publikationsphase konzentriert sich auf:
 
-Aus dieser rekursiven Bewegung entwickelt das Projekt eine Theorie der Organisation von Anschlussmöglichkeiten. Montage ist dabei kein bloßes Beispiel, sondern epistemisches Modell: An Fassungen, Schnitten, Varianten, Programmen und algorithmischen Übergängen wird sichtbar, wie Formen entstehen und weitere Bearbeitung ermöglichen oder begrenzen. Der zweite Teil überträgt diese Begriffsarbeit auf Organisation, Verteilung und Asymmetrie, ohne daraus eine allgemeine Macht- oder Gesellschaftstheorie zu machen. Der dritte Teil fragt nach Kritik, Beurteilung, Revision und Reorganisation. Der Schluss bündelt die These, dass auch die Möglichkeit zur Reorganisation selbst organisiert ist.
+1. argumentative Übergänge und Dramaturgie,
+2. Redundanzabbau und begriffliche Konsistenz,
+3. Quellen- und Literaturapparat,
+4. eine publizierbare Lesefassung.
+
+Der verbindliche Buchstand liegt unter `manuskript/`.
+
+## Worum geht es?
+
+Das Buch beginnt nicht bei fertigen Dingen oder isolierten Subjekten, sondern bei Vollzügen, die an bereits wirksame Bedingungen anschließen. Jeder vollzogene Anschluss verändert die Bedingungen weiterer Anschlüsse: Möglichkeiten werden eröffnet, gewichtet, erschwert, stabilisiert oder ausgeschlossen.
+
+Aus dieser rekursiven Bewegung entwickelt das Projekt eine Theorie der Organisation von Anschlussmöglichkeiten. Montage ist dabei kein bloßes Beispiel, sondern epistemischer Ausgangspunkt. An Material, Schnitten, Varianten, Fassungen, Programmen und algorithmischen Übergängen wird sichtbar, wie Formen entstehen und weitere Bearbeitung ermöglichen oder begrenzen.
+
+Der zweite Teil untersucht Organisation, Verteilung und Asymmetrie. Der dritte Teil entwickelt Kritik, Beurteilung, Revision und Reorganisation. Der Schluss bündelt die These, dass auch die Möglichkeit zur Reorganisation selbst organisiert ist.
+
+## Einstieg
+
+Für einen schnellen systematischen Überblick empfiehlt sich dieser Leseweg:
+
+1. `manuskript/01-anschliessen.md`
+2. `manuskript/08-algorithmus.md`
+3. `manuskript/15-beurteilen.md`
+4. `manuskript/schluss.md`
+
+Eine kommentierte Orientierung steht in [`projekt/leseweg.md`](projekt/leseweg.md).
 
 ## Architektur
 
@@ -40,49 +64,55 @@ Aus dieser rekursiven Bewegung entwickelt das Projekt eine Theorie der Organisat
 
 ### Schluss
 
-Die Organisation der Möglichkeit zur Reorganisation
+**Die Organisation der Möglichkeit zur Reorganisation**
 
-## Leitgedanke
+## Zentrale Unterscheidungen
 
-> Jede Aktualisierung verändert den Raum weiterer Anschlussmöglichkeiten.
+- **Programm:** wirksame Vorordnung möglicher Anschlüsse.
+- **Algorithmus:** wiederholbare Ordnung bedingter Übergänge.
+- **Revision:** begründetes Zurückkommen auf eine stabilisierte Anschlussbedingung.
+- **Reorganisation:** Veränderung der Beziehungen zwischen mehreren Anschlussbedingungen.
+- **Tragfähigkeit:** begründete Fortsetzbarkeit unter ausgewiesenen Bedingungen bei erhaltener Korrigierbarkeit.
 
 Das Projekt entwickelt keine allgemeine Macht-, Herrschafts- oder Gesellschaftstheorie. Macht, Herrschaft und Legitimation erscheinen allenfalls als abgeleitete Diagnosebegriffe organisierter Asymmetrie.
 
 ## Repository-Struktur
 
-- `manuskript/` – aktuelle Kapiteltexte; primärer Buchstand.
-- `build/manuskript-lesefassung.md` – generierte zusammenhängende Markdown-Lesefassung.
-- `projekt/` – Architektur, Arbeitsstand, Codex-Arbeitsprinzipien und Auftragsvorlagen.
-- `GLOSSAR.md` – verbindliche oder vorläufig stabilisierte Arbeitsdefinitionen.
-- `knowledge/` – Entscheidungen, Begriffsdateien, Relationen und Change Events als Prüf- und Navigationsinstrumente.
-- `sources/` – Bachelorarbeit, Masterarbeit, Gutachten und erschlossene Primärquellen des Projekts.
-- `literatur/` – Arbeitsapparat für Quellen, Literatur und externe Gesprächspartner.
-- `recovered/` – Audits, Rekonstruktionsdossiers und quellenkritische Sicherungen.
-- `archive/` – datenschutzbereinigte Chat- und Entwicklungsarchive.
-- `interaktiv/` – Anschlusslabor zur operativen Darstellung einzelner Begriffe; kein Ersatz für das Manuskript.
+- `manuskript/` – aktuelle Kapiteltexte und verbindlicher Buchstand
+- `build/manuskript-lesefassung.md` – generierte zusammenhängende Lesefassung
+- `projekt/` – Architektur, Leseweg, Arbeitsstand und Arbeitsprotokolle
+- `GLOSSAR.md` – stabilisierte und vorläufige Begriffsbestimmungen
+- `knowledge/` – Entscheidungen, Begriffsdateien, Relationen und Change Events
+- `sources/` – genealogische Primärquellen und erschlossene Quellen
+- `literatur/` – Arbeitsapparat für Literatur und Gesprächspartner
+- `recovered/` – Audits, Rekonstruktionsdossiers und Vorschläge
+- `archive/` – datenschutzbereinigte Entwicklungsarchive
+- `interaktiv/` – Anschlusslabor zur operativen Erprobung einzelner Begriffe
 
-
-Weitere Hinweise zu Zitierbarkeit, Urheberrecht, KI-Mitwirkung, Datenschutz und öffentlicher Freigabe stehen in `PUBLICATION.md`.
+Hinweise zu Zitierbarkeit, Urheberrecht, KI-Mitwirkung, Datenschutz und öffentlicher Freigabe stehen in [`PUBLICATION.md`](PUBLICATION.md).
 
 ## Quellen- und Rekonstruktionspolitik
 
-Das aktuelle Manuskript unter `manuskript/` ist der geltende Buchstand. Frühere Chatfassungen, rekonstruierte Passagen und Assistentenantworten sind historische Quellen oder Arbeitsmaterialien, aber keine automatisch verbindlichen Manuskriptfassungen. Unsichere Rekonstruktionen bleiben markiert und dürfen nicht als gesicherter Autorenwortlaut behandelt werden.
+Frühere Chatfassungen, rekonstruierte Passagen und Assistentenantworten sind historische Quellen oder Arbeitsmaterialien, aber keine automatisch verbindlichen Manuskriptfassungen. Unsichere Rekonstruktionen bleiben markiert und dürfen nicht als gesicherter Autorenwortlaut behandelt werden.
 
 Die Bachelor- und Masterarbeit unter `sources/` sind genealogische Primärquellen des Projekts. Externe Literatur wird als Gesprächspartner, Kontrast oder methodischer Kontext geführt und darf die Architektur des Buches nicht stillschweigend ersetzen.
 
 ## Anschlusslabor
 
-Der interaktive Teil unter `interaktiv/` macht Anschlussoperationen praktisch erfahrbar. Er illustriert die Theorie nicht bloß, ersetzt aber auch nicht die argumentative Entwicklung des Manuskripts. Eine optionale KI-Funktion bleibt an Datenschutz-, Sicherheits- und Deploymententscheidungen gebunden und ist ohne serverseitige Schutzkonfiguration deaktiviert.
+Der interaktive Teil unter `interaktiv/` macht Anschlussoperationen praktisch erfahrbar. Er ersetzt die Argumentation des Manuskripts nicht. Eine optionale KI-Funktion bleibt ohne serverseitige Schutzkonfiguration deaktiviert.
 
 ## Codex-Arbeitsweise
 
-Codex wird in diesem Repository nicht als Autorersatz oder Theorieautorität behandelt. Größere Änderungen werden als adressierbare Aktualisierungen geführt: Sie sollen Herkunft, betroffene Relationen, bewahrte Entscheidungen, eröffnete Möglichkeiten und offene TODOs sichtbar machen. Der Projekttext `projekt/codex-als-anschlussapparat.md` beschreibt diese Arbeitsweise als Anschlussapparat; `projekt/codex-nutzungsanleitung.md` fasst die praktische Nutzung von Codex in diesem Repository zusammen. Beide Texte sind Arbeitsprogramme, keine Manuskriptdefinitionen und keine neuen Grundthesen des Buches.
+Codex wird in diesem Repository nicht als Autorersatz oder Theorieautorität behandelt. Größere Änderungen werden als adressierbare Aktualisierungen geführt: Herkunft, betroffene Relationen, bewahrte Entscheidungen, eröffnete Möglichkeiten und offene Aufgaben sollen sichtbar bleiben.
 
-Der erste technische Baustein dafür ist `scripts/philosophie_automat.py`: ein regelbasierter Prototyp, der einen Gedanken gegen deklarierte Begriffe, Projektgrenzen, Prüfrollen und mögliche Anschlussstellen liest. Standardmäßig erzeugt er nur Prüfungen oder Vorschlagsdossiers; mit explizitem `--apply` kann er markierte Manuskriptvorschläge an einer angegebenen Zielstelle einfügen. Er ersetzt keine Autorenentscheidung.
+Die methodischen Grundlagen stehen in:
+
+- `CONSTITUTION.md`
+- `WORKFLOW.md`
+- `projekt/codex-als-anschlussapparat.md`
+- `projekt/codex-nutzungsanleitung.md`
 
 ## Lesefassung bauen
-
-Der aktuelle Manuskriptstand kann als zusammenhängende Markdown-Lesefassung gebaut werden:
 
 ```powershell
 python scripts/build_manuscript.py
@@ -90,17 +120,18 @@ python scripts/build_manuscript.py
 
 Die Ausgabe entsteht unter `build/manuskript-lesefassung.md`. Bearbeitet werden weiterhin die Einzelkapitel unter `manuskript/`.
 
-## Prüfungen
+## Projekt prüfen
 
-Die Wissensbasis wird geprüft mit:
+Die zentrale Prüfung bündelt Wissensvalidierung, Change Events, Recursive State, MCP-Tests und das Anschlusslabor:
+
+```powershell
+python scripts/check_all.py
+```
+
+Einzelne Prüfungen:
 
 ```powershell
 python scripts/validate_knowledge.py
-```
-
-Der rekursive Projektzustand wird geprüft mit:
-
-```powershell
 python -B .agents\skills\recursive-codex\scripts\check_recursive_state.py
 ```
 
@@ -112,11 +143,4 @@ npm test
 npm run build
 ```
 
-Lesende Begriffsnetze zu Themen lassen sich mit scripts/begriffsnetz.py erzeugen; Hinweise stehen in projekt/begriffsnetze.md.
-
-Automaten für Unterscheidungsanalyse und propositionale Prüfstrukturen stehen in scripts/unterscheidungsautomat.py und scripts/tractatus_automat.py; Hinweise stehen in projekt/automaten.md.
-
-
-Der selbstprogrammierende Kunstwerk-Automat `scripts/kunstwerk_automat.py` erzeugt aus einer ersten Unterscheidung eine projektgebundene Auffuehrungsspur mit generiertem Score; er schreibt nur mit explizitem `--output` und ersetzt keine Manuskriptentscheidung.
-
-Der Automatenverbund `scripts/automatenverbund.py` kombiniert Unterscheidungs-, Tractatus- und Kunstwerk-Automat nur ueber ausgewiesene Anschlussbruecken.
+Weitere lesende Werkzeuge stehen unter `scripts/`, darunter Begriffsnetze, Unterscheidungsanalyse, propositionale Prüfstrukturen und der Philosophie-Automat. Sie erzeugen Prüfungen oder Vorschläge und ersetzen keine Manuskriptentscheidung.
