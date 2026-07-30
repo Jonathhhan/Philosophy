@@ -20,7 +20,7 @@ Nicht jede Verteilung besitzt jedoch ein einzelnes Zentrum. Eine formelle Regel,
 
 Innerhalb dieses Begriffsrahmens gilt:
 
-> Verteilen heißt, Möglichkeiten, Mittel, Positionen, Belastungen und Entscheidungschancen innerhalb einer Organisation unterschiedlich zuzuordnen.
+> Verteilen heißt, Anschlussbedingungen innerhalb einer Organisation verschiedenen Positionen so zuzuordnen, dass Möglichkeiten, Mittel, Belastungen und Entscheidungschancen unterschiedlich wirksam werden.
 
 „Unterschiedlich“ bezeichnet zunächst eine differenzierte Zuordnung. Es behauptet noch keine ungerechte Ungleichheit. Auch eine gleichmäßige Aufteilung setzt Unterschiede voraus: Bestimmte Anteile werden bestimmten Stellen zugeordnet und dadurch von anderen Anteilen unterschieden. Ob die Zuordnung gleich, ungleich, angemessen oder problematisch ist, folgt nicht aus dem Begriff des Verteilens.
 
@@ -114,7 +114,7 @@ Montage dient deshalb auch für Verteilen als epistemisches Modell. In ihren Zwi
 
 ## 10. Verteilung, Asymmetrie und Rechtfertigung
 
-Verteilungsanalyse beschreibt Zuordnungen. Sie zeigt, welche Möglichkeiten, Mittel, Positionen, Belastungen und Entscheidungschancen innerhalb eines organisierten Zusammenhangs verschieden wirksam werden. Daraus folgt weder, dass alle Unterschiede beseitigt werden müssten, noch dass die bestehende Verteilung gerechtfertigt wäre.
+Verteilungsanalyse beschreibt die Zuordnung von Anschlussbedingungen zu Positionen. Sie zeigt, wie dadurch Möglichkeiten, Mittel, Belastungen und Entscheidungschancen innerhalb eines organisierten Zusammenhangs verschieden wirksam werden. Daraus folgt weder, dass alle Unterschiede beseitigt werden müssten, noch dass die bestehende Verteilung gerechtfertigt wäre.
 
 Verteilung und Asymmetrie sind nicht gleichbedeutend. Eine unterschiedliche Zuordnung kann Arbeitsteilung ermöglichen, ohne dass eine Position die Bedingungen anderer einseitig bestimmen kann. Umgekehrt kann eine hinsichtlich einzelner Mittel gleichmäßige Verteilung in einem asymmetrischen Zusammenhang stehen, wenn einige Positionen ihre Bedingungen verändern können, während andere dauerhaft an dieselbe Zuordnung gebunden bleiben.
 
