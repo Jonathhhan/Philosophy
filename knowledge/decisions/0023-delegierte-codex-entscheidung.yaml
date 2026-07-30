@@ -1,0 +1,28 @@
+id: decision-0023
+date: 2026-07-30
+title: Optionale delegierte Codex-Entscheidung
+status: accepted
+decision: >-
+  Der Autor erlaubt Codex optional, in klar begrenzten Fällen eine vorläufige
+  Autorenentscheidung zu übernehmen. Diese Delegation gilt nur, wenn der Auftrag
+  sie ausdrücklich aktiviert oder auf die Delegationsregel verweist. Delegierte
+  Entscheidungen müssen als solche markiert, begründet, dokumentiert und
+  revidierbar gehalten werden.
+reason: >-
+  Die Projektarbeit soll flüssiger werden, ohne die Autoritätshierarchie zu
+  verwischen. Codex kann Standardfälle, lokale Integrationsentscheidungen und
+  begründete Priorisierungen übernehmen, solange Grundbegriffe, Grundthesen,
+  Theorieachsen, Quellenbehauptungen und externe Entscheidungen geschützt bleiben.
+affected_files:
+  - CONSTITUTION.md
+  - AGENTS.md
+  - WORKFLOW.md
+  - projekt/codex-methode-verfeinerung.md
+  - .agents/skills/recursive-codex/references/change-event-schema.md
+  - .agents/skills/recursive-codex/scripts/validate_change_event.py
+limits:
+  - Die letzte Verantwortung und das Revisionsrecht bleiben beim Autor.
+  - Neue Grundbegriffe, Grundthesen, Theorieachsen und Kapitelumordnungen bleiben nicht delegiert.
+  - Quellenbehauptungen, Zitate und Seitenangaben brauchen weiterhin geprüfte Primärquellen.
+  - Datenschutz, Lizenz, Deployment und öffentliche Veröffentlichung bleiben separat zu autorisieren.
+  - Bei mehreren philosophisch gleich starken Lösungen muss Codex Varianten markieren oder zurückfragen.

@@ -1,0 +1,113 @@
+schema_version: 1
+id: change-0034-selbstprogrammierendes-kunstwerk
+created_at: 2026-07-30
+goal: >-
+  Einen Kunst-/Pruefautomaten anlegen, der von einer ersten Unterscheidung aus
+  entlang deklarierter Concept-Relationen laeuft und dabei einen eigenen Score
+  als Auffuehrungsspur erzeugt.
+operation: composition
+scope:
+  allowed_files:
+    - scripts/kunstwerk_automat.py
+    - projekt/automaten.md
+    - projekt/codex-nutzungsanleitung.md
+    - README.md
+    - projekt/arbeitsstand.md
+    - recovered/proposals/kunstwerk-automat-erster-lauf.md
+    - knowledge/change-events/0034-selbstprogrammierendes-kunstwerk.yaml
+  protected_files:
+    - manuskript/
+    - knowledge/concepts/
+    - sources/
+basis:
+  project_files:
+    - CONSTITUTION.md
+    - AGENTS.md
+    - WORKFLOW.md
+    - projekt/automaten.md
+    - projekt/codex-nutzungsanleitung.md
+    - projekt/genetisches-register.md
+  decisions:
+    - user-request-selbstprogrammierendes-kunstwerk-2026-07-30
+  sources:
+    - user-instruction-2026-07-30
+changes:
+  - file: scripts/kunstwerk_automat.py
+    summary: >-
+      Fuehrt einen lesenden Automaten ein, der eine Startunterscheidung entlang
+      deklarierter Concept-Relationen fortsetzt und einen generierten Score
+      ausgibt.
+  - file: recovered/proposals/kunstwerk-automat-erster-lauf.md
+    summary: >-
+      Legt eine erste Auffuehrungsspur ab, erzeugt von Anschliessen /
+      Nicht-Anschluss.
+  - file: projekt/automaten.md
+    summary: >-
+      Dokumentiert den Automaten als selbstprogrammierendes Kunstwerk der
+      Anschlussunterscheidungen.
+  - file: projekt/codex-nutzungsanleitung.md
+    summary: >-
+      Ergaenzt den Kunstwerk-Automaten als eigenen Nutzungsmodus.
+  - file: README.md
+    summary: >-
+      Erwaehnt den Kunstwerk-Automaten als auffuehrbaren Prototypen.
+  - file: projekt/arbeitsstand.md
+    summary: >-
+      Dokumentiert Ziel, Grenzen, Anschlussbedingungen und Pruefstatus.
+affected_relations:
+  - from: scripts/kunstwerk_automat.py
+    relation: depends_on
+    to: knowledge/concepts/
+    effect: added
+    note: Der Lauf nutzt deklarierte Concept-Relationen als Material seiner Auffuehrung.
+  - from: scripts/kunstwerk_automat.py
+    relation: documents
+    to: recovered/proposals/kunstwerk-automat-erster-lauf.md
+    effect: added
+    note: Der erste Lauf schreibt eine Proposal-Spur, aber kein Manuskript.
+  - from: projekt/automaten.md
+    relation: cross_references
+    to: scripts/kunstwerk_automat.py
+    effect: added
+    note: Die Automatendokumentation beschreibt Funktion, Beispiele und Grenzen.
+  - from: projekt/codex-nutzungsanleitung.md
+    relation: cross_references
+    to: scripts/kunstwerk_automat.py
+    effect: added
+    note: Die Nutzungsanleitung macht den Automaten als Codex-Modus verwendbar.
+possibilities:
+  opened:
+    - Das Projekt besitzt einen auffuehrbaren Prototypen zwischen Unterscheidung, Anschluss, Algorithmus und Kunstform.
+    - Laeufe koennen als Proposal, Pruefstruktur oder Visualisierungsmaterial erzeugt werden.
+    - Spaetere interaktive Umsetzungen koennen den Score als Ablauf sichtbar machen.
+  restricted:
+    - Der Automat veraendert nicht selbst seinen Quellcode und schreibt nicht ins Manuskript.
+    - Die letzte Station ist eine Abbruchbedingung, keine letzte philosophische Wahrheit.
+    - Ausgaben bleiben Auffuehrungsspuren ohne Theorieautoritaet.
+  deferred:
+    - "TODO: Interaktive Visualisierung des Kunstwerk-Laufs im Anschlusslabor."
+    - "TODO: Optionaler Abbruch durch Grenzwarnungen oder Autorentscheidung spaeter pruefen."
+uncertainties: []
+agent_findings:
+  genealogist: []
+  consistency_checker: []
+  critic: []
+  material_technical: []
+authority:
+  requires_author_decision: true
+  decision_status: delegated
+  decision_reference: user-request-selbstprogrammierendes-kunstwerk-2026-07-30
+validation:
+  - check: Python-Syntax
+    result: not_run
+    evidence: TODO
+  - check: Example-Run
+    result: not_run
+    evidence: TODO
+  - check: Change-Event-Schema
+    result: not_run
+    evidence: TODO
+  - check: Repository-Validation
+    result: not_run
+    evidence: TODO
+status: confirmed

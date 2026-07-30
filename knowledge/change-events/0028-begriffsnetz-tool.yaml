@@ -1,0 +1,97 @@
+schema_version: 1
+id: change-0028-begriffsnetz-tool
+created_at: 2026-07-30
+goal: >-
+  Ein lesendes Werkzeug ergänzen, das zu einem Thema ein Begriffsnetz aus
+  Concept-Dateien, deklarierten Relationen und Manuskriptankern erzeugt.
+operation: composition
+scope:
+  allowed_files:
+    - scripts/begriffsnetz.py
+    - projekt/begriffsnetze.md
+    - README.md
+    - projekt/arbeitsstand.md
+    - recovered/proposals/begriffsnetz-algorithmusidentitaet.md
+    - knowledge/change-events/0028-begriffsnetz-tool.yaml
+  protected_files:
+    - manuskript/
+    - knowledge/concepts/
+    - sources/
+basis:
+  project_files:
+    - AGENTS.md
+    - PROJECT.md
+    - GLOSSAR.md
+    - knowledge/concepts/
+    - scripts/philosophie_automat.py
+  decisions:
+    - author-confirmation-ja-begriffsnetze-2026-07-30
+  sources:
+    - knowledge/concepts/
+changes:
+  - file: scripts/begriffsnetz.py
+    summary: >-
+      Ergänzt ein CLI-Werkzeug, das aus erkannten Startbegriffen, Nachbarschaften,
+      Relationen und Manuskriptankern ein Markdown- oder JSON-Begriffsnetz erzeugt.
+  - file: projekt/begriffsnetze.md
+    summary: >-
+      Dokumentiert Zweck, Beispiele, Ausgabeformen und Grenzen der Begriffsnetze.
+  - file: README.md
+    summary: >-
+      Verweist auf das neue Begriffsnetz-Werkzeug und seine Projektdokumentation.
+  - file: projekt/arbeitsstand.md
+    summary: >-
+      Dokumentiert die Begriffsnetz-Stufe als lesende Erweiterung der Projektwerkzeuge.
+  - file: recovered/proposals/begriffsnetz-algorithmusidentitaet.md
+    summary: >-
+      Speichert eine Beispielausgabe als prüfbaren Markdown-/Mermaid-Beleg für das neue Werkzeug.
+affected_relations:
+  - from: scripts/begriffsnetz.py
+    relation: depends_on
+    to: knowledge/concepts/
+    effect: added
+    note: Das Werkzeug liest die bestehenden Concept-Dateien, verändert sie aber nicht.
+  - from: scripts/begriffsnetz.py
+    relation: documents
+    to: manuskript/
+    effect: added
+    note: Manuskriptanker werden als Prüfhinweise ausgegeben, nicht als Belege oder automatische Integrationsentscheidung.
+  - from: projekt/begriffsnetze.md
+    relation: documents
+    to: scripts/begriffsnetz.py
+    effect: added
+    note: Die Dokumentation begrenzt das Werkzeug auf Orientierung, Visualisierung und spätere Anschlussprüfung.
+possibilities:
+  opened:
+    - Themen können als deklarierte Anschlusskarten mit Mermaid-Diagramm sichtbar gemacht werden.
+    - JSON-Ausgaben können später im interaktiven Teil weiterverwendet werden.
+    - Manuskriptanker erleichtern gezielte Lektüre vor Integrationen.
+  restricted:
+    - Das Werkzeug schreibt nicht automatisch ins Manuskript und bestätigt keine Theorieentscheidung.
+    - Nicht gefundene Begriffe werden nicht als irrelevant behandelt.
+  deferred:
+    - "TODO: Interaktive Visualisierung und schreibende Anschlussvorschläge bleiben spätere Stufen."
+uncertainties: []
+agent_findings:
+  genealogist: []
+  consistency_checker: []
+  critic: []
+  material_technical: []
+authority:
+  requires_author_decision: false
+  decision_status: not_required
+  decision_reference: null
+validation:
+  - check: Python-Syntax
+    result: passed
+    evidence: python -m py_compile scripts\begriffsnetz.py
+  - check: Beispielausgabe
+    result: passed
+    evidence: Markdown- und JSON-Beispielausgaben wurden erfolgreich erzeugt.
+  - check: Change-Event-Schema
+    result: passed
+    evidence: python -B .agents\skills\recursive-codex\scripts\validate_change_event.py knowledge\change-events\0028-begriffsnetz-tool.yaml
+  - check: Repository-Validation
+    result: passed
+    evidence: python scripts\check_all.py --skip-install completed with ALL REPOSITORY CHECKS PASSED.
+status: stabilized

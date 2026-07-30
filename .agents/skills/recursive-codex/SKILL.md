@@ -109,13 +109,25 @@ Die Arbeit erst abschließen, wenn:
 - Quellen und Provenienz kenntlich bleiben;
 - Agentenvorschläge nicht als gesicherte Theorie erscheinen;
 - offene Entscheidungen als offen ausgewiesen sind;
-- erforderliche Autorenbestätigungen vor Stabilisierung vorliegen;
+- erforderliche Autorenbestätigungen oder ausdrücklich dokumentierte delegierte Codex-Entscheidungen vor Stabilisierung vorliegen;
 - passende Projektprüfungen erfolgreich gelaufen oder begründet als nicht ausführbar dokumentiert sind;
 - das Änderungsereignis, sofern erforderlich, valide ist.
 
-Bei fehlgeschlagener Prüfung nicht stabilisieren. Entweder lokal revidieren, den Eingriff neu klassifizieren oder die konkrete Autorenentscheidung einholen.
+Bei fehlgeschlagener Prüfung nicht stabilisieren. Entweder lokal revidieren, den Eingriff neu klassifizieren, eine konkrete Autorenentscheidung einholen oder - nur wenn vom Autor ausdrücklich erlaubt - eine delegierte Codex-Entscheidung mit Gründen und Revisionsmöglichkeit dokumentieren.
 
-## Ergebnis berichten
+
+## Optionale delegierte Codex-Entscheidung
+
+Wenn der Autor Codex ausdrücklich erlaubt, eine Autorenentscheidung optional zu
+übernehmen, darf Codex nur innerhalb der Grenzen von `CONSTITUTION.md` entscheiden.
+Die Entscheidung muss als `delegierte Codex-Entscheidung` markiert werden. In
+Change Events gilt dann `requires_author_decision: true`,
+`decision_status: delegated` und eine konkrete `decision_reference`.
+
+Nicht delegierbar bleiben neue Grundbegriffe, Grundthesen, Theorieachsen,
+Kapitelumordnungen, Quellenbehauptungen ohne Nachweis, Datenschutz, Lizenz,
+Deployment, öffentliche Veröffentlichung und Fälle mit mehreren philosophisch
+gleich starken Lösungen.## Ergebnis berichten
 
 Kompakt berichten:
 

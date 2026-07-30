@@ -28,6 +28,49 @@ Es ersetzt sie nicht.
 6. Codex darf Anschlussmöglichkeiten sichtbar machen, aber nicht anstelle des Autors entscheiden, welche davon Theorie werden.
 7. Luhmann und Deleuze/Guattari werden in diesem Prinzip methodisch adressiert. Exakte inhaltliche Behauptungen über ihre Texte benötigen weiterhin Quellenprüfung und Seitenangaben.
 
+## Luhmann-nähere Präzisierung
+
+Für Codex wird der Zettelkasten stärker an Luhmanns Methode angelehnt, ohne sie
+als Manuskriptthese zu übernehmen. Maßgeblich sind folgende operative Züge:
+
+1. **Feste Adresse statt beweglicher Ablage.** Ein Codex-Zettel erhält eine
+   stabile Adresse. Wird später anders angeschlossen, wird er nicht umsortiert,
+   sondern durch neue Verweise, Folgezettel oder Korrekturzettel neu lesbar.
+2. **Anschließen und Zwischenschieben.** Neue Zettel werden nicht nur hinten
+   angefügt. Sie können als Fortsetzung, Seitenzweig oder nachträgliche
+   Präzisierung zwischen bestehende Adressen treten.
+3. **Verweisungstechnik vor Klassifikation.** Ordnung entsteht nicht primär
+   durch Schlagworte oder Kapitelrubriken, sondern durch explizite Links:
+   stützt, begrenzt, widerspricht, präzisiert, öffnet, korrigiert,
+   benötigt Prüfung.
+4. **Mehrere Lesemodi.** Ein Zettel kann nach physischer/chronologischer
+   Entstehung, nach Adresse, nach thematischem Strang oder nach aktueller
+   Arbeitsfrage gelesen werden. Keine dieser Reihen allein besitzt Vorrang.
+5. **Eigenkommunikation des Kastens.** Der Wert des Registers liegt nicht darin,
+   vorhandene Gedanken abzulegen, sondern unerwartete spätere Anschlüsse zu
+   erzeugen. Codex soll deshalb nicht nur suchen, was der Autor ohnehin erwartet,
+   sondern entfernte, aber begründete Anschlussstellen markieren.
+6. **Fehlplatzierung wird relational repariert.** Wenn eine Notiz später anders
+   gebraucht wird, wird sie nicht gelöscht oder in eine neue Ordnung gezwungen.
+   Codex ergänzt stattdessen einen Verweis, eine Statuskorrektur oder einen
+   neuen Zettel, der die Verschiebung sichtbar macht.
+7. **Register bleibt Eingang, nicht System.** Schlagworte, Begriffsnetze und
+   Übersichten dienen dem Finden von Gegenden. Die eigentliche Ordnung liegt in
+   adressierten Zetteln und ihren Verweisbeziehungen.
+
+Diese Präzisierung stützt sich methodisch auf das im Niklas-Luhmann-Archiv
+zugängliche Manuskript *Technik des Zettelkastens* (1968) und die editorische
+Beschreibung des Zettelkastens. Sie wird hier als Codex-Arbeitsregel verwendet;
+exakte Luhmann-Interpretationen für das Manuskript verlangen weiterhin
+Primärquellenlektüre und Seiten-/Zettelangaben.
+
+Quellenhinweise für die Methode:
+
+- Niklas Luhmann, *Technik des Zettelkastens* (1968), Niklas-Luhmann-Archiv:
+  `https://niklas-luhmann-archiv.de/bestand/manuskripte/manuskript/MS_2906`
+- Niklas-Luhmann-Archiv, Beschreibung und Tutorial des Zettelkastens:
+  `https://niklas-luhmann-archiv.de/nachlass/zettelkasten`
+  und `https://niklas-luhmann-archiv.de/bestand/zettelkasten/tutorial`
 ## Operativer Ablauf
 
 ### 1. Anschließen

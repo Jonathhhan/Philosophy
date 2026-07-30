@@ -30,7 +30,7 @@ RELATIONS = {
     "other",
 }
 EFFECTS = {"preserved", "changed", "added", "removed", "uncertain"}
-DECISION_STATUSES = {"not_required", "pending", "accepted", "rejected"}
+DECISION_STATUSES = {"not_required", "pending", "accepted", "delegated", "rejected"}
 VALIDATION_RESULTS = {"passed", "warning", "failed", "not_run"}
 STATUSES = {"proposed", "tested", "confirmed", "stabilized", "revised"}
 REQUIRED_TOP = {
@@ -212,8 +212,8 @@ def validate_event(data: Any) -> list[str]:
     if authority_ok and isinstance(data["authority"].get("requires_author_decision"), bool):
         authority = data["authority"]
         if authority["requires_author_decision"]:
-            if status in {"confirmed", "stabilized", "revised"} and authority["decision_status"] != "accepted":
-                errors.append(f"status {status} requires an accepted author decision")
+            if status in {"confirmed", "stabilized", "revised"} and authority["decision_status"] not in {"accepted", "delegated"}:
+                errors.append(f"status {status} requires an accepted or delegated author decision")
         elif authority["decision_status"] != "not_required":
             errors.append("decision_status must be not_required when no author decision is required")
 

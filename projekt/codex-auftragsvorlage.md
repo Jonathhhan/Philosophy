@@ -60,6 +60,23 @@ Diese Vorlage dient umfangreichen, wiederkehrenden oder philosophisch strittigen
 - [ ] TODO / offen
 
 **Welche Anschlussmöglichkeiten werden als Plateau sichtbar, aber noch nicht integriert?**
+
+### Luhmann-nahe Adressierung
+
+**Feste Adresse oder neuer Einschub:**
+
+**Wird fortgesetzt, eingeschoben, korrigiert oder nur verwiesen?**
+
+- [ ] Fortsetzung
+- [ ] Einschub
+- [ ] Seitenzweig
+- [ ] Rückverweis / Korrektur
+- [ ] Registereintrag
+- [ ] nur Prüfhinweis
+
+**Welche entfernte Anschlussstelle könnte der Kasten überraschend nahelegen?**
+
+**Welche Relation ersetzt eine mögliche Umordnung?**
 ## Problem und argumentative Funktion
 
 **Welche bestimmte Erklärungslücke, Inkonsistenz oder Gestaltungsaufgabe wird bearbeitet?**

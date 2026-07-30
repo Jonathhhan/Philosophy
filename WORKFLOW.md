@@ -32,7 +32,40 @@ Dabei gilt:
 - Beziehungen zwischen Änderungen, Entscheidungen, Quellen und Manuskriptstellen werden typisiert statt bloß assoziiert.
 - Offene Anschlussmöglichkeiten dürfen sichtbar gemacht, aber nicht ohne Autorenentscheidung als gesicherte Theorie stabilisiert werden.
 - Luhmanns Zettelkasten und Deleuze/Guattaris Plateaus bleiben methodische Bezugspunkte der Codex-Arbeitsweise, solange keine quellengeprüfte Manuskriptintegration beauftragt ist.
-## 1. Ausgangsmaterial sichern
+- Luhmann-näher heißt für Codex: feste Adressen vergeben, neue Zettel einschieben statt umsortieren, Fehlplatzierungen durch Verweise reparieren, Register nur als Eingangshilfe behandeln und mehrere Lesemodi zulassen.
+- Jede überraschende Verbindung muss als Relation benannt werden; eine bloße Assoziation bleibt `TODO:`.
+
+
+## Genetisches Register fuer Codex
+
+Fuer groessere Gedankenentwicklungen kann Codex zusaetzlich das Arbeitsprinzip unter `projekt/genetisches-register.md` verwenden. Dieses Prinzip behandelt wichtige Gedanken als Abstammungslinien: Herkunft, tragende Unterscheidung, Variation, Pruefung, Entscheidung und Nachkommen werden unterscheidbar dokumentiert.
+
+Dabei gilt:
+
+- Genetisch bedeutet rekonstruktiv, nicht biologisch-metaphysisch.
+- Das Register ergaenzt Zettel und Plateaus, ersetzt sie aber nicht.
+- Ein genetischer Eintrag stabilisiert keine Manuskriptthese, solange diese nicht autorisiert und argumentativ integriert ist.
+- Delegierte Codex-Entscheidungen duerfen genetisch dokumentiert werden, bleiben aber revidierbar.
+## Optionale Entscheidungsdelegation
+
+Der Autor kann Codex ausdrücklich erlauben, eine vorläufige Autorenentscheidung
+zu übernehmen. Diese Delegation ist kein Standardmodus. Sie gilt nur, wenn der
+Auftrag sie nennt oder auf die Regel in `CONSTITUTION.md` verweist.
+
+Bei delegierten Entscheidungen muss Codex:
+
+- die Entscheidung als `delegierte Codex-Entscheidung` markieren;
+- im Change Event `requires_author_decision: true`, `decision_status: delegated`
+  und eine konkrete `decision_reference` verwenden;
+- begründen, warum die Entscheidung innerhalb des delegierten Bereichs liegt;
+- weiterhin TODOs setzen, wenn Quellen, Grundbegriffe, Theorieachsen,
+  Kapitelordnung, Datenschutz, Lizenz, Deployment oder externe Veröffentlichung
+  betroffen sind;
+- im Abschlussbericht sagen, welche Entscheidung delegiert getroffen wurde und
+  wie der Autor sie revidieren kann.
+
+Delegation ersetzt keine Quellenlektüre, keine Belege und keine
+Verantwortlichkeit des Autors für den Endstand.## 1. Ausgangsmaterial sichern
 
 Neue Textfassungen werden zunächst unverändert oder nur typografisch bereinigt in das passende Manuskriptkapitel übernommen. Unsichere, abgebrochene oder beschädigte Stellen werden markiert. Rekonstruktionen dürfen nicht als Originaltext ausgegeben werden.
 

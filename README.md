@@ -61,6 +61,9 @@ Das Projekt entwickelt keine allgemeine Macht-, Herrschafts- oder Gesellschaftst
 - `archive/` – datenschutzbereinigte Chat- und Entwicklungsarchive.
 - `interaktiv/` – Anschlusslabor zur operativen Darstellung einzelner Begriffe; kein Ersatz für das Manuskript.
 
+
+Weitere Hinweise zu Zitierbarkeit, Urheberrecht, KI-Mitwirkung, Datenschutz und öffentlicher Freigabe stehen in `PUBLICATION.md`.
+
 ## Quellen- und Rekonstruktionspolitik
 
 Das aktuelle Manuskript unter `manuskript/` ist der geltende Buchstand. Frühere Chatfassungen, rekonstruierte Passagen und Assistentenantworten sind historische Quellen oder Arbeitsmaterialien, aber keine automatisch verbindlichen Manuskriptfassungen. Unsichere Rekonstruktionen bleiben markiert und dürfen nicht als gesicherter Autorenwortlaut behandelt werden.
@@ -73,7 +76,7 @@ Der interaktive Teil unter `interaktiv/` macht Anschlussoperationen praktisch er
 
 ## Codex-Arbeitsweise
 
-Codex wird in diesem Repository nicht als Autorersatz oder Theorieautorität behandelt. Größere Änderungen werden als adressierbare Aktualisierungen geführt: Sie sollen Herkunft, betroffene Relationen, bewahrte Entscheidungen, eröffnete Möglichkeiten und offene TODOs sichtbar machen. Der Projekttext `projekt/codex-als-anschlussapparat.md` beschreibt diese Arbeitsweise als Anschlussapparat; er ist ein Arbeitsprogramm, keine Manuskriptdefinition und keine neue Grundthese des Buches.
+Codex wird in diesem Repository nicht als Autorersatz oder Theorieautorität behandelt. Größere Änderungen werden als adressierbare Aktualisierungen geführt: Sie sollen Herkunft, betroffene Relationen, bewahrte Entscheidungen, eröffnete Möglichkeiten und offene TODOs sichtbar machen. Der Projekttext `projekt/codex-als-anschlussapparat.md` beschreibt diese Arbeitsweise als Anschlussapparat; `projekt/codex-nutzungsanleitung.md` fasst die praktische Nutzung von Codex in diesem Repository zusammen. Beide Texte sind Arbeitsprogramme, keine Manuskriptdefinitionen und keine neuen Grundthesen des Buches.
 
 Der erste technische Baustein dafür ist `scripts/philosophie_automat.py`: ein regelbasierter Prototyp, der einen Gedanken gegen deklarierte Begriffe, Projektgrenzen, Prüfrollen und mögliche Anschlussstellen liest. Standardmäßig erzeugt er nur Prüfungen oder Vorschlagsdossiers; mit explizitem `--apply` kann er markierte Manuskriptvorschläge an einer angegebenen Zielstelle einfügen. Er ersetzt keine Autorenentscheidung.
 
@@ -108,3 +111,12 @@ cd interaktiv
 npm test
 npm run build
 ```
+
+Lesende Begriffsnetze zu Themen lassen sich mit scripts/begriffsnetz.py erzeugen; Hinweise stehen in projekt/begriffsnetze.md.
+
+Automaten für Unterscheidungsanalyse und propositionale Prüfstrukturen stehen in scripts/unterscheidungsautomat.py und scripts/tractatus_automat.py; Hinweise stehen in projekt/automaten.md.
+
+
+Der selbstprogrammierende Kunstwerk-Automat `scripts/kunstwerk_automat.py` erzeugt aus einer ersten Unterscheidung eine projektgebundene Auffuehrungsspur mit generiertem Score; er schreibt nur mit explizitem `--output` und ersetzt keine Manuskriptentscheidung.
+
+Der Automatenverbund `scripts/automatenverbund.py` kombiniert Unterscheidungs-, Tractatus- und Kunstwerk-Automat nur ueber ausgewiesene Anschlussbruecken.

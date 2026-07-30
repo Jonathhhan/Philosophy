@@ -36,8 +36,10 @@ Der Worker benötigt serverseitig:
 - optional `OPENAI_MODEL`; Standard ist `gpt-5.6-sol`.
 
 Fehlt eine dieser Schutzvoraussetzungen, antwortet der Endpunkt mit `503` und die
-manuelle Oberfläche bleibt nutzbar. Der API-Schlüssel darf nie in Browsercode,
-Repositorydateien oder öffentliche Deploymentvariablen gelangen.
+manuelle Oberfläche bleibt nutzbar. Wird die Oberfläche nur als statische Datei oder
+ohne denselben Worker/Projektserver geöffnet, ist `/api/anschluss` nicht erreichbar;
+der Browser meldet dann, dass der KI-Endpunkt nicht erreichbar ist. Der API-Schlüssel
+darf nie in Browsercode, Repositorydateien oder öffentliche Deploymentvariablen gelangen.
 
 Vor einer öffentlichen Aktivierung sind für die konkrete Hostingumgebung außerdem
 Budgetgrenzen, Monitoring, eine globale Parallelitätsgrenze und gegebenenfalls eine

@@ -377,3 +377,81 @@ Teile des ursprünglichen Chatverlaufs sind in der Chatoberfläche und Suche nic
 - Grenze: Die Methode ist ein Arbeitsprotokoll für Codex, keine neue Grundthese des Buches und kein Ersatz für Autorentscheidung oder Quellenlektüre.
 - Anschlussbedingung: Größere Codex-Bearbeitungen können künftig Status, Herkunft, geöffnete und begrenzte Anschlussmöglichkeiten sowie offene Autorentscheidungen sichtbarer mitführen.
 - Prüfung: Zentrale Projektprüfung bestanden; Change Event 0025 ist valide und stabilisiert.
+
+## Publikationshinweise – öffentliche Hülle 2026-07-30
+
+- Aktualisiert: `PUBLICATION.md` beschreibt Projektstatus, Zitierbarkeit, Urheberrecht, Rekonstruktionspolitik, KI-/Codex-Mitwirkung, Quellenpolitik, Anschlusslabor, Datenschutz und Bedingungen einer öffentlichen Freigabe.
+- Grenze: Die Datei ist eine vorläufige Publikationshülle und keine Verlags-, Lizenz- oder Datenschutzentscheidung. Das Manuskript bleibt unverändert.
+- Anschlussbedingung: README, Publikationsaudit, Quellenapparat und Codex-Methode erhalten eine gemeinsame öffentliche Orientierung, ohne die Theoriearchitektur zu erweitern.
+- Prüfung: TODO: Zentrale Projektprüfung nach Abschluss der Dokumentationsintegration ausführen.
+## Anschlusslabor – KI-Endpunkt-Fehler 2026-07-30
+
+- Aktualisiert: Die Browsermeldung für einen nicht erreichbaren KI-Endpunkt unterscheidet nun statische Nutzung ohne API von serverseitig beantworteten KI-Fehlern.
+- Grenze: Die Änderung aktiviert keine KI-Funktion und verändert keine Deployment-, Kosten- oder Datenschutzentscheidung.
+- Anschlussbedingung: Der manuelle Entwurf bleibt ausdrücklich verfügbar; /api/anschluss muss über Worker oder Projektserver erreichbar sein.
+- Prüfung: Lokale Interaktiv-Tests, Syntaxprüfung, Build, Change-Event-Validierung und zentrale Projektprüfung bestanden.
+
+## Begriffsnetze – lesende Anschlusskarten 2026-07-30
+
+- Aktualisiert: scripts/begriffsnetz.py erzeugt zu einem Thema ein Markdown- oder JSON-Netz aus Concept-Dateien, Relationen und Manuskriptankern.
+- Grenze: Das Werkzeug schreibt nicht ins Manuskript, bestätigt keine Definition und ersetzt keine Autorenentscheidung.
+- Anschlussbedingung: JSON-Ausgaben können später in den interaktiven Teil überführt werden; Manuskriptanker bleiben Prüfhinweise.
+- Prüfung: Syntax, Beispielausgaben, Change-Event-Validierung und zentrale Projektprüfung bestanden.
+
+## Unterscheidungs- und Tractatus-Automaten 2026-07-30
+
+- Aktualisiert: scripts/unterscheidungsautomat.py analysiert markierte und unmarkierte Seiten einer Unterscheidung; scripts/tractatus_automat.py erzeugt nummerierte propositionale Prüfstrukturen.
+- Grenze: Spencer Brown und Tractatus-Form dienen als operative Prüf- und Ordnungsformen, nicht als neue Grundachse des Manuskripts.
+- Anschlussbedingung: Beide Werkzeuge bleiben lesend; Manuskriptintegration verlangt Statusmarkierung, Quellenprüfung und gegebenenfalls Autorenentscheidung.
+- Prüfung: Syntax, Beispielausgaben, Change-Event-Validierung und zentrale Projektprüfung bestanden.
+
+## Luhmann-nähere Zettelkastenmethode 2026-07-30
+
+- Aktualisiert: Das Codex-Zettelkastenprinzip wurde stärker auf feste Adressen, Einschübe, Verweisungstechnik, mehrere Lesemodi und Register als Eingangshilfe ausgerichtet.
+- Grenze: Luhmann bleibt methodischer Bezugspunkt der Codex-Arbeit; keine neue Manuskriptthese und keine quellenlose Luhmann-Integration.
+- Anschlussbedingung: Künftige größere Arbeiten können als Fortsetzung, Einschub, Seitenzweig oder Rückverweis beschrieben werden; bloße Assoziationen bleiben TODO.
+- Prüfung: Change-Event-Validierung und zentrale Projektprüfung bestanden.
+
+## Optionale delegierte Codex-Entscheidung 2026-07-30
+
+- Aktualisiert: Codex darf optional in ausdrücklich erlaubten, klar begrenzten Fällen eine vorläufige Autorenentscheidung übernehmen.
+- Grenze: Nicht delegierbar bleiben neue Grundbegriffe, Grundthesen, Theorieachsen, Kapitelumordnungen, Quellenbehauptungen ohne Nachweis, Datenschutz, Lizenz, Deployment und öffentliche Veröffentlichung.
+- Anschlussbedingung: Delegierte Entscheidungen werden als delegierte Codex-Entscheidung markiert und in Change Events mit decision_status: delegated dokumentiert.
+- Prüfung: Schema, Validator-Selftest, AST-Prüfung und zentrale Projektprüfung bestanden.
+
+## Genetisches Register der Codex-Arbeit 2026-07-30
+
+- Aktualisiert: `projekt/genetisches-register.md`, `WORKFLOW.md`, `projekt/codex-methode-verfeinerung.md`, `projekt/codex-zettelregister.md`.
+- Ziel: Codex kann wichtige Gedanken nicht nur als Zettel und Plateaus adressieren, sondern als genealogische Linien mit Herkunft, Unterscheidung, Mutation, Pruefung, Entscheidung und Nachkommen dokumentieren.
+- Delegierte Codex-Entscheidung: Die konkrete erste Form des Registers wurde innerhalb der optional erlaubten Entscheidungsdelegation gesetzt; sie betrifft Arbeitsmethode, nicht Manuskriptthese, Grundbegriff oder Theorieachse.
+- Anschlussbedingung: Genetische Eintraege stabilisieren keine Theorie, sondern markieren Status, Herkunft und Revisionsmoeglichkeit.
+- Er�ffnet: Gedankenvarianten, technische Vorschlaege und Manuskriptanschluesse koennen kuenftig als Abstammungslinien verfolgt werden.
+- Begrenzt: Biologische oder evolutionstheoretische Behauptungen duerfen daraus nicht ohne Quellenarbeit entstehen.
+- Pr�fung: Change-Event-Validierung und zentrale Projektpr�fung bestanden.
+## Codex-Nutzungsanleitung 2026-07-30
+
+- Aktualisiert: `projekt/codex-nutzungsanleitung.md`, `README.md`, `projekt/codex-zettelregister.md`, `projekt/arbeitsstand.md`.
+- Ziel: Eine praktische Anleitung festhalten, wie Codex in diesem Repository als Schreib-, Pruef-, Integrations-, Zettel-/Plateau-, genetischer und Tractatus-Pruefapparat genutzt wird.
+- Anschlussbedingung: Die Anleitung ist eine Gebrauchsanweisung, kein Manuskriptbestandteil und keine neue Theorieachse.
+- Tractatus-Methode: Als propositionaler Klaerungsmodus aufgenommen; Nummerierung ordnet Saetze und Grenzen, ersetzt aber keine Argumentation oder Autorentscheidung.
+- Er�ffnet: Kuenftige Kurzauftraege koennen auf die Anleitung verweisen, ohne jedes Mal alle Arbeitsregeln neu zu formulieren.
+- Begrenzt: Projektverfassung, Workflow, Quellenpolitik und Autorenentscheidung behalten Vorrang.
+- Pr�fung: Change-Event-Validierung und zentrale Projektpr�fung bestanden.
+## Selbstprogrammierendes Kunstwerk 2026-07-30
+
+- Aktualisiert: `scripts/kunstwerk_automat.py`, `projekt/automaten.md`, `projekt/codex-nutzungsanleitung.md`, `README.md`, `recovered/proposals/kunstwerk-automat-erster-lauf.md`.
+- Ziel: Einen Kunst-/Pruefautomaten anlegen, der von einer ersten Unterscheidung aus entlang deklarierter Concept-Relationen laeuft und dabei seinen eigenen Score erzeugt.
+- Grenze: Der Automat veraendert nicht seinen Quellcode, schreibt nicht ins Manuskript und behauptet keine letzte philosophische Begruendung.
+- Anschlussbedingung: Jede Station fuehrt markierte Seite, unmarkierte Seite, Relation, Concept-Datei, Grenzen und Programmlinie mit.
+- Er�ffnet: Das Projekt besitzt nun einen auffuehrbaren Prototypen, der Unterscheidung, Anschluss, Algorithmus und Kunstform operativ verbindet.
+- Begrenzt: Automatische Laeufe bleiben Proposal, Pruefstruktur oder Auffuehrungsspur; Integration verlangt gesonderte Autorentscheidung.
+- Pr�fung: Syntax, Beispielausgaben, Change-Event-Validierung und zentrale Projektpr�fung bestanden.
+## Automatenverbund 2026-07-30
+
+- Aktualisiert: `scripts/automatenverbund.py`, `projekt/automaten.md`, `projekt/codex-nutzungsanleitung.md`, `README.md`, `recovered/proposals/automatenverbund-erster-lauf.md`.
+- Ziel: Unterscheidungsautomat, Tractatus-Automat und Kunstwerk-Automat dort kombinieren, wo gemeinsame Begriffsadressen, Manuskriptanker oder deklarierte Concept-Relationen Anschluesse ermoeglichen.
+- Grenze: Der Verbund schreibt nicht ins Manuskript und blockiert nicht ausgewiesene Verbindungen, statt sie zu erfinden.
+- Anschlussbedingung: Jede Kombination weist ihre Bruecken oder Blockaden aus.
+- Er�ffnet: Ein Gedanke kann jetzt als Unterscheidung, propositionale Ordnung und Auffuehrungsspur in einem Lauf sichtbar werden.
+- Begrenzt: Die Ausgabe bleibt Proposal, Pruefstruktur oder Auffuehrungsspur; Manuskriptintegration bleibt gesondert zu autorisieren.
+- Pr�fung: Syntax, Beispielausgabe, Change-Event-Validierung und zentrale Projektpr�fung noch auszuf�hren.

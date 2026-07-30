@@ -1,0 +1,102 @@
+# Automaten der Unterscheidung und propositionalen Ordnung
+
+Diese Werkzeuge erweitern die vorhandenen Projektwerkzeuge um zwei lesende
+Prüfmodi. Diese Werkzeuge stabilisieren keine neue Theorieachse und verändern keine
+Manuskriptdateien.
+
+## Codex-Automat der Unterscheidung
+
+`scripts/unterscheidungsautomat.py` analysiert eine Unterscheidung als markierte
+und unmarkierte Seite. Er ist von George Spencer Browns Formdenken inspiriert,
+wird hier aber nur als operative Beobachtungsfigur verwendet.
+
+Beispiele:
+
+```powershell
+python scripts\unterscheidungsautomat.py "Organisation" "nicht organisierter Möglichkeitsraum"
+python scripts\unterscheidungsautomat.py "Algorithmus" "materielle Ausführung" --context "Identität über Implementierungen hinweg"
+python scripts\unterscheidungsautomat.py "Kritik" "Organisation" --format json
+```
+
+Der Automat fragt:
+
+- Welche Seite wird markiert?
+- Welche Seite läuft unmarkiert mit?
+- Welche Concept-Dateien werden berührt?
+- Welche Manuskriptanker bieten Leseanschlüsse?
+- Welche Grenzwarnungen entstehen?
+
+## Tractatus-philosophicus-Automat
+
+`scripts/tractatus_automat.py` erzeugt zu einem Thema eine nummerierte,
+propositionale Prüfstruktur. Die Nummerierung dient der Ordnung von Leitsatz,
+Unterthese, Grenze und Anschluss. Sie imitiert keinen Autorstil und ersetzt keine
+philosophische Ausarbeitung.
+
+Beispiele:
+
+```powershell
+python scripts\tractatus_automat.py "Jede Aktualisierung verändert den Raum weiterer Anschlussmöglichkeiten"
+python scripts\tractatus_automat.py "Algorithmusidentität" --output recovered\proposals\tractatus-algorithmusidentitaet.md
+python scripts\tractatus_automat.py "Organisation und Kritik" --format json
+```
+
+
+## Selbstprogrammierendes Kunstwerk der Anschlussunterscheidungen
+
+`scripts/kunstwerk_automat.py` laesst eine Folge von Unterscheidungen von einer
+Startmarkierung aus laufen. Der Automat veraendert nicht seinen Quellcode.
+Stattdessen erzeugt jeder Schritt eine neue Programmlinie seines eigenen Scores:
+Die Auffuehrung schreibt also die Regelspur, nach der sie als Kunstwerk lesbar
+wird.
+
+Beispiele:
+
+```powershell
+python scripts\kunstwerk_automat.py Anschliessen Nicht-Anschluss --max-steps 17
+python scripts\kunstwerk_automat.py Algorithmus materielle-Ausfuehrung --max-steps 8 --format json
+python scripts\kunstwerk_automat.py Form Unmarkiertes --output recovered\proposals\kunstwerk-form-lauf.md
+```
+
+Der Automat fragt nicht nach der letzten Wahrheit. Er laeuft bis zu einer
+Abbruchbedingung:
+
+- gesetzte Schrittgrenze;
+- keine unbesuchte deklarierte Anschlussstelle;
+- spaetere Erweiterung: ausdruecklicher Stopp durch Grenzwarnung oder
+  Autorentscheidung.
+
+Die Ausgabe ist eine Auffuehrungsspur: markierte Seite, unmarkierte Seite,
+Anschlussrelation, Concept-Datei, Grenzen und generierter Score. Sie ist kein
+Manuskripttext und keine Theorieentscheidung.
+
+## Automatenverbund
+
+`scripts/automatenverbund.py` kombiniert Unterscheidungsautomat,
+Tractatus-Automat und Kunstwerk-Automat dort, wo Anschluesse nachweisbar sind.
+Der Verbund prueft Bruecken ueber gemeinsame Begriffsadressen, Manuskriptanker
+oder deklarierte Concept-Relationen. Wo keine Bruecke besteht, wird die
+Verbindung blockiert und als Befund ausgegeben.
+
+Beispiele:
+
+```powershell
+python scripts\automatenverbund.py Anschliessen Nicht-Anschluss --context "von der ersten Unterscheidung bis zur Auffuehrung" --max-steps 8
+python scripts\automatenverbund.py Algorithmus materielle-Ausfuehrung --context "Identitaet ueber Implementierungen" --format json
+python scripts\automatenverbund.py Form Unmarkiertes --output recovered\proposals\automatenverbund-form.md
+```
+
+Der Verbund erzeugt drei Stufen:
+
+1. Unterscheiden: markierte und unmarkierte Seite mit Begriffsadressen.
+2. Propositional ordnen: Tractatus-Struktur aus Leitsatz, Grenze und Anschluss.
+3. Auffuehren: Kunstwerk-Score entlang deklarierter Relationen.
+
+Er schreibt nur mit explizitem `--output` und bleibt Proposal, Pruefstruktur
+oder Auffuehrungsspur.
+## Gemeinsame Grenzen
+
+- Die Werkzeuge schreiben nur mit explizitem `--output`.
+- Ausgaben sind Vorschläge, Prüfstrukturen oder Lesehilfen.
+- Manuskriptintegration erfordert weiterhin Quellenprüfung, Statusmarkierung,
+  Change Event und gegebenenfalls Autorenentscheidung.

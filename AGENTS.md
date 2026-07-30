@@ -101,6 +101,27 @@ Nach größeren Änderungen berichtet Codex mindestens:
 - welche Entscheidungen bestätigt und welche noch offen sind;
 - welche Prüfungen durchgeführt wurden.
 
+
+## Optionale Entscheidungsdelegation
+
+Der Autor kann Codex ausdrücklich erlauben, in einem klar begrenzten Bereich eine
+vorläufige Autorenentscheidung zu übernehmen. Diese Delegation ist optional,
+widerrufbar und muss dokumentiert werden. Sie erlaubt keine stillschweigende
+Änderung von Grundthesen, Grundbegriffen, Theorieachsen, Kapitelordnung,
+Quellenbehauptungen, Datenschutz-, Lizenz-, Deployment- oder
+Veröffentlichungsentscheidungen.
+
+Bei delegierten Entscheidungen muss Codex:
+
+- die Entscheidung als `delegierte Codex-Entscheidung` kennzeichnen;
+- Alternativen und Gründe knapp ausweisen;
+- die Entscheidung in `projekt/arbeitsstand.md`, einem Change Event oder einer
+  Entscheidungsdatei dokumentieren;
+- bei Change Events `requires_author_decision: true`, `decision_status: delegated`
+  und eine konkrete `decision_reference` verwenden;
+- offenlassen oder zurückfragen, wenn mehrere philosophisch gleich starke
+  Lösungen bestehen.
+
 ## Rollen
 
 Codex kann je nach Auftrag folgende Rollen übernehmen:

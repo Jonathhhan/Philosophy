@@ -1,0 +1,87 @@
+schema_version: 1
+id: change-0027-ai-endpoint-unreachable-message
+created_at: 2026-07-30
+goal: >-
+  Die KI-Schaltfläche im Anschlusslabor soll einen nicht erreichbaren API-Endpunkt
+  verständlich als Konfigurations- oder Deploymentgrenze ausweisen, statt die
+  technische Browsermeldung "Failed to fetch" anzuzeigen.
+operation: local_update
+scope:
+  allowed_files:
+    - interaktiv/js/main.js
+    - interaktiv/tests/main.test.mjs
+    - interaktiv/README.md
+    - projekt/arbeitsstand.md
+    - knowledge/change-events/0027-ai-endpoint-unreachable-message.yaml
+  protected_files:
+    - manuskript/
+    - knowledge/concepts/
+    - sources/
+    - PUBLICATION.md
+basis:
+  project_files:
+    - AGENTS.md
+    - interaktiv/README.md
+    - interaktiv/js/main.js
+    - interaktiv/server/runtime.js
+    - interaktiv/tests/main.test.mjs
+  decisions:
+    - author-report-failed-to-fetch-2026-07-30
+  sources:
+    - interaktiv/server/runtime.js
+changes:
+  - file: interaktiv/js/main.js
+    summary: >-
+      Übersetzt Netzwerkfehler beim KI-Aufruf in eine nutzbare Meldung zur
+      Erreichbarkeit von Worker oder Projektserver.
+  - file: interaktiv/tests/main.test.mjs
+    summary: >-
+      Ergänzt einen Test für den nicht erreichbaren KI-Endpunkt und stellt sicher,
+      dass der manuelle Entwurf unverändert bleibt.
+  - file: interaktiv/README.md
+    summary: >-
+      Dokumentiert den Unterschied zwischen konfiguriertem 503-Endpunkt und
+      statischer Nutzung ohne erreichbare API.
+  - file: projekt/arbeitsstand.md
+    summary: >-
+      Hält die lokale Korrektur und ihre Grenze für den Arbeitsstand fest.
+affected_relations:
+  - from: interaktiv/js/main.js
+    relation: other
+    to: interaktiv/server/runtime.js
+    effect: changed
+    note: Die Browseroberfläche unterscheidet nicht erreichbare API und verworfene oder serverseitig abgelehnte KI-Antworten besser.
+  - from: interaktiv/README.md
+    relation: documents
+    to: interaktiv/js/main.js
+    effect: added
+    note: Die Betriebsgrenze der optionalen KI-Funktion wird für lokale und statische Nutzung sichtbar.
+possibilities:
+  opened:
+    - Nutzer können den Fehler als fehlenden Worker oder Projektserver erkennen.
+    - Die manuelle Anschlussarbeit bleibt auch bei nicht verfügbarer KI-Funktion explizit ausgewiesen.
+  restricted:
+    - Die Änderung aktiviert keinen KI-Endpunkt und verändert keine Deployment- oder Datenschutzentscheidung.
+  deferred:
+    - "TODO: Öffentliche Aktivierung der KI-Funktion bleibt an Hosting-, Budget-, Monitoring- und Datenschutzentscheidungen gebunden."
+uncertainties: []
+agent_findings:
+  genealogist: []
+  consistency_checker: []
+  critic: []
+  material_technical: []
+authority:
+  requires_author_decision: false
+  decision_status: not_required
+  decision_reference: null
+validation:
+  - check: Change-Event-Schema
+    result: passed
+    evidence: python -B .agents\skills\recursive-codex\scripts\validate_change_event.py knowledge\change-events\0027-ai-endpoint-unreachable-message.yaml
+  - check: Interaktiv-Tests
+    result: passed
+    evidence: npm run check, npm test and npm run build completed successfully in interaktiv/.
+  - check: Repository-Validation
+    result: passed
+    evidence: python scripts\check_all.py --skip-install completed with ALL REPOSITORY CHECKS PASSED.
+status: stabilized

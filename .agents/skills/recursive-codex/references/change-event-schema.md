@@ -41,7 +41,7 @@
 
 `affected_relations[].effect`: `preserved`, `changed`, `added`, `removed`, `uncertain`
 
-`authority.decision_status`: `not_required`, `pending`, `accepted`, `rejected`
+`authority.decision_status`: `not_required`, `pending`, `accepted`, `delegated`, `rejected`
 
 `validation[].result`: `passed`, `warning`, `failed`, `not_run`
 
@@ -59,7 +59,7 @@
 2. Für `reorganization` mindestens eine Beziehung als `changed`, `added` oder `removed` bestimmen.
 3. Nach `proposed` mindestens eine Validierung dokumentieren.
 4. Bei `confirmed`, `stabilized` oder `revised` keine fehlgeschlagene Validierung offenlassen.
-5. Wenn `requires_author_decision: true` gilt, `confirmed`, `stabilized` oder `revised` nur mit `decision_status: accepted` verwenden.
+5. Wenn `requires_author_decision: true` gilt, `confirmed`, `stabilized` oder `revised` nur mit `decision_status: accepted` oder `decision_status: delegated` verwenden. `delegated` bedeutet: Der Autor hat Codex für den konkreten Bereich eine vorläufige, revidierbare Entscheidung erlaubt.
 6. Wenn keine Autorenentscheidung erforderlich ist, `decision_status: not_required` verwenden.
 7. Bei `stabilized` mindestens eine tatsächliche Änderung ausweisen; ein reiner Audit stabilisiert keine Projektänderung.
 8. Eröffnete Möglichkeiten nicht als automatisch besser und begrenzte Möglichkeiten nicht als automatisch schlechter behandeln. Gründe im Ereignis oder in der zugehörigen Entscheidung ausweisen.
@@ -81,4 +81,4 @@ proposed → tested → confirmed → stabilized
                     ↘ revised → tested …
 ```
 
-`confirmed` überspringen, wenn keine Autorenentscheidung erforderlich ist. Einen zurückgewiesenen Vorschlag nicht stabilisieren; seine Provenienz darf als verworfene Variante erhalten bleiben.
+`confirmed` überspringen, wenn keine Autorenentscheidung erforderlich ist. Bei `delegated` muss die Entscheidungsgrundlage im Ereignis oder in einer Entscheidungsdatei nachvollziehbar sein. Einen zurückgewiesenen Vorschlag nicht stabilisieren; seine Provenienz darf als verworfene Variante erhalten bleiben.

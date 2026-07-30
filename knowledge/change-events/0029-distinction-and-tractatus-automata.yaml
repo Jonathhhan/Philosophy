@@ -1,0 +1,114 @@
+schema_version: 1
+id: change-0029-distinction-and-tractatus-automata
+created_at: 2026-07-30
+goal: >-
+  Zwei lesende philosophische Automaten ergänzen: einen Codex-Automaten der
+  Unterscheidung nach markierter und unmarkierter Seite sowie einen
+  Tractatus-philosophicus-Automaten für nummerierte propositionale Prüfstrukturen.
+operation: composition
+scope:
+  allowed_files:
+    - scripts/unterscheidungsautomat.py
+    - scripts/tractatus_automat.py
+    - projekt/automaten.md
+    - README.md
+    - projekt/arbeitsstand.md
+    - recovered/proposals/unterscheidung-algorithmus-ausfuehrung.md
+    - recovered/proposals/tractatus-anschlussmoeglichkeiten.md
+    - knowledge/change-events/0029-distinction-and-tractatus-automata.yaml
+  protected_files:
+    - manuskript/
+    - knowledge/concepts/
+    - sources/
+basis:
+  project_files:
+    - AGENTS.md
+    - PROJECT.md
+    - GLOSSAR.md
+    - scripts/begriffsnetz.py
+    - scripts/philosophie_automat.py
+  decisions:
+    - author-request-spencer-brown-unterscheidungsautomat-2026-07-30
+    - author-request-tractatus-philosophicus-automat-2026-07-30
+  sources:
+    - knowledge/concepts/
+changes:
+  - file: scripts/unterscheidungsautomat.py
+    summary: >-
+      Ergänzt eine lesende Analyse markierter und unmarkierter Seiten einer
+      Unterscheidung mit Concept-Adressen, Manuskriptankern, Warnungen und Grenzen.
+  - file: scripts/tractatus_automat.py
+    summary: >-
+      Ergänzt eine nummerierte propositionale Prüfstruktur zu einem Thema mit
+      Begriffsadressen, Manuskriptankern und Grenzhinweisen.
+  - file: projekt/automaten.md
+    summary: >-
+      Dokumentiert Zweck, Beispiele und Grenzen der beiden neuen Automaten.
+  - file: README.md
+    summary: >-
+      Verweist auf die neuen Automaten und ihre Projektdokumentation.
+  - file: projekt/arbeitsstand.md
+    summary: >-
+      Hält die Automaten als lesende Prüf- und Ordnungsformen fest.
+  - file: recovered/proposals/unterscheidung-algorithmus-ausfuehrung.md
+    summary: >-
+      Speichert eine Beispielausgabe des Unterscheidungsautomaten.
+  - file: recovered/proposals/tractatus-anschlussmoeglichkeiten.md
+    summary: >-
+      Speichert eine Beispielausgabe des Tractatus-Automaten.
+affected_relations:
+  - from: scripts/unterscheidungsautomat.py
+    relation: depends_on
+    to: knowledge/concepts/
+    effect: added
+    note: Das Werkzeug liest Concept-Dateien und behandelt erkannte Relationen als Prüfhinweise.
+  - from: scripts/tractatus_automat.py
+    relation: depends_on
+    to: knowledge/concepts/
+    effect: added
+    note: Die propositionale Ordnung wird an bestehende Begriffsadressen rückgebunden.
+  - from: projekt/automaten.md
+    relation: documents
+    to: scripts/unterscheidungsautomat.py
+    effect: added
+    note: Spencer Brown wird als operative Beobachtungsfigur begrenzt.
+  - from: projekt/automaten.md
+    relation: documents
+    to: scripts/tractatus_automat.py
+    effect: added
+    note: Die Tractatus-Form wird als Ordnungsform begrenzt, nicht als Stilimitat oder Theorieautorität.
+possibilities:
+  opened:
+    - Unterscheidungen können als markierte und unmarkierte Seiten geprüft werden.
+    - Themen können als nummerierte Satzgefüge vorbereitet werden.
+    - Beide Ausgaben können später in den interaktiven Teil oder in Vorschlagsdossiers überführt werden.
+  restricted:
+    - Keine neue Grundachse des Manuskripts wird stabilisiert.
+    - Die Werkzeuge schreiben nicht automatisch ins Manuskript.
+    - Spencer Brown und Tractatus-Form werden nicht als Quellenbeleg ohne gesonderte Lektüre eingesetzt.
+  deferred:
+    - "TODO: Interaktive Bedienung und mögliche Verbindung mit Begriffsnetzen bleiben spätere Stufen."
+uncertainties: []
+agent_findings:
+  genealogist: []
+  consistency_checker: []
+  critic: []
+  material_technical: []
+authority:
+  requires_author_decision: false
+  decision_status: not_required
+  decision_reference: null
+validation:
+  - check: Python-Syntax
+    result: passed
+    evidence: python -m py_compile scripts\unterscheidungsautomat.py scripts\tractatus_automat.py
+  - check: Beispielausgaben
+    result: passed
+    evidence: Beispielausgaben fuer Unterscheidungsautomat und Tractatus-Automat wurden erfolgreich erzeugt.
+  - check: Change-Event-Schema
+    result: passed
+    evidence: python -B .agents\skills\recursive-codex\scripts\validate_change_event.py knowledge\change-events\0029-distinction-and-tractatus-automata.yaml
+  - check: Repository-Validation
+    result: passed
+    evidence: python scripts\check_all.py --skip-install completed with ALL REPOSITORY CHECKS PASSED.
+status: stabilized

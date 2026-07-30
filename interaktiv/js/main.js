@@ -189,6 +189,15 @@ function clearAiState({ abort = true, status = '' } = {}) {
   aiStatus.textContent = status;
 }
 
+function userFacingAiError(error) {
+  if (error instanceof TypeError && /fetch/i.test(error.message || '')) {
+    return 'Der KI-Endpunkt ist nicht erreichbar. Öffne das Anschlusslabor über den Worker oder Projektserver; bei einer rein statischen Datei bleibt der manuelle Entwurf verfügbar.';
+  }
+  return error instanceof Error
+    ? error.message
+    : 'Der KI-Vorschlag ist derzeit nicht verfügbar. Der manuelle Entwurf bleibt verfügbar.';
+}
+
 async function requestAiSuggestion() {
   const previousText = currentWording();
   if (!pendingMoveKey || !previousText || aiRequest) {
@@ -253,9 +262,7 @@ async function requestAiSuggestion() {
         ? 'Die KI-Anfrage hat zu lange gedauert. Der manuelle Entwurf bleibt verfügbar.'
         : 'Die KI-Anfrage wurde abgebrochen.';
     } else {
-      aiStatus.textContent = error instanceof Error
-        ? error.message
-        : 'Der KI-Vorschlag ist derzeit nicht verfügbar. Der manuelle Entwurf bleibt verfügbar.';
+      aiStatus.textContent = userFacingAiError(error);
     }
   } finally {
     if (aiRequest?.sequence === sequence) {

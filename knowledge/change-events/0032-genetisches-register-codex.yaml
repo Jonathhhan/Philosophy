@@ -1,0 +1,104 @@
+schema_version: 1
+id: change-0032-genetisches-register-codex
+created_at: 2026-07-30
+goal: >-
+  Codex um ein genetisches Register der Gedankenentwicklung erweitern, damit
+  Herkunft, Unterscheidung, Variation, Pruefung, Entscheidung und Nachkommen
+  wichtiger Anschlusslinien nachvollziehbar dokumentiert werden koennen.
+operation: reorganization
+scope:
+  allowed_files:
+    - projekt/genetisches-register.md
+    - WORKFLOW.md
+    - projekt/codex-methode-verfeinerung.md
+    - projekt/codex-zettelregister.md
+    - projekt/arbeitsstand.md
+    - knowledge/change-events/0032-genetisches-register-codex.yaml
+  protected_files:
+    - manuskript/
+    - knowledge/concepts/
+    - sources/
+basis:
+  project_files:
+    - CONSTITUTION.md
+    - AGENTS.md
+    - WORKFLOW.md
+    - projekt/codex-prinzip-zettelkasten-plateaus.md
+    - projekt/codex-zettelregister.md
+    - projekt/codex-methode-verfeinerung.md
+  decisions:
+    - knowledge/decisions/0023-delegierte-codex-entscheidung.yaml
+    - user-request-genetisch-evolutionaer-codex-2026-07-30
+  sources:
+    - user-instruction-2026-07-30
+changes:
+  - file: projekt/genetisches-register.md
+    summary: >-
+      Fuehrt ein operatives Registerformat fuer Gedankenabstammung, Mutation,
+      Pruefung, Entscheidung und Vererbung ein.
+  - file: WORKFLOW.md
+    summary: >-
+      Verankert das genetische Register als optionales Arbeitsprinzip fuer
+      groessere Gedankenentwicklungen.
+  - file: projekt/codex-methode-verfeinerung.md
+    summary: >-
+      Ergaenzt die Codex-Methode um genetische Anschlussarbeit und nummeriert
+      die folgenden Abschnitte neu.
+  - file: projekt/codex-zettelregister.md
+    summary: >-
+      Ergaenzt Z-0005 als Registeradresse fuer das genetische Arbeitsprinzip.
+  - file: projekt/arbeitsstand.md
+    summary: >-
+      Dokumentiert Ziel, Delegationsstatus, Anschlussbedingung und offene
+      Pruefung der neuen Methode.
+affected_relations:
+  - from: projekt/genetisches-register.md
+    relation: documents
+    to: projekt/codex-prinzip-zettelkasten-plateaus.md
+    effect: added
+    note: Das neue Register ergaenzt Zettel und Plateaus um Abstammung und Variation.
+  - from: projekt/genetisches-register.md
+    relation: constrains
+    to: projekt/codex-methode-verfeinerung.md
+    effect: added
+    note: Die Methode kann Gedankenlinien nun genealogisch dokumentieren.
+  - from: projekt/codex-zettelregister.md
+    relation: cross_references
+    to: projekt/genetisches-register.md
+    effect: added
+    note: Z-0005 macht das Register als Codex-Arbeitsadresse auffindbar.
+  - from: knowledge/decisions/0023-delegierte-codex-entscheidung.yaml
+    relation: documents
+    to: projekt/genetisches-register.md
+    effect: changed
+    note: Die konkrete erste Form des Registers wird als delegierte Codex-Entscheidung gesetzt.
+possibilities:
+  opened:
+    - Gedanken koennen als Abstammungslinien mit Eltern, Mutation und Nachkommen verfolgt werden.
+    - Varianten und automatische Vorschlaege koennen genauer von bestaetigter Theorie unterschieden werden.
+    - Spaetere Manuskript- oder Technikarbeit kann ihre Herkunft besser ausweisen.
+  restricted:
+    - Das genetische Register ist kein Manuskriptbestandteil und keine biologische oder evolutionstheoretische These.
+    - Es darf keine Quellenbehauptungen ohne erneute Quellenpruefung erzeugen.
+    - Es ersetzt weder Zettelkasten, Plateau-Prinzip noch Autorenentscheidung.
+  deferred:
+    - "TODO: Technische Auswertung oder Visualisierung genetischer Eintraege bleibt spaetere Arbeit."
+    - "TODO: Konkrete genetische Eintraege fuer bestehende Gedankenlinien nur bei Bedarf anlegen."
+uncertainties: []
+agent_findings:
+  genealogist: []
+  consistency_checker: []
+  critic: []
+  material_technical: []
+authority:
+  requires_author_decision: true
+  decision_status: delegated
+  decision_reference: user-request-ja-genetisches-register-2026-07-30
+validation:
+  - check: Change-Event-Schema
+    result: not_run
+    evidence: TODO
+  - check: Repository-Validation
+    result: not_run
+    evidence: TODO
+status: confirmed

@@ -53,7 +53,7 @@ Jede größere Codex-Ausgabe soll mindestens implizit, bei Projektdateien ausdr�
 - `entwicklung`: begriffliche Weiterentwicklung aus früherem Material;
 - `vorschlag`: von Codex, Agenten oder Automat erzeugte Möglichkeit;
 - `geprüfter_vorschlag`: formal oder konsistent geprüft, aber nicht autorisiert;
-- `autorentscheidung_offen`: Integration braucht ausdrückliche Entscheidung;
+- `autorentscheidung_offen`: Integration braucht ausdrückliche Entscheidung;`r`n- `delegierte_codex_entscheidung`: der Autor hat Codex für einen klar begrenzten Fall eine vorläufige, revidierbare Entscheidung erlaubt;
 - `bestätigt`: vom Autor oder verbindlicher Projektdatei getragen;
 - `verworfen`: bewusst nicht weitergeführt;
 - `technische_umsetzung`: Code, Test, Visualisierung oder Build ohne Manuskriptrang.
@@ -123,7 +123,42 @@ begrenzt:
 autorentscheidung: offen
 ```
 
-## 7. Abschlussfragen
+
+## 7. Genetische Anschlussarbeit
+
+Das genetische Register unter `projekt/genetisches-register.md` erweitert die Methode um Abstammung, Variation, Pruefung und Vererbung von Gedanken. Codex kann dadurch nicht nur sagen, was geaendert wurde, sondern auch, aus welcher Linie ein Vorschlag stammt, welche Unterscheidung er traegt und welche spaeteren Anschluesse von ihm abhaengen.
+
+Genetische Anschlussarbeit ist sinnvoll, wenn ein Gedanke:
+
+- aus mehreren Quellen, Kapiteln oder Entscheidungen hervorgeht;
+- als Variante einer bestehenden Fassung auftritt;
+- technische Umsetzung und begriffliche Herkunft verbindet;
+- als delegierte Codex-Entscheidung stabilisiert wird;
+- spaeter wieder aufgegriffen, korrigiert oder vererbt werden soll.
+
+Sie bleibt eine Arbeitsdisziplin. Sie macht keine Evolutionstheorie des Buches und ersetzt keine Autorentscheidung.
+
+## 8. Optionale Delegation
+
+Codex kann eine Autorenentscheidung nur dann vorläufig übernehmen, wenn der
+Autor dies ausdrücklich erlaubt und der Fall innerhalb der Grenzen von
+`CONSTITUTION.md` bleibt. Die Delegation ist kein Freibrief zur Theorieproduktion.
+Sie dient dazu, klar begrenzte Integrations-, Auswahl- oder Priorisierungsfragen
+nicht jedes Mal zurückzugeben, wenn Codex sie mit vorhandenen Regeln gut
+begründen kann.
+
+Nicht delegierbar bleiben insbesondere:
+
+- neue Grundbegriffe, Grundthesen oder Theorieachsen;
+- Kapitel löschen, zusammenführen oder umnummerieren;
+- Quellenbehauptungen ohne geprüfte Primärquelle und Seitenangabe;
+- Datenschutz, Lizenz, Deployment und öffentliche Veröffentlichung;
+- Entscheidungen mit mehreren philosophisch gleich starken Lösungen.
+
+Delegierte Entscheidungen müssen als solche markiert, begründet und revidierbar
+gehalten werden.
+
+## 9. Abschlussfragen
 
 Vor dem Abschluss einer größeren Codex-Bearbeitung fragt Codex:
 
@@ -138,6 +173,6 @@ Vor dem Abschluss einer größeren Codex-Bearbeitung fragt Codex:
 9. Ist die passende technische oder projektweite Prüfung gelaufen?
 10. Muss ein TODO, Change Event oder Zettel entstehen?
 
-## 8. Grenze der Methode
+## 10. Grenze der Methode
 
 Die Verfeinerung soll Codex vorsichtiger, anschlussfähiger und produktiver machen. Sie soll Codex nicht zu einer zweiten Theorieinstanz machen. Gerade ihre Stärke liegt darin, Vorschläge, Prüfungen, Entscheidungen und technische Ausführungen auseinanderzuhalten.

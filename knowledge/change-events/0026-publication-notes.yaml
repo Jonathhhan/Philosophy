@@ -1,0 +1,85 @@
+schema_version: 1
+id: change-0026-publication-notes
+created_at: 2026-07-30
+goal: >-
+  Eine öffentliche Publikationshülle ergänzen, die Status, Zitierbarkeit,
+  Urheberrecht, KI-Mitwirkung, Datenschutz, Quellenpolitik und Freigabegrenzen
+  des Arbeitsrepositories verständlich macht.
+operation: composition
+scope:
+  allowed_files:
+    - PUBLICATION.md
+    - README.md
+    - projekt/arbeitsstand.md
+    - knowledge/change-events/0026-publication-notes.yaml
+  protected_files:
+    - manuskript/
+    - knowledge/concepts/
+    - sources/
+basis:
+  project_files:
+    - CONSTITUTION.md
+    - PROJECT.md
+    - README.md
+    - recovered/audits/publication-readiness-audit.md
+    - literatur/quellen.md
+    - projekt/codex-methode-verfeinerung.md
+  decisions:
+    - author-confirmation-ja-2026-07-30
+  sources:
+    - recovered/audits/publication-readiness-audit.md
+changes:
+  - file: PUBLICATION.md
+    summary: >-
+      Legt vorläufige Publikations- und Nutzungshinweise zu Status,
+      Zitierbarkeit, Urheberrecht, Rekonstruktionen, KI-Mitwirkung,
+      Quellenpolitik, Anschlusslabor, Datenschutz und öffentlicher Freigabe an.
+  - file: README.md
+    summary: >-
+      Ergänzt einen Verweis auf PUBLICATION.md.
+  - file: projekt/arbeitsstand.md
+    summary: >-
+      Dokumentiert die öffentliche Publikationshülle als nächsten Schritt der Publikationsreife.
+affected_relations:
+  - from: PUBLICATION.md
+    relation: documents
+    to: README.md
+    effect: added
+    note: Die neue Datei ergänzt die öffentliche Orientierung des Repositories.
+  - from: PUBLICATION.md
+    relation: constrains
+    to: interaktiv/README.md
+    effect: added
+    note: Die KI-Funktion bleibt an Deployment- und Datenschutzentscheidungen gebunden.
+  - from: PUBLICATION.md
+    relation: constrains
+    to: archive/
+    effect: added
+    note: Archiv- und Rekonstruktionsmaterialien werden nicht als öffentliche Manuskriptfassung behandelt.
+possibilities:
+  opened:
+    - Dritte können Status, Zitierbarkeit, KI-Mitwirkung und Datenschutzgrenzen des Arbeitsrepositories leichter einschätzen.
+    - Eine spätere öffentliche Freigabe erhält eine klare Checkliste.
+  restricted:
+    - Die Datei setzt keine offene Lizenz und gibt das Manuskript nicht als zitierfähige Endfassung frei.
+    - Die KI-Funktion wird nicht öffentlich aktiviert.
+  deferred:
+    - "TODO: Autorentscheidung zu Lizenz, Zitierstil, Datenschutz und Deployment bleibt offen."
+uncertainties: []
+agent_findings:
+  genealogist: []
+  consistency_checker: []
+  critic: []
+  material_technical: []
+authority:
+  requires_author_decision: false
+  decision_status: not_required
+  decision_reference: null
+validation:
+  - check: Change-Event-Schema
+    result: passed
+    evidence: python -B .agents\skills\recursive-codex\scripts\validate_change_event.py knowledge\change-events\0026-publication-notes.yaml
+  - check: Repository-Validation
+    result: passed
+    evidence: python scripts\check_all.py --skip-install completed with ALL REPOSITORY CHECKS PASSED.
+status: stabilized

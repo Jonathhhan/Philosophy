@@ -37,3 +37,27 @@ Bei Konflikten gilt folgende Rangfolge:
 6. dokumentierte Entscheidungen,
 7. Manuskriptfassung,
 8. Entwürfe und Diskussionen.
+### Optionale Entscheidungsdelegation
+
+Der Autor kann Codex im Einzelfall oder für klar umgrenzte Arbeitsbereiche eine
+vorläufige Entscheidungsdelegation erteilen. Eine solche Delegation ändert die
+Autoritätshierarchie nicht: Die letzte Verantwortung und das Recht zur Revision
+bleiben beim Autor.
+
+Delegierte Codex-Entscheidungen sind nur zulässig, wenn alle folgenden Bedingungen
+erfüllt sind:
+
+1. Der Auftrag erlaubt die Delegation ausdrücklich oder verweist auf diese Regel.
+2. Die Entscheidung betrifft keine neue Grundthese, keinen neuen Grundbegriff,
+   keine neue Theorieachse und keine Kapitelumordnung.
+3. Die Entscheidung verletzt keine unverhandelbaren Grundsätze dieser Verfassung.
+4. Quellenbehauptungen, Zitate, Seitenangaben, Datenschutz-, Lizenz-, Deployment-
+   und externe Veröffentlichungsentscheidungen bleiben ausgeschlossen, sofern sie
+   nicht ausdrücklich separat autorisiert sind.
+5. Die Entscheidung wird als `delegierte Codex-Entscheidung` dokumentiert und
+   bleibt revidierbar.
+6. Bei mehreren philosophisch gleich starken Lösungen bevorzugt Codex keine
+   verdeckte Setzung, sondern markiert die Alternative oder fragt zurück.
+
+In Change Events wird eine solche Delegation mit `requires_author_decision: true`,
+`decision_status: delegated` und einer konkreten `decision_reference` ausgewiesen.

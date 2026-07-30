@@ -1,0 +1,113 @@
+schema_version: 1
+id: change-0035-automatenverbund
+created_at: 2026-07-30
+goal: >-
+  Die vorhandenen Automaten dort kombinieren, wo gemeinsame Begriffsadressen,
+  Manuskriptanker oder deklarierte Concept-Relationen Anschluesse ermoeglichen.
+operation: composition
+scope:
+  allowed_files:
+    - scripts/automatenverbund.py`r`n    - scripts/check_all.py
+    - projekt/automaten.md
+    - projekt/codex-nutzungsanleitung.md
+    - README.md
+    - projekt/arbeitsstand.md
+    - recovered/proposals/automatenverbund-erster-lauf.md
+    - knowledge/change-events/0035-automatenverbund.yaml
+  protected_files:
+    - manuskript/
+    - knowledge/concepts/
+    - sources/
+basis:
+  project_files:
+    - CONSTITUTION.md
+    - AGENTS.md
+    - WORKFLOW.md
+    - projekt/automaten.md
+    - projekt/codex-nutzungsanleitung.md
+  decisions:
+    - user-request-automaten-kombinieren-2026-07-30
+  sources:
+    - user-instruction-2026-07-30
+changes:
+  - file: scripts/automatenverbund.py
+    summary: >-
+      Fuehrt einen Verbundautomaten ein, der Unterscheidungs-, Tractatus- und
+      Kunstwerk-Automat ueber ausgewiesene Anschlussbruecken kombiniert.
+  - file: recovered/proposals/automatenverbund-erster-lauf.md
+    summary: >-
+      Legt eine erste kombinierte Proposal-Spur an.
+  - file: projekt/automaten.md
+    summary: >-
+      Dokumentiert Funktion, Beispiele, Stufen und Grenzen des Verbundautomaten.
+  - file: projekt/codex-nutzungsanleitung.md
+    summary: >-
+      Ergaenzt den Automatenverbund als Nutzungsmodus.
+  - file: README.md
+    summary: >-
+      Erwaehnt den Verbundautomaten als Kombination ausgewiesener Anschlussbruecken.
+  - file: projekt/arbeitsstand.md
+    summary: >-
+      Dokumentiert Ziel, Grenzen, Anschlussbedingungen und Pruefstatus.
+affected_relations:
+  - from: scripts/automatenverbund.py
+    relation: depends_on
+    to: scripts/unterscheidungsautomat.py
+    effect: added
+    note: Der Verbund nutzt dessen Unterscheidungsanalyse als erste Stufe.
+  - from: scripts/automatenverbund.py
+    relation: depends_on
+    to: scripts/tractatus_automat.py
+    effect: added
+    note: Der Verbund nutzt dessen propositionale Ordnung als zweite Stufe.
+  - from: scripts/automatenverbund.py
+    relation: depends_on
+    to: scripts/kunstwerk_automat.py
+    effect: added
+    note: Der Verbund nutzt dessen Score-Lauf als dritte Stufe.
+  - from: scripts/automatenverbund.py
+    relation: documents
+    to: recovered/proposals/automatenverbund-erster-lauf.md
+    effect: added
+    note: Die erste Verbundspur wird als Proposal dokumentiert.
+  - from: projekt/automaten.md
+    relation: cross_references
+    to: scripts/automatenverbund.py
+    effect: added
+    note: Die Automatendokumentation macht den Verbund auffindbar.
+possibilities:
+  opened:
+    - Ein Gedanke kann in einem Lauf unterschieden, propositional geordnet und als Score aufgefuehrt werden.
+    - Nicht anschlussfaehige Kombinationen werden als Blockaden sichtbar statt erfunden.
+    - Der Verbund kann spaeter im interaktiven Teil visualisiert werden.
+  restricted:
+    - Der Verbund schreibt nicht ins Manuskript.
+    - Nur ausgewiesene Anschlussbruecken aktivieren eine Kombination.
+    - Die Ausgabe bleibt Proposal, Pruefstruktur oder Auffuehrungsspur.
+  deferred:
+    - "TODO: Visualisierung des Verbundlaufs im Anschlusslabor spaeter pruefen."
+    - "TODO: Optional genetische Registereintraege aus Verbundlaeufen nur mit gesondertem Auftrag erzeugen."
+uncertainties: []
+agent_findings:
+  genealogist: []
+  consistency_checker: []
+  critic: []
+  material_technical: []
+authority:
+  requires_author_decision: true
+  decision_status: delegated
+  decision_reference: user-request-automaten-kombinieren-2026-07-30
+validation:
+  - check: Python-Syntax
+    result: not_run
+    evidence: TODO
+  - check: Example-Run
+    result: not_run
+    evidence: TODO
+  - check: Change-Event-Schema
+    result: not_run
+    evidence: TODO
+  - check: Repository-Validation
+    result: not_run
+    evidence: TODO
+status: confirmed

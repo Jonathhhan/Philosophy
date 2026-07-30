@@ -375,6 +375,24 @@ test('Veraltete oder nicht verfügbare KI-Antworten verändern den manuellen Ent
   window.happyDOM.abort();
 });
 
+test('Nicht erreichbarer KI-Endpunkt wird als Konfigurationsgrenze erklärt', async () => {
+  const window = createApp();
+  window.fetch = async () => {
+    throw new window.TypeError('Failed to fetch');
+  };
+
+  setValue(window, '#beginning', 'Ein Ausgang für eine nicht erreichbare KI-Funktion.');
+  click(window, "[data-move='fortsetzen']");
+  click(window, '#ai-suggest');
+  await window.happyDOM.waitUntilComplete();
+
+  assert.match(window.document.querySelector('#ai-status').textContent, /KI-Endpunkt/);
+  assert.match(window.document.querySelector('#ai-status').textContent, /Worker oder Projektserver/);
+  assert.match(window.document.querySelector('#ai-status').textContent, /manuelle Entwurf verfügbar/);
+  assert.equal(window.document.querySelector('#connection-text').value, '');
+  window.happyDOM.abort();
+});
+
 test('Eine asynchrone KI-Antwort unterbricht das manuelle Schreiben nicht', async () => {
   const window = createApp();
   let resolveRequest;
