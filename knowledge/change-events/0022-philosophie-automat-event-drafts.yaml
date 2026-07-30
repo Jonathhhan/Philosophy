@@ -1,0 +1,94 @@
+﻿schema_version: 1
+id: change-0022-philosophie-automat-event-drafts
+created_at: 2026-07-30
+goal: >-
+  Den Philosophie-Automaten um einen Modus erweitern, der aus einem geprüften
+  Gedanken oder kapitelbezogenen Entwurf einen Change-Event-Entwurf vorbereitet,
+  ohne ihn als bestätigtes Ereignis in die Wissensbasis zu schreiben.
+operation: reorganization
+scope:
+  allowed_files:
+    - scripts/philosophie_automat.py
+    - scripts/check_all.py
+    - projekt/philosophie-automat.md
+    - projekt/arbeitsstand.md
+    - knowledge/change-events/0022-philosophie-automat-event-drafts.yaml
+  protected_files:
+    - CONSTITUTION.md
+    - PROJECT.md
+    - GLOSSAR.md
+    - manuskript/
+    - knowledge/concepts/
+    - knowledge/change-events/0001-recursive-codex-phase-1.yaml
+    - knowledge/change-events/0021-philosophie-automat-stufe-2-draft-for.yaml
+basis:
+  project_files:
+    - CONSTITUTION.md
+    - AGENTS.md
+    - WORKFLOW.md
+    - projekt/philosophie-automat.md
+    - scripts/philosophie_automat.py
+  decisions:
+    - author-confirmation-ja-2026-07-30
+  sources:
+    - knowledge/change-events/0021-philosophie-automat-stufe-2-draft-for.yaml
+changes:
+  - file: scripts/philosophie_automat.py
+    summary: >-
+      Ergänzt --event-draft und --write-event-draft. Der Automat kann aus einem
+      Bericht einen Change-Event-Entwurf erzeugen und optional unter
+      recovered/proposals/change-events/ als Vorschlagsdatei sichern.
+  - file: scripts/check_all.py
+    summary: >-
+      Ergänzt einen nicht-schreibenden JSON-Smoke-Test für --event-draft.
+  - file: projekt/philosophie-automat.md
+    summary: >-
+      Dokumentiert Anzeige, Sicherung und Grenzen von Event-Entwürfen.
+  - file: projekt/arbeitsstand.md
+    summary: >-
+      Dokumentiert Stufe 3/4 als Verbindung von Entwurf, Begriffsadressen,
+      Prüfrollen und Änderungsprovenienz.
+affected_relations:
+  - from: scripts/philosophie_automat.py
+    relation: documents
+    to: knowledge/change-events/
+    effect: changed
+    note: Der Automat soll Change Events vorbereiten, aber nicht als bestätigte Wissensereignisse stabilisieren.
+  - from: scripts/check_all.py
+    relation: tests
+    to: scripts/philosophie_automat.py
+    effect: added
+    note: Die zentrale Prüfung soll den nicht-schreibenden Event-Draft-Modus abdecken.
+possibilities:
+  opened:
+    - Entwürfe können mit Provenienz, betroffenen Relationen und Grenzen vorbereitet werden.
+    - Spätere Manuskriptänderungen können mit einem vorgeschalteten Ereignisdossier beginnen.
+  restricted:
+    - Automatische Event-Entwürfe bleiben unter recovered/proposals/ oder in JSON und werden nicht ohne Prüfung zu knowledge/change-events/ erhoben.
+    - Autorentscheidung und Abschlussprüfung bleiben unersetzt.
+  deferred:
+    - "TODO: Spätere Stufe kann aus einem angenommenen Event-Draft kontrolliert ein echtes Change Event unter knowledge/change-events/ anlegen."
+uncertainties: []
+agent_findings:
+  genealogist: []
+  consistency_checker: []
+  critic: []
+  material_technical: []
+authority:
+  requires_author_decision: false
+  decision_status: not_required
+  decision_reference: null
+validation:
+  - check: Python-Syntax
+    result: passed
+    evidence: python -m py_compile scripts\philosophie_automat.py
+  - check: Event-Draft-JSON-Smoke
+    result: passed
+    evidence: python scripts\philosophie_automat.py --format json --draft-for manuskript/08-algorithmus.md --event-draft "Ein Algorithmus bleibt derselbe, obwohl seine materielle Implementierung wechselt."
+  - check: Event-Draft-Write-Smoke
+    result: passed
+    evidence: python scripts\philosophie_automat.py --draft-for manuskript/08-algorithmus.md --write-event-draft "Kritik steht nicht außerhalb der Organisation."
+  - check: Repository-Validation
+    result: passed
+    evidence: python scripts\check_all.py --skip-install completed with ALL REPOSITORY CHECKS PASSED.
+status: stabilized

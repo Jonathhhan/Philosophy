@@ -1,0 +1,77 @@
+schema_version: 1
+id: change-draft-kritik-steht-nicht-au-erhalb-der-organis
+created_at: '2026-07-30'
+goal: 'Vorschlag prüfen: Kritik steht nicht au?erhalb der Organisation.'
+operation: composition
+scope:
+  allowed_files:
+  - scripts/philosophie_automat.py
+  - manuskript\08-algorithmus.md
+  protected_files:
+  - CONSTITUTION.md
+  - PROJECT.md
+  - GLOSSAR.md
+  - knowledge/concepts/
+basis:
+  project_files:
+  - CONSTITUTION.md
+  - AGENTS.md
+  - WORKFLOW.md
+  - projekt/philosophie-automat.md
+  decisions: []
+  sources:
+  - generated-by-scripts/philosophie_automat.py
+changes: []
+affected_relations:
+- from: manuskript\08-algorithmus.md
+  relation: depends_on
+  to: knowledge\concepts\kritisieren.yaml
+  effect: uncertain
+  note: Automatisch erkannte Begriffsadresse; vor Integration manuell prüfen.
+- from: manuskript\08-algorithmus.md
+  relation: depends_on
+  to: knowledge\concepts\organisieren.yaml
+  effect: uncertain
+  note: Automatisch erkannte Begriffsadresse; vor Integration manuell prüfen.
+- from: manuskript\08-algorithmus.md
+  relation: other
+  to: recovered/proposals/
+  effect: uncertain
+  note: Der Bericht schlägt eine mögliche Manuskriptanschlussstelle vor, stabilisiert
+    aber keine Änderung.
+possibilities:
+  opened:
+  - Ein möglicher Anschluss kann mit Provenienz und Prüfstatus weiterbearbeitet werden.
+  restricted:
+  - Der Entwurf ist kein bestätigtes Change Event und darf nicht ohne Prüfung nach
+    knowledge/change-events/ übernommen werden.
+  deferred:
+  - 'TODO: Autorentscheidung und zentrale Prüfung vor einer Manuskriptintegration
+    einholen.'
+uncertainties: []
+agent_findings:
+  genealogist: []
+  consistency_checker: []
+  critic: []
+  material_technical: []
+authority:
+  requires_author_decision: true
+  decision_status: pending
+  decision_reference: null
+validation: []
+status: proposed
+draft_context:
+  status_guess: unbestimmt; als Vorschlag oder TODO behandeln, bis der Autor entscheidet
+  mentioned_concepts:
+  - kritisieren
+  - organisieren
+  adjacent_concepts:
+  - algorithmus
+  - anschliessen
+  - asymmetrie
+  - beurteilen
+  - problematisieren
+  - programm
+  - reorganisieren
+  - verteilen
+  target_file: manuskript\08-algorithmus.md

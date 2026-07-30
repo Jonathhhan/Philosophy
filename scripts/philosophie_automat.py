@@ -28,6 +28,7 @@ ROOT = Path(__file__).resolve().parents[1]
 CONCEPT_DIR = ROOT / "knowledge" / "concepts"
 MANUSCRIPT_DIR = ROOT / "manuskript"
 PROPOSAL_DIR = ROOT / "recovered" / "proposals"
+EVENT_PROPOSAL_DIR = PROPOSAL_DIR / "change-events"
 
 BOUNDARY_MARKERS = {
     "general_power_theory": {
@@ -247,6 +248,75 @@ def recommended_steps(found: list[Concept], adjacent: list[Concept], anchors: li
     return steps
 
 
+
+def safe_existing_path(value: str, root: Path, message: str) -> Path:
+    path = (ROOT / value).resolve()
+    resolved_root = root.resolve()
+    if not path.is_file() or resolved_root not in path.parents:
+        raise SystemExit(message)
+    return path
+
+
+def chapter_context(chapter_file: str, concepts: list[Concept]) -> dict[str, Any]:
+    path = safe_existing_path(chapter_file, MANUSCRIPT_DIR, "--draft-for muss auf eine vorhandene Datei unter manuskript/ zeigen.")
+    text = path.read_text(encoding="utf-8")
+    lines = text.splitlines()
+    headings = []
+    for idx, line in enumerate(lines, start=1):
+        if line.startswith("#"):
+            level = len(line) - len(line.lstrip("#"))
+            headings.append({"line": idx, "level": level, "text": line.strip()})
+    mentioned = mentioned_concepts(text, concepts)
+    return {
+        "file": str(path.relative_to(ROOT)),
+        "title": headings[0]["text"] if headings else path.stem,
+        "line_count": len(lines),
+        "headings": headings[:40],
+        "mentioned_concepts": [concept_to_dict(concept, compact=True) for concept in mentioned],
+        "text": text,
+    }
+
+
+def draft_anchor_from_context(report: dict[str, Any], context: dict[str, Any]) -> dict[str, Any] | None:
+    if report.get("anchors"):
+        chapter_anchors = [anchor for anchor in report["anchors"] if anchor["file"] == context["file"]]
+        if chapter_anchors:
+            return chapter_anchors[0]
+    headings = context.get("headings", [])
+    if len(headings) > 1:
+        heading = headings[-1]
+        return {"file": context["file"], "line": heading["line"], "score": 0, "hits": [], "excerpt": heading["text"], "after_heading": heading["text"]}
+    if headings:
+        heading = headings[0]
+        return {"file": context["file"], "line": heading["line"], "score": 0, "hits": [], "excerpt": heading["text"], "after_heading": heading["text"]}
+    return None
+
+
+def build_chapter_draft(report: dict[str, Any], context: dict[str, Any]) -> dict[str, Any]:
+    anchor = draft_anchor_from_context(report, context)
+    chapter_concepts = context.get("mentioned_concepts", [])
+    thought = report["thought"].strip().rstrip(".")
+    touched = ", ".join(concept["label"] for concept in report.get("mentioned_concepts", [])) or "die im Kapitel angelegte Problemstellung"
+    chapter_names = ", ".join(concept["label"] for concept in chapter_concepts[:8]) or "keine zusätzlichen Begriffsadressen"
+    anchor_sentence = ""
+    if anchor:
+        anchor_sentence = f" Vorgeschlagene Anschlussstelle: {anchor['file']}:{anchor['line']} ({anchor['excerpt']})."
+    draft = (
+        "TODO: Kapitelbezogener Vorschlag des Philosophie-Automaten; nicht als bestätigte Theorie behandeln.\n\n"
+        f"Der Gedanke lautet: {thought}. Im Kontext von {context['title']} berührt er {touched}. "
+        f"Das Kapitel führt außerdem folgende Begriffsadressen mit: {chapter_names}. "
+        "Eine Integration müsste deshalb zeigen, ob der Gedanke eine bereits angelegte Unterscheidung präzisiert, eine fehlende argumentative Stufe ergänzt oder nur eine prüfbedürftige Variante markiert."
+        f"{anchor_sentence}\n\n"
+        "Für die Manuskriptarbeit gilt: Der Vorschlag darf nur übernommen werden, wenn Quelle, begrifflicher Status und Folgeanschlüsse ausdrücklich geprüft sind. "
+        "Er eröffnet eine mögliche Anschlussstelle, stabilisiert aber keine Theorieentscheidung."
+    )
+    checks = [
+        "Betroffenes Kapitel vollständig gegen Überschriftenfolge und vorhandene Begriffsführung lesen.",
+        "Prüfen, ob der Vorschlag Definition, Anwendung, Übergang, Einwand oder Beispiel ist.",
+        "Bei Übernahme als markierten Vorschlag einfügen und anschließend zentrale Prüfungen ausführen.",
+    ]
+    return {"target_file": context["file"], "proposed_anchor": anchor, "chapter_concepts": chapter_concepts, "draft_text": draft, "chapter_checks": checks}
+
 def build_report(thought: str, include_anchors: bool = False, include_suggestion: bool = False) -> dict[str, Any]:
     concepts = load_concepts()
     found = mentioned_concepts(thought, concepts)
@@ -272,6 +342,79 @@ def build_report(thought: str, include_anchors: bool = False, include_suggestion
         report["text_suggestion"] = build_suggestion(thought, found, warnings)
     return report
 
+
+
+def build_event_draft(report: dict[str, Any]) -> dict[str, Any]:
+    chapter_draft = report.get("chapter_draft") or {}
+    target_file = chapter_draft.get("target_file")
+    mentioned = report.get("mentioned_concepts", [])
+    adjacent = report.get("adjacent_concepts", [])
+    allowed_files = ["scripts/philosophie_automat.py"]
+    protected_files = ["CONSTITUTION.md", "PROJECT.md", "GLOSSAR.md", "knowledge/concepts/"]
+    if target_file:
+        allowed_files.append(target_file)
+    else:
+        protected_files.append("manuskript/")
+    affected = []
+    for concept in mentioned[:8]:
+        affected.append({
+            "from": target_file or "recovered/proposals/",
+            "relation": "depends_on",
+            "to": concept.get("file", concept.get("id", "unknown")),
+            "effect": "uncertain",
+            "note": "Automatisch erkannte Begriffsadresse; vor Integration manuell prüfen.",
+        })
+    if target_file:
+        affected.append({
+            "from": target_file,
+            "relation": "other",
+            "to": "recovered/proposals/",
+            "effect": "uncertain",
+            "note": "Der Bericht schlägt eine mögliche Manuskriptanschlussstelle vor, stabilisiert aber keine Änderung.",
+        })
+    return {
+        "schema_version": 1,
+        "id": f"change-draft-{slugify(report['thought'], 40)}",
+        "created_at": dt.date.today().isoformat(),
+        "goal": f"Vorschlag prüfen: {report['thought']}",
+        "operation": "composition" if target_file else "audit",
+        "scope": {"allowed_files": allowed_files, "protected_files": protected_files},
+        "basis": {
+            "project_files": ["CONSTITUTION.md", "AGENTS.md", "WORKFLOW.md", "projekt/philosophie-automat.md"],
+            "decisions": [],
+            "sources": ["generated-by-scripts/philosophie_automat.py"],
+        },
+        "changes": [],
+        "affected_relations": affected,
+        "possibilities": {
+            "opened": ["Ein möglicher Anschluss kann mit Provenienz und Prüfstatus weiterbearbeitet werden."],
+            "restricted": ["Der Entwurf ist kein bestätigtes Change Event und darf nicht ohne Prüfung nach knowledge/change-events/ übernommen werden."],
+            "deferred": ["TODO: Autorentscheidung und zentrale Prüfung vor einer Manuskriptintegration einholen."],
+        },
+        "uncertainties": [warning["warning"] for warning in report.get("boundary_warnings", [])],
+        "agent_findings": {"genealogist": [], "consistency_checker": [], "critic": [], "material_technical": []},
+        "authority": {"requires_author_decision": True, "decision_status": "pending", "decision_reference": None},
+        "validation": [],
+        "status": "proposed",
+        "draft_context": {
+            "status_guess": report.get("status_guess"),
+            "mentioned_concepts": [concept.get("id") for concept in mentioned],
+            "adjacent_concepts": [concept.get("id") for concept in adjacent],
+            "target_file": target_file,
+        },
+    }
+
+def write_event_draft(report: dict[str, Any]) -> Path:
+    EVENT_PROPOSAL_DIR.mkdir(parents=True, exist_ok=True)
+    draft = report.get("event_draft") or build_event_draft(report)
+    date = dt.date.today().isoformat()
+    path = EVENT_PROPOSAL_DIR / f"{date}-{slugify(report['thought'])}.yaml"
+    counter = 2
+    while path.exists():
+        path = EVENT_PROPOSAL_DIR / f"{date}-{slugify(report['thought'])}-{counter}.yaml"
+        counter += 1
+    path.write_text(yaml.safe_dump(draft, allow_unicode=True, sort_keys=False), encoding="utf-8")
+    return path
 
 def render_markdown(report: dict[str, Any]) -> str:
     lines = ["# Philosophie-Automat", "", f"Gedanke: {report['thought']}", "", f"Status: {report['status_guess']}", ""]
@@ -305,6 +448,26 @@ def render_markdown(report: dict[str, Any]) -> str:
         lines.append("- Keine automatische Grenzwarnung ausgelöst.")
     if report.get("text_suggestion"):
         lines.extend(["", "## Textvorschlag", "", report["text_suggestion"]])
+    if report.get("chapter_context"):
+        context = report["chapter_context"]
+        lines.extend(["", "## Kapitelkontext", f"- Datei: `{context['file']}`", f"- Titel: {context['title']}", f"- Umfang: {context['line_count']} Zeilen"])
+        if context.get("headings"):
+            lines.append("- Überschriften:")
+            for heading in context["headings"][:12]:
+                lines.append(f"  - Zeile {heading['line']}: {heading['text']}")
+        if context.get("mentioned_concepts"):
+            lines.append("- Im Kapitel erkannte Begriffe:")
+            for concept in context["mentioned_concepts"][:12]:
+                lines.append(f"  - {concept['label']} (`{concept['id']}`)")
+    if report.get("chapter_draft"):
+        draft = report["chapter_draft"]
+        lines.extend(["", "## Kapitelbezogener Entwurf", "", draft["draft_text"]])
+        if draft.get("proposed_anchor"):
+            anchor = draft["proposed_anchor"]
+            lines.extend(["", f"Vorgeschlagener Anker: `{anchor['file']}:{anchor['line']}` — {anchor['excerpt']}"])
+        lines.extend(["", "### Kapitelprüfungen"])
+        for check in draft.get("chapter_checks", []):
+            lines.append(f"- {check}")
     lines.extend(["", "## Prüfrollen"])
     for role, questions in report["role_checks"].items():
         lines.append(f"- {role}:")
@@ -332,11 +495,7 @@ def write_proposal(report: dict[str, Any]) -> Path:
 
 
 def safe_manuscript_path(value: str) -> Path:
-    path = (ROOT / value).resolve()
-    manuscript_root = MANUSCRIPT_DIR.resolve()
-    if not path.is_file() or manuscript_root not in path.parents:
-        raise SystemExit("--target-file muss auf eine vorhandene Datei unter manuskript/ zeigen.")
-    return path
+    return safe_existing_path(value, MANUSCRIPT_DIR, "--target-file muss auf eine vorhandene Datei unter manuskript/ zeigen.")
 
 
 def apply_to_manuscript(report: dict[str, Any], target_file: str, after_heading: str) -> Path:
@@ -345,7 +504,7 @@ def apply_to_manuscript(report: dict[str, Any], target_file: str, after_heading:
     marker = after_heading.strip()
     if marker not in text:
         raise SystemExit("--after-heading wurde in der Zieldatei nicht gefunden.")
-    suggestion = report.get("text_suggestion") or build_suggestion(report["thought"], [], report["boundary_warnings"])
+    suggestion = (report.get("chapter_draft") or {}).get("draft_text") or report.get("text_suggestion") or build_suggestion(report["thought"], [], report["boundary_warnings"])
     block = f"\n\n<!-- PHILOSOPHIE_AUTOMAT:BEGIN status=vorschlag -->\n{suggestion}\n<!-- PHILOSOPHIE_AUTOMAT:END -->\n"
     text = text.replace(marker, marker + block, 1)
     path.write_text(text, encoding="utf-8")
@@ -359,6 +518,9 @@ def main(argv: list[str] | None = None) -> int:
     parser.add_argument("--find-anchors", action="store_true", help="Mögliche Manuskriptanker suchen.")
     parser.add_argument("--suggest", action="store_true", help="Einen markierten Textvorschlag erzeugen.")
     parser.add_argument("--write-proposal", action="store_true", help="Ein Vorschlagsdossier unter recovered/proposals/ schreiben.")
+    parser.add_argument("--draft-for", help="Kapitelbezogenen Entwurfskontext aus einer Datei unter manuskript/ erzeugen.")
+    parser.add_argument("--event-draft", action="store_true", help="Einen Change-Event-Entwurf in die Ausgabe aufnehmen.")
+    parser.add_argument("--write-event-draft", action="store_true", help="Einen Change-Event-Entwurf unter recovered/proposals/change-events/ schreiben.")
     parser.add_argument("--apply", action="store_true", help="Den Vorschlag markiert ins Manuskript einfügen; benötigt --target-file und --after-heading.")
     parser.add_argument("--target-file", help="Zieldatei unter manuskript/ für --apply.")
     parser.add_argument("--after-heading", help="Exakte Überschrift oder Markerzeile, nach der eingefügt wird.")
@@ -368,10 +530,19 @@ def main(argv: list[str] | None = None) -> int:
         parser.error("Bitte einen Gedanken als Argument oder über stdin übergeben.")
     if args.apply and not (args.target_file and args.after_heading):
         parser.error("--apply benötigt --target-file und --after-heading.")
-    report = build_report(thought, include_anchors=args.find_anchors or args.write_proposal or args.apply, include_suggestion=args.suggest or args.write_proposal or args.apply)
+    report = build_report(thought, include_anchors=args.find_anchors or args.write_proposal or args.apply or bool(args.draft_for), include_suggestion=args.suggest or args.write_proposal or args.apply or bool(args.draft_for))
+    if args.draft_for:
+        concepts = load_concepts()
+        context = chapter_context(args.draft_for, concepts)
+        report["chapter_context"] = {key: value for key, value in context.items() if key != "text"}
+        report["chapter_draft"] = build_chapter_draft(report, context)
+    if args.event_draft or args.write_event_draft:
+        report["event_draft"] = build_event_draft(report)
     written: dict[str, str] = {}
     if args.write_proposal:
         written["proposal_file"] = str(write_proposal(report).relative_to(ROOT))
+    if args.write_event_draft:
+        written["event_draft_file"] = str(write_event_draft(report).relative_to(ROOT))
     if args.apply:
         written["applied_file"] = str(apply_to_manuscript(report, args.target_file or "", args.after_heading or "").relative_to(ROOT))
         report["application_note"] = "Automatisch eingefügter, markierter Vorschlag; nicht als bestätigte Theorie behandeln."

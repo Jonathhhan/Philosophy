@@ -1,0 +1,98 @@
+﻿schema_version: 1
+id: change-0021-philosophie-automat-stufe-2-draft-for
+created_at: 2026-07-30
+goal: >-
+  Den Philosophie-Automaten um eine kapitelbezogene Entwurfsfunktion erweitern,
+  die ein konkretes Manuskriptkapitel liest, Anschlussstellen bestimmt und einen
+  markierten Vorschlag erzeugt, ohne ihn als bestätigte Theorie auszugeben.
+operation: reorganization
+scope:
+  allowed_files:
+    - scripts/philosophie_automat.py
+    - scripts/check_all.py
+    - projekt/philosophie-automat.md
+    - projekt/arbeitsstand.md
+    - knowledge/change-events/0021-philosophie-automat-stufe-2-draft-for.yaml
+  protected_files:
+    - CONSTITUTION.md
+    - PROJECT.md
+    - GLOSSAR.md
+    - manuskript/
+    - knowledge/concepts/
+basis:
+  project_files:
+    - CONSTITUTION.md
+    - AGENTS.md
+    - WORKFLOW.md
+    - projekt/codex-auftragsvorlage.md
+    - projekt/philosophie-automat.md
+    - scripts/philosophie_automat.py
+  decisions:
+    - author-confirmation-ja-2026-07-30
+  sources:
+    - knowledge/change-events/0020-philosophie-automat-stufe-1.yaml
+changes:
+  - file: scripts/philosophie_automat.py
+    summary: >-
+      Ergänzt --draft-for als kapitelbezogenen Entwurfsmodus. Der Automat liest
+      eine vorhandene Manuskriptdatei, extrahiert Überschriften und im Kapitel
+      erkannte Begriffe, bestimmt einen möglichen Anker und erzeugt einen
+      markierten Kapitelvorschlag mit Prüfhinweisen.
+  - file: scripts/check_all.py
+    summary: >-
+      Ergänzt einen JSON-Smoke-Test für --draft-for gegen Kapitel 8.
+  - file: projekt/philosophie-automat.md
+    summary: >-
+      Hebt die Dokumentation auf Stufe 2 und beschreibt Zweck, Verwendung und
+      Grenzen des kapitelbezogenen Entwurfsmodus.
+  - file: projekt/arbeitsstand.md
+    summary: >-
+      Dokumentiert die zweite Stufe, ihre Anschlussbedingungen und die weiterhin
+      offene spätere Verbindung zu Change-Event-Entwürfen.
+affected_relations:
+  - from: scripts/philosophie_automat.py
+    relation: depends_on
+    to: manuskript/
+    effect: changed
+    note: Stufe 2 soll Kapitel nicht nur als Ankersuchraum, sondern als lokalen Entwurfskontext lesen.
+  - from: scripts/check_all.py
+    relation: tests
+    to: scripts/philosophie_automat.py
+    effect: added
+    note: Die zentrale Prüfung soll den neuen kapitelbezogenen Modus abdecken.
+  - from: projekt/philosophie-automat.md
+    relation: documents
+    to: scripts/philosophie_automat.py
+    effect: changed
+    note: Die Dokumentation muss Stufe 2, Grenzen und Anwendung sichtbar machen.
+possibilities:
+  opened:
+    - Kapitelbezogene Entwürfe können vor einer Manuskriptintegration mit lokalen Begriffen, Überschriften und Anschlussstellen verbunden werden.
+    - Vollautomatische Manuskriptänderung bleibt möglich, wird aber stärker an Kapitellesung und Prüfbericht gebunden.
+  restricted:
+    - Manuskriptdateien bleiben in diesem Schritt geschützt; Stufe 2 erzeugt Entwürfe und Dossiers, aber keine unmarkierte Integration.
+    - Der Automat entscheidet keine Theoriefrage und ersetzt keine Quellenlektüre.
+  deferred:
+    - "TODO: Spätere Stufe kann Change-Event-Entwürfe automatisch aus Draft-Reports erzeugen."
+    - "TODO: Spätere Stufe kann KI-gestützte Formulierung ergänzen, wenn Datenschutz- und Autoritätsgrenzen entschieden sind."
+uncertainties: []
+agent_findings:
+  genealogist: []
+  consistency_checker: []
+  critic: []
+  material_technical: []
+authority:
+  requires_author_decision: false
+  decision_status: not_required
+  decision_reference: null
+validation:
+  - check: Python-Syntax
+    result: passed
+    evidence: python -m py_compile scripts\philosophie_automat.py
+  - check: Draft-For-JSON-Smoke
+    result: passed
+    evidence: python scripts\philosophie_automat.py --format json --draft-for manuskript/08-algorithmus.md "Ein Algorithmus bleibt derselbe, obwohl seine materielle Implementierung wechselt."
+  - check: Repository-Validation
+    result: passed
+    evidence: python scripts\check_all.py --skip-install; sandbox failed only at known MCP stdio permission before escalated rerun.
+status: stabilized

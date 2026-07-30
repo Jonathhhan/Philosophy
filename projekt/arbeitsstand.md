@@ -342,3 +342,17 @@ Teile des ursprünglichen Chatverlaufs sind in der Chatoberfläche und Suche nic
 - Grenze: Der Automat erzeugt keine Theorieentscheidung und prüft deklarierte Anschlussbedingungen, nicht philosophische Wahrheit. Vollautomatische Manuskripteinfügung ist möglich, aber nur mit explizitem `--apply`, Ziel-Datei und Marker; eingefügte Passagen bleiben als Vorschlag markiert.
 - Zentralprüfung: `scripts/check_all.py` enthält nun Syntax-, JSON- und Ankersuch-Smoke-Test für den Automaten; `--write-proposal` und `--apply` wurden zusätzlich manuell geprüft.
 - Offen: Eine spätere Stufe kann den Automaten in das Anschlusslabor integrieren oder mit Change-Event-Vorlagen verbinden.
+
+## Philosophie-Automat ? Stufe 2 2026-07-30
+
+- Aktualisiert: `scripts/philosophie_automat.py` besitzt nun `--draft-for` als kapitelbezogenen Entwurfsmodus. Der Automat liest eine vorhandene Datei unter `manuskript/`, erfasst ?berschriften, im Kapitel erkannte Begriffe, m?gliche Ankerstellen und erzeugt daraus einen markierten Kapitelvorschlag mit Pr?fhinweisen.
+- Grenze: Der Modus ver?ndert Manuskriptdateien nicht selbst. Eine automatische Einf?gung bleibt nur ?ber das bereits explizite `--apply` m?glich und w?rde den kapitelbezogenen Entwurf als `PHILOSOPHIE_AUTOMAT`-Vorschlag markieren.
+- Anschlussbedingung: Stufe 2 verschiebt den Automaten von einer allgemeinen Gedankenpr?fung zu einer kontrollierten Vorschaltstelle f?r Manuskriptarbeit. Dadurch wird die Herkunft der ?nderung im Kapitelkontext sichtbarer, ohne Autorentscheidung oder Quellenlekt?re zu ersetzen.
+- Pr?fung: `scripts/check_all.py` enth?lt nun einen JSON-Smoke-Test f?r `--draft-for` gegen Kapitel 8. TODO: Sp?tere Stufe kann aus Draft-Reports automatisch Change-Event-Entw?rfe erzeugen.
+
+## Philosophie-Automat ? Stufe 3/4 2026-07-30
+
+- Aktualisiert: `scripts/philosophie_automat.py` besitzt nun `--event-draft` und `--write-event-draft`. Aus einem Gedanken oder einem kapitelbezogenen `--draft-for`-Bericht kann ein Change-Event-Entwurf erzeugt werden.
+- Grenze: Event-Entw?rfe werden nicht automatisch als g?ltige Projekt-Ereignisse unter `knowledge/change-events/` stabilisiert. Schreibende Event-Entw?rfe landen unter `recovered/proposals/change-events/` und bleiben Vorschl?ge mit ausstehender Autorentscheidung.
+- Anschlussbedingung: Der Automat verbindet damit Manuskriptvorschlag, Begriffsadressen, Pr?frollen und ?nderungsprovenienz, ohne die Grenze zwischen Vorschlag und best?tigtem Projektwissen aufzul?sen.
+- Pr?fung: `scripts/check_all.py` enth?lt nun einen nicht-schreibenden JSON-Smoke-Test f?r `--event-draft`. TODO: Sp?tere Stufe kann die kontrollierte ?bernahme angenommener Event-Drafts in echte Change Events regeln.

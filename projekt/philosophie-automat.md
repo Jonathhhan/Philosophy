@@ -38,6 +38,29 @@ Ein Vorschlagsdossier schreiben:
 python scripts/philosophie_automat.py --write-proposal "Ein Algorithmus bleibt derselbe, obwohl seine materielle Implementierung wechselt."
 ```
 
+
+Kapitelbezogenen Entwurf erzeugen:
+
+```powershell
+python scripts/philosophie_automat.py --draft-for manuskript/08-algorithmus.md "Ein Algorithmus bleibt derselbe, obwohl seine materielle Implementierung wechselt."
+```
+
+`--draft-for` liest das angegebene Kapitel als lokalen Kontext. Der Bericht nennt Überschriften, im Kapitel erkannte Begriffe, mögliche Anschlussanker, einen markierten Kapitelentwurf und erforderliche Prüfungen. Der Modus verändert das Manuskript nicht. Eine Einfügung entsteht erst, wenn zusätzlich `--apply`, `--target-file` und `--after-heading` gesetzt werden.
+
+Change-Event-Entwurf anzeigen:
+
+```powershell
+python scripts/philosophie_automat.py --draft-for manuskript/08-algorithmus.md --event-draft "Ein Algorithmus bleibt derselbe, obwohl seine materielle Implementierung wechselt."
+```
+
+Change-Event-Entwurf als Vorschlagsdatei sichern:
+
+```powershell
+python scripts/philosophie_automat.py --draft-for manuskript/08-algorithmus.md --write-event-draft "Ein Algorithmus bleibt derselbe, obwohl seine materielle Implementierung wechselt."
+```
+
+Event-Entwürfe werden unter `recovered/proposals/change-events/` abgelegt. Sie sind bewusst noch keine bestätigten Dateien unter `knowledge/change-events/`. Erst eine geprüfte Übernahme mit Autorentscheidung und Validierung darf daraus ein stabilisiertes Projekt-Ereignis machen.
+
 Einen Vorschlag vollautomatisch, aber markiert, in eine Manuskriptdatei einfügen:
 
 ```powershell
