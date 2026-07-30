@@ -15,6 +15,7 @@ on:
 
 permissions:
   contents: write
+  models: read
   pull-requests: write
 
 jobs:
@@ -46,9 +47,9 @@ jobs:
       - name: Run bounded generation
         env:
           REQUEST_FILE: ${{ inputs.request_file }}
-          GENERATIVE_API_ENDPOINT: ${{ secrets.GENERATIVE_API_ENDPOINT }}
-          GENERATIVE_API_KEY: ${{ secrets.GENERATIVE_API_KEY }}
-          GENERATIVE_MODEL: ${{ vars.GENERATIVE_MODEL }}
+          GENERATIVE_API_ENDPOINT: ${{ secrets.GENERATIVE_API_ENDPOINT || 'https://models.github.ai/inference' }}
+          GENERATIVE_API_KEY: ${{ secrets.GENERATIVE_API_KEY || github.token }}
+          GENERATIVE_MODEL: ${{ vars.GENERATIVE_MODEL || 'openai/gpt-4.1' }}
         run: python automation/generative_runner.py "$REQUEST_FILE"
 
       - name: Enforce output boundary
