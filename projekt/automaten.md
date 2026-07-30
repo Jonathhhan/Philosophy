@@ -1,14 +1,10 @@
 # Automaten der Unterscheidung und propositionalen Ordnung
 
-Diese Werkzeuge erweitern die vorhandenen Projektwerkzeuge um zwei lesende
-Prüfmodi. Diese Werkzeuge stabilisieren keine neue Theorieachse und verändern keine
-Manuskriptdateien.
+Diese Werkzeuge erweitern die vorhandenen Projektwerkzeuge um lesende Prüfmodi. Sie stabilisieren keine neue Theorieachse und verändern für sich genommen keine Manuskriptdateien. Im editorischen Arbeitsablauf dienen sie jedoch einer Entscheidung, die entweder zu einem Manuskriptpatch oder zu einem begründeten Abschluss führt.
 
 ## Codex-Automat der Unterscheidung
 
-`scripts/unterscheidungsautomat.py` analysiert eine Unterscheidung als markierte
-und unmarkierte Seite. Er ist von George Spencer Browns Formdenken inspiriert,
-wird hier aber nur als operative Beobachtungsfigur verwendet.
+`scripts/unterscheidungsautomat.py` analysiert eine Unterscheidung als markierte und unmarkierte Seite. Er ist von George Spencer Browns Formdenken inspiriert, wird hier aber nur als operative Beobachtungsfigur verwendet.
 
 Beispiele:
 
@@ -28,10 +24,7 @@ Der Automat fragt:
 
 ## Tractatus-philosophicus-Automat
 
-`scripts/tractatus_automat.py` erzeugt zu einem Thema eine nummerierte,
-propositionale Prüfstruktur. Die Nummerierung dient der Ordnung von Leitsatz,
-Unterthese, Grenze und Anschluss. Sie imitiert keinen Autorstil und ersetzt keine
-philosophische Ausarbeitung.
+`scripts/tractatus_automat.py` erzeugt zu einem Thema eine nummerierte, propositionale Prüfstruktur. Die Nummerierung dient der Ordnung von Leitsatz, Unterthese, Grenze und Anschluss. Sie imitiert keinen Autorstil und ersetzt keine philosophische Ausarbeitung.
 
 Beispiele:
 
@@ -41,14 +34,9 @@ python scripts\tractatus_automat.py "Algorithmusidentität" --output recovered\p
 python scripts\tractatus_automat.py "Organisation und Kritik" --format json
 ```
 
-
 ## Selbstprogrammierendes Kunstwerk der Anschlussunterscheidungen
 
-`scripts/kunstwerk_automat.py` laesst eine Folge von Unterscheidungen von einer
-Startmarkierung aus laufen. Der Automat veraendert nicht seinen Quellcode.
-Stattdessen erzeugt jeder Schritt eine neue Programmlinie seines eigenen Scores:
-Die Auffuehrung schreibt also die Regelspur, nach der sie als Kunstwerk lesbar
-wird.
+`scripts/kunstwerk_automat.py` lässt eine Folge von Unterscheidungen von einer Startmarkierung aus laufen. Der Automat verändert nicht seinen Quellcode. Stattdessen erzeugt jeder Schritt eine neue Programmlinie seines eigenen Scores: Die Aufführung schreibt also die Regelspur, nach der sie als Kunstwerk lesbar wird.
 
 Beispiele:
 
@@ -58,25 +46,18 @@ python scripts\kunstwerk_automat.py Algorithmus materielle-Ausfuehrung --max-ste
 python scripts\kunstwerk_automat.py Form Unmarkiertes --output recovered\proposals\kunstwerk-form-lauf.md
 ```
 
-Der Automat fragt nicht nach der letzten Wahrheit. Er laeuft bis zu einer
-Abbruchbedingung:
+Der Automat fragt nicht nach der letzten Wahrheit. Er läuft bis zu einer Abbruchbedingung:
 
 - gesetzte Schrittgrenze;
 - keine unbesuchte deklarierte Anschlussstelle;
-- spaetere Erweiterung: ausdruecklicher Stopp durch Grenzwarnung oder
-  Autorentscheidung.
+- Wiederkehr einer bereits besuchten Begriffsadresse ohne neue Relation;
+- ausdrücklicher Stopp durch Grenzwarnung oder editorische Entscheidung.
 
-Die Ausgabe ist eine Auffuehrungsspur: markierte Seite, unmarkierte Seite,
-Anschlussrelation, Concept-Datei, Grenzen und generierter Score. Sie ist kein
-Manuskripttext und keine Theorieentscheidung.
+Die Ausgabe ist eine Aufführungsspur: markierte Seite, unmarkierte Seite, Anschlussrelation, Concept-Datei, Grenzen und generierter Score. Sie ist kein Manuskripttext und keine Theorieentscheidung.
 
 ## Automatenverbund
 
-`scripts/automatenverbund.py` kombiniert Unterscheidungsautomat,
-Tractatus-Automat und Kunstwerk-Automat dort, wo Anschluesse nachweisbar sind.
-Der Verbund prueft Bruecken ueber gemeinsame Begriffsadressen, Manuskriptanker
-oder deklarierte Concept-Relationen. Wo keine Bruecke besteht, wird die
-Verbindung blockiert und als Befund ausgegeben.
+`scripts/automatenverbund.py` kombiniert Unterscheidungsautomat, Tractatus-Automat und Kunstwerk-Automat dort, wo Anschlüsse nachweisbar sind. Der Verbund prüft Brücken über gemeinsame Begriffsadressen, Manuskriptanker oder deklarierte Concept-Relationen. Wo keine Brücke besteht, wird die Verbindung blockiert und als Befund ausgegeben.
 
 Beispiele:
 
@@ -90,13 +71,25 @@ Der Verbund erzeugt drei Stufen:
 
 1. Unterscheiden: markierte und unmarkierte Seite mit Begriffsadressen.
 2. Propositional ordnen: Tractatus-Struktur aus Leitsatz, Grenze und Anschluss.
-3. Auffuehren: Kunstwerk-Score entlang deklarierter Relationen.
+3. Aufführen: Kunstwerk-Score entlang deklarierter Relationen.
 
-Er schreibt nur mit explizitem `--output` und bleibt Proposal, Pruefstruktur
-oder Auffuehrungsspur.
+Er schreibt nur mit explizitem `--output` und bleibt Proposal, Prüfstruktur oder Aufführungsspur.
+
+## Schutz vor endlosem Regress
+
+Automaten dürfen einander nur innerhalb eines einzelnen, begrenzten Prüflaufs aufrufen. Eine Ausgabe darf nicht allein deshalb zum Eingang eines gleichartigen neuen Laufs werden, weil sie weitere mögliche Unterscheidungen enthält. Möglichkeit allein ist kein Arbeitsauftrag.
+
+Für denselben Gegenstand gilt:
+
+1. ein Hauptlauf;
+2. höchstens ein gezielter Gegencheck bei einem konkreten Widerspruch;
+3. danach Entscheidung durch den Editor: `PATCH`, `KEEP` oder `BLOCKED`.
+
+Ein Lauf ohne neue Textstelle, neue Quelle, neue Relation oder neuen Widerspruch wird nicht wiederholt. Nach einem Patch wechselt die Redaktion zum nächsten Abschnitt. Eine Rückkehr erfolgt nur, wenn eine spätere Änderung den früheren Befund tatsächlich verändert.
+
 ## Gemeinsame Grenzen
 
 - Die Werkzeuge schreiben nur mit explizitem `--output`.
 - Ausgaben sind Vorschläge, Prüfstrukturen oder Lesehilfen.
-- Manuskriptintegration erfordert weiterhin Quellenprüfung, Statusmarkierung,
-  Change Event und gegebenenfalls Autorenentscheidung.
+- Ein Audit ist kein Selbstzweck und darf kein weiteres Audit als einzigen Output erzeugen.
+- Manuskriptintegration erfordert Quellenprüfung und eine explizite editorische Entscheidung; eine erneute Autorfreigabe ist nur nötig, wenn eine Entscheidung nicht aus den Projektvorgaben und dem Textbestand ableitbar ist.
