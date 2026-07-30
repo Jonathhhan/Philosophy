@@ -370,3 +370,10 @@ Teile des ursprünglichen Chatverlaufs sind in der Chatoberfläche und Suche nic
 - Grenze: Die Visualisierung führt das CLI-Werkzeug nicht aus, erzeugt keine Dateien und verändert kein Manuskript. Sie zeigt die Statusgrenzen des Automaten didaktisch im interaktiven Teil.
 - Anschlussbedingung: Der interaktive Teil macht damit sichtbar, dass Automatisierung Möglichkeiten organisiert, aber Autorentscheidung und Projektwissen nicht ersetzt.
 - Prüfung: Ein neuer UI-Test kontrolliert, dass Vorschlag, Draft, Event-Draft, Vorprüfung und gesperrte Autorentscheidung getrennt erscheinen.
+
+## Codex-Methode ? Verfeinerung der Anschlussarbeit 2026-07-30
+
+- Aktualisiert: `projekt/codex-methode-verfeinerung.md` legt ein feineres Operationsregister f?r Codex an: Sondieren, Pr?zisieren, Integrieren, Revidieren, Reorganisieren und Sperrpr?fen.
+- Grenze: Die Methode ist ein Arbeitsprotokoll f?r Codex, keine neue Grundthese des Buches und kein Ersatz f?r Autorentscheidung oder Quellenlekt?re.
+- Anschlussbedingung: Gr??ere Codex-Bearbeitungen k?nnen k?nftig Status, Herkunft, ge?ffnete und begrenzte Anschlussm?glichkeiten sowie offene Autorentscheidungen sichtbarer mitf?hren.
+- Pr?fung: Zentrale Projektpr?fung bestanden; Change Event 0025 ist valide und stabilisiert.

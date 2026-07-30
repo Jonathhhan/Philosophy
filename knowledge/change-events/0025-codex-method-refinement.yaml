@@ -1,0 +1,90 @@
+schema_version: 1
+id: change-0025-codex-method-refinement
+created_at: 2026-07-30
+goal: >-
+  Die Codex-Arbeitsweise als feineres Anschlussprotokoll dokumentieren, damit
+  Eingriffstypen, Statusgrenzen, Rollen und Autorentscheidungen in k?nftigen
+  Bearbeitungen genauer unterscheidbar bleiben.
+operation: composition
+scope:
+  allowed_files:
+    - projekt/codex-methode-verfeinerung.md
+    - projekt/philosophie-automat.md
+    - interaktiv/README.md
+    - projekt/arbeitsstand.md
+    - knowledge/change-events/0025-codex-method-refinement.yaml
+  protected_files:
+    - manuskript/
+    - knowledge/concepts/
+    - CONSTITUTION.md
+    - GLOSSAR.md
+basis:
+  project_files:
+    - CONSTITUTION.md
+    - AGENTS.md
+    - WORKFLOW.md
+    - projekt/codex-prinzip-zettelkasten-plateaus.md
+    - projekt/philosophie-automat.md
+  decisions:
+    - author-confirmation-ja-2026-07-30
+  sources:
+    - projekt/codex-als-anschlussapparat.md
+    - knowledge/change-events/0024-interactive-philosophy-automaton-visualization.yaml
+changes:
+  - file: projekt/codex-methode-verfeinerung.md
+    summary: >-
+      Legt ein Arbeitsprotokoll f?r verfeinerte Codex-Operationen, Statusmarkierungen,
+      Rollen, Anschlussprotokolle und Abschlussfragen an.
+  - file: projekt/philosophie-automat.md
+    summary: >-
+      Aktualisiert den dokumentierten Stand auf Stufe 6 und erg?nzt die
+      Anschlusslabor-Visualisierung als nicht schreibende Prozesskarte.
+  - file: interaktiv/README.md
+    summary: >-
+      Dokumentiert die Prozessvisualisierung des Philosophie-Automaten im Anschlusslabor.
+  - file: projekt/arbeitsstand.md
+    summary: >-
+      H?lt die Methodenverfeinerung als Projektarbeitsstand fest.
+affected_relations:
+  - from: projekt/codex-methode-verfeinerung.md
+    relation: documents
+    to: WORKFLOW.md
+    effect: added
+    note: Die Datei verfeinert die operative Codex-Arbeit, ersetzt aber den bestehenden Workflow nicht.
+  - from: projekt/codex-methode-verfeinerung.md
+    relation: documents
+    to: projekt/codex-prinzip-zettelkasten-plateaus.md
+    effect: added
+    note: Zettel- und Plateau-Prinzip werden in ein konkretes Operations- und Statusregister ?berf?hrt.
+  - from: projekt/codex-methode-verfeinerung.md
+    relation: constrains
+    to: CONSTITUTION.md
+    effect: preserved
+    note: Die Autorentscheidung bleibt als Grenze gegen automatische Theorie-Stabilisierung sichtbar.
+possibilities:
+  opened:
+    - Gr??ere Codex-Bearbeitungen k?nnen k?nftig feiner als Sondierung, Pr?zisierung, Integration, Revision, Reorganisation oder Sperrpr?fung klassifiziert werden.
+    - Statusgrenzen zwischen Quelle, Entwicklung, Vorschlag, gepr?ftem Vorschlag, Autorentscheidung und technischer Umsetzung werden leichter ?berpr?fbar.
+  restricted:
+    - Die Methode darf nicht als neue Theorieachse oder Manuskriptthese behandelt werden.
+    - Agenten- und Automatenergebnisse bleiben Vorschl?ge, solange keine Autorentscheidung oder verbindliche Projektdatei sie stabilisiert.
+  deferred:
+    - "TODO: Sp?ter entscheiden, ob Teile der Methode in AGENTS.md oder WORKFLOW.md verbindlich verdichtet werden sollen."
+uncertainties: []
+agent_findings:
+  genealogist: []
+  consistency_checker: []
+  critic: []
+  material_technical: []
+authority:
+  requires_author_decision: false
+  decision_status: not_required
+  decision_reference: null
+validation:
+  - check: Change-Event-Schema
+    result: passed
+    evidence: python -B .agents\skills\recursive-codex\scripts\validate_change_event.py knowledge\change-events\0025-codex-method-refinement.yaml
+  - check: Repository-Validation
+    result: passed
+    evidence: python scripts\check_all.py --skip-install completed with ALL REPOSITORY CHECKS PASSED.
+status: stabilized

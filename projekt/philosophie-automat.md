@@ -1,6 +1,6 @@
 # Philosophie-Automat
 
-Status: Prototyp Stufe 5; Projektwerkzeug, kein Manuskriptkapitel und keine Theorieautorit?t.
+Status: Prototyp Stufe 6; Projektwerkzeug, kein Manuskriptkapitel und keine Theorieautorität.
 
 Der Philosophie-Automat ist die erste technische Umsetzung des Gedankens „Codex als Anschlussapparat“. Er soll keine Philosophie anstelle des Autors erzeugen. Er prüft, welche bereits deklarierten Begriffe, Projektgrenzen und Anschlussstellen durch einen eingegebenen Gedanken berührt werden.
 
@@ -38,7 +38,6 @@ Ein Vorschlagsdossier schreiben:
 python scripts/philosophie_automat.py --write-proposal "Ein Algorithmus bleibt derselbe, obwohl seine materielle Implementierung wechselt."
 ```
 
-
 Kapitelbezogenen Entwurf erzeugen:
 
 ```powershell
@@ -61,13 +60,13 @@ python scripts/philosophie_automat.py --draft-for manuskript/08-algorithmus.md -
 
 Event-Entwürfe werden unter `recovered/proposals/change-events/` abgelegt. Sie sind bewusst noch keine bestätigten Dateien unter `knowledge/change-events/`. Erst eine geprüfte Übernahme mit Autorentscheidung und Validierung darf daraus ein stabilisiertes Projekt-Ereignis machen.
 
-Change-Event-Entwurf vorpr?fen:
+Change-Event-Entwurf vorprüfen:
 
 ```powershell
 python scripts/philosophie_automat.py --draft-for manuskript/08-algorithmus.md --validate-event-draft "Ein Algorithmus bleibt derselbe, obwohl seine materielle Implementierung wechselt."
 ```
 
-Die Vorpr?fung kontrolliert Pflichtfelder, Draft-Status, Autorentscheidungsgrenze, erlaubte Operationen und sichere Zielorte. Sie beweist nicht, dass der Vorschlag philosophisch richtig ist. Sie sagt nur: Dieser Entwurf ist als Entwurf weiterbearbeitbar oder nicht.
+Die Vorprüfung kontrolliert Pflichtfelder, Draft-Status, Autorentscheidungsgrenze, erlaubte Operationen und sichere Zielorte. Sie beweist nicht, dass der Vorschlag philosophisch richtig ist. Sie sagt nur: Dieser Entwurf ist als Entwurf weiterbearbeitbar oder nicht.
 
 Einen Vorschlag vollautomatisch, aber markiert, in eine Manuskriptdatei einfügen:
 
@@ -76,6 +75,14 @@ python scripts/philosophie_automat.py --apply --target-file manuskript/08-algori
 ```
 
 `--apply` benötigt immer eine vorhandene Zieldatei unter `manuskript/` und eine exakte Marker- oder Überschriftszeile. Der eingefügte Text wird als `PHILOSOPHIE_AUTOMAT`-Vorschlag markiert und gilt nicht als bestätigte Theorie.
+
+## Anschlusslabor-Visualisierung
+
+Der interaktive Teil visualisiert den Automaten inzwischen als Prozesskette:
+
+> Gedanke → Begriffsprüfung → Kapitelkontext → markierter Draft → Event-Draft → Vorprüfung → Autorentscheidung
+
+Diese Darstellung führt das CLI-Werkzeug nicht aus und erzeugt keine Dateien. Sie macht didaktisch sichtbar, welche Stationen eine automatische Manuskriptvorbereitung hätte und wo ihre Grenze liegt. Auch wenn ein Draft formal vorprüfbar ist, bleibt er eine Anschlussmöglichkeit und keine bestätigte Theorieentscheidung.
 
 ## Arbeitsweise
 
@@ -91,13 +98,13 @@ python scripts/philosophie_automat.py --apply --target-file manuskript/08-algori
 
 Der Automat ist regelbasiert und transparent. Er versteht keine Argumente im starken Sinn, erzeugt keine belastbaren Quellenurteile und ersetzt keine Lektüre. Treffer können fehlen, wenn ein Gedanke andere Wörter verwendet. Treffer können zu weit sein, wenn ein Begriff nur nebenbei erwähnt wird. Automatische Manuskripteinfügungen sind deshalb immer als Vorschlag markiert und müssen editorisch geprüft werden.
 
-Das ist kein Mangel der Stufe 1, sondern ihre philosophische Sicherung. Der Automat soll nicht den Eindruck erwecken, er könne Urteil, Autorentscheidung oder Quellenarbeit automatisieren. Er macht Anschlussbedingungen sichtbar und hält dadurch die weitere Arbeit prüfbar.
+Das ist kein Mangel, sondern seine philosophische Sicherung. Der Automat soll nicht den Eindruck erwecken, er könne Urteil, Autorentscheidung oder Quellenarbeit automatisieren. Er macht Anschlussbedingungen sichtbar und hält dadurch die weitere Arbeit prüfbar.
 
 ## Nächste Stufen
 
-1. Stufe 2: Ein kleines Anschlusslabor-Modul „Gedanke prüfen“, das die Ausgabe sichtbar und interaktiv macht.
-2. Stufe 3: KI-gestützte Vorschläge innerhalb eines geschlossenen Schemas, getrennt von Autorentscheidung und Manuskriptstand.
-3. Stufe 4: Verbindung mit Change-Event-Vorlagen, sodass aus einer Prüfung ein dokumentierter Vorschlag oder ein TODO entstehen kann.
-4. Stufe 5: Kontrollierte automatische Manuskriptänderung mit vorheriger Relationsprüfung, Change Event und nachgelagerter Konsistenzprüfung.
+1. Reale Prüfberichte des CLI-Werkzeugs optional im Anschlusslabor anzeigen, ohne Browsercode direkten Schreibzugriff zu geben.
+2. KI-gestützte Vorschläge stärker an das geschlossene Schema des Automaten binden.
+3. Die kontrollierte Übernahme angenommener Event-Drafts in echte Change Events nur mit ausdrücklicher Autorentscheidung prüfen.
+4. Für automatische Manuskriptänderungen eine zusätzliche Sperre entwickeln, die Relationsprüfung, Change Event, sichtbaren Vorschlagsstatus und nachgelagerte Konsistenzprüfung bündelt.
 
-Der Automat ist inzwischen mit Syntax- und JSON-Smoke-Test in `scripts/check_all.py` aufgenommen. TODO: Entscheiden, ob und wie Stufe 2 im Anschlusslabor umgesetzt wird.
+Der Automat ist inzwischen mit Syntax-, JSON-, Draft-, Event-Draft- und Validierungs-Smoke-Tests in `scripts/check_all.py` aufgenommen. Die Anschlusslabor-Visualisierung wird ebenfalls durch UI-Test, Syntaxprüfung und Build abgesichert.
