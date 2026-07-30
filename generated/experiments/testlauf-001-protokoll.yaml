@@ -1,0 +1,27 @@
+id: generative-test-001
+type: generation_test
+mode: autonomous_generative
+status: passed
+seed: "Menschen treten in Gespräche ein, die bereits begonnen haben."
+created_by: generativer-autonomer-modus
+output: generated/experiments/testlauf-001-gespraeche.md
+checks:
+  seed_preserved: passed
+  autonomous_continuation: passed
+  coherent_long_form: passed
+  productive_difference: passed
+  new_relations:
+    - Gespräch als Organisation von Anschlusswahrscheinlichkeiten
+    - Autorschaft als rückwirkende Reorganisation eines begonnenen Zusammenhangs
+    - Programm, Algorithmus und Improvisation als verschiedene Anschlussweisen
+    - Kritik als Arbeit an der Verteilung möglicher Fortsetzungen
+  explicit_generated_status: passed
+  separate_storage: passed
+  manuscript_untouched: passed
+  generative_and_review_modes_separated: passed
+limitations:
+  - Dies testet die spezifizierte Agentenlogik und ihre Ausgabe, noch keinen extern zeitgesteuerten Runner.
+  - Projektweite Konsistenz und kritische Bestätigung wurden bewusst nicht ausgeführt, da der Test den rein generativen Modus isoliert prüft.
+next_step:
+  mode: research
+  action: Prüfe den generierten Text projektweit und entscheide über proposal oder revision.
