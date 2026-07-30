@@ -1,0 +1,111 @@
+mode: autonomous_theory_generation
+status: generated
+run_id: theory-run-20260731-0140
+seed: Kritik verändert nicht nur eine Ordnung, sondern auch die Bedingungen künftiger Kritik.
+request_file: automation/requests/example.yaml
+created_by: autonomous_theory_runner
+model: GPT-5.6 Thinking
+target: theory
+cycles_requested: 8
+cycles_completed: 8
+minimum_productive_decisions: 4
+productive_decisions: 8
+termination_reason: provisional_theoretical_closure
+source_context:
+  - manuskript/11-organisieren.md
+  - manuskript/12-verteilen.md
+connection_decisions:
+  - cycle: 1
+    candidates:
+      - Kritik als äußeres Urteil
+      - Kritik als interne Korrektur
+      - Kritik als Operation an künftigen Anschlussbedingungen
+    selected: Kritik als Operation an künftigen Anschlussbedingungen
+    reason: Verbindet den Seed unmittelbar mit Rekursivität und vermeidet die Voraussetzung eines externen Standpunkts.
+    rejected:
+      - option: Kritik als äußeres Urteil
+        reason: Setzt einen unbegründeten Beobachter außerhalb der Ordnung voraus.
+      - option: Kritik als interne Korrektur
+        reason: Erfasst nur Veränderungen innerhalb eines gegebenen Möglichkeitsraums.
+    productive_difference: Gegenstandskritik wird von Kritik der Anschlussbedingungen unterschieden.
+  - cycle: 2
+    candidates:
+      - Ordnung als Regelbestand
+      - Ordnung als institutionelle Struktur
+      - Organisation als Verteilung von Fortsetzungswahrscheinlichkeiten
+    selected: Organisation als Verteilung von Fortsetzungswahrscheinlichkeiten
+    reason: Macht Anschlussentscheidungen, Selektion und Ausschluss in einem gemeinsamen Modell beschreibbar.
+    productive_difference: Organisation wird prozessual statt dinghaft bestimmt.
+  - cycle: 3
+    candidates:
+      - Kritik ist entweder reformistisch oder radikal
+      - Kritik ist korrektiv oder reorganisierend
+      - Kritik ist erfolgreich oder erfolglos
+    selected: Kritik ist korrektiv oder reorganisierend
+    reason: Unterscheidet Ebenen der Veränderung, ohne politische Intensität mit theoretischer Funktion gleichzusetzen.
+    productive_difference: Radikalität wird durch Ebene der Anschlusswirkung ersetzt.
+  - cycle: 4
+    candidates:
+      - Urteil als Abschluss
+      - Urteil als Anwendung eines stabilen Maßstabs
+      - Urteil als rekursive Veränderung seiner künftigen Bedingungen
+    selected: Urteil als rekursive Veränderung seiner künftigen Bedingungen
+    reason: Erklärt Präzedenz, Begriffsverschiebung und veränderte Rechtfertigungslasten gemeinsam.
+    new_concept: Urteilsrekursion
+    productive_difference: Das Urteil wird zugleich als Ergebnis und neue Ausgangsbedingung gefasst.
+  - cycle: 5
+    candidates:
+      - Programm, Algorithmus und Improvisation hierarchisch ordnen
+      - Einen der drei Begriffe zum Grundbegriff machen
+      - Die drei Begriffe als irreduzible Organisationsweisen von Anschlüssen behandeln
+    selected: Die drei Begriffe als irreduzible Organisationsweisen von Anschlüssen behandeln
+    reason: Bewahrt ihre Spannung und integriert die vorhandene Projekttriade ohne Reduktion.
+    productive_difference: Möglichkeitsraum, Verfahren und situative Abweichung werden relational verbunden.
+  - cycle: 6
+    candidates:
+      - Revision als Fehlerkorrektur
+      - Revision als Wiederholung der Prüfung
+      - Revision als Wiederöffnung früherer Anschlussentscheidungen
+    selected: Revision als Wiederöffnung früherer Anschlussentscheidungen
+    reason: Macht nicht nur Resultate, sondern auch Maßstäbe und Auswahlformen veränderbar.
+    productive_difference: Revisionsfähigkeit wird zu einer Eigenschaft der Möglichkeitsorganisation.
+  - cycle: 7
+    candidates:
+      - Nur bestätigte Resultate archivieren
+      - Alle generierten Varianten vollständig speichern
+      - Folgenreiche gewählte und verworfene Anschlüsse selektiv bewahren
+    selected: Folgenreiche gewählte und verworfene Anschlüsse selektiv bewahren
+    reason: Vermeidet sowohl Ergebnisblindheit als auch unbrauchbare Totalprotokollierung.
+    new_concept: Anschlussgedächtnis
+    productive_difference: Das Archiv wird als Bedingung späterer Revision theoretisiert.
+  - cycle: 8
+    candidates:
+      - Theorie mit einem normativen Endmaßstab abschließen
+      - Vollständige Offenheit zum Ziel erklären
+      - Kritik als revisionsfähige Organisation von Möglichkeiten bestimmen
+    selected: Kritik als revisionsfähige Organisation von Möglichkeiten bestimmen
+    reason: Vermeidet sowohl letzte Fundierung als auch undifferenzierte Offenheit und macht die Theorie auf sich selbst anwendbar.
+    productive_difference: Kritik wird als Arbeit an Offenheit, Auswahl, Dauer und Revision zusammengeführt.
+new_concepts:
+  - Urteilsrekursion
+  - Anschlussgedächtnis
+  - reorganisierende Kritik
+  - Anschlussbedingungen zweiter Ordnung
+revised_assumptions:
+  - Kritik benötigt keinen externen Standpunkt.
+  - Offenheit ist nicht als Maximierung, sondern als organisierte Revisionsmöglichkeit zu bestimmen.
+  - Ausschluss ist nicht grundsätzlich zu beseitigen, sondern hinsichtlich Verteilung und Revidierbarkeit zu beurteilen.
+  - Ein Anfang bindet die Theorie nicht als unveränderliche These.
+strong_open_objections:
+  - Der Organisationsbegriff könnte zu weit werden, wenn jede Wahrscheinlichkeitsdifferenz bereits Organisation heißt.
+  - Urteilsrekursion muss gegenüber Präzedenz, Performativität und Pfadabhängigkeit genauer abgegrenzt werden.
+  - Anschlussgedächtnis benötigt einen Nachweis zusätzlichen Erklärungswerts gegenüber bestehenden Gedächtnis- und Archivbegriffen.
+  - Die normative Begründung von Revisionsfähigkeit ist noch nicht vollständig ausgewiesen.
+review:
+  started: true
+  recommended_status: generated
+  reason: Der Lauf erzeugt einen kohärenten Theorieansatz und mehrere produktive Begriffe, wurde aber noch nicht projektweit rekonstruiert oder an ernsthaften Gegenmodellen geprüft.
+outputs:
+  text: generated/theories/20260731-0140-kritik-und-ihre-kuenftigen-bedingungen.md
+  graph: generated/theories/20260731-0140-kritik-und-ihre-kuenftigen-bedingungen-graph.yaml
+  record: generated/theories/20260731-0140-kritik-und-ihre-kuenftigen-bedingungen.yaml
