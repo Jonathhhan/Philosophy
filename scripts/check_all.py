@@ -73,6 +73,7 @@ def main() -> int:
     run([python, "scripts/philosophie_automat.py", "--find-anchors", "--suggest", "Ein Algorithmus bleibt derselbe, obwohl seine materielle Implementierung wechselt."])
     run([python, "scripts/philosophie_automat.py", "--format", "json", "--draft-for", "manuskript/08-algorithmus.md", "Ein Algorithmus bleibt derselbe, obwohl seine materielle Implementierung wechselt."])
     run([python, "scripts/philosophie_automat.py", "--format", "json", "--draft-for", "manuskript/08-algorithmus.md", "--event-draft", "Ein Algorithmus bleibt derselbe, obwohl seine materielle Implementierung wechselt."])
+    run([python, "scripts/philosophie_automat.py", "--format", "json", "--draft-for", "manuskript/08-algorithmus.md", "--validate-event-draft", "Ein Algorithmus bleibt derselbe, obwohl seine materielle Implementierung wechselt."])
     run([python, "scripts/test_recursive_graph.py"])
     run([python, ".codex/hooks/recursive_stop.py", "--self-test"])
 

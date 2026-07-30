@@ -404,6 +404,44 @@ def build_event_draft(report: dict[str, Any]) -> dict[str, Any]:
         },
     }
 
+
+def validate_event_draft(draft: dict[str, Any]) -> dict[str, Any]:
+    errors: list[str] = []
+    warnings: list[str] = []
+    required = [
+        "schema_version", "id", "created_at", "goal", "operation", "scope",
+        "basis", "changes", "affected_relations", "possibilities", "uncertainties",
+        "agent_findings", "authority", "validation", "status",
+    ]
+    for key in required:
+        if key not in draft:
+            errors.append(f"Pflichtfeld fehlt: {key}")
+    if draft.get("schema_version") != 1:
+        errors.append("schema_version muss 1 sein.")
+    if not str(draft.get("id", "")).startswith("change-draft-"):
+        errors.append("Draft-ID muss mit change-draft- beginnen, damit sie nicht mit best?tigten Change Events verwechselt wird.")
+    if draft.get("status") != "proposed":
+        errors.append("Event-Drafts m?ssen status: proposed behalten.")
+    if draft.get("operation") not in {"local_update", "composition", "revision", "reorganization", "audit"}:
+        errors.append("operation besitzt keinen erlaubten Wert.")
+    authority = draft.get("authority") or {}
+    if authority.get("requires_author_decision") is not True or authority.get("decision_status") != "pending":
+        errors.append("Event-Drafts m?ssen eine ausstehende Autorentscheidung markieren.")
+    scope = draft.get("scope") or {}
+    allowed = scope.get("allowed_files") or []
+    protected = scope.get("protected_files") or []
+    if any(str(item).startswith("knowledge/change-events/") for item in allowed):
+        errors.append("Drafts d?rfen knowledge/change-events/ nicht als erlaubtes Schreibziel setzen.")
+    if not protected:
+        warnings.append("protected_files ist leer; das schw?cht die Statusgrenze des Drafts.")
+    if draft.get("changes"):
+        warnings.append("Draft enth?lt bereits changes; vor ?bernahme pr?fen, ob das noch Vorschlag oder schon Ereignis ist.")
+    if not draft.get("affected_relations"):
+        warnings.append("Keine affected_relations angegeben; Anschlussfolgen bleiben unterbestimmt.")
+    if "draft_context" not in draft:
+        warnings.append("draft_context fehlt; Herkunft aus dem Automat-Bericht ist schw?cher nachvollziehbar.")
+    return {"valid": not errors, "errors": errors, "warnings": warnings}
+
 def write_event_draft(report: dict[str, Any]) -> Path:
     EVENT_PROPOSAL_DIR.mkdir(parents=True, exist_ok=True)
     draft = report.get("event_draft") or build_event_draft(report)
@@ -521,6 +559,7 @@ def main(argv: list[str] | None = None) -> int:
     parser.add_argument("--draft-for", help="Kapitelbezogenen Entwurfskontext aus einer Datei unter manuskript/ erzeugen.")
     parser.add_argument("--event-draft", action="store_true", help="Einen Change-Event-Entwurf in die Ausgabe aufnehmen.")
     parser.add_argument("--write-event-draft", action="store_true", help="Einen Change-Event-Entwurf unter recovered/proposals/change-events/ schreiben.")
+    parser.add_argument("--validate-event-draft", action="store_true", help="Den erzeugten Change-Event-Entwurf als Vorschlag vorpr?fen.")
     parser.add_argument("--apply", action="store_true", help="Den Vorschlag markiert ins Manuskript einfügen; benötigt --target-file und --after-heading.")
     parser.add_argument("--target-file", help="Zieldatei unter manuskript/ für --apply.")
     parser.add_argument("--after-heading", help="Exakte Überschrift oder Markerzeile, nach der eingefügt wird.")
@@ -536,8 +575,10 @@ def main(argv: list[str] | None = None) -> int:
         context = chapter_context(args.draft_for, concepts)
         report["chapter_context"] = {key: value for key, value in context.items() if key != "text"}
         report["chapter_draft"] = build_chapter_draft(report, context)
-    if args.event_draft or args.write_event_draft:
+    if args.event_draft or args.write_event_draft or args.validate_event_draft:
         report["event_draft"] = build_event_draft(report)
+    if args.validate_event_draft:
+        report["event_draft_validation"] = validate_event_draft(report["event_draft"])
     written: dict[str, str] = {}
     if args.write_proposal:
         written["proposal_file"] = str(write_proposal(report).relative_to(ROOT))

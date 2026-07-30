@@ -356,3 +356,10 @@ Teile des ursprünglichen Chatverlaufs sind in der Chatoberfläche und Suche nic
 - Grenze: Event-Entw?rfe werden nicht automatisch als g?ltige Projekt-Ereignisse unter `knowledge/change-events/` stabilisiert. Schreibende Event-Entw?rfe landen unter `recovered/proposals/change-events/` und bleiben Vorschl?ge mit ausstehender Autorentscheidung.
 - Anschlussbedingung: Der Automat verbindet damit Manuskriptvorschlag, Begriffsadressen, Pr?frollen und ?nderungsprovenienz, ohne die Grenze zwischen Vorschlag und best?tigtem Projektwissen aufzul?sen.
 - Pr?fung: `scripts/check_all.py` enth?lt nun einen nicht-schreibenden JSON-Smoke-Test f?r `--event-draft`. TODO: Sp?tere Stufe kann die kontrollierte ?bernahme angenommener Event-Drafts in echte Change Events regeln.
+
+## Philosophie-Automat ? Stufe 5 2026-07-30
+
+- Aktualisiert: `scripts/philosophie_automat.py` besitzt nun `--validate-event-draft`. Der erzeugte Change-Event-Entwurf wird auf Pflichtfelder, Draft-ID, Status `proposed`, ausstehende Autorentscheidung, erlaubte Operationen und sichere Zielorte gepr?ft.
+- Grenze: Eine erfolgreiche Vorpr?fung bedeutet nur, dass der Entwurf als Entwurf weiterbearbeitbar ist. Sie stabilisiert kein Projektwissen, ersetzt keine philosophische Pr?fung und erlaubt keine automatische ?bernahme nach `knowledge/change-events/`.
+- Anschlussbedingung: Stufe 5 macht die Grenze zwischen Vorschlag, gepr?fter M?glichkeit und best?tigtem Ereignis maschinenlesbar. Damit wird die Automatisierung st?rker, ohne die Autorit?tsordnung zu schw?chen.
+- Pr?fung: `scripts/check_all.py` enth?lt nun einen JSON-Smoke-Test f?r `--validate-event-draft`. TODO: Sp?ter entscheiden, ob angenommene Drafts in einem separaten, ausdr?cklich autorisierten Modus nach `knowledge/change-events/` kopiert werden d?rfen.

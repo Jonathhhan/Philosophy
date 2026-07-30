@@ -1,6 +1,6 @@
 # Philosophie-Automat
 
-Status: Prototyp Stufe 1; Projektwerkzeug, kein Manuskriptkapitel und keine Theorieautorität.
+Status: Prototyp Stufe 5; Projektwerkzeug, kein Manuskriptkapitel und keine Theorieautorit?t.
 
 Der Philosophie-Automat ist die erste technische Umsetzung des Gedankens „Codex als Anschlussapparat“. Er soll keine Philosophie anstelle des Autors erzeugen. Er prüft, welche bereits deklarierten Begriffe, Projektgrenzen und Anschlussstellen durch einen eingegebenen Gedanken berührt werden.
 
@@ -60,6 +60,14 @@ python scripts/philosophie_automat.py --draft-for manuskript/08-algorithmus.md -
 ```
 
 Event-Entwürfe werden unter `recovered/proposals/change-events/` abgelegt. Sie sind bewusst noch keine bestätigten Dateien unter `knowledge/change-events/`. Erst eine geprüfte Übernahme mit Autorentscheidung und Validierung darf daraus ein stabilisiertes Projekt-Ereignis machen.
+
+Change-Event-Entwurf vorpr?fen:
+
+```powershell
+python scripts/philosophie_automat.py --draft-for manuskript/08-algorithmus.md --validate-event-draft "Ein Algorithmus bleibt derselbe, obwohl seine materielle Implementierung wechselt."
+```
+
+Die Vorpr?fung kontrolliert Pflichtfelder, Draft-Status, Autorentscheidungsgrenze, erlaubte Operationen und sichere Zielorte. Sie beweist nicht, dass der Vorschlag philosophisch richtig ist. Sie sagt nur: Dieser Entwurf ist als Entwurf weiterbearbeitbar oder nicht.
 
 Einen Vorschlag vollautomatisch, aber markiert, in eine Manuskriptdatei einfügen:
 
