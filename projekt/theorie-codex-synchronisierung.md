@@ -23,6 +23,33 @@ Diese Entsprechung ist methodisch. Sie führt keine neue Theorieachse ein und ma
 5. Eine rekursive Prüfung läuft weiter, solange sie eine neue Relation, einen neuen Widerspruch oder einen konkreten Patch hervorbringt. Wiederholung allein ist keine produktive Differenz.
 6. Der Synchronisierer entscheidet nicht philosophisch. Er blockiert nur Integrationen, deren Theorie- und Arbeitsstatus auseinanderlaufen.
 
+## Längere produktive Ketten
+
+Bei Eingriffen über mehrere Theorie- oder Projektebenen reicht die allgemeine rekursive Bewegung nicht als Ablaufbeschreibung. Dann gilt zusätzlich die Kettenlogik aus `projekt/produktive-ketten.md`.
+
+Zwischen Kritik, Urteil, Revision und Reorganisation liegen unterscheidbare Schwellen. Codex muss für jede Schwelle einen eigenen Output nachweisen:
+
+1. **Anschließen:** Evidenz, Textanker oder verbindliche Entscheidung;
+2. **Rekonstruieren:** bestimmte Relation zwischen Bedingungen, Vollzügen und Folgen;
+3. **Beurteilen:** ausgewiesener Maßstab, Gewichtung oder dokumentierter Entscheidungsstatus;
+4. **Revidieren:** konkret erneut bestimmte stabilisierte Anschlussbedingung;
+5. **Reorganisieren:** geprüfte und gegebenenfalls veränderte Folgebeziehungen;
+6. **Kritisieren:** neue produktive Frage, bestätigte Tragfähigkeit oder begründete Blockierung.
+
+Ein Schritt darf den nächsten nicht durch sprachliche Plausibilität ersetzen. Sichtbarkeit ist kein Urteil, ein Urteil ist keine Revision, und eine Änderung mehrerer Dateien ist nicht allein deshalb eine Reorganisation.
+
+Rückläufe sind nur zulässig, wenn eine neue Differenz angegeben wird. Dazu zählen neue Evidenz, ein bisher unbeachteter Widerspruch, eine veränderte Relation, ein neuer Maßstab oder eine unerwartete Folge. Die bloße Möglichkeit weiterer Fragen oder die Erzeugung eines zusätzlichen Audits genügt nicht.
+
+Der ausführbare Prüfer ist:
+
+```powershell
+python scripts\produktive_kette.py "Gegenstand" `
+  --input recovered\state\kette.json `
+  --output recovered\proposals\kettenlauf.md
+```
+
+Der Theorie–Codex-Synchronisierer prüft den gemeinsamen Status; der Kettenprüfer kontrolliert die Übergänge innerhalb eines längeren Laufs. Keines der Werkzeuge ersetzt die philosophische Beurteilung.
+
 ## Automatische Prüfung
 
 ```powershell
@@ -57,6 +84,7 @@ Der Synchronisierer läuft:
 1. vor strukturellen Manuskriptänderungen;
 2. nach Änderungen bestätigter Definitionen;
 3. nach Reorganisationen über mehrere Dateien;
-4. vor dem Abschluss eines automatisierten Automatenlaufs.
+4. vor dem Abschluss eines automatisierten Automatenlaufs;
+5. vor und nach einer längeren produktiven Kette.
 
 Ein erfolgreicher Lauf ersetzt weder Quellenprüfung noch philosophische Beurteilung. Er stellt sicher, dass Codex nicht nach anderen Regeln arbeitet als das Projekt, das Codex bearbeitet.
