@@ -2,7 +2,7 @@
 
 ## 1. Von der Verteilung zur Rückwirkung
 
-Verteilen ordnet Möglichkeiten, Mittel, Positionen, Belastungen und Entscheidungschancen innerhalb einer Organisation unterschiedlich zu. Diese Unterschiede können Arbeitsteilung ermöglichen, besondere Kenntnisse wirksam machen oder verlässliche Zuständigkeiten bilden. Aus der unterschiedlichen Zuordnung allein folgt noch keine Asymmetrie.
+Verteilen ordnet Anschlussbedingungen innerhalb einer Organisation verschiedenen Positionen so zu, dass Möglichkeiten, Mittel, Belastungen und Entscheidungschancen unterschiedlich wirksam werden. Diese Unterschiede können Arbeitsteilung ermöglichen, besondere Kenntnisse wirksam machen oder verlässliche Zuständigkeiten bilden. Aus der unterschiedlichen Zuordnung allein folgt noch keine Asymmetrie.
 
 Die weitere Frage richtet sich darauf, wie Beteiligte auf die Bedingungen dieser Zuordnung zurückwirken können. Eine Person kann eine vorgesehene Möglichkeit aktualisieren, ohne die Regel verändern zu können, durch die sie vorgesehen wird. Sie kann eine Entscheidung ausführen, ohne an den Kategorien mitzuwirken, in denen der entscheidende Fall beschrieben wurde. Sie kann Folgen erfahren und mitteilen, ohne dass diese Mitteilung für eine spätere Verteilung wirksam wird.
 
