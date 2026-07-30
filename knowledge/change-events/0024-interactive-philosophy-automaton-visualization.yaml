@@ -1,0 +1,96 @@
+﻿schema_version: 1
+id: change-0024-interactive-philosophy-automaton-visualization
+created_at: 2026-07-30
+goal: >-
+  Den Philosophie-Automaten im Anschlusslabor als interaktive Prozessvisualisierung
+  sichtbar machen, ohne Manuskriptdateien zu verändern oder automatische
+  Theorieentscheidungen zu suggerieren.
+operation: composition
+scope:
+  allowed_files:
+    - interaktiv/index.html
+    - interaktiv/css/main.css
+    - interaktiv/js/main.js
+    - interaktiv/tests/main.test.mjs
+    - interaktiv/README.md
+    - projekt/arbeitsstand.md
+    - knowledge/change-events/0024-interactive-philosophy-automaton-visualization.yaml
+  protected_files:
+    - manuskript/
+    - knowledge/concepts/
+    - scripts/philosophie_automat.py
+basis:
+  project_files:
+    - CONSTITUTION.md
+    - AGENTS.md
+    - WORKFLOW.md
+    - interaktiv/README.md
+    - projekt/philosophie-automat.md
+  decisions:
+    - author-confirmation-ja-2026-07-30
+  sources:
+    - knowledge/change-events/0023-philosophie-automat-event-draft-validation.yaml
+changes:
+  - file: interaktiv/index.html
+    summary: >-
+      Ergänzt einen Abschnitt Philosophie-Automat mit Statuskette von Gedanke bis
+      Autorentscheidung im Prozesspanel.
+  - file: interaktiv/css/main.css
+    summary: >-
+      Ergänzt Gestaltung für Prozesskarte, aktive Stufen und gesperrte Autorentscheidung.
+  - file: interaktiv/js/main.js
+    summary: >-
+      Bindet die Visualisierung an den bestehenden Arbeitszustand und markiert
+      Begriffsprüfung, Draft, Event-Draft und Vorprüfung abhängig vom Anschlussstand.
+  - file: interaktiv/tests/main.test.mjs
+    summary: >-
+      Ergänzt einen UI-Test zur Trennung von Vorschlag, Draft, Event-Draft,
+      Vorprüfung und Autorentscheidung.
+  - file: interaktiv/README.md
+    summary: >-
+      Dokumentiert die Visualisierung als Prozesskarte ohne Dateierzeugung oder Manuskripteingriff.
+  - file: projekt/arbeitsstand.md
+    summary: >-
+      Dokumentiert Ziel, Grenze und Prüfung der Visualisierung.
+affected_relations:
+  - from: interaktiv/index.html
+    relation: renders
+    to: scripts/philosophie_automat.py
+    effect: added
+    note: Die Oberfläche visualisiert die Prozesslogik des Automaten, führt das CLI-Werkzeug aber nicht aus.
+  - from: interaktiv/js/main.js
+    relation: constrains
+    to: CONSTITUTION.md
+    effect: preserved
+    note: Die Visualisierung markiert Vorschlag, Vorprüfung und Autorentscheidung getrennt.
+possibilities:
+  opened:
+    - Der Ablauf Gedanke, Begriffsprüfung, Kapitelkontext, Draft, Event-Draft, Vorprüfung und Autorentscheidung wird im Anschlusslabor erfahrbar.
+  restricted:
+    - Die Visualisierung bleibt eine didaktische Prozessdarstellung und erzeugt keine Dateien, Manuskriptänderungen oder Theorieentscheidungen.
+  deferred:
+    - "TODO: Später entscheiden, ob das Anschlusslabor reale CLI- oder Serverdaten aus dem Philosophie-Automaten lesen darf."
+uncertainties: []
+agent_findings:
+  genealogist: []
+  consistency_checker: []
+  critic: []
+  material_technical: []
+authority:
+  requires_author_decision: false
+  decision_status: not_required
+  decision_reference: null
+validation:
+  - check: Anschlusslabor-Check
+    result: passed
+    evidence: npm run check
+  - check: Anschlusslabor-Tests
+    result: passed
+    evidence: npm test
+  - check: Anschlusslabor-Build
+    result: passed
+    evidence: npm run build
+  - check: Repository-Validation
+    result: passed
+    evidence: python scripts\check_all.py --skip-install completed with ALL REPOSITORY CHECKS PASSED.
+status: stabilized

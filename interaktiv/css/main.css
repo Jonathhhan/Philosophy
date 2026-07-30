@@ -850,6 +850,99 @@ blockquote {
 .ai-adoption-note {
   margin: .8rem 0 0;
 }
+
+.automaton-block {
+  position: relative;
+  z-index: 1;
+  margin-top: 2rem;
+  padding-top: 1.3rem;
+  border-top: 1px solid rgba(246, 241, 231, .2);
+}
+
+.automaton-copy {
+  margin: .7rem 0 1rem;
+  color: var(--dark-muted);
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: .72rem;
+  line-height: 1.55;
+}
+
+.automaton-flow {
+  display: grid;
+  gap: .55rem;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.automaton-flow li {
+  display: grid;
+  grid-template-columns: 2.3rem minmax(7rem, .75fr) minmax(0, 1fr);
+  align-items: baseline;
+  gap: .65rem;
+  padding: .65rem .7rem;
+  border: 1px solid rgba(246, 241, 231, .16);
+  background: rgba(246, 241, 231, .035);
+  color: var(--dark-muted);
+}
+
+.automaton-flow li.is-active {
+  border-color: rgba(143, 192, 196, .72);
+  background: rgba(49, 95, 101, .26);
+  color: var(--dark-text);
+}
+
+.automaton-flow li.is-locked {
+  border-style: dashed;
+  border-color: rgba(225, 167, 143, .42);
+}
+
+.automaton-flow span,
+.automaton-flow small,
+.automaton-gate {
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+.automaton-flow span {
+  color: #e1a78f;
+  font-size: .68rem;
+}
+
+.automaton-flow strong {
+  font-size: .86rem;
+  font-weight: 400;
+}
+
+.automaton-flow small {
+  min-width: 0;
+  font-size: .66rem;
+  line-height: 1.35;
+}
+
+.automaton-gate {
+  margin-top: .8rem;
+  padding: .75rem .85rem;
+  border-left: 3px solid #e1a78f;
+  background: rgba(166, 67, 41, .14);
+}
+
+.automaton-gate p {
+  margin: 0;
+  color: var(--dark-text);
+  font-size: .69rem;
+  line-height: 1.45;
+}
+
+@media (max-width: 650px) {
+  .automaton-flow li {
+    grid-template-columns: 2rem 1fr;
+  }
+
+  .automaton-flow small {
+    grid-column: 2;
+  }
+}
+
 @media (max-width: 650px) {
   .site-header {
     align-items: flex-start;

@@ -399,3 +399,24 @@ test('Eine asynchrone KI-Antwort unterbricht das manuelle Schreiben nicht', asyn
   assert.equal(window.document.querySelector('#ai-result').hidden, false);
   window.happyDOM.abort();
 });
+
+
+test('Philosophie-Automat visualisiert Vorschlag, Draft und Autorentscheidung getrennt', () => {
+  const window = createApp();
+  assert.match(window.document.querySelector('#automaton-copy').textContent, /keine Theorieentscheidung/);
+  assert.equal(window.document.querySelector("[data-automaton-step='decision']").classList.contains('is-locked'), true);
+
+  setValue(window, '#beginning', 'Ein Algorithmus ordnet bedingte Übergänge.');
+  assert.match(window.document.querySelector('#automaton-status').textContent, /Begriffsprüfung/);
+  assert.match(window.document.querySelector('#automaton-concepts').textContent, /Algorithmus/);
+  assert.equal(window.document.querySelector("[data-automaton-step='draft']").classList.contains('is-active'), false);
+
+  addConnection(window, 'praezisieren', 'Die Unterscheidung betrifft die wiederholbare Ordnung der Übergänge.');
+  assert.match(window.document.querySelector('#automaton-status').textContent, /Draft vorprüfbar/);
+  assert.match(window.document.querySelector('#automaton-draft').textContent, /markierter Vorschlag/);
+  assert.match(window.document.querySelector('#automaton-event').textContent, /Change-Event/);
+  assert.match(window.document.querySelector('#automaton-validation').textContent, /formal vorprüfbar/);
+  assert.match(window.document.querySelector('#automaton-gate').textContent, /nicht bestätigt/);
+  assert.match(window.document.querySelector('#automaton-decision').textContent, /Autor/);
+  window.happyDOM.abort();
+});

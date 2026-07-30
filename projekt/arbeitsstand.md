@@ -343,23 +343,30 @@ Teile des ursprünglichen Chatverlaufs sind in der Chatoberfläche und Suche nic
 - Zentralprüfung: `scripts/check_all.py` enthält nun Syntax-, JSON- und Ankersuch-Smoke-Test für den Automaten; `--write-proposal` und `--apply` wurden zusätzlich manuell geprüft.
 - Offen: Eine spätere Stufe kann den Automaten in das Anschlusslabor integrieren oder mit Change-Event-Vorlagen verbinden.
 
-## Philosophie-Automat ? Stufe 2 2026-07-30
+## Philosophie-Automat – Stufe 2 2026-07-30
 
-- Aktualisiert: `scripts/philosophie_automat.py` besitzt nun `--draft-for` als kapitelbezogenen Entwurfsmodus. Der Automat liest eine vorhandene Datei unter `manuskript/`, erfasst ?berschriften, im Kapitel erkannte Begriffe, m?gliche Ankerstellen und erzeugt daraus einen markierten Kapitelvorschlag mit Pr?fhinweisen.
-- Grenze: Der Modus ver?ndert Manuskriptdateien nicht selbst. Eine automatische Einf?gung bleibt nur ?ber das bereits explizite `--apply` m?glich und w?rde den kapitelbezogenen Entwurf als `PHILOSOPHIE_AUTOMAT`-Vorschlag markieren.
-- Anschlussbedingung: Stufe 2 verschiebt den Automaten von einer allgemeinen Gedankenpr?fung zu einer kontrollierten Vorschaltstelle f?r Manuskriptarbeit. Dadurch wird die Herkunft der ?nderung im Kapitelkontext sichtbarer, ohne Autorentscheidung oder Quellenlekt?re zu ersetzen.
-- Pr?fung: `scripts/check_all.py` enth?lt nun einen JSON-Smoke-Test f?r `--draft-for` gegen Kapitel 8. TODO: Sp?tere Stufe kann aus Draft-Reports automatisch Change-Event-Entw?rfe erzeugen.
+- Aktualisiert: `scripts/philosophie_automat.py` besitzt nun `--draft-for` als kapitelbezogenen Entwurfsmodus. Der Automat liest eine vorhandene Datei unter `manuskript/`, erfasst Überschriften, im Kapitel erkannte Begriffe, mögliche Ankerstellen und erzeugt daraus einen markierten Kapitelvorschlag mit Prüfhinweisen.
+- Grenze: Der Modus verändert Manuskriptdateien nicht selbst. Eine automatische Einfügung bleibt nur über das bereits explizite `--apply` möglich und würde den kapitelbezogenen Entwurf als `PHILOSOPHIE_AUTOMAT`-Vorschlag markieren.
+- Anschlussbedingung: Stufe 2 verschiebt den Automaten von einer allgemeinen Gedankenprüfung zu einer kontrollierten Vorschaltstelle für Manuskriptarbeit. Dadurch wird die Herkunft der Änderung im Kapitelkontext sichtbarer, ohne Autorentscheidung oder Quellenlektüre zu ersetzen.
+- Prüfung: `scripts/check_all.py` enthält nun einen JSON-Smoke-Test für `--draft-for` gegen Kapitel 8. TODO: Spätere Stufe kann aus Draft-Reports automatisch Change-Event-Entwürfe erzeugen.
 
-## Philosophie-Automat ? Stufe 3/4 2026-07-30
+## Philosophie-Automat – Stufe 3/4 2026-07-30
 
 - Aktualisiert: `scripts/philosophie_automat.py` besitzt nun `--event-draft` und `--write-event-draft`. Aus einem Gedanken oder einem kapitelbezogenen `--draft-for`-Bericht kann ein Change-Event-Entwurf erzeugt werden.
-- Grenze: Event-Entw?rfe werden nicht automatisch als g?ltige Projekt-Ereignisse unter `knowledge/change-events/` stabilisiert. Schreibende Event-Entw?rfe landen unter `recovered/proposals/change-events/` und bleiben Vorschl?ge mit ausstehender Autorentscheidung.
-- Anschlussbedingung: Der Automat verbindet damit Manuskriptvorschlag, Begriffsadressen, Pr?frollen und ?nderungsprovenienz, ohne die Grenze zwischen Vorschlag und best?tigtem Projektwissen aufzul?sen.
-- Pr?fung: `scripts/check_all.py` enth?lt nun einen nicht-schreibenden JSON-Smoke-Test f?r `--event-draft`. TODO: Sp?tere Stufe kann die kontrollierte ?bernahme angenommener Event-Drafts in echte Change Events regeln.
+- Grenze: Event-Entwürfe werden nicht automatisch als gültige Projekt-Ereignisse unter `knowledge/change-events/` stabilisiert. Schreibende Event-Entwürfe landen unter `recovered/proposals/change-events/` und bleiben Vorschläge mit ausstehender Autorentscheidung.
+- Anschlussbedingung: Der Automat verbindet damit Manuskriptvorschlag, Begriffsadressen, Prüfrollen und Änderungsprovenienz, ohne die Grenze zwischen Vorschlag und bestätigtem Projektwissen aufzulösen.
+- Prüfung: `scripts/check_all.py` enthält nun einen nicht-schreibenden JSON-Smoke-Test für `--event-draft`. TODO: Spätere Stufe kann die kontrollierte übernahme angenommener Event-Drafts in echte Change Events regeln.
 
-## Philosophie-Automat ? Stufe 5 2026-07-30
+## Philosophie-Automat – Stufe 5 2026-07-30
 
-- Aktualisiert: `scripts/philosophie_automat.py` besitzt nun `--validate-event-draft`. Der erzeugte Change-Event-Entwurf wird auf Pflichtfelder, Draft-ID, Status `proposed`, ausstehende Autorentscheidung, erlaubte Operationen und sichere Zielorte gepr?ft.
-- Grenze: Eine erfolgreiche Vorpr?fung bedeutet nur, dass der Entwurf als Entwurf weiterbearbeitbar ist. Sie stabilisiert kein Projektwissen, ersetzt keine philosophische Pr?fung und erlaubt keine automatische ?bernahme nach `knowledge/change-events/`.
-- Anschlussbedingung: Stufe 5 macht die Grenze zwischen Vorschlag, gepr?fter M?glichkeit und best?tigtem Ereignis maschinenlesbar. Damit wird die Automatisierung st?rker, ohne die Autorit?tsordnung zu schw?chen.
-- Pr?fung: `scripts/check_all.py` enth?lt nun einen JSON-Smoke-Test f?r `--validate-event-draft`. TODO: Sp?ter entscheiden, ob angenommene Drafts in einem separaten, ausdr?cklich autorisierten Modus nach `knowledge/change-events/` kopiert werden d?rfen.
+- Aktualisiert: `scripts/philosophie_automat.py` besitzt nun `--validate-event-draft`. Der erzeugte Change-Event-Entwurf wird auf Pflichtfelder, Draft-ID, Status `proposed`, ausstehende Autorentscheidung, erlaubte Operationen und sichere Zielorte geprüft.
+- Grenze: Eine erfolgreiche Vorprüfung bedeutet nur, dass der Entwurf als Entwurf weiterbearbeitbar ist. Sie stabilisiert kein Projektwissen, ersetzt keine philosophische Prüfung und erlaubt keine automatische übernahme nach `knowledge/change-events/`.
+- Anschlussbedingung: Stufe 5 macht die Grenze zwischen Vorschlag, geprüfter Möglichkeit und bestätigtem Ereignis maschinenlesbar. Damit wird die Automatisierung stärker, ohne die Autoritätsordnung zu schwächen.
+- Prüfung: `scripts/check_all.py` enthält nun einen JSON-Smoke-Test für `--validate-event-draft`. TODO: Später entscheiden, ob angenommene Drafts in einem separaten, ausdrücklich autorisierten Modus nach `knowledge/change-events/` kopiert werden dürfen.
+
+## Anschlusslabor – Visualisierung des Philosophie-Automaten 2026-07-30
+
+- Aktualisiert: Das Anschlusslabor visualisiert den Philosophie-Automaten als Statuskette: Gedanke, Begriffsprüfung, Kapitelkontext, markierter Draft, Event-Draft, Vorprüfung und Autorentscheidung.
+- Grenze: Die Visualisierung führt das CLI-Werkzeug nicht aus, erzeugt keine Dateien und verändert kein Manuskript. Sie zeigt die Statusgrenzen des Automaten didaktisch im interaktiven Teil.
+- Anschlussbedingung: Der interaktive Teil macht damit sichtbar, dass Automatisierung Möglichkeiten organisiert, aber Autorentscheidung und Projektwissen nicht ersetzt.
+- Prüfung: Ein neuer UI-Test kontrolliert, dass Vorschlag, Draft, Event-Draft, Vorprüfung und gesperrte Autorentscheidung getrennt erscheinen.

@@ -52,6 +52,17 @@ const importSessionInput = document.querySelector('#import-session');
 const clearSessionButton = document.querySelector('#clear-session');
 const relationCheck = document.querySelector('#relation-check');
 const relationCheckPrompt = document.querySelector('#relation-check-prompt');
+const automatonStatus = document.querySelector('#automaton-status');
+const automatonCopy = document.querySelector('#automaton-copy');
+const automatonThought = document.querySelector('#automaton-thought');
+const automatonConcepts = document.querySelector('#automaton-concepts');
+const automatonChapter = document.querySelector('#automaton-chapter');
+const automatonDraft = document.querySelector('#automaton-draft');
+const automatonEvent = document.querySelector('#automaton-event');
+const automatonValidation = document.querySelector('#automaton-validation');
+const automatonDecision = document.querySelector('#automaton-decision');
+const automatonGate = document.querySelector('#automaton-gate');
+const automatonSteps = [...document.querySelectorAll('[data-automaton-step]')];
 
 const STORAGE_KEY = 'anschlusslabor.session.v2';
 const SESSION_FORMAT = 'anschlusslabor-session';
@@ -780,6 +791,80 @@ function renderPlateau() {
   plateauLink.textContent = 'Prüfspur: ' + definition.manuscriptChapter + ' · ' + definition.manuscriptQuestion;
   renderPlateauLinks(root, lastStep);
 }
+function inferredConceptsForAutomaton(wording, lastStep) {
+  const normalized = String(wording || '').toLowerCase();
+  const concepts = new Set();
+  if (/algorithm|programm|regel|beding/.test(normalized)) {
+    concepts.add('Algorithmus');
+    concepts.add('Programm');
+  }
+  if (/kritik|kritisch|beurteil|urteil/.test(normalized)) {
+    concepts.add('Kritisieren');
+    concepts.add('Beurteilen');
+  }
+  if (/organisation|organisier|anschluss|möglich/.test(normalized)) {
+    concepts.add('Anschließen');
+    concepts.add('Organisieren');
+  }
+  if (/unterbrech|zäsur|fraglich/.test(normalized) || lastStep?.type === 'unterbrechen') {
+    concepts.add('Unterbrechen');
+  }
+  if (/form|unterscheid|präzis/.test(normalized) || lastStep?.type === 'praezisieren') {
+    concepts.add('Form');
+  }
+  if (/variation|variante|improvis/.test(normalized) || lastStep?.type === 'variieren') {
+    concepts.add('Improvisieren');
+  }
+  if (lastStep?.type === 'fortsetzen') {
+    concepts.add('Anschließen');
+  }
+  return [...concepts].slice(0, 4);
+}
+
+function setAutomatonStep(name, active, locked = false) {
+  const step = automatonSteps.find((item) => item.dataset.automatonStep === name);
+  if (!step) {
+    return;
+  }
+  step.classList.toggle('is-active', active);
+  step.classList.toggle('is-locked', locked);
+}
+
+function renderAutomaton() {
+  const root = working.root.trim();
+  const lastStep = working.steps.at(-1);
+  const wording = currentWording();
+  const hasThought = Boolean(root);
+  const hasDraft = Boolean(lastStep);
+  const concepts = inferredConceptsForAutomaton(wording, lastStep);
+  const definition = lastStep ? moveDefinitions[lastStep.type] : null;
+
+  automatonStatus.textContent = hasDraft ? 'Draft vorprüfbar' : hasThought ? 'Begriffsprüfung möglich' : 'Vorschlagsmaschine';
+  automatonThought.textContent = hasThought ? excerpt(wording, 72) : 'kein eigener Wortlaut';
+  automatonConcepts.textContent = concepts.length ? concepts.join(', ') : hasThought ? 'keine sichere Begriffsadresse' : 'wartet auf Anschluss';
+  automatonChapter.textContent = definition ? definition.manuscriptChapter : hasThought ? 'Kapitelanker noch offen' : 'kein Kapitelanker';
+  automatonDraft.textContent = hasDraft ? 'markierter Vorschlag möglich' : hasThought ? 'erst nach konkretem Anschluss' : 'nicht erzeugt';
+  automatonEvent.textContent = hasDraft ? 'Change-Event-Entwurf möglich' : 'nicht vorgeschlagen';
+  automatonValidation.textContent = hasDraft ? 'als Draft formal vorprüfbar' : 'nicht geprüft';
+  automatonDecision.textContent = 'bleibt beim Autor';
+  automatonCopy.textContent = hasDraft
+    ? 'Der aktuelle Anschluss kann als Vorschlag, Kapitelkontext, Event-Draft und Vorprüfung gedacht werden. Stabilisiert ist dadurch noch nichts.'
+    : hasThought
+      ? 'Der gesetzte Gedanke kann auf Begriffe und mögliche Kapitelanker bezogen werden. Ein Draft entsteht erst durch einen konkreten Anschluss.'
+      : 'Noch liegt kein eigener Gedanke vor. Der Automat bleibt hier als Prozesskarte sichtbar: Er erzeugt Möglichkeiten, aber keine Theorieentscheidung.';
+  automatonGate.querySelector('p').textContent = hasDraft
+    ? 'Sperrklinke: gültig als Draft heißt nicht bestätigt als Theorie.'
+    : 'Grenze: Der Automat erzeugt Möglichkeiten, aber keine Autorentscheidung.';
+
+  setAutomatonStep('thought', hasThought);
+  setAutomatonStep('concepts', hasThought);
+  setAutomatonStep('chapter', hasThought);
+  setAutomatonStep('draft', hasDraft);
+  setAutomatonStep('event', hasDraft);
+  setAutomatonStep('validation', hasDraft);
+  setAutomatonStep('decision', false, true);
+}
+
 function renderStabilization() {
   const root = working.root.trim();
   const exactCurrentVersion = isCurrentVersionExact();
@@ -905,6 +990,7 @@ function renderAll(message) {
   renderInputControls();
   renderProcess(message);
   renderPlateau();
+  renderAutomaton();
   renderStabilization();
   storageStatus.textContent = storageMessage;
 }
