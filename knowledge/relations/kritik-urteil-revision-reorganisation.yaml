@@ -1,0 +1,58 @@
+id: kritik-urteil-revision-reorganisation
+label: Produktive Kette von Kritik zu Reorganisation
+status: proposal
+relation_type: staged_transformation
+source_files:
+  - manuskript/14-kritisieren.md
+  - manuskript/15-beurteilen.md
+  - manuskript/16-revidieren.md
+  - manuskript/17-reorganisieren.md
+  - recovered/proposals/2026-07-31-uebersetzungsschwellen-kritik-revision-reorganisation.md
+  - projekt/produktive-ketten.md
+stages:
+  - id: darstellen
+    operation: kritisieren
+    input: erfahrene Wirkungen, materielle Spuren, Regeln, Programme und organisatorische Folgen
+    required_output: ausweisbare Rekonstruktion einer prüfbaren Relation
+    does_not_imply: Urteil
+  - id: urteilen
+    operation: beurteilen
+    input: rekonstruierte Unterschiede
+    required_output: ausgewiesener Maßstab, Vergleich und Gewichtung
+    does_not_imply: Revision
+  - id: bedingung_neu_bestimmen
+    operation: revidieren
+    input: begründetes Urteil über eine stabilisierte Anschlussbedingung
+    required_output: erneut bestimmte und anschlusswirksame Bedingung
+    does_not_imply: Reorganisation
+  - id: relationen_veraendern
+    operation: reorganisieren
+    input: revidierte Bedingungen und ihre Folgebeziehungen
+    required_output: veränderter Zusammenhang wechselseitiger Ermöglichung und Begrenzung
+    does_not_imply: Rechtfertigung
+  - id: folgen_pruefen
+    operation: kritisieren
+    input: reorganisierter Zusammenhang
+    required_output: neue produktive Frage, bestätigte Tragfähigkeit oder begründete Blockierung
+productive_difference:
+  requires_any:
+    - neue Evidenz oder Textstelle
+    - neue typisierte Relation
+    - Widerspruch zwischen bestätigten Aussagen
+    - ausgewiesener Maßstab oder bestätigte Entscheidung
+    - veränderte stabilisierte Anschlussbedingung
+    - veränderte Beziehung mehrerer Bedingungen
+    - bisher nicht erfasste Folge
+  excludes:
+    - bloße Neuformulierung
+    - zusätzliches Audit ohne neuen Befund
+    - Agentenmehrheit
+    - Möglichkeit weiterer Fragen ohne bestimmte Differenz
+constraints:
+  - Die Relation ist ein Integrationsvorschlag und noch keine bestätigte neue Theorieachse.
+  - Die Eigenfunktionen von Kritisieren, Beurteilen, Revidieren und Reorganisieren bleiben erhalten.
+  - Rückläufe benötigen eine neue Differenz und eine benannte nicht mehr tragende Ausgabe.
+  - Technische Validierung ersetzt weder Quellenprüfung noch philosophische Beurteilung.
+required_for:
+  - produktive_ketten
+  - theorie_codex_synchronisierung
