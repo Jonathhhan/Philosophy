@@ -23,7 +23,18 @@ Die Forschungsarchitektur trennt fünf Operationen:
 - `confirmed`: vorläufig in den bestätigten Bestand aufgenommen.
 - `rejected`: begründet verworfen; die Begründung bleibt dokumentiert.
 
-Kein Automat darf einen Status überspringen. `confirmed` bedeutet nicht endgültig wahr, sondern vorläufig belastbar und weiterhin revidierbar.
+Kein Automat darf einen Status ohne dokumentierte Prüfung überspringen. `confirmed` bedeutet nicht endgültig wahr, sondern vorläufig belastbar und weiterhin revidierbar.
+
+Ein erzeugender Automat darf einen eigenen Vorschlag selbst bestätigen, wenn der Anschluss plausibel ist. Plausibilität liegt nur vor, wenn:
+
+1. die Anschlusskette explizit rekonstruiert ist,
+2. die verwendeten Begriffe ihre bisherige Funktion behalten oder eine Verschiebung ausdrücklich begründet wird,
+3. der Vorschlag gegen Manuskript, Glossar und Wissensmodell geprüft wurde,
+4. mindestens ein ernsthaftes Gegenmodell oder Gegenbeispiel geprüft wurde,
+5. kein ungelöster starker Einwand verbleibt,
+6. und die Bestätigung samt Begründung, Grenzen und Revisionsbedingungen protokolliert wird.
+
+Selbstbestätigung ist damit keine Abkürzung der Prüfung, sondern eine mögliche Zusammenführung von Erzeugung, Prüfung und Integration in einem hinreichend transparenten Lauf.
 
 ## Produktiver Forschungszyklus
 
@@ -77,7 +88,7 @@ Bewertet, ob ein Durchlauf tatsächlich neues Wissen erzeugt hat.
 
 ### Integrations-Agent
 
-Entscheidet nicht allein, sondern anhand der protokollierten Resultate, ob eine Aussage verworfen, weiter geprüft oder integriert wird.
+Entscheidet anhand der protokollierten Resultate, ob eine Aussage verworfen, weiter geprüft oder integriert wird. Diese Funktion kann von einem anderen Automaten oder vom erzeugenden Automaten selbst übernommen werden, sofern die Bedingungen plausibler Selbstbestätigung erfüllt sind.
 
 ## Sicherheitsregeln
 
@@ -85,7 +96,7 @@ Entscheidet nicht allein, sondern anhand der protokollierten Resultate, ob eine 
 2. Neue Theorie wird zuerst unter `knowledge/hypotheses/`, `knowledge/invariants/` oder `knowledge/tensions/` dokumentiert.
 3. Jede Änderung nennt Quellen, Gegenargumente und Status.
 4. Bestehende Dateien werden nur vollständig gelesen und vollständig ersetzt.
-5. Kein Automat bestätigt seine eigenen Vorschläge ohne Gegenprüfung.
+5. Ein Automat darf eigene Vorschläge bestätigen, wenn er die Plausibilität des Anschlusses, die Gegenprüfung und die verbleibenden Grenzen vollständig dokumentiert.
 6. Ein fehlender Befund wird als `no_productive_difference` dokumentiert und nicht künstlich erzeugt.
 
 ## Lange Ketten
