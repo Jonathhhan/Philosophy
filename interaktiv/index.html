@@ -82,6 +82,11 @@
           <p class='section-kicker'>Konkreter Anschluss</p>
           <h3 id='connection-title'>Formuliere den nächsten Vollzug</h3>
           <p class='move-prompt' id='move-prompt'></p>
+          <aside class='manuscript-reference' id='manuscript-reference' aria-labelledby='manuscript-reference-title'>
+            <p class='section-kicker' id='manuscript-reference-title'>Manuskriptbezug</p>
+            <p class='manuscript-chapter' id='manuscript-chapter'></p>
+            <p class='manuscript-question' id='manuscript-question'></p>
+          </aside>
           <label class='input-label compact-label' for='connection-text'>Arbeitsentwurf</label>
           <textarea id='connection-text' rows='4' maxlength='400' aria-describedby='move-prompt connection-count connection-warning'></textarea>
           <div class='input-meta'>
@@ -194,6 +199,18 @@
         <div class='return-line' aria-hidden='true'>
           <span>Der hervorgebrachte Wortlaut wird selbst zur Bedingung.</span>
           <b>↺</b>
+        </div>
+
+        <div class='plateau-block' aria-labelledby='plateau-title'>
+          <div class='history-heading'>
+            <p class='stage-label' id='plateau-title'>Zettel / Plateau</p>
+            <span id='zettel-address'>Zettel 00</span>
+          </div>
+          <p class='plateau-copy' id='plateau-copy'>Noch ist kein eigener Zettel adressiert. Die erste Äußerung eröffnet eine lokale Karte weiterer Anschlüsse.</p>
+          <p class='plateau-link' id='plateau-link'>Arbeitsmodell: Luhmanns Zettelkasten und Deleuze/Guattaris Plateaus bleiben hier methodische Bezugspunkte, keine neue Theorieachse.</p>
+          <ul class='plateau-links' id='plateau-links'>
+            <li>Keine gerichtete Verbindung gesetzt.</li>
+          </ul>
         </div>
 
         <div class='history-block'>

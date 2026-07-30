@@ -22,6 +22,16 @@ Das Protokoll wird nach Eingriffstiefe skaliert:
 
 Die Aufgabenvorlage unter `projekt/codex-auftragsvorlage.md` kann für umfangreiche oder wiederkehrende Arbeiten verwendet werden.
 
+## Zettelkasten- und Plateau-Prinzip für Codex
+
+Für größere Arbeiten kann Codex zusätzlich nach dem Arbeitsprinzip unter `projekt/codex-prinzip-zettelkasten-plateaus.md` verfahren. Dieses Prinzip behandelt Bearbeitungen als adressierbare Zettel und als nicht-linear anschließbare Plateaus. Es dient der Projektarbeit, nicht der Einführung einer neuen Theorieachse im Manuskript.
+
+Dabei gilt:
+
+- Jede größere Änderung soll eine Adresse, einen Status und eine erkennbare Herkunft besitzen.
+- Beziehungen zwischen Änderungen, Entscheidungen, Quellen und Manuskriptstellen werden typisiert statt bloß assoziiert.
+- Offene Anschlussmöglichkeiten dürfen sichtbar gemacht, aber nicht ohne Autorenentscheidung als gesicherte Theorie stabilisiert werden.
+- Luhmanns Zettelkasten und Deleuze/Guattaris Plateaus bleiben methodische Bezugspunkte der Codex-Arbeitsweise, solange keine quellengeprüfte Manuskriptintegration beauftragt ist.
 ## 1. Ausgangsmaterial sichern
 
 Neue Textfassungen werden zunächst unverändert oder nur typografisch bereinigt in das passende Manuskriptkapitel übernommen. Unsichere, abgebrochene oder beschädigte Stellen werden markiert. Rekonstruktionen dürfen nicht als Originaltext ausgegeben werden.

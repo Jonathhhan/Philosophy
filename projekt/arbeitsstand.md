@@ -280,3 +280,11 @@ Teile des ursprünglichen Chatverlaufs sind in der Chatoberfläche und Suche nic
 - TODO: Der Autor muss noch entscheiden, wie eine neu akzeptierte Entscheidung wirkt, wenn sie Glossar oder Architektur ausdrücklich revidiert, die höherrangige Datei aber noch nicht synchronisiert ist.
 - Grenze: Eine erfolgreiche Gesamtprüfung bestätigt deterministische Repository-Invarianten, nicht philosophische Vollständigkeit oder wissenschaftliche Publikationsreife.
 - Ereignis: `knowledge/change-events/0006-governance-and-central-validation.yaml` dokumentiert die stabilisierte Reorganisation.
+
+## Codex-Arbeitsprinzip Zettelkasten / Plateaus – Stand 2026-07-30
+
+- Neu dokumentiert: `projekt/codex-prinzip-zettelkasten-plateaus.md` als bestätigtes Arbeitsprinzip für Codex.
+- Funktion: Größere Codex-Arbeiten sollen adressierbar wie Zettel, relational verknüpft und nicht-linear anschlussfähig wie Plateaus geführt werden.
+- Grenze: Das Prinzip führt keine neue Grundthese des Manuskripts ein und ersetzt keine quellengeprüfte Integration von Luhmann oder Deleuze/Guattari.
+- Ergänzt: `WORKFLOW.md`, `.agents/skills/recursive-codex/SKILL.md`, `projekt/codex-auftragsvorlage.md`, `knowledge/decisions/0022-codex-zettelkasten-plateaus.yaml` und `knowledge/change-events/0007-codex-zettelkasten-plateaus.yaml`.
+- Offen: Ob daraus später ein technisches Zettel-/Graphregister entsteht, bleibt TODO und ist noch nicht beauftragt.

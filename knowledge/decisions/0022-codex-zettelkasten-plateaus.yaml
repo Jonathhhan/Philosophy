@@ -1,0 +1,26 @@
+id: decision-0022
+date: 2026-07-30
+title: Zettelkasten und Plateaus als Codex-Arbeitsprinzip
+status: accepted
+decision: >-
+  Codex darf Luhmanns Zettelkasten und Deleuze/Guattaris Plateaus als
+  operative Orientierungsmodelle für die eigene Projektarbeit verwenden:
+  Änderungen sollen adressierbar, relational verknüpft, statusbewusst und
+  nicht-linear anschlussfähig geführt werden. Dies ist ein Arbeitsprinzip
+  für Codex und keine neue Grundthese des Manuskripts.
+reason: >-
+  Der Autor möchte die Arbeitsweise von Codex an die Theorie der organisierten
+  Anschlussmöglichkeiten anpassen. Das Prinzip stärkt Provenienz, Relationierung
+  und Revidierbarkeit, ohne externe Theorien ungeprüft in das Buch zu integrieren.
+affected_files:
+  - WORKFLOW.md
+  - .agents/skills/recursive-codex/SKILL.md
+  - projekt/codex-prinzip-zettelkasten-plateaus.md
+  - projekt/codex-zettelregister.md
+  - projekt/codex-auftragsvorlage.md
+  - projekt/arbeitsstand.md
+limits:
+  - Exakte Aussagen über Luhmann oder Deleuze/Guattari benötigen weiterhin Quellenprüfung und Seitenangaben.
+  - Das Prinzip ersetzt keine Autorenentscheidung über Manuskriptthesen.
+  - Nicht-lineare Verknüpfungen sind keine Argumente, solange sie nicht ausgearbeitet sind.
+  - Das Codex-Zettelregister ist eine operative Arbeitskarte und kein Begriffsregister des Manuskripts.

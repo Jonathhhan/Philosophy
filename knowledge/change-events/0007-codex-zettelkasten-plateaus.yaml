@@ -1,0 +1,115 @@
+schema_version: 1
+id: change-0007-codex-zettelkasten-plateaus
+created_at: 2026-07-30
+goal: >-
+  Luhmanns Zettelkasten und Deleuze/Guattaris Plateaus als Codex-Arbeitsprinzip
+  dokumentieren, ohne sie als neue Grundthese des Manuskripts zu behandeln.
+operation: reorganization
+scope:
+  allowed_files:
+    - WORKFLOW.md
+    - .agents/skills/recursive-codex/SKILL.md
+    - projekt/codex-prinzip-zettelkasten-plateaus.md
+    - projekt/codex-zettelregister.md
+    - projekt/codex-auftragsvorlage.md
+    - projekt/arbeitsstand.md
+    - knowledge/decisions/0022-codex-zettelkasten-plateaus.yaml
+    - knowledge/change-events/0007-codex-zettelkasten-plateaus.yaml
+  protected_files:
+    - manuskript/
+    - GLOSSAR.md
+basis:
+  project_files:
+    - CONSTITUTION.md
+    - PROJECT.md
+    - WORKFLOW.md
+    - projekt/codex-auftragsvorlage.md
+    - projekt/codex-prinzip-zettelkasten-plateaus.md
+  decisions:
+    - knowledge/decisions/0021-theoriegeleitetes-codex-arbeitsprotokoll.yaml
+  sources:
+    - user-instruction-2026-07-30
+changes:
+  - file: projekt/codex-prinzip-zettelkasten-plateaus.md
+    summary: >-
+      Legt ein operatives Prinzip für adressierbare Codex-Zettel, nicht-lineare
+      Plateaus, Statusgrenzen und rekursive Projektarbeit an; verweist nun auch
+      auf ein optionales Codex-Zettelregister.
+  - file: projekt/codex-zettelregister.md
+    summary: >-
+      Legt eine erste operative Arbeitskarte mit zentralen Codex-Adressen,
+      Relationen und offenen Plateaus an.
+  - file: WORKFLOW.md
+    summary: >-
+      Verweist im Arbeitsablauf auf das Zettelkasten- und Plateau-Prinzip als
+      zusätzliche Codex-Arbeitsweise für größere Arbeiten.
+  - file: .agents/skills/recursive-codex/SKILL.md
+    summary: >-
+      Hängt das Prinzip an den rekursiven Codex-Skill an, wenn der Autor diese
+      Arbeitsweise ausdrücklich verlangt.
+  - file: projekt/codex-auftragsvorlage.md
+    summary: >-
+      Ergänzt eine Zettel-/Plateau-Adressierung für künftige größere Codex-Aufträge.
+  - file: projekt/arbeitsstand.md
+    summary: >-
+      Hält das neue Codex-Arbeitsprinzip, seine Grenze zum Manuskript und die
+      offene technische Weiterführung fest.
+  - file: knowledge/decisions/0022-codex-zettelkasten-plateaus.yaml
+    summary: >-
+      Dokumentiert die Autorenentscheidung als Arbeitsprinzip für Codex mit
+      ausdrücklicher Grenze gegenüber Manuskriptthesen.
+affected_relations:
+  - from: knowledge/decisions/0022-codex-zettelkasten-plateaus.yaml
+    relation: documents
+    to: projekt/codex-prinzip-zettelkasten-plateaus.md
+    effect: added
+    note: Die Entscheidung erhält eine ausformulierte Arbeitsregel.
+  - from: projekt/codex-prinzip-zettelkasten-plateaus.md
+    relation: documents
+    to: projekt/codex-zettelregister.md
+    effect: added
+    note: Das Prinzip erhält eine erste operative Arbeitskarte.
+  - from: projekt/codex-prinzip-zettelkasten-plateaus.md
+    relation: constrains
+    to: WORKFLOW.md
+    effect: added
+    note: Der Workflow bekommt eine zusätzliche operative Regel für größere Codex-Arbeiten.
+  - from: projekt/codex-prinzip-zettelkasten-plateaus.md
+    relation: constrains
+    to: .agents/skills/recursive-codex/SKILL.md
+    effect: added
+    note: Der lokale Skill soll das Prinzip verwenden, wenn der Autor es ausdrücklich verlangt.
+  - from: projekt/codex-prinzip-zettelkasten-plateaus.md
+    relation: constrains
+    to: projekt/codex-auftragsvorlage.md
+    effect: added
+    note: Die Auftragsvorlage kann größere Arbeiten künftig als Zettel-/Plateau-Konstellation erfassen.
+possibilities:
+  opened:
+    - Größere Codex-Arbeiten können künftig als adressierbare Zettel mit typisierten Relationen geführt werden.
+    - Interaktive und manuskriptbezogene Codex-Arbeit kann offene Anschlussräume ausdrücklicher markieren.
+    - Ein erstes Register macht zentrale Arbeitsadressen ohne zusätzliche Datenbank oder Automationsschicht auffindbar.
+  restricted:
+    - Luhmann und Deleuze/Guattari dürfen dadurch nicht ohne Quellenprüfung als Buchautoritäten erscheinen.
+    - Plateaus dürfen nicht als Ersatz für argumentative Kapitelordnung behandelt werden.
+    - Das Register darf nicht als Manuskript- oder Begriffsregister missverstanden werden.
+  deferred:
+    - "TODO: Bei späterer Manuskriptintegration müssten Primärquellen mit Seitenangaben geprüft werden."
+    - "TODO: Ein technisches Graphformat für Codex-Zettel bleibt optional und ist noch nicht beauftragt."
+    - "TODO: Eine Verbindung des Anschlusslabors mit ausgewählten Codex-Zetteln ist noch zu prüfen."
+uncertainties:
+  - "TODO: Ob daraus später eine technische Zettel-/Graph-Dateistruktur entstehen soll, ist nicht entschieden."
+agent_findings:
+  genealogist: []
+  consistency_checker: []
+  critic: []
+  material_technical: []
+authority:
+  requires_author_decision: true
+  decision_status: accepted
+  decision_reference: user-instruction-2026-07-30
+validation:
+  - check: Change-Event-Schema
+    result: not_run
+    evidence: Wird nach der Registerergänzung erneut ausgeführt.
+status: stabilized

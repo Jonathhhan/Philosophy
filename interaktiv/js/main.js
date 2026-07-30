@@ -12,6 +12,8 @@ const cancelBeginningEditButton = document.querySelector('#cancel-beginning-edit
 const connectionComposer = document.querySelector('#connection-composer');
 const connectionTitle = document.querySelector('#connection-title');
 const movePrompt = document.querySelector('#move-prompt');
+const manuscriptChapter = document.querySelector('#manuscript-chapter');
+const manuscriptQuestion = document.querySelector('#manuscript-question');
 const connectionInput = document.querySelector('#connection-text');
 const connectionCount = document.querySelector('#connection-count');
 const connectionWarning = document.querySelector('#connection-warning');
@@ -38,6 +40,10 @@ const releaseButton = document.querySelector('#release');
 const stabilizationStatus = document.querySelector('#stabilization-status');
 const versionsList = document.querySelector('#versions');
 const versionCount = document.querySelector('#version-count');
+const zettelAddress = document.querySelector('#zettel-address');
+const plateauCopy = document.querySelector('#plateau-copy');
+const plateauLink = document.querySelector('#plateau-link');
+const plateauLinks = document.querySelector('#plateau-links');
 const storageStatus = document.querySelector('#storage-status');
 const draftStatus = document.querySelector('#draft-status');
 const exportSessionButton = document.querySelector('#export-session');
@@ -73,6 +79,8 @@ const moveDefinitions = {
     key: 'fortsetzen',
     label: 'Fortsetzen',
     prompt: 'Wie setzt du den vorherigen Wortlaut fort?',
+    manuscriptChapter: 'Kapitel 1: Anschließen',
+    manuscriptQuestion: 'Prüffrage: Welche Bedingung des vorherigen Wortlauts wird aufgenommen und dadurch für weitere Anschlüsse wirksam?',
     placeholder: 'Formuliere eine Folgerung, Ergänzung oder Weiterführung.',
     relation: 'Als Fortsetzung gesetzt',
     condition: 'als Fortsetzung gesetzter Wortlaut',
@@ -87,6 +95,8 @@ const moveDefinitions = {
     key: 'praezisieren',
     label: 'Präzisieren',
     prompt: 'Welche Unterscheidung soll genauer bestimmt werden?',
+    manuscriptChapter: 'Kapitel 4: Form',
+    manuscriptQuestion: 'Prüffrage: Welche Differenz wird so bestimmt, dass sie weitere Anschlüsse trägt?',
     placeholder: 'Benenne die Unterscheidung und ihren begrenzten Geltungsbereich.',
     relation: 'Als Präzisierung gesetzt',
     condition: 'als Präzisierung gesetzter Wortlaut',
@@ -101,6 +111,8 @@ const moveDefinitions = {
     key: 'unterbrechen',
     label: 'Unterbrechen',
     prompt: 'Welche Voraussetzung des vorherigen Anschlusses wird fraglich?',
+    manuscriptChapter: 'Kapitel 2: Unterbrechen',
+    manuscriptQuestion: 'Prüffrage: Welche bisher unauffällige Bedingung wird durch die Unterbrechung sichtbar oder fraglich?',
     placeholder: 'Formuliere die Unterbrechung als konkrete Frage, Zurückweisung oder Zäsur.',
     relation: 'Als Unterbrechung gesetzt',
     condition: 'als Unterbrechung gesetzter Wortlaut',
@@ -115,6 +127,8 @@ const moveDefinitions = {
     key: 'variieren',
     label: 'Variieren',
     prompt: 'Wie verändern sich Perspektive oder Gewichtung des vorherigen Anschlusses?',
+    manuscriptChapter: 'Kapitel 6: Improvisieren',
+    manuscriptQuestion: 'Prüffrage: Welche Gewichtung verschiebt sich, ohne dass der Bezug zur vorherigen Fassung verschwindet?',
     placeholder: 'Formuliere eine erkennbare Abweichung innerhalb desselben Bezugs.',
     relation: 'Als Variation gesetzt',
     condition: 'als Variation gesetzter Wortlaut',
@@ -580,6 +594,12 @@ function createHistoryEntry(entry, number) {
   text.textContent = '„' + entry.text + '“';
 
   body.append(meta, text);
+  if (entry.manuscriptChapter) {
+    const reference = document.createElement('p');
+    reference.className = 'history-reference';
+    reference.textContent = entry.manuscriptChapter + ': ' + entry.manuscriptQuestion;
+    body.append(reference);
+  }
   item.append(numberElement, body);
   return item;
 }
@@ -600,7 +620,12 @@ function renderHistory() {
   const entries = [{ meta: 'Ausgangsäußerung', text: root }];
   working.steps.forEach((step) => {
     const definition = moveDefinitions[step.type];
-    entries.push({ meta: definition.relation, text: step.text });
+    entries.push({
+      meta: definition.relation,
+      text: step.text,
+      manuscriptChapter: step.manuscriptChapter || definition.manuscriptChapter,
+      manuscriptQuestion: step.manuscriptQuestion || definition.manuscriptQuestion
+    });
   });
 
   const visibleStart = Math.max(0, entries.length - HISTORY_PREVIEW_LENGTH);
@@ -702,6 +727,59 @@ function renderVersions() {
   versionCount.textContent = versions.length + (versions.length === 1 ? ' Fassung' : ' Fassungen');
 }
 
+function zettelLabel(index) {
+  return 'Zettel ' + String(index).padStart(2, '0');
+}
+
+function renderPlateauLinks(root, lastStep) {
+  plateauLinks.replaceChildren();
+  if (!root) {
+    const item = document.createElement('li');
+    item.textContent = 'Keine gerichtete Verbindung gesetzt.';
+    plateauLinks.append(item);
+    return;
+  }
+
+  working.steps.forEach((step, index) => {
+    const definition = moveDefinitions[step.type];
+    const item = document.createElement('li');
+    item.textContent = zettelLabel(index + 1) + ' → ' + zettelLabel(index + 2) + ': ' + definition.label;
+    plateauLinks.append(item);
+  });
+
+  const openItem = document.createElement('li');
+  openItem.className = 'open-plateau-link';
+  openItem.textContent = lastStep
+    ? zettelLabel(working.steps.length + 1) + ' → ? : Fortsetzen, Präzisieren, Unterbrechen oder Variieren bleiben möglich.'
+    : zettelLabel(1) + ' → ? : Fortsetzen, Präzisieren, Unterbrechen oder Variieren bleiben möglich.';
+  plateauLinks.append(openItem);
+}
+
+function renderPlateau() {
+  const root = working.root.trim();
+  const lastStep = working.steps.at(-1);
+  const addressNumber = root ? working.steps.length + 1 : 0;
+  zettelAddress.textContent = zettelLabel(addressNumber);
+
+  if (!root) {
+    plateauCopy.textContent = 'Noch ist kein eigener Zettel adressiert. Die erste Äußerung eröffnet eine lokale Karte weiterer Anschlüsse.';
+    plateauLink.textContent = 'Arbeitsmodell: Luhmanns Zettelkasten und Deleuze/Guattaris Plateaus bleiben hier methodische Bezugspunkte, keine neue Theorieachse.';
+    renderPlateauLinks(root, lastStep);
+    return;
+  }
+
+  if (!lastStep) {
+    plateauCopy.textContent = 'Die Ausgangsäußerung ist als erster Zettel adressiert. Sie bildet noch kein abgeschlossenes System, sondern einen Einstieg in mögliche Fortsetzungen, Unterbrechungen, Präzisierungen und Variationen.';
+    plateauLink.textContent = 'Plateau: ein lokaler Zusammenhang aus Wortlaut, Bedingungen und noch offenen Anschlusswegen.';
+    renderPlateauLinks(root, lastStep);
+    return;
+  }
+
+  const definition = moveDefinitions[lastStep.type];
+  plateauCopy.textContent = definition.label + ' bildet ' + zettelLabel(addressNumber) + '. Der neue Wortlaut bleibt auf den vorherigen Zettel bezogen und verändert zugleich, welche weiteren Anschlüsse naheliegen.';
+  plateauLink.textContent = 'Prüfspur: ' + definition.manuscriptChapter + ' · ' + definition.manuscriptQuestion;
+  renderPlateauLinks(root, lastStep);
+}
 function renderStabilization() {
   const root = working.root.trim();
   const exactCurrentVersion = isCurrentVersionExact();
@@ -765,6 +843,8 @@ function renderInputControls() {
     const definition = moveDefinitions[pendingMoveKey];
     connectionTitle.textContent = definition.label + ': Formuliere den nächsten Vollzug';
     movePrompt.textContent = definition.prompt;
+    manuscriptChapter.textContent = definition.manuscriptChapter;
+    manuscriptQuestion.textContent = definition.manuscriptQuestion;
     connectionInput.placeholder = definition.placeholder;
   }
   connectionCount.textContent = connectionInput.value.length + ' von 400 Zeichen';
@@ -824,6 +904,7 @@ function renderProcess(message) {
 function renderAll(message) {
   renderInputControls();
   renderProcess(message);
+  renderPlateau();
   renderStabilization();
   storageStatus.textContent = storageMessage;
 }
@@ -864,6 +945,8 @@ function commitMove() {
     type: definition.key,
     text,
     previousText: currentWording(),
+    manuscriptChapter: definition.manuscriptChapter,
+    manuscriptQuestion: definition.manuscriptQuestion,
     createdAt: new Date().toISOString()
   });
   pendingMoveKey = null;

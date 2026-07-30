@@ -27,3 +27,12 @@ Die Texte werden als Arbeitsfassungen versioniert. Frühere Varianten bleiben ü
 ## Wissensbasis prüfen
 
 Die YAML-Dateien und ihre internen Referenzen werden mit `python scripts/validate_knowledge.py` geprüft. Die dafür benötigte Entwicklungsabhängigkeit steht in `requirements-dev.txt`.
+## Lesefassung bauen
+
+Der aktuelle Manuskriptstand kann als zusammenhängende Markdown-Lesefassung gebaut werden:
+
+```powershell
+python scripts/build_manuscript.py
+```
+
+Die Ausgabe entsteht unter `build/manuskript-lesefassung.md`. Bearbeitet werden weiterhin die Einzelkapitel unter `manuskript/`.

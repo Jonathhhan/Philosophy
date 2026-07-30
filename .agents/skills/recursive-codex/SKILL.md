@@ -75,6 +75,11 @@ Prüfhinweise behandeln, nicht automatisch schließen. Vor Änderungen die von
 den Kanten genannten Dateien selbst lesen. Graphwege sind keine neuen
 Direktrelationen, und der Graph ersetzt weder Quellenprüfung noch
 Autorenentscheidung.
+## Zettelkasten-/Plateau-Prinzip verwenden
+
+Wenn der Autor Codex ausdrücklich auf Luhmanns Zettelkasten, Deleuze/Guattaris Plateaus oder eine vergleichbare nicht-lineare Arbeitsweise verpflichtet, `projekt/codex-prinzip-zettelkasten-plateaus.md` lesen und als operative Arbeitskarte verwenden.
+
+Das Prinzip ordnet Codex-Arbeit, nicht die Theorie des Manuskripts. Es macht Adressen, Relationen, offene Anschlüsse und Statusgrenzen sichtbar, ohne neue Grundbegriffe, Grundthesen oder Theorieachsen zu stabilisieren.
 ## Rekursive Abschlussprüfung verwenden
 
 Vor dem Abschluss größerer Änderungen die projektweite Zustandsprüfung ausführen:

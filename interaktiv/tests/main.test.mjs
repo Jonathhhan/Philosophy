@@ -67,6 +67,8 @@ test('Eingaben und Operationswahl besitzen die angekündigten zugänglichen Zust
   moveButton.click();
   assert.equal(moveButton.getAttribute('aria-pressed'), 'true');
   assert.equal(window.document.querySelector('#connection-text').getAttribute('aria-describedby'), 'move-prompt connection-count connection-warning');
+  assert.match(window.document.querySelector('#manuscript-chapter').textContent, /Kapitel 1: Anschließen/);
+  assert.match(window.document.querySelector('#manuscript-question').textContent, /Bedingung des vorherigen Wortlauts/);
   window.happyDOM.abort();
 });
 test('Eingabe aktiviert Operationen und ein konkreter Anschluss erscheint im Verlauf', () => {
@@ -84,8 +86,14 @@ test('Eingabe aktiviert Operationen und ein konkreter Anschluss erscheint im Ver
   assert.match(window.document.querySelector('#actual-text').textContent, /Bedingungen den Vollzug/);
   assert.match(window.document.querySelector('#history').textContent, /Als Fortsetzung gesetzt/);
   assert.match(window.document.querySelector('#history').textContent, /Daraus folgt/);
+  assert.match(window.document.querySelector('#history').textContent, /Kapitel 1: Anschließen/);
   assert.equal(window.document.querySelector('#beginning').disabled, true);
   assert.match(window.document.querySelector('#actual-relation').textContent, /Als Fortsetzung gesetzt/);
+  assert.equal(window.document.querySelector('#zettel-address').textContent, 'Zettel 02');
+  assert.match(window.document.querySelector('#plateau-copy').textContent, /Fortsetzen bildet Zettel 02/);
+  assert.match(window.document.querySelector('#plateau-link').textContent, /Kapitel 1: Anschließen/);
+  assert.match(window.document.querySelector('#plateau-links').textContent, /Zettel 01 → Zettel 02: Fortsetzen/);
+  assert.match(window.document.querySelector('#plateau-links').textContent, /Zettel 02 → \?/);
   assert.equal(window.document.querySelector('#relation-check').hidden, false);
   assert.equal(window.document.activeElement, window.document.querySelector('#observation'));
 

@@ -35,6 +35,31 @@ Diese Vorlage dient umfangreichen, wiederkehrenden oder philosophisch strittigen
 
 **Betroffene Kapitel, Begriffe und technische Ausgaben:**
 
+## Zettel-/Plateau-Adressierung
+
+**Adresse der Bearbeitung:**
+
+**Anschlüsse, an die angeknüpft wird:**
+
+**Typisierte Relationen:**
+
+- [ ] stützt
+- [ ] begrenzt
+- [ ] verweist auf
+- [ ] widerspricht
+- [ ] öffnet
+- [ ] verschiebt
+- [ ] benötigt Prüfung
+
+**Status der Bearbeitung:**
+
+- [ ] Quelle
+- [ ] begriffliche Entwicklung
+- [ ] Codex-Vorschlag
+- [ ] bestätigt
+- [ ] TODO / offen
+
+**Welche Anschlussmöglichkeiten werden als Plateau sichtbar, aber noch nicht integriert?**
 ## Problem und argumentative Funktion
 
 **Welche bestimmte Erklärungslücke, Inkonsistenz oder Gestaltungsaufgabe wird bearbeitet?**
