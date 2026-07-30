@@ -1,0 +1,14 @@
+mode: autonomous_generative
+seed: >-
+  Kritik verändert nicht nur eine Ordnung, sondern auch die Bedingungen künftiger Kritik.
+title: Kritik und ihre künftigen Bedingungen
+target: essay
+max_passes: 4
+start_review_after_generation: true
+instructions: >-
+  Entwickle eine eigenständige theoretische Bewegung. Prüfe besonders die Beziehungen
+  zwischen Anschluss, Organisation, Urteil, Revision und Reorganisation. Bewahre die
+  Spannung zwischen Programm, Algorithmus und Improvisation, statt sie aufzulösen.
+source_context:
+  - manuskript/11-organisieren.md
+  - manuskript/12-verteilen.md
