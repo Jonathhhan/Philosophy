@@ -1,0 +1,87 @@
+name: Autonomous generative run
+
+on:
+  workflow_dispatch:
+    inputs:
+      request_file:
+        description: YAML request below automation/requests/
+        required: true
+        default: automation/requests/example.yaml
+      create_branch:
+        description: Commit generated output to a new branch
+        required: true
+        type: boolean
+        default: true
+
+permissions:
+  contents: write
+  pull-requests: write
+
+jobs:
+  generate:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+
+      - name: Install runner dependency
+        run: python -m pip install --disable-pip-version-check PyYAML==6.0.2
+
+      - name: Validate request path
+        env:
+          REQUEST_FILE: ${{ inputs.request_file }}
+        run: |
+          case "$REQUEST_FILE" in
+            automation/requests/*.yaml|automation/requests/*.yml) ;;
+            *) echo "Request must be below automation/requests/" >&2; exit 1 ;;
+          esac
+          test -f "$REQUEST_FILE"
+          python automation/generative_runner.py "$REQUEST_FILE" --validate-only
+
+      - name: Run bounded generation
+        env:
+          REQUEST_FILE: ${{ inputs.request_file }}
+          GENERATIVE_API_ENDPOINT: ${{ secrets.GENERATIVE_API_ENDPOINT }}
+          GENERATIVE_API_KEY: ${{ secrets.GENERATIVE_API_KEY }}
+          GENERATIVE_MODEL: ${{ vars.GENERATIVE_MODEL }}
+        run: python automation/generative_runner.py "$REQUEST_FILE"
+
+      - name: Enforce output boundary
+        run: |
+          changed="$(git status --porcelain | awk '{print $2}')"
+          test -n "$changed"
+          while IFS= read -r path; do
+            case "$path" in
+              generated/*) ;;
+              *) echo "Runner changed forbidden path: $path" >&2; exit 1 ;;
+            esac
+          done <<< "$changed"
+
+      - name: Upload generated files
+        uses: actions/upload-artifact@v4
+        with:
+          name: autonomous-generative-output
+          path: generated/
+
+      - name: Create result branch and pull request
+        if: ${{ inputs.create_branch }}
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          branch="generated/run-${GITHUB_RUN_ID}-${GITHUB_RUN_ATTEMPT}"
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git switch -c "$branch"
+          git add generated/
+          git commit -m "Generate autonomous philosophical draft"
+          git push --set-upstream origin "$branch"
+          gh pr create \
+            --base "${GITHUB_REF_NAME}" \
+            --head "$branch" \
+            --title "Generated philosophical draft" \
+            --body "Automatisch erzeugtes Werkstattmaterial. Status: generated. Keine Manuskriptdatei wurde verändert."
