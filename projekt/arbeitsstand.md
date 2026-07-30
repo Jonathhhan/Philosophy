@@ -225,7 +225,7 @@ Teile des ursprünglichen Chatverlaufs sind in der Chatoberfläche und Suche nic
 - Ergänzt: `.codex/hooks.json` und `.codex/hooks/recursive_stop.py` binden eine read-only Abschlussprüfung an das Codex-`Stop`-Ereignis.
 - Getrennt: `.agents/skills/recursive-codex/scripts/check_recursive_state.py` bleibt unabhängig vom Hook als CLI und später in CI ausführbar.
 - Geprüft: alle Änderungsereignisse gegen ihr eigenes Schema sowie die deklarierte Wissensintegrität über `scripts/validate_knowledge.py`.
-- Warnungspolitik: die 24 bereits vorhandenen Wissensreferenzwarnungen bleiben sichtbar, blockieren den Abschluss derzeit aber nicht; Schema- oder Wissensfehler blockieren den ersten Stop.
+- Warnungspolitik: Wissensreferenzwarnungen bleiben sichtbar; Schema- oder Wissensfehler blockieren den ersten Stop. Die früheren 24 bekannten Warnungen sind inzwischen durch deklarierte Concept-Dateien behoben.
 - Schleifengrenze: Bei einem Fehler fordert der Hook höchstens einen weiteren Prüfgang an. Bleibt der Fehler bestehen, darf er keine Endlosschleife erzeugen und muss den verbleibenden Blocker kenntlich machen.
 - Reichweitengrenze: Der Prüfer behauptet keine philosophische Vollständigkeit der Relationsanalyse und leitet aus Git-Pfaden keine inhaltliche Relevanz ab.
 - Zurückgestellt: Eine deklarative Abdeckung struktureller Git-Änderungen benötigt zuerst Entscheidungen über Baseline, aktives Ereignis, relationspflichtige Pfade und zulässige Ereignisstatus.
@@ -268,7 +268,7 @@ Teile des ursprünglichen Chatverlaufs sind in der Chatoberfläche und Suche nic
 - Kapitel 11: Reorganisieren als Tätigkeit ist wieder eindeutig vom möglichen Ergebnis einer Reorganisation unterschieden.
 - Kapitel 15 und 16: Die bestätigten Präzisierungen zu Tragfähigkeit und unveränderter Bestätigung stehen nun vor den jeweiligen Kapitelübergängen; ihr Wortlaut blieb unverändert.
 - Glossar: Die Definitionszitate zu Revidieren und Reorganisieren sind korrekt von den Erläuterungen abgesetzt.
-- Geprüft: Auditmarker und verwischende Altformulierung sind entfernt; Change Events, Wissens- und Recursive-State-Prüfung, Hook-Selbsttest, Anschlusslabor und MCP-Graph-Tests bestehen. Die 24 bekannten Wissenswarnungen bleiben offen und nicht blockierend.
+- Geprüft: Auditmarker und verwischende Altformulierung sind entfernt; Change Events, Wissens- und Recursive-State-Prüfung, Hook-Selbsttest, Anschlusslabor und MCP-Graph-Tests bestehen. Die früheren 24 Wissenswarnungen sind inzwischen behoben; die Wissensprüfung läuft warnungsfrei.
 - Ereignis: `knowledge/change-events/0005-manuscript-audit-local-corrections.yaml` dokumentiert den stabilisierten redaktionellen Eingriff.
 - Unverändert: Kapitelarchitektur, theoretische Reichweite und bestätigte Begriffsentscheidungen.
 ## Governance und zentrale Gesamtprüfung 2026-07-30
@@ -276,7 +276,7 @@ Teile des ursprünglichen Chatverlaufs sind in der Chatoberfläche und Suche nic
 - Verbindlicher Kontext: `AGENTS.md`, `WORKFLOW.md` und der Recursive-Codex-Skill beginnen größere Arbeiten nun ausdrücklich mit `CONSTITUTION.md` und der geltenden Autoritätshierarchie.
 - Zentraler Befehl: `python scripts/check_all.py` bündelt Wissensvalidierung, alle Change Events, Recursive State, MCP-Kern und -Protokoll, Hook-Selbsttest sowie Installation, Tests, Syntaxprüfung und Build des Anschlusslabors.
 - CI: `.github/workflows/validate.yml` führt denselben Gesamtbefehl bei Pushes und Pull Requests mit Python 3.12 und Node 22 aus.
-- Geprüft: Der vollständige lokale Lauf einschließlich `npm ci`, 18 DOM-/Worker-Tests und MCP-STDIO-Protokoll besteht; die 24 bekannten Wissenswarnungen bleiben sichtbar und nicht blockierend.
+- Geprüft: Der vollständige lokale Lauf einschließlich `npm ci`, 18 DOM-/Worker-Tests und MCP-STDIO-Protokoll besteht; die früheren 24 bekannten Wissenswarnungen sind inzwischen behoben; die Wissensprüfung läuft warnungsfrei.
 - TODO: Der Autor muss noch entscheiden, wie eine neu akzeptierte Entscheidung wirkt, wenn sie Glossar oder Architektur ausdrücklich revidiert, die höherrangige Datei aber noch nicht synchronisiert ist.
 - Grenze: Eine erfolgreiche Gesamtprüfung bestätigt deterministische Repository-Invarianten, nicht philosophische Vollständigkeit oder wissenschaftliche Publikationsreife.
 - Ereignis: `knowledge/change-events/0006-governance-and-central-validation.yaml` dokumentiert die stabilisierte Reorganisation.
@@ -324,3 +324,21 @@ Teile des ursprünglichen Chatverlaufs sind in der Chatoberfläche und Suche nic
 - Integriert: Verantwortung meint keine voraussetzungslose Autorschaft, sondern zurechenbare Antwortfähigkeit innerhalb verteilter Anschlussbedingungen.
 - Grenzen: Keine neue Subjekttheorie, keine Glossaränderung, keine Abschwächung von Verantwortung oder Zurechnung.
 - Agentenbefund: Beide Prüfungen empfahlen nur eine minimale Präzisierung in Kapitel 15; Schluss und Kapitel 14 bleiben unverändert.
+
+## Codex als Anschlussapparat und warnungsfreie Wissensbasis – Stand 2026-07-30
+
+- Neu angelegt: `projekt/codex-als-anschlussapparat.md` als Projekttext und Arbeitsprogramm. Codex wird darin nicht als Autorersatz oder Theorieautorität bestimmt, sondern als organisierte Praxis der Sichtbarmachung, Prüfung und Reorganisation von Anschlussmöglichkeiten.
+- Öffentlich markiert: `README.md` enthält einen kurzen Abschnitt zur Codex-Arbeitsweise und verweist auf den Projekttext.
+- Manuskriptpräzisierung: Kapitel 16 bündelt die Leitdifferenz zwischen Revision und Reorganisation. Revision fragt nach der erneuten Bestimmung einer stabilisierten Bedingung; Reorganisation nach der Verschiebung der Beziehungen mehrerer Bedingungen.
+- Wissensbasis: Die früheren 24 bekannten Wissenswarnungen wurden durch schlanke Concept-Dateien für bereits referenzierte Begriffe behoben. Die Dateien deklarieren bestehende Begriffe aus Glossar, Projektarchitektur und Manuskriptstand; sie führen keine neuen Grundbegriffe ein.
+- Geprüft: `python scripts/check_all.py` bestand vollständig; `validate_knowledge.py` und `check_recursive_state.py` melden 0 Wissenswarnungen.
+- Ereignisse: `knowledge/change-events/0015-kapitel-16-revision-reorganisation-leitdifferenz.yaml`, `0016-codex-als-anschlussapparat.yaml`, `0017-readme-codex-arbeitsweise.yaml` und `0018-knowledge-concepts-warning-cleanup.yaml` dokumentieren den stabilisierten Stand.
+- Offen: Ob die Formel „Codex als Anschlussapparat“ später in Anschlusslabor, README-Ausbau oder methodischem Anhang stärker sichtbar wird, bleibt Autorenentscheidung.
+
+## Philosophie-Automat – Stufe 1 2026-07-30
+
+- Neu angelegt: `scripts/philosophie_automat.py` als regelbasierter Prototyp. Der Automat liest `knowledge/concepts/`, erkennt Begriffsadressen in einem eingegebenen Gedanken, markiert Projektgrenzen, findet Manuskriptanker und gibt Prüfrollen sowie nächste Anschlussstellen aus.
+- Neu dokumentiert: `projekt/philosophie-automat.md` beschreibt Zweck, Gebrauch, Grenzen und mögliche Ausbaustufen.
+- Grenze: Der Automat erzeugt keine Theorieentscheidung und prüft deklarierte Anschlussbedingungen, nicht philosophische Wahrheit. Vollautomatische Manuskripteinfügung ist möglich, aber nur mit explizitem `--apply`, Ziel-Datei und Marker; eingefügte Passagen bleiben als Vorschlag markiert.
+- Zentralprüfung: `scripts/check_all.py` enthält nun Syntax-, JSON- und Ankersuch-Smoke-Test für den Automaten; `--write-proposal` und `--apply` wurden zusätzlich manuell geprüft.
+- Offen: Eine spätere Stufe kann den Automaten in das Anschlusslabor integrieren oder mit Change-Event-Vorlagen verbinden.

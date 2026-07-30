@@ -1,0 +1,86 @@
+schema_version: 1
+id: change-0019-arbeitsstand-codex-wissensbasis
+created_at: 2026-07-30
+goal: >-
+  Den Arbeitsstand an den gepushten Zustand nach Codex-Anschlussapparat,
+  Kapitel-16-Präzisierung und warnungsfreier Wissensbasis anpassen.
+operation: local_update
+scope:
+  allowed_files:
+    - projekt/arbeitsstand.md
+    - knowledge/change-events/0019-arbeitsstand-codex-wissensbasis.yaml
+  protected_files:
+    - CONSTITUTION.md
+    - PROJECT.md
+    - GLOSSAR.md
+    - README.md
+    - manuskript/
+    - interaktiv/
+basis:
+  project_files:
+    - projekt/arbeitsstand.md
+    - README.md
+    - projekt/codex-als-anschlussapparat.md
+    - knowledge/change-events/0015-kapitel-16-revision-reorganisation-leitdifferenz.yaml
+    - knowledge/change-events/0016-codex-als-anschlussapparat.yaml
+    - knowledge/change-events/0017-readme-codex-arbeitsweise.yaml
+    - knowledge/change-events/0018-knowledge-concepts-warning-cleanup.yaml
+  decisions:
+    - knowledge/decisions/0021-theoriegeleitetes-codex-arbeitsprotokoll.yaml
+    - knowledge/decisions/0022-codex-zettelkasten-plateaus.yaml
+  sources:
+    - author-request-weiter-2026-07-30
+changes:
+  - file: projekt/arbeitsstand.md
+    summary: >-
+      Korrigiert veraltete Hinweise auf die 24 bekannten Wissenswarnungen und
+      ergänzt einen Arbeitsstand zu Codex als Anschlussapparat, Kapitel-16-Präzisierung
+      und warnungsfreier Wissensbasis.
+  - file: knowledge/change-events/0019-arbeitsstand-codex-wissensbasis.yaml
+    summary: >-
+      Dokumentiert die Aktualisierung des Arbeitsstands.
+affected_relations:
+  - from: projekt/arbeitsstand.md
+    relation: documents
+    to: knowledge/change-events/0018-knowledge-concepts-warning-cleanup.yaml
+    effect: changed
+    note: Der Arbeitsstand weist nun aus, dass die früheren 24 Wissenswarnungen behoben sind.
+  - from: projekt/arbeitsstand.md
+    relation: documents
+    to: projekt/codex-als-anschlussapparat.md
+    effect: added
+    note: Der neue Projekttext wird im Arbeitsstand als Arbeitsprogramm eingeordnet.
+  - from: projekt/arbeitsstand.md
+    relation: constrains
+    to: CONSTITUTION.md
+    effect: preserved
+    note: Der Nachtrag bestätigt, dass keine neue Manuskriptthese und keine neue Autorität von Codex eingeführt wurde.
+possibilities:
+  opened:
+    - Der dokumentierte Projektstand entspricht wieder dem tatsächlichen warnungsfreien Prüfzustand.
+    - Spätere Arbeiten können zwischen Manuskriptstand, Codex-Arbeitsprogramm und Wissensbasis klarer unterscheiden.
+  restricted:
+    - Keine Manuskript-, Glossar-, README- oder Interaktivdatei wird durch diesen Schritt verändert.
+  deferred:
+    - "TODO: Öffentliche Sichtbarkeit der Formel 'Codex als Anschlussapparat' bleibt Autorenentscheidung."
+uncertainties: []
+agent_findings:
+  genealogist: []
+  consistency_checker: []
+  critic: []
+  material_technical: []
+authority:
+  requires_author_decision: false
+  decision_status: not_required
+  decision_reference: null
+validation:
+  - check: Change-Event-Schema
+    result: passed
+    evidence: python -B .agents\skills\recursive-codex\scripts\validate_change_event.py knowledge\change-events\0019-arbeitsstand-codex-wissensbasis.yaml
+  - check: Knowledge-Validation
+    result: passed
+    evidence: python scripts\validate_knowledge.py reports Knowledge validation passed.
+  - check: Recursive-State
+    result: passed
+    evidence: python -B .agents\skills\recursive-codex\scripts\check_recursive_state.py reports RECURSIVE STATE VALID with 0 knowledge warnings.
+status: stabilized

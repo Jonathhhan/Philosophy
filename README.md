@@ -75,6 +75,8 @@ Der interaktive Teil unter `interaktiv/` macht Anschlussoperationen praktisch er
 
 Codex wird in diesem Repository nicht als Autorersatz oder Theorieautorität behandelt. Größere Änderungen werden als adressierbare Aktualisierungen geführt: Sie sollen Herkunft, betroffene Relationen, bewahrte Entscheidungen, eröffnete Möglichkeiten und offene TODOs sichtbar machen. Der Projekttext `projekt/codex-als-anschlussapparat.md` beschreibt diese Arbeitsweise als Anschlussapparat; er ist ein Arbeitsprogramm, keine Manuskriptdefinition und keine neue Grundthese des Buches.
 
+Der erste technische Baustein dafür ist `scripts/philosophie_automat.py`: ein regelbasierter Prototyp, der einen Gedanken gegen deklarierte Begriffe, Projektgrenzen, Prüfrollen und mögliche Anschlussstellen liest. Standardmäßig erzeugt er nur Prüfungen oder Vorschlagsdossiers; mit explizitem `--apply` kann er markierte Manuskriptvorschläge an einer angegebenen Zielstelle einfügen. Er ersetzt keine Autorenentscheidung.
+
 ## Lesefassung bauen
 
 Der aktuelle Manuskriptstand kann als zusammenhängende Markdown-Lesefassung gebaut werden:

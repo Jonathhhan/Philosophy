@@ -68,6 +68,9 @@ def main() -> int:
         )
 
     run([python, ".agents/skills/recursive-codex/scripts/check_recursive_state.py"])
+    run([python, "-m", "py_compile", "scripts/philosophie_automat.py"])
+    run([python, "scripts/philosophie_automat.py", "--format", "json", "Kritik steht nicht außerhalb der Organisation."])
+    run([python, "scripts/philosophie_automat.py", "--find-anchors", "--suggest", "Ein Algorithmus bleibt derselbe, obwohl seine materielle Implementierung wechselt."])
     run([python, "scripts/test_recursive_graph.py"])
     run([python, ".codex/hooks/recursive_stop.py", "--self-test"])
 

@@ -1,0 +1,121 @@
+schema_version: 1
+id: change-0020-philosophie-automat-stufe-1
+created_at: 2026-07-30
+goal: >-
+  Einen ersten regelbasierten Philosophie-Automaten bauen, der Gedanken gegen
+  deklarierte Begriffe, Projektgrenzen und Anschlussstellen prüft, ohne Manuskript
+  oder Autorentscheidung zu ersetzen.
+operation: composition
+scope:
+  allowed_files:
+    - scripts/philosophie_automat.py
+    - scripts/check_all.py
+    - README.md
+    - projekt/philosophie-automat.md
+    - recovered/proposals/2026-07-30-kritik-steht-nicht-ausserhalb-der-organisation.md
+    - projekt/arbeitsstand.md
+    - knowledge/change-events/0020-philosophie-automat-stufe-1.yaml
+  protected_files:
+    - CONSTITUTION.md
+    - PROJECT.md
+    - GLOSSAR.md
+    - manuskript/
+    - interaktiv/
+basis:
+  project_files:
+    - CONSTITUTION.md
+    - PROJECT.md
+    - GLOSSAR.md
+    - projekt/codex-als-anschlussapparat.md
+    - projekt/codex-prinzip-zettelkasten-plateaus.md
+    - knowledge/concepts/
+  decisions:
+    - knowledge/decisions/0021-theoriegeleitetes-codex-arbeitsprotokoll.yaml
+    - knowledge/decisions/0022-codex-zettelkasten-plateaus.yaml
+  sources:
+    - author-confirmation-ja-2026-07-30
+changes:
+  - file: scripts/philosophie_automat.py
+    summary: >-
+      Ergänzt einen transparenten CLI-Prototyp, der Concept-Dateien liest,
+      Begriffe und Aliasformen in einem Gedanken erkennt, Projektgrenzen markiert,
+      Manuskriptanker sucht, Textvorschläge erzeugt, Vorschlagsdossiers schreibt
+      und mit explizitem --apply markierte Manuskriptvorschläge einfügen kann.
+  - file: projekt/philosophie-automat.md
+    summary: >-
+      Dokumentiert Zweck, Gebrauch, Grenzen und Ausbaustufen des Automaten; die
+      frühere Smoke-Test-TODO ist als erledigt markiert.
+  - file: scripts/check_all.py
+    summary: >-
+      Nimmt Syntax- und JSON-Smoke-Test für den Automaten in die zentrale Prüfung auf.
+  - file: README.md
+    summary: >-
+      Ergänzt unter Codex-Arbeitsweise einen knappen Hinweis auf den Philosophie-Automaten als technischen Baustein.
+  - file: recovered/proposals/2026-07-30-kritik-steht-nicht-ausserhalb-der-organisation.md
+    summary: >-
+      Beispielhaftes Vorschlagsdossier, das die automatische Dossierfunktion dokumentiert; nicht ins Manuskript übernommen.
+  - file: projekt/arbeitsstand.md
+    summary: >-
+      Ergänzt den aktuellen Arbeitsstand zum Philosophie-Automaten Stufe 1.
+  - file: knowledge/change-events/0020-philosophie-automat-stufe-1.yaml
+    summary: >-
+      Dokumentiert Umfang, Grenzen und Prüfungen der neuen Werkzeugstufe.
+affected_relations:
+  - from: scripts/philosophie_automat.py
+    relation: depends_on
+    to: knowledge/concepts/
+    effect: added
+    note: Der Automat nutzt die warnungsfreie Concept-Basis als deklarierte Begriffsadresse.
+  - from: scripts/philosophie_automat.py
+    relation: constrains
+    to: CONSTITUTION.md
+    effect: preserved
+    note: Das Werkzeug ersetzt weder Autorentscheidung noch Projektverfassung.
+  - from: projekt/philosophie-automat.md
+    relation: depends_on
+    to: projekt/codex-als-anschlussapparat.md
+    effect: added
+    note: Der Automat operationalisiert Stufe 1 des Anschlussapparats.
+  - from: scripts/check_all.py
+    relation: tests
+    to: scripts/philosophie_automat.py
+    effect: added
+    note: Die zentrale Prüfung deckt Syntax und JSON-Ausgabe des Automaten ab.
+possibilities:
+  opened:
+    - Gedanken können vor einer Manuskriptintegration auf erkannte Begriffe, Projektgrenzen und Anschlussstellen geprüft werden.
+    - Das Anschlusslabor kann später ein Modul „Gedanke prüfen“ auf Grundlage dieses Skripts erhalten.
+    - Change-Event-Vorlagen können später aus Automatenausgaben vorbereitet werden.
+  restricted:
+    - Automatische Manuskripteinfügung ist nur mit explizitem --apply, Ziel-Datei und Marker möglich und bleibt als Vorschlag markiert.
+    - Der Automat erzeugt keine Theorieentscheidungen.
+    - Er nutzt transparente Regeln statt verdeckter KI-Urteile.
+    - Quellenarbeit, Seitenangaben und Autorenentscheidung bleiben unersetzt.
+  deferred:
+    - "TODO: Entscheiden, ob und wie Stufe 2 im Anschlusslabor umgesetzt wird."
+    - "TODO: Prüfen, ob spätere Aliaslisten in Concept-Dateien statt im Skript gepflegt werden sollten."
+    - "TODO: Entscheiden, ob und wie Stufe 2 im Anschlusslabor umgesetzt wird."
+uncertainties: []
+agent_findings:
+  genealogist: []
+  consistency_checker: []
+  critic: []
+  material_technical: []
+authority:
+  requires_author_decision: false
+  decision_status: not_required
+  decision_reference: null
+validation:
+  - check: Python-Syntax
+    result: passed
+    evidence: python -m py_compile scripts\philosophie_automat.py
+  - check: Automat-Markdown-Smoke
+    result: passed
+    evidence: python scripts\philosophie_automat.py "Ein Algorithmus bleibt derselbe, obwohl seine materielle Implementierung wechselt."
+  - check: Automat-JSON-Smoke
+    result: passed
+    evidence: python scripts\philosophie_automat.py --format json "Kritik steht nicht außerhalb der Organisation."
+  - check: Repository-Validation
+    result: passed
+    evidence: python scripts\check_all.py --skip-install completed with ALL REPOSITORY CHECKS PASSED.
+status: stabilized

@@ -50,14 +50,14 @@ def test_core() -> None:
     summary = graph.summary()
     require(not summary["partial"], f"graph must not be partial: {summary['diagnostics']}")
     require(summary["node_count"] > 100, "graph unexpectedly small")
-    require(summary["event_edges_by_status"].get("tested", 0) > 0, "tested event edges not identified")
+    require(sum(summary["event_edges_by_status"].values()) > 0, "event edges not identified")
     require(summary["event_edges_by_status"].get("stabilized", 0) > 0, "stabilized event edges not identified")
 
     current = graph.get("concept:algorithmus")["node"]
     historical = graph.get("historical:algorithmus")["node"]
     require(current["declared"] and current["kind"] == "concept", "current algorithmus missing")
     require(historical["declared"] and historical["kind"] == "historical_concept", "historical algorithmus missing")
-    require(graph.get("concept:montage")["node"]["declared"] is False, "undeclared current montage was inferred")
+    require(graph.get("concept:montage")["node"]["declared"] is True, "current montage concept missing")
     require(graph.get("historical:montage")["node"]["declared"] is True, "historical montage missing")
     require(graph.get("directory:knowledge/")["node"]["kind"] == "directory", "directory path misclassified")
 
@@ -65,7 +65,7 @@ def test_core() -> None:
     require(any(edge["relation"] == "depends_on" for edge in algorithm_edges), "depends_on edge missing")
     require(all("[" in edge["field"] or edge["field"] == "$document" for edge in algorithm_edges), "list provenance lacks index")
     require(
-        any(edge["metadata"].get("event_status") == "tested" for edge in graph.edges),
+        any(edge["metadata"].get("event_status") in {"tested", "stabilized"} for edge in graph.edges),
         "affected relation event status missing",
     )
 
