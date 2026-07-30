@@ -19,6 +19,9 @@ Jeder Forschungsdatensatz enthält:
 - offene Einwände
 - erzeugender Agent
 - prüfender Agent
+- Prüfmodus (`independent_review` oder `self_review`)
+- Begründung der Anschlussplausibilität
+- Revisionsbedingungen
 - produktive Differenz
 
 ## Zulässige Typen
@@ -31,12 +34,14 @@ Jeder Forschungsdatensatz enthält:
 
 ## Regeln
 
-1. Ein erzeugender Agent bestätigt seinen eigenen Vorschlag nicht.
-2. Theoretische Behauptungen benötigen konkrete Quellstellen.
-3. Ungelöste starke Einwände bleiben bei jeder Statusänderung erhalten.
-4. Manuskriptintegration erfolgt grundsätzlich erst nach projektweiter und kritischer Prüfung.
-5. Ein leerer Lauf wird als `no_productive_difference` dokumentiert.
-6. Statusstufen dürfen nicht übersprungen werden.
+1. Ein erzeugender Agent darf seinen eigenen Vorschlag bestätigen, wenn er `review_mode: self_review` setzt und die Plausibilität des Anschlusses vollständig dokumentiert.
+2. Für eine Selbstbestätigung müssen Anschlusskette, Begriffskonsistenz, projektweite Prüfung, mindestens ein ernsthaftes Gegenmodell oder Gegenbeispiel, bekannte Grenzen und Revisionsbedingungen festgehalten sein.
+3. Ein ungelöster starker Einwand verhindert den Status `confirmed`, unabhängig vom Prüfmodus.
+4. Theoretische Behauptungen benötigen konkrete Quellstellen.
+5. Ungelöste Einwände bleiben bei jeder Statusänderung erhalten.
+6. Manuskriptintegration erfolgt grundsätzlich erst nach projektweiter und kritischer Prüfung.
+7. Ein leerer Lauf wird als `no_productive_difference` dokumentiert.
+8. Statusstufen dürfen nur dann zusammengefasst werden, wenn die jeweils erforderlichen Prüfungen im selben Lauf explizit protokolliert sind.
 
 ## Beispiel
 
@@ -54,5 +59,28 @@ open_objections:
   - Ist negative Selektion für jede Form von Organisation notwendig?
 created_by: invarianten-agent
 reviewed_by: null
+review_mode: null
+connection_plausibility: null
+revision_conditions: []
 productive_difference: Verbindet Organisation und Verteilung durch einen allgemeinen Selektionssatz.
+```
+
+## Beispiel einer Selbstbestätigung
+
+```yaml
+status: confirmed
+created_by: invarianten-agent
+reviewed_by: invarianten-agent
+review_mode: self_review
+connection_plausibility:
+  chain:
+    - Organisation stabilisiert Anschlussbedingungen.
+    - Stabilisierung macht einige Fortsetzungen wahrscheinlicher als andere.
+    - Diese Differenz erscheint als Verteilung von Anschlusschancen.
+  project_check: passed
+  countermodel_check: passed_with_limits
+  unresolved_strong_objections: []
+revision_conditions:
+  - Ein Fall von Organisation ohne selektive Wirkung wird nachgewiesen.
+  - Die Relation widerspricht einer stärkeren bestätigten Erklärung.
 ```
