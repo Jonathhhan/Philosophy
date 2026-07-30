@@ -3,16 +3,29 @@ seed: >-
   Kritik verändert nicht nur eine Ordnung, sondern auch die Bedingungen künftiger Kritik.
 title: Kritik und ihre künftigen Bedingungen
 target: theory
-max_cycles: 8
+max_cycles: 10
 minimum_productive_decisions: 4
 allow_new_concepts: true
 allow_divergence: true
 start_review_after_generation: true
+meta_agent: true
+meta_interval: 2
+initial_heuristic: >-
+  Bevorzuge Anschlüsse, die neue Unterscheidungs- oder Erklärungskraft erzeugen,
+  ohne den bisherigen Theoriegraphen bloß sprachlich zu verlängern.
+epistemic_styles:
+  - exploratory
+  - dialectical
+  - conservative
+  - genealogical
+  - aesthetic
+  - pragmatic
 orientation: >-
   Entwickle eine eigenständige Theorie durch explizite Anschlussentscheidungen. Untersuche
   besonders Anschluss, Organisation, Urteil, Revision und Reorganisation. Programm,
-  Algorithmus und Improvisation sollen als produktive Spannung verfügbar bleiben, aber
-  die Theorie darf neue Grundbegriffe und Relationen erzeugen oder frühere verwerfen.
+  Algorithmus und Improvisation sollen als produktive Spannung verfügbar bleiben. Der
+  Meta-Anschluss-Agent darf die verwendete Erkenntnisheuristik ändern, wenn er Wiederholung,
+  Scheinkohärenz oder einen relevanten blinden Fleck begründet nachweist.
 source_context:
   - manuskript/11-organisieren.md
   - manuskript/12-verteilen.md
