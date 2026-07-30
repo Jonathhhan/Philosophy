@@ -1,0 +1,116 @@
+mode: autonomous_theory_generation
+status: generated
+seed: Kritik verändert nicht nur eine Ordnung, sondern auch die Bedingungen künftiger Kritik.
+graph_status: provisional
+nodes:
+  - id: anschlussentscheidung
+    type: concept
+    claim: Eine Kritik aktualisiert selektiv einen möglichen Anschluss und macht andere zunächst unwahrscheinlicher.
+  - id: anschlussbedingung
+    type: concept
+    claim: Eine Bedingung, welche Fortsetzungen sichtbar, legitim oder praktisch erreichbar macht.
+  - id: organisation
+    type: concept
+    claim: Stabilisierung ungleicher Wahrscheinlichkeiten möglicher Fortsetzungen.
+  - id: kritik
+    type: operation
+    claim: Beurteilung und mögliche Reorganisation einer Ordnung und ihrer künftigen Anschlussbedingungen.
+  - id: korrektive_kritik
+    type: distinction
+    claim: Verändert Entscheidungen innerhalb eines bestehenden Möglichkeitsraums.
+  - id: reorganisierende_kritik
+    type: distinction
+    claim: Verändert Bedingungen der Bildung, Unterscheidung und Bewertung von Möglichkeiten.
+  - id: urteilsrekursion
+    type: concept
+    claim: Jede Anwendung eines Maßstabs prägt dessen spätere Anwendung und die künftige Urteilslage.
+  - id: programm
+    type: concept
+    claim: Organisiert einen Möglichkeitsraum verfügbarer Operationen, Rollen und Übergänge.
+  - id: algorithmus
+    type: concept
+    claim: Organisiert Verfahren, durch die Möglichkeiten in geregelte Folgen aktualisiert werden.
+  - id: improvisation
+    type: concept
+    claim: Erzeugt Anschlüsse unter nicht vollständig vorwegnehmbaren Bedingungen und verändert dabei sedimentierte Formen.
+  - id: revision
+    type: operation
+    claim: Macht frühere Anschlussentscheidungen und nicht nur ihre Resultate erneut zum Gegenstand.
+  - id: revisionsfaehigkeit
+    type: property
+    claim: Fähigkeit einer Ordnung, Maßstäbe, Verfahren und frühere Auswahlentscheidungen veränderbar zu halten.
+  - id: anschlussgedaechtnis
+    type: new_concept
+    claim: Selektives Gedächtnis gewählter, verworfener und blockierter Fortsetzungen.
+  - id: kritik_zweiter_ordnung
+    type: concept
+    claim: Untersucht, wie Ordnung und Maßstab gemeinsam Anschlussbedingungen hervorbringen.
+  - id: organisation_von_moeglichkeiten
+    type: central_problem
+    claim: Verteilung von Zugängen, Ausschlüssen, Aktualisierungswegen und Revisionschancen.
+edges:
+  - from: kritik
+    relation: performs
+    to: anschlussentscheidung
+  - from: anschlussentscheidung
+    relation: changes
+    to: anschlussbedingung
+  - from: organisation
+    relation: stabilizes
+    to: anschlussbedingung
+  - from: kritik
+    relation: can_be
+    to: korrektive_kritik
+  - from: kritik
+    relation: can_be
+    to: reorganisierende_kritik
+  - from: reorganisierende_kritik
+    relation: transforms
+    to: organisation
+  - from: urteilsrekursion
+    relation: explains_feedback_of
+    to: anschlussentscheidung
+  - from: programm
+    relation: defines_space_for
+    to: anschlussentscheidung
+  - from: algorithmus
+    relation: proceduralizes
+    to: anschlussentscheidung
+  - from: improvisation
+    relation: varies
+    to: anschlussentscheidung
+  - from: revision
+    relation: reopens
+    to: anschlussentscheidung
+  - from: revisionsfaehigkeit
+    relation: depends_on
+    to: anschlussgedaechtnis
+  - from: anschlussgedaechtnis
+    relation: preserves_paths_for
+    to: revision
+  - from: kritik_zweiter_ordnung
+    relation: observes_coproduction_of
+    to: anschlussbedingung
+  - from: organisation_von_moeglichkeiten
+    relation: includes
+    to: organisation
+  - from: organisation_von_moeglichkeiten
+    relation: includes
+    to: revisionsfaehigkeit
+productive_tensions:
+  - programme_offenheit_vs_algorithmische_bestimmtheit
+  - improvisation_vs_dauerhafte_verfuegbarkeit
+  - urteilskraft_vs_rueckwirkung_des_urteils
+  - notwendige_selektion_vs_revisionsfaehiger_ausschluss
+  - theorieautonomie_vs_selbstbeobachtung
+open_questions:
+  - Wann ist ein Anschluss nur plausibel und wann theoretisch notwendig?
+  - Kann es Organisation ohne asymmetrische Verteilung von Anschlusschancen geben?
+  - Wie lässt sich Anschlussgedächtnis institutionalisieren, ohne Totalprotokollierung zu erzeugen?
+  - Welche Maßstäbe begrenzen reorganisierende Kritik, ohne sie auf bestehende Programme zurückzuführen?
+  - Wie unterscheiden sich ästhetische, soziale, technische und biologische Anschlussentscheidungen?
+revision_conditions:
+  - Ein tragfähiges Gegenmodell zeigt Organisation ohne selektive Anschlusswirkung.
+  - Urteilsrekursion erweist sich nur als sprachliche Umbenennung bekannter Präzedenzwirkung.
+  - Anschlussgedächtnis liefert gegenüber Archiv, Gedächtnis und Pfadabhängigkeit keinen zusätzlichen Erklärungswert.
+  - Die Triade Programm, Algorithmus und Improvisation lässt sich nicht konsistent auf Anschlussorganisation beziehen.
