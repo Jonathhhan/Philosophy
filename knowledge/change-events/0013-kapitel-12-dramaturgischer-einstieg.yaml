@@ -1,0 +1,96 @@
+schema_version: 1
+id: change-0013-kapitel-12-dramaturgischer-einstieg
+created_at: 2026-07-30
+goal: >-
+  Kapitel 12 mit einer konkreten Verteilungsszene eröffnen, damit der Begriff
+  der Zuordnung aus einer nachvollziehbaren Lage heraus notwendig wird.
+operation: revision
+scope:
+  allowed_files:
+    - manuskript/12-verteilen.md
+    - knowledge/change-events/0013-kapitel-12-dramaturgischer-einstieg.yaml
+  protected_files:
+    - CONSTITUTION.md
+    - PROJECT.md
+    - GLOSSAR.md
+    - manuskript/11-organisieren.md
+    - manuskript/13-asymmetrie.md
+    - build/manuskript-lesefassung.md
+basis:
+  project_files:
+    - CONSTITUTION.md
+    - PROJECT.md
+    - GLOSSAR.md
+    - STYLE.md
+    - WORKFLOW.md
+    - projekt/arbeitsstand.md
+    - manuskript/11-organisieren.md
+    - manuskript/12-verteilen.md
+    - manuskript/13-asymmetrie.md
+    - recovered/audits/argumentation-audit-chapters-01-17.md
+  decisions:
+    - knowledge/decisions/0021-theoriegeleitetes-codex-arbeitsprotokoll.yaml
+  sources:
+    - author-request-weiter-2026-07-30
+    - recovered/audits/argumentation-audit-chapters-01-17.md
+changes:
+  - file: manuskript/12-verteilen.md
+    summary: >-
+      Ergänzt vor der abstrakten Bestimmung des Übergangs von Organisieren zu
+      Verteilen eine konkrete Szene aus Datei, Erfahrung und Frist, um die
+      Zuordnung von Zugang, Wirksamkeit und Belastung früher sichtbar zu machen.
+  - file: knowledge/change-events/0013-kapitel-12-dramaturgischer-einstieg.yaml
+    summary: >-
+      Dokumentiert Umfang, Grenzen und Prüfungen der lokalen dramaturgischen Revision.
+affected_relations:
+  - from: manuskript/12-verteilen.md
+    relation: defines
+    to: GLOSSAR.md#Verteilen
+    effect: preserved
+    note: Die bestehende Definition von Verteilen bleibt unverändert; nur ihre argumentative Vorbereitung wird konkretisiert.
+  - from: manuskript/12-verteilen.md
+    relation: cross_references
+    to: manuskript/11-organisieren.md
+    effect: preserved
+    note: Der Übergang von Organisieren zu Verteilen bleibt erhalten und wird durch die Szene anschaulicher vorbereitet.
+  - from: manuskript/12-verteilen.md
+    relation: cross_references
+    to: manuskript/13-asymmetrie.md
+    effect: preserved
+    note: Die neue Szene bleibt bei Zuordnung, Zugang und Belastung und greift die gerichtete Ungleichheit der Rückwirkung aus Kapitel 13 nicht vorweg.
+  - from: manuskript/12-verteilen.md
+    relation: constrains
+    to: CONSTITUTION.md
+    effect: preserved
+    note: Die Passage führt keine allgemeine Macht-, Herrschafts- oder Gesellschaftstheorie ein.
+possibilities:
+  opened:
+    - Kapitel 12 kann stärker aus einer problematischen Verteilungslage heraus gelesen werden.
+    - Spätere Redaktionsgänge können weitere Kapitelanfänge ähnlich konkretisieren, ohne Definitionen zu verändern.
+  restricted:
+    - Die Änderung beschränkt sich auf die dramaturgische Vorbereitung des bestehenden Begriffs.
+    - Der Begriff der Asymmetrie und normative Beurteilungen bleiben den folgenden Kapiteln vorbehalten.
+  deferred:
+    - "TODO: In einer späteren Gesamtlektüre prüfen, ob weitere Kapitelanfänge konkrete Szenen benötigen."
+    - "TODO: Build der Lesefassung erst aktualisieren, wenn der Autor den nächsten Manuskriptstand bündeln möchte."
+uncertainties: []
+agent_findings:
+  genealogist: []
+  consistency_checker: []
+  critic: []
+  material_technical: []
+authority:
+  requires_author_decision: false
+  decision_status: not_required
+  decision_reference: null
+validation:
+  - check: Change-Event-Schema
+    result: passed
+    evidence: python -B .agents\skills\recursive-codex\scripts\validate_change_event.py knowledge\change-events\0013-kapitel-12-dramaturgischer-einstieg.yaml
+  - check: Knowledge-Validation
+    result: warning
+    evidence: python scripts\validate_knowledge.py passed with the 24 known undeclared-concept warnings.
+  - check: Recursive-State
+    result: warning
+    evidence: python -B .agents\skills\recursive-codex\scripts\check_recursive_state.py reports RECURSIVE STATE VALID with the 24 known knowledge warnings.
+status: stabilized

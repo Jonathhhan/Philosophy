@@ -2,6 +2,8 @@
 
 ## 1. Vom Zusammenhang zur Zuordnung
 
+Eine Datei kann im gemeinsamen Ordner liegen und dennoch für einige Beteiligte praktisch unerreichbar bleiben, weil ihnen die Software, die Berechtigung oder die Zeit zum Öffnen fehlt. Eine Erfahrung kann für den weiteren Verlauf entscheidend sein und doch an einer Stelle entstehen, an der sie keine Freigabe verändert. Eine Frist kann formal für alle gelten und diejenigen stärker belasten, die Material, Zugang oder Entscheidung erst von anderen erhalten müssen. In solchen Fällen ist nicht nur der Zusammenhang der Bedingungen erklärungsbedürftig, sondern ihre Zuordnung.
+
 Organisieren bringt mehrere Anschlussbedingungen in einen Zusammenhang, in dem sie einander ermöglichen, begrenzen, priorisieren oder ausschließen. Eine Zuständigkeit verbindet Tätigkeiten mit einer Rolle, ein Verfahren verbindet Entscheidungen mit bestimmten Zeitpunkten, und eine technische Einrichtung verbindet mögliche Operationen mit Zugängen und Kenntnissen. Damit ist mehr geschehen, als verschiedene Bedingungen nur nebeneinanderzustellen. Sie sind verschiedenen Stellen im Zusammenhang zugeordnet.
 
 Diese Zuordnung ist nicht erst eine spätere Folge der Organisation. Sobald Tätigkeiten aufgeteilt, Mittel bereitgestellt, Fristen gesetzt oder Entscheidungen gebunden werden, entstehen Unterschiede darin, von wo aus angeschlossen werden kann. Eine Person kann Material bearbeiten, eine andere kann eine Fassung freigeben, eine dritte muss auf diese Freigabe warten. Dass alle an demselben Zusammenhang beteiligt sind, bedeutet nicht, dass ihnen dieselben Bedingungen in derselben Weise zukommen.

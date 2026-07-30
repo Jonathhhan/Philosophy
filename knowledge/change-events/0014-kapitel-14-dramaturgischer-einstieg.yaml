@@ -1,0 +1,94 @@
+schema_version: 1
+id: change-0014-kapitel-14-dramaturgischer-einstieg
+created_at: 2026-07-30
+goal: >-
+  Kapitel 14 mit einer asymmetrischen Erfahrungsszene eröffnen, damit der
+  Übergang von Beschreibung zu Kritik aus einem konkreten Prüfungsbedarf entsteht.
+operation: revision
+scope:
+  allowed_files:
+    - manuskript/14-kritisieren.md
+    - knowledge/change-events/0014-kapitel-14-dramaturgischer-einstieg.yaml
+  protected_files:
+    - CONSTITUTION.md
+    - PROJECT.md
+    - GLOSSAR.md
+    - manuskript/13-asymmetrie.md
+    - manuskript/15-beurteilen.md
+    - build/manuskript-lesefassung.md
+basis:
+  project_files:
+    - CONSTITUTION.md
+    - PROJECT.md
+    - GLOSSAR.md
+    - STYLE.md
+    - WORKFLOW.md
+    - manuskript/13-asymmetrie.md
+    - manuskript/14-kritisieren.md
+    - manuskript/15-beurteilen.md
+    - recovered/audits/argumentation-audit-chapters-01-17.md
+  decisions:
+    - knowledge/decisions/0021-theoriegeleitetes-codex-arbeitsprotokoll.yaml
+  sources:
+    - author-request-weiter-2026-07-30
+    - recovered/audits/argumentation-audit-chapters-01-17.md
+changes:
+  - file: manuskript/14-kritisieren.md
+    summary: >-
+      Ergänzt am Kapitelanfang eine Szene aus folgenlosem Einwand, wiederkehrender
+      Belastung und fehlender Rückwirkung, um Kritik aus asymmetrischer Erfahrung
+      und nicht aus einer bloß abstrakten Normöffnung entstehen zu lassen.
+  - file: knowledge/change-events/0014-kapitel-14-dramaturgischer-einstieg.yaml
+    summary: >-
+      Dokumentiert Umfang, Grenzen und Prüfungen der lokalen dramaturgischen Revision.
+affected_relations:
+  - from: manuskript/14-kritisieren.md
+    relation: defines
+    to: GLOSSAR.md#Kritisieren
+    effect: preserved
+    note: Die Definition von Kritisieren bleibt unverändert; die Passage bereitet nur den Prüfungsbedarf vor.
+  - from: manuskript/14-kritisieren.md
+    relation: cross_references
+    to: manuskript/13-asymmetrie.md
+    effect: preserved
+    note: Die neue Szene nimmt die gerichtete Ungleichheit der Rückwirkung auf, ohne den Asymmetriebegriff zu verändern.
+  - from: manuskript/14-kritisieren.md
+    relation: cross_references
+    to: manuskript/15-beurteilen.md
+    effect: preserved
+    note: Kapitel 14 macht den Gegenstand beurteilbar; das Urteil selbst bleibt Kapitel 15 vorbehalten.
+  - from: manuskript/14-kritisieren.md
+    relation: constrains
+    to: CONSTITUTION.md
+    effect: preserved
+    note: Kritik bleibt eine Operation innerhalb organisierter Anschlussbedingungen und wird nicht als Außenposition eingeführt.
+possibilities:
+  opened:
+    - Der Eintritt in Teil III wird stärker aus erfahrener Folge- und Rückwirkungslosigkeit motiviert.
+    - Die Differenz zwischen Sichtbarmachen und Beurteilen kann anschließender deutlicher gelesen werden.
+  restricted:
+    - Die Passage führt keinen neuen normativen Maßstab ein.
+    - Macht und Herrschaft bleiben abgeleitete Diagnosebegriffe und werden nicht zur Theorieachse erhoben.
+  deferred:
+    - "TODO: Build der Lesefassung erst aktualisieren, wenn der Autor den nächsten Manuskriptstand bündeln möchte."
+uncertainties: []
+agent_findings:
+  genealogist: []
+  consistency_checker: []
+  critic: []
+  material_technical: []
+authority:
+  requires_author_decision: false
+  decision_status: not_required
+  decision_reference: null
+validation:
+  - check: Change-Event-Schema
+    result: passed
+    evidence: python -B .agents\skills\recursive-codex\scripts\validate_change_event.py knowledge\change-events\0014-kapitel-14-dramaturgischer-einstieg.yaml
+  - check: Knowledge-Validation
+    result: warning
+    evidence: python scripts\validate_knowledge.py passed with the 24 known undeclared-concept warnings.
+  - check: Recursive-State
+    result: warning
+    evidence: python -B .agents\skills\recursive-codex\scripts\check_recursive_state.py reports RECURSIVE STATE VALID with the 24 known knowledge warnings.
+status: stabilized

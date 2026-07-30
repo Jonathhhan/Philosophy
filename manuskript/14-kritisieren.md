@@ -2,6 +2,8 @@
 
 ## 1. Wenn die Anschlussordnung zum Gegenstand wird
 
+Ein Einwand kann geäußert und dennoch folgenlos bleiben. Eine Belastung kann wiederkehren, obwohl keine einzelne Regel sie ausdrücklich verlangt. Eine Position kann die Folgen einer Ordnung erfahren, ohne die Stellen zu erreichen, an denen diese Ordnung verändert wird. Solche Fälle zeigen nicht nur, dass Anschlüsse ungleich verteilt sind. Sie machen fraglich, unter welchen Bedingungen diese Ungleichheit überhaupt als Gegenstand einer Prüfung erscheinen kann.
+
 Teil II hat beschrieben, wie Anschlussbedingungen organisiert, verteilt und in ihrer Veränderbarkeit asymmetrisch werden können. Eine solche Beschreibung macht Beziehungen sichtbar, die in einzelnen Vollzügen nicht notwendig hervortreten. Sie entscheidet jedoch noch nicht, wie mit ihnen umzugehen ist.
 
 Eine asymmetrische Ordnung kann einen bestimmten Zweck erfüllen. Eine Belastung kann aus knappen Mitteln, einer vermeidbaren Entscheidung oder dem Zusammenwirken mehrerer Bedingungen entstehen. Ein Ausschluss kann unbeabsichtigt sein und dennoch fortwirken. Aus dem Befund allein folgt weder, welche Bedingung verändert werden sollte, noch ob der Zusammenhang als ganzer unangemessen ist.
