@@ -52,7 +52,7 @@ Mehrere Anschlussbedingungen in einen Zusammenhang bringen, in dem sie einander 
 
 ## Verteilen
 
-Möglichkeiten, Mittel, Positionen, Belastungen und Entscheidungschancen innerhalb einer Organisation unterschiedlich zuordnen.
+Anschlussbedingungen innerhalb einer Organisation verschiedenen Positionen so zuordnen, dass Möglichkeiten, Mittel, Belastungen und Entscheidungschancen unterschiedlich wirksam werden.
 
 ## Asymmetrie
 
