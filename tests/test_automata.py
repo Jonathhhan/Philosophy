@@ -110,6 +110,21 @@ class KollektivAutomatTests(unittest.TestCase):
             None,
         )
         self.assertEqual(result["outcome"], "REORGANIZE")
+    def test_role_plurality_is_not_automatically_dissent(self) -> None:
+        report = kollektiv_automat.build_collective_report(
+            "Ein technisch nicht adressierter Prüfgedanke ohne Manuskriptziel."
+        )
+        self.assertTrue(report["dissent"]["preserved"])
+        self.assertFalse(report["dissent"]["active"])
+        self.assertEqual(report["dissent"]["tensions"], [])
+
+    def test_boundary_can_conflict_with_existing_evidence(self) -> None:
+        report = kollektiv_automat.build_collective_report(
+            "Freiheit beginnt dort, wo Organisation endet."
+        )
+        tension_ids = {item["id"] for item in report["dissent"]["tensions"]}
+        self.assertTrue(report["dissent"]["active"])
+        self.assertIn("evidence_vs_boundary", tension_ids)
 
 if __name__ == "__main__":
     unittest.main()

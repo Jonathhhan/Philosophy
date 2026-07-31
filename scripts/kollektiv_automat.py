@@ -183,6 +183,51 @@ def _recommendation(
     }
 
 
+def _dissent(
+    report: dict[str, Any],
+    variants: list[str],
+    exact: list[dict[str, Any]],
+    affected_files: list[str],
+    target_file: str | None,
+    roles: list[dict[str, Any]],
+) -> dict[str, Any]:
+    tensions = []
+    if len(variants) >= 2:
+        tensions.append({
+            "id": "non_equivalent_variants",
+            "between": ["variants"],
+            "description": "Mehrere ausdrücklich übergebene Varianten beanspruchen getrennte Weiterarbeit.",
+        })
+    if report["boundary_warnings"] and (exact or target_file or report["mentioned_concepts"]):
+        tensions.append({
+            "id": "evidence_vs_boundary",
+            "between": ["genealogist", "boundary_checker"],
+            "description": "Vorhandene Evidenz oder eine redaktionelle Adresse hebt die Grenzwarnung nicht auf.",
+        })
+    if exact and len(affected_files) >= 3:
+        tensions.append({
+            "id": "presence_vs_relational_scope",
+            "between": ["editorial_locator", "consistency_checker"],
+            "description": "Explizite Präsenz und dateiübergreifende Folgen begründen verschiedene Weiterarbeitsrichtungen.",
+        })
+    if target_file and len(affected_files) >= 3:
+        tensions.append({
+            "id": "local_target_vs_cross_file_scope",
+            "between": ["editorial_locator", "consistency_checker"],
+            "description": "Das lokale Ziel steht einer weiter reichenden Relationsprüfung gegenüber.",
+        })
+    return {
+        "preserved": True,
+        "active": bool(tensions),
+        "role_plurality": sorted({item["stance"] for item in roles}),
+        "tensions": tensions,
+        "note": (
+            "Benannte Spannungen bleiben unaufgelöst; sie werden nicht gezählt oder gemittelt."
+            if tensions
+            else "Rollenpluralität ist erhalten, ohne daraus automatisch inhaltlichen Dissens abzuleiten."
+        ),
+    }
+
 def build_collective_report(
     thought: str,
     *,
@@ -204,7 +249,6 @@ def build_collective_report(
     affected_files = _affected_manuscript_files(base)
     roles = _role_findings(base, exact, affected_files, normalized_target)
     recommendation = _recommendation(base, variants, exact, affected_files, normalized_target)
-    stances = sorted({item["stance"] for item in roles})
 
     return {
         "protocol": "collective-difference-protocol/v1",
@@ -220,11 +264,7 @@ def build_collective_report(
             "boundary_warnings": base["boundary_warnings"],
         },
         "role_findings": roles,
-        "dissent": {
-            "preserved": True,
-            "stances": stances,
-            "note": "Abweichende Rollenbefunde werden nicht gezählt, gemittelt oder aufgelöst.",
-        },
+        "dissent": _dissent(base, variants, exact, affected_files, normalized_target, roles),
         "collective_recommendation": recommendation,
         "limits": [
             "Die Empfehlung folgt transparenten Vorrangregeln, nicht einer Mehrheitsentscheidung.",
@@ -252,7 +292,10 @@ def render_markdown(report: dict[str, Any]) -> str:
         for evidence in finding["evidence"]:
             lines.append(f"  - {evidence}")
     lines.extend(["", "## Erhaltener Dissens"])
-    lines.append(f"- Positionen: {', '.join(report['dissent']['stances'])}")
+    lines.append(f"- Aktiv: {'ja' if report['dissent']['active'] else 'nein'}")
+    lines.append(f"- Rollenstände: {', '.join(report['dissent']['role_plurality'])}")
+    for tension in report["dissent"]["tensions"]:
+        lines.append(f"- `{tension['id']}`: {tension['description']}")
     lines.append(f"- {report['dissent']['note']}")
     lines.extend(["", "## Betroffene Manuskriptdateien"])
     affected = report["shared_evidence"]["affected_manuscript_files"]

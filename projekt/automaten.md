@@ -130,7 +130,10 @@ Der Automatenlauf verhindert damit zwei entgegengesetzte Fehler: Er bricht nicht
 Prüfrollen. Genealogie, Konsistenz, Kritik, material-technische Bedingungen,
 Projektgrenzen und redaktionelle Adresse bleiben als eigenständige Befunde
 sichtbar. Das Werkzeug zählt diese Befunde nicht aus und löst ihren Dissens
-nicht durch Mehrheit auf.
+nicht durch Mehrheit auf. Verschiedene Rollenstände bilden zunächst nur eine
+Pluralität. Inhaltlicher Dissens gilt erst dann als aktiv, wenn das Protokoll eine
+konkrete Spannung benennt, etwa Evidenz gegen Projektgrenze oder lokales Ziel
+gegen dateiübergreifende Folgen.
 
 ```powershell
 python scripts\kollektiv_automat.py "Kritik steht nicht außerhalb der Organisation"

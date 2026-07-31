@@ -1,0 +1,71 @@
+schema_version: 1
+id: change-kollektiv-dissenspraezisierung
+created_at: 2026-07-31
+goal: Rollenpluralität und inhaltlichen Dissens im Kollektiv-Protokoll unterscheidbar machen.
+operation: revision
+scope:
+  allowed_files:
+    - scripts/kollektiv_automat.py
+    - tests/test_automata.py
+    - projekt/automaten.md
+    - knowledge/change-events/2026-07-31-kollektiv-dissenspraezisierung.yaml
+  protected_files:
+    - CONSTITUTION.md
+    - PROJECT.md
+    - GLOSSAR.md
+    - knowledge/concepts/
+    - manuskript/
+basis:
+  project_files:
+    - knowledge/change-events/2026-07-31-kollektiv-automat.yaml
+    - scripts/kollektiv_automat.py
+    - projekt/automaten.md
+  decisions: []
+  sources:
+    - author-request-weiter-2026-07-31
+changes:
+  - file: scripts/kollektiv_automat.py
+    summary: Trennt erhaltene Rollenpluralität von aktivem, durch konkrete Spannungsgründe ausgewiesenem Dissens.
+  - file: tests/test_automata.py
+    summary: Prüft inaktive Rollenpluralität und aktiven Konflikt zwischen Evidenz und Projektgrenze.
+  - file: projekt/automaten.md
+    summary: Dokumentiert die Unterscheidung von Pluralität und inhaltlichem Dissens.
+  - file: knowledge/change-events/2026-07-31-kollektiv-dissenspraezisierung.yaml
+    summary: Dokumentiert und validiert die Revision des Dissensprotokolls.
+affected_relations:
+  - from: scripts/kollektiv_automat.py
+    relation: supersedes
+    to: knowledge/change-events/2026-07-31-kollektiv-automat.yaml
+    effect: changed
+    note: Die pauschale Darstellung verschiedener Rollenstände als Dissens wird durch explizite Spannungsgründe präzisiert.
+possibilities:
+  opened:
+    - Rollenpluralität kann ohne behaupteten inhaltlichen Dissens dargestellt werden.
+    - Aktiver Dissens wird durch benannte Spannungsgründe nachvollziehbar.
+  restricted:
+    - Verschiedene Rollenbezeichnungen allein gelten nicht mehr als Dissens.
+  deferred:
+    - Eine semantische Konfliktanalyse freier Rollentexte bleibt außerhalb des deterministischen lokalen Protokolls.
+uncertainties: []
+agent_findings:
+  genealogist: []
+  consistency_checker:
+    - Der Selbsttest setzte Rollenverschiedenheit und inhaltlichen Dissens gleich.
+  critic:
+    - Dissens darf nicht allein aus unterschiedlichen, nicht gegensätzlichen Prüfaufträgen abgeleitet werden.
+  material_technical: []
+authority:
+  requires_author_decision: false
+  decision_status: not_required
+  decision_reference: null
+validation:
+  - check: Automaten-Regressionstests
+    result: passed
+    evidence: python -m unittest tests/test_automata.py; 12 tests passed
+  - check: Kollektiv-Selbsttest
+    result: passed
+    evidence: Rollenpluralität ohne Spannung ergibt dissent.active false; Evidenz gegen Grenzwarnung ergibt evidence_vs_boundary
+  - check: Vollständige Projektprüfung
+    result: passed
+    evidence: python scripts/check_all.py; 39/39 Change Events, MCP-Graph, Hooks, 20 JavaScript-Tests und Build bestanden
+status: stabilized
