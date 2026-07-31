@@ -1,0 +1,47 @@
+schema_version: 1
+id: change-draft-automatenlaeufe-dramaturgische-verdichtu
+created_at: '2026-07-31'
+goal: 'Vorschlag prüfen: Automatenläufe: dramaturgische Verdichtung, Tragfähigkeit,
+  Einleitung als Ordnung'
+operation: audit
+scope:
+  allowed_files:
+  - scripts/philosophie_automat.py
+  protected_files:
+  - CONSTITUTION.md
+  - PROJECT.md
+  - GLOSSAR.md
+  - knowledge/concepts/
+  - manuskript/
+basis:
+  project_files:
+  - CONSTITUTION.md
+  - AGENTS.md
+  - WORKFLOW.md
+  - projekt/philosophie-automat.md
+  decisions: []
+  sources:
+  - generated-by-scripts/philosophie_automat.py
+changes: []
+affected_relations: []
+possibilities:
+  opened:
+  - Ein möglicher Anschluss kann mit Provenienz und Prüfstatus weiterbearbeitet werden.
+  restricted:
+  - Der Entwurf ist kein bestätigtes Change Event und darf nicht ohne Prüfung nach
+    knowledge/change-events/ übernommen werden.
+  deferred:
+  - 'TODO: Autorentscheidung und zentrale Prüfung vor einer Manuskriptintegration
+    einholen.'
+uncertainties: []
+agent_findings:
+  genealogist: []
+  consistency_checker: []
+  critic: []
+  material_technical: []
+authority:
+  requires_author_decision: true
+  decision_status: pending
+  decision_reference: null
+validation: []
+status: proposed

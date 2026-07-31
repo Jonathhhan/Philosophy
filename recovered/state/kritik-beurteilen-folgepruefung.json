@@ -1,0 +1,50 @@
+{
+  "concepts": [
+    "aktualisieren",
+    "algorithmus",
+    "anschliessen",
+    "asymmetrie",
+    "beurteilen",
+    "form",
+    "fortsetzen",
+    "improvisieren",
+    "kommunikation",
+    "komposition",
+    "kritisieren",
+    "moeglichkeitsraum",
+    "montage",
+    "problematisieren",
+    "programm",
+    "reorganisieren",
+    "revidieren",
+    "stabilisieren",
+    "unterbrechen"
+  ],
+  "anchors": [
+    "manuskript\\01-anschliessen.md:13",
+    "manuskript\\05-aktualisieren.md:25",
+    "manuskript\\05-aktualisieren.md:47",
+    "manuskript\\05-aktualisieren.md:89",
+    "manuskript\\07-programm.md:43",
+    "manuskript\\11-organisieren.md:87",
+    "manuskript\\13-asymmetrie.md:117",
+    "manuskript\\13-asymmetrie.md:35",
+    "manuskript\\13-asymmetrie.md:89",
+    "manuskript\\14-kritisieren.md:119",
+    "manuskript\\14-kritisieren.md:27",
+    "manuskript\\15-beurteilen.md:145",
+    "manuskript\\16-revidieren.md:5"
+  ],
+  "bridges": [
+    "tractatus_automat->kunstwerk_automat:gemeinsame Begriffsadressen: aktualisieren, fortsetzen, improvisieren, montage, problematisieren, revidieren",
+    "tractatus_automat->kunstwerk_automat:gemeinsame Begriffsadressen: aktualisieren, fortsetzen, improvisieren, revidieren",
+    "tractatus_automat->kunstwerk_automat:gemeinsame Begriffsadressen: aktualisieren, improvisieren, montage, problematisieren, programm, revidieren",
+    "tractatus_automat->kunstwerk_automat:gemeinsame Begriffsadressen: aktualisieren, improvisieren, programm, revidieren",
+    "unterscheidungsautomat->tractatus_automat:gemeinsame Begriffsadressen: aktualisieren, asymmetrie, beurteilen, fortsetzen, improvisieren, kritisieren, programm, revidieren",
+    "unterscheidungsautomat->tractatus_automat:gemeinsame Manuskriptanker: manuskript\\05-aktualisieren.md:25, manuskript\\14-kritisieren.md:119, manuskript\\15-beurteilen.md:145"
+  ],
+  "inputs": [
+    "[\"Bedingungen späterer Kritik\", \"Maßstäbe des Beurteilens\", \"Folgeprüfung nach der Ergänzung in Kapitel 14: Nimmt Kapitel 15 die Frage hinreichend auf, ob Kritik ihre Voraussetzungen, Maßstäbe und Folgen für Gegenprüfung und Revision zugänglich hält, ohne Offenheit zum Obermaßstab zu machen?\"]",
+    "[\"aktualisieren\", \"Bedingungen späterer Kritik\", \"Folgeprüfung nach der Ergänzung in Kapitel 14: Nimmt Kapitel 15 die Frage hinreichend auf, ob Kritik ihre Voraussetzungen, Maßstäbe und Folgen für Gegenprüfung und Revision zugänglich hält, ohne Offenheit zum Obermaßstab zu machen?\"]"
+  ]
+}

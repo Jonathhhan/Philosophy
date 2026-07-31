@@ -1,0 +1,55 @@
+{
+  "concepts": [
+    "aktualisieren",
+    "algorithmus",
+    "anschliessen",
+    "asymmetrie",
+    "beurteilen",
+    "form",
+    "fortsetzen",
+    "improvisieren",
+    "komposition",
+    "kritisieren",
+    "montage",
+    "problematisieren",
+    "programm",
+    "reorganisieren",
+    "revidieren",
+    "stabilisieren",
+    "unterbrechen",
+    "verteilen"
+  ],
+  "anchors": [
+    "manuskript\\01-anschliessen.md:34",
+    "manuskript\\05-aktualisieren.md:41",
+    "manuskript\\05-aktualisieren.md:47",
+    "manuskript\\07-programm.md:105",
+    "manuskript\\08-algorithmus.md:97",
+    "manuskript\\11-organisieren.md:79",
+    "manuskript\\12-verteilen.md:119",
+    "manuskript\\13-asymmetrie.md:89",
+    "manuskript\\15-beurteilen.md:33",
+    "manuskript\\15-beurteilen.md:79",
+    "manuskript\\16-revidieren.md:23",
+    "manuskript\\16-revidieren.md:5",
+    "manuskript\\16-revidieren.md:91",
+    "manuskript\\17-reorganisieren.md:125",
+    "manuskript\\17-reorganisieren.md:25",
+    "manuskript\\17-reorganisieren.md:33",
+    "manuskript\\17-reorganisieren.md:73",
+    "manuskript\\schluss.md:7"
+  ],
+  "bridges": [
+    "tractatus_automat->kunstwerk_automat:gemeinsame Begriffsadressen: aktualisieren, algorithmus, anschliessen, revidieren",
+    "tractatus_automat->kunstwerk_automat:gemeinsame Begriffsadressen: aktualisieren, algorithmus, revidieren",
+    "tractatus_automat->kunstwerk_automat:gemeinsame Begriffsadressen: aktualisieren, anschliessen, programm, reorganisieren, revidieren",
+    "tractatus_automat->kunstwerk_automat:gemeinsame Begriffsadressen: aktualisieren, programm, reorganisieren, revidieren",
+    "unterscheidungsautomat->tractatus_automat:gemeinsame Begriffsadressen: aktualisieren, algorithmus, beurteilen, kritisieren, programm, reorganisieren, revidieren, verteilen",
+    "unterscheidungsautomat->tractatus_automat:gemeinsame Begriffsadressen: aktualisieren, asymmetrie, beurteilen, kritisieren, programm, reorganisieren, revidieren, verteilen",
+    "unterscheidungsautomat->tractatus_automat:gemeinsame Manuskriptanker: manuskript\\16-revidieren.md:5, manuskript\\17-reorganisieren.md:73"
+  ],
+  "inputs": [
+    "[\"Kritik\", \"Bedingungen künftiger Kritik\", \"Kritik verändert nicht nur eine Ordnung, sondern auch die Bedingungen künftiger Kritik. Gesucht ist eine produktive Differenz zwischen Kritik, Urteil, Revision und Reorganisation.\"]",
+    "[\"aktualisieren\", \"Kritik\", \"Kritik verändert nicht nur eine Ordnung, sondern auch die Bedingungen künftiger Kritik. Gesucht ist eine produktive Differenz zwischen Kritik, Urteil, Revision und Reorganisation.\"]"
+  ]
+}
