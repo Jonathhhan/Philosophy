@@ -104,3 +104,5 @@ Als vorläufige Schlussformel lässt sich festhalten:
 Die Formel bezeichnet kein Gleichgewicht, das ein für alle Mal erreicht werden könnte. Stabilisierung und Reorganisation sind keine gegensätzlichen Endzustände. Sie sind aufeinander bezogene Operationen in einem Zusammenhang, dessen Fortsetzung neue Möglichkeiten eröffnet, andere zurückstellt und dadurch neue Gründe der Kritik hervorbringen kann.
 
 Menschen beginnen nicht bei null. Doch indem sie anschließen, verändern sie, woran weiter angeschlossen werden kann. Darin liegt weder die Garantie einer besseren Ordnung noch die Unmöglichkeit begründeter Veränderung. Darin liegt die Aufgabe, die Bedingungen des Anschließens so bestimmt wahrzunehmen, zu beurteilen und zu verändern, wie es ihre jeweiligen Folgen verlangen.
+
+Innerhalb des hier entwickelten Begriffsrahmens beginnt Freiheit nicht dort, wo Organisation endet. Sie zeigt sich dort, wo deren Bedingungen beantwortbar und einer begründeten Reorganisation zugänglich bleiben.

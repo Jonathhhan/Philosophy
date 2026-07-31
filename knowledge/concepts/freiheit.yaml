@@ -1,0 +1,18 @@
+id: freiheit
+label: Freiheit
+status: boundary
+working_definition: Nicht die Abwesenheit aller Organisation, sondern innerhalb des entwickelten Begriffsrahmens die Möglichkeit, unter organisierten Bedingungen zu handeln und an ihrer begründeten Reorganisation mitzuwirken.
+depends_on:
+  - anschliessen
+  - organisieren
+required_for: []
+related:
+  - asymmetrie
+  - reorganisieren
+constraints:
+  - Die Bestimmung gilt innerhalb des entwickelten Begriffsrahmens und begründet keine allgemeine Freiheitstheorie.
+  - Freiheit ist nicht mit einer bloßen Zahl verfügbarer Optionen gleichzusetzen.
+source_files:
+  - PROJECT.md
+  - GLOSSAR.md
+  - manuskript/schluss.md

@@ -219,6 +219,13 @@ def save_state(path: Path, state: dict[str, set[str]]) -> None:
     )
 
 
+def display_path(path: Path) -> str:
+    try:
+        return str(path.relative_to(ROOT))
+    except ValueError:
+        return str(path)
+
+
 def input_key(marked: str, unmarked: str, context: str) -> str:
     return json.dumps([marked, unmarked, context], ensure_ascii=False)
 
@@ -294,8 +301,14 @@ def run_until_new(
         result = combine(marked, unmarked, context, max_steps=max_steps)
 
     result["iterative_run"] = {
+        "initial_input": {
+            "marked": marked,
+            "unmarked": unmarked,
+            "context": context,
+        },
+        "terminal_input": result["input"],
         "trace": trace,
-        "state_file": str(state_path.relative_to(ROOT)),
+        "state_file": display_path(state_path),
         "terminal_condition": (
             "produktive Differenz gefunden"
             if trace and trace[-1]["productive_difference"]
@@ -314,13 +327,17 @@ def markdown(data: dict[str, Any]) -> str:
         "## Eingabe",
         "",
     ]
-    entry = data["input"]
+    iterative = data.get("iterative_run")
+    entry = (
+        iterative.get("initial_input", data["input"])
+        if iterative
+        else data["input"]
+    )
     lines.append(f"- markiert: {entry['marked']}")
     lines.append(f"- unmarkiert: {entry['unmarked'] or 'TODO'}")
     if entry["context"]:
         lines.append(f"- Kontext: {entry['context']}")
 
-    iterative = data.get("iterative_run")
     if iterative:
         lines.extend(["", "## Iterativer Lauf", ""])
         for run in iterative["trace"]:
@@ -335,6 +352,12 @@ def markdown(data: dict[str, Any]) -> str:
             if run["new_bridges"]:
                 lines.append("  - neue Anschluesse: " + ", ".join(run["new_bridges"][:8]))
         lines.append(f"- Abbruch: {iterative['terminal_condition']}")
+        terminal = iterative.get("terminal_input", {})
+        if terminal and terminal.get("marked") != entry.get("marked"):
+            lines.append(
+                "- terminale Eingabe: "
+                f"{terminal.get('marked')} / {terminal.get('unmarked') or 'TODO'}"
+            )
         lines.append(f"- Zustand: `{iterative['state_file']}`")
 
     lines.extend(["", "## Ermoeglichte Anschluesse", ""])

@@ -94,6 +94,8 @@ Diese Darstellung führt das CLI-Werkzeug nicht aus und erzeugt keine Dateien. S
 6. Er kann markierte Textvorschläge und Vorschlagsdossiers erzeugen.
 7. Er kann mit `--apply` einen Vorschlag an einer explizit angegebenen Manuskriptstelle einfügen, ohne ihn als bestätigt auszugeben.
 
+Die Grenzprüfung umfasst außerdem zwei begrenzte normative Begriffsadressen: Freiheit wird nur innerhalb des entwickelten Begriffsrahmens erkannt; Tragfähigkeit bleibt Ergebnis eines ausgewiesenen Urteils und darf nicht zum Obermaßstab werden. Formulierungen wie „Automatenanalyse bestätigt“ werden als Provenienzleck markiert, weil Werkzeugbefunde nicht als Manuskriptargumente auftreten dürfen.
+
 ## Grenzen
 
 Der Automat ist regelbasiert und transparent. Er versteht keine Argumente im starken Sinn, erzeugt keine belastbaren Quellenurteile und ersetzt keine Lektüre. Treffer können fehlen, wenn ein Gedanke andere Wörter verwendet. Treffer können zu weit sein, wenn ein Begriff nur nebenbei erwähnt wird. Automatische Manuskripteinfügungen sind deshalb immer als Vorschlag markiert und müssen editorisch geprüft werden.

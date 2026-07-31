@@ -47,6 +47,24 @@ BOUNDARY_MARKERS = {
         "terms": ["anfang bei null", "voraussetzungsloser anfang", "ursprung ohne voraussetzung"],
         "warning": "Das Projekt beginnt nicht bei einem voraussetzungslosen Anfang; Anschlüsse setzen Bedingungen voraus.",
     },
+    "universal_freedom_claim": {
+        "terms": ["freiheit beginnt", "ist nicht frei", "wahre freiheit"],
+        "unless_terms": [
+            "innerhalb dieses begriffsrahmens",
+            "für den gegenstand",
+            "keine allgemeine freiheitstheorie",
+        ],
+        "warning": "Freiheit nur innerhalb des entwickelten Begriffsrahmens bestimmen; keine allgemeine Freiheitstheorie einführen.",
+    },
+    "tragfaehigkeit_as_supreme_standard": {
+        "terms": ["tragfähigkeit ist der maßstab", "tragfähigkeit entscheidet", "je tragfähiger"],
+        "unless_terms": ["kein obermaßstab", "kein universaler maßstab", "ergebnis eines ausgewiesenen urteils"],
+        "warning": "Tragfähigkeit als Ergebnis eines ausgewiesenen Urteils behandeln, nicht als normativen Obermaßstab.",
+    },
+    "automation_provenance_in_manuscript": {
+        "terms": ["automatenanalyse bestätigt", "kunstwerk-score", "dramaturgische verdichtung"],
+        "warning": "Automatenprovenienz und operative Prüfvokabeln nicht als Manuskriptargument ausgeben.",
+    },
 }
 
 ROLE_QUESTIONS = {
@@ -154,7 +172,15 @@ def mentioned_concepts(thought: str, concepts: list[Concept]) -> list[Concept]:
 
 def boundary_warnings(thought: str) -> list[dict[str, str]]:
     haystack = normalize(thought)
-    return [{"id": key, "warning": data["warning"]} for key, data in BOUNDARY_MARKERS.items() if any(normalize(term) in haystack for term in data["terms"])]
+    warnings = []
+    for key, data in BOUNDARY_MARKERS.items():
+        if not any(normalize(term) in haystack for term in data["terms"]):
+            continue
+        unless_terms = data.get("unless_terms", [])
+        if any(normalize(term) in haystack for term in unless_terms):
+            continue
+        warnings.append({"id": key, "warning": data["warning"]})
+    return warnings
 
 
 def status_guess(thought: str) -> str:

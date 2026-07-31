@@ -89,3 +89,8 @@ Montage ist kein nachträglich eingefügtes Beispiel. An ihr wird sichtbar, wie 
 ## Grenzen des Projekts
 
 Das Buch soll nicht stillschweigend zu einer Universaltheorie ausgebaut werden. Es erhebt den Anspruch, einen relationalen Begriffsrahmen zur Analyse der Organisation von Möglichkeiten zu entwickeln. Anwendungen auf gesellschaftliche, technische, ästhetische oder politische Phänomene müssen jeweils eigens ausgewiesen werden.
+
+## Aktualisierungen 2026-07-31
+
+- Einleitung als Ordnung möglicher Anschlüsse: Kapitel 1 enthält nun einen kurzen Einleitungsabschnitt, der die drei Teile und die rekursive Bewegung vorstellt.
+- Normative Kante im Schluss: Der Schluss verdichtet Freiheit innerhalb des entwickelten Begriffsrahmens als Beantwortbarkeit organisierter Bedingungen.

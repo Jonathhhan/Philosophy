@@ -78,6 +78,7 @@ def main() -> int:
     run([python, "-m", "py_compile", "scripts/tractatus_automat.py"])
     run([python, "-m", "py_compile", "scripts/kunstwerk_automat.py"])
     run([python, "-m", "py_compile", "scripts/automatenverbund.py"])
+    run([python, "-m", "unittest", "tests/test_automata.py"])
     run([python, "scripts/unterscheidungsautomat.py", "Anschliessen", "Nicht-Anschluss", "--format", "json"])
     run([python, "scripts/tractatus_automat.py", "Jede Aktualisierung veraendert den Raum weiterer Anschlussmoeglichkeiten", "--format", "json"])
     run([python, "scripts/kunstwerk_automat.py", "Anschliessen", "Nicht-Anschluss", "--max-steps", "5", "--format", "json"])

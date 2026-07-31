@@ -1,0 +1,17 @@
+id: tragfaehigkeit
+label: Tragfähigkeit
+status: supporting
+working_definition: Zusammenfassender Urteilsbegriff für das positive Ergebnis eines ausgewiesenen Urteils unter den jeweils berücksichtigten Bedingungen.
+depends_on:
+  - beurteilen
+required_for: []
+related:
+  - stabilisieren
+  - revidieren
+  - reorganisieren
+constraints:
+  - Tragfähigkeit ist weder ein eigenständiger normativer Grundbegriff noch ein universaler Maßstab.
+  - Das Ergebnis darf nicht an die Stelle der auszuweisenden Maßstäbe und Gründe treten.
+source_files:
+  - manuskript/15-beurteilen.md
+  - manuskript/schluss.md

@@ -1,5 +1,12 @@
 # Kapitel 1: Anschließen
 
+Dieses Buch beginnt nicht bei null. Es setzt bei Anschlüssen an, die bereits wirksame Sprachen, Materialien, Formen, Verfahren und Erwartungen aufnehmen und durch ihren Vollzug verändern.
+
+Die Untersuchung entfaltet diesen Zusammenhang in drei Teilen. Teil I verfolgt Formbildung, Aktualisierung und Stabilisierung; Teil II untersucht Organisation, Verteilung und Asymmetrie; Teil III führt über Kritik und Beurteilung zu Revision und Reorganisation. Der Schluss fragt, wie die Möglichkeit zur Reorganisation selbst organisiert ist.
+
+> Anschlussmöglichkeiten → Organisation → Aktualisierung → Reorganisation → Kritik
+
+Diese Bewegung bezeichnet keine lineare Stufenfolge. Sie hält fest, dass Aktualisierungen Bedingungen weiterer Anschlüsse verändern, Reorganisationen die Beziehungen solcher Bedingungen verschieben und Kritik die Voraussetzungen, Formen und Folgen des veränderten Zusammenhangs erneut wahrnehmbar macht. Montage ist dafür epistemischer Ausgangspunkt und Modell relationaler Formbildung, nicht bloß ein nachträglich eingefügtes Beispiel.
 ## 1. Der Schein des Anfangs
 
 Jedes Handeln scheint mit einem Anfang zu beginnen. Wir fassen einen Entschluss, sprechen ein erstes Wort, setzen einen ersten Schritt oder beginnen eine Arbeit. In der alltäglichen Erfahrung erscheint dieser Anfang als Ursprung des Handelns selbst. Von ihm aus erklären wir das Folgende. Der Anfang scheint deshalb selbstverständlich.

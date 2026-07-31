@@ -1,0 +1,107 @@
+schema_version: 1
+id: change-automaten-grenzpruefung
+created_at: 2026-07-31
+goal: Automatenverbund und Philosophie-Automat um verlässliche Eingabeprovenienz und begrenzte normative Grenzprüfungen erweitern.
+operation: reorganization
+scope:
+  allowed_files:
+    - scripts/automatenverbund.py
+    - scripts/philosophie_automat.py
+    - scripts/check_all.py
+    - tests/test_automata.py
+    - knowledge/concepts/freiheit.yaml
+    - knowledge/concepts/tragfaehigkeit.yaml
+    - projekt/automaten.md
+    - projekt/philosophie-automat.md
+    - knowledge/change-events/2026-07-31-automaten-grenzpruefung.yaml
+  protected_files:
+    - CONSTITUTION.md
+    - PROJECT.md
+    - GLOSSAR.md
+    - manuskript/
+basis:
+  project_files:
+    - CONSTITUTION.md
+    - PROJECT.md
+    - GLOSSAR.md
+    - projekt/automaten.md
+    - projekt/philosophie-automat.md
+    - knowledge/concepts/
+  decisions: []
+  sources:
+    - author-request-weiter-verbessere-auch-die-automaten-oder-finde-neue-2026-07-31
+changes:
+  - file: scripts/automatenverbund.py
+    summary: Bewahrt ursprüngliche und terminale Eingabe iterativer Läufe getrennt und stellt externe Zustandspfade sicher dar.
+  - file: scripts/philosophie_automat.py
+    summary: Ergänzt begrenzbare Warnprofile für Freiheit, Tragfähigkeit und Automatenprovenienz im Manuskript.
+  - file: knowledge/concepts/freiheit.yaml
+    summary: Erfasst Freiheit als begrenzte Begriffsadresse innerhalb des entwickelten Begriffsrahmens.
+  - file: knowledge/concepts/tragfaehigkeit.yaml
+    summary: Erfasst Tragfähigkeit als unterstützenden Urteilsbegriff ohne Obermaßstabsfunktion.
+  - file: tests/test_automata.py
+    summary: Prüft Grenzwarnungen, Ausnahmebedingungen und Eingabeprovenienz mit fünf Regressionstests.
+  - file: scripts/check_all.py
+    summary: Integriert die Automaten-Regressionstests in die zentrale Projektprüfung.
+  - file: projekt/automaten.md
+    summary: Dokumentiert die Trennung von ursprünglicher und terminaler Eingabe.
+  - file: projekt/philosophie-automat.md
+    summary: Dokumentiert normative Grenzprofile und das Verbot von Automatenprovenienz als Manuskriptargument.
+  - file: knowledge/change-events/2026-07-31-automaten-grenzpruefung.yaml
+    summary: Dokumentiert Umfang, Relationsfolgen und Prüfungen der technischen Reorganisation.
+affected_relations:
+  - from: scripts/automatenverbund.py
+    relation: tests
+    to: tests/test_automata.py
+    effect: added
+    note: Die ursprüngliche Eingabe des iterativen Laufs wird als Provenienz erhalten und geprüft.
+  - from: scripts/philosophie_automat.py
+    relation: depends_on
+    to: knowledge/concepts/freiheit.yaml
+    effect: added
+    note: Freiheit wird als begrenzte Begriffsadresse erkannt, nicht als neue Theorieachse.
+  - from: scripts/philosophie_automat.py
+    relation: depends_on
+    to: knowledge/concepts/tragfaehigkeit.yaml
+    effect: added
+    note: Tragfähigkeit wird als zusammenfassender Urteilsbegriff erkannt, nicht als Obermaßstab.
+  - from: scripts/philosophie_automat.py
+    relation: constrains
+    to: CONSTITUTION.md
+    effect: changed
+    note: Grenzwarnungen prüfen künftig auch universale Freiheits- und Tragfähigkeitsbehauptungen.
+possibilities:
+  opened:
+    - Iterative Verbundläufe können Start- und terminale Eingabe unterscheiden.
+    - Normative Überdehnungen von Freiheit und Tragfähigkeit werden vor einer Manuskriptintegration sichtbar.
+    - Regressionstests sichern beide Verhaltensweisen.
+  restricted:
+    - Grenzwarnungen entscheiden keine philosophische Frage und ersetzen keine Autorenentscheidung.
+    - Freiheit und Tragfähigkeit werden nicht zu neuen Grundbegriffen erhoben.
+  deferred:
+    - Ein eigenständiger neuer Automat wird erst erwogen, wenn die integrierte Grenzprüfung nachweislich nicht ausreicht.
+uncertainties: []
+agent_findings:
+  genealogist: []
+  consistency_checker:
+    - Die bisherigen Läufe verloren in der Gesamtausgabe die ursprüngliche markierte Eingabe.
+    - Freiheit und Tragfähigkeit waren im Glossar beziehungsweise Manuskript bestimmt, aber nicht als Concept-Dateien maschinenlesbar.
+  critic:
+    - Eine bloße Schlüsselwortwarnung darf begrenzte Aussagen nicht pauschal als Grenzverletzung behandeln.
+  material_technical:
+    - Regressionstests müssen Markdown- und JSON-Ausgabe sowie die Warnungslogik prüfen.
+authority:
+  requires_author_decision: false
+  decision_status: not_required
+  decision_reference: null
+validation:
+  - check: Automaten-Regressionstests
+    result: passed
+    evidence: python -m unittest tests/test_automata.py; 5 tests passed
+  - check: Knowledge-Validierung
+    result: passed
+    evidence: python scripts/validate_knowledge.py
+  - check: Change-Event-Validierung
+    result: passed
+    evidence: python -B .agents/skills/recursive-codex/scripts/validate_change_event.py knowledge/change-events/2026-07-31-automaten-grenzpruefung.yaml
+status: stabilized

@@ -96,6 +96,8 @@ Gespeichert werden:
 - gefundene Manuskriptanker;
 - nachgewiesene Anschlussbrücken.
 
+Die Gesamtausgabe unterscheidet dabei die ursprüngliche Eingabe von der terminalen Eingabe des letzten Folgelaufs. Dadurch bleibt nachvollziehbar, welche Unterscheidung den Lauf ausgelöst hat, auch wenn der Verbund anschließend selbst weitere Begriffsadressen verfolgt.
+
 Der erste Lauf bildet den Ausgangsstand. Danach arbeitet der Verbund weiter, bis mindestens eine produktive Differenz entsteht:
 
 - ein zuvor nicht erreichter Begriff;
