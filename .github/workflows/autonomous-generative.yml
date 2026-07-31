@@ -75,7 +75,7 @@ jobs:
         uses: actions/upload-artifact@v4
         with:
           name: autonomous-generative-output
-          path: generated/
+          path: generated/autonomous-generative-output.zip
 
   publish:
     if: ${{ inputs.create_branch }}
@@ -93,7 +93,12 @@ jobs:
         uses: actions/download-artifact@v4
         with:
           name: autonomous-generative-output
-          path: generated/
+          path: .artifact/
+
+      - name: Verify manifest and extract exact generated files
+        run: |
+          python automation/artifact_bundle.py verify-extract .artifact/autonomous-generative-output.zip .
+          rm -rf .artifact
 
       - name: Enforce publication boundary
         run: |

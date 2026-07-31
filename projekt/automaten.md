@@ -163,3 +163,11 @@ explizitem `--output` eine Ausgabedatei und verändert niemals das Manuskript.
 - Der persistente Zustand ist kein theoretischer Wahrheitsbestand, sondern ein Gedächtnis bereits geprüfter Anschlüsse.
 - Eine produktive Differenz ist zunächst ein editorischer Prüfgegenstand, noch keine Theorieentscheidung.
 - Manuskriptintegration bleibt eine explizite editorische Operation mit Quellenprüfung und begrifflicher Begründung.
+
+## Operativer Status des Kollektivs
+
+`Kollektiv` bezeichnet eine rollengetrennte, nicht-majoritäre
+Entscheidungsunterstützung. Die Rollen sind Protokollfunktionen eines
+Entscheidungswegs, keine Behauptung mehrerer epistemisch unabhängiger
+Agentenprozesse. Ihre Befunde können Entscheidungen vorbereiten, aber weder
+Projektgrenzen noch die Autorentscheidung überstimmen.

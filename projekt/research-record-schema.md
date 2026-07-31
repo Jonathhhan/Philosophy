@@ -162,3 +162,16 @@ mode_transitions:
     to: research
     reason: Der generierte Gedanke wurde als prüfbare Invariante formuliert.
 ```
+
+## Strukturierter Review und Reproduzierbarkeit
+
+Generative Records führen `sampling_seed`, `temperature`, `model_revision`,
+`project_binding_provenance` und eine lebenszyklusfähige `binding_matrix`.
+`review` ist entweder `null` oder ein Objekt mit `recommended_status`,
+`validated_relations`, `rejected_relations`, `strong_objections`,
+`countermodel_results`, `method_assessment` und
+`requires_author_decision`. Unbekannte Felder sind Vertragsfehler.
+
+Die drei Prüfwerte `novelty_verified`, `project_relevance_verified` und
+`philosophical_productivity_verified` dürfen nicht zusammengezogen werden.
+Ein Review kann `proposal`, aber nicht automatisch `confirmed` empfehlen.

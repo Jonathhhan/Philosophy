@@ -21,8 +21,9 @@ from typing import Any
 import yaml
 
 try:
-    from automation import generative_schemas
+    from automation import artifact_bundle, generative_schemas
 except ModuleNotFoundError:  # direct script execution
+    import artifact_bundle
     import generative_schemas
 
 ALLOWED_TARGETS = {"essay", "chapter_seed", "continuation", "experiment", "theses", "dialogue", "theory"}
@@ -50,6 +51,7 @@ PROJECT_GUARDRAILS = """Projektgrenzen:
 - Unsicherheiten und unbelegte Quellenbehauptungen bleiben offen."""
 
 PROJECT_BINDING_FILES = ("CONSTITUTION.md", "PROJECT.md", "GLOSSAR.md")
+PROJECT_BINDING_PATH = Path("knowledge/project_binding.yaml")
 MAX_REPAIR_ATTEMPTS = 2
 
 
@@ -110,6 +112,9 @@ def load_request(path: Path) -> dict[str, Any]:
         max_cycles = int(data.get("max_cycles", data.get("max_passes", 6)))
         minimum_productive = int(data.get("minimum_productive_decisions", 3))
         meta_interval = int(data.get("meta_interval", 2))
+        sampling_seed = int(data.get("sampling_seed", 0))
+        style_repetitions = int(data.get("style_repetitions", 1))
+        temperature = float(data.get("temperature", 0.9))
     except (TypeError, ValueError):
         fail("cycle and interval fields must be integers")
     if not 1 <= max_cycles <= 16:
@@ -118,6 +123,13 @@ def load_request(path: Path) -> dict[str, Any]:
         fail("minimum_productive_decisions must be between 1 and max_cycles")
     if not 1 <= meta_interval <= max_cycles:
         fail("meta_interval must be between 1 and max_cycles")
+    if not 1 <= style_repetitions <= 10:
+        fail("style_repetitions must be between 1 and 10")
+    if not 0 <= temperature <= 2:
+        fail("temperature must be between 0 and 2")
+    model_revision = str(data.get("model_revision", "unspecified")).strip()
+    if not model_revision:
+        fail("model_revision must be a non-empty string")
     styles = data.get("epistemic_styles", ["exploratory", "dialectical", "conservative"])
     if not isinstance(styles, list) or not styles or any(not isinstance(item, str) for item in styles):
         fail("epistemic_styles must be a non-empty list of strings")
@@ -160,14 +172,19 @@ def load_request(path: Path) -> dict[str, Any]:
         "meta_interval": meta_interval,
         "epistemic_styles": styles,
         "initial_heuristic": initial_heuristic.strip(),
+        "sampling_seed": sampling_seed, "style_repetitions": style_repetitions,
+        "temperature": temperature, "model_revision": model_revision,
     }
 
 
-def api_call(messages: list[dict[str, str]], *, endpoint: str, model: str, api_key: str, temperature: float = 0.9) -> str:
+def api_call(messages: list[dict[str, str]], *, endpoint: str, model: str, api_key: str, temperature: float = 0.9, seed: int | None = None) -> str:
     url = endpoint.rstrip("/")
     if not url.endswith("/chat/completions"):
         url += "/chat/completions"
-    payload = json.dumps({"model": model, "messages": messages, "temperature": temperature}).encode("utf-8")
+    body_payload = {"model": model, "messages": messages, "temperature": temperature}
+    if seed is not None:
+        body_payload["seed"] = seed
+    payload = json.dumps(body_payload).encode("utf-8")
     request = urllib.request.Request(url, data=payload, headers={"Content-Type": "application/json", "Authorization": f"Bearer {api_key}"}, method="POST")
     try:
         with urllib.request.urlopen(request, timeout=240) as response:
@@ -184,7 +201,12 @@ def api_call(messages: list[dict[str, str]], *, endpoint: str, model: str, api_k
 
 def load_project_binding_context(root: Path | None = None) -> tuple[str, list[dict[str, Any]]]:
     root = (root or Path.cwd()).resolve()
-    return load_source_context(list(PROJECT_BINDING_FILES), root)
+    text, provenance = load_source_context(list(PROJECT_BINDING_FILES), root)
+    binding_text, binding_provenance = load_source_context([PROJECT_BINDING_PATH.as_posix()], root)
+    binding = yaml.safe_load((root / PROJECT_BINDING_PATH).read_text(encoding="utf-8"))
+    if not isinstance(binding, dict) or binding.get("schema_version") != 1:
+        fail("knowledge/project_binding.yaml must use schema_version 1")
+    return text + "\n\n" + binding_text, provenance + binding_provenance
 
 
 def parse_json_response(raw: str, required: str = "text") -> dict[str, Any]:
@@ -203,6 +225,7 @@ def call_structured_agent(
     model: str,
     api_key: str,
     temperature: float,
+    seed: int | None = None,
 ) -> dict[str, Any]:
     attempts = list(messages)
     last_error = "unknown schema error"
@@ -213,6 +236,7 @@ def call_structured_agent(
             model=model,
             api_key=api_key,
             temperature=temperature,
+            seed=seed,
         )
         try:
             return generative_schemas.parse_and_validate(raw, schema)
@@ -233,8 +257,9 @@ def call_structured_agent(
     fail(f"agent JSON violates {schema} schema after repairs: {last_error}")
 
 
-def verify_productivity(result: dict[str, Any], prior: list[dict[str, Any]]) -> dict[str, Any]:
+def verify_productivity(result: dict[str, Any], prior: list[dict[str, Any]], protected_concepts: set[str] | None = None) -> dict[str, Any]:
     evidence: list[dict[str, str]] = []
+    protected = {item.casefold() for item in (protected_concepts or set())}
     known_relations = {
         (item.get("from"), item.get("relation"), item.get("to"))
         for decision in prior
@@ -258,27 +283,57 @@ def verify_productivity(result: dict[str, Any], prior: list[dict[str, Any]]) -> 
     for item in result["revisions"]:
         if item["target"] in prior_text:
             evidence.append({"kind": "revision", "detail": item["target"]})
+    relevance = []
+    for relation in result["new_relations"]:
+        if relation["from"].casefold() in protected or relation["to"].casefold() in protected:
+            relevance.append({"kind": "protected_concept_relation", "detail": relation})
+    for item in result["definition_refinements"]:
+        if item["concept"].casefold() in protected:
+            relevance.append({"kind": "protected_definition", "detail": item["concept"]})
+    for item in result["countermodels"]:
+        if any(concept in item["claim"].casefold() for concept in protected):
+            relevance.append({"kind": "project_countermodel", "detail": item["claim"]})
     return {
-        "productive": bool(evidence),
-        "evidence": evidence,
+        "novelty_verified": bool(evidence),
+        "novelty_evidence": evidence,
+        "project_relevance_verified": bool(relevance),
+        "project_relevance_evidence": relevance,
+        "philosophical_productivity_verified": False,
+        "philosophical_evidence": [],
         "model_claim": result["productive_difference"],
-        "independent_rule": "structured_novelty_v1",
+        "verification_rule": "epistemic_levels_v1",
     }
 
 
-def update_binding_matrix(
-    previous: dict[str, list[str]], result: dict[str, Any]
-) -> dict[str, list[str]]:
-    matrix = {key: list(value) for key, value in previous.items()}
-    mapping = {
-        "preserved_definitions": "preserved_definitions",
-        "claims_in_tension": "claims_in_tension",
-        "departures_from_sources": "departures_from_sources",
-        "unresolved_source_conflicts": "unresolved_source_conflicts",
-        "open_objections": "open_objections",
-    }
-    for target, source in mapping.items():
-        matrix[target] = list(dict.fromkeys(matrix.get(target, []) + result[source]))
+def update_binding_matrix(previous: dict[str, list[dict[str, Any]]], result: dict[str, Any], cycle: int) -> dict[str, list[dict[str, Any]]]:
+    matrix = {key: [dict(item) for item in value] for key, value in previous.items()}
+    for kind in matrix:
+        existing = {item["value"] for item in matrix[kind]}
+        for value in result[kind]:
+            if value not in existing:
+                record_id = hashlib.sha256(f"{kind}:{value}".encode()).hexdigest()[:16]
+                matrix[kind].append({
+                    "id": record_id, "value": value,
+                    "status": "open" if kind != "preserved_definitions" else "active",
+                    "introduced_in_cycle": cycle, "resolved_in_cycle": None, "resolution": None,
+                })
+                existing.add(value)
+    for update in result["binding_updates"]:
+        records = matrix[update["kind"]]
+        match = next((item for item in records if item["id"] == update["id"]), None)
+        if update["action"] == "add":
+            if match is not None:
+                fail(f"binding id already exists: {update['id']}")
+            records.append({
+                "id": update["id"], "value": update["value"], "status": "open",
+                "introduced_in_cycle": cycle, "resolved_in_cycle": None, "resolution": None,
+            })
+        else:
+            if match is None:
+                fail(f"binding id does not exist: {update['id']}")
+            match["status"] = "resolved" if update["action"] == "resolve" else "superseded"
+            match["resolved_in_cycle"] = cycle
+            match["resolution"] = update["resolution"]
     return matrix
 
 
@@ -302,7 +357,8 @@ text, chosen_connection, alternatives_rejected, new_concepts, new_relations,
 definition_refinements, countermodels, merged_nodes, removed_categories,
 productive_difference, revisions, tensions_preserved, heuristic_effect, continue,
 preserved_definitions, claims_in_tension, departures_from_sources,
-unresolved_source_conflicts, open_objections.
+unresolved_source_conflicts, open_objections, binding_updates.
+binding_updates enthält kind, id, action (add|resolve|supersede), value und resolution.
 new_relations enthält Objekte mit from, relation, to. revisions enthält target und reason.
 Definitionen, Gegenmodelle, Zusammenführungen und Entfernungen verwenden die im Schema verlangten Objektfelder."""
 
@@ -347,6 +403,7 @@ Prüfe, ob die Anschlussregel beibehalten oder begründet verändert werden soll
         model=model,
         api_key=api_key,
         temperature=0.35,
+        seed=config["sampling_seed"] + 10000 + len(decisions),
     )
     selected_style = result["selected_style"]
     if selected_style not in config["epistemic_styles"]:
@@ -442,11 +499,13 @@ LETZTE ENTSCHEIDUNGEN:
             endpoint=endpoint,
             model=model,
             api_key=api_key,
-            temperature=0.9,
+            temperature=config["temperature"],
+            seed=config["sampling_seed"] + cycle,
         )
         current = result["text"].strip()
-        verification = verify_productivity(result, decisions)
-        binding_matrix = update_binding_matrix(binding_matrix, result)
+        protected = set(config["project_binding"].get("protected_concepts", {}).keys())
+        verification = verify_productivity(result, decisions, protected)
+        binding_matrix = update_binding_matrix(binding_matrix, result, cycle)
         decision = {
             "cycle": cycle,
             "heuristic_version": heuristic_version,
@@ -470,7 +529,8 @@ LETZTE ENTSCHEIDUNGEN:
         }
         decisions.append(decision)
         productive_count = sum(
-            bool(item["productivity_verification"]["productive"])
+            item["productivity_verification"]["novelty_verified"]
+            and item["productivity_verification"]["project_relevance_verified"]
             for item in decisions
         )
         if not decision["continue"] and productive_count >= config["minimum_productive_decisions"]:
@@ -478,19 +538,47 @@ LETZTE ENTSCHEIDUNGEN:
     return current, decisions, meta_decisions
 
 
-def optional_review(text: str, decisions: list[dict[str, Any]], meta_decisions: list[dict[str, Any]], config: dict[str, Any], endpoint: str, model: str, api_key: str) -> str | None:
+def optional_review(text: str, decisions: list[dict[str, Any]], meta_decisions: list[dict[str, Any]], config: dict[str, Any], endpoint: str, model: str, api_key: str) -> dict[str, Any] | None:
     if not config["start_review_after_generation"]:
         return None
-    prompt = f"""Prüfe Theorie, Anschlussentscheidungen und Methodenänderungen. Bewerte Erkenntnisgewinn, Scheinkohärenz, Drift, Gegenmodelle und ob Regeländerungen begründet waren. Gib keine pauschale Bestätigung.
-PROJEKTGRENZEN:\n{PROJECT_GUARDRAILS}
-DEKLARIERTER QUELLENKONTEXT:\n{config['source_context_text'] or 'keiner'}
+    review_input = [{
+        key: value for key, value in decision.items()
+        if key not in {"productive_difference", "productivity_verification"}
+    } for decision in decisions]
+    prompt = f"""Prüfe unabhängig Theorie, Relationen, Gegenmodelle und Methode. Die Selbstbeschreibung des Generators wird dir absichtlich nicht gezeigt.
+PROJEKTBINDUNG:\n{config['project_binding_text']}
 THEORIE:\n{text}
-ANSCHLUSSENTSCHEIDUNGEN:\n{json.dumps(decisions, ensure_ascii=False, indent=2)}
-META-ENTSCHEIDUNGEN:\n{json.dumps(meta_decisions, ensure_ascii=False, indent=2)}"""
-    return api_call([{"role": "system", "content": "Du bist der kritische Prüfmodus."}, {"role": "user", "content": prompt}], endpoint=endpoint, model=model, api_key=api_key, temperature=0.25)
+ANSCHLUSSENTSCHEIDUNGEN:\n{json.dumps(review_input, ensure_ascii=False, indent=2)}
+META-ENTSCHEIDUNGEN:\n{json.dumps(meta_decisions, ensure_ascii=False, indent=2)}
+Antworte exakt mit recommended_status, validated_relations, rejected_relations,
+strong_objections, countermodel_results, method_assessment, requires_author_decision."""
+    return call_structured_agent(
+        [{"role": "system", "content": "Du bist ein rollengetrennter kritischer Prüfer."}, {"role": "user", "content": prompt}],
+        schema="review", endpoint=endpoint, model=model, api_key=api_key,
+        temperature=0.25, seed=config["sampling_seed"] + 20000,
+    )
 
 
-def write_outputs(config: dict[str, Any], text: str, decisions: list[dict[str, Any]], meta_decisions: list[dict[str, Any]], review: str | None, request_path: Path) -> list[Path]:
+def apply_review_verification(decisions: list[dict[str, Any]], review: dict[str, Any] | None) -> None:
+    if review is None:
+        return
+    validated = {(r["from"], r["relation"], r["to"]) for r in review["validated_relations"]}
+    passed_claims = {r["claim"] for r in review["countermodel_results"] if r["result"] == "passed"}
+    for decision in decisions:
+        evidence = [
+            {"kind": "review_validated_relation", "detail": relation}
+            for relation in decision["new_relations"]
+            if (relation["from"], relation["relation"], relation["to"]) in validated
+        ]
+        evidence += [
+            {"kind": "review_passed_countermodel", "detail": item["claim"]}
+            for item in decision["countermodels"] if item["claim"] in passed_claims
+        ]
+        decision["productivity_verification"]["philosophical_productivity_verified"] = bool(evidence)
+        decision["productivity_verification"]["philosophical_evidence"] = evidence
+
+
+def write_outputs(config: dict[str, Any], text: str, decisions: list[dict[str, Any]], meta_decisions: list[dict[str, Any]], review: dict[str, Any] | None, request_path: Path) -> list[Path]:
     title = config["title"] or config["seed"].splitlines()[0][:72]
     stamp = dt.datetime.now(dt.timezone.utc).strftime("%Y%m%d-%H%M%S")
     directory = Path("generated") / "active" / TARGET_DIRS[config["target"]]
@@ -501,11 +589,13 @@ def write_outputs(config: dict[str, Any], text: str, decisions: list[dict[str, A
         "mode": config["mode"], "status": "generated", "seed": config["seed"],
         "created_by": "generative_runner_with_meta_agent", "model": os.environ.get("GENERATIVE_MODEL", "unknown"),
         "cycles": len(decisions), "method_revisions": sum(bool(m.get("change_rule")) for m in meta_decisions),
-        "verified_productive_cycles": sum(bool(d["productivity_verification"]["productive"]) for d in decisions),
+        "verified_productive_cycles": sum(bool(d["productivity_verification"]["philosophical_productivity_verified"]) for d in decisions),
         "source_context": config["source_context"],
         "source_provenance": config["source_provenance"],
         "project_binding_provenance": config["project_binding_provenance"],
         "binding_matrix": decisions[-1]["binding_matrix"] if decisions else config["initial_binding_matrix"],
+        "sampling_seed": config["sampling_seed"], "temperature": config["temperature"],
+        "model_revision": config["model_revision"],
         "next_possible_steps": ["critical_review", "compare_epistemic_styles", "revise_connections", "promote_selected_relations_to_proposal"],
     }
     concepts = sorted({str(c) for d in decisions for c in d.get("new_concepts", []) if c})
@@ -540,10 +630,17 @@ def style_comparison_summary(runs: list[dict[str, Any]]) -> dict[str, Any]:
     for run in runs:
         decisions = run["decisions"]
         summaries.append({
-            "style": run["style"],
+            "initial_style": run["style"],
+            "final_style": decisions[-1]["epistemic_style"] if decisions else run["style"],
+            "style_changes": sum(
+                bool(item.get("change_rule")) and item.get("previous_style") != item.get("selected_style")
+                for item in run["meta_decisions"]
+            ),
+            "repetition": run.get("repetition", 1),
+            "sampling_seed": run.get("sampling_seed"),
             "cycles": len(decisions),
             "verified_productive_cycles": sum(
-                bool(item["productivity_verification"]["productive"])
+                bool(item["productivity_verification"]["philosophical_productivity_verified"])
                 for item in decisions
             ),
             "new_relations": sum(len(item["new_relations"]) for item in decisions),
@@ -568,6 +665,8 @@ def write_style_comparison(config: dict[str, Any], runs: list[dict[str, Any]]) -
         "model": os.environ.get("GENERATIVE_MODEL", "unknown"),
         "source_provenance": config["source_provenance"],
         "project_binding_provenance": config["project_binding_provenance"],
+        "temperature": config["temperature"], "model_revision": config["model_revision"],
+        "style_repetitions": config["style_repetitions"],
     }
     path.parent.mkdir(parents=True, exist_ok=True)
     path.write_text(yaml.safe_dump(data, allow_unicode=True, sort_keys=False), encoding="utf-8")
@@ -581,12 +680,15 @@ def main() -> None:
     config = load_request(args.request)
     config["source_context_text"], config["source_provenance"] = load_source_context(config["source_context"])
     config["project_binding_text"], config["project_binding_provenance"] = load_project_binding_context()
+    config["project_binding"] = yaml.safe_load(PROJECT_BINDING_PATH.read_text(encoding="utf-8"))
+    definitions = list(config["project_binding"].get("protected_concepts", {}).keys())
     config["initial_binding_matrix"] = {
-        "preserved_definitions": ["Anschluss", "Programm", "Algorithmus", "Montage", "Kritik", "Reorganisation"],
-        "claims_in_tension": [],
-        "departures_from_sources": [],
-        "unresolved_source_conflicts": [],
-        "open_objections": [],
+        "preserved_definitions": [{
+            "id": f"definition-{slugify(value)}", "value": value, "status": "active",
+            "introduced_in_cycle": 0, "resolved_in_cycle": None, "resolution": None,
+        } for value in definitions],
+        "claims_in_tension": [], "departures_from_sources": [],
+        "unresolved_source_conflicts": [], "open_objections": [],
     }
     if args.validate_only:
         hidden = {"source_context_text", "project_binding_text"}
@@ -601,20 +703,31 @@ def main() -> None:
         runs = []
         paths = []
         base_title = config["title"]
-        for style in config["epistemic_styles"]:
-            run_config = dict(config)
-            run_config["initial_style"] = style
-            run_config["title"] = f"{base_title or config['seed'].splitlines()[0][:72]} [{style}]"
-            text, decisions, meta_decisions = run_theory_cycles(run_config, endpoint, model, api_key)
-            review = optional_review(text, decisions, meta_decisions, run_config, endpoint, model, api_key)
-            paths.extend(write_outputs(run_config, text, decisions, meta_decisions, review, args.request))
-            runs.append({"style": style, "decisions": decisions, "meta_decisions": meta_decisions})
+        for repetition in range(config["style_repetitions"]):
+            for style in config["epistemic_styles"]:
+                run_config = dict(config)
+                run_config["sampling_seed"] = config["sampling_seed"] + repetition * 1000
+                run_config["initial_style"] = style
+                run_config["title"] = f"{base_title or config['seed'].splitlines()[0][:72]} [{style} r{repetition + 1}]"
+                text, decisions, meta_decisions = run_theory_cycles(run_config, endpoint, model, api_key)
+                review = optional_review(text, decisions, meta_decisions, run_config, endpoint, model, api_key)
+                apply_review_verification(decisions, review)
+                paths.extend(write_outputs(run_config, text, decisions, meta_decisions, review, args.request))
+                runs.append({
+                    "style": style, "repetition": repetition + 1,
+                    "sampling_seed": run_config["sampling_seed"],
+                    "decisions": decisions, "meta_decisions": meta_decisions,
+                })
         paths.append(write_style_comparison(config, runs))
+        paths.append(artifact_bundle.create_bundle(paths))
         print("\n".join(str(path) for path in paths))
         return
     text, decisions, meta_decisions = run_theory_cycles(config, endpoint, model, api_key)
     review = optional_review(text, decisions, meta_decisions, config, endpoint, model, api_key)
-    print("\n".join(str(path) for path in write_outputs(config, text, decisions, meta_decisions, review, args.request)))
+    apply_review_verification(decisions, review)
+    paths = write_outputs(config, text, decisions, meta_decisions, review, args.request)
+    paths.append(artifact_bundle.create_bundle(paths))
+    print("\n".join(str(path) for path in paths))
 
 
 if __name__ == "__main__":

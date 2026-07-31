@@ -158,3 +158,24 @@ Der Lauf endet, wenn:
 - oder der Text sich in mehrere gleichwertige Linien teilt, die als getrennte Entwürfe gespeichert werden sollten.
 
 `no_productive_difference` ist auch in diesem Modus zulässig, wenn aus dem Anfang keine tragfähige neue Bewegung entsteht.
+
+## Epistemische Stufen und Reviewvertrag
+
+Der Runner unterscheidet `novelty_verified`,
+`project_relevance_verified` und
+`philosophical_productivity_verified`. Die erste Stufe prüft strukturierte
+Neuheit, die zweite einen ausgewiesenen Bezug zur maschinenlesbaren
+Projektbindung. Erst ein rollengetrennter strukturierter Review darf die dritte
+Stufe setzen. Auch dann bleibt der Status höchstens `proposal`; `confirmed`
+erfordert eine gesonderte Autorenentscheidung.
+
+Der Review protokolliert validierte und zurückgewiesene Relationen, starke
+Einwände, Gegenmodellergebnisse, Methodenurteil und Entscheidungsbedarf. Die
+Bindungsmatrix führt Einträge mit stabiler ID und den Zuständen `active`,
+`open`, `resolved` oder `superseded`. Stilversuche halten Seed, Temperatur,
+Modellrevision, Anfangs- und Endstil sowie Stilwechsel fest; Wiederholungen
+erzeugen Verteilungen statt eines scheinbar deterministischen Einzelvergleichs.
+
+Jeder Lauf erzeugt schließlich ein Manifestbündel. Der Publish-Job extrahiert
+nur die darin benannten Dateien, nachdem Pfad, Größe und SHA-256-Hash geprüft
+wurden.

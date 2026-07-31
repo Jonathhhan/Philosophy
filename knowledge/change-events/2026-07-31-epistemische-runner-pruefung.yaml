@@ -1,0 +1,104 @@
+schema_version: 1
+id: change-epistemische-runner-pruefung
+created_at: 2026-07-31
+goal: Strukturelle Neuheit, Projektrelevanz und philosophische Produktivität trennen sowie Review, Bindungszustand, CI und Artefaktpublikation weiter härten.
+operation: reorganization
+scope:
+  allowed_files:
+    - automation/generative_runner.py
+    - automation/generative_schemas.py
+    - automation/artifact_bundle.py
+    - automation/requests/example.yaml
+    - tests/test_generative_runner.py
+    - tests/test_generative_runner_hardening.py
+    - scripts/check_all.py
+    - knowledge/project_binding.yaml
+    - agents/meta-anschluss-agent.md
+    - agents/generativer-autonomer-modus.md
+    - projekt/research-record-schema.md
+    - projekt/forschungsarchitektur-v2.md
+    - projekt/automaten.md
+    - .github/workflows/autonomous-generative.yml
+    - .github/workflows/validate.yml
+    - knowledge/change-events/2026-07-31-epistemische-runner-pruefung.yaml
+  protected_files:
+    - CONSTITUTION.md
+    - PROJECT.md
+    - GLOSSAR.md
+    - knowledge/concepts/
+    - manuskript/
+basis:
+  project_files:
+    - CONSTITUTION.md
+    - PROJECT.md
+    - GLOSSAR.md
+    - knowledge/project_binding.yaml
+    - automation/generative_runner.py
+    - automation/generative_schemas.py
+    - .github/workflows/autonomous-generative.yml
+    - .github/workflows/validate.yml
+  decisions: []
+  sources:
+    - external-repository-review-attached-2026-07-31
+changes:
+  - file: automation/generative_schemas.py
+    summary: Strikte Theory-, Review- und Record-Verträge einschließlich unbekannter Felder eingeführt.
+  - file: automation/generative_runner.py
+    summary: Epistemische Prüfstufen, Reviewtrennung, Binding-Lebenszyklus und Sampling-Provenienz umgesetzt.
+  - file: automation/artifact_bundle.py
+    summary: Exaktes Pfad-, Größen- und SHA-256-Manifest für Jobübergaben ergänzt.
+  - file: knowledge/project_binding.yaml
+    summary: Deterministische Projektbindung als Ergänzung der autoritativen Originaldateien angelegt.
+  - file: .github/workflows/autonomous-generative.yml
+    summary: Publikation auf verifiziertes Manifestbündel begrenzt.
+  - file: .github/workflows/validate.yml
+    summary: Kompilierung, Workflow-YAML und generative Vertragstests explizit sichtbar gemacht.
+affected_relations:
+  - from: automation/generative_runner.py
+    relation: depends_on
+    to: knowledge/project_binding.yaml
+    effect: added
+    note: Maschinenprüfbare Regeln ergänzen den weiterhin verfügbaren Originalkontext.
+  - from: automation/generative_runner.py
+    relation: tests
+    to: tests/test_generative_runner_hardening.py
+    effect: changed
+    note: Review, epistemische Stufen, Bindungslebenszyklus, Vergleichskontrollen und Manifest werden geprüft.
+  - from: .github/workflows/autonomous-generative.yml
+    relation: constrains
+    to: generated/
+    effect: changed
+    note: Nur manifestierte und hash-geprüfte Dateien dürfen in den Publish-Job gelangen.
+possibilities:
+  opened:
+    - Formale Neuheit, Projektrelevanz und philosophische Prüfung werden getrennt protokolliert.
+    - Ein strukturiertes Review kann Relationen zurückweisen und starke Einwände erhalten.
+    - Bindungseinträge können aufgelöst oder supersediert werden.
+    - Artefakte können zwischen Jobs anhand eines Manifests verifiziert werden.
+  restricted:
+    - Unbekannte Schemafelder werden abgewiesen.
+    - Ein formal neues Objekt gilt nicht automatisch als philosophisch produktiv.
+  deferred:
+    - Required Branch Checks müssen mit administrativ authentifiziertem GitHub-Zugang aktiviert werden.
+    - Empirische Mehrfachläufe benötigen einen vollständig konfigurierten Modellprovider.
+uncertainties: []
+agent_findings:
+  genealogist: []
+  consistency_checker:
+    - Die bisherige unabhängige Regel war nur von der Selbstbewertung, nicht von der erzeugten Evidenz unabhängig.
+  critic:
+    - Philosophische Produktivität darf ohne getrenntes Review nicht als verifiziert erscheinen.
+  material_technical:
+    - Der Publish-Job benötigt einen Pfad- und Hashvertrag statt Vertrauen in das gesamte generated-Verzeichnis.
+authority:
+  requires_author_decision: false
+  decision_status: not_required
+  decision_reference: null
+validation:
+  - check: generative_contract_tests
+    result: passed
+    evidence: 25 Tests bestanden.
+  - check: repository_validation
+    result: warning
+    evidence: Wissens-, Change-Event- und Graphprüfungen bestanden; MCP-Subprozess wird gesondert wiederholt.
+status: tested

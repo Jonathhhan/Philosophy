@@ -30,6 +30,7 @@ def theory_result(**overrides):
         "departures_from_sources": [],
         "unresolved_source_conflicts": [],
         "open_objections": [],
+        "binding_updates": [],
     }
     result.update(overrides)
     return result
@@ -68,11 +69,12 @@ def config(max_cycles=1):
         "project_binding_text": "VERFASSUNG PROGRAMM ALGORITHMUS MONTAGE",
         "project_binding_provenance": [{"path": "CONSTITUTION.md", "sha256": "b" * 64}],
         "initial_binding_matrix": {
-            "preserved_definitions": ["Programm", "Algorithmus", "Montage"],
+            "preserved_definitions": [{"id": "definition-programm", "value": "Programm", "status": "active", "introduced_in_cycle": 0, "resolved_in_cycle": None, "resolution": None}],
             "claims_in_tension": [],
             "departures_from_sources": [],
             "unresolved_source_conflicts": [],
             "open_objections": [],
+        "binding_updates": [],
         },
         "allow_new_concepts": True,
         "allow_divergence": True,
@@ -83,6 +85,10 @@ def config(max_cycles=1):
         "meta_interval": 1,
         "minimum_productive_decisions": 1,
         "start_review_after_generation": False,
+        "temperature": 0.9,
+        "sampling_seed": 7,
+        "model_revision": "test",
+        "project_binding": {"protected_concepts": {"a": {}, "programm": {}}},
     }
 
 
@@ -132,7 +138,7 @@ class ProductivityTests(unittest.TestCase):
     def test_model_claim_alone_is_not_productive(self):
         result = theory_result(productive_difference="Ich bin produktiv.")
         verification = runner.verify_productivity(result, [])
-        self.assertFalse(verification["productive"])
+        self.assertFalse(verification["novelty_verified"])
         self.assertEqual(verification["model_claim"], "Ich bin produktiv.")
 
     def test_new_relation_is_independently_productive(self):
@@ -140,8 +146,8 @@ class ProductivityTests(unittest.TestCase):
             new_relations=[{"from": "A", "relation": "begrenzt", "to": "B"}]
         )
         verification = runner.verify_productivity(result, [])
-        self.assertTrue(verification["productive"])
-        self.assertEqual(verification["evidence"][0]["kind"], "new_relation")
+        self.assertTrue(verification["novelty_verified"])
+        self.assertEqual(verification["novelty_evidence"][0]["kind"], "new_relation")
 
 
 class MetaAgentTests(unittest.TestCase):
@@ -225,7 +231,7 @@ class MethodVersionAndStopTests(unittest.TestCase):
         with patch.object(runner, "api_call", side_effect=responses):
             _, decisions, _ = runner.run_theory_cycles(cfg, "endpoint", "model", "key")
         self.assertEqual(len(decisions), 2)
-        self.assertFalse(decisions[0]["productivity_verification"]["productive"])
+        self.assertFalse(decisions[0]["productivity_verification"]["novelty_verified"])
 
 class CycleAndOutputTests(unittest.TestCase):
     def test_later_cycle_receives_binding_matrix_and_provenance(self):
@@ -249,14 +255,14 @@ class CycleAndOutputTests(unittest.TestCase):
         second_prompt = api.call_args_list[1].args[0][1]["content"]
         self.assertIn("A oder B", second_prompt)
         self.assertIn("quelle.md", second_prompt)
-        self.assertTrue(decisions[1]["productivity_verification"]["productive"])
+        self.assertTrue(decisions[1]["productivity_verification"]["novelty_verified"])
 
     def test_writes_all_four_schema_valid_outputs(self):
         cfg = config()
         decision = {
             "new_concepts": ["A"],
             "new_relations": [{"from": "A", "relation": "öffnet", "to": "B"}],
-            "productivity_verification": {"productive": True, "evidence": []},
+            "productivity_verification": {"philosophical_productivity_verified": True, "novelty_verified": True},
             "binding_matrix": cfg["initial_binding_matrix"],
         }
         with (
@@ -292,13 +298,15 @@ class StyleComparisonTests(unittest.TestCase):
             "new_relations": [{"from": "A", "relation": "öffnet", "to": "B"}],
             "definition_refinements": [],
             "countermodels": [],
-            "productivity_verification": {"productive": True},
+            "productivity_verification": {"philosophical_productivity_verified": True},
+            "epistemic_style": "exploratory",
         }
         conservative = {
             "new_relations": [],
             "definition_refinements": [],
             "countermodels": [],
-            "productivity_verification": {"productive": False},
+            "productivity_verification": {"philosophical_productivity_verified": False},
+            "epistemic_style": "conservative",
         }
         summary = runner.style_comparison_summary([
             {"style": "exploratory", "decisions": [productive], "meta_decisions": []},

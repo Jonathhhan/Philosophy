@@ -30,5 +30,14 @@ jobs:
       - name: Install Python dependencies
         run: python -m pip install -r requirements-dev.txt
 
+      - name: Compile automation and validation scripts
+        run: python -m compileall -q automation scripts
+
+      - name: Validate workflow YAML
+        run: python -c "from pathlib import Path; import yaml; [yaml.safe_load(p.read_text(encoding='utf-8')) for p in Path('.github/workflows').glob('*.yml')]"
+
+      - name: Run generative contract tests explicitly
+        run: python -m unittest discover -s tests -p "test_generative*.py"
+
       - name: Run complete repository validation
         run: python scripts/check_all.py

@@ -29,11 +29,12 @@ class SourceContextTests(unittest.TestCase):
             "project_binding_text": "VERFASSUNG UND GLOSSAR",
             "project_binding_provenance": [],
             "initial_binding_matrix": {
-                "preserved_definitions": ["Programm", "Algorithmus", "Montage"],
+                "preserved_definitions": [{"id": "definition-programm", "value": "Programm", "status": "active", "introduced_in_cycle": 0, "resolved_in_cycle": None, "resolution": None}],
                 "claims_in_tension": [],
                 "departures_from_sources": [],
                 "unresolved_source_conflicts": [],
                 "open_objections": [],
+        "binding_updates": [],
             },
             "allow_new_concepts": True,
             "allow_divergence": True,
@@ -43,6 +44,9 @@ class SourceContextTests(unittest.TestCase):
             "meta_agent": False,
             "meta_interval": 2,
             "minimum_productive_decisions": 1,
+            "temperature": 0.9,
+            "sampling_seed": 7,
+            "project_binding": {"protected_concepts": {"anschluss": {}}},
         }
         response = json.dumps({
             "text": "Entwurf",
@@ -63,6 +67,7 @@ class SourceContextTests(unittest.TestCase):
             "departures_from_sources": [],
             "unresolved_source_conflicts": [],
             "open_objections": [],
+        "binding_updates": [],
             "continue": False,
         })
 

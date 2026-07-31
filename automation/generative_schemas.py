@@ -46,6 +46,9 @@ def _require(data: dict[str, Any], fields: set[str], name: str) -> None:
     missing = sorted(fields - data.keys())
     if missing:
         raise SchemaError(f"{name} missing fields: {', '.join(missing)}")
+    unexpected = sorted(data.keys() - fields)
+    if unexpected:
+        raise SchemaError(f"{name} unexpected fields: {', '.join(unexpected)}")
 
 
 def _string(data: dict[str, Any], key: str, nonempty: bool = False) -> str:
@@ -79,9 +82,7 @@ def _objects(
     if not isinstance(value, list) or any(not isinstance(item, dict) for item in value):
         raise SchemaError(f"{key} must be a list of objects")
     for index, item in enumerate(value):
-        missing = fields - item.keys()
-        if missing:
-            raise SchemaError(f"{key}[{index}] missing fields: {', '.join(sorted(missing))}")
+        _require(item, fields, f"{key}[{index}]")
         for field in string_fields or set():
             if not isinstance(item.get(field), str) or not item[field].strip():
                 raise SchemaError(f"{key}[{index}].{field} must be a non-empty string")
@@ -94,7 +95,7 @@ THEORY_FIELDS = {
     "removed_categories", "productive_difference", "revisions",
     "tensions_preserved", "heuristic_effect", "continue",
     "preserved_definitions", "claims_in_tension", "departures_from_sources",
-    "unresolved_source_conflicts", "open_objections",
+    "unresolved_source_conflicts", "open_objections", "binding_updates",
 }
 
 
@@ -129,6 +130,51 @@ def validate_theory_cycle(data: dict[str, Any]) -> dict[str, Any]:
             raise SchemaError(f"merged_nodes[{index}].nodes must contain at least two strings")
     _objects(data, "removed_categories", {"category", "reason"}, {"category", "reason"})
     _objects(data, "revisions", {"target", "reason"}, {"target", "reason"})
+    _objects(
+        data, "binding_updates",
+        {"kind", "id", "action", "value", "resolution"},
+        {"kind", "id", "action", "value"},
+    )
+    valid_kinds = {
+        "preserved_definitions", "claims_in_tension", "departures_from_sources",
+        "unresolved_source_conflicts", "open_objections",
+    }
+    for index, item in enumerate(data["binding_updates"]):
+        if item["action"] not in {"add", "resolve", "supersede"}:
+            raise SchemaError(f"binding_updates[{index}].action is invalid")
+        if item["kind"] not in valid_kinds:
+            raise SchemaError(f"binding_updates[{index}].kind is invalid")
+        if item["resolution"] is not None and not isinstance(item["resolution"], str):
+            raise SchemaError(f"binding_updates[{index}].resolution must be null or a string")
+        if item["action"] != "add" and not item["resolution"]:
+            raise SchemaError(f"binding_updates[{index}].resolution is required")
+    return data
+
+
+REVIEW_FIELDS = {
+    "recommended_status", "validated_relations", "rejected_relations",
+    "strong_objections", "countermodel_results", "method_assessment",
+    "requires_author_decision",
+}
+
+
+def validate_review_result(data: dict[str, Any]) -> dict[str, Any]:
+    _require(data, REVIEW_FIELDS, "ReviewResult")
+    if data["recommended_status"] not in {"generated", "proposal", "rejected"}:
+        raise SchemaError("recommended_status must be generated, proposal or rejected")
+    for key in ("validated_relations", "rejected_relations"):
+        _objects(data, key, {"from", "relation", "to", "reason"}, {"from", "relation", "to", "reason"})
+    _objects(data, "strong_objections", {"id", "claim", "reason"}, {"id", "claim", "reason"})
+    _objects(
+        data, "countermodel_results",
+        {"claim", "countermodel", "result", "reason"},
+        {"claim", "countermodel", "result", "reason"},
+    )
+    for index, item in enumerate(data["countermodel_results"]):
+        if item["result"] not in {"passed", "failed", "inconclusive"}:
+            raise SchemaError(f"countermodel_results[{index}].result is invalid")
+    _string(data, "method_assessment", True)
+    _bool(data, "requires_author_decision")
     return data
 
 
@@ -179,6 +225,8 @@ def validate_generation_record(data: dict[str, Any]) -> dict[str, Any]:
         "next_possible_steps", "request_file", "target", "max_cycles",
         "connection_decisions", "meta_decisions", "review_started",
         "review", "output_file", "graph_file", "method_file",
+        "verified_productive_cycles", "project_binding_provenance",
+        "binding_matrix", "sampling_seed", "temperature", "model_revision",
     }
     _require(data, required, "GenerationRecord")
     for key in ("mode", "status", "seed", "created_by", "model", "request_file", "target"):
@@ -194,8 +242,21 @@ def validate_generation_record(data: dict[str, Any]) -> dict[str, Any]:
         raise SchemaError("decision fields must be lists")
     if type(data["review_started"]) is not bool:
         raise SchemaError("review_started must be a boolean")
-    if data["review"] is not None and not isinstance(data["review"], str):
-        raise SchemaError("review must be null or a string")
+    if data["review"] is not None:
+        if not isinstance(data["review"], dict):
+            raise SchemaError("review must be null or an object")
+        validate_review_result(data["review"])
+    if type(data["verified_productive_cycles"]) is not int or data["verified_productive_cycles"] < 0:
+        raise SchemaError("verified_productive_cycles must be a non-negative integer")
+    if not isinstance(data["project_binding_provenance"], list):
+        raise SchemaError("project_binding_provenance must be a list")
+    if not isinstance(data["binding_matrix"], dict):
+        raise SchemaError("binding_matrix must be an object")
+    if type(data["sampling_seed"]) is not int:
+        raise SchemaError("sampling_seed must be an integer")
+    if not isinstance(data["temperature"], (int, float)):
+        raise SchemaError("temperature must be a number")
+    _string(data, "model_revision", True)
     for key in ("output_file", "graph_file", "method_file"):
         _string(data, key, True)
     return data
@@ -204,6 +265,7 @@ def validate_generation_record(data: dict[str, Any]) -> dict[str, Any]:
 VALIDATORS: dict[str, Callable[[dict[str, Any]], dict[str, Any]]] = {
     "theory": validate_theory_cycle,
     "meta": validate_meta_decision,
+    "review": validate_review_result,
     "graph": validate_theory_graph,
     "record": validate_generation_record,
 }

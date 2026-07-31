@@ -200,3 +200,12 @@ An jeder Kante wird geprüft:
 Im rein generativen Modus dürfen neue Ketten zunächst auch ohne vollständige Prüfung entstehen. Ihre Kanten werden erst beim Übergang in den Forschungszyklus rekonstruiert und bewertet.
 
 Damit wird Rekursivität nicht nur Gegenstand der Theorie, sondern Arbeitsweise ihrer Entwicklung und ihres Schreibens.
+
+## Präzisierung der generativen Prüfung
+
+Formale Neuheit, Projektrelevanz und philosophische Produktivität sind getrennte
+Prüfstufen. Eine Neuheitsprüfung ist noch kein Theorieurteil. Ein strukturierter,
+rollengetrennter Review kann höchstens `generated`, `proposal` oder `rejected`
+empfehlen; eine Bestätigung bleibt eine gesonderte Autorenentscheidung. Die
+maschinenlesbare Projektbindung in `knowledge/project_binding.yaml` ergänzt die
+Originaldateien, ersetzt deren Autorität aber nicht.

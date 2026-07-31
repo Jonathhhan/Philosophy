@@ -1,0 +1,46 @@
+schema_version: 1
+authority_order:
+  - author_decision
+  - constitution
+  - project
+  - architecture
+  - glossary
+  - documented_decisions
+  - manuscript
+  - drafts
+immutable_rules:
+  - id: object
+    text: Gegenstand ist die Organisation von Anschlussmöglichkeiten.
+  - id: no_universal_power_theory
+    text: Das Projekt entwickelt keine allgemeine Macht-, Herrschafts- oder Gesellschaftstheorie.
+  - id: montage_epistemic
+    text: Montage ist epistemischer Ausgangspunkt und Modell, nicht bloß ein Beispiel.
+  - id: author_authority
+    text: Inhaltliche Letztentscheidungen trifft der Autor.
+protected_concepts:
+  anschluss:
+    definition: Ein Vollzug, der an bereits wirksame Bedingungen anknüpft und weitere Vollzüge ermöglicht, begrenzt oder verändert.
+  programm:
+    definition: Die wirksame Vorordnung möglicher Anschlüsse.
+  algorithmus:
+    definition: Die wiederholbare Ordnung bedingter Übergänge.
+  montage:
+    definition: Epistemisches Modell rekursiver, materialgebundener Formbildung.
+  kritik:
+    definition: Operation innerhalb organisierter Anschlussbedingungen, nicht Position außerhalb der Organisation.
+  reorganisieren:
+    definition: Beziehungen mehrerer Anschlussbedingungen verändern.
+protected_relations:
+  - from: programm
+    relation: distinct_from
+    to: algorithmus
+  - from: montage
+    relation: epistemic_model_for
+    to: formbildung
+  - from: kritik
+    relation: operates_within
+    to: organisation
+open_author_decisions: []
+soft_constraints:
+  - Neue Begriffe und Theorieachsen bleiben bis zur Autorenentscheidung Vorschläge.
+  - Unsicherheiten und unbelegte Quellenbehauptungen bleiben offen.
