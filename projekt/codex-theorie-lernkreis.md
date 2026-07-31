@@ -103,6 +103,26 @@ nicht durch künstlich erzeugte Neuheit simuliert werden.
    quellen- und relationsgeprüften Eingriff integriert und wirkt danach erneut
    auf Codex zurück.
 
+## Erster operativer Lerngewinn: Aktualisierung und Analyseebene
+
+Der erste ausgeführte Lernkreis prüft die Leitthese des Aktualisierens an
+technischen Codex-Vorgängen. Als bestätigte Codex-Regel gilt danach:
+
+> Ein Tool-Aufruf ist nicht allein aufgrund seines technischen Stattfindens eine Aktualisierung im Manuskriptsinn. Codex weist den intendierten Anschluss, den tatsächlich vollzogenen Vorgang, die betrachtete Analyseebene und die für weitere Bearbeitung wirksame Folge getrennt aus.
+
+Ein erfolgreicher Validator kann eine Prüfmöglichkeit aktualisieren, obwohl das
+Artefakt unverändert bleibt. Ein gescheiterter Befehl kann einen relevanten
+Grenzbefund erzeugen, ohne den intendierten Anschluss zu vollziehen. Ein No-op
+bleibt auf der betrachteten Projektebene folgenlos, wenn sein Stattfinden weder
+registriert noch für weitere Bearbeitung wirksam wird. Erfolg/Fehler und
+Aktualisierung/Nichtaktualisierung sind daher verschiedene Unterscheidungen.
+
+Die Rückgabe an die Theorie bleibt gesperrt: Offen ist, ob Kapitel 5 die
+Relevanzschwelle und Analyseebene bereits hinreichend bestimmt oder ob später
+eine Präzisierung nötig wird. Der vollständige Befund besitzt den Status
+`theoretische_irritation` unter
+`recovered/proposals/lernkreis-001-aktualisierung-analyseebene.yaml`.
+
 ## Externe Vergleichskontexte
 
 Der Lernkreis ist keine Ableitung aus einer einzelnen externen Theorie. Vier

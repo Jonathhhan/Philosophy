@@ -1,0 +1,143 @@
+schema_version: 1
+id: change-lernkreis-001-aktualisierung
+created_at: 2026-07-31
+goal: Den ersten Codex-Theorie-Lernkreis an der Leitthese des Aktualisierens ausführen und Codex-Anpassung von theoretischer Irritation trennen.
+operation: revision
+scope:
+  allowed_files:
+    - projekt/codex-theorie-lernkreis.md
+    - recovered/proposals/lernkreis-001-aktualisierung-analyseebene.yaml
+    - knowledge/change-events/2026-07-31-lernkreis-001-aktualisierung.yaml
+  protected_files:
+    - CONSTITUTION.md
+    - PROJECT.md
+    - GLOSSAR.md
+    - knowledge/concepts/aktualisieren.yaml
+    - manuskript/
+basis:
+  project_files:
+    - CONSTITUTION.md
+    - GLOSSAR.md
+    - manuskript/05-aktualisieren.md
+    - knowledge/concepts/aktualisieren.yaml
+    - projekt/codex-theorie-lernkreis.md
+  decisions:
+    - knowledge/decisions/0025-codex-theorie-lernkreis.yaml
+  sources: []
+changes:
+  - file: recovered/proposals/lernkreis-001-aktualisierung-analyseebene.yaml
+    summary: Den ersten Lernkreis mit Vorgabe, Probe, Gegenprobe, Befund, Übersetzungsverlust, Codex-Anpassung und offener Theoriefolge dokumentiert.
+  - file: projekt/codex-theorie-lernkreis.md
+    summary: Die bestätigte operative Regel zur Trennung von Tool-Aufruf, intendiertem Anschluss, Vollzug, Analyseebene und anschlusswirksamer Folge ergänzt.
+affected_relations:
+  - from: manuskript/05-aktualisieren.md
+    relation: constrains
+    to: projekt/codex-theorie-lernkreis.md
+    effect: changed
+    note: Die operative Codex-Regel unterscheidet technische Ausführung von Aktualisierung im Manuskriptsinn.
+  - from: recovered/proposals/lernkreis-001-aktualisierung-analyseebene.yaml
+    relation: documents
+    to: manuskript/05-aktualisieren.md
+    effect: added
+    note: Eine theoretische Irritation wird adressierbar, ohne den bestätigten Text zu verändern.
+possibilities:
+  opened:
+    - Weitere Lernkreise können intendierten Anschluss, Vollzug, Analyseebene und anschlusswirksame Folge getrennt protokollieren.
+  restricted:
+    - Tool-Aufrufe dürfen nicht pauschal als Bestätigung oder Anwendung der Leitthese behandelt werden.
+  deferred:
+    - Eine Präzisierung von Kapitel 5 zur Relevanzschwelle und Analyseebene bleibt Autorenentscheidung.
+uncertainties:
+  - Offen ist, ob die Irritation eine Manuskriptlücke oder nur eine Grenze technischer Übertragung bezeichnet.
+agent_findings:
+  genealogist: []
+  consistency_checker:
+    - Technische Vorgänge sind nur dann Aktualisierungen im Manuskriptsinn, wenn ein bestimmter Vollzug zustande kommt und anschlusswirksam wird.
+    - Erfolg, Fehler und No-op fallen nicht mit Aktualisierung und Nichtaktualisierung zusammen.
+  critic:
+    - Eine beliebig feine Analyseebene könnte stets irgendeine Zustandsdifferenz finden und die Leitthese dadurch trivialisieren.
+    - Der Befund begründet zunächst eine Anwendungsgrenze, nicht die Widerlegung der Leitthese.
+  material_technical: []
+montage:
+  materials:
+    - id: actualization-theory
+      reference: manuskript/05-aktualisieren.md und knowledge/concepts/aktualisieren.yaml
+      kind: manuscript
+      status: bestätigte Theorie
+      identity: git:1e0c4b9
+    - id: learning-method
+      reference: projekt/codex-theorie-lernkreis.md
+      kind: proposal
+      status: bestätigtes Codex-Arbeitsprinzip
+      identity: git:1e0c4b9
+  variants:
+    - id: every-tool-call
+      derived_from:
+        - actualization-theory
+        - learning-method
+      artifact_or_diff: Jeder technische Vollzug wird als Aktualisierung klassifiziert.
+      status: rejected
+    - id: level-qualified
+      derived_from:
+        - actualization-theory
+        - learning-method
+      artifact_or_diff: recovered/proposals/lernkreis-001-aktualisierung-analyseebene.yaml
+      status: selected
+  selection:
+    selected:
+      - variant: level-qualified
+        reason: Die Fassung erhält Anschlussrelevanz und verhindert eine trivialisierende Ebenenverschiebung.
+    rejected:
+      - variant: every-tool-call
+        reason: Technisches Stattfinden allein genügt nicht für eine Aktualisierung im Manuskriptsinn.
+    deferred: []
+  arrangement:
+    - position: 1
+      variant: level-qualified
+      target: recovered/proposals/lernkreis-001-aktualisierung-analyseebene.yaml
+      function: Probe, Gegenprobe, Übersetzungsverlust und Irritation dokumentieren.
+    - position: 2
+      variant: level-qualified
+      target: projekt/codex-theorie-lernkreis.md
+      function: Den bestätigten operativen Codex-Lerngewinn festhalten.
+  feedback:
+    - subject: Konsistenzprüfung
+      finding: Eine Prüfung kann anschlusswirksam sein, obwohl das geprüfte Artefakt unverändert bleibt.
+      consequence: preserve
+    - subject: Gegenmodell
+      finding: Mikrodifferenzen dürfen nicht durch willkürlichen Ebenenwechsel als relevante Veränderung ausgegeben werden.
+      consequence: revise
+  stabilization:
+    state: stabilized
+    evidence:
+      - Read-only Validator-, Negativsuch- und Dateistandsproben wurden ausgeführt.
+      - Zwei unabhängige Konsistenz- und Gegenmodellprüfungen wurden integriert.
+      - Vollständige Repository-Prüfung, 20 Webtests und Build bestanden.
+  recovery:
+    baseline: git:1e0c4b9
+    strategy: Lernkreis, Codex-Regel und Theorieirritation bleiben in einem eigenen Commit revidierbar.
+    verification: Event, Forschungsdatensatz, Diff und vollständiger Repository-Zustand sind geprüft.
+authority:
+  requires_author_decision: true
+  decision_status: accepted
+  decision_reference: knowledge/decisions/0025-codex-theorie-lernkreis.yaml
+validation:
+  - check: executed_operational_probe
+    result: passed
+    evidence: Erfolgreiche read-only Prüfung, Negativsuche und unveränderter Git-Stand wurden als verschiedene Vollzugsfolgen dokumentiert.
+  - check: independent_consistency_review
+    result: passed
+    evidence: Tool-Ausführung und Aktualisierung im Manuskriptsinn wurden begrifflich getrennt.
+  - check: independent_countermodel_review
+    result: passed
+    evidence: Idempotenz, No-op, Fehler und willkürlicher Analyseebenenwechsel wurden als Gegenfälle geprüft.
+  - check: theory_return_gate
+    result: passed
+    evidence: Die mögliche Theoriefolge bleibt als theoretische Irritation mit offener Autorenentscheidung außerhalb des Manuskripts.
+  - check: change_event_schema
+    result: passed
+    evidence: Das Change Event einschließlich Montage-Nachweis ist valide.
+  - check: complete_repository_validation
+    result: passed
+    evidence: ALL REPOSITORY CHECKS PASSED; 20 Webtests und Build bestanden.
+status: stabilized

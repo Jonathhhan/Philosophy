@@ -1,0 +1,70 @@
+id: lernkreis-001-aktualisierung-analyseebene
+type: tension
+mode: research
+status: proposal
+created_by: codex-theorie-lernkreis
+theoretische_vorgabe:
+  claim: Jede Aktualisierung verändert den Raum weiterer Anschlussmöglichkeiten.
+  references:
+    - CONSTITUTION.md
+    - GLOSSAR.md
+    - manuskript/05-aktualisieren.md
+    - knowledge/concepts/aktualisieren.yaml
+operative_uebersetzung: >-
+  Codex prüft nach einer Ausführung, welche bestimmten weiteren
+  Bearbeitungsmöglichkeiten durch deren Ergebnis eröffnet, begrenzt oder
+  zurückgestellt wurden.
+ausgefuehrte_probe:
+  - Ein bestehendes Change Event wurde erfolgreich read-only validiert; das Artefakt blieb unverändert, der gültige Prüfstatus wurde im Arbeitskontext aktualisiert.
+  - Eine Suche ohne Treffer veränderte keine Projektdatei und aktualisierte den intendierten Suchanschluss nicht; ihr negativer Befund konnte dennoch als Arbeitsinformation aufgenommen werden.
+  - Die Erstellung dieses Forschungsdatensatzes aktualisiert den Projektstand und schafft eine adressierbare Entscheidungsgrundlage.
+gegenprobe: >-
+  Ohne Projektvokabular führt Codex technische Zustandsübergänge aus. Manche
+  verändern Dateien, Ausgaben, verfügbare Informationen oder
+  Entscheidungsgrundlagen; andere bleiben auf der betrachteten Projektebene
+  folgenlos. Erfolg und Fehler bestimmen diese Differenz nicht allein.
+beobachteter_befund:
+  - Technische Ausführung und Aktualisierung im Manuskriptsinn sind nicht gleichbedeutend.
+  - Ein unverändertes Artefakt schließt eine anschlusswirksame Prüfung nicht aus.
+  - Ein Fehler kann einen relevanten Befund erzeugen; ein Erfolg kann auf der betrachteten Ebene ein No-op bleiben.
+  - Die Wahl der Analyseebene darf eine fehlende relevante Veränderung nicht nachträglich trivialisierend erzeugen.
+alternative_deutung: >-
+  Der Befund zeigt nur, dass technische Vorgänge nach ihrer Wirkung auf
+  Arbeitszustand und Entscheidungslage klassifiziert werden müssen. Er muss
+  keine Lücke der Theorie anzeigen.
+uebersetzungsverlust:
+  - Diskrete Maschinenereignisse sind nicht ohne Weiteres relationale, situativ relevante Vollzüge.
+  - Veränderte technische Zustände sind nicht automatisch veränderte Räume sinnhafter Anschlussmöglichkeiten.
+  - Codex nimmt Folgen nicht autonom wahr und beurteilt sie nicht selbst.
+rueckgabe_status: theoretische_irritation
+codex_anpassung:
+  status: accepted_operational_rule
+  rule: >-
+    Bei theoriegeleiteter Beschreibung technischer Arbeit intendierten
+    Anschluss, tatsächlich vollzogenen Vorgang, Analyseebene und
+    anschlusswirksame Folge getrennt ausweisen; nicht jeden Tool-Aufruf als
+    Aktualisierung bezeichnen.
+moegliche_theoriefolge:
+  status: author_decision_open
+  question: >-
+    Genügt für die Veränderung jede kausale Zustandsdifferenz, oder muss sie
+    für einen bestimmbaren Zusammenhang weiterer Vollzüge als
+    Anschlussbedingung wirksam werden?
+  assessment: >-
+    Kapitel 5 spricht bereits für die zweite Lesart, bestimmt die
+    Relevanzschwelle und Analyseebene aber nicht als eigenes Ausschlusskriterium.
+autorentscheidung: offen
+open_objections:
+  - Die Leitthese könnte als definitorische Bestimmung statt als widerlegbare Behauptung verstanden werden.
+  - Eine zusätzliche Analyseebenen-Regel könnte den vorhandenen Begriff unnötig technisieren.
+revision_conditions:
+  - Manuskriptänderung nur nach gesonderter Autorenentscheidung und vollständiger Relationsprüfung.
+  - Irritation verwerfen, wenn Kapitel 5 die Relevanzschwelle im bestehenden Argument bereits hinreichend bestimmt.
+productive_difference: >-
+  Trennt technische Ausführung von theoretischer Aktualisierung und erzeugt
+  eine prüfbare Frage nach Relevanzschwelle und Analyseebene.
+next_possible_steps:
+  - Autor entscheidet, ob die Irritation verworfen, weiter geprüft oder als Präzisierungsvorschlag entwickelt wird.
+  - Gegenbeispiele aus nichttechnischen Vollzügen prüfen, bevor eine Manuskriptänderung erwogen wird.
+mode_transitions: []
+
