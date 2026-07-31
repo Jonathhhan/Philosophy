@@ -1,0 +1,78 @@
+schema_version: 1
+id: change-kritik-bedingungen-spaeterer-kritik
+created_at: 2026-07-31
+goal: Die rekursive Rückwirkung kritischer Anschlüsse auf die Bedingungen späterer Kritik in Kapitel 14 explizieren.
+operation: composition
+scope:
+  allowed_files:
+    - manuskript/14-kritisieren.md
+    - knowledge/change-events/2026-07-31-kritik-bedingungen-spaeterer-kritik.yaml
+  protected_files:
+    - CONSTITUTION.md
+    - PROJECT.md
+    - GLOSSAR.md
+    - manuskript/15-beurteilen.md
+    - manuskript/16-revidieren.md
+basis:
+  project_files:
+    - CONSTITUTION.md
+    - PROJECT.md
+    - STYLE.md
+    - GLOSSAR.md
+    - manuskript/14-kritisieren.md
+    - manuskript/15-beurteilen.md
+    - manuskript/16-revidieren.md
+    - projekt/automaten.md
+  decisions:
+    - Autorenbestätigung im Codex-Dialog vom 2026-07-31 auf den zusammengeführten Automatenvorschlag.
+  sources:
+    - Interne Prüfungen durch Automatenverbund, Unterscheidungsautomat, Tractatus-Automat und Philosophie-Automat; keine neue historische Quellenbehauptung.
+changes:
+  - file: manuskript/14-kritisieren.md
+    summary: Ergänzt die rekursive Folge, dass kritische Anschlüsse Bedingungen späterer Gegenprüfung und Revision verändern, ohne die Vermehrung von Kritik zum Obermaßstab zu machen.
+  - file: knowledge/change-events/2026-07-31-kritik-bedingungen-spaeterer-kritik.yaml
+    summary: Dokumentiert Umfang, Autorenbestätigung, Relationsfolgen und Validierung der kompositorischen Ergänzung.
+affected_relations:
+  - from: manuskript/14-kritisieren.md
+    relation: cross_references
+    to: manuskript/15-beurteilen.md
+    effect: preserved
+    note: Die Ergänzung bereitet weiterhin das Beurteilen vor und nimmt dessen Maßstabsentscheidung nicht vorweg.
+  - from: manuskript/14-kritisieren.md
+    relation: cross_references
+    to: manuskript/16-revidieren.md
+    effect: added
+    note: Die Revidierbarkeit kritischer Voraussetzungen und Problemfassungen wird als späterer Anschluss ausgewiesen, ohne Kritik und Revision gleichzusetzen.
+  - from: manuskript/14-kritisieren.md
+    relation: defines
+    to: knowledge/concepts/kritisieren.yaml
+    effect: preserved
+    note: Die bestätigte Definition von Kritisieren bleibt unverändert; ergänzt wird eine rekursive Folge ihrer Aktualisierung.
+possibilities:
+  opened:
+    - Spätere Kritik kann danach geprüft werden, ob Voraussetzungen, Maßstäbe und Folgen einer Gegenprüfung und Revision zugänglich bleiben.
+  restricted:
+    - Die bloße Vermehrung weiterer Kritikmöglichkeiten wird ausdrücklich nicht als allgemeiner Gütemaßstab eingeführt.
+  deferred:
+    - Eine eigenständige Definition von Kritikfähigkeit oder bedingter Offenheit wird nicht eingeführt.
+uncertainties: []
+agent_findings:
+  genealogist: []
+  consistency_checker:
+    - Die Ergänzung erhält die Trennung von Kritisieren, Beurteilen und Revidieren.
+  critic:
+    - Das Gegenmodell einer begründet abschließenden oder begrenzenden Kritik verhindert die Gleichsetzung von Güte und maximaler Offenheit.
+  material_technical:
+    - Begriffe, Darstellungsformen, Belege und Adressen halten die materiellen und technischen Bedingungen kritischer Anschlussfähigkeit sichtbar.
+authority:
+  requires_author_decision: true
+  decision_status: accepted
+  decision_reference: Codex-Dialog 2026-07-31, Antwort des Autors "ja" auf den zusammengeführten Integrationsvorschlag.
+validation:
+  - check: Change-Event-Schema
+    result: passed
+    evidence: Prüfung mit validate_change_event.py vorgesehen und anschließend ausgeführt.
+  - check: Begriffs- und Übergangsprüfung Kapitel 14 bis 16
+    result: passed
+    evidence: Definitionen und Übergänge vollständig gelesen; keine Definition ersetzt und kein Maßstab des Beurteilens vorweggenommen.
+status: stabilized
