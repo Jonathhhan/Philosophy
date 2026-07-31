@@ -95,6 +95,7 @@ Kritik beendet diese Bewegung nicht. Sie ist selbst ein Anschluss, der Formen de
 Die Möglichkeit zur Reorganisation muss organisiert werden, ohne dadurch gegen ihre eigene Reorganisation abgeschlossen zu werden. Dieser Satz bezeichnet keine institutionelle Einheitslösung. Je nach Gegenstand können andere Formen des Gedächtnisses, der Prüfung, der Entscheidung und des Übergangs erforderlich sein. Gemeinsam ist ihnen nur die rekursive Anforderung, dass die Wirkungen einer Organisation unter bestimmbaren Bedingungen auf ihre weitere Organisation zurückwirken können.
 
 Reorganisation kann die Bedingungen künftiger Antworten verändern. Sie kann jedoch nicht im Voraus bestimmen, welche Erfahrungen, Einwände und Möglichkeiten in ihnen hervortreten werden.
+
 Als vorläufige Schlussformel lässt sich festhalten:
 
 > **Eine tragfähige Organisation von Anschlussmöglichkeiten stabilisiert Bedingungen gemeinsamen Handelns und erhält zugleich die Möglichkeit, diese Bedingungen aufgrund ihrer erfahrenen Folgen wahrzunehmen, zu beantworten und zu reorganisieren.**

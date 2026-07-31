@@ -122,7 +122,7 @@ Damit schließt sich die rekursive Bewegung des Buches, ohne zum Ausgangspunkt z
 
 Organisation ordnet die Bedingungen weiterer Anschlüsse. Aktualisierung verwirklicht Möglichkeiten unter diesen Bedingungen und verändert dadurch den Raum weiterer Möglichkeiten. Reorganisation verändert die Beziehungen, in denen die Bedingungen gemeinsam wirksam werden. Kritik macht die Voraussetzungen, Formen und Folgen dieses veränderten Zusammenhangs erneut wahrnehmbar und beurteilbar.
 
-Das Ergebnis ist keine letzte Organisation. Es ist eine bestimmte, stabilisierte und weiterhin revidierbare Anordnung, an die weitere Vollzüge anschließen. Die Kritik der Organisation von Anschlussmöglichkeiten bezeichnet deshalb keinen Standpunkt außerhalb aller Organisation. Sie bezeichnet die rekursive Arbeit an Bedingungen, deren Aktualisierung immer schon neue Bedingungen weiterer Anschlüsse hervorbringt.
+Das Ergebnis ist keine letzte Organisation. Es ist eine bestimmte, stabilisierte und weiterhin revidierbare Anordnung, an die weitere Vollzüge anschließen. Die Kritik der Organisation von Anschlussmöglichkeiten bezeichnet deshalb keinen Standpunkt außerhalb aller Organisation. Sie bezeichnet die rekursive Arbeit an Bedingungen, deren Aktualisierung den Raum weiterer Anschlussmöglichkeiten verändert.
 
 [^ba-reorganisieren]: Jonathan Frank, *Filmmontage und Improvisation. Weiterführende Gedanken* (2014), gedruckte S. 38–45.
 [^ma-reorganisieren]: Jonathan Frank, *Algorithmische Komposition in der Filmmontage oder wie ich darüber denke*, 2. Aufl. (2020), gedruckte S. 8–9, 54–55 und 92–93.

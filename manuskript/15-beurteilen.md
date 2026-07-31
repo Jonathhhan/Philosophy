@@ -130,7 +130,7 @@ Auch ein gut ausgewiesenes Urteil ist eine Aktualisierung. Es hebt bestimmte Unt
 
 Diese Korrekturbereitschaft begründet keine Pflicht, jede Ordnung jederzeit offenzuhalten. Verlässlichkeit, Schutz und die Möglichkeit gemeinsamer Planung können eine Stabilisierung verlangen. Zunächst muss das Urteil selbst als revidierbar ausgewiesen bleiben: Neue Folgen, veränderte Umstände oder eine überzeugendere Alternative können seine Gründe und Gewichtungen erneut fraglich machen.
 
-Ein Urteil kann so ergeben, dass eine bestehende Anschlussbedingung fortgesetzt, begrenzt oder verändert werden sollte. Es verändert diese Bedingung aber noch nicht selbst. Das begründete Zurückkommen auf stabilisierte Anschlussbedingungen ist die Eigenfunktion des Revidierens.
+Ein Urteil kann so ergeben, dass eine bestehende Anschlussbedingung fortgesetzt, begrenzt oder verändert werden sollte. Es bestimmt die beurteilte stabilisierte Bedingung aber noch nicht selbst neu. Das begründete Zurückkommen auf stabilisierte Anschlussbedingungen ist die Eigenfunktion des Revidierens.
 
 [^ba-beurteilen-material]: Jonathan Frank, *Filmmontage und Improvisation. Weiterführende Gedanken* (2014), gedruckte S. 7.
 [^ba-beurteilen-varianten]: Ebd., gedruckte S. 35–45, besonders S. 40–45.

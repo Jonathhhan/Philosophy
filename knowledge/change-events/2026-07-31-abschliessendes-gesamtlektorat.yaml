@@ -1,0 +1,105 @@
+schema_version: 1
+id: change-abschliessendes-gesamtlektorat
+created_at: 2026-07-31
+goal: Das gesamte Manuskript abschließend auf Argumentation, Stil, Definitionen, Übergänge, Querverweise und Quellenprovenienz lektorieren.
+operation: revision
+scope:
+  allowed_files:
+    - manuskript/01-anschliessen.md
+    - manuskript/15-beurteilen.md
+    - manuskript/17-reorganisieren.md
+    - manuskript/schluss.md
+    - recovered/audits/abschliessendes-gesamtlektorat-2026-07-31.md
+    - knowledge/change-events/2026-07-31-abschliessendes-gesamtlektorat.yaml
+  protected_files:
+    - CONSTITUTION.md
+    - PROJECT.md
+    - GLOSSAR.md
+    - projekt/architektur.md
+    - knowledge/concepts/
+basis:
+  project_files:
+    - CONSTITUTION.md
+    - PROJECT.md
+    - STYLE.md
+    - GLOSSAR.md
+    - projekt/architektur.md
+    - manuskript/
+    - sources/README.md
+    - sources/development.md
+  decisions:
+    - knowledge/decisions/0021-theoriegeleitetes-codex-arbeitsprotokoll.yaml
+  sources:
+    - sources/bachelor/Filmmontage_und_Improvisation.pdf
+    - sources/master/Algorithmische_Komposition_in_der_Filmmontage.pdf
+changes:
+  - file: manuskript/01-anschliessen.md
+    summary: Fehlenden Abstand vor der ersten Unterüberschrift ergänzt.
+  - file: manuskript/15-beurteilen.md
+    summary: Übergang zum Revidieren auf die noch ausstehende Neubestimmung der beurteilten stabilisierten Bedingung präzisiert.
+  - file: manuskript/17-reorganisieren.md
+    summary: Schlussformulierung auf die exakte Reichweite der stabilisierten Leitthese zurückgeführt.
+  - file: manuskript/schluss.md
+    summary: Fehlenden Absatzabstand vor der vorläufigen Schlussformel ergänzt.
+  - file: recovered/audits/abschliessendes-gesamtlektorat-2026-07-31.md
+    summary: Gesamturteil, integrierte Korrekturen, offene Autorenentscheidungen und ausstehende Quellenprüfungen dokumentiert.
+affected_relations:
+  - from: manuskript/15-beurteilen.md
+    relation: cross_references
+    to: manuskript/16-revidieren.md
+    effect: changed
+    note: Der Übergang soll Aktualisierung des Urteils und Neubestimmung der beurteilten Bedingung ausdrücklich unterscheiden.
+  - from: manuskript/17-reorganisieren.md
+    relation: defines
+    to: PROJECT.md
+    effect: changed
+    note: Die Schlussformulierung soll wieder exakt an die stabilisierte Leitthese anschließen.
+  - from: recovered/audits/abschliessendes-gesamtlektorat-2026-07-31.md
+    relation: documents
+    to: manuskript/
+    effect: added
+    note: Eindeutige Korrekturen und entscheidungsbedürftige Theoriefragen werden getrennt dokumentiert.
+possibilities:
+  opened:
+    - Der publikationsnahe Manuskriptstand erhält einen nachvollziehbaren Gesamtbefund.
+  restricted:
+    - Philosophisch mehrdeutige Revisionen werden nicht als bloßes Lektorat integriert.
+  deferred:
+    - Status der Leitthese als konstitutive, empirische oder metaphysische Aussage.
+    - Übergang von Begründungsanspruch zu Antwortanspruch und Freiheit.
+    - Reichweite von Asymmetrie, Verantwortung und Montage als epistemischem Modell.
+uncertainties:
+  - Die offenen Theoriefragen benötigen eine ausdrückliche Autorenentscheidung vor einer weiter reichenden Revision.
+agent_findings:
+  genealogist:
+    - Die Provenienzordnung trennt Quelle, Entwicklung und aktuellen Status konsistent.
+    - Fünf historische Deutungsstellen benötigen vor Veröffentlichung noch eine Prüfung am originalen Seitenbild.
+  consistency_checker:
+    - Die stabilisierten Definitionen und Kapitelübergänge sind überwiegend konsistent.
+    - Zwei eindeutige Begriffspräzisierungen und zwei formale Abstände konnten lokal korrigiert werden.
+  critic:
+    - Möglichkeit, normative Ausweisbarkeit, Asymmetrie und Freiheit enthalten entscheidungsbedürftige Reichweitenfragen.
+    - Die stärksten systematischen Unterscheidungen und Montage als epistemisches Modell sollen erhalten bleiben.
+  material_technical:
+    - Alle Fußnotenreferenzen sind aufgelöst; keine TODOs, Platzhalter oder beschädigten Querverweise gefunden.
+authority:
+  requires_author_decision: false
+  decision_status: not_required
+  decision_reference: null
+validation:
+  - check: footnote_integrity
+    result: passed
+    evidence: Alle Fußnotenreferenzen besitzen Definitionen; keine verwaisten Definitionen gefunden.
+  - check: manuscript_placeholders
+    result: passed
+    evidence: Keine TODOs, FIXMEs oder Platzhalter im Manuskript.
+  - check: change_event_schema
+    result: passed
+    evidence: Change Event ist valide.
+  - check: recursive_state
+    result: passed
+    evidence: 47 von 47 Change Events valide; Wissensvalidierung bestanden; keine Warnungen.
+  - check: complete_repository_validation
+    result: passed
+    evidence: ALL REPOSITORY CHECKS PASSED.
+status: stabilized
