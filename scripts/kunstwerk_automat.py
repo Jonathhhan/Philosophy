@@ -136,6 +136,7 @@ def run(marked: str, unmarked: str, max_steps: int) -> dict[str, Any]:
     visited: set[str] = set()
     trace: list[dict[str, Any]] = []
     score: list[str] = []
+    recursive_returns: list[dict[str, str]] = []
     current_id = start
     current_unmarked = unmarked
     relation: str | None = None
@@ -156,6 +157,14 @@ def run(marked: str, unmarked: str, max_steps: int) -> dict[str, Any]:
             "program_line": instruction,
             "source_file": current.file,
         })
+        for target in current.required_for:
+            if target in visited and target in concepts:
+                recursive_returns.append({
+                    "from": current.id,
+                    "relation": "required_for",
+                    "to": target,
+                    "to_label": concepts[target].label,
+                })
         next_edge = choose_next(current_id, concepts, visited, index)
         if next_edge is None:
             break
@@ -170,10 +179,12 @@ def run(marked: str, unmarked: str, max_steps: int) -> dict[str, Any]:
         "first_distinction": {"marked": marked, "unmarked": unmarked},
         "terminal_condition": terminal,
         "steps": trace,
+        "recursive_returns": recursive_returns,
         "generated_score": score,
         "limits": [
             "Der Automat veraendert nicht seinen Quellcode, sondern erzeugt einen auffuehrbaren Score.",
             "Die Folge nutzt deklarierte Concept-Relationen und bleibt dadurch projektgebunden.",
+            "Rückkehrskanten werden ausgewiesen, aber nicht als unbegrenzte Schleife ausgeführt.",
             "Die letzte Station ist eine Abbruchbedingung, keine philosophische Letztbegruendung.",
             "Manuskriptintegration braucht einen gesonderten Auftrag, Quellenpruefung und Autorentscheidung.",
         ],
@@ -200,6 +211,14 @@ def markdown(data: dict[str, Any]) -> str:
             for constraint in step["constraints"]:
                 lines.append(f"  - {constraint}")
         lines.append(f"- Programmiert naechste Auffuehrung: `{step['program_line']}`")
+        lines.append("")
+    if data["recursive_returns"]:
+        lines.extend(["## Rekursive Rückkehr", ""])
+        for item in data["recursive_returns"]:
+            lines.append(
+                f"- `{item['from']}` führt über `{item['relation']}` erneut zu "
+                f"`{item['to']}` ({item['to_label']})."
+            )
         lines.append("")
     lines.extend(["## Generierter Score", "", "```text"])
     lines.extend(data["generated_score"])

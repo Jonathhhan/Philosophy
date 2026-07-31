@@ -1,0 +1,78 @@
+schema_version: 1
+id: change-rekursive-rueckkante-kritik
+created_at: 2026-07-31
+goal: Die im Manuskript bestätigte Rückwirkung von Reorganisation auf erneute Kritik im Begriffsgraphen und im Kunstwerk-Automaten sichtbar machen.
+operation: reorganization
+scope:
+  allowed_files:
+    - knowledge/concepts/reorganisieren.yaml
+    - scripts/kunstwerk_automat.py
+    - tests/test_automata.py
+    - knowledge/change-events/2026-07-31-rekursive-rueckkante-kritik.yaml
+  protected_files:
+    - CONSTITUTION.md
+    - PROJECT.md
+    - GLOSSAR.md
+    - manuskript/
+basis:
+  project_files:
+    - CONSTITUTION.md
+    - manuskript/17-reorganisieren.md
+    - manuskript/schluss.md
+    - knowledge/concepts/reorganisieren.yaml
+    - knowledge/concepts/kritisieren.yaml
+    - scripts/kunstwerk_automat.py
+  decisions: []
+  sources: []
+changes:
+  - file: knowledge/concepts/reorganisieren.yaml
+    summary: Kritisieren als deklarierte Folge der Reorganisation ergänzt.
+  - file: scripts/kunstwerk_automat.py
+    summary: Rückkanten zu bereits besuchten Begriffen werden gesondert ausgewiesen, ohne eine Endlosschleife auszuführen.
+  - file: tests/test_automata.py
+    summary: Vollständiger Kapitelpfad und rekursive Rückkehr von Reorganisieren zu Kritisieren gemeinsam abgesichert.
+affected_relations:
+  - from: reorganisieren
+    relation: other
+    to: kritisieren
+    effect: added
+    note: Die Wirkungen des reorganisierten Zusammenhangs werden als Gegenstand erneuter Kritik maschinenlesbar.
+  - from: scripts/kunstwerk_automat.py
+    relation: renders
+    to: reorganisieren
+    effect: changed
+    note: Bereits besuchte Ziele deklarierter required_for-Kanten werden als rekursive Rückkehr ausgewiesen.
+possibilities:
+  opened:
+    - Der Automat kann zwischen linearer Kapiteltraversierung und rekursiver Rückwirkung unterscheiden.
+  restricted:
+    - Rückkanten werden nicht als unbegrenzte automatische Wiederholung ausgeführt.
+  deferred:
+    - Mehrfache Aufführungszyklen benötigen weiterhin eine ausdrückliche Laufstrategie.
+uncertainties: []
+agent_findings:
+  genealogist: []
+  consistency_checker:
+    - Kapitel 17 und Schluss bestimmen die Wirkungen einer Reorganisation ausdrücklich als möglichen Gegenstand erneuter Kritik.
+  critic:
+    - Die Rückkante bezeichnet eine Anschlussmöglichkeit, keine notwendige oder endlose Wiederholung.
+  material_technical:
+    - Die bisherige Besuchsmenge verhinderte Zyklen, machte dadurch aber auch die deklarierte Rekursion unsichtbar.
+authority:
+  requires_author_decision: false
+  decision_status: not_required
+  decision_reference: null
+validation:
+  - check: knowledge_validation
+    result: passed
+    evidence: Knowledge validation passed.
+  - check: automata_tests
+    result: passed
+    evidence: 16 Tests bestanden.
+  - check: recursive_return_trace
+    result: passed
+    evidence: Der vollständige Lauf weist genau die Rückkante Reorganisieren zu Kritisieren aus.
+  - check: complete_repository_validation
+    result: passed
+    evidence: ALL REPOSITORY CHECKS PASSED.
+status: stabilized

@@ -116,6 +116,18 @@ class KunstwerkTraversalTests(unittest.TestCase):
                 "freiheit",
             ],
         )
+        self.assertEqual(
+            result["recursive_returns"],
+            [
+                {
+                    "from": "reorganisieren",
+                    "relation": "required_for",
+                    "to": "kritisieren",
+                    "to_label": "Kritisieren",
+                }
+            ],
+        )
+        self.assertIn("## Rekursive Rückkehr", kunstwerk_automat.markdown(result))
 
 
 class KollektivAutomatTests(unittest.TestCase):

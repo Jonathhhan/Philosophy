@@ -6,7 +6,8 @@ definition: Die Beziehungen verändern, durch die mehrere Anschlussbedingungen e
 depends_on:
   - organisieren
   - revidieren
-required_for: []
+required_for:
+  - kritisieren
 related:
   - aktualisieren
 constraints:
