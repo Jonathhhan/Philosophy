@@ -22,6 +22,29 @@
 | `validation` | Liste | Prüfungen, Ergebnisse und Belege |
 | `status` | Enum | gegenwärtiger Status des Ereignisses |
 
+## Optionaler Montage-Nachweis
+
+Größere kompositorische, revidierende oder reorganisierende Arbeiten können
+zusätzlich ein Top-Level-Feld `montage` führen. Es ersetzt kein Pflichtfeld und
+lässt bestehende Ereignisse unverändert gültig. Der Nachweis besitzt:
+
+- `materials`: adressierte Materialien mit eindeutiger ID, Referenz, Art,
+  Status und Identitätsnachweis;
+- `variants`: tatsächlich ausgeführte Varianten mit Herkunft, Artefakt oder
+  Diff und Status;
+- `selection`: disjunkte Listen ausgewählter, verworfener und zurückgestellter
+  Varianten, jeweils mit Grund;
+- `arrangement`: lückenlos geordnete Verwendung ausgewählter Varianten mit
+  Ziel und argumentativer oder technischer Funktion;
+- `feedback`: Sichtungsbefunde und Konsequenz (`preserve`, `revise`,
+  `reorder`, `defer`);
+- `stabilization`: Zustand (`open`, `tested`, `stabilized`) und Belege;
+- `recovery`: Baseline, Wiederherstellungsstrategie und Prüfung.
+
+Der Validator prüft IDs, Referenzen, Zyklen, Auswahlkategorien, Anordnung und
+Stabilisierungsbelege. Pfad, Git-Revision oder Hash dokumentieren Identität,
+beweisen aber keine philosophische Richtigkeit.
+
 ## Enumerationen
 
 `operation`: `local_update`, `composition`, `revision`, `reorganization`, `audit`

@@ -77,6 +77,23 @@ Diese Vorlage dient umfangreichen, wiederkehrenden oder philosophisch strittigen
 **Welche entfernte Anschlussstelle könnte der Kasten überraschend nahelegen?**
 
 **Welche Relation ersetzt eine mögliche Umordnung?**
+
+## Montage
+
+**Materialkonstellation und geschützte Ausgangsfassungen:**
+
+**Vergleichshinsicht oder zu prüfende Beziehung:**
+
+**Auswahl, Auslassung und sichtbare Brüche:**
+
+**Tatsächlich ausgeführte Varianten:**
+
+**Was zeigt die Sichtung der Fassungen erst im Vollzug?**
+
+**Welche Fassung wird integriert, zurückgestellt oder verworfen – und warum?**
+
+**Wie bleiben Ausgangsstand und verworfene Variante wiederherstellbar?**
+
 ## Problem und argumentative Funktion
 
 **Welche bestimmte Erklärungslücke, Inkonsistenz oder Gestaltungsaufgabe wird bearbeitet?**

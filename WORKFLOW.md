@@ -22,6 +22,30 @@ Das Protokoll wird nach Eingriffstiefe skaliert:
 
 Die Aufgabenvorlage unter `projekt/codex-auftragsvorlage.md` kann für umfangreiche oder wiederkehrende Arbeiten verwendet werden.
 
+## Montageprinzip für Codex
+
+Bei `composition`, größeren Revisionen, Reorganisationen und ausdrücklich
+montierenden Aufgaben gilt zusätzlich `projekt/codex-prinzip-montage.md`.
+Das Prinzip ergänzt die rekursive Steuerung um die Bildung und Prüfung
+ausgeführter Fassungen:
+
+1. bereits geformtes Material und geschützte Fassungen sichern;
+2. Auswahl, Auslassung, Schnitt und Vergleichshinsicht bestimmen;
+3. bei echter Unbestimmtheit mindestens zwei relevante Varianten ausführen;
+4. Anordnung, Übergänge, Brüche und Materialwiderstände sichten;
+5. nur eine geprüfte und autorisierte Fassung integrieren und stabilisieren;
+6. die hervorgebrachte Fassung als Material weiterer Revision behandeln.
+
+Vor der Stabilisierung ist zu fragen:
+
+- Welche Auswahl und Auslassung wird in der Fassung wirksam?
+- Welche Variante wurde tatsächlich ausgeführt und womit verglichen?
+- Welche Beziehung, welcher Bruch oder welcher Widerstand wurde erst in der
+  ausgeführten Fassung sichtbar?
+
+Lokale Korrekturen und reine Audits verlangen keinen Montagepass. Technische
+Erzeugung, Diff und Test ersetzen weder sinnhaftes Urteil noch Autorenentscheidung.
+
 ## Zettelkasten- und Plateau-Prinzip für Codex
 
 Für größere Arbeiten kann Codex zusätzlich nach dem Arbeitsprinzip unter `projekt/codex-prinzip-zettelkasten-plateaus.md` verfahren. Dieses Prinzip behandelt Bearbeitungen als adressierbare Zettel und als nicht-linear anschließbare Plateaus. Es dient der Projektarbeit, nicht der Einführung einer neuen Theorieachse im Manuskript.

@@ -33,6 +33,12 @@ EFFECTS = {"preserved", "changed", "added", "removed", "uncertain"}
 DECISION_STATUSES = {"not_required", "pending", "accepted", "delegated", "rejected"}
 VALIDATION_RESULTS = {"passed", "warning", "failed", "not_run"}
 STATUSES = {"proposed", "tested", "confirmed", "stabilized", "revised"}
+OPTIONAL_TOP = {"montage"}
+MATERIAL_KINDS = {"source", "manuscript", "decision", "proposal", "generated", "diff"}
+VARIANT_STATUSES = {"candidate", "selected", "rejected", "deferred"}
+MONTAGE_STATES = {"open", "tested", "stabilized"}
+FEEDBACK_CONSEQUENCES = {"preserve", "revise", "reorder", "defer"}
+
 REQUIRED_TOP = {
     "schema_version",
     "id",
@@ -95,13 +101,158 @@ def check_date(value: Any, errors: list[str]) -> None:
     errors.append("created_at must be an ISO date")
 
 
+def validate_montage(value: Any, event: dict[str, Any], errors: list[str]) -> None:
+    keys = {"materials", "variants", "selection", "arrangement", "feedback", "stabilization", "recovery"}
+    if not check_exact_keys(value, "montage", keys, errors):
+        return
+
+    material_ids: set[str] = set()
+    materials = value["materials"]
+    if not isinstance(materials, list) or not materials:
+        errors.append("montage.materials must be a non-empty list")
+    else:
+        for index, item in enumerate(materials):
+            item_path = f"montage.materials[{index}]"
+            if check_exact_keys(item, item_path, {"id", "reference", "kind", "status", "identity"}, errors):
+                material_id = item["id"]
+                if not is_nonempty_string(material_id) or material_id in material_ids:
+                    errors.append(f"{item_path}.id must be a unique non-empty string")
+                else:
+                    material_ids.add(material_id)
+                for key in ("reference", "status", "identity"):
+                    if not is_nonempty_string(item[key]):
+                        errors.append(f"{item_path}.{key} must be a non-empty string")
+                check_enum(item["kind"], f"{item_path}.kind", MATERIAL_KINDS, errors)
+
+    variant_ids: set[str] = set()
+    variant_items: dict[str, dict[str, Any]] = {}
+    variants = value["variants"]
+    if not isinstance(variants, list) or not variants:
+        errors.append("montage.variants must be a non-empty list")
+    else:
+        for index, item in enumerate(variants):
+            item_path = f"montage.variants[{index}]"
+            if check_exact_keys(item, item_path, {"id", "derived_from", "artifact_or_diff", "status"}, errors):
+                variant_id = item["id"]
+                if not is_nonempty_string(variant_id) or variant_id in variant_ids:
+                    errors.append(f"{item_path}.id must be a unique non-empty string")
+                else:
+                    variant_ids.add(variant_id)
+                    variant_items[variant_id] = item
+                check_string_list(item["derived_from"], f"{item_path}.derived_from", errors)
+                if not is_nonempty_string(item["artifact_or_diff"]):
+                    errors.append(f"{item_path}.artifact_or_diff must be a non-empty string")
+                check_enum(item["status"], f"{item_path}.status", VARIANT_STATUSES, errors)
+
+    for variant_id, item in variant_items.items():
+        for source in item.get("derived_from", []):
+            if source == variant_id:
+                errors.append(f"montage variant {variant_id} cannot derive from itself")
+            elif source not in material_ids and source not in variant_ids:
+                errors.append(f"montage variant {variant_id} has unknown derived_from reference {source}")
+
+    graph = {key: [item for item in value.get("derived_from", []) if item in variant_ids] for key, value in variant_items.items()}
+    visiting: set[str] = set()
+    visited: set[str] = set()
+    def visit(node: str) -> None:
+        if node in visiting:
+            errors.append(f"montage variants contain a derived_from cycle at {node}")
+            return
+        if node in visited:
+            return
+        visiting.add(node)
+        for parent in graph.get(node, []):
+            visit(parent)
+        visiting.remove(node)
+        visited.add(node)
+    for node in graph:
+        visit(node)
+
+    categories: dict[str, set[str]] = {}
+    selection = value["selection"]
+    if check_exact_keys(selection, "montage.selection", {"selected", "rejected", "deferred"}, errors):
+        for category in ("selected", "rejected", "deferred"):
+            categories[category] = set()
+            entries = selection[category]
+            if not isinstance(entries, list):
+                errors.append(f"montage.selection.{category} must be a list")
+                continue
+            for index, item in enumerate(entries):
+                item_path = f"montage.selection.{category}[{index}]"
+                if check_exact_keys(item, item_path, {"variant", "reason"}, errors):
+                    variant_id = item["variant"]
+                    if variant_id not in variant_ids or variant_id in categories[category]:
+                        errors.append(f"{item_path}.variant must reference a unique declared variant")
+                    else:
+                        categories[category].add(variant_id)
+                    if not is_nonempty_string(item["reason"]):
+                        errors.append(f"{item_path}.reason must be a non-empty string")
+        overlap = (
+            categories["selected"] & categories["rejected"]
+            | categories["selected"] & categories["deferred"]
+            | categories["rejected"] & categories["deferred"]
+        )
+        if overlap:
+            errors.append(f"montage selection categories must be disjoint: {sorted(overlap)}")
+
+    positions: list[int] = []
+    arrangement = value["arrangement"]
+    if not isinstance(arrangement, list):
+        errors.append("montage.arrangement must be a list")
+    else:
+        for index, item in enumerate(arrangement):
+            item_path = f"montage.arrangement[{index}]"
+            if check_exact_keys(item, item_path, {"position", "variant", "target", "function"}, errors):
+                position = item["position"]
+                if not isinstance(position, int) or isinstance(position, bool) or position < 1:
+                    errors.append(f"{item_path}.position must be a positive integer")
+                else:
+                    positions.append(position)
+                if item["variant"] not in categories.get("selected", set()):
+                    errors.append(f"{item_path}.variant must reference a selected variant")
+                for key in ("target", "function"):
+                    if not is_nonempty_string(item[key]):
+                        errors.append(f"{item_path}.{key} must be a non-empty string")
+        if positions and sorted(positions) != list(range(1, len(positions) + 1)):
+            errors.append("montage.arrangement positions must be unique and contiguous from 1")
+
+    feedback = value["feedback"]
+    if not isinstance(feedback, list):
+        errors.append("montage.feedback must be a list")
+    else:
+        for index, item in enumerate(feedback):
+            item_path = f"montage.feedback[{index}]"
+            if check_exact_keys(item, item_path, {"subject", "finding", "consequence"}, errors):
+                for key in ("subject", "finding"):
+                    if not is_nonempty_string(item[key]):
+                        errors.append(f"{item_path}.{key} must be a non-empty string")
+                check_enum(item["consequence"], f"{item_path}.consequence", FEEDBACK_CONSEQUENCES, errors)
+
+    stabilization = value["stabilization"]
+    if check_exact_keys(stabilization, "montage.stabilization", {"state", "evidence"}, errors):
+        check_enum(stabilization["state"], "montage.stabilization.state", MONTAGE_STATES, errors)
+        check_string_list(stabilization["evidence"], "montage.stabilization.evidence", errors)
+
+    recovery = value["recovery"]
+    if check_exact_keys(recovery, "montage.recovery", {"baseline", "strategy", "verification"}, errors):
+        for key in ("baseline", "strategy", "verification"):
+            if not is_nonempty_string(recovery[key]):
+                errors.append(f"montage.recovery.{key} must be a non-empty string")
+
+    if event.get("status") in {"confirmed", "stabilized", "revised"}:
+        if stabilization.get("state") != "stabilized":
+            errors.append("stable event status requires montage.stabilization.state stabilized")
+        if not feedback or not stabilization.get("evidence"):
+            errors.append("stable event status with montage requires feedback and stabilization evidence")
+
+
 def validate_event(data: Any) -> list[str]:
     errors: list[str] = []
     if not isinstance(data, dict):
         return ["document root must be a mapping"]
 
     missing = REQUIRED_TOP - set(data)
-    unknown = set(data) - REQUIRED_TOP
+    unknown = set(data) - REQUIRED_TOP - OPTIONAL_TOP
     for key in sorted(missing, key=str):
         errors.append(f"{key} is required")
     for key in sorted(unknown, key=str):
@@ -208,6 +359,9 @@ def validate_event(data: Any) -> list[str]:
             errors.append(f"status {status} cannot contain failed validation")
     if status == "stabilized" and operation != "audit" and not changes:
         errors.append("stabilized non-audit events require at least one change")
+
+    if "montage" in data:
+        validate_montage(data["montage"], data, errors)
 
     if authority_ok and isinstance(data["authority"].get("requires_author_decision"), bool):
         authority = data["authority"]

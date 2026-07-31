@@ -1,0 +1,200 @@
+schema_version: 1
+id: change-codex-montageprinzip
+created_at: 2026-07-31
+goal: Die bestätigte Montagetheorie als begrenztes, ausführbares und prüfbares Codex-Arbeitsprinzip implementieren.
+operation: reorganization
+scope:
+  allowed_files:
+    - AGENTS.md
+    - WORKFLOW.md
+    - .agents/skills/recursive-codex/SKILL.md
+    - projekt/codex-prinzip-montage.md
+    - projekt/codex-nutzungsanleitung.md
+    - projekt/codex-auftragsvorlage.md
+    - knowledge/decisions/0024-codex-montageprinzip.yaml
+    - knowledge/change-events/2026-07-31-codex-montageprinzip.yaml
+    - .agents/skills/recursive-codex/references/change-event-schema.md
+    - .agents/skills/recursive-codex/scripts/validate_change_event.py
+    - tests/test_recursive_codex_montage.py
+    - scripts/check_all.py
+  protected_files:
+    - CONSTITUTION.md
+    - PROJECT.md
+    - GLOSSAR.md
+    - manuskript/
+basis:
+  project_files:
+    - CONSTITUTION.md
+    - AGENTS.md
+    - WORKFLOW.md
+    - projekt/codex-prinzip-zettelkasten-plateaus.md
+    - projekt/genetisches-register.md
+    - manuskript/02-unterbrechen.md
+    - manuskript/04-form.md
+    - manuskript/06-improvisieren.md
+    - manuskript/09-komponieren.md
+    - manuskript/10-stabilisieren.md
+    - manuskript/16-revidieren.md
+    - manuskript/17-reorganisieren.md
+  decisions:
+    - knowledge/decisions/0021-theoriegeleitetes-codex-arbeitsprotokoll.yaml
+    - knowledge/decisions/0022-codex-zettelkasten-plateaus.yaml
+    - knowledge/decisions/0024-codex-montageprinzip.yaml
+  sources:
+    - sources/bachelor/Jonathan Frank Bachelorarbeit Montage und Improvisation_klein.pdf
+    - sources/master/Jonathan_Frank_Masterarbeit_Algorithmische_Komposition_in_der_Filmmontage_Zweite_Auflage_16072020_Klein.pdf
+changes:
+  - file: projekt/codex-prinzip-montage.md
+    summary: Montage als begrenztes Codex-Arbeitsprinzip mit Material-, Schnitt-, Varianten-, Sichtungs- und Rückkopplungsprotokoll bestimmt.
+  - file: AGENTS.md
+    summary: Das Montageprinzip für größere kompositorische, revidierende und reorganisierende Arbeiten verbindlich gemacht.
+  - file: WORKFLOW.md
+    summary: Den sechsstufigen Montageablauf und seine Abschlussfragen in den Projektworkflow aufgenommen.
+  - file: .agents/skills/recursive-codex/SKILL.md
+    summary: Aktivierung, Arbeitsteilung und Validierung des Montageprinzips im rekursiven Skill festgelegt.
+  - file: projekt/codex-nutzungsanleitung.md
+    summary: Montage von rekursivem Protokoll, Zettelkasten/Plateaus und genetischem Register funktional unterschieden.
+  - file: projekt/codex-auftragsvorlage.md
+    summary: Eine optionale Montage-Sektion für Material, Varianten, Auswahl, Anordnung und Rückkopplung ergänzt.
+  - file: knowledge/decisions/0024-codex-montageprinzip.yaml
+    summary: Die ausdrückliche Autorenentscheidung und ihre Grenzen dokumentiert.
+  - file: .agents/skills/recursive-codex/references/change-event-schema.md
+    summary: Den optionalen Montage-Nachweis im bestehenden Change-Event-Schema beschrieben.
+  - file: .agents/skills/recursive-codex/scripts/validate_change_event.py
+    summary: Strikte strukturelle Validierung optionaler Montage-Nachweise ergänzt, ohne ältere Events ungültig zu machen.
+  - file: tests/test_recursive_codex_montage.py
+    summary: Positiv- und Negativtests für Montage-Nachweise und die Rückwärtskompatibilität angelegt.
+  - file: scripts/check_all.py
+    summary: Die Montage-Validator-Tests in die zentrale Repository-Prüfung aufgenommen.
+affected_relations:
+  - from: knowledge/decisions/0024-codex-montageprinzip.yaml
+    relation: defines
+    to: projekt/codex-prinzip-montage.md
+    effect: added
+    note: Die aktuelle Autorenentscheidung erhält eine ausführbare Projektform.
+  - from: projekt/codex-prinzip-montage.md
+    relation: constrains
+    to: .agents/skills/recursive-codex/SKILL.md
+    effect: added
+    note: Größere kompositorische und reorganisierende Arbeiten erhalten ein Montageprotokoll.
+  - from: projekt/codex-prinzip-montage.md
+    relation: cross_references
+    to: projekt/codex-prinzip-zettelkasten-plateaus.md
+    effect: added
+    note: Adresse und Anordnung bleiben verschiedene operative Funktionen.
+possibilities:
+  opened:
+    - Codex kann Materialauswahl, Varianten, Fassungen und Rückkopplungen ausdrücklich dokumentieren.
+    - Ergebnisse können nach ihrer Prüfung als Material einer begründeten Remontage behandelt werden.
+  restricted:
+    - Große Umschreibungen ohne gesichertes Ausgangsmaterial, Variantenprüfung und Fassungskontrolle werden begrenzt.
+  deferred:
+    - Eine eigene technische Montage-Automation ist nicht Teil dieses Eingriffs.
+uncertainties: []
+agent_findings:
+  genealogist:
+    - Die Bachelorarbeit trägt Rohmaterial als bereits geformte Bedingung, diagrammatische Vorgaben, Auswahl, Haltung und Rückkopplung an den entstehenden Filmzustand.
+    - Die Masterarbeit entwickelt Montage als wiederholtes Reagieren auf Material und entstehende Sequenzen sowie als ausführbare Variantenbildung im Verhältnis von Programm, Algorithmus und Improvisation.
+    - Der aktuelle Manuskriptstand besitzt Vorrang; die Übertragung bleibt deshalb ein Projektprinzip und keine Rückübernahme historischer Definitionen.
+  consistency_checker:
+    - Das rekursive Protokoll steuert Eingriff und Abschluss, Zettelkasten/Plateaus adressieren Material, Montage prüft ausgeführte Fassungen und Change Events dokumentieren Zustandsänderungen.
+    - Montage darf weder zum Synonym für Anschluss oder Komposition werden noch Codex autonomes Sinnverstehen oder Urteil zuschreiben.
+  critic: []
+  material_technical:
+    - Ein optionaler Montage-Nachweis im bestehenden Change Event vermeidet ein konkurrierendes Ereignissystem.
+    - Strikte Validierung muss Identitäten, Variantenableitung, Auswahl, Anordnung, Rückkopplung, Stabilisierung und Wiederherstellung prüfen; ältere Events bleiben gültig.
+montage:
+  materials:
+    - id: current-method
+      reference: AGENTS.md, WORKFLOW.md und .agents/skills/recursive-codex/SKILL.md
+      kind: manuscript
+      status: bestätigter Projektstand
+      identity: git:574a598
+    - id: montage-sources
+      reference: Bachelorarbeit S. 7-10 und 35-45; Masterarbeit S. 8-24, 51-94 und 150-152
+      kind: source
+      status: historische Primärquellen
+      identity: repository PDFs at git:574a598
+    - id: author-decision
+      reference: knowledge/decisions/0024-codex-montageprinzip.yaml
+      kind: decision
+      status: accepted
+      identity: decision-0024
+  variants:
+    - id: documentation-only
+      derived_from:
+        - current-method
+        - montage-sources
+        - author-decision
+      artifact_or_diff: Nur projekt/codex-prinzip-montage.md ohne ausführbare Bindung
+      status: rejected
+    - id: integrated-and-validated
+      derived_from:
+        - current-method
+        - montage-sources
+        - author-decision
+      artifact_or_diff: Projektprinzip, Workflow, Skill, optionaler Event-Nachweis und Validator-Test
+      status: selected
+  selection:
+    selected:
+      - variant: integrated-and-validated
+        reason: Das Prinzip wird dokumentiert, in den Arbeitsablauf gebunden und technisch prüfbar.
+    rejected:
+      - variant: documentation-only
+        reason: Eine isolierte Methodendatei würde keine verlässliche operative Anwendung sichern.
+    deferred: []
+  arrangement:
+    - position: 1
+      variant: integrated-and-validated
+      target: projekt/codex-prinzip-montage.md
+      function: Operative Arbeitskarte und Grenzen bestimmen.
+    - position: 2
+      variant: integrated-and-validated
+      target: AGENTS.md und WORKFLOW.md
+      function: Aktivierung und Ablauf projektweit binden.
+    - position: 3
+      variant: integrated-and-validated
+      target: .agents/skills/recursive-codex/
+      function: Anwendung und optionalen Montage-Nachweis validierbar machen.
+    - position: 4
+      variant: integrated-and-validated
+      target: projekt/codex-nutzungsanleitung.md und projekt/codex-auftragsvorlage.md
+      function: Nutzung und Auftragsform für den Autor zugänglich machen.
+  feedback:
+    - subject: unabhängige Konsistenzprüfung
+      finding: Montage muss ausgeführte Fassungen prüfen und darf nicht zum Synonym für Rekursion oder Zettelkasten werden.
+      consequence: preserve
+    - subject: material-technische Prüfung
+      finding: Der Montage-Nachweis gehört optional in bestehende Change Events statt in ein zweites Ereignissystem.
+      consequence: revise
+  stabilization:
+    state: stabilized
+    evidence:
+      - Vier Montage-Validator-Tests bestanden.
+      - Alle 48 Change Events und der rekursive Projektzustand sind valide.
+      - Vollständige Repository-Prüfung, 20 Webtests und Build bestanden.
+  recovery:
+    baseline: git:574a598
+    strategy: Änderungen bleiben in einem eigenen Commit und können als vollständiger Commit revidiert werden.
+    verification: Diff-Prüfung, Event-Validator, Unit-Tests und vollständige Repository-Prüfung sind bestanden.
+authority:
+  requires_author_decision: true
+  decision_status: accepted
+  decision_reference: knowledge/decisions/0024-codex-montageprinzip.yaml
+validation:
+  - check: primary_source_genealogy
+    result: passed
+    evidence: Einschlägige Seiten der Bachelorarbeit (S. 7-10, 35-45) und Masterarbeit (S. 8-24, 51-94, 150-152) wurden am Original-PDF geprüft.
+  - check: montage_validator_tests
+    result: passed
+    evidence: Vier Tests für gültige, ungültige und rückwärtskompatible Montage-Nachweise bestanden.
+  - check: change_event_schema
+    result: passed
+    evidence: Der Montage-Nachweis ist mit dem erweiterten Event-Validator valide.
+  - check: recursive_state
+    result: passed
+    evidence: 48 von 48 Change Events valide; Wissensvalidierung bestanden; keine Warnungen außer dem vor Abschluss erwarteten proposed-Status dieses Events.
+  - check: complete_repository_validation
+    result: passed
+    evidence: ALL REPOSITORY CHECKS PASSED; 20 Webtests und Build bestanden.
+status: stabilized

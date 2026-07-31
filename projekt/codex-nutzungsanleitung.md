@@ -103,15 +103,16 @@ Bei groesseren Aufgaben verwendet Codex den lokalen Recursive-Codex-Apparat. Die
 
 Codex soll nicht einfach immer mehr Text erzeugen. Gute Arbeit besteht darin, die richtige Anschlussstelle zu finden und sie tragfaehig zu aktualisieren.
 
-## 5. Zettelkasten, Plateaus und genetisches Register
+## 5. Zettelkasten, Plateaus, genetisches Register und Montage
 
-Das Projekt nutzt drei operative Formen, die zusammenarbeiten:
+Das Projekt nutzt vier operative Formen, die zusammenarbeiten:
 
 | Form | Funktion | Datei |
 | --- | --- | --- |
 | Zettel | feste Adresse, Status, Verweise | `projekt/codex-zettelregister.md` |
 | Plateau | nicht-lineare Konstellation von Anschlussstellen | `projekt/codex-prinzip-zettelkasten-plateaus.md` |
 | genetisches Register | Herkunft, Mutation, Pruefung, Entscheidung, Nachkommen | `projekt/genetisches-register.md` |
+| Montage | Materialauswahl, Schnitt, ausgefuehrte Varianten, Anordnung und Rueckkopplung | `projekt/codex-prinzip-montage.md` |
 
 Codex soll diese Formen nutzen, wenn ein Gedanke mehr ist als eine lokale Formulierung. Besonders wichtig ist das bei Gedanken, die aus mehreren Quellen, Kapiteln, Entscheidungen oder technischen Umsetzungen hervorgehen.
 
@@ -121,8 +122,15 @@ Kurzform:
 Zettel: Wo ist der Gedanke adressiert?
 Plateau: Von wo aus kann man anschliessen?
 Genetik: Woher kommt der Gedanke, wie mutiert er, was vererbt er?
+Montage: Welche Fassung bildet welche Beziehungen, und was zeigt ihr Vergleich?
 ```
 
+Bei groesseren Kompositionen, Revisionen und Reorganisationen wird Montage als
+Arbeitsprinzip aktiv. Codex sichert das Ausgangsmaterial, weist Auswahl und
+Auslassung aus, fuehrt bei echter Unbestimmtheit vergleichbare Varianten aus,
+sichtet deren Folgen und stabilisiert nur eine gepruefte und autorisierte
+Fassung. Das bedeutet weder, dass jeder Datei-Edit Montage sei, noch dass Codex
+dadurch autonom urteile.
 
 ## 6. Tractatus-philosophicus-Methode fuer Codex
 

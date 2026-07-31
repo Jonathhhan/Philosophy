@@ -84,6 +84,13 @@ Der Umfang des Protokolls richtet sich nach dem Eingriff:
 - **Abschnitts- oder Kapitelarbeit:** Problematisieren → Form bestimmen → Aktualisieren → Komponieren → Stabilisieren → Prüfen;
 - **Änderung von Definition, Architektur oder Theoriebeziehung:** vollständige rekursive Arbeitsbewegung mit Quellenprüfung, Beurteilung, dokumentierter Autorenentscheidung und erneuter Konsistenzprüfung.
 
+Bei größeren kompositorischen, revidierenden oder reorganisierenden Arbeiten ist
+zusätzlich `projekt/codex-prinzip-montage.md` anzuwenden. Codex sichert das bereits
+geformte Material, macht Auswahl und Auslassung sichtbar, führt bei echter
+Unbestimmtheit vergleichbare Fassungen aus, sichtet ihre relationalen Folgen und
+stabilisiert nur eine autorisierte und geprüfte Fassung. Das Montageprinzip
+ordnet Codex-Arbeit; es definiert Montage im Manuskript nicht neu.
+
 Vor einer inhaltlichen Aktualisierung ist kenntlich zu machen, ob Codex:
 
 - einem bestätigten Arbeitsprogramm aus Definitionen und Entscheidungen folgt;

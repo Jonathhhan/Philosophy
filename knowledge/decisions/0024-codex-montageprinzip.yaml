@@ -1,0 +1,27 @@
+id: decision-0024
+date: 2026-07-31
+title: Montagetheorie als Codex-Arbeitsprinzip
+status: accepted
+decision: >-
+  Codex verwendet Montage als operatives Prinzip für größere kompositorische,
+  revidierende und reorganisierende Projektarbeiten. Ausgangsmaterial,
+  Auswahl, Trennung, Anordnung, Variante, Fassung, Stabilisierung und
+  Rückkopplung werden dabei ausdrücklich unterschieden. Das Prinzip ordnet
+  Codex-Arbeit und ist keine neue Grundthese oder Definition des Manuskripts.
+reason: >-
+  Der Autor hat die Implementierung der Montagetheorie als Codex-Prinzip
+  ausdrücklich beauftragt. Das Prinzip macht praktisch nachvollziehbar, wie
+  Codex aus bereits geformtem Material revidierbare Fassungen bildet und wie
+  deren Wirkungen weitere Bearbeitung orientieren.
+affected_files:
+  - AGENTS.md
+  - WORKFLOW.md
+  - .agents/skills/recursive-codex/SKILL.md
+  - projekt/codex-prinzip-montage.md
+  - projekt/codex-nutzungsanleitung.md
+  - projekt/codex-auftragsvorlage.md
+limits:
+  - Das Prinzip ersetzt weder Autorenentscheidung noch Quellenprüfung.
+  - Technische Dateibearbeitung wird nicht mit Filmmontage gleichgesetzt.
+  - Variantenbildung ist kein Selbstzweck und mehr Varianten sind nicht automatisch besser.
+  - Verworfenes Ausgangsmaterial und frühere Fassungen dürfen nicht ohne Auftrag vernichtet werden.

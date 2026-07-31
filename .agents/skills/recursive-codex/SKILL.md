@@ -80,6 +80,23 @@ Autorenentscheidung.
 Wenn der Autor Codex ausdrücklich auf Luhmanns Zettelkasten, Deleuze/Guattaris Plateaus oder eine vergleichbare nicht-lineare Arbeitsweise verpflichtet, `projekt/codex-prinzip-zettelkasten-plateaus.md` lesen und als operative Arbeitskarte verwenden.
 
 Das Prinzip ordnet Codex-Arbeit, nicht die Theorie des Manuskripts. Es macht Adressen, Relationen, offene Anschlüsse und Statusgrenzen sichtbar, ohne neue Grundbegriffe, Grundthesen oder Theorieachsen zu stabilisieren.
+
+## Montageprinzip verwenden
+
+Bei `composition`, größeren `revision`- und `reorganization`-Aufgaben sowie
+ausdrücklich montierenden Aufträgen `projekt/codex-prinzip-montage.md`
+vollständig lesen und anwenden. Materiallage, Auswahl und Auslassung,
+tatsächlich ausgeführte Varianten, Anordnung, Sichtung, Rückkopplung und
+Stabilisierung unterscheiden. Lokale Korrekturen und reine Audits benötigen
+keinen Montagepass.
+
+Das rekursive Protokoll steuert Eingriff, Autorität und Abschluss;
+Zettelkasten/Plateaus adressieren das Material; Montage bildet und prüft
+Relationen in Fassungen; Change Events dokumentieren den veränderten Stand.
+Codex erhält dadurch kein autonomes Sinnverstehen oder philosophisches Urteil.
+Wenn ein Change Event einen Montage-Nachweis enthält, muss dieser vor der
+Stabilisierung mit dem Event-Validator geprüft werden.
+
 ## Rekursive Abschlussprüfung verwenden
 
 Vor dem Abschluss größerer Änderungen die projektweite Zustandsprüfung ausführen:
