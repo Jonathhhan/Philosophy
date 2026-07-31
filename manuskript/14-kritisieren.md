@@ -116,6 +116,8 @@ Gerade dadurch kann sie deren gewöhnliche Fortsetzung unterbrechen. Sie nimmt e
 
 Kritisieren ist damit eine Weise des Anschließens, in der die Bedingungen des Anschließens selbst zum Gegenstand werden. Der kritische Anschluss verändert den untersuchten Zusammenhang nicht notwendig unmittelbar. Er kann zurückgewiesen, folgenlos dokumentiert oder an einer anderen Stelle aufgenommen werden. Seine Eigenfunktion liegt zunächst darin, eine begründete Beurteilung zu ermöglichen.
 
+Als Aktualisierung verändert der kritische Anschluss dennoch die Bedingungen, unter denen weitere Kritik möglich wird. Er führt Begriffe, Darstellungsformen, Belege und Adressen ein, an die spätere Einwände anschließen können, und kann zugleich andere Problemfassungen erschweren oder ausschließen. Daraus folgt kein Maßstab, nach dem eine Kritik umso besser wäre, je mehr weitere Kritik sie hervorbringt. Prüfungsbedürftig ist vielmehr, ob sie ihre Voraussetzungen, Maßstäbe und Folgen einer begründeten Gegenprüfung und möglichen Revision zugänglich hält oder spätere Kritik von der Übernahme ihrer eigenen Problemfassung abhängig macht.
+
 Damit ist zugleich seine Grenze bestimmt. Kritik kann zeigen, dass und in welcher Hinsicht die Fortsetzung einer Ordnung begründungsbedürftig geworden ist. Sie kann Voraussetzungen und Wirkungen rekonstruieren, Gründe zugänglich machen und Alternativen vergleichbar werden lassen. Sie entscheidet jedoch nicht allein, welche Gründe überwiegen und welche Ordnung vorzuziehen ist.
 
 Diese Entscheidung verlangt ausweisbare Maßstäbe. Beurteilen bestimmt Unterschiede zwischen möglichen und aktualisierten Ordnungen anhand solcher Maßstäbe, ohne sie als voraussetzungslos zu behandeln. Die Frage, wie dies möglich ist, folgt im nächsten Kapitel.
