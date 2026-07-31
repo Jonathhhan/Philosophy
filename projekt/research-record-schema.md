@@ -42,7 +42,10 @@ Für autonom generierte Texte kommen hinzu:
 - eingeführte neue Begriffe oder Relationen,
 - markierte Abweichungen vom bestätigten Bestand,
 - Anzahl oder Beschreibung der generativen Durchgänge,
-- und Abbruchgrund.
+- und Abbruchgrund;
+- die unabhängige Produktivitätsverifikation je Zyklus;
+- die fortgeschriebene Bindungsmatrix;
+- sowie Verfassungsverträglichkeit und gefährdete Projektrelationen jeder Meta-Entscheidung.
 
 ## Zulässige Typen
 

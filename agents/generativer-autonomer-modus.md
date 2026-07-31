@@ -139,6 +139,16 @@ next_possible_steps: []
 
 Ein generativer Lauf ist gelungen, wenn er aus dem Anfang eine eigenständige Bewegung entwickelt, die mehr enthält als Paraphrase oder bloße Verlängerung. Erwartet wird mindestens eine neue Differenz, Relation, Perspektive, Form oder begriffliche Möglichkeit.
 
+## Kontrollierte Stil-/Methodenvergleiche
+
+Mit `compare_epistemic_styles: true` führt der Runner denselben Seed, Quellenstand, Modellzugang und dieselben Zyklusgrenzen einmal pro deklariertem Erkenntnisstil aus. Die Vergleichsdatei protokolliert Zyklen, unabhängig verifizierte produktive Zyklen, Relationen, Definitionspräzisierungen, Gegenmodelle und Methodenrevisionen. Diese Metriken wählen keinen philosophisch überlegenen Stil; sie schaffen erst einen vergleichbaren Prüfgegenstand.
+## Unabhängiger Produktivitätsnachweis
+
+Die sprachliche Selbstbeschreibung `productive_difference` gilt nur als Modellbehauptung. Ein Zyklus zählt erst dann als produktiv, wenn der Runner mindestens eine strukturierte und gegenüber früheren Zyklen neue Evidenz nachweist: Relation, abgegrenzte Definitionspräzisierung, Revision einer früheren Entscheidung, Gegenmodell, Knotenzusammenführung oder begründete Kategorienentfernung. Die Verifikation wird getrennt von der Modellbehauptung protokolliert.
+
+Jeder Zyklus schreibt außerdem eine kompakte Bindungsmatrix fort: bewahrte Definitionen, Behauptungen in Spannung, Abweichungen von Quellen, ungelöste Quellenkonflikte und offene Einwände. Dieselbe Matrix bindet den Meta-Agenten.
+
+Neue Läufe werden unter `generated/active/` angelegt. Eine spätere Überführung nach `generated/promoted/` oder `generated/rejected/` ist eine gesondert dokumentierte Statusentscheidung.
 ## Abbruchkriterium
 
 Der Lauf endet, wenn:

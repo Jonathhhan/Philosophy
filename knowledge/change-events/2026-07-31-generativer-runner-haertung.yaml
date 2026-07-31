@@ -1,0 +1,119 @@
+schema_version: 1
+id: change-generativer-runner-haertung
+created_at: 2026-07-31
+goal: Den autonomen Theorie-Runner an Projektverfassung und Quellen binden, Modellantworten strikt validieren und Produktivität unabhängig prüfen.
+operation: reorganization
+scope:
+  allowed_files:
+    - automation/generative_runner.py
+    - automation/generative_schemas.py
+    - automation/requests/example.yaml
+    - tests/test_generative_runner_hardening.py
+    - scripts/check_all.py
+    - tests/test_generative_runner.py
+    - agents/meta-anschluss-agent.md
+    - agents/generativer-autonomer-modus.md
+    - projekt/research-record-schema.md
+    - projekt/forschungsarchitektur-v2.md
+    - .github/workflows/autonomous-generative.yml
+    - knowledge/change-events/2026-07-31-generativer-runner-haertung.yaml
+  protected_files:
+    - CONSTITUTION.md
+    - PROJECT.md
+    - GLOSSAR.md
+    - knowledge/concepts/
+    - manuskript/
+basis:
+  project_files:
+    - CONSTITUTION.md
+    - PROJECT.md
+    - GLOSSAR.md
+    - automation/generative_runner.py
+    - tests/test_generative_runner.py
+    - agents/meta-anschluss-agent.md
+    - agents/generativer-autonomer-modus.md
+    - projekt/research-record-schema.md
+    - projekt/forschungsarchitektur-v2.md
+  decisions: []
+  sources:
+    - external-repository-audit-attached-2026-07-31
+changes:
+  - file: automation/generative_schemas.py
+    summary: Definiert typstrikte Verträge für Theoriezyklen, Meta-Entscheidungen, Theoriegraphen und Generationsdatensätze sowie eine nicht-gierige JSON-Extraktion.
+  - file: automation/generative_runner.py
+    summary: Bindet Theorie- und Meta-Agent an Verfassung, Glossar, Quellenprovenienz und Bindungsmatrix; repariert ungültige Antworten begrenzt; prüft Produktivität unabhängig; unterstützt kontrollierte Stiltests und Lifecycle-Ablage unter generated/active.
+  - file: tests/test_generative_runner.py
+    summary: Aktualisiert den bestehenden Quellenbindungstest auf den strikten Zyklusvertrag.
+  - file: tests/test_generative_runner_hardening.py
+    summary: Prüft Request-Typen, JSON-Verträge, Reparatur, Produktivitätsnachweis, Meta-Grenzen, Heuristikversionen, Abbruch, Bindungsmatrix, vier Ausgaben, Workflow-Rechte und Stilvergleich mit aufgezeichneten Antworten.
+  - file: scripts/check_all.py
+    summary: Integriert Runner-Kompilierung und 19 Generationsregressionen in die zentrale Projektprüfung.
+  - file: .github/workflows/autonomous-generative.yml
+    summary: Trennt read-only Generierung von write-enabled Veröffentlichung in zwei Jobs mit Artefaktgrenze.
+  - file: automation/requests/example.yaml
+    summary: Dokumentiert den optionalen kontrollierten Stilvergleich.
+  - file: agents/meta-anschluss-agent.md
+    summary: Dokumentiert verpflichtende Projektbindung und zusätzliche Kompatibilitätsfelder.
+  - file: agents/generativer-autonomer-modus.md
+    summary: Dokumentiert unabhängige Produktivität, Bindungsmatrix, Stilvergleich und Lifecycle-Ablage.
+  - file: projekt/research-record-schema.md
+    summary: Ergänzt Produktivitätsverifikation, Bindungsmatrix und Meta-Kompatibilität als Generationsdaten.
+  - file: projekt/forschungsarchitektur-v2.md
+    summary: Trennt Modellselbstauskunft und deterministischen Produktivitätsnachweis.
+  - file: knowledge/change-events/2026-07-31-generativer-runner-haertung.yaml
+    summary: Dokumentiert Umfang, Folgen, Grenzen und Validierung der Reorganisation.
+affected_relations:
+  - from: automation/generative_runner.py
+    relation: constrains
+    to: CONSTITUTION.md
+    effect: changed
+    note: Theorie- und Meta-Agent erhalten künftig dieselbe verbindliche Projektbindung.
+  - from: automation/generative_runner.py
+    relation: tests
+    to: tests/test_generative_runner.py
+    effect: changed
+    note: Schemas, Reparaturversuche, Methodenwechsel, Produktivitätsprüfung und Wiederholbarkeit werden regressiongetestet.
+  - from: .github/workflows/autonomous-generative.yml
+    relation: constrains
+    to: generated/
+    effect: changed
+    note: Generierung und Veröffentlichung werden in Jobs mit getrennten Rechten ausgeführt.
+possibilities:
+  opened:
+    - Methodenänderungen können gegen Verfassung, Quellen und bestätigte Definitionen geprüft werden.
+    - Produktive Differenzen werden durch strukturierte Evidenz statt durch Modellselbstbeschreibung gezählt.
+    - Fehlerhafte Antworten können begrenzt repariert und reproduzierbar getestet werden.
+  restricted:
+    - Ungültige Typen, unbekannte Stile und verfassungsgefährdende Methodenwechsel werden abgewiesen.
+    - Der Generationsjob besitzt keine Schreibrechte für Repository-Inhalte.
+  deferred:
+    - Bestehende generated- und recovered-Bestände werden nicht automatisch in neue Lebenszyklusordner verschoben.
+    - Action-Versionen bleiben bis zu einer gesonderten Lieferkettenprüfung auf Major-Tags.
+uncertainties:
+  - Ein empirischer Mehrstil-Vergleich mit externem Modell bleibt ausstehend, weil lokal kein vollständiger Provider-Satz konfiguriert ist.
+agent_findings:
+  genealogist: []
+  consistency_checker:
+    - Quellenbindung und Projektgrenzen waren zwischen Theorie- und Meta-Agent asymmetrisch verteilt.
+  critic:
+    - Das erzeugende Modell durfte seine eigene Produktivität durch einen nichtleeren Textwert behaupten.
+  material_technical:
+    - Der JSON-Fallback war gierig und die Feldtypen wurden nicht vollständig geprüft.
+authority:
+  requires_author_decision: false
+  decision_status: not_required
+  decision_reference: null
+validation:
+  - check: Strikte Runner-Regressionen
+    result: passed
+    evidence: python -m unittest tests/test_generative_runner.py tests/test_generative_runner_hardening.py; 19 tests passed
+  - check: Request- und CLI-Smoke-Test
+    result: passed
+    evidence: python automation/generative_runner.py automation/requests/example.yaml --validate-only
+  - check: Vollständige Projektprüfung
+    result: passed
+    evidence: python scripts/check_all.py; 41/41 Change Events, 14 Automaten-, 19 Generations- und 20 JavaScript-Tests, MCP-Graph, Hooks und Build bestanden
+  - check: Live-Vergleich mehrerer Erkenntnisstile
+    result: not_run
+    evidence: Kein vollständiger lokaler Satz aus GENERATIVE_API_ENDPOINT, GENERATIVE_API_KEY und GENERATIVE_MODEL verfügbar; Verhalten mit aufgezeichneten Antworten geprüft.
+status: stabilized

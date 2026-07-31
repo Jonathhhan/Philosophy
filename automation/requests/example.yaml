@@ -20,6 +20,7 @@ epistemic_styles:
   - genealogical
   - aesthetic
   - pragmatic
+compare_epistemic_styles: false
 orientation: >-
   Entwickle eine eigenständige Theorie durch explizite Anschlussentscheidungen. Untersuche
   besonders Anschluss, Organisation, Urteil, Revision und Reorganisation. Programm,

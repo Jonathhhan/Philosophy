@@ -57,6 +57,9 @@ Der Runner unterstützt folgende Ausgangsstile:
 
 Diese Stile sind keine Weltanschauungen, sondern revidierbare Verfahren der Anschlussselektion.
 
+## Verbindliche Projektbindung
+
+Jede Meta-Prüfung erhält dieselbe Verfassung, dieselben Projektgrenzen und dieselbe Quellenprovenienz wie der Theoriezyklus. Hinzu kommen die aktuellen bestätigten Begriffsdefinitionen, die fortgeschriebene Bindungsmatrix und offene Einwände. Eine Methodenänderung wird blockiert, wenn sie geschützte Projektrelationen gefährdet, eine Autorenentscheidung voraussetzt oder ihre Verfassungsverträglichkeit nicht ausdrücklich ausweist.
 ## Protokoll
 
 Jede Meta-Entscheidung dokumentiert:
@@ -72,6 +75,10 @@ reason: ...
 alternatives_rejected: []
 expected_gain: ...
 expected_risk: ...
+constitutional_compatibility: compatible
+project_relations_preserved: []
+project_relations_endangered: []
+requires_author_decision: false
 change_rule: true
 ```
 

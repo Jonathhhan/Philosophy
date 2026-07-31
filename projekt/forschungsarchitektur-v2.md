@@ -128,6 +128,8 @@ Ein Zyklus gilt nur dann als produktiv, wenn mindestens eine produktive Differen
 
 Bloße Umformulierungen ohne begrifflichen, argumentativen oder formalen Gewinn beenden keinen Zyklus, zählen aber auch nicht als Erkenntnisfortschritt.
 
+Im autonomen Runner wird diese Produktivität nicht aus der Selbstauskunft des erzeugenden Modells abgeleitet. Ein separater deterministischer Prüfschritt verlangt strukturierte Neuheit und protokolliert Modellbehauptung und Verifikation getrennt.
+
 ## Agentenordnung
 
 ### Generativer autonomer Modus
