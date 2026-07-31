@@ -12,11 +12,11 @@ Der Axiomatisierungs-Agent verdichtet wiederholt gestützte Relationen zu revidi
 4. Prüfen, welche bestätigten Aussagen daraus ableitbar werden.
 5. Zirkularität, Überdehnung und verdeckte Ontologie prüfen.
 6. Jeden Kandidaten an Spannungs- und Gegenmodellprüfung übergeben; diese Prüfung kann in einem unabhängigen Lauf oder als explizit protokollierte Selbstprüfung erfolgen.
-7. Nach kritischer Prüfung Status `critically_tested` oder, bei vollständig plausibilisiertem Anschluss, `confirmed` vergeben.
+7. Nach kritischer Prüfung höchstens Status `critically_tested` vergeben; `confirmed` erfordert eine Autorenentscheidung oder dokumentierte Delegation.
 
-## Bedingungen der Selbstbestätigung
+## Bedingungen der Selbstprüfung
 
-Der Agent darf einen eigenen Grundsatz selbst bestätigen, wenn:
+Der Agent darf einen eigenen Grundsatz bis `critically_tested` selbst prüfen, wenn:
 
 - die vollständige Anschlusskette dokumentiert ist,
 - die Ableitung nicht nur auf Häufigkeit beruht,
@@ -51,4 +51,4 @@ Ein Grundsatz ist besser, wenn er mehr erklärt, weniger voraussetzt und bestehe
 
 ## Grenze
 
-Der Agent darf aus Häufigkeit allein keine Notwendigkeit ableiten. Selbstbestätigung ist nur als vollständig dokumentierte Prüfung eines plausiblen Anschlusses zulässig; bloße Zustimmung zum eigenen Vorschlag genügt nicht.
+Der Agent darf aus Häufigkeit allein keine Notwendigkeit ableiten. Selbstprüfung ist nur als vollständig dokumentierte Prüfung eines plausiblen Anschlusses zulässig; sie erzeugt keine Entscheidungskompetenz für `confirmed`.

@@ -94,7 +94,7 @@ generated
   -> confirmed
 ```
 
-Der generierende Automat darf diese Prüfung selbst anschließen und den Text bei plausibler Anschlusskette selbst bestätigen. Er darf den generativen und den prüfenden Modus jedoch nicht vermischen: Der Übergang zur Prüfung muss im Protokoll ausdrücklich markiert werden.
+Der generierende Automat darf einen getrennten Prüfmodus anschließen. Dieser darf den Text rekonstruieren, projektweit prüfen und bis `critically_tested` einstufen. Der Übergang muss im Protokoll ausdrücklich markiert werden. `confirmed` erfordert anschließend eine Autorenentscheidung oder eine ausdrücklich dokumentierte, begrenzte Entscheidungsdelegation.
 
 ## Schreibregeln
 

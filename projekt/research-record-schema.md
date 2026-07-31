@@ -73,11 +73,11 @@ Ein Datensatz darf den Modus wechseln. Jeder Wechsel wird in `mode_transitions` 
 1. Im Modus `autonomous_generative` darf ein Automat ohne vorherige Quellen- oder Konsistenzprüfung neue Texte, Begriffe und Relationen erzeugen.
 2. Der Anfang muss als `seed` vollständig erhalten und der erzeugte Text zunächst als `generated` gekennzeichnet werden.
 3. Generiertes Material darf nicht ungekennzeichnet in bestätigte Manuskriptpassagen übernommen werden.
-4. Der generierende Automat darf selbst in den Forschungsmodus wechseln, den Text prüfen und ihn bei plausibler Anschlusskette selbst bestätigen.
+4. Der generierende Automat darf selbst in einen getrennt protokollierten Forschungsmodus wechseln und den Text bis `critically_tested` prüfen.
 5. Ein Moduswechsel von `autonomous_generative` zu `research` muss ausdrücklich protokolliert werden.
-6. Ein erzeugender Agent darf seinen eigenen Vorschlag bestätigen, wenn er `review_mode: self_review` setzt und die Plausibilität des Anschlusses vollständig dokumentiert.
-7. Für eine Selbstbestätigung müssen Anschlusskette, Begriffskonsistenz, projektweite Prüfung, mindestens ein ernsthaftes Gegenmodell oder Gegenbeispiel, bekannte Grenzen und Revisionsbedingungen festgehalten sein.
-8. Ein ungelöster starker Einwand verhindert den Status `confirmed`, unabhängig vom Prüfmodus.
+6. `review_mode: self_review` dokumentiert eine Prüfung, verleiht aber keine Entscheidungskompetenz für `confirmed`.
+7. Für `critically_tested` müssen Anschlusskette, Begriffskonsistenz, projektweite Prüfung, mindestens ein ernsthaftes Gegenmodell oder Gegenbeispiel, bekannte Grenzen und Revisionsbedingungen festgehalten sein.
+8. Ein ungelöster starker Einwand verhindert sowohl `critically_tested` als auch `confirmed`.
 9. Theoretische Behauptungen benötigen spätestens ab `reconstructed` konkrete Quellstellen oder eine explizit dokumentierte interne Herleitung.
 10. Ungelöste Einwände bleiben bei jeder Statusänderung erhalten.
 11. Manuskriptintegration erfolgt grundsätzlich erst nach projektweiter und kritischer Prüfung oder nach einer ausdrücklich dokumentierten redaktionellen Entscheidung, einen generierten Text als experimentellen Text zu veröffentlichen.
@@ -139,13 +139,16 @@ next_possible_steps:
 mode_transitions: []
 ```
 
-## Beispiel einer Selbstbestätigung
+## Historisches Gegenbeispiel: unzulässige Selbstbestätigung
+
+Das folgende ältere Muster ist nicht mehr zulässig, weil erzeugende und entscheidende Rolle zusammenfallen:
 
 ```yaml
-status: confirmed
+status: critically_tested
 created_by: invarianten-agent
 reviewed_by: invarianten-agent
 review_mode: self_review
+requires_author_decision: true
 connection_plausibility:
   chain:
     - Organisation stabilisiert Anschlussbedingungen.

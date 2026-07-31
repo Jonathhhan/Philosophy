@@ -1,0 +1,80 @@
+schema_version: 1
+id: change-selbstbestaetigungsregel-revision
+created_at: 2026-07-31
+goal: Widersprüchliche Regeln automatischer Selbstbestätigung an die Autoritätshierarchie und den strukturierten Reviewvertrag angleichen.
+operation: revision
+scope:
+  allowed_files:
+    - agents/generativer-autonomer-modus.md
+    - agents/axiomatisierungs-agent.md
+    - projekt/forschungsarchitektur-v2.md
+    - projekt/research-record-schema.md
+    - scripts/check_all.py
+    - knowledge/change-events/2026-07-31-selbstbestaetigungsregel-revision.yaml
+  protected_files:
+    - CONSTITUTION.md
+    - PROJECT.md
+    - GLOSSAR.md
+    - manuskript/
+basis:
+  project_files:
+    - CONSTITUTION.md
+    - AGENTS.md
+    - agents/generativer-autonomer-modus.md
+    - agents/axiomatisierungs-agent.md
+    - projekt/forschungsarchitektur-v2.md
+    - projekt/research-record-schema.md
+  decisions: []
+  sources: []
+changes:
+  - file: agents/generativer-autonomer-modus.md
+    summary: Selbstbestätigung durch getrennte Selbstprüfung bis critically_tested ersetzt.
+  - file: agents/axiomatisierungs-agent.md
+    summary: Entscheidungskompetenz für confirmed aus der Agentenrolle entfernt.
+  - file: projekt/forschungsarchitektur-v2.md
+    summary: Erzeugung, Prüfung und Autorenentscheidung durchgängig getrennt.
+  - file: projekt/research-record-schema.md
+    summary: Self-review als Prüfung ohne automatische Bestätigung präzisiert.
+  - file: scripts/check_all.py
+    summary: Alle generativen Vertragstests und artifact_bundle.py in die zentrale Prüfung aufgenommen.
+affected_relations:
+  - from: critically_tested
+    relation: constrains
+    to: confirmed
+    effect: changed
+    note: Der Übergang benötigt Autorentscheidung oder ausdrücklich dokumentierte begrenzte Delegation.
+  - from: scripts/check_all.py
+    relation: tests
+    to: tests/test_generative_epistemic_contracts.py
+    effect: added
+    note: Die zentrale lokale Prüfung führt künftig alle generativen Vertragstests aus.
+possibilities:
+  opened:
+    - Automatische Prüfung kann bis critically_tested reichen, ohne Entscheidung und Prüfung zu vermischen.
+  restricted:
+    - Ein erzeugender oder prüfender Automat kann seinen eigenen Vorschlag nicht allein auf confirmed setzen.
+  deferred: []
+uncertainties: []
+agent_findings:
+  genealogist: []
+  consistency_checker:
+    - Ältere Architekturabschnitte erlaubten Selbstbestätigung, während neuere Reviewregeln sie ausschlossen.
+  critic:
+    - Transparente Selbstprüfung ersetzt keine unabhängige Entscheidungskompetenz.
+  material_technical:
+    - Die zentrale Prüfroutine ließ die neue epistemische Testsuite aus.
+authority:
+  requires_author_decision: false
+  decision_status: not_required
+  decision_reference: null
+validation:
+  - check: recursive_state
+    result: passed
+    evidence: 43 Change Events valide, Wissensprüfung bestanden, keine Warnungen.
+  - check: generative_contract_tests
+    result: passed
+    evidence: 25 Tests bestanden.
+  - check: complete_repository_validation
+    result: passed
+    evidence: ALL REPOSITORY CHECKS PASSED einschließlich Graph, Hooks, Node-Tests und Build.
+status: stabilized

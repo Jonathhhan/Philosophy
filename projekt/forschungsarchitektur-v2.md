@@ -41,16 +41,9 @@ generated -> proposal -> reconstructed -> internally_consistent -> project_consi
 
 Kein Automat darf einen Status ohne dokumentierte Prüfung überspringen. `confirmed` bedeutet nicht endgültig wahr, sondern vorläufig belastbar und weiterhin revidierbar.
 
-Ein erzeugender Automat darf einen eigenen Vorschlag selbst bestätigen, wenn der Anschluss plausibel ist. Plausibilität liegt nur vor, wenn:
+Ein erzeugender Automat darf seinen eigenen Vorschlag in einem getrennt protokollierten Modus prüfen. Die Prüfung darf bis `critically_tested` reichen, wenn Anschlusskette, Begriffsfunktionen, Projektkonsistenz, Gegenmodelle, starke Einwände, Grenzen und Revisionsbedingungen vollständig ausgewiesen sind.
 
-1. die Anschlusskette explizit rekonstruiert ist,
-2. die verwendeten Begriffe ihre bisherige Funktion behalten oder eine Verschiebung ausdrücklich begründet wird,
-3. der Vorschlag gegen Manuskript, Glossar und Wissensmodell geprüft wurde,
-4. mindestens ein ernsthaftes Gegenmodell oder Gegenbeispiel geprüft wurde,
-5. kein ungelöster starker Einwand verbleibt,
-6. und die Bestätigung samt Begründung, Grenzen und Revisionsbedingungen protokolliert wird.
-
-Selbstbestätigung ist damit keine Abkürzung der Prüfung, sondern eine mögliche Zusammenführung von Erzeugung, Prüfung und Integration in einem hinreichend transparenten Lauf.
+Der Status `confirmed` folgt daraus nicht automatisch. Er benötigt eine Autorenentscheidung oder eine ausdrücklich dokumentierte, begrenzte Entscheidungsdelegation. Erzeugung, Prüfung und Entscheidung bleiben dadurch auch dann unterscheidbar, wenn dieselbe technische Ausführung mehrere Rollen nacheinander übernimmt.
 
 ## Rein generativer autonomer Modus
 
@@ -95,7 +88,7 @@ Anfang
 
 Generierter Text wird zunächst unter `generated/` gespeichert und erhält den Status `generated`. Er darf neue Begriffe enthalten, von bestehenden Begriffsfunktionen abweichen und ungelöste Spannungen offenlassen, sofern Herkunft und Abweichungen gekennzeichnet werden.
 
-Der Automat darf anschließend selbst vom generativen in den prüfenden Modus wechseln. Dieser Moduswechsel muss ausdrücklich protokolliert sein. Erst dann darf er den Text rekonstruieren, projektweit prüfen, kritisieren und bei plausiblem Anschluss selbst bestätigen.
+Der Automat darf anschließend selbst vom generativen in den prüfenden Modus wechseln. Dieser Moduswechsel muss ausdrücklich protokolliert sein. Erst dann darf er den Text rekonstruieren, projektweit prüfen, kritisieren und bis `critically_tested` einstufen; `confirmed` bleibt einer Autorenentscheidung oder dokumentierten Delegation vorbehalten.
 
 Die vollständige Spezifikation steht in `agents/generativer-autonomer-modus.md`.
 
@@ -158,7 +151,7 @@ Bewertet, ob ein Durchlauf tatsächlich neues Wissen oder eine eigenständige ne
 
 ### Integrations-Agent
 
-Entscheidet anhand der protokollierten Resultate, ob eine Aussage oder ein generierter Text verworfen, weiter geprüft oder integriert wird. Diese Funktion kann von einem anderen Automaten oder vom erzeugenden Automaten selbst übernommen werden, sofern die Bedingungen plausibler Selbstbestätigung erfüllt sind.
+Empfiehlt anhand der protokollierten Resultate, ob eine Aussage oder ein generierter Text verworfen, weiter geprüft oder zur Integration vorgeschlagen wird. Diese Prüfrolle kann von einer getrennten Ausführung oder nacheinander vom erzeugenden Automaten übernommen werden; die Entscheidung über `confirmed` besitzt sie nicht.
 
 ## Sicherheitsregeln
 
@@ -167,7 +160,7 @@ Entscheidet anhand der protokollierten Resultate, ob eine Aussage oder ein gener
 3. Neue Theorie wird zunächst unter `knowledge/hypotheses/`, `knowledge/invariants/` oder `knowledge/tensions/` dokumentiert.
 4. Jede prüfende Änderung nennt Quellen, Gegenargumente und Status.
 5. Bestehende Dateien werden nur vollständig gelesen und vollständig ersetzt.
-6. Ein Automat darf eigene Vorschläge bestätigen, wenn er die Plausibilität des Anschlusses, die Gegenprüfung und die verbleibenden Grenzen vollständig dokumentiert.
+6. Ein Automat darf eigene Vorschläge bis `critically_tested` prüfen; `confirmed` erfordert eine Autorenentscheidung oder dokumentierte Delegation.
 7. Im generativen Modus sind Quellen und Gegenargumente noch nicht verpflichtend; der Modus und der Anfang müssen jedoch eindeutig protokolliert sein.
 8. Generierter Text darf nicht ungekennzeichnet als bestätigter Manuskripttext erscheinen.
 9. Ein fehlender Befund wird als `no_productive_difference` dokumentiert und nicht künstlich erzeugt.
