@@ -10,6 +10,7 @@ ROOT = Path(__file__).resolve().parents[1]
 sys.path.insert(0, str(ROOT / "scripts"))
 
 import automatenverbund
+import kollektiv_automat
 import philosophie_automat
 
 
@@ -68,6 +69,47 @@ class AutomatenverbundProvenanceTests(unittest.TestCase):
         self.assertIn("- markiert: Freiheit", rendered)
         self.assertIn("- unmarkiert: allgemeine Freiheitstheorie", rendered)
 
+class KollektivAutomatTests(unittest.TestCase):
+    def test_boundary_warning_has_precedence_and_blocks(self) -> None:
+        report = kollektiv_automat.build_collective_report(
+            "Freiheit beginnt dort, wo Organisation endet."
+        )
+        self.assertEqual(report["collective_recommendation"]["outcome"], "BLOCKED")
+        self.assertEqual(report["collective_recommendation"]["rule"], "boundary_precedence")
+
+    def test_explicit_variants_are_forked_without_majority_vote(self) -> None:
+        report = kollektiv_automat.build_collective_report(
+            "Organisation verändert Anschlussmöglichkeiten.",
+            variants=["lokale Präzisierung", "kapitelübergreifende Reorganisation"],
+        )
+        self.assertEqual(report["collective_recommendation"]["outcome"], "FORK")
+        self.assertTrue(report["dissent"]["preserved"])
+        self.assertIn("nicht gezählt", report["dissent"]["note"])
+
+    def test_existing_statement_is_kept(self) -> None:
+        report = kollektiv_automat.build_collective_report(
+            "Kritik steht nicht außerhalb der Organisation"
+        )
+        self.assertEqual(report["collective_recommendation"]["outcome"], "KEEP")
+        self.assertTrue(report["shared_evidence"]["exact_occurrences"])
+
+    def test_bounded_target_produces_patch_proposal(self) -> None:
+        report = kollektiv_automat.build_collective_report(
+            "Organisation verändert die Bedingungen weiterer Anschlüsse.",
+            target_file="manuskript/01-anschliessen.md",
+        )
+        self.assertEqual(report["collective_recommendation"]["outcome"], "PATCH")
+        self.assertTrue(report["collective_recommendation"]["requires_author_decision"])
+
+    def test_cross_file_evidence_can_require_reorganization(self) -> None:
+        result = kollektiv_automat._recommendation(
+            {"boundary_warnings": []},
+            [],
+            [],
+            ["manuskript/01.md", "manuskript/02.md", "manuskript/03.md"],
+            None,
+        )
+        self.assertEqual(result["outcome"], "REORGANIZE")
 
 if __name__ == "__main__":
     unittest.main()

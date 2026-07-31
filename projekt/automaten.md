@@ -124,6 +124,36 @@ Eine produktive Differenz ist noch kein gültiger Manuskripttext. Sie ist ein ne
 
 Der Automatenlauf verhindert damit zwei entgegengesetzte Fehler: Er bricht nicht schon bei einer weiteren bloßen Prüfspur ab, und er wiederholt auch nicht endlos denselben Zustand.
 
+## Kollektiv-Automat
+
+`scripts/kollektiv_automat.py` verarbeitet einen Gedanken durch getrennte
+Prüfrollen. Genealogie, Konsistenz, Kritik, material-technische Bedingungen,
+Projektgrenzen und redaktionelle Adresse bleiben als eigenständige Befunde
+sichtbar. Das Werkzeug zählt diese Befunde nicht aus und löst ihren Dissens
+nicht durch Mehrheit auf.
+
+```powershell
+python scripts\kollektiv_automat.py "Kritik steht nicht außerhalb der Organisation"
+python scripts\kollektiv_automat.py "Organisation verändert Anschlussmöglichkeiten" `
+  --target-file manuskript\11-organisieren.md
+python scripts\kollektiv_automat.py "Organisation verändert Anschlussmöglichkeiten" `
+  --variant "lokale Präzisierung" `
+  --variant "kapitelübergreifende Reorganisation" `
+  --format json
+```
+
+Die operative Empfehlung folgt transparenten Vorrangregeln:
+
+1. Eine deklarierte Grenzwarnung führt zu `BLOCKED`.
+2. Mehrere ausdrücklich übergebene Varianten führen zu `FORK`.
+3. Eine bereits ausdrücklich vorhandene Manuskriptformulierung führt zu `KEEP`.
+4. Ein konkretes, begrenztes Manuskriptziel ermöglicht `PATCH`.
+5. Folgen für mindestens drei Manuskriptdateien führen zu `REORGANIZE`.
+6. Fehlt eine hinreichend bestimmte redaktionelle Adresse, bleibt der Vorschlag `BLOCKED`.
+
+Diese Ausgänge sind keine Theorieurteile. `PATCH`, `REORGANIZE` und `FORK`
+verlangen weiterhin eine Autorenentscheidung. Das Kollektiv schreibt nur mit
+explizitem `--output` eine Ausgabedatei und verändert niemals das Manuskript.
 ## Gemeinsame Grenzen
 
 - Die Werkzeuge schreiben Ausgaben nur mit explizitem `--output`.
