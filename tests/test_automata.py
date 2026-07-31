@@ -91,6 +91,32 @@ class KunstwerkTraversalTests(unittest.TestCase):
             ["organisieren", "verteilen", "asymmetrie", "kritisieren"],
         )
 
+    def test_full_theory_chapter_mediation_is_preserved(self) -> None:
+        result = kunstwerk_automat.run("Anschließen", "Nicht-Anschluss", 18)
+        self.assertEqual(
+            [step["concept_id"] for step in result["steps"]],
+            [
+                "anschliessen",
+                "unterbrechen",
+                "problematisieren",
+                "form",
+                "aktualisieren",
+                "improvisieren",
+                "programm",
+                "algorithmus",
+                "komposition",
+                "stabilisieren",
+                "organisieren",
+                "verteilen",
+                "asymmetrie",
+                "kritisieren",
+                "beurteilen",
+                "revidieren",
+                "reorganisieren",
+                "freiheit",
+            ],
+        )
+
 
 class KollektivAutomatTests(unittest.TestCase):
     def test_boundary_warning_has_precedence_and_blocks(self) -> None:

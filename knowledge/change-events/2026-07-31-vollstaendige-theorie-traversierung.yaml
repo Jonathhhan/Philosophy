@@ -1,0 +1,94 @@
+schema_version: 1
+id: change-vollstaendige-theorie-traversierung
+created_at: 2026-07-31
+goal: Die im Manuskript ausgearbeiteten Vermittlungen der Kapitel 5 bis 11 im maschinenlesbaren Begriffsgraphen vollständig abbilden.
+operation: reorganization
+scope:
+  allowed_files:
+    - knowledge/concepts/aktualisieren.yaml
+    - knowledge/concepts/algorithmus.yaml
+    - knowledge/concepts/komposition.yaml
+    - knowledge/concepts/stabilisieren.yaml
+    - tests/test_automata.py
+    - knowledge/change-events/2026-07-31-vollstaendige-theorie-traversierung.yaml
+  protected_files:
+    - CONSTITUTION.md
+    - PROJECT.md
+    - GLOSSAR.md
+    - manuskript/
+basis:
+  project_files:
+    - manuskript/05-aktualisieren.md
+    - manuskript/06-improvisieren.md
+    - manuskript/08-algorithmus.md
+    - manuskript/09-komponieren.md
+    - manuskript/10-stabilisieren.md
+    - manuskript/11-organisieren.md
+    - knowledge/concepts/
+  decisions: []
+  sources: []
+changes:
+  - file: knowledge/concepts/aktualisieren.yaml
+    summary: Improvisieren als nächste systematische Vermittlung nach Aktualisieren ergänzt.
+  - file: knowledge/concepts/algorithmus.yaml
+    summary: Komposition als nächste systematische Vermittlung nach Algorithmus ergänzt.
+  - file: knowledge/concepts/komposition.yaml
+    summary: Stabilisieren als nächste systematische Vermittlung nach Komposition ergänzt.
+  - file: knowledge/concepts/stabilisieren.yaml
+    summary: Organisieren als nächste systematische Vermittlung nach Stabilisieren ergänzt.
+  - file: tests/test_automata.py
+    summary: Vollständige Traversierung der Kapitelstationen 1 bis 18 als Regressionstest gesichert.
+affected_relations:
+  - from: aktualisieren
+    relation: other
+    to: improvisieren
+    effect: added
+    note: Improvisieren wird als besondere Weiterbestimmung des Aktualisierens traversierbar.
+  - from: algorithmus
+    relation: other
+    to: komposition
+    effect: added
+    note: Der Übergang von bedingten Einzelübergängen zum Zusammenhang wird abgebildet.
+  - from: komposition
+    relation: other
+    to: stabilisieren
+    effect: added
+    note: Relative Dauer schließt an den hervorgebrachten kompositorischen Zusammenhang an.
+  - from: stabilisieren
+    relation: other
+    to: organisieren
+    effect: added
+    note: Der Zusammenhang verteilter Bedingungen folgt auf die Stabilisierung einzelner Bedingungen.
+possibilities:
+  opened:
+    - Der Automat kann die vollständige Kapitelvermittlung ohne Sprünge aufführen.
+  restricted:
+    - Alternative Querpfade werden nicht gelöscht, aber gegenüber der deklarierten Hauptvermittlung nachgeordnet.
+  deferred: []
+uncertainties: []
+agent_findings:
+  genealogist: []
+  consistency_checker:
+    - Die vier Relationen sind in den Kapitelübergängen bereits argumentativ ausgewiesen.
+  critic:
+    - Die Traversierung bleibt eine Arbeitsordnung und behauptet keine einzig mögliche logische Ableitung.
+  material_technical:
+    - Fehlende required_for-Kanten ließen vorhandene Concept-Knoten im Hauptpfad unbesucht.
+authority:
+  requires_author_decision: false
+  decision_status: not_required
+  decision_reference: null
+validation:
+  - check: knowledge_validation
+    result: passed
+    evidence: Knowledge validation passed.
+  - check: automata_tests
+    result: passed
+    evidence: 16 Tests bestanden.
+  - check: complete_theory_trace
+    result: passed
+    evidence: Der Lauf führt von Anschließen über alle Kapitelstationen einschließlich Improvisieren, Komposition und Stabilisieren bis Freiheit.
+  - check: complete_repository_validation
+    result: passed
+    evidence: ALL REPOSITORY CHECKS PASSED.
+status: stabilized

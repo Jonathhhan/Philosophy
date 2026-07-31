@@ -6,7 +6,8 @@ working_definition: Ergebnis oder Zusammenhang des Komponierens, in dem Elemente
 depends_on:
   - form
   - aktualisieren
-required_for: []
+required_for:
+  - stabilisieren
 related:
   - algorithmus
   - programm

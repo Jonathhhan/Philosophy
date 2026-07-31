@@ -7,6 +7,7 @@ central_claim: Jede Aktualisierung verändert den Raum weiterer Anschlussmöglic
 depends_on:
   - anschliessen
 required_for:
+  - improvisieren
   - programm
   - algorithmus
   - revidieren
