@@ -1,0 +1,54 @@
+{
+  "concepts": [
+    "aktualisieren",
+    "algorithmus",
+    "anschliessen",
+    "asymmetrie",
+    "beurteilen",
+    "form",
+    "freiheit",
+    "kommunikation",
+    "komposition",
+    "kritisieren",
+    "moeglichkeitsraum",
+    "problematisieren",
+    "programm",
+    "regel",
+    "reorganisieren",
+    "revidieren",
+    "stabilisieren",
+    "tragfaehigkeit"
+  ],
+  "anchors": [
+    "manuskript\\01-anschliessen.md:26",
+    "manuskript\\01-anschliessen.md:5",
+    "manuskript\\01-anschliessen.md:9",
+    "manuskript\\04-form.md:77",
+    "manuskript\\05-aktualisieren.md:11",
+    "manuskript\\05-aktualisieren.md:111",
+    "manuskript\\05-aktualisieren.md:47",
+    "manuskript\\05-aktualisieren.md:99",
+    "manuskript\\07-programm.md:59",
+    "manuskript\\07-programm.md:61",
+    "manuskript\\09-komponieren.md:104",
+    "manuskript\\09-komponieren.md:55",
+    "manuskript\\16-revidieren.md:23",
+    "manuskript\\17-reorganisieren.md:65"
+  ],
+  "bridges": [
+    "tractatus_automat->kunstwerk_automat:gemeinsame Begriffsadressen: aktualisieren, algorithmus, anschliessen, stabilisieren",
+    "tractatus_automat->kunstwerk_automat:gemeinsame Begriffsadressen: aktualisieren, asymmetrie, freiheit, problematisieren",
+    "tractatus_automat->kunstwerk_automat:gemeinsame Begriffsadressen: aktualisieren, problematisieren, tragfaehigkeit",
+    "tractatus_automat->kunstwerk_automat:gemeinsame Begriffsadressen: aktualisieren, reorganisieren",
+    "unterscheidungsautomat->tractatus_automat:gemeinsame Begriffsadressen: aktualisieren, algorithmus, anschliessen, asymmetrie, form, freiheit, reorganisieren, stabilisieren",
+    "unterscheidungsautomat->tractatus_automat:gemeinsame Begriffsadressen: aktualisieren, asymmetrie, form, freiheit, problematisieren, tragfaehigkeit",
+    "unterscheidungsautomat->tractatus_automat:gemeinsame Manuskriptanker: manuskript\\01-anschliessen.md:26, manuskript\\04-form.md:77, manuskript\\05-aktualisieren.md:11, manuskript\\05-aktualisieren.md:111, manuskript\\05-aktualisieren.md:47",
+    "unterscheidungsautomat->tractatus_automat:gemeinsame Manuskriptanker: manuskript\\01-anschliessen.md:5, manuskript\\01-anschliessen.md:9, manuskript\\04-form.md:77, manuskript\\05-aktualisieren.md:11, manuskript\\05-aktualisieren.md:111"
+  ],
+  "inputs": [
+    "[\"Problematisieren\", \"Aktualisieren\", \"Wie wird aus der Aktualisierung eines Rollenbefunds eine konkrete, prüfbare Spannung, ohne Rollenpluralität mit Dissens gleichzusetzen?\"]",
+    "[\"Rollenpluralität\", \"behaupteter Dissens\", \"Wann bildet Verschiedenheit eine konkrete, nicht durch Mehrheit aufzulösende Spannung?\"]",
+    "[\"aktualisieren\", \"Problematisieren\", \"Wie wird aus der Aktualisierung eines Rollenbefunds eine konkrete, prüfbare Spannung, ohne Rollenpluralität mit Dissens gleichzusetzen?\"]",
+    "[\"aktualisieren\", \"Rollenpluralität\", \"Wann bildet Verschiedenheit eine konkrete, nicht durch Mehrheit aufzulösende Spannung?\"]"
+  ]
+}
