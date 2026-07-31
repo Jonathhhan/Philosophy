@@ -94,6 +94,22 @@ Diese Vorlage dient umfangreichen, wiederkehrenden oder philosophisch strittigen
 
 **Wie bleiben Ausgangsstand und verworfene Variante wiederherstellbar?**
 
+## Codex-Theorie-Lernkreis
+
+**Welche bestätigte theoretische Vorgabe organisiert die Codex-Arbeit?**
+
+**Wie wird sie operativ übersetzt, und was geht in der Übersetzung verloren?**
+
+**Welche Probe und welche Gegenprobe werden tatsächlich ausgeführt?**
+
+**Welcher Befund ist operative Beobachtung, Irritation oder Theorie-Vorschlag?**
+
+**Welche alternative Deutung ohne Projektvokabular ist möglich?**
+
+**Was darf Codex an seiner Arbeitsweise ändern?**
+
+**Welche mögliche Theoriefolge bleibt bis zur Autorenentscheidung gesperrt?**
+
 ## Problem und argumentative Funktion
 
 **Welche bestimmte Erklärungslücke, Inkonsistenz oder Gestaltungsaufgabe wird bearbeitet?**

@@ -1,0 +1,27 @@
+id: decision-0025
+date: 2026-07-31
+title: Asymmetrischer Codex-Theorie-Lernkreis
+status: accepted
+decision: >-
+  Codex und Theorie werden durch einen vermittelten, asymmetrischen Lernkreis
+  verbunden. Bestätigte Theorie darf Codex-Arbeitsregeln unmittelbar prägen.
+  Codex darf der Theorie operative Beobachtungen, Irritationen, Gegenproben und
+  Vorschläge zurückgeben; theoretische Geltung entsteht daraus erst nach
+  Quellenprüfung, begrifflicher Prüfung und Autorenentscheidung.
+reason: >-
+  Der Autor hat ausdrücklich beauftragt, Codex von der Theorie und die Theorie
+  von Codex lernen zu lassen. Die asymmetrische Form ermöglicht Rückwirkung,
+  ohne Selbstbestätigung, Anthropomorphisierung oder eine Verschiebung der
+  theoretischen Letztentscheidung zu Codex.
+affected_files:
+  - AGENTS.md
+  - WORKFLOW.md
+  - .agents/skills/recursive-codex/SKILL.md
+  - projekt/codex-theorie-lernkreis.md
+  - projekt/codex-nutzungsanleitung.md
+  - projekt/codex-auftragsvorlage.md
+limits:
+  - Lernen bezeichnet keine Modellnachschulung und kein autonomes Sinnverstehen.
+  - Operative Bewährung ist kein philosophischer Wahrheitsbeweis.
+  - Codex-Rückgaben bleiben bis zur ausdrücklichen Autorisierung Vorschlag, TODO oder Verwerfung.
+  - Grundbegriffe, Grundthesen, Theorieachsen und Manuskriptänderungen werden nicht automatisch aktualisiert.

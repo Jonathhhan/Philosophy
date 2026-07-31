@@ -53,7 +53,8 @@ Jede größere Codex-Ausgabe soll mindestens implizit, bei Projektdateien ausdr�
 - `entwicklung`: begriffliche Weiterentwicklung aus früherem Material;
 - `vorschlag`: von Codex, Agenten oder Automat erzeugte Möglichkeit;
 - `geprüfter_vorschlag`: formal oder konsistent geprüft, aber nicht autorisiert;
-- `autorentscheidung_offen`: Integration braucht ausdrückliche Entscheidung;`r`n- `delegierte_codex_entscheidung`: der Autor hat Codex für einen klar begrenzten Fall eine vorläufige, revidierbare Entscheidung erlaubt;
+- `autorentscheidung_offen`: Integration braucht ausdrückliche Entscheidung;
+- `delegierte_codex_entscheidung`: der Autor hat Codex für einen klar begrenzten Fall eine vorläufige, revidierbare Entscheidung erlaubt;
 - `bestätigt`: vom Autor oder verbindlicher Projektdatei getragen;
 - `verworfen`: bewusst nicht weitergeführt;
 - `technische_umsetzung`: Code, Test, Visualisierung oder Build ohne Manuskriptrang.
@@ -173,6 +174,16 @@ Vor dem Abschluss einer größeren Codex-Bearbeitung fragt Codex:
 9. Ist die passende technische oder projektweite Prüfung gelaufen?
 10. Muss ein TODO, Change Event oder Zettel entstehen?
 
-## 10. Grenze der Methode
+## 10. Wechselseitiges Lernen
+
+Der Lernkreis unter `projekt/codex-theorie-lernkreis.md` verbindet diese Methode
+mit einer kontrollierten Rückkante. Bestätigte Theorie kann Codex-Operationen
+neu ordnen. Operative Befunde von Codex können dagegen nur als Beobachtung,
+Irritation oder Vorschlag an die Theorie zurückkehren. Dazwischen liegen
+Gegenprobe, alternative Deutung, Quellen- und Begriffsprüfung sowie
+Autorenentscheidung. Damit bleibt Lernen möglich, ohne Regelbefolgung mit
+Theoriebestätigung gleichzusetzen.
+
+## 11. Grenze der Methode
 
 Die Verfeinerung soll Codex vorsichtiger, anschlussfähiger und produktiver machen. Sie soll Codex nicht zu einer zweiten Theorieinstanz machen. Gerade ihre Stärke liegt darin, Vorschläge, Prüfungen, Entscheidungen und technische Ausführungen auseinanderzuhalten.

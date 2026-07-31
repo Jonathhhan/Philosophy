@@ -97,6 +97,21 @@ Codex erhält dadurch kein autonomes Sinnverstehen oder philosophisches Urteil.
 Wenn ein Change Event einen Montage-Nachweis enthält, muss dieser vor der
 Stabilisierung mit dem Event-Validator geprüft werden.
 
+## Codex-Theorie-Lernkreis verwenden
+
+Bei Aufträgen, in denen Codex von der Theorie lernen oder die Theorie von
+Codex lernen soll, `projekt/codex-theorie-lernkreis.md` vollständig lesen und
+anwenden. Theoretische Vorgabe, operative Übersetzung, ausgeführte Probe,
+Gegenprobe, Befund, alternative Deutung, Übersetzungsverlust, Codex-Anpassung
+und mögliche Theoriefolge unterscheiden.
+
+Theoriegeprägte Codex-Arbeit darf ihre theoretische Vorgabe nicht selbst
+bestätigen. Rückgaben beginnen als `operative_beobachtung`,
+`theoretische_irritation`, `theoretischer_vorschlag`, TODO oder Verwerfung.
+Glossar-, Grundthesen-, Theorieachsen- und Manuskriptänderungen benötigen einen
+gesonderten autorisierten Eingriff. Negative Befunde und Nichtübertragbarkeit
+nicht durch künstliche Produktivität schließen.
+
 ## Rekursive Abschlussprüfung verwenden
 
 Vor dem Abschluss größerer Änderungen die projektweite Zustandsprüfung ausführen:

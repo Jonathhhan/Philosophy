@@ -113,6 +113,7 @@ Das Projekt nutzt vier operative Formen, die zusammenarbeiten:
 | Plateau | nicht-lineare Konstellation von Anschlussstellen | `projekt/codex-prinzip-zettelkasten-plateaus.md` |
 | genetisches Register | Herkunft, Mutation, Pruefung, Entscheidung, Nachkommen | `projekt/genetisches-register.md` |
 | Montage | Materialauswahl, Schnitt, ausgefuehrte Varianten, Anordnung und Rueckkopplung | `projekt/codex-prinzip-montage.md` |
+| Lernkreis | Theorie in Codex-Regeln übersetzen und diagnostische Rückgaben kontrolliert an Theorie zurückführen | `projekt/codex-theorie-lernkreis.md` |
 
 Codex soll diese Formen nutzen, wenn ein Gedanke mehr ist als eine lokale Formulierung. Besonders wichtig ist das bei Gedanken, die aus mehreren Quellen, Kapiteln, Entscheidungen oder technischen Umsetzungen hervorgehen.
 
@@ -123,6 +124,7 @@ Zettel: Wo ist der Gedanke adressiert?
 Plateau: Von wo aus kann man anschliessen?
 Genetik: Woher kommt der Gedanke, wie mutiert er, was vererbt er?
 Montage: Welche Fassung bildet welche Beziehungen, und was zeigt ihr Vergleich?
+Lernkreis: Was verändert die Theorie an Codex, und welcher Befund darf nur als Vorschlag an die Theorie zurückkehren?
 ```
 
 Bei groesseren Kompositionen, Revisionen und Reorganisationen wird Montage als
@@ -131,6 +133,22 @@ Auslassung aus, fuehrt bei echter Unbestimmtheit vergleichbare Varianten aus,
 sichtet deren Folgen und stabilisiert nur eine gepruefte und autorisierte
 Fassung. Das bedeutet weder, dass jeder Datei-Edit Montage sei, noch dass Codex
 dadurch autonom urteile.
+
+### Theorie und Codex wechselseitig lernen lassen
+
+Der Lernkreis ist kein automatischer Selbstverbesserungsmodus. Bestätigte
+Theorie wird in eine konkrete Arbeitsregel übersetzt und an einer Bearbeitung
+samt Gegenprobe ausgeführt. Codex kann daraus Widerstände, Nebenfolgen,
+alternative Deutungen oder Präzisierungsvorschläge zurückgeben. Diese Rückgaben
+ändern die Theorie erst nach gesonderter Prüfung und Autorenentscheidung.
+
+Guter Prompt:
+
+```text
+Lass Codex diese Unterscheidung operativ erproben. Dokumentiere Gegenprobe,
+Übersetzungsverlust und theoretische Irritation. Verändere das Manuskript nicht
+ohne meine anschließende Entscheidung.
+```
 
 ## 6. Tractatus-philosophicus-Methode fuer Codex
 

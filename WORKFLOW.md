@@ -46,6 +46,24 @@ Vor der Stabilisierung ist zu fragen:
 Lokale Korrekturen und reine Audits verlangen keinen Montagepass. Technische
 Erzeugung, Diff und Test ersetzen weder sinnhaftes Urteil noch Autorenentscheidung.
 
+## Codex-Theorie-Lernkreis
+
+Wenn Theorie Codex-Arbeit organisiert und Ergebnisse dieser Arbeit an die
+Theorie zurückgegeben werden sollen, gilt `projekt/codex-theorie-lernkreis.md`:
+
+1. bestätigte theoretische Vorgabe und Reichweite bestimmen;
+2. Vorgabe in eine begrenzte Codex-Prüfregel übersetzen;
+3. konkrete Probe und relevante Gegenprobe ausführen;
+4. Widerstand, Nebenfolge, Grenze und Übersetzungsverlust dokumentieren;
+5. Codex-Anpassung von möglicher Theoriefolge trennen;
+6. Theoriefolgen bis zur Quellenprüfung und Autorenentscheidung sperren.
+
+Der Lernkreis ist asymmetrisch: Theorie kann Codex unmittelbar als
+Arbeitsdisziplin verändern; Codex verändert Theorie nur über ausgewiesene,
+revidierbare Vorschläge. Eine technische Störung ist nicht automatisch ein
+philosophischer Einwand, und Regelbefolgung bestätigt nicht die Theorie, aus der
+die Regel abgeleitet wurde.
+
 ## Zettelkasten- und Plateau-Prinzip für Codex
 
 Für größere Arbeiten kann Codex zusätzlich nach dem Arbeitsprinzip unter `projekt/codex-prinzip-zettelkasten-plateaus.md` verfahren. Dieses Prinzip behandelt Bearbeitungen als adressierbare Zettel und als nicht-linear anschließbare Plateaus. Es dient der Projektarbeit, nicht der Einführung einer neuen Theorieachse im Manuskript.

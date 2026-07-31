@@ -1,0 +1,173 @@
+schema_version: 1
+id: change-codex-theorie-lernkreis
+created_at: 2026-07-31
+goal: Theoriegeleitete Codex-Arbeit und diagnostische Rückgaben an die Theorie als kontrollierten doppelten Lernkreis verbinden.
+operation: reorganization
+scope:
+  allowed_files:
+    - AGENTS.md
+    - WORKFLOW.md
+    - .agents/skills/recursive-codex/SKILL.md
+    - projekt/codex-theorie-lernkreis.md
+    - projekt/codex-methode-verfeinerung.md
+    - projekt/codex-nutzungsanleitung.md
+    - projekt/codex-auftragsvorlage.md
+    - recovered/proposals/codex-theorie-lernkreis-varianten.md
+    - knowledge/decisions/0025-codex-theorie-lernkreis.yaml
+    - knowledge/change-events/2026-07-31-codex-theorie-lernkreis.yaml
+  protected_files:
+    - CONSTITUTION.md
+    - PROJECT.md
+    - GLOSSAR.md
+    - manuskript/
+basis:
+  project_files:
+    - CONSTITUTION.md
+    - PROJECT.md
+    - GLOSSAR.md
+    - WORKFLOW.md
+    - projekt/codex-prinzip-montage.md
+    - projekt/codex-als-anschlussapparat.md
+    - projekt/codex-methode-verfeinerung.md
+    - projekt/genetisches-register.md
+    - projekt/forschungsarchitektur-v2.md
+    - projekt/research-record-schema.md
+  decisions:
+    - knowledge/decisions/0021-theoriegeleitetes-codex-arbeitsprotokoll.yaml
+    - knowledge/decisions/0024-codex-montageprinzip.yaml
+    - knowledge/decisions/0025-codex-theorie-lernkreis.yaml
+  sources: []
+changes:
+  - file: projekt/codex-theorie-lernkreis.md
+    summary: Den asymmetrischen doppelten Lernkreis, seine Rückübersetzungssperre, Gegenproben, Status und Grenzen bestimmt.
+  - file: recovered/proposals/codex-theorie-lernkreis-varianten.md
+    summary: Symmetrische und asymmetrische Lernform tatsächlich ausgeführt, verglichen und begründet ausgewählt.
+  - file: knowledge/decisions/0025-codex-theorie-lernkreis.yaml
+    summary: Den ausdrücklichen Autorenauftrag als begrenzte Projektentscheidung dokumentiert.
+  - file: AGENTS.md
+    summary: Den Lernkreis und die Sperre operativer Selbstbestätigung als verbindliche Arbeitsregel ergänzt.
+  - file: WORKFLOW.md
+    summary: Den sechsstufigen Ablauf von theoretischer Vorgabe bis gesperrter Theoriefolge integriert.
+  - file: .agents/skills/recursive-codex/SKILL.md
+    summary: Aktivierung, Statusgrenzen, Gegenprobe und negative Befunde im rekursiven Skill verankert.
+  - file: projekt/codex-nutzungsanleitung.md
+    summary: Lernkreis in die operativen Formen und in ein verwendbares Auftragsmuster aufgenommen.
+  - file: projekt/codex-auftragsvorlage.md
+    summary: Prüffelder für Vorgabe, Übersetzung, Probe, Gegenprobe, Rückgabe und gesperrte Theoriefolge ergänzt.
+  - file: projekt/codex-methode-verfeinerung.md
+    summary: Kontrollierte Rückkante ergänzt und eine beschädigte Statuszeile lokal repariert.
+affected_relations:
+  - from: PROJECT.md
+    relation: constrains
+    to: projekt/codex-theorie-lernkreis.md
+    effect: added
+    note: Bestätigte Theorie wird in operative Codex-Prüfbedingungen übersetzt, ohne dadurch neu definiert zu werden.
+  - from: projekt/codex-theorie-lernkreis.md
+    relation: constrains
+    to: .agents/skills/recursive-codex/SKILL.md
+    effect: added
+    note: Diagnostische Rückgaben erhalten eine Rückübersetzungssperre und Statusgrenzen.
+  - from: projekt/codex-theorie-lernkreis.md
+    relation: cross_references
+    to: projekt/forschungsarchitektur-v2.md
+    effect: added
+    note: Der Lernkreis nutzt bestehende Forschungsstatus und führt kein zweites Wissenssystem ein.
+possibilities:
+  opened:
+    - Theoriegeleitete Codex-Arbeit kann systematisch Widerstände, Nebenfolgen und Grenzbefunde an die Theorie zurückgeben.
+    - Negative Befunde und gescheiterte Übertragungen werden als mögliche Lernresultate dokumentierbar.
+  restricted:
+    - Codex-Ausgaben, Validatorerfolg und operative Bewährung dürfen Theorie nicht selbst bestätigen.
+  deferred:
+    - Eine konkrete Manuskriptrevision aus einem diagnostischen Rückgabebefund benötigt einen eigenen Auftrag.
+uncertainties: []
+agent_findings:
+  genealogist: []
+  consistency_checker:
+    - Tragfähig ist ein vermittelter doppelter Lernkreis mit Sperre zwischen operativem Befund und theoretischer Integration.
+    - Negative Befunde, Nichtübertragbarkeit und Übersetzungsverluste müssen erhalten bleiben.
+  critic:
+    - Symmetrisches Lernen erzeugt Zirkularität, Selbstbestätigung und eine verdeckte Verschiebung von Auswahl- und Aufmerksamkeitsmacht.
+    - Gegenproben sollen auch alternative Beschreibungen ohne Projektvokabular zulassen.
+  material_technical: []
+montage:
+  materials:
+    - id: current-method
+      reference: Projektworkflow, Montageprinzip, Anschlussapparat, Forschungsarchitektur und genetisches Register
+      kind: manuscript
+      status: bestätigter Projektstand
+      identity: git:e876ef8
+    - id: author-decision
+      reference: knowledge/decisions/0025-codex-theorie-lernkreis.yaml
+      kind: decision
+      status: accepted
+      identity: decision-0025
+  variants:
+    - id: symmetric-learning
+      derived_from:
+        - current-method
+        - author-decision
+      artifact_or_diff: recovered/proposals/codex-theorie-lernkreis-varianten.md#variante-a
+      status: rejected
+    - id: asymmetric-learning
+      derived_from:
+        - current-method
+        - author-decision
+      artifact_or_diff: recovered/proposals/codex-theorie-lernkreis-varianten.md#variante-b
+      status: selected
+  selection:
+    selected:
+      - variant: asymmetric-learning
+        reason: Rückwirkung bleibt möglich, während Autorität, Gegenprüfung und Statusgrenzen erhalten werden.
+    rejected:
+      - variant: symmetric-learning
+        reason: Die Fassung könnte theoriegeprägte Codex-Ausgaben zirkulär als Theoriebeleg behandeln.
+    deferred: []
+  arrangement:
+    - position: 1
+      variant: asymmetric-learning
+      target: projekt/codex-theorie-lernkreis.md
+      function: Doppelte Bewegung, Rückübersetzungssperre und Lernprotokoll bestimmen.
+    - position: 2
+      variant: asymmetric-learning
+      target: AGENTS.md, WORKFLOW.md und recursive-codex-Skill
+      function: Lernkreis in den ausführbaren Projektablauf binden.
+    - position: 3
+      variant: asymmetric-learning
+      target: Codex-Nutzungsanleitung und Auftragsvorlage
+      function: Lernauftrag und Statusgrenzen für den Autor zugänglich machen.
+  feedback:
+    - subject: Konsistenzprüfung
+      finding: Der Lernkreis muss asymmetrisch und durch eine Rückübersetzungssperre vermittelt sein.
+      consequence: preserve
+    - subject: Kritische Prüfung
+      finding: Gegenproben müssen Selbstbestätigung, Anthropomorphisierung und Aufmerksamkeitsmacht sichtbar machen.
+      consequence: revise
+  stabilization:
+    state: stabilized
+    evidence:
+      - Beide Lernkreisvarianten sind als vergleichbare Textfassungen dokumentiert.
+      - Zwei unabhängige Rollenprüfungen wurden integriert.
+      - Vollständige Repository-Prüfung, 20 Webtests und Build bestanden.
+  recovery:
+    baseline: git:e876ef8
+    strategy: Alle Änderungen bleiben in einem eigenen Commit und sind gemeinsam revidierbar.
+    verification: Diff-Prüfung, Event-Validator und vollständige Repository-Prüfung sind bestanden.
+authority:
+  requires_author_decision: true
+  decision_status: accepted
+  decision_reference: knowledge/decisions/0025-codex-theorie-lernkreis.yaml
+validation:
+  - check: independent_consistency_review
+    result: passed
+    evidence: Asymmetrische Rückwirkung, Statusfolge und Rückübersetzungssperre wurden als projektkonsistent beurteilt.
+  - check: independent_critical_review
+    result: passed
+    evidence: Zirkularität, Selbstbestätigung, Anthropomorphisierung, Aufmerksamkeitsmacht und alternative Beschreibung wurden als Grenzen integriert.
+  - check: change_event_schema
+    result: passed
+    evidence: Das Change Event einschließlich Montage-Nachweis ist valide.
+  - check: complete_repository_validation
+    result: passed
+    evidence: ALL REPOSITORY CHECKS PASSED; 20 Webtests und Build bestanden.
+status: stabilized

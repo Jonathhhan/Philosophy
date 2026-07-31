@@ -91,6 +91,14 @@ Unbestimmtheit vergleichbare Fassungen aus, sichtet ihre relationalen Folgen und
 stabilisiert nur eine autorisierte und geprüfte Fassung. Das Montageprinzip
 ordnet Codex-Arbeit; es definiert Montage im Manuskript nicht neu.
 
+Für Aufgaben, in denen Codex von der Theorie lernen oder Befunde an die
+Theorie zurückgeben soll, gilt zusätzlich `projekt/codex-theorie-lernkreis.md`.
+Bestätigte Theorie darf Codex-Arbeitsregeln unmittelbar prägen. Rückgaben von
+Codex beginnen dagegen als operative Beobachtung, theoretische Irritation,
+Vorschlag oder TODO. Eine theoretische Integration benötigt Quellenprüfung,
+begriffliche Rekonstruktion und Autorenentscheidung. Operative Bewährung und
+Validatorerfolg gelten nicht als Beleg philosophischer Wahrheit.
+
 Vor einer inhaltlichen Aktualisierung ist kenntlich zu machen, ob Codex:
 
 - einem bestätigten Arbeitsprogramm aus Definitionen und Entscheidungen folgt;
