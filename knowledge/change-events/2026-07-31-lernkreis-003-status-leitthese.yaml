@@ -1,0 +1,141 @@
+schema_version: 1
+id: change-lernkreis-003-status-leitthese
+created_at: 2026-07-31
+goal: Die offene Statusfrage der Leitthese in ausgeführten Varianten prüfen und eine entscheidungsfähige Empfehlung vorbereiten.
+operation: audit
+scope:
+  allowed_files:
+    - recovered/proposals/lernkreis-003-status-der-leitthese.md
+    - knowledge/change-events/2026-07-31-lernkreis-003-status-leitthese.yaml
+  protected_files:
+    - CONSTITUTION.md
+    - PROJECT.md
+    - GLOSSAR.md
+    - manuskript/
+basis:
+  project_files:
+    - CONSTITUTION.md
+    - PROJECT.md
+    - GLOSSAR.md
+    - manuskript/01-anschliessen.md
+    - manuskript/04-form.md
+    - manuskript/05-aktualisieren.md
+    - manuskript/17-reorganisieren.md
+    - manuskript/schluss.md
+    - recovered/audits/abschliessendes-gesamtlektorat-2026-07-31.md
+    - recovered/proposals/lernkreis-002-relevanz-und-provenienz.yaml
+  decisions:
+    - knowledge/decisions/0025-codex-theorie-lernkreis.yaml
+  sources: []
+changes:
+  - file: recovered/proposals/lernkreis-003-status-der-leitthese.md
+    summary: Vier ausgeführte Statusvarianten, Einwände, Manuskriptfolgen, Möglichkeitsstatus und Empfehlung dokumentiert.
+affected_relations:
+  - from: recovered/proposals/lernkreis-003-status-der-leitthese.md
+    relation: documents
+    to: recovered/audits/abschliessendes-gesamtlektorat-2026-07-31.md
+    effect: added
+    note: Die dort offene Autorenentscheidung wird in vollständige Varianten und eine Empfehlung überführt.
+possibilities:
+  opened:
+    - Der Autor kann den Status der Leitthese anhand expliziter Alternativen und Folgen entscheiden.
+  restricted:
+    - Metaphysische und uneingeschränkt universal-empirische Lesarten werden nicht stillschweigend vorausgesetzt.
+  deferred:
+    - Jede Änderung an Projekt, Glossar oder Manuskript bleibt bis zur Autorenentscheidung gesperrt.
+uncertainties:
+  - Offen bleibt, ob der Autor A+, A, B oder C wählt oder eine weitere Variante verlangt.
+agent_findings:
+  genealogist: []
+  consistency_checker:
+    - Der geltende Text zieht zu einer begrenzten Mischform aus konstitutivem Kern und sachhaltiger Bewährungsanforderung.
+    - Die metaphysische Lesart kollidiert mit den ausdrücklichen Reichweitengrenzen.
+  critic:
+    - Eine Hybridform ist nur tragfähig, wenn begrifflicher Kern und konkrete Wirkungsbehauptung getrennte Prüfkriterien erhalten.
+    - Die mögliche definitorische Zirkularität darf nicht als entdeckte Universalgesetzmäßigkeit ausgegeben werden.
+  material_technical: []
+montage:
+  materials:
+    - id: current-thesis
+      reference: PROJECT.md, GLOSSAR.md, Kapitel 1, 4, 5, 17 und Schluss
+      kind: manuscript
+      status: bestätigter Projektstand
+      identity: git:bda6f28
+    - id: open-decision
+      reference: recovered/audits/abschliessendes-gesamtlektorat-2026-07-31.md
+      kind: proposal
+      status: offene Autorenentscheidung
+      identity: git:bda6f28
+  variants:
+    - id: constitutive
+      derived_from:
+        - current-thesis
+        - open-decision
+      artifact_or_diff: recovered/proposals/lernkreis-003-status-der-leitthese.md#variante-a
+      status: candidate
+    - id: substantive-universal
+      derived_from:
+        - current-thesis
+        - open-decision
+      artifact_or_diff: recovered/proposals/lernkreis-003-status-der-leitthese.md#variante-b
+      status: candidate
+    - id: metaphysical
+      derived_from:
+        - current-thesis
+        - open-decision
+      artifact_or_diff: recovered/proposals/lernkreis-003-status-der-leitthese.md#variante-c
+      status: rejected
+    - id: constitutive-plus
+      derived_from:
+        - current-thesis
+        - open-decision
+      artifact_or_diff: recovered/proposals/lernkreis-003-status-der-leitthese.md#variante-a
+      status: selected
+  selection:
+    selected:
+      - variant: constitutive-plus
+        reason: Konstitutiver Kern und fallbezogene sachhaltige Prüfung werden ausdrücklich getrennt.
+    rejected:
+      - variant: metaphysical
+        reason: Die Variante überschreitet Reichweite und Begründungsstand des Buches.
+    deferred:
+      - variant: constitutive
+        reason: Konsistent, aber möglicherweise zu schwach für den sachhaltigen Arbeitsanspruch.
+      - variant: substantive-universal
+        reason: Erkenntnisstark, aber ohne zusätzliche Kriterien und Gegenfallprüfung nicht hinreichend begründet.
+  arrangement:
+    - position: 1
+      variant: constitutive-plus
+      target: recovered/proposals/lernkreis-003-status-der-leitthese.md
+      function: Empfohlene Statusformel und Integrationsfolgen als Entscheidungsvorlage ausführen.
+  feedback:
+    - subject: systematische Prüfung
+      finding: A+ passt am besten zur gegenwärtigen Manuskriptsemantik und Reichweitenbegrenzung.
+      consequence: preserve
+    - subject: kritische Prüfung
+      finding: A+ muss seine zwei Ebenen und Prüfkriterien explizit halten, um keine Immunisierung zu werden.
+      consequence: revise
+  stabilization:
+    state: tested
+    evidence:
+      - Vier Statusvarianten vollständig ausgeführt und verglichen.
+      - Zwei unabhängige Rollenprüfungen integriert.
+  recovery:
+    baseline: git:bda6f28
+    strategy: Entscheidungsvorlage bleibt in einem eigenen Commit; geschützte Theorie ist unverändert.
+    verification: Event, Dossier, Diff und Repository-Zustand werden geprüft.
+authority:
+  requires_author_decision: true
+  decision_status: pending
+  decision_reference: recovered/proposals/lernkreis-003-status-der-leitthese.md
+validation:
+  - check: independent_systematic_review
+    result: passed
+    evidence: Vier Varianten, Folgen und Empfehlung wurden gegen den vollständigen Manuskriptzusammenhang geprüft.
+  - check: independent_critical_review
+    result: passed
+    evidence: Zirkularität, Falsifizierbarkeit, explanatorischer Ertrag und metaphysische Überdehnung wurden geprüft.
+  - check: theory_return_gate
+    result: passed
+    evidence: Projekt, Glossar und Manuskript bleiben bis zur Autorenentscheidung unverändert.
+status: tested
