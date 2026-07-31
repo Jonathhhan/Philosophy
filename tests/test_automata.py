@@ -11,6 +11,7 @@ sys.path.insert(0, str(ROOT / "scripts"))
 
 import automatenverbund
 import kollektiv_automat
+import kunstwerk_automat
 import philosophie_automat
 
 
@@ -81,6 +82,15 @@ class AutomatenverbundProvenanceTests(unittest.TestCase):
         rendered = automatenverbund.markdown(data)
         self.assertIn("- markiert: Freiheit", rendered)
         self.assertIn("- unmarkiert: allgemeine Freiheitstheorie", rendered)
+
+class KunstwerkTraversalTests(unittest.TestCase):
+    def test_systematic_mediation_is_not_skipped(self) -> None:
+        result = kunstwerk_automat.run("Organisieren", "nicht organisiert", 4)
+        self.assertEqual(
+            [step["concept_id"] for step in result["steps"]],
+            ["organisieren", "verteilen", "asymmetrie", "kritisieren"],
+        )
+
 
 class KollektivAutomatTests(unittest.TestCase):
     def test_boundary_warning_has_precedence_and_blocks(self) -> None:

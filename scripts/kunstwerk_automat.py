@@ -106,8 +106,8 @@ def choose_next(current_id: str, concepts: dict[str, Concept], visited: set[str]
     if not edges:
         return None
     priority = {"required_for": 0, "related": 1, "inverse_depends_on": 2, "inverse_related": 3, "depends_on": 4}
-    edges.sort(key=lambda item: (priority.get(item[0], 99), item[1]))
-    return edges[step % len(edges)]
+    edges.sort(key=lambda item: priority.get(item[0], 99))
+    return edges[0]
 
 
 def unmarked_for(concept: Concept, relation: str, previous_unmarked: str) -> str:

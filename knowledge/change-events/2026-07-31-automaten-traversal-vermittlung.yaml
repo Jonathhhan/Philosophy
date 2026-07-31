@@ -1,0 +1,73 @@
+schema_version: 1
+id: change-automaten-traversal-vermittlung
+created_at: 2026-07-31
+goal: Die Automaten-Traversierung an die bereits deklarierte Vermittlung Organisation, Verteilung, Asymmetrie und Kritik angleichen.
+operation: reorganization
+scope:
+  allowed_files:
+    - scripts/kunstwerk_automat.py
+    - tests/test_automata.py
+    - knowledge/change-events/2026-07-31-automaten-traversal-vermittlung.yaml
+  protected_files:
+    - CONSTITUTION.md
+    - PROJECT.md
+    - GLOSSAR.md
+    - knowledge/concepts/
+    - manuskript/
+basis:
+  project_files:
+    - CONSTITUTION.md
+    - knowledge/concepts/organisieren.yaml
+    - knowledge/concepts/verteilen.yaml
+    - knowledge/concepts/asymmetrie.yaml
+    - knowledge/concepts/kritisieren.yaml
+    - scripts/kunstwerk_automat.py
+  decisions: []
+  sources: []
+changes:
+  - file: scripts/kunstwerk_automat.py
+    summary: Priorisierte Kanten werden deterministisch und in deklarierter Reihenfolge traversiert.
+  - file: tests/test_automata.py
+    summary: Regressionstest für Organisieren, Verteilen, Asymmetrie und Kritisieren ergänzt.
+affected_relations:
+  - from: organisieren
+    relation: other
+    to: verteilen
+    effect: changed
+    note: Die deklarierte required_for-Kante wird in der priorisierten Traversierung nicht mehr schrittabhängig übersprungen.
+  - from: scripts/kunstwerk_automat.py
+    relation: tests
+    to: tests/test_automata.py
+    effect: changed
+    note: Ein Regressionstest sichert Organisation zu Verteilung zu Asymmetrie zu Kritik.
+possibilities:
+  opened:
+    - Automatenpfade können die systematische Vermittlung des Manuskripts reproduzierbar abbilden.
+  restricted:
+    - Die globale Schrittnummer variiert nicht länger willkürlich zwischen gleichzeitigen Anschlusskandidaten.
+  deferred:
+    - Alternative explorative Traversierungsstrategien benötigen eine eigene explizite Auswahlregel.
+uncertainties: []
+agent_findings:
+  genealogist: []
+  consistency_checker:
+    - Die Concept-Dateien enthielten die richtige Kette bereits; die Abweichung entstand erst in der Traversierung.
+  critic:
+    - Ein priorisierter Pfad ist eine Ordnungsentscheidung, keine philosophische Notwendigkeit.
+  material_technical:
+    - Die Modulo-Auswahl mit der globalen Schrittzahl unterlief die zuvor sortierte Kantenpriorität.
+authority:
+  requires_author_decision: false
+  decision_status: not_required
+  decision_reference: null
+validation:
+  - check: automata_tests
+    result: passed
+    evidence: 15 Tests bestanden.
+  - check: mediation_trace
+    result: passed
+    evidence: Organisieren, Verteilen, Asymmetrie und Kritisieren werden in dieser Reihenfolge ausgegeben.
+  - check: complete_repository_validation
+    result: passed
+    evidence: ALL REPOSITORY CHECKS PASSED.
+status: stabilized
