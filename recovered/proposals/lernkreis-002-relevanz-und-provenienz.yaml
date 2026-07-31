@@ -1,0 +1,80 @@
+id: lernkreis-002-relevanz-und-provenienz
+type: cycle
+mode: research
+status: reconstructed
+created_by: codex-theorie-lernkreis
+herkunft:
+  eltern:
+    - recovered/proposals/lernkreis-001-aktualisierung-analyseebene.yaml
+  frueherer_befund:
+    - recovered/audits/abschliessendes-gesamtlektorat-2026-07-31.md
+theoretische_vorgabe:
+  claim: Jede Aktualisierung verändert den Raum weiterer Anschlussmöglichkeiten.
+  references:
+    - GLOSSAR.md
+    - manuskript/01-anschliessen.md
+    - manuskript/04-form.md
+    - manuskript/05-aktualisieren.md
+operative_uebersetzung: >-
+  Die Irritation aus Lernkreis 001 wird an nichttechnischen Grenzfällen und
+  gegen bereits dokumentierte Projektbefunde geprüft.
+ausgefuehrte_probe:
+  - fall: unbemerkte Handlung
+    befund: Bewusstsein und Absicht sind nicht erforderlich; ein bestimmter Vollzug muss jedoch anschlusswirksam werden.
+  - fall: exakte Wiederholung
+    befund: Kapitel 5 bestimmt ausdrücklich eine veränderte konkrete Folgesituation, ohne deutliche Formänderung zu behaupten.
+  - fall: wirklich folgenloses Ereignis
+    befund: Bloßes Geschehen oder kausale Mikrodifferenz ist kein Anschluss und keine Aktualisierung im Manuskriptsinn.
+  - fall: gescheiterter Versuch
+    befund: Der intendierte Anschluss kann ausbleiben, während der tatsächlich vollzogene Versuch anschlusswirksam wird; beides ist getrennt zu bestimmen.
+gegenprobe: >-
+  Ein unbemerkter Atemzug während gemeinsamen Schweigens verändert den
+  physiologischen Zustand, muss aber die relevanten Gesprächsanschlüsse nicht
+  verändern. Die Analyseebene darf nicht nachträglich gewechselt werden, nur
+  um irgendeine Differenz zu finden.
+beobachteter_befund:
+  - Kapitel 1, 4 und 5 bestimmen Anschlussrelevanz und relationalen Zusammenhang bereits hinreichend gegen den technischen No-op.
+  - Die vermutete fehlende Analyseebenenregel ist keine nachgewiesene Manuskriptlücke.
+  - Die tiefere Metafrage nach dem Status der Leitthese war bereits im abschließenden Gesamtlektorat dokumentiert.
+alternative_deutung: >-
+  Die Leitthese ist weitgehend analytisch aus Anschluss und Aktualisieren
+  entwickelt. Ihre philosophische Prüfung richtet sich dann weniger auf ein
+  isoliertes Gegenbeispiel als auf ihren explikativen Ertrag und die
+  Unabhängigkeit ihrer Bestimmungen.
+uebersetzungsverlust:
+  - Technische Ereignisse legen diskrete Ebenen nahe; der Manuskriptzusammenhang bestimmt seine Ebene relational.
+  - Ein nichttechnisches Beispiel kann die Statusfrage der Leitthese exponieren, entscheidet sie aber nicht.
+rueckgabe_status: keine_neue_theorie
+codex_anpassung:
+  status: accepted_operational_rule
+  rule: >-
+    Vor der Kennzeichnung eines Befunds als neue theoretische Irritation
+    vorhandene Audits, Entscheidungen, Change Events und Vorschläge prüfen;
+    Ergebnis als neu, verstärkend, präzisierend oder bereits dokumentiert
+    klassifizieren.
+theoriefolge:
+  status: rejected_as_new_revision
+  rejected:
+    - Zusätzliche Analyseebenen- oder Relevanzregel in Kapitel 5 aus Lernkreis 001.
+  preserved_open_question:
+    reference: recovered/audits/abschliessendes-gesamtlektorat-2026-07-31.md
+    question: >-
+      Ist die Leitthese konstitutive Begriffsregel, sachhaltige These oder
+      metaphysische Aussage?
+autorentscheidung: nicht_erforderlich
+open_objections:
+  - Die bereits offene Statusfrage der Leitthese bleibt durch diesen Lernkreis unentschieden.
+  - Die analytische Absicherung könnte den explikativen Ertrag stärken oder eine definitorische Zirkularität verdecken.
+revision_conditions:
+  - Nur ein eigenständiger Auftrag zur Statusfrage darf eine Manuskriptrevision eröffnen.
+productive_difference: >-
+  Verhindert eine redundante Manuskriptpräzisierung und ergänzt Codex um eine
+  Provenienzprüfung vor Neuheitsbehauptungen.
+next_possible_steps:
+  - Einen späteren Lernkreis ausdrücklich der bereits offenen Statusfrage der Leitthese widmen.
+  - Den Provenienzcheck auf weitere theoretische Irritationen anwenden.
+mode_transitions:
+  - from: proposal
+    to: reconstructed
+    reason: Die Irritation wurde gegen Manuskriptzusammenhang und früheren Auditbefund geprüft.
+

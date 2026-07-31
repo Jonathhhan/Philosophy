@@ -123,6 +123,29 @@ eine Präzisierung nötig wird. Der vollständige Befund besitzt den Status
 `theoretische_irritation` unter
 `recovered/proposals/lernkreis-001-aktualisierung-analyseebene.yaml`.
 
+## Zweiter operativer Lerngewinn: Irritationsprovenienz
+
+Die Gegenprüfung von Lernkreis 001 an nichttechnischen Fällen ergab keine neue
+Manuskriptlücke. Kapitel 1, 4 und 5 bestimmen Anschluss bereits als relational
+wirksamen Vollzug und den Möglichkeitsraum als Ordnung situativ zugänglicher,
+relevanter und vollziehbarer Anschlüsse. Eine zusätzliche Analyseebenenregel
+wäre redundant und könnte die Leitthese eher immunisieren als präzisieren.
+
+Zugleich zeigte der genealogische Abgleich, dass das abschließende
+Gesamtlektorat die tiefere Frage bereits dokumentiert hatte: den Status der
+Leitthese als konstitutive Begriffsregel, sachhaltige These oder metaphysische
+Aussage. Lernkreis 001 hatte daher keine neue Theoriefrage erzeugt, sondern
+eine bestehende offene Frage unabhängig wieder erreicht.
+
+Als zweite bestätigte Codex-Regel gilt:
+
+> Bevor Codex einen Befund als neue theoretische Irritation ausgibt, prüft er Audits, Entscheidungen, Change Events und Vorschläge und klassifiziert den Befund als neu, verstärkend, präzisierend oder bereits dokumentiert.
+
+Der vollständige Folgezyklus steht unter
+`recovered/proposals/lernkreis-002-relevanz-und-provenienz.yaml`. Die
+Manuskriptpräzisierung aus Lernkreis 001 ist verworfen; die frühere offene
+Statusfrage bleibt davon unentschieden.
+
 ## Externe Vergleichskontexte
 
 Der Lernkreis ist keine Ableitung aus einer einzelnen externen Theorie. Vier

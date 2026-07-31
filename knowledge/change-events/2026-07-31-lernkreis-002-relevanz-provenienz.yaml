@@ -1,0 +1,149 @@
+schema_version: 1
+id: change-lernkreis-002-relevanz-provenienz
+created_at: 2026-07-31
+goal: Die erste theoretische Irritation an nichttechnischen Fällen und vorhandener Provenienz prüfen und nur den tragfähigen Codex-Lerngewinn stabilisieren.
+operation: revision
+scope:
+  allowed_files:
+    - projekt/codex-theorie-lernkreis.md
+    - recovered/proposals/lernkreis-002-relevanz-und-provenienz.yaml
+    - knowledge/change-events/2026-07-31-lernkreis-002-relevanz-provenienz.yaml
+  protected_files:
+    - CONSTITUTION.md
+    - PROJECT.md
+    - GLOSSAR.md
+    - manuskript/
+    - recovered/proposals/lernkreis-001-aktualisierung-analyseebene.yaml
+basis:
+  project_files:
+    - manuskript/01-anschliessen.md
+    - manuskript/04-form.md
+    - manuskript/05-aktualisieren.md
+    - projekt/codex-theorie-lernkreis.md
+    - recovered/proposals/lernkreis-001-aktualisierung-analyseebene.yaml
+    - recovered/audits/abschliessendes-gesamtlektorat-2026-07-31.md
+  decisions:
+    - knowledge/decisions/0025-codex-theorie-lernkreis.yaml
+  sources: []
+changes:
+  - file: recovered/proposals/lernkreis-002-relevanz-und-provenienz.yaml
+    summary: Nichttechnische Gegenproben, genealogischen Abgleich, Verwerfung der Manuskriptpräzisierung und erhaltene Statusfrage dokumentiert.
+  - file: projekt/codex-theorie-lernkreis.md
+    summary: Provenienzprüfung vor Neuheitsbehauptungen als zweiten bestätigten operativen Codex-Lerngewinn ergänzt.
+affected_relations:
+  - from: recovered/proposals/lernkreis-002-relevanz-und-provenienz.yaml
+    relation: supersedes
+    to: recovered/proposals/lernkreis-001-aktualisierung-analyseebene.yaml
+    effect: added
+    note: Die vermutete Manuskriptlücke wird zur Anwendungsgrenze und bereits dokumentierten Metafrage revidiert.
+  - from: recovered/audits/abschliessendes-gesamtlektorat-2026-07-31.md
+    relation: documents
+    to: recovered/proposals/lernkreis-002-relevanz-und-provenienz.yaml
+    effect: preserved
+    note: Die Statusfrage der Leitthese bleibt als frühere offene Autorenentscheidung erhalten.
+possibilities:
+  opened:
+    - Codex prüft künftig die Provenienz einer Irritation, bevor er theoretische Neuheit behauptet.
+  restricted:
+    - Lernkreis 001 begründet keine zusätzliche Analyseebenenregel im Manuskript.
+  deferred:
+    - Die bereits offene Statusfrage der Leitthese bleibt einem eigenständigen Autorenauftrag vorbehalten.
+uncertainties:
+  - Offen bleibt, ob die analytische Struktur der Leitthese explikativ produktiv oder definitorisch zirkulär ist.
+agent_findings:
+  genealogist:
+    - Das abschließende Gesamtlektorat dokumentiert die Status- und Analyseebenenfrage bereits als offene Autorenentscheidung.
+  consistency_checker:
+    - Kapitel 1, 4 und 5 schließen bloße zeitliche oder kausale Mikrodifferenzen als Anschlüsse aus.
+    - Die technische Irritation ist als Anwendungsgrenze produktiv, nicht als Manuskriptlücke.
+  critic:
+    - Der Atemzug-Gegenfall zeigt, dass die Analyseebene aus dem untersuchten Zusammenhang folgen muss.
+    - Die tiefere offene Frage betrifft den Status der Leitthese zwischen Begriffsbestimmung und Universalbehauptung.
+  material_technical: []
+montage:
+  materials:
+    - id: first-irritation
+      reference: recovered/proposals/lernkreis-001-aktualisierung-analyseebene.yaml
+      kind: proposal
+      status: theoretische Irritation
+      identity: git:75449be
+    - id: manuscript-context
+      reference: Kapitel 1, 4 und 5 sowie abschließendes Gesamtlektorat
+      kind: manuscript
+      status: bestätigter Text und dokumentierter Audit
+      identity: git:75449be
+  variants:
+    - id: manuscript-precision
+      derived_from:
+        - first-irritation
+        - manuscript-context
+      artifact_or_diff: Zusätzliche Relevanz- und Analyseebenenregel in Kapitel 5
+      status: rejected
+    - id: application-boundary
+      derived_from:
+        - first-irritation
+        - manuscript-context
+      artifact_or_diff: recovered/proposals/lernkreis-002-relevanz-und-provenienz.yaml
+      status: selected
+  selection:
+    selected:
+      - variant: application-boundary
+        reason: Der Manuskriptzusammenhang enthält die relevante relationale Begrenzung bereits.
+    rejected:
+      - variant: manuscript-precision
+        reason: Eine zusätzliche Regel wäre redundant und könnte die Leitthese stärker immunisieren.
+    deferred: []
+  arrangement:
+    - position: 1
+      variant: application-boundary
+      target: recovered/proposals/lernkreis-002-relevanz-und-provenienz.yaml
+      function: Nichttechnische Gegenprobe und genealogischen Abgleich dokumentieren.
+    - position: 2
+      variant: application-boundary
+      target: projekt/codex-theorie-lernkreis.md
+      function: Provenienzprüfung als zweiten Codex-Lerngewinn stabilisieren.
+  feedback:
+    - subject: Konsistenzprüfung
+      finding: Relevanzschwelle und relationaler Zusammenhang sind bereits hinreichend bestimmt.
+      consequence: preserve
+    - subject: kritische Gegenprobe
+      finding: Die offene Schwäche betrifft den Status der Leitthese, nicht eine fehlende Analyseebenenregel.
+      consequence: revise
+  stabilization:
+    state: stabilized
+    evidence:
+      - Vier nichttechnische Grenzfälle gegen Kapitel 1, 4 und 5 geprüft.
+      - Frühere Dokumentation der Statusfrage im abschließenden Gesamtlektorat nachgewiesen.
+      - Zwei unabhängige Konsistenz- und Gegenmodellprüfungen integriert.
+      - Vollständige Repository-Prüfung, 20 Webtests und Build bestanden.
+  recovery:
+    baseline: git:75449be
+    strategy: Zweiter Lernkreis und methodischer Provenienzgewinn bleiben als eigener Commit revidierbar.
+    verification: Forschungsdatensatz, Event, Diff und vollständiger Repository-Zustand sind geprüft.
+authority:
+  requires_author_decision: false
+  decision_status: not_required
+  decision_reference: null
+validation:
+  - check: nontechnical_counterexamples
+    result: passed
+    evidence: Unbemerkte Handlung, Wiederholung, folgenloses Ereignis und gescheiterter Versuch wurden begrifflich unterschieden.
+  - check: provenance_search
+    result: passed
+    evidence: Die Status- und Analyseebenenfrage ist bereits im abschließenden Gesamtlektorat als offene Autorenentscheidung dokumentiert.
+  - check: independent_consistency_review
+    result: passed
+    evidence: Der Manuskriptzusammenhang bestimmt die relationale Relevanz bereits hinreichend gegen den technischen No-op.
+  - check: independent_countermodel_review
+    result: passed
+    evidence: Atemzug-Gegenfall und mögliche definitorische Zirkularität wurden als stärkere Metafrage erhalten.
+  - check: theory_return_gate
+    result: passed
+    evidence: Keine Manuskriptänderung; die redundante Präzisierung ist verworfen und die frühere Statusfrage bleibt offen.
+  - check: change_event_schema
+    result: passed
+    evidence: Das Change Event einschließlich Montage-Nachweis ist valide.
+  - check: complete_repository_validation
+    result: passed
+    evidence: ALL REPOSITORY CHECKS PASSED; 20 Webtests und Build bestanden.
+status: stabilized
