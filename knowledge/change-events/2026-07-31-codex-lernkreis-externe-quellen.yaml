@@ -1,0 +1,142 @@
+schema_version: 1
+id: change-codex-lernkreis-externe-quellen
+created_at: 2026-07-31
+goal: Den Codex-Theorie-Lernkreis durch externe Quellen kontextualisieren, begrenzen und gegen Fehlanschlüsse absichern.
+operation: revision
+scope:
+  allowed_files:
+    - projekt/codex-theorie-lernkreis.md
+    - recovered/audits/codex-theorie-lernkreis-externe-quellen-2026-07-31.md
+    - knowledge/change-events/2026-07-31-codex-lernkreis-externe-quellen.yaml
+  protected_files:
+    - CONSTITUTION.md
+    - PROJECT.md
+    - GLOSSAR.md
+    - manuskript/
+basis:
+  project_files:
+    - CONSTITUTION.md
+    - PROJECT.md
+    - projekt/codex-theorie-lernkreis.md
+    - knowledge/decisions/0025-codex-theorie-lernkreis.yaml
+  decisions:
+    - knowledge/decisions/0025-codex-theorie-lernkreis.yaml
+  sources:
+    - Heinz von Foerster, Ethics and Second-Order Cybernetics, 1991, PDF-S. 2 und 10-11
+    - Thomas Manning, What is Conversation Theory?, 2023, PDF-S. 2, 4-5 und 8-9
+    - Xiaomei Wang und Xiaoyu Chen, Towards Human-AI Mutual Learning, 2024, PDF-S. 1-4
+    - Murray Shanahan, Talking About Large Language Models, 2023, PDF-S. 1-5
+    - Lu et al., Do We Learn From Each Other, 2025, nur Abstract geprüft
+changes:
+  - file: recovered/audits/codex-theorie-lernkreis-externe-quellen-2026-07-31.md
+    summary: Quellenbefunde, Seitenangaben, tragfähige Anschlüsse, Gegenbefunde und offene Volltextprüfungen für fünf externe Publikationen dokumentiert.
+  - file: projekt/codex-theorie-lernkreis.md
+    summary: Vier externe Vergleichskontexte mit ihren Teilanschlüssen und Nichtübertragbarkeiten in das Arbeitsprinzip aufgenommen.
+affected_relations:
+  - from: externe Quellen
+    relation: sourced_from
+    to: projekt/codex-theorie-lernkreis.md
+    effect: added
+    note: Begrenzte Affinitäten und Nichtübertragbarkeiten werden mit Seitenangaben ausgewiesen.
+  - from: recovered/audits/codex-theorie-lernkreis-externe-quellen-2026-07-31.md
+    relation: documents
+    to: projekt/codex-theorie-lernkreis.md
+    effect: added
+    note: Quellenbefund, Anschluss, Grenze und offene Volltextprüfungen bleiben getrennt dokumentiert.
+possibilities:
+  opened:
+    - Der Lernkreis kann gegenüber Kybernetik zweiter Ordnung, Conversation Theory und Human-AI-Forschung präzise verortet werden.
+  restricted:
+    - Externe Wortähnlichkeit darf nicht als Begründung symmetrischen, subjektförmigen oder trainingsbezogenen Codex-Lernens gelten.
+  deferred:
+    - Pasks Originaltext und der Volltext von Lu et al. benötigen weitere Zugriffs- und Seitenprüfung.
+uncertainties:
+  - Die externe Genealogie bleibt plural; keine Quelle begründet den Lernkreis als zusammenhängende Theorie.
+agent_findings:
+  genealogist:
+    - Von Foerster trägt Reflexivität und fehlenden Außenstandpunkt; Manning trägt Gegenprüfung und how/why-Differenz; Wang und Chen schärfen als Gegenmodell den Übersetzungsverlust.
+  consistency_checker: []
+  critic:
+    - Asymmetrie, Rückübersetzungssperre und Autorentscheidung sind projektspezifisch und dürfen den Quellen nicht zugeschrieben werden.
+    - Shanahan stützt die bestehende Anthropomorphisierungsgrenze und die Unterscheidung von Sprachmodell und eingebettetem System.
+  material_technical: []
+montage:
+  materials:
+    - id: learning-principle
+      reference: projekt/codex-theorie-lernkreis.md
+      kind: manuscript
+      status: bestätigtes Projektprinzip
+      identity: git:fbfbc95
+    - id: external-sources
+      reference: vier geprüfte Open-Access-Texte und ein nur abstrakt zugänglicher Artikel
+      kind: source
+      status: externe Vergleichsquellen
+      identity: URLs und PDF-Seiten im Quellenbericht
+  variants:
+    - id: external-foundation
+      derived_from:
+        - learning-principle
+        - external-sources
+      artifact_or_diff: Externe Literatur als Begründung des Lernkreises
+      status: rejected
+    - id: critical-comparison
+      derived_from:
+        - learning-principle
+        - external-sources
+      artifact_or_diff: recovered/audits/codex-theorie-lernkreis-externe-quellen-2026-07-31.md
+      status: selected
+  selection:
+    selected:
+      - variant: critical-comparison
+        reason: Partielle Affinität, Gegenmodell und Nichtübertragbarkeit bleiben unterscheidbar.
+    rejected:
+      - variant: external-foundation
+        reason: Keine Quelle trägt die asymmetrische Autoritätsordnung und den gesamten Lernkreis.
+    deferred: []
+  arrangement:
+    - position: 1
+      variant: critical-comparison
+      target: recovered/audits/codex-theorie-lernkreis-externe-quellen-2026-07-31.md
+      function: Vollständigen Quellen- und Grenzbefund dokumentieren.
+    - position: 2
+      variant: critical-comparison
+      target: projekt/codex-theorie-lernkreis.md
+      function: Verdichtete externe Vergleichskontexte und Grenzen eintragen.
+  feedback:
+    - subject: Quellenfit-Prüfung
+      finding: Die Quellen tragen Teiloperationen, aber keine gemeinsame Fundierung.
+      consequence: revise
+    - subject: kritische Quellenprüfung
+      finding: Human-AI mutual learning ist wegen Modelltraining und symmetrischer Lernsemantik vor allem Gegenmodell.
+      consequence: preserve
+  stabilization:
+    state: stabilized
+    evidence:
+      - Vier frei zugängliche Volltexte mit PDF-Seiten geprüft.
+      - Zwei unabhängige Quellenfit- und Kritikprüfungen integriert.
+      - Vollständige Repository-Prüfung, 20 Webtests und Build bestanden.
+  recovery:
+    baseline: git:fbfbc95
+    strategy: Quellenrevision bleibt in einem eigenen Commit revidierbar.
+    verification: Event, Links, Seitenangaben, Diff und vollständiger Repository-Zustand sind geprüft.
+authority:
+  requires_author_decision: false
+  decision_status: not_required
+  decision_reference: null
+validation:
+  - check: external_source_access
+    result: passed
+    evidence: Von Foerster, Manning, Wang/Chen und Shanahan wurden als frei zugängliche Volltexte geprüft; Lu et al. ist ausdrücklich auf den Abstract begrenzt.
+  - check: independent_source_fit_review
+    result: passed
+    evidence: Seitenangaben, Teilanschlüsse und unzulässige Übernahmen wurden unabhängig gegengeprüft.
+  - check: independent_critical_review
+    result: passed
+    evidence: Keine Quelle wurde als Gesamtfundierung behandelt; Human-AI mutual learning ist als trainingsbezogenes Gegenmodell begrenzt.
+  - check: change_event_schema
+    result: passed
+    evidence: Das Change Event einschließlich Montage-Nachweis ist valide.
+  - check: complete_repository_validation
+    result: passed
+    evidence: ALL REPOSITORY CHECKS PASSED; 20 Webtests und Build bestanden.
+status: stabilized

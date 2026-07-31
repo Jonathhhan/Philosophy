@@ -103,6 +103,35 @@ nicht durch künstlich erzeugte Neuheit simuliert werden.
    quellen- und relationsgeprüften Eingriff integriert und wirkt danach erneut
    auf Codex zurück.
 
+## Externe Vergleichskontexte
+
+Der Lernkreis ist keine Ableitung aus einer einzelnen externen Theorie. Vier
+Vergleichskontexte präzisieren Teiloperationen und Grenzen:
+
+- Heinz von Foersters *Ethics and Second-Order Cybernetics* bindet Beobachtung
+  an die Reflexion der eigenen Tätigkeit und unterscheidet beobachtete von
+  beobachtenden Systemen (PDF-S. 2 und 10–11). Das trägt die Prüfung des
+  vermeintlichen Außenstandpunkts, nicht Codex als verantwortliches Subjekt.
+- Thomas Mannings Rekonstruktion von Gordon Pasks Conversation Theory fasst
+  Begriffe prozessual und trennt praktische `how`- von begründenden
+  `why`-Ebenen (PDF-S. 2, 4–5 und 8–9). Das ist eine methodische Nähe zu Probe
+  und Gegenprobe, keine symmetrische Codex-Autorschaft.
+- Wang und Chen bestimmen Human–AI mutual learning als beidseitige
+  Wissensbewegung, zeigen aber zugleich Fehler, lokale Reichweite, Implizitheit
+  und Repräsentationsprobleme menschlichen Wissens (PDF-S. 1–4). Ihr
+  trainingsbezogenes Modell dient hier vor allem als Gegenmodell, weil der
+  Projektlernkreis keine Modellnachschulung vornimmt.
+- Murray Shanahan warnt vor philosophisch überladener Beschreibung von
+  Sprachmodellen und verlangt die Unterscheidung von Modelloperation und
+  eingebettetem System (PDF-S. 1–5). Das stützt die
+  Anthropomorphisierungsgrenze.
+
+Vollständige bibliografische Angaben, Links, Befunde und Nichtübertragbarkeiten
+stehen in `recovered/audits/codex-theorie-lernkreis-externe-quellen-2026-07-31.md`.
+Asymmetrie, Rückübersetzungssperre und Autorenentscheidung bleiben
+projektspezifische Bestimmungen; keine der Quellen begründet sie als
+zusammenhängende Theorie.
+
 ## Verhältnis zu den anderen Arbeitsformen
 
 - Das rekursive Protokoll steuert Umfang, Autorität und Abschluss.
