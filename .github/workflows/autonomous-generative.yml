@@ -15,7 +15,6 @@ on:
 
 permissions:
   contents: write
-  models: read
   pull-requests: write
 
 jobs:
@@ -44,12 +43,22 @@ jobs:
           test -f "$REQUEST_FILE"
           python automation/generative_runner.py "$REQUEST_FILE" --validate-only
 
+      - name: Validate model provider configuration
+        env:
+          GENERATIVE_API_ENDPOINT: ${{ secrets.GENERATIVE_API_ENDPOINT }}
+          GENERATIVE_API_KEY: ${{ secrets.GENERATIVE_API_KEY }}
+          GENERATIVE_MODEL: ${{ vars.GENERATIVE_MODEL }}
+        run: |
+          test -n "$GENERATIVE_API_ENDPOINT" || { echo "::error::Configure the GENERATIVE_API_ENDPOINT repository secret."; exit 1; }
+          test -n "$GENERATIVE_API_KEY" || { echo "::error::Configure the GENERATIVE_API_KEY repository secret."; exit 1; }
+          test -n "$GENERATIVE_MODEL" || { echo "::error::Configure the GENERATIVE_MODEL repository variable."; exit 1; }
+
       - name: Run bounded generation
         env:
           REQUEST_FILE: ${{ inputs.request_file }}
-          GENERATIVE_API_ENDPOINT: ${{ secrets.GENERATIVE_API_ENDPOINT || 'https://models.github.ai/inference' }}
-          GENERATIVE_API_KEY: ${{ secrets.GENERATIVE_API_KEY || github.token }}
-          GENERATIVE_MODEL: ${{ vars.GENERATIVE_MODEL || 'openai/gpt-4.1' }}
+          GENERATIVE_API_ENDPOINT: ${{ secrets.GENERATIVE_API_ENDPOINT }}
+          GENERATIVE_API_KEY: ${{ secrets.GENERATIVE_API_KEY }}
+          GENERATIVE_MODEL: ${{ vars.GENERATIVE_MODEL }}
         run: python automation/generative_runner.py "$REQUEST_FILE"
 
       - name: Enforce output boundary
