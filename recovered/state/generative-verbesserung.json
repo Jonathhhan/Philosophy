@@ -1,0 +1,49 @@
+{
+  "concepts": [
+    "aktualisieren",
+    "algorithmus",
+    "anschliessen",
+    "asymmetrie",
+    "form",
+    "fortsetzen",
+    "improvisieren",
+    "komposition",
+    "moeglichkeitsraum",
+    "montage",
+    "problematisieren",
+    "programm",
+    "reorganisieren",
+    "revidieren",
+    "stabilisieren",
+    "unterbrechen"
+  ],
+  "anchors": [
+    "manuskript\\01-anschliessen.md:32",
+    "manuskript\\02-unterbrechen.md:31",
+    "manuskript\\04-form.md:77",
+    "manuskript\\04-form.md:83",
+    "manuskript\\05-aktualisieren.md:47",
+    "manuskript\\05-aktualisieren.md:9",
+    "manuskript\\05-aktualisieren.md:99",
+    "manuskript\\07-programm.md:105",
+    "manuskript\\07-programm.md:21",
+    "manuskript\\08-algorithmus.md:101",
+    "manuskript\\08-algorithmus.md:37",
+    "manuskript\\11-organisieren.md:87",
+    "manuskript\\12-verteilen.md:119",
+    "manuskript\\13-asymmetrie.md:89",
+    "manuskript\\16-revidieren.md:23"
+  ],
+  "bridges": [
+    "tractatus_automat->kunstwerk_automat:gemeinsame Begriffsadressen: aktualisieren",
+    "tractatus_automat->kunstwerk_automat:gemeinsame Begriffsadressen: aktualisieren, algorithmus, fortsetzen, revidieren",
+    "unterscheidungsautomat->tractatus_automat:gemeinsame Begriffsadressen: aktualisieren, algorithmus, fortsetzen, moeglichkeitsraum, revidieren",
+    "unterscheidungsautomat->tractatus_automat:gemeinsame Begriffsadressen: aktualisieren, asymmetrie",
+    "unterscheidungsautomat->tractatus_automat:gemeinsame Manuskriptanker: manuskript\\01-anschliessen.md:32, manuskript\\02-unterbrechen.md:31, manuskript\\04-form.md:77, manuskript\\05-aktualisieren.md:99, manuskript\\07-programm.md:21",
+    "unterscheidungsautomat->tractatus_automat:gemeinsame Manuskriptanker: manuskript\\04-form.md:83, manuskript\\05-aktualisieren.md:47, manuskript\\05-aktualisieren.md:9, manuskript\\05-aktualisieren.md:99, manuskript\\07-programm.md:105"
+  ],
+  "inputs": [
+    "[\"Generierung\", \"bloße Dateierzeugung\", \"Qualität der autonomen Theoriegenese: deklarierter source_context versus tatsächlich im Prompt verwendeter Quelleninhalt, Provenienz, Projektgrenzen und produktive Differenz\"]",
+    "[\"aktualisieren\", \"Generierung\", \"Qualität der autonomen Theoriegenese: deklarierter source_context versus tatsächlich im Prompt verwendeter Quelleninhalt, Provenienz, Projektgrenzen und produktive Differenz\"]"
+  ]
+}
