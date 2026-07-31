@@ -12,7 +12,7 @@ Eine unter bestimmten Bedingungen aktualisierbare Möglichkeit des Weitergehens.
 
 ## Aktualisieren
 
-Eine Anschlussmöglichkeit in einen bestimmten Vollzug überführen. Jede Aktualisierung verändert den Raum weiterer Anschlussmöglichkeiten.
+Eine Anschlussmöglichkeit in einen bestimmten Vollzug überführen. Jede Aktualisierung verändert den Raum weiterer Anschlussmöglichkeiten. Welche Möglichkeiten sich dabei für welche Position verändern, ist unter Angabe der wirksamen Bedingungen und der Analyseebene sachhaltig zu rekonstruieren.
 
 ## Problematisieren
 

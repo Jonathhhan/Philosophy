@@ -12,6 +12,8 @@ Es beginnt nicht bei fertigen Dingen oder isolierten Subjekten, sondern bei Proz
 
 Diese These verbindet die Kapitel. Sie bedeutet weder, dass jede Aktualisierung alle Möglichkeiten verändert, noch dass jede Veränderung beabsichtigt ist. Sie bezeichnet die rekursive Struktur, in der ein vollzogener Anschluss zum Bestandteil der Bedingungen weiterer Anschlüsse wird.
 
+Die Leitthese ist eine konstitutive Explikation des hier entwickelten Aktualisierungsbegriffs. Sie legt den rekursiven Minimalzusammenhang fest; welche Möglichkeiten dadurch für welche Position eröffnet, begrenzt, gewichtet oder unzugänglich werden, ist eine sachhaltige Frage der jeweiligen Rekonstruktion. Der Satz ist daher weder ein empirisches Universalgesetz noch die Behauptung einer allgemeinen Modalontologie.
+
 ## Rekursive Bewegung
 
 > Anschlussmöglichkeiten → Organisation → Aktualisierung → Reorganisation → Kritik

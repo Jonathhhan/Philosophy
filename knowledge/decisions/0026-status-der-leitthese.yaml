@@ -1,0 +1,27 @@
+id: decision-0026
+date: 2026-07-31
+title: Konstitutiver Status der Leitthese mit sachhaltiger Bewährungsanforderung
+status: accepted
+decision: >-
+  Die Leitthese "Jede Aktualisierung verändert den Raum weiterer
+  Anschlussmöglichkeiten" gilt als konstitutive Explikation des im Buch
+  entwickelten Aktualisierungsbegriffs. Sie legt fest, dass ein aktualisierter
+  Anschluss in die Bedingungen weiterer Anschlüsse eingeht. Welche
+  Möglichkeiten dadurch für welche Position eröffnet, begrenzt, gewichtet
+  oder unzugänglich werden, ist eine sachhaltige Frage der jeweiligen
+  Rekonstruktion.
+reason: >-
+  Die Fassung erhält den rekursiven Minimalzusammenhang des Projekts, ohne ihn
+  als empirisches Universalgesetz oder allgemeine Metaphysik auszugeben. Sie
+  trennt begriffliche Kohärenz und explikativen Ertrag von fallbezogenen
+  Aussagen über konkrete Wirkungen, Zugänglichkeiten und Analyseebenen.
+affected_files:
+  - PROJECT.md
+  - GLOSSAR.md
+  - manuskript/05-aktualisieren.md
+  - recovered/proposals/lernkreis-003-status-der-leitthese.md
+limits:
+  - Aus der Leitthese folgt keine allgemeine Modalontologie.
+  - Aus der Veränderung weiterer Anschlussmöglichkeiten folgt keine normative Richtigkeit.
+  - Konkrete Veränderungsbehauptungen müssen Position, Bedingungen und Analyseebene ausweisen.
+  - Die Entscheidung erweitert den Gegenstand des Buches nicht zu einer Universaltheorie.

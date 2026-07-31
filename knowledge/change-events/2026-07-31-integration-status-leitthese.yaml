@@ -1,0 +1,150 @@
+schema_version: 1
+id: change-integration-status-leitthese
+created_at: 2026-07-31
+goal: Die bestätigte Variante A+ als Status der Leitthese minimal und konsistent integrieren.
+operation: reorganization
+scope:
+  allowed_files:
+    - PROJECT.md
+    - GLOSSAR.md
+    - manuskript/05-aktualisieren.md
+    - knowledge/decisions/0026-status-der-leitthese.yaml
+    - knowledge/change-events/2026-07-31-lernkreis-003-status-leitthese.yaml
+    - knowledge/change-events/2026-07-31-integration-status-leitthese.yaml
+  protected_files:
+    - CONSTITUTION.md
+    - manuskript/01-anschliessen.md
+    - manuskript/04-form.md
+    - manuskript/17-reorganisieren.md
+    - manuskript/schluss.md
+basis:
+  project_files:
+    - CONSTITUTION.md
+    - PROJECT.md
+    - GLOSSAR.md
+    - manuskript/01-anschliessen.md
+    - manuskript/04-form.md
+    - manuskript/05-aktualisieren.md
+    - manuskript/17-reorganisieren.md
+    - manuskript/schluss.md
+    - recovered/proposals/lernkreis-003-status-der-leitthese.md
+  decisions:
+    - knowledge/decisions/0025-codex-theorie-lernkreis.yaml
+    - "Autorenentscheidung im Codex-Task vom 2026-07-31: Variante A+ annehmen und integrieren."
+  sources: []
+changes:
+  - file: PROJECT.md
+    summary: Status der Leitthese als konstitutive Explikation mit sachhaltiger Rekonstruktionspflicht bestimmt.
+  - file: manuskript/05-aktualisieren.md
+    summary: Konstitutiven Kern, fallbezogene Bewährung und Reichweitengrenze argumentativ unterschieden.
+  - file: GLOSSAR.md
+    summary: Bestehende Definition um Positions-, Bedingungs- und Analyseebenenbezug ergänzt.
+  - file: knowledge/decisions/0026-status-der-leitthese.yaml
+    summary: Ausdrückliche Autorenentscheidung und ihre Grenzen dokumentiert.
+affected_relations:
+  - from: PROJECT.md
+    relation: defines
+    to: manuskript/05-aktualisieren.md
+    effect: added
+    note: Projektstatus und argumentative Ausführung der Leitthese werden explizit aufeinander abgestimmt.
+  - from: GLOSSAR.md
+    relation: constrains
+    to: manuskript/05-aktualisieren.md
+    effect: added
+    note: Die Definition wird nicht ersetzt, sondern um die sachhaltige Rekonstruktionspflicht ergänzt.
+possibilities:
+  opened:
+    - Konstitutiver Kern und konkrete Wirkungsbehauptung können getrennt geprüft werden.
+  restricted:
+    - Die Leitthese kann nicht mehr stillschweigend als empirisches Universalgesetz oder allgemeine Metaphysik gelesen werden.
+  deferred:
+    - Eine allgemeine Modalontologie und eine bereichsübergreifende Universalbehauptung bleiben außerhalb des Projekts.
+uncertainties: []
+agent_findings:
+  genealogist: []
+  consistency_checker:
+    - Die systematische Vorprüfung empfiehlt A+ als konsistenteste Fassung des bestehenden Manuskriptzusammenhangs.
+  critic:
+    - Die Integration muss konstitutiven Kern und fallbezogene Prüfkriterien ausdrücklich auseinanderhalten.
+  material_technical: []
+montage:
+  materials:
+    - id: accepted-a-plus
+      reference: recovered/proposals/lernkreis-003-status-der-leitthese.md
+      kind: proposal
+      status: vom Autor bestätigt
+      identity: git:75408ee
+    - id: current-theory
+      reference: PROJECT.md, GLOSSAR.md und manuskript/05-aktualisieren.md
+      kind: manuscript
+      status: stabilisierter Projektstand
+      identity: git:75408ee
+  variants:
+    - id: project-only
+      derived_from:
+        - accepted-a-plus
+        - current-theory
+      artifact_or_diff: Nur PROJECT.md präzisieren.
+      status: rejected
+    - id: coordinated-minimal-integration
+      derived_from:
+        - accepted-a-plus
+        - current-theory
+      artifact_or_diff: PROJECT.md, Kapitel 5 und Glossar mit kleinsten hinreichenden Ergänzungen koordinieren.
+      status: selected
+  selection:
+    selected:
+      - variant: coordinated-minimal-integration
+        reason: Der Status wird dort sichtbar, wo Leitthese, Argument und Definition jeweils ihre eigene Funktion haben.
+    rejected:
+      - variant: project-only
+        reason: Der philosophische Status bliebe im argumentierenden Manuskript und in der Definition zu leicht überlesbar.
+    deferred: []
+  arrangement:
+    - position: 1
+      variant: coordinated-minimal-integration
+      target: PROJECT.md
+      function: Status der Leitthese projektweit bestimmen.
+    - position: 2
+      variant: coordinated-minimal-integration
+      target: manuskript/05-aktualisieren.md
+      function: Konstitutiven Kern und sachhaltige Prüfanforderung argumentativ unterscheiden.
+    - position: 3
+      variant: coordinated-minimal-integration
+      target: GLOSSAR.md
+      function: Rekonstruktionspflicht ergänzen, ohne die Definition zu ersetzen.
+  feedback:
+    - subject: integrierte Fassung
+      finding: Die drei Ergänzungen erfüllen getrennte Funktionen und stimmen in Status, Prüfkriterien und Reichweite überein.
+      consequence: preserve
+    - subject: geschützte Querverweise
+      finding: Kapitel 1, 4, 17 und Schluss widersprechen A+ nicht und benötigen keine Folgeänderung.
+      consequence: preserve
+  stabilization:
+    state: stabilized
+    evidence:
+      - Autorenentscheidung ist als decision-0026 dokumentiert.
+      - Projektstatus, Kapitelargument und Glossardefinition sind konsistent integriert.
+      - Projektweite Validierung und rekursive Abschlussprüfung sind bestanden.
+  recovery:
+    baseline: git:75408ee
+    strategy: Inhaltliche Integration bleibt in einem eigenen Commit vollständig revidierbar.
+    verification: Diff, Querverweise, Wissensbasis und Repository wurden vor Stabilisierung erfolgreich geprüft.
+authority:
+  requires_author_decision: true
+  decision_status: accepted
+  decision_reference: knowledge/decisions/0026-status-der-leitthese.yaml
+validation:
+  - check: author_decision
+    result: passed
+    evidence: Der Autor hat Variante A+ im Codex-Task am 2026-07-31 ausdrücklich bestätigt.
+  - check: conceptual_consistency
+    result: passed
+    evidence: Konstitutiver Kern, sachhaltige Bewährung und Reichweitengrenze werden getrennt ausgewiesen.
+  - check: cross_reference_review
+    result: passed
+    evidence: Kapitel 1, 4, 17 und Schluss benötigen keine Folgeänderung.
+  - check: complete_repository_validation
+    result: passed
+    evidence: python scripts/check_all.py --skip-install und check_recursive_state.py erfolgreich.
+status: stabilized
