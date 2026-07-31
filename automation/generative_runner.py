@@ -9,6 +9,7 @@ from __future__ import annotations
 
 import argparse
 import datetime as dt
+import hashlib
 import json
 import os
 import re
@@ -33,6 +34,17 @@ DEFAULT_STYLES = {
     "pragmatic": "Bewerte Begriffe nach Erklärungskraft, Folgen und möglichen Anwendungen.",
 }
 
+MAX_SOURCE_FILE_CHARS = 24_000
+MAX_SOURCE_CONTEXT_CHARS = 64_000
+PROJECT_GUARDRAILS = """Projektgrenzen:
+- Generiertes Material bleibt Status generated und ist keine bestätigte Theorie.
+- Bestehende Definitionen dürfen nicht stillschweigend ersetzt werden.
+- Neue Grundbegriffe, Grundthesen und Theorieachsen sind ausdrücklich als Vorschläge zu markieren.
+- Programm und Algorithmus bleiben eigenständige Begriffe.
+- Montage ist ein epistemisches Modell und nicht bloß ein Beispiel.
+- Unsicherheiten und unbelegte Quellenbehauptungen bleiben offen."""
+
+
 
 def fail(message: str) -> None:
     raise SystemExit(f"error: {message}")
@@ -40,6 +52,37 @@ def fail(message: str) -> None:
 
 def slugify(value: str) -> str:
     return (re.sub(r"[^a-z0-9äöüß]+", "-", value.lower().strip()).strip("-")[:64] or "autonome-theorie")
+
+
+def load_source_context(paths: list[str], root: Path | None = None) -> tuple[str, list[dict[str, Any]]]:
+    root = (root or Path.cwd()).resolve()
+    blocks: list[str] = []
+    provenance: list[dict[str, Any]] = []
+    total = 0
+    for raw_path in paths:
+        relative = Path(str(raw_path))
+        if relative.is_absolute():
+            fail(f"source_context path must be relative: {raw_path}")
+        resolved = (root / relative).resolve()
+        if resolved != root and root not in resolved.parents:
+            fail(f"source_context path escapes repository: {raw_path}")
+        if not resolved.is_file():
+            fail(f"source_context file not found: {raw_path}")
+        content = resolved.read_text(encoding="utf-8")
+        included = content[:min(MAX_SOURCE_FILE_CHARS, MAX_SOURCE_CONTEXT_CHARS - total)]
+        provenance.append({
+            "path": relative.as_posix(),
+            "sha256": hashlib.sha256(content.encode("utf-8")).hexdigest(),
+            "characters": len(content),
+            "included_characters": len(included),
+            "truncated": len(included) < len(content),
+        })
+        if included:
+            blocks.append(f"--- QUELLE: {relative.as_posix()} ---\n{included}")
+            total += len(included)
+        if total >= MAX_SOURCE_CONTEXT_CHARS:
+            break
+    return "\n\n".join(blocks), provenance
 
 
 def load_request(path: Path) -> dict[str, Any]:
@@ -122,6 +165,7 @@ def theory_prompt(config: dict[str, Any], heuristic: str, style: str) -> str:
         permissions.append("Du darfst vom Anfang abweichen, wenn eine stärkere theoretische Linie entsteht.")
     return f"""Du erzeugst autonom eine philosophische Theorie durch Anschlussentscheidungen.
 Der Anfang ist kein Dogma, sondern die erste Bedingung eines rekursiven Prozesses.
+{PROJECT_GUARDRAILS}
 Aktuelle Anschlussheuristik: {heuristic}
 Aktueller Erkenntnisstil ({style}): {DEFAULT_STYLES[style]}
 {chr(10).join(permissions)}
@@ -191,7 +235,7 @@ def run_theory_cycles(config: dict[str, Any], endpoint: str, model: str, api_key
                 style = meta["selected_style"]
 
         if cycle == 1:
-            task = f"""ANFANG:\n{config['seed']}\n\nORIENTIERUNG:\n{config['orientation'] or 'keine äußere Vorgabe'}\nErzeuge einen ersten Theorieentwurf und protokolliere die gewählte Anschlussentscheidung."""
+            task = f"""ANFANG:\n{config['seed']}\n\nORIENTIERUNG:\n{config['orientation'] or 'keine äußere Vorgabe'}\n\nDEKLARIERTER QUELLENKONTEXT:\n{config['source_context_text'] or 'kein deklarierter Quellenkontext'}\n\nBehandle den Quellenkontext als bestehenden Projektstand, nicht pauschal als bestätigte Wahrheit. Markiere Abweichungen und neue Setzungen. Erzeuge einen ersten Theorieentwurf und protokolliere die gewählte Anschlussentscheidung."""
         else:
             task = f"""Setze die Theorie autonom fort. Du darfst sie stark reorganisieren und frühere Entscheidungen revidieren.
 BISHERIGER TEXT:\n{current}
@@ -222,6 +266,8 @@ def optional_review(text: str, decisions: list[dict[str, Any]], meta_decisions: 
     if not config["start_review_after_generation"]:
         return None
     prompt = f"""Prüfe Theorie, Anschlussentscheidungen und Methodenänderungen. Bewerte Erkenntnisgewinn, Scheinkohärenz, Drift, Gegenmodelle und ob Regeländerungen begründet waren. Gib keine pauschale Bestätigung.
+PROJEKTGRENZEN:\n{PROJECT_GUARDRAILS}
+DEKLARIERTER QUELLENKONTEXT:\n{config['source_context_text'] or 'keiner'}
 THEORIE:\n{text}
 ANSCHLUSSENTSCHEIDUNGEN:\n{json.dumps(decisions, ensure_ascii=False, indent=2)}
 META-ENTSCHEIDUNGEN:\n{json.dumps(meta_decisions, ensure_ascii=False, indent=2)}"""
@@ -237,10 +283,11 @@ def write_outputs(config: dict[str, Any], text: str, decisions: list[dict[str, A
     text_path, graph_path = directory / f"{base}.md", directory / f"{base}-graph.yaml"
     record_path, method_path = directory / f"{base}.yaml", directory / f"{base}-method.yaml"
     header = {
-        "mode": "autonomous_theory_generation", "status": "generated", "seed": config["seed"],
+        "mode": config["mode"], "status": "generated", "seed": config["seed"],
         "created_by": "generative_runner_with_meta_agent", "model": os.environ.get("GENERATIVE_MODEL", "unknown"),
         "cycles": len(decisions), "method_revisions": sum(bool(m.get("change_rule")) for m in meta_decisions),
         "source_context": config["source_context"],
+        "source_provenance": config["source_provenance"],
         "next_possible_steps": ["critical_review", "compare_epistemic_styles", "revise_connections", "promote_selected_relations_to_proposal"],
     }
     text_path.write_text("---\n" + yaml.safe_dump(header, allow_unicode=True, sort_keys=False).strip() + "\n---\n\n" + text.strip() + "\n", encoding="utf-8")
@@ -258,8 +305,10 @@ def main() -> None:
     parser.add_argument("--validate-only", action="store_true")
     args = parser.parse_args()
     config = load_request(args.request)
+    config["source_context_text"], config["source_provenance"] = load_source_context(config["source_context"])
     if args.validate_only:
-        print(json.dumps(config, ensure_ascii=False, indent=2)); return
+        validation = {key: value for key, value in config.items() if key != "source_context_text"}
+        print(json.dumps(validation, ensure_ascii=False, indent=2)); return
     endpoint = os.environ.get("GENERATIVE_API_ENDPOINT", "").strip()
     model = os.environ.get("GENERATIVE_MODEL", "").strip()
     api_key = os.environ.get("GENERATIVE_API_KEY", "").strip()
