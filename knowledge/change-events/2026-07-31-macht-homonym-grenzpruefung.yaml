@@ -1,0 +1,66 @@
+schema_version: 1
+id: change-macht-homonym-grenzpruefung
+created_at: 2026-07-31
+goal: Die falsche Grenzwarnung für das Verb macht beseitigen, ohne spezifische Macht- und Herrschaftstheorie-Kontexte freizugeben.
+operation: revision
+scope:
+  allowed_files:
+    - scripts/philosophie_automat.py
+    - tests/test_automata.py
+    - knowledge/change-events/2026-07-31-macht-homonym-grenzpruefung.yaml
+  protected_files:
+    - CONSTITUTION.md
+    - PROJECT.md
+    - GLOSSAR.md
+    - knowledge/concepts/
+    - manuskript/
+basis:
+  project_files:
+    - knowledge/change-events/2026-07-31-automaten-grenzpruefung.yaml
+    - scripts/philosophie_automat.py
+  decisions: []
+  sources:
+    - automatenlauf-kollektiv-zweiter-anschluss-2026-07-31
+changes:
+  - file: scripts/philosophie_automat.py
+    summary: Ersetzt den mehrdeutigen Einzelmarker macht durch spezifische Macht-Kontexte.
+  - file: tests/test_automata.py
+    summary: Sichert Verbgebrauch ohne Warnung und explizite Machttheorie mit Warnung ab.
+  - file: knowledge/change-events/2026-07-31-macht-homonym-grenzpruefung.yaml
+    summary: Dokumentiert Ursache, Reichweite und Prüfung der Homonymkorrektur.
+affected_relations:
+  - from: scripts/philosophie_automat.py
+    relation: supersedes
+    to: knowledge/change-events/2026-07-31-automaten-grenzpruefung.yaml
+    effect: changed
+    note: Das isolierte Homonym macht wird durch spezifische Macht-Kontexte ersetzt.
+possibilities:
+  opened:
+    - Formulierungen mit dem Verb macht können ohne falsche Grenzwarnung geprüft werden.
+  restricted:
+    - Allgemeine Macht-, Herrschafts-, Legitimations- und Gesellschaftstheorien bleiben als Grenzkontexte markiert.
+  deferred: []
+uncertainties: []
+agent_findings:
+  genealogist: []
+  consistency_checker:
+    - Die bisherige Teilzeichenkettensuche unterschied das Verb macht nicht vom Substantiv Macht.
+  critic:
+    - Eine vollständige semantische Disambiguierung bleibt außerhalb der Schlüsselwortprüfung.
+  material_technical:
+    - Spezifische Mehrwortmarker sind für diesen Grenzfall zuverlässiger als das isolierte Homonym.
+authority:
+  requires_author_decision: false
+  decision_status: not_required
+  decision_reference: null
+validation:
+  - check: Automaten-Regressionstests
+    result: passed
+    evidence: python -m unittest tests/test_automata.py; 14 tests passed
+  - check: Wiederholung des blockierten Kollektivlaufs
+    result: passed
+    evidence: Die Formulierung macht den Möglichkeitsraum sichtbar löst keine Grenzwarnung mehr aus und ergibt REORGANIZE.
+  - check: Vollständige Projektprüfung
+    result: passed
+    evidence: python scripts/check_all.py; 40/40 Change Events, MCP-Graph, Hooks, 20 JavaScript-Tests und Build bestanden
+status: stabilized

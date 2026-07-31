@@ -47,6 +47,19 @@ class PhilosophieAutomatBoundaryTests(unittest.TestCase):
         warning_ids = {item["id"] for item in report["boundary_warnings"]}
         self.assertIn("automation_provenance_in_manuscript", warning_ids)
 
+    def test_verb_macht_does_not_trigger_power_theory_warning(self) -> None:
+        report = philosophie_automat.build_report(
+            "Problematisieren macht den Möglichkeitsraum sichtbar."
+        )
+        warning_ids = {item["id"] for item in report["boundary_warnings"]}
+        self.assertNotIn("general_power_theory", warning_ids)
+
+    def test_explicit_power_theory_context_still_warns(self) -> None:
+        report = philosophie_automat.build_report(
+            "Das Kapitel entwickelt eine allgemeine Machttheorie."
+        )
+        warning_ids = {item["id"] for item in report["boundary_warnings"]}
+        self.assertIn("general_power_theory", warning_ids)
 
 class AutomatenverbundProvenanceTests(unittest.TestCase):
     def test_iterative_output_preserves_initial_input(self) -> None:

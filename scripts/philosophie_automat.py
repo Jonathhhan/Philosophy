@@ -32,7 +32,15 @@ EVENT_PROPOSAL_DIR = PROPOSAL_DIR / "change-events"
 
 BOUNDARY_MARKERS = {
     "general_power_theory": {
-        "terms": ["macht", "herrschaft", "legitimation", "gesellschaftstheorie"],
+        "terms": [
+            "machttheorie",
+            "machtbegriff",
+            "politische macht",
+            "verteilung von macht",
+            "herrschaft",
+            "legitimation",
+            "gesellschaftstheorie",
+        ],
         "warning": "Macht, Herrschaft und Legitimation nur als abgeleitete Diagnosebegriffe organisierter Asymmetrie behandeln.",
     },
     "ai_authority": {
