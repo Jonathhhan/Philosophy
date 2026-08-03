@@ -1,0 +1,92 @@
+schema_version: 1
+id: change-structured-critical-review
+created_at: 2026-08-03
+goal: Autonome Generierung um eine getrennte, schema-gebundene kritische Prüfung ergänzen und kontinuierliche Validierung einführen.
+operation: reorganization
+scope:
+  allowed_files:
+    - automation/structured_reviewer.py
+    - tests/test_structured_reviewer.py
+    - .github/workflows/continuous-validation.yml
+    - projekt/strukturierte-kritische-pruefung.md
+    - knowledge/change-events/2026-08-03-structured-critical-review.yaml
+  protected_files:
+    - CONSTITUTION.md
+    - PROJECT.md
+    - GLOSSAR.md
+    - manuskript/
+    - knowledge/concepts/
+basis:
+  project_files:
+    - CONSTITUTION.md
+    - PROJECT.md
+    - projekt/forschungsarchitektur-v2.md
+    - projekt/research-record-schema.md
+    - automation/generative_runner.py
+    - automation/generative_schemas.py
+  decisions:
+    - Fortsetzung der Repository-Verbesserung nach Review vom 2026-08-03.
+  sources:
+    - Interne Repository-Analyse; keine neue historische Quellenbehauptung.
+changes:
+  - file: automation/structured_reviewer.py
+    summary: Ergänzt einen getrennten kritischen Prüfer mit strengem Ergebnisvertrag und begrenzten Reparaturversuchen.
+  - file: tests/test_structured_reviewer.py
+    summary: Prüft Schema, Statusgrenzen, unbekannte Felder, Reparaturversuche und Schreibgrenze.
+  - file: .github/workflows/continuous-validation.yml
+    summary: Führt Kompilierung, Python-Tests und vollständige Projektvalidierung bei Pull Requests und Änderungen an main aus.
+  - file: projekt/strukturierte-kritische-pruefung.md
+    summary: Dokumentiert die Trennung von Neuheit, Projektbezug und philosophischer Produktivität.
+  - file: knowledge/change-events/2026-08-03-structured-critical-review.yaml
+    summary: Dokumentiert Umfang, Grenzen und Prüfungen der technischen Reorganisation.
+affected_relations:
+  - from: automation/structured_reviewer.py
+    relation: reviews
+    to: automation/generative_runner.py
+    effect: added
+    note: Generationsdatensätze werden nachgelagert geprüft, ohne den Generator oder seine Ausgaben rückwirkend zu bestätigen.
+  - from: automation/structured_reviewer.py
+    relation: constrains
+    to: generated/
+    effect: added
+    note: Ein proposal wird nur bei gestützter philosophischer Produktivität und ohne starken offenen Einwand empfohlen.
+  - from: .github/workflows/continuous-validation.yml
+    relation: validates
+    to: repository
+    effect: added
+    note: Zentrale technische und rekursive Prüfungen werden als wiederholbarer Workflow ausgeführt.
+possibilities:
+  opened:
+    - Neuheit, Projektbezug und philosophische Produktivität können getrennt beurteilt werden.
+    - Review-Ergebnisse können von weiteren Automaten maschinenlesbar verarbeitet werden.
+    - Pull Requests erhalten einen kontinuierlichen Validierungspfad.
+  restricted:
+    - Bloße strukturierte Neuheit reicht nicht für den Status proposal.
+    - Ein starker offener Einwand verhindert proposal.
+  deferred:
+    - Automatische Integration des Review-Ergebnisses in den Bindungsmatrix-Lebenszyklus bleibt einem weiteren Change Event vorbehalten.
+uncertainties:
+  - Die philosophische Bewertung bleibt modellgestützt und ersetzt keine endgültige Autorenentscheidung.
+agent_findings:
+  genealogist: []
+  consistency_checker:
+    - Die Trennung erhält den Status generated und verändert keine bestätigte Definition.
+  critic:
+    - Ein getrenntes Modell ist nicht vollständig epistemisch unabhängig; der Status wird deshalb nur empfohlen.
+  material_technical:
+    - Strikte Pfadgrenzen verhindern Prüfzugriffe außerhalb von generated/.
+authority:
+  requires_author_decision: false
+  decision_status: delegated
+  decision_reference: Nutzerauftrag "weiter" im Codex-Dialog 2026-08-03 nach ausdrücklicher vorheriger Entscheidungsdelegation.
+validation:
+  - check: Strukturierter-Prüfer-Unit-Tests
+    result: passed
+    evidence: Sechs lokale unittest-Fälle bestanden.
+  - check: Python-Kompilierung
+    result: passed
+    evidence: structured_reviewer.py wurde im lokalen Testlauf importiert und ausgeführt.
+  - check: Vollständige Projektprüfung
+    result: pending
+    evidence: Wird durch den neuen Pull-Request-Workflow ausgeführt.
+status: proposal
