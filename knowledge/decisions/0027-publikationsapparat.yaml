@@ -1,0 +1,29 @@
+id: decision-0027
+date: 2026-08-03
+title: Grundform des Publikationsapparats
+status: accepted
+decision: >-
+  Die Publikationsfassung verwendet Chicago Notes and Bibliography in einer
+  deutsch angepassten Form. Bachelor- und Masterarbeit werden als
+  unveröffentlichte Hochschulschriften und genealogische Primärquellen geführt.
+  Der Schluss erhält keine neue Literaturdebatte; Fußnoten werden dort nur für
+  eigenständige Quellenbehauptungen ergänzt. Externe Literatur erscheint
+  überwiegend in Fußnoten und nur dann namentlich im Fließtext, wenn die
+  Auseinandersetzung selbst argumentativ notwendig ist. Philosophische
+  Buchbibliographie und technische Dokumentation des Anschlusslabors bleiben
+  getrennte Apparate.
+reason: >-
+  Diese Form ermöglicht einen überprüfbaren wissenschaftlichen Apparat, ohne
+  externe Literatur zur neuen Grundarchitektur des Buches zu machen. Sie
+  bewahrt die genealogische Sonderstellung der Eigenquellen, hält den Schluss
+  argumentativ geschlossen und trennt philosophische Belege von technischen
+  Betriebs- und Datenschutzquellen.
+affected_files:
+  - literatur/quellen.md
+  - literatur/bibliographie.md
+  - projekt/arbeitsstand.md
+limits:
+  - Verlags- oder Reihenrichtlinien können vor Veröffentlichung formale Anpassungen verlangen.
+  - Ungeprüfte externe Kandidaten werden nicht in die Bibliographie aufgenommen.
+  - Direkte Zitate und genaue Quellenbehauptungen benötigen weiterhin geprüfte Originalstellen und Seitenangaben.
+  - Die Entscheidung autorisiert keine automatische Manuskriptintegration externer Literatur.

@@ -4,9 +4,25 @@ Diese Datei ist der erste Arbeitsapparat fuer die Publikationsfassung. Sie
 trennt sichere Projektprimaerquellen, noch zu pruefende externe
 Gespraechspartner und technische Dokumentation des interaktiven Teils.
 
-Sie ersetzt keine Bibliographie im Endformat. Direkte Zitate und genaue
-inhaltliche Behauptungen duerfen erst nach Kontrolle der Originalstelle mit
-Seitenangabe in den Manuskripttext uebernommen werden.
+Sie bleibt der Arbeits- und Prüfapparat neben der kontrollierten
+Publikationsbibliographie unter `literatur/bibliographie.md`. Direkte Zitate und
+genaue inhaltliche Behauptungen dürfen erst nach Kontrolle der Originalstelle
+mit Seitenangabe in den Manuskripttext übernommen werden.
+
+## Verbindliche Apparatentscheidungen
+
+- Zitierstil: *Chicago Notes and Bibliography*, deutsch angepasst.
+- Bachelor- und Masterarbeit: unveröffentlichte Hochschulschriften und
+  genealogische Primärquellen.
+- Schluss: keine neue Literaturdebatte; Fußnoten nur für eigenständige
+  Quellenbehauptungen.
+- Externe Literatur: überwiegend in Fußnoten; Namen im Fließtext nur bei
+  argumentativ notwendiger Auseinandersetzung.
+- Philosophische Buchbibliographie und technische Dokumentation des
+  Anschlusslabors bleiben getrennt.
+
+Diese Entscheidungen sind unter
+`knowledge/decisions/0027-publikationsapparat.yaml` dokumentiert.
 
 ## Regeln
 
@@ -33,8 +49,8 @@ Seitenangabe in den Manuskripttext uebernommen werden.
   Rohmaterial, Moeglichkeitsraum, Rueckkopplung und diagrammatische Formen.
 - Verwendungsgrenze: Fruehe dualistische oder subjektzentrierte Fassungen
   nicht als aktuelle Buchposition ausgeben.
-- TODO: Endgueltige bibliografische Schreibweise und Publikationsstatus
-  festlegen.
+- Bibliografischer Status: als unveröffentlichte Bachelorarbeit und
+  genealogische Primärquelle bestätigt.
 
 Wichtige bereits erschlossene Seitenbereiche:
 
@@ -63,8 +79,8 @@ Wichtige bereits erschlossene Seitenbereiche:
 - Verwendungsgrenze: Programm, Algorithmus und Improvisation nicht in der
   frueheren Taxonomie stehen lassen, sondern als gegenwaertige Weiterentwicklung
   kenntlich machen.
-- TODO: Endgueltige bibliografische Schreibweise und Zitierform fuer die zweite
-  Auflage festlegen.
+- Bibliografischer Status: als unveröffentlichte Masterarbeit, 2. Auflage, und
+  genealogische Primärquelle bestätigt.
 
 Wichtige bereits erschlossene Seitenbereiche:
 
@@ -90,7 +106,8 @@ Wichtige bereits erschlossene Seitenbereiche:
 - Funktion im Buch: punktueller Beleg fuer den Montage-Automaten als Denkmodell
   eines subjektiven `if-then-else`.
 - Bereits verwendet: Kapitel 8.
-- TODO: Endgueltige bibliografische Angabe und genaue Seitenpruefung klaeren.
+- Bibliografische Angabe nach der visuell geprüften Titelseite stabilisiert;
+  genaue Seitenangaben bleiben vor Einzelzitaten zu prüfen.
 
 ## Externe Gespraechspartner
 
@@ -184,8 +201,8 @@ automatisch Teil des philosophischen Literaturverzeichnisses.
 - Projektinterne Dateien: `interaktiv/README.md`, `interaktiv/server/runtime.js`
   und Tests als technische Nachvollziehbarkeit.
 
-TODO: Getrennte Dokumentation fuer interaktiven Teil und philosophisches Buch
-festlegen.
+Die technische Dokumentation des interaktiven Teils und die philosophische
+Buchbibliographie werden getrennt geführt.
 
 ## Kapitelprioritaet fuer die naechste Quellenarbeit
 
@@ -196,12 +213,9 @@ festlegen.
 5. Kapitel 1 bis 5 und 11 bis 13: nur gezielte Ergaenzungen, keine
    Literaturausweitung aus Pflichtgefuehl.
 
-## Offene Autorenentscheidungen
+## Offene Anschlussentscheidungen
 
-- TODO: Zitierstil fuer die Publikationsfassung bestimmen.
-- TODO: Status der Bachelor- und Masterarbeit im Literaturverzeichnis festlegen.
-- TODO: Entscheiden, ob der Schluss eigene Fussnoten bekommt.
-- TODO: Entscheiden, ob externe Literatur primaer im Fliesstext oder in
-  Fussnoten erscheint.
-- TODO: Entscheiden, ob Manuskript und Anschlusslabor getrennte Apparate
-  erhalten.
+- TODO: Für jeden externen Gesprächspartner anhand eines konkreten
+  Kapitelproblems entscheiden, ob seine Aufnahme notwendig ist.
+- TODO: Vor der Endredaktion prüfen, ob Verlagsvorgaben eine Anpassung des
+  Chicago-Stils verlangen.

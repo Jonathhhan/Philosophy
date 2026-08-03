@@ -1,0 +1,163 @@
+schema_version: 1
+id: change-publikationsapparat-grundentscheidung
+created_at: 2026-08-03
+goal: Die bestätigten Regeln des Publikationsapparats dokumentieren und eine erste kontrollierte Bibliographie aus sicheren Projektprimärquellen anlegen.
+operation: composition
+scope:
+  allowed_files:
+    - knowledge/decisions/0027-publikationsapparat.yaml
+    - knowledge/change-events/2026-08-03-publikationsapparat-grundentscheidung.yaml
+    - literatur/quellen.md
+    - literatur/bibliographie.md
+    - projekt/arbeitsstand.md
+  protected_files:
+    - manuskript/
+    - GLOSSAR.md
+    - PROJECT.md
+    - build/manuskript-lesefassung.md
+basis:
+  project_files:
+    - CONSTITUTION.md
+    - PROJECT.md
+    - STYLE.md
+    - GLOSSAR.md
+    - projekt/arbeitsstand.md
+    - recovered/audits/publication-readiness-audit.md
+    - recovered/audits/source-literature-apparatus-plan.md
+    - literatur/quellen.md
+    - sources/README.md
+    - sources/development.md
+    - sources/bachelor/source.yaml
+    - sources/master/source.yaml
+  decisions:
+    - "Autorenentscheidung im Codex-Task vom 2026-08-03: fünf empfohlene Regeln des Publikationsapparats gemeinsam annehmen."
+  sources:
+    - sources/bachelor/Jonathan Frank Bachelorarbeit Montage und Improvisation_klein.pdf
+    - sources/master/Jonathan_Frank_Masterarbeit_Algorithmische_Komposition_in_der_Filmmontage_Zweite_Auflage_16072020_Klein.pdf
+    - sources/master/Gutachten_JonathanFrank_MA.pdf
+changes:
+  - file: knowledge/decisions/0027-publikationsapparat.yaml
+    summary: Fünf bestätigte Regeln des Publikationsapparats als Autorenentscheidung dokumentiert.
+  - file: literatur/bibliographie.md
+    summary: Kontrollierte Bibliographie und Zitiermuster für die drei sicheren Projektprimärquellen angelegt.
+  - file: literatur/quellen.md
+    summary: Arbeitsapparat mit der verbindlichen Publikationsentscheidung synchronisiert und erledigte TODOs geschlossen.
+  - file: projekt/arbeitsstand.md
+    summary: Literaturintegration als aktive Publikationsaufgabe und sichere Primärbibliographie als erreicht ausgewiesen.
+affected_relations:
+  - from: knowledge/decisions/0027-publikationsapparat.yaml
+    relation: constrains
+    to: literatur/bibliographie.md
+    effect: added
+    note: Zitierstil, Quellenstatus und Apparatgrenzen bestimmen die Form der Bibliographie.
+  - from: literatur/quellen.md
+    relation: constrains
+    to: literatur/bibliographie.md
+    effect: added
+    note: Der Arbeitsapparat hält Funktions- und Prüfnotizen; die Bibliographie enthält nur verwendbare Nachweise.
+possibilities:
+  opened:
+    - Sichere Projektprimärquellen können einheitlich in Fußnoten und Bibliographie nachgewiesen werden.
+  restricted:
+    - Ungeprüfte externe Gesprächspartner und technische Dokumentation gelangen nicht automatisch in die Buchbibliographie.
+  deferred:
+    - Aufnahme externer Literatur bis zur Prüfung konkreter Kapitelprobleme und Originalstellen.
+    - Manuskriptintegration und neue Fußnoten im Schluss bis zur jeweiligen Quellenprüfung.
+uncertainties:
+  - Die endgültige Publikationsform kann eine Anpassung an Verlagsvorgaben erfordern.
+agent_findings:
+  genealogist: []
+  consistency_checker: []
+  critic: []
+  material_technical:
+    - Die Titelseiten der drei Projektprimärquellen wurden visuell geprüft; Autor, Titel, Hochschulstatus, Gutachterin und Datum sind ausgewiesen.
+montage:
+  materials:
+    - id: apparatus-decision
+      reference: Autorenbestätigung vom 2026-08-03
+      kind: decision
+      status: accepted
+      identity: task:2026-08-03
+    - id: source-apparatus
+      reference: literatur/quellen.md
+      kind: source
+      status: current working apparatus
+      identity: git:54adc72
+    - id: primary-source-title-pages
+      reference: Bachelorarbeit, Masterarbeit und Gutachten
+      kind: source
+      status: visually verified
+      identity: pdf:title-pages
+  variants:
+    - id: working-apparatus-only
+      derived_from:
+        - source-apparatus
+      artifact_or_diff: Bestehende Funktionsnotizen ohne eigenständige Bibliographie fortführen.
+      status: rejected
+    - id: separated-working-and-publication-apparatus
+      derived_from:
+        - apparatus-decision
+        - source-apparatus
+        - primary-source-title-pages
+      artifact_or_diff: Arbeitsnotizen in literatur/quellen.md bewahren und sichere Nachweise in literatur/bibliographie.md trennen.
+      status: selected
+  selection:
+    selected:
+      - variant: separated-working-and-publication-apparatus
+        reason: Prüfstatus und Funktionsnotizen bleiben sichtbar, während die Publikationsbibliographie nur bestätigte Quellen enthält.
+    rejected:
+      - variant: working-apparatus-only
+        reason: Die Arbeitsdatei vermischt Kandidaten, TODOs und sichere Nachweise und ist deshalb keine publizierbare Bibliographie.
+    deferred: []
+  arrangement:
+    - position: 1
+      variant: separated-working-and-publication-apparatus
+      target: knowledge/decisions/0027-publikationsapparat.yaml
+      function: Autorisierte Regeln dokumentieren.
+    - position: 2
+      variant: separated-working-and-publication-apparatus
+      target: literatur/quellen.md
+      function: Arbeits- und Prüfapparat fortführen.
+    - position: 3
+      variant: separated-working-and-publication-apparatus
+      target: literatur/bibliographie.md
+      function: Publizierbare sichere Nachweise bereitstellen.
+  feedback:
+    - subject: Trennung der Apparate
+      finding: Arbeitsnotizen, Publikationsnachweise und technische Dokumentation besitzen nun getrennte Funktionen.
+      consequence: preserve
+    - subject: Manuskriptbelege
+      finding: Sämtliche vorhandenen Fußnotendefinitionen beziehen sich auf Bachelorarbeit, Masterarbeit oder Gutachten und sind durch die drei Bibliographieeinträge gedeckt.
+      consequence: preserve
+    - subject: externe Gesprächspartner
+      finding: Kandidaten bleiben mangels konkreter Kapitelentscheidung und Originalprüfung außerhalb der Bibliographie.
+      consequence: preserve
+  stabilization:
+    state: stabilized
+    evidence:
+      - Autorenentscheidung ist als decision-0027 dokumentiert.
+      - Titelseiten der drei Projektprimärquellen wurden visuell geprüft.
+      - Bibliographie, Arbeitsapparat und Manuskriptfußnoten wurden gegeneinander geprüft.
+      - Vollständiger Repository-Prüflauf ist bestanden.
+  recovery:
+    baseline: git:54adc72
+    strategy: Die Apparatsentscheidung und Bibliographie bleiben in einem eigenen Commit revidierbar; die bereits veränderte Lesefassung wird nicht berührt.
+    verification: Diff, Event, Wissensbasis, rekursiver Zustand und vollständiger Repository-Prüflauf wurden erfolgreich geprüft.
+authority:
+  requires_author_decision: true
+  decision_status: accepted
+  decision_reference: knowledge/decisions/0027-publikationsapparat.yaml
+validation:
+  - check: author_decision
+    result: passed
+    evidence: Der Autor hat die fünf vorgeschlagenen Regeln am 2026-08-03 gemeinsam bestätigt.
+  - check: primary_source_title_pages
+    result: passed
+    evidence: Bachelorarbeit, Masterarbeit und Gutachten wurden auf ihren Titelseiten visuell geprüft.
+  - check: bibliography_coverage
+    result: passed
+    evidence: Alle 51 Manuskriptfußnotendefinitionen verwenden ausschließlich die drei bibliografisch erfassten Projektprimärquellen.
+  - check: complete_repository_validation
+    result: passed
+    evidence: python scripts/check_all.py --skip-install erfolgreich; 55 Change Events valide und 20 Anschlusslabor-Tests bestanden.
+status: stabilized

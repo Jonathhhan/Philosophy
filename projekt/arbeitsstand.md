@@ -1,6 +1,6 @@
 # Arbeitsstand
 
-Stand: 31. Juli 2026
+Stand: 3. August 2026
 
 Das Projekt besitzt einen vollständigen Arbeitsentwurf mit 17 Kapiteln und Schluss. Die theoretische Architektur und die zentralen Begriffsentscheidungen sind stabilisiert. Die aktuelle Phase dient nicht dem Ausbau um weitere Grundbegriffe oder Werkzeuge, sondern der argumentativen, literarischen und editorischen Publikationsreife.
 
@@ -28,8 +28,8 @@ Der vollständige Manuskriptstand wird von einer stabilen Begriffsarchitektur in
 Die Publikationsphase folgt vier Anschlüssen:
 
 1. **Kapitelübergänge prüfen – abgeschlossen.** Die vier priorisierten Übergänge wurden mit `keep` bewertet; künstliche Ergänzungen waren nicht erforderlich. Das Audit steht unter [`recovered/audits/uebergangsaudit-publikationsphase.md`](../recovered/audits/uebergangsaudit-publikationsphase.md).
-2. **Redundanzen verdichten – aktiv.** Wiederholte Definitionen und Abgrenzungen bleiben nur dort erhalten, wo sie eine neue argumentative Leistung erbringen.
-3. **Literatur integrieren – anschließend.** Externe Gesprächspartner werden problembezogen eingesetzt, um Unterscheidungen zu schärfen, Alternativen sichtbar zu machen oder Reichweitengrenzen auszuweisen.
+2. **Redundanzen verdichten – geprüft.** Das abschließende Gesamtlektorat empfiehlt keine weitere flächige Stilrevision. Wiederholungen werden nur aufgrund konkreter Störungen der Autorenlektüre verändert.
+3. **Literatur integrieren – aktiv.** Die Grundform des Publikationsapparats ist mit Entscheidung 0027 bestätigt; eine kontrollierte Bibliographie der sicheren Projektprimärquellen liegt vor. Externe Gesprächspartner werden problembezogen geprüft, bevor sie aufgenommen werden.
 4. **Lesefassung beurteilen – abschließend.** Nach lokalen Revisionen wird das Manuskript als zusammenhängender Text gelesen und nicht nur kapitelweise geprüft.
 
 Die automatengeleitete Prüfstruktur für diese Phase steht unter [`recovered/proposals/naechste-anschluesse.md`](../recovered/proposals/naechste-anschluesse.md).
@@ -62,14 +62,10 @@ Kürzungen erfolgen nur, wenn eine Wiederholung weder Orientierung, Rückbezug, 
 
 ## Nächster konkreter Arbeitsschritt
 
-Ein Redundanzaudit unterscheidet für jede Wiederholung:
-
-- notwendige Definition,
-- hilfreichen Rückbezug,
-- neue argumentative Folgerung,
-- bloße Sicherungswiederholung.
-
-Nur die letzte Kategorie wird zur Kürzung vorgeschlagen. Manuskriptänderungen bleiben klein, lokal und begründet.
+Die sichere Primärbibliographie wird kapitelweise gegen die vorhandenen
+Fußnoten geprüft. Danach werden für Kapitel 6 bis 10 nur diejenigen externen
+Gesprächspartner ausgewählt, die ein konkretes Erklärungs-, Kontrast- oder
+Begrenzungsproblem bearbeiten. Kandidatennamen allein begründen keine Aufnahme.
 
 ## Prüfungen
 
