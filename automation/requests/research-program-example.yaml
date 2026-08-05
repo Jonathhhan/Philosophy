@@ -1,0 +1,20 @@
+schema_version: 1
+id: rp-kritik-reorganisation
+title: Kritik und Reorganisation vergleichend untersuchen
+questions:
+  - Welche Gegenmodelle verändern die Reichweite der Relation zwischen Kritik und Reorganisation?
+methods:
+  - id: gegenmodell
+  - id: invariantenanalyse
+open_problems:
+  - id: kritik-reorganisation-reichweite
+    uncertainty: 0.8
+    connectivity: 0.9
+    theoretical_scope: 0.8
+    experimentability: 0.7
+authority:
+  constitution_mutable: false
+  protected_concepts_mutable: false
+  authority_rules_mutable: false
+  automatic_confirmation: false
+

@@ -1,0 +1,11 @@
+schema_version: 1
+id: exp-kritik-reorganisation-001
+research_program: rp-kritik-reorganisation
+seed: Kritik verändert die Bedingungen späterer Kritik.
+status: planned
+variants:
+  - id: gegenmodell-variante
+    method: gegenmodell
+  - id: invarianten-variante
+    method: invariantenanalyse
+
