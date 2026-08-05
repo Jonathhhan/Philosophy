@@ -1,0 +1,41 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://jonathhhan.github.io/philosophy/schemas/research-program.schema.json",
+  "title": "Research Program",
+  "type": "object",
+  "required": ["schema_version", "id", "title", "questions", "methods", "open_problems", "authority"],
+  "properties": {
+    "schema_version": {"const": 1},
+    "id": {"type": "string", "minLength": 1},
+    "title": {"type": "string", "minLength": 1},
+    "questions": {"type": "array", "minItems": 1, "items": {"type": "string", "minLength": 1}},
+    "methods": {"type": "array", "minItems": 1, "items": {"type": "object", "required": ["id"], "properties": {"id": {"type": "string", "minLength": 1}}}},
+    "open_problems": {"type": "array", "items": {"$ref": "#/$defs/scoredItem"}},
+    "authority": {
+      "type": "object",
+      "required": ["constitution_mutable", "protected_concepts_mutable", "authority_rules_mutable", "automatic_confirmation"],
+      "properties": {
+        "constitution_mutable": {"const": false},
+        "protected_concepts_mutable": {"const": false},
+        "authority_rules_mutable": {"const": false},
+        "automatic_confirmation": {"const": false}
+      },
+      "additionalProperties": false
+    }
+  },
+  "$defs": {
+    "score": {"type": "number", "minimum": 0, "maximum": 1},
+    "scoredItem": {
+      "type": "object",
+      "required": ["id", "uncertainty", "connectivity", "theoretical_scope", "experimentability"],
+      "properties": {
+        "id": {"type": "string", "minLength": 1},
+        "uncertainty": {"$ref": "#/$defs/score"},
+        "connectivity": {"$ref": "#/$defs/score"},
+        "theoretical_scope": {"$ref": "#/$defs/score"},
+        "experimentability": {"$ref": "#/$defs/score"}
+      }
+    }
+  }
+}
+

@@ -1,0 +1,24 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://jonathhhan.github.io/philosophy/schemas/experiment.schema.json",
+  "title": "Research Experiment",
+  "type": "object",
+  "required": ["schema_version", "id", "research_program", "seed", "variants", "status"],
+  "properties": {
+    "schema_version": {"const": 1},
+    "id": {"type": "string", "minLength": 1},
+    "research_program": {"type": "string", "minLength": 1},
+    "seed": {"type": "string", "minLength": 1},
+    "status": {"enum": ["planned", "running", "generated", "generated_comparison", "proposal", "rejected"]},
+    "variants": {
+      "type": "array",
+      "minItems": 2,
+      "items": {
+        "type": "object",
+        "required": ["id", "method"],
+        "properties": {"id": {"type": "string", "minLength": 1}, "method": {"type": "string", "minLength": 1}}
+      }
+    }
+  }
+}
+
